@@ -12,6 +12,7 @@ namespace Plataforma
 {
     public partial class Form1 : Form
     {
+        //modificado
         public Form1()
         {
             InitializeComponent();
