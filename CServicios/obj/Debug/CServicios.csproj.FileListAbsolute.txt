@@ -1,0 +1,7 @@
+C:\Users\Usuario\source\repos\Simulador2\ServiciosBancarios\bin\ServiciosBancarios.dll.config
+C:\Users\Usuario\source\repos\Simulador2\ServiciosBancarios\bin\ServiciosBancarios.dll
+C:\Users\Usuario\source\repos\Simulador2\ServiciosBancarios\bin\ServiciosBancarios.pdb
+C:\Users\Usuario\source\repos\Simulador2\ServiciosBancarios\obj\Debug\CServicios.csprojAssemblyReference.cache
+C:\Users\Usuario\source\repos\Simulador2\ServiciosBancarios\obj\Debug\CServicios.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\source\repos\Simulador2\ServiciosBancarios\obj\Debug\ServiciosBancarios.dll
+C:\Users\Usuario\source\repos\Simulador2\ServiciosBancarios\obj\Debug\ServiciosBancarios.pdb

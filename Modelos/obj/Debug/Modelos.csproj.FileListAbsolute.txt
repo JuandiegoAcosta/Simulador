@@ -1,0 +1,2 @@
+C:\Users\Jean\Source\Repos\JuandiegoAcosta\Simulador\Modelos\obj\Debug\Modelos.csprojAssemblyReference.cache
+C:\Users\Jean\Source\Repos\JuandiegoAcosta\Simulador\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache

@@ -1,0 +1,2 @@
+C:\Users\Jean\Source\Repos\JuandiegoAcosta\Simulador\CDatos\obj\Debug\CDatos.csprojAssemblyReference.cache
+C:\Users\Jean\Source\Repos\JuandiegoAcosta\Simulador\CDatos\obj\Debug\CDatos.csproj.CoreCompileInputs.cache

@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CNegocio", "CNegocio\CNegoc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modelos", "Modelos\Modelos.csproj", "{9FE05416-88DF-4058-97BA-3966308A94E5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CServicios", "CServicios\CServicios.csproj", "{4D344881-6E47-4F46-AA36-93B84E62C338}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plataforma-GUI", "CGUI\Plataforma-GUI.csproj", "{9F5C0BAC-DC0E-4D8A-AD95-C330689669A6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{9FE05416-88DF-4058-97BA-3966308A94E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9FE05416-88DF-4058-97BA-3966308A94E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9FE05416-88DF-4058-97BA-3966308A94E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D344881-6E47-4F46-AA36-93B84E62C338}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D344881-6E47-4F46-AA36-93B84E62C338}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D344881-6E47-4F46-AA36-93B84E62C338}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D344881-6E47-4F46-AA36-93B84E62C338}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F5C0BAC-DC0E-4D8A-AD95-C330689669A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F5C0BAC-DC0E-4D8A-AD95-C330689669A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F5C0BAC-DC0E-4D8A-AD95-C330689669A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F5C0BAC-DC0E-4D8A-AD95-C330689669A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
