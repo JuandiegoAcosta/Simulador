@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Manager\BancoManager.cs" />
-    <Compile Include="Manager\Caja_chicaManager.cs" />
+    <Compile Include="Manager\CajaChicaManager.cs" />
     <Compile Include="Manager\ChequeManager.cs" />
     <Compile Include="Manager\ChequeraManager.cs" />
     <Compile Include="Manager\CobrochequeManager.cs" />
