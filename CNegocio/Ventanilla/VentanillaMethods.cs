@@ -1,17 +1,18 @@
-using System;
-using System.Collections.Generic;
-using Modelos.Modelos;
+
 using CDatos.Manager;
+
 namespace CNegocio.Ventanilla
 {
     public class VentanillaMethods
     {
         private ManagerMovimientosVentanillaModel ManagerMovimientosVentanilla;
 
-        public Ventanilla()
+        public VentanillaMethods()
         {
             ManagerMovimientosVentanilla = new ManagerMovimientosVentanillaModel();
         }
+
+        #region Front
         public bool CrearOperacion()
         {
             return false;
@@ -22,6 +23,7 @@ namespace CNegocio.Ventanilla
             return false;
         }
 
+        #endregion
     }
 
 }
