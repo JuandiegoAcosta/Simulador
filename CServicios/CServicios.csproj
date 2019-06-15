@@ -69,7 +69,13 @@
       <DependentUpon>SistemaBancario.svc</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ventanilla\ICobroChequeService.cs" />
     <Compile Include="Ventanilla\IEmpresaService.cs" />
+    <Compile Include="Ventanilla\IPagoServicioService.cs" />
+    <Compile Include="Ventanilla\IRecaudosService.cs" />
+    <Compile Include="Ventanilla\ITipoMonedaService.cs" />
+    <Compile Include="Ventanilla\ITipoMovimientoService.cs" />
+    <Compile Include="Ventanilla\IVentanillaService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

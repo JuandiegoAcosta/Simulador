@@ -10,18 +10,18 @@ namespace ServiciosBancarios.Ventanilla
     public interface IEmpresaService 
     {
         [OperationContract]
-        bool Crear(EmpresaModel aEmpresaModel);
+        bool Empresa_Crear(EmpresaModel aEmpresaModel);
 
         [OperationContract]
-        bool Editar(EmpresaModel aEmpresaModel);
+        bool Empresa_Editar(EmpresaModel aEmpresaModel);
 
         [OperationContract]
-        bool Eliminar(int aID_EmpresaModel);
+        bool Empresa_Eliminar(int aID_EmpresaModel);
 
         [OperationContract]
-        EmpresaModel ObtenerUno(int aID_EmpresaModel);
+        EmpresaModel Empresa_ObtenerUno(int aID_EmpresaModel);
 
         [OperationContract]
-        List<EmpresaModel> ObtenerTodos();
+        List<EmpresaModel> Empresa_ObtenerTodos();
     }
 }

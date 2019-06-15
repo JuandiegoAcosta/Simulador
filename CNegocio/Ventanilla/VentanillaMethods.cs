@@ -1,29 +1,42 @@
 
 using CDatos.Manager;
+using Modelos.Modelos;
+using System.Collections.Generic;
 
 namespace CNegocio.Ventanilla
 {
     public class VentanillaMethods
     {
-        private ManagerMovimientosVentanillaModel ManagerMovimientosVentanilla;
+        private ManagerVentanillaModel ADVentanillaManager;
 
         public VentanillaMethods()
         {
-            ManagerMovimientosVentanilla = new ManagerMovimientosVentanillaModel();
+            ADVentanillaManager = new ManagerVentanillaModel();
         }
-
-        #region Front
-        public bool CrearOperacion()
+        public bool Crear(VentanillaModel aVentanilla)
         {
-            return false;
+            return ADVentanillaManager.Insert(aVentanilla);
         }
 
-        public bool PagarServicio()
+        public bool Editar(VentanillaModel aVentanilla)
         {
-            return false;
+            return ADVentanillaManager.Update(aVentanilla);
         }
 
-        #endregion
+        public bool Eliminar(int aID_VentanillaModel)
+        {
+            return ADVentanillaManager.Delete(aID_VentanillaModel);
+        }
+
+        public VentanillaModel ObtenerUno(int aID_VentanillaModel)
+        {
+            return ADVentanillaManager.GetVentanillaModel(aID_VentanillaModel);
+        }
+
+        public List<VentanillaModel> ObtenerTodos()
+        {
+            return ADVentanillaManager.VentanillaModelSelectAll();
+        }
     }
 
 }
