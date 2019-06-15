@@ -11,16 +11,16 @@ namespace ServiciosBancarios.Ventanilla
     public interface IPagoServicioService
     {
         [OperationContract]
-        bool PagoServicio_Crear(PagoServiciosModel aEmpresaModel);
+        bool PagoServicio_Crear(PagoServiciosModel aPagoServicios);
 
         [OperationContract]
-        bool PagoServicio_Editar(PagoServiciosModel aEmpresaModel);
+        bool PagoServicio_Editar(PagoServiciosModel aPagoServicios);
 
         [OperationContract]
-        bool PagoServicio_Eliminar(int aID_EmpresaModel);
+        bool PagoServicio_Eliminar(int aNro_Contrato, int aID_Movimiento);
 
         [OperationContract]
-        PagoServiciosModel PagoServicio_ObtenerUno(int aID_EmpresaModel);
+        PagoServiciosModel PagoServicio_ObtenerUno(int aNro_Contrato, int aID_Movimiento);
 
         [OperationContract]
         List<PagoServiciosModel> PagoServicio_ObtenerTodos();

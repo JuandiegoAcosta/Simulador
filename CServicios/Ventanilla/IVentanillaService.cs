@@ -11,16 +11,16 @@ namespace ServiciosBancarios.Ventanilla
     public interface IVentanillaService
     {
         [OperationContract]
-        bool Ventanilla_Crear(VentanillaModel aEmpresaModel);
+        bool Ventanilla_Crear(VentanillaModel aVentanilla);
 
         [OperationContract]
-        bool Ventanilla_Editar(VentanillaModel aEmpresaModel);
+        bool Ventanilla_Editar(VentanillaModel aVentanilla);
 
         [OperationContract]
-        bool Ventanilla_Eliminar(int aID_EmpresaModel);
+        bool Ventanilla_Eliminar(int aID_VentanillaModel);
 
         [OperationContract]
-        VentanillaModel Ventanilla_ObtenerUno(int aID_EmpresaModel);
+        VentanillaModel Ventanilla_ObtenerUno(int aID_VentanillaModel);
 
         [OperationContract]
         List<VentanillaModel> Ventanilla_ObtenerTodos();

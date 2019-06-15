@@ -11,16 +11,16 @@ namespace ServiciosBancarios.Ventanilla
     public interface IRecaudosService
     {
         [OperationContract]
-        bool Recaudos_Crear(RecaudosModel aEmpresaModel);
+        bool Recaudos_Crear(RecaudosModel aRecaudos);
 
         [OperationContract]
-        bool Recaudos_Editar(RecaudosModel aEmpresaModel);
+        bool Recaudos_Editar(RecaudosModel aRecaudos);
 
         [OperationContract]
-        bool Recaudos_Eliminar(int aID_EmpresaModel);
+        bool Recaudos_Eliminar(int aNro_Contrato);
 
         [OperationContract]
-        RecaudosModel Recaudos_ObtenerUno(int aID_EmpresaModel);
+        RecaudosModel Recaudos_ObtenerUno(int aNro_Contrato);
 
         [OperationContract]
         List<RecaudosModel> Recaudos_ObtenerTodos();

@@ -11,16 +11,16 @@ namespace ServiciosBancarios.Ventanilla
     public interface ITipoMovimientoService
     {
         [OperationContract]
-        bool TipoMovimiento_Crear(MovimientosVentanillaModel aEmpresaModel);
+        bool TipoMovimiento_Crear(MovimientosVentanillaModel aMovimientoVentanilla);
 
         [OperationContract]
-        bool TipoMovimiento_Editar(MovimientosVentanillaModel aEmpresaModel);
+        bool TipoMovimiento_Editar(MovimientosVentanillaModel aMovimientoVentanilla);
 
         [OperationContract]
-        bool TipoMovimiento_Eliminar(int aID_EmpresaModel);
+        bool TipoMovimiento_Eliminar(int aID_Movimiento);
 
         [OperationContract]
-        MovimientosVentanillaModel TipoMovimiento_ObtenerUno(int aID_EmpresaModel);
+        MovimientosVentanillaModel TipoMovimiento_ObtenerUno(int aID_Movimiento);
 
         [OperationContract]
         List<MovimientosVentanillaModel> TipoMovimiento_ObtenerTodos();

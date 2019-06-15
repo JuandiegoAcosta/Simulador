@@ -11,16 +11,16 @@ namespace ServiciosBancarios.Ventanilla
     public interface ICobroChequeService
     {
         [OperationContract]
-        bool CobroCheque_CrearCobr(CobroChequesModel aEmpresaModel);
+        bool CobroCheque_Crear(CobroChequesModel aCobroCheque);
 
         [OperationContract]
-        bool CobroCheque_Editar(CobroChequesModel aEmpresaModel);
+        bool CobroCheque_Editar(CobroChequesModel aCobroCheque);
 
         [OperationContract]
-        bool CobroCheque_Eliminar(int aID_EmpresaModel);
+        bool CobroCheque_Eliminar(int aID_Cheque, int aID_Movimiento);
 
         [OperationContract]
-        CobroChequesModel CobroCheque_ObtenerUno(int aID_EmpresaModel);
+        CobroChequesModel CobroCheque_ObtenerUno(int aID_Cheque, int aID_Movimiento);
 
         [OperationContract]
         List<CobroChequesModel> CobroCheque_ObtenerTodos();
