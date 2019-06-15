@@ -31,12 +31,12 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
-                    command.Parameters.AddWithValue("@NroCuentasModel", aCuentasModel.NroCuentasModel);
+                   // command.Parameters.AddWithValue("@NroCuentasModel", aCuentasModel.NroCuentasModel);
                     command.Parameters.AddWithValue("@Estado", aCuentasModel.Estado);
                     command.Parameters.AddWithValue("@SaldoContable", aCuentasModel.Saldocontable);
                     command.Parameters.AddWithValue("@SaldoDisponible", aCuentasModel.Saldodisponible);
                     command.Parameters.AddWithValue("@SobreGiro", aCuentasModel.Sobregiro);
-                    command.Parameters.AddWithValue("@TipoCuentasModel", aCuentasModel.TipoCuentasModel);
+                    //command.Parameters.AddWithValue("@TipoCuentasModel", aCuentasModel.TipoCuentasModel);
                     command.Parameters.AddWithValue("@TipoMoneda", aCuentasModel.Tipomoneda);
                     command.Parameters.AddWithValue("@Id_Tarjeta", aCuentasModel.Id_tarjeta == null ? (object)DBNull.Value : aCuentasModel.Id_tarjeta);
                     command.Parameters.AddWithValue("@USUARIO_CREADOR", aCuentasModel.Usuario_creador);
@@ -89,12 +89,12 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
-                    command.Parameters.AddWithValue("@NroCuentasModel", aCuentasModel.NroCuentasModel);
+                    //command.Parameters.AddWithValue("@NroCuentasModel", aCuentasModel.NroCuentasModel);
                     command.Parameters.AddWithValue("@Estado", aCuentasModel.Estado);
                     command.Parameters.AddWithValue("@SaldoContable", aCuentasModel.Saldocontable);
                     command.Parameters.AddWithValue("@SaldoDisponible", aCuentasModel.Saldodisponible);
                     command.Parameters.AddWithValue("@SobreGiro", aCuentasModel.Sobregiro);
-                    command.Parameters.AddWithValue("@TipoCuentasModel", aCuentasModel.TipoCuentasModel);
+                    //command.Parameters.AddWithValue("@TipoCuentasModel", aCuentasModel.TipoCuentasModel);
                     command.Parameters.AddWithValue("@TipoMoneda", aCuentasModel.Tipomoneda);
                     command.Parameters.AddWithValue("@Id_Tarjeta", aCuentasModel.Id_tarjeta == null ? (object)DBNull.Value : aCuentasModel.Id_tarjeta);
                     command.Parameters.AddWithValue("@USUARIO_CREADOR", aCuentasModel.Usuario_creador);
@@ -218,12 +218,12 @@ namespace CDatos.Manager
 
                             CuentasModel = new CuentasModel
                             {
-                                NroCuentasModel = NroCuentasModel,
+                               // NroCuentasModel = NroCuentasModel,
                                 Estado = Estado,
                                 Saldocontable = SaldoContable,
                                 Saldodisponible = SaldoDisponible,
                                 Sobregiro = SobreGiro,
-                                TipoCuentasModel = TipoCuentasModel,
+                                //TipoCuentasModel = TipoCuentasModel,
                                 Tipomoneda = TipoMoneda,
                                 Id_tarjeta = Id_Tarjeta,
                                 Usuario_creador = USUARIO_CREADOR,
@@ -289,12 +289,12 @@ namespace CDatos.Manager
 
                             CuentasModellist.Add(new CuentasModel
                             {
-                                NroCuentasModel = NroCuentasModel,
+                                //NroCuentasModel = NroCuentasModel,
                                 Estado = Estado,
                                 Saldocontable = SaldoContable,
                                 Saldodisponible = SaldoDisponible,
                                 Sobregiro = SobreGiro,
-                                TipoCuentasModel = TipoCuentasModel,
+                                //TipoCuentasModel = TipoCuentasModel,
                                 Tipomoneda = TipoMoneda,
                                 Id_tarjeta = Id_Tarjeta,
                                 Usuario_creador = USUARIO_CREADOR,
@@ -362,12 +362,12 @@ namespace CDatos.Manager
 
                             CuentasModellist.Add(new CuentasModel
                             {
-                                NroCuentasModel = NroCuentasModel,
+                                //NroCuentasModel = NroCuentasModel,
                                 Estado = Estado,
                                 Saldocontable = SaldoContable,
                                 Saldodisponible = SaldoDisponible,
                                 Sobregiro = SobreGiro,
-                                TipoCuentasModel = TipoCuentasModel,
+                                //TipoCuentasModel = TipoCuentasModel,
                                 Tipomoneda = TipoMoneda,
                                 Id_tarjeta = Id_Tarjeta,
                                 Usuario_creador = USUARIO_CREADOR,

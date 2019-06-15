@@ -32,7 +32,7 @@ namespace CDatos.Manager
                     command.Transaction = sqlTran;
 
                     command.Parameters.AddWithValue("@ID", aTipoCambioModel.Id);
-                    command.Parameters.AddWithValue("@Nombre", aTipoCambioModel.Nombre);
+                    //command.Parameters.AddWithValue("@Nombre", aTipoCambioModel.Nombre);
                     command.Parameters.AddWithValue("@FECHA_CREACION", aTipoCambioModel.Fecha_creacion);
                     command.Parameters.AddWithValue("@FECHA_MODIFICACION", aTipoCambioModel.Fecha_modificacion == null ? (object)DBNull.Value : aTipoCambioModel.Fecha_modificacion);
                     command.Parameters.AddWithValue("@USUARIO_CREADOR", aTipoCambioModel.Usuario_creador);
@@ -83,7 +83,7 @@ namespace CDatos.Manager
                     command.Transaction = sqlTran;
 
                     command.Parameters.AddWithValue("@ID", aTipoCambioModel.Id);
-                    command.Parameters.AddWithValue("@Nombre", aTipoCambioModel.Nombre);
+                    //command.Parameters.AddWithValue("@Nombre", aTipoCambioModel.Nombre);
                     command.Parameters.AddWithValue("@FECHA_CREACION", aTipoCambioModel.Fecha_creacion);
                     command.Parameters.AddWithValue("@FECHA_MODIFICACION", aTipoCambioModel.Fecha_modificacion == null ? (object)DBNull.Value : aTipoCambioModel.Fecha_modificacion);
                     command.Parameters.AddWithValue("@USUARIO_CREADOR", aTipoCambioModel.Usuario_creador);
@@ -198,7 +198,7 @@ namespace CDatos.Manager
                             TipoCambioModel = new TipoCambioModel
                             {
                                 Id = ID,
-                                Nombre = Nombre,
+                                //Nombre = Nombre,
                                 Fecha_creacion = FECHA_CREACION,
                                 Fecha_modificacion = FECHA_MODIFICACION,
                                 Usuario_creador = USUARIO_CREADOR,
@@ -255,7 +255,7 @@ namespace CDatos.Manager
                             TipoCambioModellist.Add(new TipoCambioModel
                             {
                                 Id = ID,
-                                Nombre = Nombre,
+                             //   Nombre = Nombre,
                                 Fecha_creacion = FECHA_CREACION,
                                 Fecha_modificacion = FECHA_MODIFICACION,
                                 Usuario_creador = USUARIO_CREADOR,
@@ -314,7 +314,7 @@ namespace CDatos.Manager
                             TipoCambioModellist.Add(new TipoCambioModel
                             {
                                 Id = ID,
-                                Nombre = Nombre,
+                               // Nombre = Nombre,
                                 Fecha_creacion = FECHA_CREACION,
                                 Fecha_modificacion = FECHA_MODIFICACION,
                                 Usuario_creador = USUARIO_CREADOR,

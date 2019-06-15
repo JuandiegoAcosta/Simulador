@@ -17,7 +17,7 @@ namespace CDatos.Manager
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>		
-        public bool Insert(PrestamosModelsModel aPrestamosModel)
+        public bool Insert(PrestamosModel aPrestamosModel)
         {
             try
             {
@@ -32,8 +32,8 @@ namespace CDatos.Manager
                     command.Transaction = sqlTran;
 
                     command.Parameters.AddWithValue("@ID", aPrestamosModel.Id);
-                    command.Parameters.AddWithValue("@FechaPrestamosModel", aPrestamosModel.FechaPrestamosModel);
-                    command.Parameters.AddWithValue("@MontoPrestamosModel", aPrestamosModel.MontoPrestamosModel);
+                    //command.Parameters.AddWithValue("@FechaPrestamosModel", aPrestamosModel.FechaPrestamosModel);
+                    //command.Parameters.AddWithValue("@MontoPrestamosModel", aPrestamosModel.MontoPrestamosModel);
                     command.Parameters.AddWithValue("@Moneda", aPrestamosModel.Moneda);
                     command.Parameters.AddWithValue("@PlazoMeses", aPrestamosModel.Plazomeses);
                     command.Parameters.AddWithValue("@Porcentaje_Interes", aPrestamosModel.Porcentaje_interes);
@@ -89,8 +89,8 @@ namespace CDatos.Manager
                     command.Transaction = sqlTran;
 
                     command.Parameters.AddWithValue("@ID", aPrestamosModel.Id);
-                    command.Parameters.AddWithValue("@FechaPrestamosModel", aPrestamosModel.FechaPrestamosModel);
-                    command.Parameters.AddWithValue("@MontoPrestamosModel", aPrestamosModel.MontoPrestamosModel);
+                    //command.Parameters.AddWithValue("@FechaPrestamosModel", aPrestamosModel.FechaPrestamosModel);
+                    //command.Parameters.AddWithValue("@MontoPrestamosModel", aPrestamosModel.MontoPrestamosModel);
                     command.Parameters.AddWithValue("@Moneda", aPrestamosModel.Moneda);
                     command.Parameters.AddWithValue("@PlazoMeses", aPrestamosModel.Plazomeses);
                     command.Parameters.AddWithValue("@Porcentaje_Interes", aPrestamosModel.Porcentaje_interes);
@@ -216,8 +216,8 @@ namespace CDatos.Manager
                             PrestamosModel = new PrestamosModel
                             {
                                 Id = ID,
-                                FechaPrestamosModel = FechaPrestamosModel,
-                                MontoPrestamosModel = MontoPrestamosModel,
+                                //FechaPrestamosModel = FechaPrestamosModel,
+                                //MontoPrestamosModel = MontoPrestamosModel,
                                 Moneda = Moneda,
                                 Plazomeses = PlazoMeses,
                                 Porcentaje_interes = Porcentaje_Interes,
@@ -285,8 +285,8 @@ namespace CDatos.Manager
                             PrestamosModellist.Add(new PrestamosModel
                             {
                                 Id = ID,
-                                FechaPrestamosModel = FechaPrestamosModel,
-                                MontoPrestamosModel = MontoPrestamosModel,
+                                //FechaPrestamosModel = FechaPrestamosModel,
+                                //MontoPrestamosModel = MontoPrestamosModel,
                                 Moneda = Moneda,
                                 Plazomeses = PlazoMeses,
                                 Porcentaje_interes = Porcentaje_Interes,
@@ -356,8 +356,8 @@ namespace CDatos.Manager
                             PrestamosModellist.Add(new PrestamosModel
                             {
                                 Id = ID,
-                                FechaPrestamosModel = FechaPrestamosModel,
-                                MontoPrestamosModel = MontoPrestamosModel,
+                                //FechaPrestamosModel = FechaPrestamosModel,
+                                //MontoPrestamosModel = MontoPrestamosModel,
                                 Moneda = Moneda,
                                 Plazomeses = PlazoMeses,
                                 Porcentaje_interes = Porcentaje_Interes,

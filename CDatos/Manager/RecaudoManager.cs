@@ -17,7 +17,7 @@ namespace CDatos.Manager
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>		
-        public bool Insert(RecaudosModelsModel aRecaudosModel)
+        public bool Insert(RecaudosModel aRecaudosModel)
         {
             try
             {
@@ -34,7 +34,7 @@ namespace CDatos.Manager
                     command.Parameters.AddWithValue("@Nro_Contrato", aRecaudosModel.Nro_contrato);
                     command.Parameters.AddWithValue("@Monto", aRecaudosModel.Monto);
                     command.Parameters.AddWithValue("@Fecha_Vencimiento", aRecaudosModel.Fecha_vencimiento);
-                    command.Parameters.AddWithValue("@Estado_RecaudosModel", aRecaudosModel.Estado_RecaudosModel);
+                    //command.Parameters.AddWithValue("@Estado_RecaudosModel", aRecaudosModel.Estado_RecaudosModel);
                     command.Parameters.AddWithValue("@ID_Empresa", aRecaudosModel.Id_empresa);
                     command.Parameters.AddWithValue("@FECHA_CREACION", aRecaudosModel.Fecha_creacion);
                     command.Parameters.AddWithValue("@FECHA_MODIFICACION", aRecaudosModel.Fecha_modificacion == null ? (object)DBNull.Value : aRecaudosModel.Fecha_modificacion);
@@ -88,7 +88,7 @@ namespace CDatos.Manager
                     command.Parameters.AddWithValue("@Nro_Contrato", aRecaudosModel.Nro_contrato);
                     command.Parameters.AddWithValue("@Monto", aRecaudosModel.Monto);
                     command.Parameters.AddWithValue("@Fecha_Vencimiento", aRecaudosModel.Fecha_vencimiento);
-                    command.Parameters.AddWithValue("@Estado_RecaudosModel", aRecaudosModel.Estado_RecaudosModel);
+                    //command.Parameters.AddWithValue("@Estado_RecaudosModel", aRecaudosModel.Estado_RecaudosModel);
                     command.Parameters.AddWithValue("@ID_Empresa", aRecaudosModel.Id_empresa);
                     command.Parameters.AddWithValue("@FECHA_CREACION", aRecaudosModel.Fecha_creacion);
                     command.Parameters.AddWithValue("@FECHA_MODIFICACION", aRecaudosModel.Fecha_modificacion == null ? (object)DBNull.Value : aRecaudosModel.Fecha_modificacion);
@@ -209,7 +209,7 @@ namespace CDatos.Manager
                                 Nro_contrato = Nro_Contrato,
                                 Monto = Monto,
                                 Fecha_vencimiento = Fecha_Vencimiento,
-                                Estado_RecaudosModel = Estado_RecaudosModel,
+                                //Estado_RecaudosModel = Estado_RecaudosModel,
                                 Id_empresa = ID_Empresa,
                                 Fecha_creacion = FECHA_CREACION,
                                 Fecha_modificacion = FECHA_MODIFICACION,
@@ -272,7 +272,7 @@ namespace CDatos.Manager
                                 Nro_contrato = Nro_Contrato,
                                 Monto = Monto,
                                 Fecha_vencimiento = Fecha_Vencimiento,
-                                Estado_RecaudosModel = Estado_RecaudosModel,
+                                //Estado_RecaudosModel = Estado_RecaudosModel,
                                 Id_empresa = ID_Empresa,
                                 Fecha_creacion = FECHA_CREACION,
                                 Fecha_modificacion = FECHA_MODIFICACION,
@@ -337,7 +337,7 @@ namespace CDatos.Manager
                                 Nro_contrato = Nro_Contrato,
                                 Monto = Monto,
                                 Fecha_vencimiento = Fecha_Vencimiento,
-                                Estado_RecaudosModel = Estado_RecaudosModel,
+                                //Estado_RecaudosModel = Estado_RecaudosModel,
                                 Id_empresa = ID_Empresa,
                                 Fecha_creacion = FECHA_CREACION,
                                 Fecha_modificacion = FECHA_MODIFICACION,

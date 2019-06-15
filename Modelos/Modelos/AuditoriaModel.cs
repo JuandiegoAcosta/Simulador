@@ -50,8 +50,8 @@ namespace Modelos.Modelos
         /// <summary>
         /// Gets or sets the Campoorigendestino value.
         /// </summary>
-        public UNKNOWN_xml Campoorigendestino
-        { get; set; }
+        //public UNKNOWN_xml Campoorigendestino
+        //{ get; set; }
 
 
         #endregion

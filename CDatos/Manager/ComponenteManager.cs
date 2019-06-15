@@ -36,7 +36,7 @@ namespace CDatos.Manager
                     command.Parameters.AddWithValue("@Id_aplicacion", aComponenteModel.Id_aplicacion == null ? (object)DBNull.Value : aComponenteModel.Id_aplicacion);
                     command.Parameters.AddWithValue("@Estado", aComponenteModel.Estado);
                     command.Parameters.AddWithValue("@Codigo", aComponenteModel.Codigo);
-                    command.Parameters.AddWithValue("@Id_ComponenteModel", aComponenteModel.Id_componente == null ? (object)DBNull.Value : aComponenteModel.Id_ComponenteModel);
+                    //command.Parameters.AddWithValue("@Id_ComponenteModel", aComponenteModel.Id_componente == null ? (object)DBNull.Value : aComponenteModel.Id_ComponenteModel);
                     command.Parameters.AddWithValue("@USUARIO_CREADOR", aComponenteModel.Usuario_creador);
                     command.Parameters.AddWithValue("@FECHA_CREACION", aComponenteModel.Fecha_creacion);
                     command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aComponenteModel.Usuario_modificador == null ? (object)DBNull.Value : aComponenteModel.Usuario_modificador);
@@ -92,7 +92,7 @@ namespace CDatos.Manager
                     command.Parameters.AddWithValue("@Id_aplicacion", aComponenteModel.Id_aplicacion == null ? (object)DBNull.Value : aComponenteModel.Id_aplicacion);
                     command.Parameters.AddWithValue("@Estado", aComponenteModel.Estado);
                     command.Parameters.AddWithValue("@Codigo", aComponenteModel.Codigo);
-                    command.Parameters.AddWithValue("@Id_ComponenteModel", aComponenteModel.Id_componente == null ? (object)DBNull.Value : aComponenteModel.Id_ComponenteModel);
+                    //command.Parameters.AddWithValue("@Id_ComponenteModel", aComponenteModel.Id_componente == null ? (object)DBNull.Value : aComponenteModel.Id_ComponenteModel);
                     command.Parameters.AddWithValue("@USUARIO_CREADOR", aComponenteModel.Usuario_creador);
                     command.Parameters.AddWithValue("@FECHA_CREACION", aComponenteModel.Fecha_creacion);
                     command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aComponenteModel.Usuario_modificador == null ? (object)DBNull.Value : aComponenteModel.Usuario_modificador);

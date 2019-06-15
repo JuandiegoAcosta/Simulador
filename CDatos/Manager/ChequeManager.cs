@@ -17,7 +17,7 @@ namespace CDatos.Manager
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>		
-        public bool Insert(ChequesModelsModel aChequesModel)
+        public bool Insert(ChequesModel aChequesModel)
         {
             try
             {
@@ -36,7 +36,7 @@ namespace CDatos.Manager
                     command.Parameters.AddWithValue("@FechaCobro", aChequesModel.Fechacobro == null ? (object)DBNull.Value : aChequesModel.Fechacobro);
                     command.Parameters.AddWithValue("@Destinatario", aChequesModel.Destinatario);
                     command.Parameters.AddWithValue("@Monto", aChequesModel.Monto);
-                    command.Parameters.AddWithValue("@IDChequesModelra", aChequesModel.IdChequesModelra);
+                   // command.Parameters.AddWithValue("@IDChequesModelra", aChequesModel.IdChequesModelra);
                     command.Parameters.AddWithValue("@Estado", aChequesModel.Estado);
                     command.Parameters.AddWithValue("@FECHA_CREACION", aChequesModel.Fecha_creacion);
                     command.Parameters.AddWithValue("@FECHA_MODIFICACION", aChequesModel.Fecha_modificacion == null ? (object)DBNull.Value : aChequesModel.Fecha_modificacion);
@@ -92,7 +92,7 @@ namespace CDatos.Manager
                     command.Parameters.AddWithValue("@FechaCobro", aChequesModel.Fechacobro == null ? (object)DBNull.Value : aChequesModel.Fechacobro);
                     command.Parameters.AddWithValue("@Destinatario", aChequesModel.Destinatario);
                     command.Parameters.AddWithValue("@Monto", aChequesModel.Monto);
-                    command.Parameters.AddWithValue("@IDChequesModelra", aChequesModel.IdChequesModelra);
+                   // command.Parameters.AddWithValue("@IDChequesModelra", aChequesModel.IdChequesModelra);
                     command.Parameters.AddWithValue("@Estado", aChequesModel.Estado);
                     command.Parameters.AddWithValue("@FECHA_CREACION", aChequesModel.Fecha_creacion);
                     command.Parameters.AddWithValue("@FECHA_MODIFICACION", aChequesModel.Fecha_modificacion == null ? (object)DBNull.Value : aChequesModel.Fecha_modificacion);
@@ -217,7 +217,7 @@ namespace CDatos.Manager
                                 Fechacobro = FechaCobro,
                                 Destinatario = Destinatario,
                                 Monto = Monto,
-                                IdChequesModelra = IDChequesModelra,
+                              //  IdChequesModelra = IDChequesModelra,
                                 Estado = Estado,
                                 Fecha_creacion = FECHA_CREACION,
                                 Fecha_modificacion = FECHA_MODIFICACION,
@@ -284,7 +284,7 @@ namespace CDatos.Manager
                                 Fechacobro = FechaCobro,
                                 Destinatario = Destinatario,
                                 Monto = Monto,
-                                IdChequesModelra = IDChequesModelra,
+                            //    IdChequesModelra = IDChequesModelra,
                                 Estado = Estado,
                                 Fecha_creacion = FECHA_CREACION,
                                 Fecha_modificacion = FECHA_MODIFICACION,
@@ -353,7 +353,7 @@ namespace CDatos.Manager
                                 Fechacobro = FechaCobro,
                                 Destinatario = Destinatario,
                                 Monto = Monto,
-                                IdChequesModelra = IDChequesModelra,
+                                //IdChequesModelra = IDChequesModelra,
                                 Estado = Estado,
                                 Fecha_creacion = FECHA_CREACION,
                                 Fecha_modificacion = FECHA_MODIFICACION,

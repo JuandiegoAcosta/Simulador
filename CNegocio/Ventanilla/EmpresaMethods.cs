@@ -1,4 +1,5 @@
-﻿using Modelos.Modelos;
+﻿using CDatos.Manager;
+using Modelos.Modelos;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,29 +11,35 @@ namespace CNegocio.Ventanilla
 {
     public class EmpresaMethods
     {
-        public bool Crear(EmpresaModel aempresa)
+        private ManagerEmpresaModel ADEmpresaManager;
+
+        public EmpresaMethods()
         {
-            return false;
+            ADEmpresaManager = new ManagerEmpresaModel();
+        }
+        public bool Crear(EmpresaModel aEmpresaModel)
+        {
+            return ADEmpresaManager.Insert(aEmpresaModel);
         }
 
-        public bool Editar(EmpresaModel aempresa)
+        public bool Editar(EmpresaModel aEmpresaModel)
         {
-            return false;
+            return ADEmpresaManager.Update(aEmpresaModel);
         }
 
-        public bool Eliminar(int identidad)
+        public bool Eliminar(int aID_EmpresaModel)
         {
-            return false;
+            return ADEmpresaManager.Delete(aID_EmpresaModel);
         }
 
-        public EmpresaModel ObtenerUno(int identidad)
+        public EmpresaModel ObtenerUno(int aID_EmpresaModel)
         {
-            return new EmpresaModel();
+            return ADEmpresaManager.GetEmpresaModel(aID_EmpresaModel);
         }
 
-        public ObservableCollection<EmpresaModel> ObtenerTodos()
+        public List<EmpresaModel> ObtenerTodos()
         {
-            return new ObservableCollection<EmpresaModel>();
+            return ADEmpresaManager.EmpresaModelSelectAll();
         }
     }
 }

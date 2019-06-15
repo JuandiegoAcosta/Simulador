@@ -5,3 +5,17 @@ C:\Users\Usuario\source\repos\Simulador2\ServiciosBancarios\obj\Debug\CServicios
 C:\Users\Usuario\source\repos\Simulador2\ServiciosBancarios\obj\Debug\CServicios.csproj.CoreCompileInputs.cache
 C:\Users\Usuario\source\repos\Simulador2\ServiciosBancarios\obj\Debug\ServiciosBancarios.dll
 C:\Users\Usuario\source\repos\Simulador2\ServiciosBancarios\obj\Debug\ServiciosBancarios.pdb
+C:\Users\elife\Source\Repos\Simulador\CServicios\bin\ServiciosBancarios.dll.config
+C:\Users\elife\Source\Repos\Simulador\CServicios\bin\ServiciosBancarios.dll
+C:\Users\elife\Source\Repos\Simulador\CServicios\bin\ServiciosBancarios.pdb
+C:\Users\elife\Source\Repos\Simulador\CServicios\bin\CNegocio.dll
+C:\Users\elife\Source\Repos\Simulador\CServicios\bin\Modelos.dll
+C:\Users\elife\Source\Repos\Simulador\CServicios\bin\CNegocio.pdb
+C:\Users\elife\Source\Repos\Simulador\CServicios\bin\Modelos.pdb
+C:\Users\elife\Source\Repos\Simulador\CServicios\obj\Debug\CServicios.csprojAssemblyReference.cache
+C:\Users\elife\Source\Repos\Simulador\CServicios\obj\Debug\CServicios.csproj.CoreCompileInputs.cache
+C:\Users\elife\Source\Repos\Simulador\CServicios\obj\Debug\CServicios.csproj.CopyComplete
+C:\Users\elife\Source\Repos\Simulador\CServicios\obj\Debug\ServiciosBancarios.dll
+C:\Users\elife\Source\Repos\Simulador\CServicios\obj\Debug\ServiciosBancarios.pdb
+C:\Users\elife\Source\Repos\Simulador\CServicios\bin\CDatos.dll
+C:\Users\elife\Source\Repos\Simulador\CServicios\bin\CDatos.pdb

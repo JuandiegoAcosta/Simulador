@@ -35,7 +35,7 @@ namespace CDatos.Manager
                     command.Parameters.AddWithValue("@Pass", aPersonaModel.Pass == null ? (object)DBNull.Value : aPersonaModel.Pass);
                     command.Parameters.AddWithValue("@Correo", aPersonaModel.Correo == null ? (object)DBNull.Value : aPersonaModel.Correo);
                     command.Parameters.AddWithValue("@Fecha", aPersonaModel.Fecha == null ? (object)DBNull.Value : aPersonaModel.Fecha);
-                    command.Parameters.AddWithValue("@Id_area", aPersonaModel.Id_area == null ? (object)DBNull.Value : aPersonaModel.Id_area);
+                    //command.Parameters.AddWithValue("@Id_area", aPersonaModel.Id_area == null ? (object)DBNull.Value : aPersonaModel.Id_area);
                     command.Parameters.AddWithValue("@Estado", aPersonaModel.Estado);
                     command.Parameters.AddWithValue("@Nombres", aPersonaModel.Nombres);
                     command.Parameters.AddWithValue("@Apellidos", aPersonaModel.Apellidos);
@@ -97,7 +97,7 @@ namespace CDatos.Manager
                     command.Parameters.AddWithValue("@Pass", aPersonaModel.Pass == null ? (object)DBNull.Value : aPersonaModel.Pass);
                     command.Parameters.AddWithValue("@Correo", aPersonaModel.Correo == null ? (object)DBNull.Value : aPersonaModel.Correo);
                     command.Parameters.AddWithValue("@Fecha", aPersonaModel.Fecha == null ? (object)DBNull.Value : aPersonaModel.Fecha);
-                    command.Parameters.AddWithValue("@Id_area", aPersonaModel.Id_area == null ? (object)DBNull.Value : aPersonaModel.Id_area);
+                   // command.Parameters.AddWithValue("@Id_area", aPersonaModel.Id_area == null ? (object)DBNull.Value : aPersonaModel.Id_area);
                     command.Parameters.AddWithValue("@Estado", aPersonaModel.Estado);
                     command.Parameters.AddWithValue("@Nombres", aPersonaModel.Nombres);
                     command.Parameters.AddWithValue("@Apellidos", aPersonaModel.Apellidos);
@@ -234,7 +234,7 @@ namespace CDatos.Manager
                                 Pass = Pass,
                                 Correo = Correo,
                                 Fecha = Fecha,
-                                Id_area = Id_area,
+                                //Id_area = Id_area,
                                 Estado = Estado,
                                 Nombres = Nombres,
                                 Apellidos = Apellidos,
@@ -313,7 +313,7 @@ namespace CDatos.Manager
                                 Pass = Pass,
                                 Correo = Correo,
                                 Fecha = Fecha,
-                                Id_area = Id_area,
+                                //Id_area = Id_area,
                                 Estado = Estado,
                                 Nombres = Nombres,
                                 Apellidos = Apellidos,
@@ -394,7 +394,7 @@ namespace CDatos.Manager
                                 Pass = Pass,
                                 Correo = Correo,
                                 Fecha = Fecha,
-                                Id_area = Id_area,
+                                //Id_area = Id_area,
                                 Estado = Estado,
                                 Nombres = Nombres,
                                 Apellidos = Apellidos,

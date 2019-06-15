@@ -251,7 +251,7 @@ namespace CDatos.Manager
 
                             TipoMovimientoModellist.Add(new TipoMovimientoModel
                             {
-                                Id_TipoMovimientoModel = ID_TipoMovimientoModel,
+                                //Id_TipoMovimientoModel = ID_TipoMovimientoModel,
                                 Descripcion = Descripcion,
                                 Usuario_creador = USUARIO_CREADOR,
                                 Fecha_creacion = FECHA_CREACION,
@@ -310,7 +310,7 @@ namespace CDatos.Manager
 
                             TipoMovimientoModellist.Add(new TipoMovimientoModel
                             {
-                                Id_TipoMovimientoModel = ID_TipoMovimientoModel,
+                                //Id_TipoMovimientoModel = ID_TipoMovimientoModel,
                                 Descripcion = Descripcion,
                                 Usuario_creador = USUARIO_CREADOR,
                                 Fecha_creacion = FECHA_CREACION,
