@@ -28,18 +28,17 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
+                    command.Parameters.AddWithValue("@pMode", 4);
+
                     command.Parameters.AddWithValue("@Id_usuario", aPermisosUsuarioModel.Id_usuario == null ? (object)DBNull.Value : aPermisosUsuarioModel.Id_usuario);
                     command.Parameters.AddWithValue("@Id_rol", aPermisosUsuarioModel.Id_rol == null ? (object)DBNull.Value : aPermisosUsuarioModel.Id_rol);
                     command.Parameters.AddWithValue("@Id_componente", aPermisosUsuarioModel.Id_componente == null ? (object)DBNull.Value : aPermisosUsuarioModel.Id_componente);
                     command.Parameters.AddWithValue("@Estado", aPermisosUsuarioModel.Estado);
                     command.Parameters.AddWithValue("@USUARIO_CREADOR", aPermisosUsuarioModel.Usuario_creador);
                     command.Parameters.AddWithValue("@FECHA_CREACION", aPermisosUsuarioModel.Fecha_creacion);
-                    command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aPermisosUsuarioModel.Usuario_modificador == null ? (object)DBNull.Value : aPermisosUsuarioModel.Usuario_modificador);
-                    command.Parameters.AddWithValue("@FECHA_MODIFICACION", aPermisosUsuarioModel.Fecha_modificacion == null ? (object)DBNull.Value : aPermisosUsuarioModel.Fecha_modificacion);
-
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "PermisosUsuarioModelInsert";
+                    command.CommandText = "spPermisosUsuario";
 
                     int afectados = command.ExecuteNonQuery();
 
@@ -81,19 +80,19 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
+                    command.Parameters.AddWithValue("@pMode", 5);
+
                     command.Parameters.AddWithValue("@Id", aPermisosUsuarioModel.Id);
                     command.Parameters.AddWithValue("@Id_usuario", aPermisosUsuarioModel.Id_usuario == null ? (object)DBNull.Value : aPermisosUsuarioModel.Id_usuario);
                     command.Parameters.AddWithValue("@Id_rol", aPermisosUsuarioModel.Id_rol == null ? (object)DBNull.Value : aPermisosUsuarioModel.Id_rol);
                     command.Parameters.AddWithValue("@Id_componente", aPermisosUsuarioModel.Id_componente == null ? (object)DBNull.Value : aPermisosUsuarioModel.Id_componente);
                     command.Parameters.AddWithValue("@Estado", aPermisosUsuarioModel.Estado);
-                    command.Parameters.AddWithValue("@USUARIO_CREADOR", aPermisosUsuarioModel.Usuario_creador);
-                    command.Parameters.AddWithValue("@FECHA_CREACION", aPermisosUsuarioModel.Fecha_creacion);
                     command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aPermisosUsuarioModel.Usuario_modificador == null ? (object)DBNull.Value : aPermisosUsuarioModel.Usuario_modificador);
                     command.Parameters.AddWithValue("@FECHA_MODIFICACION", aPermisosUsuarioModel.Fecha_modificacion == null ? (object)DBNull.Value : aPermisosUsuarioModel.Fecha_modificacion);
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "PermisosUsuarioModelUpdate";
+                    command.CommandText = "spPermisosUsuario";
 
                     int afectados = command.ExecuteNonQuery();
 
@@ -135,11 +134,12 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
+                    command.Parameters.AddWithValue("@pMode", 6);
                     command.Parameters.AddWithValue("@Id", aId);
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "PermisosUsuarioModelDelete";
+                    command.CommandText = "spPermisosUsuario";
                     int afectados = command.ExecuteNonQuery();
 
                     // Commit the transaction.
@@ -176,12 +176,13 @@ namespace CDatos.Manager
 
                     SqlCommand command = connection.CreateCommand();
 
+                    command.Parameters.AddWithValue("@pMode", 2);
                     command.Parameters.AddWithValue("@Id", aId);
 
 
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.CommandText = "PermisosUsuarioModelSelect";
+                    command.CommandText = "spPermisosUsuario";
 
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -197,7 +198,7 @@ namespace CDatos.Manager
                             bool Estado = (bool)(reader["Estado"]);
                             string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
-                            string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
+                            string USUARIO_MODIFICADOR = (reader["USUARIO_MODIFICADOR"]) == DBNull.Value ? null : (string)(reader["USUARIO_MODIFICADOR"]);
                             DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
 
                             PermisosUsuarioModel = new PermisosUsuarioModel
@@ -244,7 +245,7 @@ namespace CDatos.Manager
 
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.CommandText = "PermisosUsuarioModelSelectAll";
+                    command.CommandText = "spPermisosUsuario";
 
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -260,7 +261,7 @@ namespace CDatos.Manager
                             bool Estado = (bool)(reader["Estado"]);
                             string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
-                            string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
+                            string USUARIO_MODIFICADOR = (reader["USUARIO_MODIFICADOR"]) == DBNull.Value ? null : (string)(reader["USUARIO_MODIFICADOR"]);
                             DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
 
                             PermisosUsuarioModellist.Add(new PermisosUsuarioModel

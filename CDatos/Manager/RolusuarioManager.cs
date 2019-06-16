@@ -28,17 +28,16 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
+                    command.Parameters.AddWithValue("@pMode", 4);
                     command.Parameters.AddWithValue("@Id_Personas", aRolUsuarioModel.Id_personas == null ? (object)DBNull.Value : aRolUsuarioModel.Id_personas);
                     command.Parameters.AddWithValue("@Id_roles", aRolUsuarioModel.Id_roles == null ? (object)DBNull.Value : aRolUsuarioModel.Id_roles);
                     command.Parameters.AddWithValue("@Activo", aRolUsuarioModel.Activo);
                     command.Parameters.AddWithValue("@FECHA_CREACION", aRolUsuarioModel.Fecha_creacion);
-                    command.Parameters.AddWithValue("@FECHA_MODIFICACION", aRolUsuarioModel.Fecha_modificacion == null ? (object)DBNull.Value : aRolUsuarioModel.Fecha_modificacion);
                     command.Parameters.AddWithValue("@USUARIO_CREADOR", aRolUsuarioModel.Usuario_creador);
-                    command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aRolUsuarioModel.Usuario_modificador == null ? (object)DBNull.Value : aRolUsuarioModel.Usuario_modificador);
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "RolUsuarioModelInsert";
+                    command.CommandText = "spRolUsuario";
 
                     int afectados = command.ExecuteNonQuery();
 
@@ -80,18 +79,17 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
+                    command.Parameters.AddWithValue("@pMode", 5);
                     command.Parameters.AddWithValue("@Id", aRolUsuarioModel.Id);
                     command.Parameters.AddWithValue("@Id_Personas", aRolUsuarioModel.Id_personas == null ? (object)DBNull.Value : aRolUsuarioModel.Id_personas);
                     command.Parameters.AddWithValue("@Id_roles", aRolUsuarioModel.Id_roles == null ? (object)DBNull.Value : aRolUsuarioModel.Id_roles);
                     command.Parameters.AddWithValue("@Activo", aRolUsuarioModel.Activo);
-                    command.Parameters.AddWithValue("@FECHA_CREACION", aRolUsuarioModel.Fecha_creacion);
                     command.Parameters.AddWithValue("@FECHA_MODIFICACION", aRolUsuarioModel.Fecha_modificacion == null ? (object)DBNull.Value : aRolUsuarioModel.Fecha_modificacion);
-                    command.Parameters.AddWithValue("@USUARIO_CREADOR", aRolUsuarioModel.Usuario_creador);
                     command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aRolUsuarioModel.Usuario_modificador == null ? (object)DBNull.Value : aRolUsuarioModel.Usuario_modificador);
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "RolUsuarioModelUpdate";
+                    command.CommandText = "spRolUsuario";
 
                     int afectados = command.ExecuteNonQuery();
 
@@ -133,11 +131,12 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
+                    command.Parameters.AddWithValue("@pMode", 6);
                     command.Parameters.AddWithValue("@Id", aId);
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "RolUsuarioModelDelete";
+                    command.CommandText = "spRolUsuario";
                     int afectados = command.ExecuteNonQuery();
 
                     // Commit the transaction.
@@ -174,12 +173,13 @@ namespace CDatos.Manager
 
                     SqlCommand command = connection.CreateCommand();
 
+                    command.Parameters.AddWithValue("@pMode", 2);
                     command.Parameters.AddWithValue("@Id", aId);
 
 
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.CommandText = "RolUsuarioModelSelect";
+                    command.CommandText = "spRolUsuario";
 
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -195,7 +195,7 @@ namespace CDatos.Manager
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
                             DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
                             string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
-                            string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
+                            string USUARIO_MODIFICADOR = (reader["USUARIO_MODIFICADOR"]) == DBNull.Value ? null : (string)(reader["USUARIO_MODIFICADOR"]);
 
                             RolUsuarioModel = new RolUsuarioModel
                             {
@@ -238,9 +238,11 @@ namespace CDatos.Manager
 
                     SqlCommand command = connection.CreateCommand();
 
+                    command.Parameters.AddWithValue("@pMode", 1);
+
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.CommandText = "RolUsuarioModelSelectAll";
+                    command.CommandText = "spRolUsuario";
 
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -256,7 +258,7 @@ namespace CDatos.Manager
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
                             DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
                             string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
-                            string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
+                            string USUARIO_MODIFICADOR = (reader["USUARIO_MODIFICADOR"]) == DBNull.Value ? null : (string)(reader["USUARIO_MODIFICADOR"]);
 
                             RolUsuarioModellist.Add(new RolUsuarioModel
                             {

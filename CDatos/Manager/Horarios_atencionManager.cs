@@ -28,17 +28,15 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
+                    command.Parameters.AddWithValue("@pMode", 4);
                     command.Parameters.AddWithValue("@Fecha", aHorarios_AtencionModel.Fecha);
                     command.Parameters.AddWithValue("@Hora_Inicio", aHorarios_AtencionModel.Hora_inicio);
                     command.Parameters.AddWithValue("@Hora_Fin", aHorarios_AtencionModel.Hora_fin == null ? (object)DBNull.Value : aHorarios_AtencionModel.Hora_fin);
                     command.Parameters.AddWithValue("@FECHA_CREACION", aHorarios_AtencionModel.Fecha_creacion);
-                    command.Parameters.AddWithValue("@FECHA_MODIFICACION", aHorarios_AtencionModel.Fecha_modificacion == null ? (object)DBNull.Value : aHorarios_AtencionModel.Fecha_modificacion);
                     command.Parameters.AddWithValue("@USUARIO_CREADOR", aHorarios_AtencionModel.Usuario_creador);
-                    command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aHorarios_AtencionModel.Usuario_modificador == null ? (object)DBNull.Value : aHorarios_AtencionModel.Usuario_modificador);
-
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "Horarios_AtencionModelInsert";
+                    command.CommandText = "spHorarios_atencion";
 
                     int afectados = command.ExecuteNonQuery();
 
@@ -80,18 +78,17 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
+                    command.Parameters.AddWithValue("@pMode", 5);
                     command.Parameters.AddWithValue("@Id", aHorarios_AtencionModel.Id);
                     command.Parameters.AddWithValue("@Fecha", aHorarios_AtencionModel.Fecha);
                     command.Parameters.AddWithValue("@Hora_Inicio", aHorarios_AtencionModel.Hora_inicio);
                     command.Parameters.AddWithValue("@Hora_Fin", aHorarios_AtencionModel.Hora_fin == null ? (object)DBNull.Value : aHorarios_AtencionModel.Hora_fin);
-                    command.Parameters.AddWithValue("@FECHA_CREACION", aHorarios_AtencionModel.Fecha_creacion);
                     command.Parameters.AddWithValue("@FECHA_MODIFICACION", aHorarios_AtencionModel.Fecha_modificacion == null ? (object)DBNull.Value : aHorarios_AtencionModel.Fecha_modificacion);
-                    command.Parameters.AddWithValue("@USUARIO_CREADOR", aHorarios_AtencionModel.Usuario_creador);
                     command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aHorarios_AtencionModel.Usuario_modificador == null ? (object)DBNull.Value : aHorarios_AtencionModel.Usuario_modificador);
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "Horarios_AtencionModelUpdate";
+                    command.CommandText = "spHorarios_atencion";
 
                     int afectados = command.ExecuteNonQuery();
 
@@ -133,11 +130,12 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
+                    command.Parameters.AddWithValue("@pMode", 6);
                     command.Parameters.AddWithValue("@Id", aId);
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "Horarios_AtencionModelDelete";
+                    command.CommandText = "spHorarios_atencion";
                     int afectados = command.ExecuteNonQuery();
 
                     // Commit the transaction.
@@ -174,12 +172,13 @@ namespace CDatos.Manager
 
                     SqlCommand command = connection.CreateCommand();
 
+                    command.Parameters.AddWithValue("@pMode", 2);
                     command.Parameters.AddWithValue("@Id", aId);
 
 
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.CommandText = "Horarios_AtencionModelSelect";
+                    command.CommandText = "spHorarios_atencion";
 
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -238,9 +237,10 @@ namespace CDatos.Manager
 
                     SqlCommand command = connection.CreateCommand();
 
+                    command.Parameters.AddWithValue("@pMode", 1);
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.CommandText = "Horarios_AtencionModelSelectAll";
+                    command.CommandText = "spHorarios_atencion";
 
                     SqlDataReader reader = command.ExecuteReader();
 

@@ -28,6 +28,7 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
+                    command.Parameters.AddWithValue("@pMode", 4);
                     command.Parameters.AddWithValue("@Fecha", aTurnoUsuarioModel.Fecha);
                     command.Parameters.AddWithValue("@HoraInicio", aTurnoUsuarioModel.Horainicio);
                     command.Parameters.AddWithValue("@HoraFin", aTurnoUsuarioModel.Horafin);
@@ -36,13 +37,11 @@ namespace CDatos.Manager
                     command.Parameters.AddWithValue("@ID_Horarios_Atencion", aTurnoUsuarioModel.Id_horarios_atencion);
                     command.Parameters.AddWithValue("@ID_Turnos", aTurnoUsuarioModel.Id_turnos == null ? (object)DBNull.Value : aTurnoUsuarioModel.Id_turnos);
                     command.Parameters.AddWithValue("@FECHA_CREACION", aTurnoUsuarioModel.Fecha_creacion);
-                    command.Parameters.AddWithValue("@FECHA_MODIFICACION", aTurnoUsuarioModel.Fecha_modificacion == null ? (object)DBNull.Value : aTurnoUsuarioModel.Fecha_modificacion);
                     command.Parameters.AddWithValue("@USUARIO_CREADOR", aTurnoUsuarioModel.Usuario_creador);
-                    command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aTurnoUsuarioModel.Usuario_modificador == null ? (object)DBNull.Value : aTurnoUsuarioModel.Usuario_modificador);
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "TurnoUsuarioModelInsert";
+                    command.CommandText = "spTurnoUsuario";
 
                     int afectados = command.ExecuteNonQuery();
 
@@ -84,6 +83,7 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
+                    command.Parameters.AddWithValue("@pMode", 5);
                     command.Parameters.AddWithValue("@ID", aTurnoUsuarioModel.Id);
                     command.Parameters.AddWithValue("@Fecha", aTurnoUsuarioModel.Fecha);
                     command.Parameters.AddWithValue("@HoraInicio", aTurnoUsuarioModel.Horainicio);
@@ -92,14 +92,12 @@ namespace CDatos.Manager
                     command.Parameters.AddWithValue("@ID_Ventanilla", aTurnoUsuarioModel.Id_ventanilla);
                     command.Parameters.AddWithValue("@ID_Horarios_Atencion", aTurnoUsuarioModel.Id_horarios_atencion);
                     command.Parameters.AddWithValue("@ID_Turnos", aTurnoUsuarioModel.Id_turnos == null ? (object)DBNull.Value : aTurnoUsuarioModel.Id_turnos);
-                    command.Parameters.AddWithValue("@FECHA_CREACION", aTurnoUsuarioModel.Fecha_creacion);
                     command.Parameters.AddWithValue("@FECHA_MODIFICACION", aTurnoUsuarioModel.Fecha_modificacion == null ? (object)DBNull.Value : aTurnoUsuarioModel.Fecha_modificacion);
-                    command.Parameters.AddWithValue("@USUARIO_CREADOR", aTurnoUsuarioModel.Usuario_creador);
                     command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aTurnoUsuarioModel.Usuario_modificador == null ? (object)DBNull.Value : aTurnoUsuarioModel.Usuario_modificador);
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "TurnoUsuarioModelUpdate";
+                    command.CommandText = "spTurnoUsuario";
 
                     int afectados = command.ExecuteNonQuery();
 
@@ -141,11 +139,12 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
+                    command.Parameters.AddWithValue("@pMode", 6);
                     command.Parameters.AddWithValue("@ID", aID);
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "TurnoUsuarioModelDelete";
+                    command.CommandText = "spTurnoUsuario";
                     int afectados = command.ExecuteNonQuery();
 
                     // Commit the transaction.
@@ -182,12 +181,13 @@ namespace CDatos.Manager
 
                     SqlCommand command = connection.CreateCommand();
 
+                    command.Parameters.AddWithValue("@pMode", 2);
                     command.Parameters.AddWithValue("@ID", aID);
 
 
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.CommandText = "TurnoUsuarioModelSelect";
+                    command.CommandText = "spTurnoUsuario";
 
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -207,7 +207,7 @@ namespace CDatos.Manager
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
                             DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
                             string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
-                            string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
+                            string USUARIO_MODIFICADOR = (reader["USUARIO_MODIFICADOR"]) == DBNull.Value ? null : (string)(reader["USUARIO_MODIFICADOR"]);
 
                             TurnoUsuarioModel = new TurnoUsuarioModel
                             {
@@ -254,6 +254,7 @@ namespace CDatos.Manager
 
                     SqlCommand command = connection.CreateCommand();
 
+                    command.Parameters.AddWithValue("@pMode", 1);
                     command.CommandType = CommandType.StoredProcedure;
 
                     command.CommandText = "TurnoUsuarioModelSelectAll";
@@ -276,7 +277,7 @@ namespace CDatos.Manager
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
                             DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
                             string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
-                            string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
+                            string USUARIO_MODIFICADOR = (reader["USUARIO_MODIFICADOR"]) == DBNull.Value ? null : (string)(reader["USUARIO_MODIFICADOR"]);
 
                             TurnoUsuarioModellist.Add(new TurnoUsuarioModel
                             {

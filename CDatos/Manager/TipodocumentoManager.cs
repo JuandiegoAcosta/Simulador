@@ -28,15 +28,14 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
+                    command.Parameters.AddWithValue("@pMode", 4);
                     command.Parameters.AddWithValue("@Descripcion", aTipoDocumentoModel.Descripcion);
                     command.Parameters.AddWithValue("@FECHA_CREACION", aTipoDocumentoModel.Fecha_creacion);
-                    command.Parameters.AddWithValue("@FECHA_MODIFICACION", aTipoDocumentoModel.Fecha_modificacion == null ? (object)DBNull.Value : aTipoDocumentoModel.Fecha_modificacion);
                     command.Parameters.AddWithValue("@USUARIO_CREADOR", aTipoDocumentoModel.Usuario_creador);
-                    command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aTipoDocumentoModel.Usuario_modificador == null ? (object)DBNull.Value : aTipoDocumentoModel.Usuario_modificador);
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "TipoDocumentoModelInsert";
+                    command.CommandText = "spTipoDocumento";
 
                     int afectados = command.ExecuteNonQuery();
 
@@ -78,16 +77,15 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
+                    command.Parameters.AddWithValue("@pMode", 5);
                     command.Parameters.AddWithValue("@Id_documento", aTipoDocumentoModel.Id_documento);
                     command.Parameters.AddWithValue("@Descripcion", aTipoDocumentoModel.Descripcion);
-                    command.Parameters.AddWithValue("@FECHA_CREACION", aTipoDocumentoModel.Fecha_creacion);
                     command.Parameters.AddWithValue("@FECHA_MODIFICACION", aTipoDocumentoModel.Fecha_modificacion == null ? (object)DBNull.Value : aTipoDocumentoModel.Fecha_modificacion);
-                    command.Parameters.AddWithValue("@USUARIO_CREADOR", aTipoDocumentoModel.Usuario_creador);
                     command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aTipoDocumentoModel.Usuario_modificador == null ? (object)DBNull.Value : aTipoDocumentoModel.Usuario_modificador);
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "TipoDocumentoModelUpdate";
+                    command.CommandText = "spTipoDocumento";
 
                     int afectados = command.ExecuteNonQuery();
 
@@ -129,11 +127,12 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
+                    command.Parameters.AddWithValue("@pMode", 6);
                     command.Parameters.AddWithValue("@Id_documento", aId_documento);
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "TipoDocumentoModelDelete";
+                    command.CommandText = "spTipoDocumento";
                     int afectados = command.ExecuteNonQuery();
 
                     // Commit the transaction.
@@ -170,12 +169,13 @@ namespace CDatos.Manager
 
                     SqlCommand command = connection.CreateCommand();
 
+                    command.Parameters.AddWithValue("@pMode", 2);
                     command.Parameters.AddWithValue("@Id_documento", aId_documento);
 
 
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.CommandText = "TipoDocumentoModelSelect";
+                    command.CommandText = "spTipoDocumento";
 
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -189,7 +189,7 @@ namespace CDatos.Manager
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
                             DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
                             string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
-                            string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
+                            string USUARIO_MODIFICADOR = (reader["USUARIO_MODIFICADOR"]) == DBNull.Value ? null : (string)(reader["USUARIO_MODIFICADOR"]);
 
                             TipoDocumentoModel = new TipoDocumentoModel
                             {
@@ -230,9 +230,10 @@ namespace CDatos.Manager
 
                     SqlCommand command = connection.CreateCommand();
 
+                    command.Parameters.AddWithValue("@pMode", 1);
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.CommandText = "TipoDocumentoModelSelectAll";
+                    command.CommandText = "spTipoDocumento";
 
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -246,7 +247,7 @@ namespace CDatos.Manager
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
                             DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
                             string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
-                            string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
+                            string USUARIO_MODIFICADOR = (reader["USUARIO_MODIFICADOR"]) == DBNull.Value ? null : (string)(reader["USUARIO_MODIFICADOR"]);
 
                             TipoDocumentoModellist.Add(new TipoDocumentoModel
                             {

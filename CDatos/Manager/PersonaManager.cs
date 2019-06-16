@@ -31,28 +31,26 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
-                    command.Parameters.AddWithValue("@NombreUsuario", aPersonaModel.Nombreusuario == null ? (object)DBNull.Value : aPersonaModel.Nombreusuario);
-                    command.Parameters.AddWithValue("@Pass", aPersonaModel.Pass == null ? (object)DBNull.Value : aPersonaModel.Pass);
+                    command.Parameters.AddWithValue("@pMode", 4);
+
+                    command.Parameters.AddWithValue("@NombreUsuario", aPersonaModel.Nombreusuario);
+                    command.Parameters.AddWithValue("@Pass", aPersonaModel.Pass);
                     command.Parameters.AddWithValue("@Correo", aPersonaModel.Correo == null ? (object)DBNull.Value : aPersonaModel.Correo);
-                    command.Parameters.AddWithValue("@Fecha", aPersonaModel.Fecha == null ? (object)DBNull.Value : aPersonaModel.Fecha);
-                    //command.Parameters.AddWithValue("@Id_area", aPersonaModel.Id_area == null ? (object)DBNull.Value : aPersonaModel.Id_area);
                     command.Parameters.AddWithValue("@Estado", aPersonaModel.Estado);
                     command.Parameters.AddWithValue("@Nombres", aPersonaModel.Nombres);
                     command.Parameters.AddWithValue("@Apellidos", aPersonaModel.Apellidos);
-                    command.Parameters.AddWithValue("@FechaNacimiento", aPersonaModel.Fechanacimiento);
+                    command.Parameters.AddWithValue("@FechaNacimiento", aPersonaModel.Fechanacimiento == null ? (object)DBNull.Value : aPersonaModel.Fechanacimiento);
                     command.Parameters.AddWithValue("@Telefono", aPersonaModel.Telefono == null ? (object)DBNull.Value : aPersonaModel.Telefono);
                     command.Parameters.AddWithValue("@NroDocumento", aPersonaModel.Nrodocumento);
                     command.Parameters.AddWithValue("@TipoDocumento", aPersonaModel.Tipodocumento);
                     command.Parameters.AddWithValue("@FECHA_CREACION", aPersonaModel.Fecha_creacion);
-                    command.Parameters.AddWithValue("@FECHA_MODIFICACION", aPersonaModel.Fecha_modificacion == null ? (object)DBNull.Value : aPersonaModel.Fecha_modificacion);
                     command.Parameters.AddWithValue("@USUARIO_CREADOR", aPersonaModel.Usuario_creador);
-                    command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aPersonaModel.Usuario_modificador == null ? (object)DBNull.Value : aPersonaModel.Usuario_modificador);
-
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "PersonaModelInsert";
+                    command.CommandText = "sp_Persona";
 
                     int afectados = command.ExecuteNonQuery();
+
 
                     // Commit the transaction.
                     sqlTran.Commit();
@@ -92,27 +90,25 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
+                    command.Parameters.AddWithValue("@pMode", 5);
+
                     command.Parameters.AddWithValue("@Id", aPersonaModel.Id);
-                    command.Parameters.AddWithValue("@NombreUsuario", aPersonaModel.Nombreusuario == null ? (object)DBNull.Value : aPersonaModel.Nombreusuario);
-                    command.Parameters.AddWithValue("@Pass", aPersonaModel.Pass == null ? (object)DBNull.Value : aPersonaModel.Pass);
+                    command.Parameters.AddWithValue("@NombreUsuario", aPersonaModel.Nombreusuario);
+                    command.Parameters.AddWithValue("@Pass", aPersonaModel.Pass);
                     command.Parameters.AddWithValue("@Correo", aPersonaModel.Correo == null ? (object)DBNull.Value : aPersonaModel.Correo);
-                    command.Parameters.AddWithValue("@Fecha", aPersonaModel.Fecha == null ? (object)DBNull.Value : aPersonaModel.Fecha);
-                   // command.Parameters.AddWithValue("@Id_area", aPersonaModel.Id_area == null ? (object)DBNull.Value : aPersonaModel.Id_area);
                     command.Parameters.AddWithValue("@Estado", aPersonaModel.Estado);
                     command.Parameters.AddWithValue("@Nombres", aPersonaModel.Nombres);
                     command.Parameters.AddWithValue("@Apellidos", aPersonaModel.Apellidos);
-                    command.Parameters.AddWithValue("@FechaNacimiento", aPersonaModel.Fechanacimiento);
+                    command.Parameters.AddWithValue("@FechaNacimiento", aPersonaModel.Fechanacimiento == null ? (object)DBNull.Value : aPersonaModel.Fechanacimiento);
                     command.Parameters.AddWithValue("@Telefono", aPersonaModel.Telefono == null ? (object)DBNull.Value : aPersonaModel.Telefono);
                     command.Parameters.AddWithValue("@NroDocumento", aPersonaModel.Nrodocumento);
                     command.Parameters.AddWithValue("@TipoDocumento", aPersonaModel.Tipodocumento);
-                    command.Parameters.AddWithValue("@FECHA_CREACION", aPersonaModel.Fecha_creacion);
                     command.Parameters.AddWithValue("@FECHA_MODIFICACION", aPersonaModel.Fecha_modificacion == null ? (object)DBNull.Value : aPersonaModel.Fecha_modificacion);
-                    command.Parameters.AddWithValue("@USUARIO_CREADOR", aPersonaModel.Usuario_creador);
                     command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aPersonaModel.Usuario_modificador == null ? (object)DBNull.Value : aPersonaModel.Usuario_modificador);
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "PersonaModelUpdate";
+                    command.CommandText = "sp_Persona";
 
                     int afectados = command.ExecuteNonQuery();
 
@@ -154,11 +150,13 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
+                    command.Parameters.AddWithValue("@pMode", 6);
+
                     command.Parameters.AddWithValue("@Id", aId);
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "PersonaModelDelete";
+                    command.CommandText = "sp_Persona";
                     int afectados = command.ExecuteNonQuery();
 
                     // Commit the transaction.
@@ -195,60 +193,54 @@ namespace CDatos.Manager
 
                     SqlCommand command = connection.CreateCommand();
 
+                    command.Parameters.AddWithValue("@pMode", 2);
+
                     command.Parameters.AddWithValue("@Id", aId);
 
 
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.CommandText = "PersonaModelSelect";
+                    command.CommandText = "sp_Persona";
 
                     SqlDataReader reader = command.ExecuteReader();
 
                     if (reader.HasRows)
                     {
-                        while (reader.Read())
+                        reader.Read();
+                        int Id = (int)(reader["Id"]);
+                        string NombreUsuario = (string)(reader["NombreUsuario"]);
+                        string Pass = (string)(reader["Pass"]);
+                        string Correo = (reader["Correo"]) == DBNull.Value ? null : (string)(reader["Correo"]);
+                        bool Estado = (bool)(reader["Estado"]);
+                        string Nombres = (string)(reader["Nombres"]);
+                        string Apellidos = (string)(reader["Apellidos"]);
+                        DateTime FechaNacimiento = (DateTime)(reader["FechaNacimiento"]);
+                        string Telefono = (reader["Telefono"]) == DBNull.Value ? null : (string)(reader["Telefono"]);
+                        string NroDocumento = (string)(reader["NroDocumento"]);
+                        int TipoDocumento = (int)(reader["TipoDocumento"]);
+                        DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
+                        DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
+                        string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
+                        string USUARIO_MODIFICADOR = (reader["USUARIO_MODIFICADOR"]) == DBNull.Value ? null : (string)(reader["USUARIO_MODIFICADOR"]);
+
+                        PersonaModel = new PersonaModel
                         {
-
-                            int Id = (int)(reader["Id"]);
-                            string NombreUsuario = (string)(reader["NombreUsuario"]);
-                            string Pass = (string)(reader["Pass"]);
-                            string Correo = (string)(reader["Correo"]);
-                            DateTime? Fecha = reader["Fecha"] as DateTime?;
-                            int? Id_area = reader["Id_area"] as int?;
-                            bool Estado = (bool)(reader["Estado"]);
-                            string Nombres = (string)(reader["Nombres"]);
-                            string Apellidos = (string)(reader["Apellidos"]);
-                            DateTime FechaNacimiento = (DateTime)(reader["FechaNacimiento"]);
-                            string Telefono = (string)(reader["Telefono"]);
-                            string NroDocumento = (string)(reader["NroDocumento"]);
-                            int TipoDocumento = (int)(reader["TipoDocumento"]);
-                            DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
-                            DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
-                            string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
-                            string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
-
-                            PersonaModel = new PersonaModel
-                            {
-                                Id = Id,
-                                Nombreusuario = NombreUsuario,
-                                Pass = Pass,
-                                Correo = Correo,
-                                Fecha = Fecha,
-                                //Id_area = Id_area,
-                                Estado = Estado,
-                                Nombres = Nombres,
-                                Apellidos = Apellidos,
-                                Fechanacimiento = FechaNacimiento,
-                                Telefono = Telefono,
-                                Nrodocumento = NroDocumento,
-                                Tipodocumento = TipoDocumento,
-                                Fecha_creacion = FECHA_CREACION,
-                                Fecha_modificacion = FECHA_MODIFICACION,
-                                Usuario_creador = USUARIO_CREADOR,
-                                Usuario_modificador = USUARIO_MODIFICADOR,
-
-                            };
-                        }
+                            Id = Id,
+                            Nombreusuario = NombreUsuario,
+                            Pass = Pass,
+                            Correo = Correo,
+                            Estado = Estado,
+                            Nombres = Nombres,
+                            Apellidos = Apellidos,
+                            Fechanacimiento = FechaNacimiento,
+                            Telefono = Telefono,
+                            Nrodocumento = NroDocumento,
+                            Tipodocumento = TipoDocumento,
+                            Fecha_creacion = FECHA_CREACION,
+                            Fecha_modificacion = FECHA_MODIFICACION,
+                            Usuario_creador = USUARIO_CREADOR,
+                            Usuario_modificador = USUARIO_MODIFICADOR,
+                        };
                     }
                 }
 
@@ -277,9 +269,11 @@ namespace CDatos.Manager
 
                     SqlCommand command = connection.CreateCommand();
 
+                    command.Parameters.AddWithValue("@pMode", 1);
+
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.CommandText = "PersonaModelSelectAll";
+                    command.CommandText = "sp_Persona";
 
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -291,20 +285,18 @@ namespace CDatos.Manager
                             int Id = (int)(reader["Id"]);
                             string NombreUsuario = (string)(reader["NombreUsuario"]);
                             string Pass = (string)(reader["Pass"]);
-                            string Correo = (string)(reader["Correo"]);
-                            DateTime? Fecha = reader["Fecha"] as DateTime?;
-                            int? Id_area = reader["Id_area"] as int?;
+                            string Correo = (reader["Correo"]) == DBNull.Value ? null : (string)(reader["Correo"]);
                             bool Estado = (bool)(reader["Estado"]);
                             string Nombres = (string)(reader["Nombres"]);
                             string Apellidos = (string)(reader["Apellidos"]);
                             DateTime FechaNacimiento = (DateTime)(reader["FechaNacimiento"]);
-                            string Telefono = (string)(reader["Telefono"]);
+                            string Telefono = (reader["Telefono"]) == DBNull.Value ? null : (string)(reader["Telefono"]);
                             string NroDocumento = (string)(reader["NroDocumento"]);
                             int TipoDocumento = (int)(reader["TipoDocumento"]);
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
                             DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
                             string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
-                            string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
+                            string USUARIO_MODIFICADOR = (reader["USUARIO_MODIFICADOR"]) == DBNull.Value ? null : (string)(reader["USUARIO_MODIFICADOR"]);
 
                             PersonaModellist.Add(new PersonaModel
                             {
@@ -312,8 +304,6 @@ namespace CDatos.Manager
                                 Nombreusuario = NombreUsuario,
                                 Pass = Pass,
                                 Correo = Correo,
-                                Fecha = Fecha,
-                                //Id_area = Id_area,
                                 Estado = Estado,
                                 Nombres = Nombres,
                                 Apellidos = Apellidos,
@@ -373,8 +363,6 @@ namespace CDatos.Manager
                             string NombreUsuario = (string)(reader["NombreUsuario"]);
                             string Pass = (string)(reader["Pass"]);
                             string Correo = (string)(reader["Correo"]);
-                            DateTime? Fecha = reader["Fecha"] as DateTime?;
-                            int? Id_area = reader["Id_area"] as int?;
                             bool Estado = (bool)(reader["Estado"]);
                             string Nombres = (string)(reader["Nombres"]);
                             string Apellidos = (string)(reader["Apellidos"]);
@@ -393,8 +381,6 @@ namespace CDatos.Manager
                                 Nombreusuario = NombreUsuario,
                                 Pass = Pass,
                                 Correo = Correo,
-                                Fecha = Fecha,
-                                //Id_area = Id_area,
                                 Estado = Estado,
                                 Nombres = Nombres,
                                 Apellidos = Apellidos,

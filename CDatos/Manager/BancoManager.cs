@@ -31,6 +31,7 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
+                    command.Parameters.AddWithValue("@pMode", 4);
                     command.Parameters.AddWithValue("@Nombre", aBancoModel.Nombre);
                     command.Parameters.AddWithValue("@Ubicacion", aBancoModel.Ubicacion);
                     command.Parameters.AddWithValue("@USUARIO_CREADOR", aBancoModel.Usuario_creador);
@@ -40,7 +41,7 @@ namespace CDatos.Manager
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "BancoModelInsert";
+                    command.CommandText = "spBanco";
 
                     int afectados = command.ExecuteNonQuery();
 
@@ -82,6 +83,7 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
+                    command.Parameters.AddWithValue("@pMode", 5);
                     command.Parameters.AddWithValue("@ID", aBancoModel.Id);
                     command.Parameters.AddWithValue("@Nombre", aBancoModel.Nombre);
                     command.Parameters.AddWithValue("@Ubicacion", aBancoModel.Ubicacion);
@@ -92,7 +94,7 @@ namespace CDatos.Manager
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "BancoModelUpdate";
+                    command.CommandText = "spBanco";
 
                     int afectados = command.ExecuteNonQuery();
 
@@ -134,11 +136,12 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
+                    command.Parameters.AddWithValue("@pMode", 6);
                     command.Parameters.AddWithValue("@ID", aID);
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "BancoModelDelete";
+                    command.CommandText = "spBanco";
                     int afectados = command.ExecuteNonQuery();
 
                     // Commit the transaction.
@@ -175,12 +178,13 @@ namespace CDatos.Manager
 
                     SqlCommand command = connection.CreateCommand();
 
+                    command.Parameters.AddWithValue("@pMode", 2);
                     command.Parameters.AddWithValue("@ID", aID);
 
 
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.CommandText = "BancoModelSelect";
+                    command.CommandText = "spBanco";
 
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -194,7 +198,7 @@ namespace CDatos.Manager
                             string Ubicacion = (string)(reader["Ubicacion"]);
                             string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
-                            string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
+                            string USUARIO_MODIFICADOR = (reader["USUARIO_MODIFICADOR"]) == DBNull.Value ? null : (string)(reader["USUARIO_MODIFICADOR"]);
                             DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
 
                             BancoModel = new BancoModel
@@ -237,9 +241,10 @@ namespace CDatos.Manager
 
                     SqlCommand command = connection.CreateCommand();
 
+                    command.Parameters.AddWithValue("@pMode", 1);
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.CommandText = "BancoModelSelectAll";
+                    command.CommandText = "spBanco";
 
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -253,7 +258,7 @@ namespace CDatos.Manager
                             string Ubicacion = (string)(reader["Ubicacion"]);
                             string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
-                            string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
+                            string USUARIO_MODIFICADOR = (reader["USUARIO_MODIFICADOR"]) == DBNull.Value ? null : (string)(reader["USUARIO_MODIFICADOR"]);
                             DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
 
                             BancoModellist.Add(new BancoModel

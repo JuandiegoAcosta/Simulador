@@ -28,17 +28,16 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
+                    command.Parameters.AddWithValue("@pMode", 4);
                     command.Parameters.AddWithValue("@Nombre", aSucursalModel.Nombre);
                     command.Parameters.AddWithValue("@Ubicacion", aSucursalModel.Ubicacion);
                     command.Parameters.AddWithValue("@IdBanco", aSucursalModel.Idbanco);
                     command.Parameters.AddWithValue("@FECHA_CREACION", aSucursalModel.Fecha_creacion);
-                    command.Parameters.AddWithValue("@FECHA_MODIFICACION", aSucursalModel.Fecha_modificacion == null ? (object)DBNull.Value : aSucursalModel.Fecha_modificacion);
                     command.Parameters.AddWithValue("@USUARIO_CREADOR", aSucursalModel.Usuario_creador);
-                    command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aSucursalModel.Usuario_modificador == null ? (object)DBNull.Value : aSucursalModel.Usuario_modificador);
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "SucursalModelInsert";
+                    command.CommandText = "spSucursal";
 
                     int afectados = command.ExecuteNonQuery();
 
@@ -80,18 +79,17 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
+                    command.Parameters.AddWithValue("@pMode", 5);
                     command.Parameters.AddWithValue("@Id", aSucursalModel.Id);
                     command.Parameters.AddWithValue("@Nombre", aSucursalModel.Nombre);
                     command.Parameters.AddWithValue("@Ubicacion", aSucursalModel.Ubicacion);
                     command.Parameters.AddWithValue("@IdBanco", aSucursalModel.Idbanco);
-                    command.Parameters.AddWithValue("@FECHA_CREACION", aSucursalModel.Fecha_creacion);
                     command.Parameters.AddWithValue("@FECHA_MODIFICACION", aSucursalModel.Fecha_modificacion == null ? (object)DBNull.Value : aSucursalModel.Fecha_modificacion);
-                    command.Parameters.AddWithValue("@USUARIO_CREADOR", aSucursalModel.Usuario_creador);
                     command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aSucursalModel.Usuario_modificador == null ? (object)DBNull.Value : aSucursalModel.Usuario_modificador);
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "SucursalModelUpdate";
+                    command.CommandText = "spSucursal";
 
                     int afectados = command.ExecuteNonQuery();
 
@@ -133,11 +131,12 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
+                    command.Parameters.AddWithValue("@pMode", 6);
                     command.Parameters.AddWithValue("@Id", aId);
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "SucursalModelDelete";
+                    command.CommandText = "spSucursal";
                     int afectados = command.ExecuteNonQuery();
 
                     // Commit the transaction.
@@ -174,12 +173,13 @@ namespace CDatos.Manager
 
                     SqlCommand command = connection.CreateCommand();
 
+                    command.Parameters.AddWithValue("@pMode", 2);
                     command.Parameters.AddWithValue("@Id", aId);
 
 
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.CommandText = "SucursalModelSelect";
+                    command.CommandText = "spSucursal";
 
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -195,7 +195,7 @@ namespace CDatos.Manager
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
                             DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
                             string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
-                            string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
+                            string USUARIO_MODIFICADOR = (reader["USUARIO_MODIFICADOR"]) == DBNull.Value ? null : (string)(reader["USUARIO_MODIFICADOR"]);
 
                             SucursalModel = new SucursalModel
                             {
@@ -238,9 +238,10 @@ namespace CDatos.Manager
 
                     SqlCommand command = connection.CreateCommand();
 
+                    command.Parameters.AddWithValue("@pMode", 1);
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.CommandText = "SucursalModelSelectAll";
+                    command.CommandText = "spSucursal";
 
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -256,7 +257,7 @@ namespace CDatos.Manager
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
                             DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
                             string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
-                            string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
+                            string USUARIO_MODIFICADOR = (reader["USUARIO_MODIFICADOR"]) == DBNull.Value ? null : (string)(reader["USUARIO_MODIFICADOR"]);
 
                             SucursalModellist.Add(new SucursalModel
                             {

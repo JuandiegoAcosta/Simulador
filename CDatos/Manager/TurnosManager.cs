@@ -28,17 +28,16 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
+                    command.Parameters.AddWithValue("@pMode", 4);
                     command.Parameters.AddWithValue("@Descripcion", aTurnosModel.Descripcion);
                     command.Parameters.AddWithValue("@Hora_Inicio", aTurnosModel.Hora_inicio == null ? (object)DBNull.Value : aTurnosModel.Hora_inicio);
                     command.Parameters.AddWithValue("@Hora_Fin", aTurnosModel.Hora_fin == null ? (object)DBNull.Value : aTurnosModel.Hora_fin);
                     command.Parameters.AddWithValue("@FECHA_CREACION", aTurnosModel.Fecha_creacion);
-                    command.Parameters.AddWithValue("@FECHA_MODIFICACION", aTurnosModel.Fecha_modificacion == null ? (object)DBNull.Value : aTurnosModel.Fecha_modificacion);
                     command.Parameters.AddWithValue("@USUARIO_CREADOR", aTurnosModel.Usuario_creador);
-                    command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aTurnosModel.Usuario_modificador == null ? (object)DBNull.Value : aTurnosModel.Usuario_modificador);
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "TurnosModelInsert";
+                    command.CommandText = "sp_Turnos";
 
                     int afectados = command.ExecuteNonQuery();
 
@@ -80,18 +79,17 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
+                    command.Parameters.AddWithValue("@pMode", 5);
                     command.Parameters.AddWithValue("@Id", aTurnosModel.Id);
                     command.Parameters.AddWithValue("@Descripcion", aTurnosModel.Descripcion);
                     command.Parameters.AddWithValue("@Hora_Inicio", aTurnosModel.Hora_inicio == null ? (object)DBNull.Value : aTurnosModel.Hora_inicio);
                     command.Parameters.AddWithValue("@Hora_Fin", aTurnosModel.Hora_fin == null ? (object)DBNull.Value : aTurnosModel.Hora_fin);
-                    command.Parameters.AddWithValue("@FECHA_CREACION", aTurnosModel.Fecha_creacion);
                     command.Parameters.AddWithValue("@FECHA_MODIFICACION", aTurnosModel.Fecha_modificacion == null ? (object)DBNull.Value : aTurnosModel.Fecha_modificacion);
-                    command.Parameters.AddWithValue("@USUARIO_CREADOR", aTurnosModel.Usuario_creador);
                     command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aTurnosModel.Usuario_modificador == null ? (object)DBNull.Value : aTurnosModel.Usuario_modificador);
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "TurnosModelUpdate";
+                    command.CommandText = "sp_Turnos";
 
                     int afectados = command.ExecuteNonQuery();
 
@@ -133,11 +131,12 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
+                    command.Parameters.AddWithValue("@pMode", 6);
                     command.Parameters.AddWithValue("@Id", aId);
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "TurnosModelDelete";
+                    command.CommandText = "sp_Turnos";
                     int afectados = command.ExecuteNonQuery();
 
                     // Commit the transaction.
@@ -174,12 +173,13 @@ namespace CDatos.Manager
 
                     SqlCommand command = connection.CreateCommand();
 
+                    command.Parameters.AddWithValue("@pMode", 2);
                     command.Parameters.AddWithValue("@Id", aId);
 
 
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.CommandText = "TurnosModelSelect";
+                    command.CommandText = "sp_Turnos";
 
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -195,7 +195,7 @@ namespace CDatos.Manager
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
                             DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
                             string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
-                            string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
+                            string USUARIO_MODIFICADOR = (reader["USUARIO_MODIFICADOR"]) == DBNull.Value ? null : (string)(reader["USUARIO_MODIFICADOR"]);
 
                             TurnosModel = new TurnosModel
                             {
@@ -238,9 +238,10 @@ namespace CDatos.Manager
 
                     SqlCommand command = connection.CreateCommand();
 
+                    command.Parameters.AddWithValue("@pMode", 1);
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.CommandText = "TurnosModelSelectAll";
+                    command.CommandText = "sp_Turnos";
 
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -256,7 +257,7 @@ namespace CDatos.Manager
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
                             DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
                             string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
-                            string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
+                            string USUARIO_MODIFICADOR = (reader["USUARIO_MODIFICADOR"]) == DBNull.Value ? null : (string)(reader["USUARIO_MODIFICADOR"]);
 
                             TurnosModellist.Add(new TurnosModel
                             {
