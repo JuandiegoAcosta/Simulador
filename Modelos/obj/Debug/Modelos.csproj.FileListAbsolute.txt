@@ -6,3 +6,9 @@ C:\Users\elife\Source\Repos\Simulador\Modelos\obj\Debug\Modelos.csprojAssemblyRe
 C:\Users\elife\Source\Repos\Simulador\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
 C:\Users\elife\Source\Repos\Simulador\Modelos\obj\Debug\Modelos.dll
 C:\Users\elife\Source\Repos\Simulador\Modelos\obj\Debug\Modelos.pdb
+C:\Users\Pablo\Desktop\SistemaBancario\Simulador 2\Simulador\Modelos\bin\Debug\Modelos.dll
+C:\Users\Pablo\Desktop\SistemaBancario\Simulador 2\Simulador\Modelos\bin\Debug\Modelos.pdb
+C:\Users\Pablo\Desktop\SistemaBancario\Simulador 2\Simulador\Modelos\obj\Debug\Modelos.csprojAssemblyReference.cache
+C:\Users\Pablo\Desktop\SistemaBancario\Simulador 2\Simulador\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
+C:\Users\Pablo\Desktop\SistemaBancario\Simulador 2\Simulador\Modelos\obj\Debug\Modelos.dll
+C:\Users\Pablo\Desktop\SistemaBancario\Simulador 2\Simulador\Modelos\obj\Debug\Modelos.pdb

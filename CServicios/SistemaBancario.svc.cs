@@ -82,27 +82,27 @@ namespace ServiciosBancarios
 
         #region [ Cobro cheque ]
         bool ICobroChequeService.CobroCheque_Crear(CobroChequesModel aCobroCheque)
-        {
+        {        
             return BLCobroCheque.Crear(aCobroCheque);
         }
 
         bool ICobroChequeService.CobroCheque_Editar(CobroChequesModel aCobroCheque)
-        {
+        {        
             return BLCobroCheque.Editar(aCobroCheque);
         }
 
         bool ICobroChequeService.CobroCheque_Eliminar(int aID_Cheque, int aID_Movimiento)
-        {
+        {      
             return BLCobroCheque.Eliminar(aID_Cheque, aID_Movimiento);
         }
 
         List<CobroChequesModel> ICobroChequeService.CobroCheque_ObtenerTodos()
-        {
+        {        
             return BLCobroCheque.ObtenerTodos();
         }
 
         CobroChequesModel ICobroChequeService.CobroCheque_ObtenerUno(int aID_Cheque, int aID_Movimiento)
-        {
+        {         
             return BLCobroCheque.ObtenerUno(aID_Cheque, aID_Movimiento);
         }
         #endregion
