@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CServicios", "CServicios\CS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plataforma-GUI", "CGUI\Plataforma-GUI.csproj", "{9F5C0BAC-DC0E-4D8A-AD95-C330689669A6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "..\..\..\..\Google Drive\Sistema\Sistema_Bancario-V4\Sistema_Bancario\Sistema_Bancario\GUI.csproj", "{D362364A-03B1-482F-B992-474C30F1E7EB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{9F5C0BAC-DC0E-4D8A-AD95-C330689669A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F5C0BAC-DC0E-4D8A-AD95-C330689669A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F5C0BAC-DC0E-4D8A-AD95-C330689669A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D362364A-03B1-482F-B992-474C30F1E7EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D362364A-03B1-482F-B992-474C30F1E7EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D362364A-03B1-482F-B992-474C30F1E7EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D362364A-03B1-482F-B992-474C30F1E7EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
