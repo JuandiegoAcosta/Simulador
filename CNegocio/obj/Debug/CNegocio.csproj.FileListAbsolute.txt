@@ -15,3 +15,14 @@ C:\Users\elife\Source\Repos\Simulador\CNegocio\bin\Debug\Modelos.dll
 C:\Users\elife\Source\Repos\Simulador\CNegocio\bin\Debug\CDatos.pdb
 C:\Users\elife\Source\Repos\Simulador\CNegocio\bin\Debug\Modelos.pdb
 C:\Users\elife\Source\Repos\Simulador\CNegocio\obj\Debug\CNegocio.csproj.CopyComplete
+C:\Users\Pablo\Desktop\SistemaBancario\Simulador 2\Simulador\CNegocio\bin\Debug\CNegocio.dll
+C:\Users\Pablo\Desktop\SistemaBancario\Simulador 2\Simulador\CNegocio\bin\Debug\CNegocio.pdb
+C:\Users\Pablo\Desktop\SistemaBancario\Simulador 2\Simulador\CNegocio\bin\Debug\CDatos.dll
+C:\Users\Pablo\Desktop\SistemaBancario\Simulador 2\Simulador\CNegocio\bin\Debug\Modelos.dll
+C:\Users\Pablo\Desktop\SistemaBancario\Simulador 2\Simulador\CNegocio\bin\Debug\CDatos.pdb
+C:\Users\Pablo\Desktop\SistemaBancario\Simulador 2\Simulador\CNegocio\bin\Debug\Modelos.pdb
+C:\Users\Pablo\Desktop\SistemaBancario\Simulador 2\Simulador\CNegocio\obj\Debug\CNegocio.csprojAssemblyReference.cache
+C:\Users\Pablo\Desktop\SistemaBancario\Simulador 2\Simulador\CNegocio\obj\Debug\CNegocio.csproj.CoreCompileInputs.cache
+C:\Users\Pablo\Desktop\SistemaBancario\Simulador 2\Simulador\CNegocio\obj\Debug\CNegocio.csproj.CopyComplete
+C:\Users\Pablo\Desktop\SistemaBancario\Simulador 2\Simulador\CNegocio\obj\Debug\CNegocio.dll
+C:\Users\Pablo\Desktop\SistemaBancario\Simulador 2\Simulador\CNegocio\obj\Debug\CNegocio.pdb
