@@ -30,13 +30,23 @@
         {
             this.empresa1 = new Sistema_Bancario.Controles.Empresa();
             this.nroContrato1 = new Sistema_Bancario.Controles.NroContrato();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.GEmpresas = new System.Windows.Forms.DataGridView();
+            this.GNroContrato = new System.Windows.Forms.DataGridView();
             this.BTBuscarEmpresa = new System.Windows.Forms.Button();
             this.BTNroContrato = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.Nombre_Empresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_Empresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha_Vencimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado_Recaudo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.GEmpresas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GNroContrato)).BeginInit();
             this.SuspendLayout();
+            // 
+            // proceder1
+            // 
+            this.proceder1.Location = new System.Drawing.Point(8, 377);
+            this.proceder1.Size = new System.Drawing.Size(672, 49);
             // 
             // empresa1
             // 
@@ -54,27 +64,34 @@
             this.nroContrato1.Size = new System.Drawing.Size(364, 34);
             this.nroContrato1.TabIndex = 4;
             // 
-            // dataGridView1
+            // GEmpresas
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 50);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(647, 121);
-            this.dataGridView1.TabIndex = 5;
+            this.GEmpresas.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.GEmpresas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GEmpresas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Nombre_Empresa});
+            this.GEmpresas.Location = new System.Drawing.Point(13, 50);
+            this.GEmpresas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.GEmpresas.Name = "GEmpresas";
+            this.GEmpresas.RowTemplate.Height = 24;
+            this.GEmpresas.Size = new System.Drawing.Size(647, 121);
+            this.GEmpresas.TabIndex = 5;
             // 
-            // dataGridView2
+            // GNroContrato
             // 
-            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(13, 218);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(647, 142);
-            this.dataGridView2.TabIndex = 6;
+            this.GNroContrato.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.GNroContrato.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GNroContrato.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID_Empresa,
+            this.Monto,
+            this.Fecha_Vencimiento,
+            this.Estado_Recaudo});
+            this.GNroContrato.Location = new System.Drawing.Point(13, 218);
+            this.GNroContrato.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.GNroContrato.Name = "GNroContrato";
+            this.GNroContrato.RowTemplate.Height = 24;
+            this.GNroContrato.Size = new System.Drawing.Size(647, 142);
+            this.GNroContrato.TabIndex = 6;
             // 
             // BTBuscarEmpresa
             // 
@@ -98,21 +115,54 @@
             this.BTNroContrato.UseVisualStyleBackColor = true;
             this.BTNroContrato.Click += new System.EventHandler(this.BTNroContrato_Click);
             // 
+            // Nombre_Empresa
+            // 
+            this.Nombre_Empresa.HeaderText = "Empresa";
+            this.Nombre_Empresa.Name = "Nombre_Empresa";
+            // 
+            // ID_Empresa
+            // 
+            this.ID_Empresa.HeaderText = "ID";
+            this.ID_Empresa.Name = "ID_Empresa";
+            // 
+            // Monto
+            // 
+            this.Monto.HeaderText = "Monto";
+            this.Monto.Name = "Monto";
+            // 
+            // Fecha_Vencimiento
+            // 
+            this.Fecha_Vencimiento.HeaderText = "Fecha Vencimiento";
+            this.Fecha_Vencimiento.Name = "Fecha_Vencimiento";
+            this.Fecha_Vencimiento.Width = 200;
+            // 
+            // Estado_Recaudo
+            // 
+            this.Estado_Recaudo.HeaderText = "Pagado";
+            this.Estado_Recaudo.Name = "Estado_Recaudo";
+            // 
             // Servicios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.Controls.Add(this.BTNroContrato);
             this.Controls.Add(this.BTBuscarEmpresa);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.GNroContrato);
+            this.Controls.Add(this.GEmpresas);
             this.Controls.Add(this.nroContrato1);
             this.Controls.Add(this.empresa1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Servicios";
             this.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Size = new System.Drawing.Size(688, 433);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.Controls.SetChildIndex(this.empresa1, 0);
+            this.Controls.SetChildIndex(this.nroContrato1, 0);
+            this.Controls.SetChildIndex(this.GEmpresas, 0);
+            this.Controls.SetChildIndex(this.GNroContrato, 0);
+            this.Controls.SetChildIndex(this.BTBuscarEmpresa, 0);
+            this.Controls.SetChildIndex(this.BTNroContrato, 0);
+            this.Controls.SetChildIndex(this.proceder1, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.GEmpresas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GNroContrato)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -121,9 +171,14 @@
 
         private Controles.Empresa empresa1;
         private Controles.NroContrato nroContrato1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView GEmpresas;
+        private System.Windows.Forms.DataGridView GNroContrato;
         private System.Windows.Forms.Button BTBuscarEmpresa;
         private System.Windows.Forms.Button BTNroContrato;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre_Empresa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Empresa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Monto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha_Vencimiento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado_Recaudo;
     }
 }

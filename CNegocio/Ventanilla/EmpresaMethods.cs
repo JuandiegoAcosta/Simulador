@@ -41,5 +41,13 @@ namespace CNegocio.Ventanilla
         {
             return ADEmpresaManager.EmpresaModelSelectAll();
         }
+        public List<EmpresaModel> BuscarEmpresa(string Nombre)
+        {
+            return ADEmpresaManager.BuscarEmpresa(Nombre);
+        }
+        public List<RecaudosModel> PagoServicioEmpresa(int id)
+        {
+            return ADEmpresaManager.PagoServicioEmpresa(id);
+        }
     }
 }

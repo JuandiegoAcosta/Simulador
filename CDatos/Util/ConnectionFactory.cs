@@ -9,7 +9,7 @@ namespace CDatos.Util
 {
     public static class ConnectionFactory
     {
-        private const string cadenaconexion = "";
+        private const string cadenaconexion = "Persist Security Info=False;User ID=DB_A48A9F_elviscaceres777_admin;Password=123456Abc;Data Source=SQL5036.site4now.net;";
 
         public static SqlConnection conexion()
         {

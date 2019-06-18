@@ -364,8 +364,104 @@ namespace CDatos.Manager
                 return EmpresaModellist;
             }
         }
+
+        public List<EmpresaModel> BuscarEmpresa(string nombre)
+        {
+
+            List<EmpresaModel> EmpresaModellist = new List<EmpresaModel>();
+
+            try
+            {
+                using (var connection = Util.ConnectionFactory.conexion())
+                {
+                    connection.Open();
+
+                    SqlCommand command = connection.CreateCommand();
+
+                    command.Parameters.AddWithValue("@nombre", nombre);
+
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.CommandText = "BuscarEmpresa";
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+
+                            int ID_EmpresaModel = (int)(reader["ID_Empresa"]);
+                            string Nombre_EmpresaModel = (string)(reader["Nombre_Empresa"]);
+                           
+                            EmpresaModellist.Add(new EmpresaModel
+                            {
+                                Id_empresa = ID_EmpresaModel,
+                                Nombre_empresa = Nombre_EmpresaModel                            
+                            });
+                        }
+                    }
+                }
+
+                return EmpresaModellist;
+            }
+            catch (Exception)
+            {
+                return EmpresaModellist;
+            }
+        }
+
+
+        public List<RecaudosModel> PagoServicioEmpresa(int id)
+        {
+
+            List<RecaudosModel> EmpresaModellist = new List<RecaudosModel>();
+
+            try
+            {
+                using (var connection = Util.ConnectionFactory.conexion())
+                {
+                    connection.Open();
+
+                    SqlCommand command = connection.CreateCommand();
+
+                    command.Parameters.AddWithValue("@id", id);
+
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.CommandText = "PagoEmpresa";
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+
+                            int ID_EmpresaModel = (int)(reader["ID_Empresa"]);
+                            decimal MontoModel = (decimal)(reader["Monto"]);
+                            DateTime FechaVencimiento = (DateTime)(reader["Fecha_Vencimiento"]);
+                            bool EstadoRecaudo = (bool)(reader["Estado_Recaudo"]);
+
+                            EmpresaModellist.Add(new RecaudosModel
+                            {
+                                Id_empresa = ID_EmpresaModel,
+                                Monto = MontoModel,
+                                Fecha_vencimiento = FechaVencimiento,
+                                Estado_recaudo = EstadoRecaudo
+                            });
+                        }
+                    }
+                }
+
+                return EmpresaModellist;
+            }
+            catch (Exception)
+            {
+                return EmpresaModellist;
+            }
+        }
+
         #endregion
-
     }
-
 }

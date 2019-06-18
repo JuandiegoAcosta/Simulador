@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using CNegocio.Ventanilla;
 using Modelos.Modelos;
 
 namespace Sistema_Bancario.Froms_opciones
@@ -22,10 +23,7 @@ namespace Sistema_Bancario.Froms_opciones
 
         private void BTProceder_Click(object sender, EventArgs e)
         {
-           
-            
-
-                    
+                             
         }
 
         private static Servicios _instance;
@@ -44,19 +42,27 @@ namespace Sistema_Bancario.Froms_opciones
 
         private void BTBuscarEmpresa_Click(object sender, EventArgs e)
         {
-            this.gEmpresaModel = new EmpresaModel()
+            EmpresaMethods empresaMethods = new EmpresaMethods();
+          //  GEmpresas.Rows.Add(empresaMethods.BuscarEmpresa(empresa1.TBEmpresa.Text)[0].Id_empresa);
+            GEmpresas.Rows.Add(empresaMethods.BuscarEmpresa(empresa1.TBEmpresa.Text)[0].Nombre_empresa);
+
+            /*this.gEmpresaModel = new EmpresaModel()
             {
                 Nombre_empresa = empresa1.TBEmpresa.Text,
-            };
+            };*/
         }
 
         private void BTNroContrato_Click(object sender, EventArgs e)
         {
-            int nrocontrato = Convert.ToInt32(this.nroContrato1.TBNroContrato.Text);
+            EmpresaMethods empresaMethods = new EmpresaMethods();
+            //empresaMethods.PagoServicioEmpresa(1);
+            GNroContrato.Rows.Add(empresaMethods.PagoServicioEmpresa(1)[0].Monto);
+
+         /*   int nrocontrato = Convert.ToInt32(this.nroContrato1.TBNroContrato.Text);
             this.gPagomodels = new PagoServiciosModel()
             {
                 Nro_contrato = nrocontrato
-            };
+            };*/
         }
     }
 }

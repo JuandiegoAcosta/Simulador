@@ -389,6 +389,10 @@
       <Project>{9fe05416-88df-4058-97ba-3966308a94e5}</Project>
       <Name>Modelos</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CNegocio\CNegocio.csproj">
+      <Project>{B2806070-24E8-4315-9491-608D2479ADEA}</Project>
+      <Name>CNegocio</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
