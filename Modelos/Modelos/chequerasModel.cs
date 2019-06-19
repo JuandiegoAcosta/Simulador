@@ -50,6 +50,12 @@ namespace Modelos.Modelos
         /// <summary>
         /// Gets or sets the Fecha_modificacion value.
         /// </summary>
+        public int Cantidad_cheques
+        { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Fecha_modificacion value.
+        /// </summary>
         public DateTime? Fecha_modificacion
         { get; set; }
 

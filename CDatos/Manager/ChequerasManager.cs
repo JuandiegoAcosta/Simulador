@@ -9,7 +9,7 @@ using Modelos.Modelos;
 
 namespace CDatos.Manager
 {
-    public class ManagerChequerasModel
+    public class ChequerasManager
     {
         #region Methods
         /// <summary>
@@ -44,7 +44,7 @@ namespace CDatos.Manager
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "ChequerasModelInsert";
+                    command.CommandText = "ChequerasInsert";
 
                     int afectados = command.ExecuteNonQuery();
 
@@ -99,7 +99,7 @@ namespace CDatos.Manager
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "ChequerasModelUpdate";
+                    command.CommandText = "ChequerasUpdate";
 
                     int afectados = command.ExecuteNonQuery();
 
@@ -145,7 +145,7 @@ namespace CDatos.Manager
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "ChequerasModelDelete";
+                    command.CommandText = "ChequerasDelete";
                     int afectados = command.ExecuteNonQuery();
 
                     // Commit the transaction.
@@ -187,7 +187,7 @@ namespace CDatos.Manager
 
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.CommandText = "ChequerasModelSelect";
+                    command.CommandText = "ChequerasSelect";
 
                     SqlDataReader reader = command.ExecuteReader();
 

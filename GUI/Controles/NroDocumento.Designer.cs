@@ -30,32 +30,46 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.TBNroDocumento = new System.Windows.Forms.TextBox();
+            this.btnNumero = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(4, 4);
+            this.label1.Location = new System.Drawing.Point(3, 3);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 17);
+            this.label1.Size = new System.Drawing.Size(82, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nro Documento";
             // 
             // TBNroDocumento
             // 
-            this.TBNroDocumento.Location = new System.Drawing.Point(118, 4);
+            this.TBNroDocumento.Location = new System.Drawing.Point(88, 3);
+            this.TBNroDocumento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TBNroDocumento.Name = "TBNroDocumento";
-            this.TBNroDocumento.Size = new System.Drawing.Size(325, 22);
+            this.TBNroDocumento.Size = new System.Drawing.Size(186, 20);
             this.TBNroDocumento.TabIndex = 1;
+            // 
+            // btnNumero
+            // 
+            this.btnNumero.Location = new System.Drawing.Point(279, 0);
+            this.btnNumero.Name = "btnNumero";
+            this.btnNumero.Size = new System.Drawing.Size(37, 23);
+            this.btnNumero.TabIndex = 20;
+            this.btnNumero.Text = "...";
+            this.btnNumero.UseVisualStyleBackColor = true;
             // 
             // Nro_Documento
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnNumero);
             this.Controls.Add(this.TBNroDocumento);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Nro_Documento";
-            this.Size = new System.Drawing.Size(446, 32);
+            this.Size = new System.Drawing.Size(323, 26);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -65,5 +79,6 @@
 
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.TextBox TBNroDocumento;
+        private System.Windows.Forms.Button btnNumero;
     }
 }

@@ -18,3 +18,12 @@ C:\Users\Pablo\Desktop\SistemaBancario\Simulador 2\Simulador\CDatos\obj\Debug\CD
 C:\Users\Pablo\Desktop\SistemaBancario\Simulador 2\Simulador\CDatos\obj\Debug\CDatos.csproj.CopyComplete
 C:\Users\Pablo\Desktop\SistemaBancario\Simulador 2\Simulador\CDatos\obj\Debug\CDatos.dll
 C:\Users\Pablo\Desktop\SistemaBancario\Simulador 2\Simulador\CDatos\obj\Debug\CDatos.pdb
+C:\Users\kat\Source\Repos\JuandiegoAcosta\Simulador\CDatos\bin\Debug\CDatos.dll
+C:\Users\kat\Source\Repos\JuandiegoAcosta\Simulador\CDatos\bin\Debug\CDatos.pdb
+C:\Users\kat\Source\Repos\JuandiegoAcosta\Simulador\CDatos\bin\Debug\Modelos.dll
+C:\Users\kat\Source\Repos\JuandiegoAcosta\Simulador\CDatos\bin\Debug\Modelos.pdb
+C:\Users\kat\Source\Repos\JuandiegoAcosta\Simulador\CDatos\obj\Debug\CDatos.csprojAssemblyReference.cache
+C:\Users\kat\Source\Repos\JuandiegoAcosta\Simulador\CDatos\obj\Debug\CDatos.csproj.CoreCompileInputs.cache
+C:\Users\kat\Source\Repos\JuandiegoAcosta\Simulador\CDatos\obj\Debug\CDatos.csproj.CopyComplete
+C:\Users\kat\Source\Repos\JuandiegoAcosta\Simulador\CDatos\obj\Debug\CDatos.dll
+C:\Users\kat\Source\Repos\JuandiegoAcosta\Simulador\CDatos\obj\Debug\CDatos.pdb

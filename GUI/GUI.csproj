@@ -74,6 +74,12 @@
     <Compile Include="Botones\BTRetiros.Designer.cs">
       <DependentUpon>BTRetiros.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controles\DatosPersona.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\DatosPersona.Designer.cs">
+      <DependentUpon>DatosPersona.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controles\DNI.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -176,6 +182,18 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Plataforma\UCchequeras.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Plataforma\UCchequeras.Designer.cs">
+      <DependentUpon>UCchequeras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Plataforma\UCcuenta.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Plataforma\UCcuenta.Designer.cs">
+      <DependentUpon>UCcuenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ventanilla.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -259,6 +277,9 @@
     <EmbeddedResource Include="Botones\BTRetiros.resx">
       <DependentUpon>BTRetiros.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controles\DatosPersona.resx">
+      <DependentUpon>DatosPersona.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controles\DNI.resx">
       <DependentUpon>DNI.cs</DependentUpon>
     </EmbeddedResource>
@@ -312,6 +333,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Plataforma\UCchequeras.resx">
+      <DependentUpon>UCchequeras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Plataforma\UCcuenta.resx">
+      <DependentUpon>UCcuenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanilla.resx">
       <DependentUpon>Ventanilla.cs</DependentUpon>
@@ -385,7 +412,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\Desktop\SistemaBancario\Simulador 2\Simulador\Modelos\Modelos.csproj">
+    <ProjectReference Include="..\Modelos\Modelos.csproj">
       <Project>{9fe05416-88df-4058-97ba-3966308a94e5}</Project>
       <Name>Modelos</Name>
     </ProjectReference>
