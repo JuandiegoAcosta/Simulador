@@ -396,6 +396,15 @@ namespace ServiciosBancarios
             return BLPersona.ObtenerTodos();
         }
 
+        public bool Persona_ValidarUsuario(string aUsuario, string aContraseña)
+        {
+            return BLPersona.ValidarUsuario(aUsuario, aContraseña);
+        }
+
+        public bool Persona_CambiarContraseña(string aUsuario, string aContraseña, string aNuevaContraseña)
+        {
+            return BLPersona.CambiarContraseña(aUsuario, aContraseña, aNuevaContraseña);
+        }
         #endregion
 
         #region [ Roles ]

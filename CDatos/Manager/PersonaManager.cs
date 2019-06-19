@@ -405,6 +405,83 @@ namespace CDatos.Manager
                 return PersonaModellist;
             }
         }
+
+        public bool ValidarUsuario(string usuario, string password)
+        {
+            int acceso = 0;
+
+            try
+            {
+                using (var connection = Util.ConnectionFactory.conexion())
+                {
+                    connection.Open();
+
+                    SqlCommand command = connection.CreateCommand();
+
+                    command.Parameters.AddWithValue("@Usuario", usuario);
+                    command.Parameters.AddWithValue("@Password", password);
+
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.CommandText = "ValidaUsuario";
+
+                    SqlDataReader reader = command.ExecuteReader();
+                    acceso = command.ExecuteNonQuery();
+                    if (acceso > 0)
+                        return true;
+                    else
+                        return false;
+
+                }
+
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+        }
+
+
+        public bool CambiarContraseña(string Usuario, string Password, string NewPassword)
+        {
+            int acceso = 0;
+
+            try
+            {
+                using (var connection = Util.ConnectionFactory.conexion())
+                {
+                    connection.Open();
+
+                    SqlCommand command = connection.CreateCommand();
+
+                    command.Parameters.AddWithValue("@Usuario", Usuario);
+                    command.Parameters.AddWithValue("@Password", Password);
+                    command.Parameters.AddWithValue("@NewPassword", NewPassword);
+
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.CommandText = "spCambiarContrasena";
+
+                    SqlDataReader reader = command.ExecuteReader();
+                    acceso = command.ExecuteNonQuery();
+                    if (acceso > 0)
+                        return true;
+                    else
+                        return false;
+
+                }
+
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+
+
+
         #endregion
 
     }

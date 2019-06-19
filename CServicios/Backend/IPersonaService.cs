@@ -24,5 +24,11 @@ namespace ServiciosBancarios.Backend
 
         [OperationContract]
         List<PersonaModel> Persona_ObtenerTodos();
+
+        [OperationContract]
+        bool Persona_ValidarUsuario(string aUsuario, string aContraseña);
+
+        [OperationContract]
+        bool Persona_CambiarContraseña(string aUsuario, string aPassword, string aNewPassword);
     }
 }
