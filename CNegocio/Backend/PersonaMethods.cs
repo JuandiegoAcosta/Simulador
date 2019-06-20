@@ -18,7 +18,25 @@ namespace CNegocio.Backend
         }
         public bool Crear(PersonaModel aPersona)
         {
-            return ADPersonaManager.Insert(aPersona);
+            bool exito = false;
+            try
+            {
+
+                bool ValidacionUsuario = ValidarUsuario(aPersona.Nombreusuario, aPersona.Pass);
+                if (ValidacionUsuario == true)
+                {
+                    return false;
+                }
+                else
+                {
+                    exito = ADPersonaManager.Insert(aPersona);
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            return exito;
         }
 
         public bool Editar(PersonaModel aPersona)
@@ -40,5 +58,18 @@ namespace CNegocio.Backend
         {
             return ADPersonaManager.PersonaModelSelectAll();
         }
+
+        public bool ValidarUsuario(string aUsuario, string aContraseña)
+        {
+
+            return ADPersonaManager.ValidarUsuario(aUsuario, aContraseña);
+        }
+
+        public bool CambiarContraseña(string aUsuario, string aContraseña, string aNuevaContraseña)
+        {
+
+            return ADPersonaManager.CambiarContraseña(aUsuario, aContraseña, aNuevaContraseña);
+        }
+
     }
 }
