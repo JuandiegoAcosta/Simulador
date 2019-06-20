@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Sistema_Bancario.Froms_opciones;
+using Sistema_Bancario.Plataforma;
 using Modelos.Modelos;
 
 namespace Sistema_Bancario
@@ -257,6 +258,96 @@ namespace Sistema_Bancario
                 //  Limpiar();
                 // button10.BackColor = SystemColors.HotTrack;
             }
+            else if (btn.Text.Equals("Abrir Cuenta"))
+            {
+                if (!panel1.Controls.Contains(UCcuenta.instance))
+                {
+                    panel1.Controls.Add(UCcuenta.instance);
+                    UCcuenta.instance.Dock = DockStyle.Fill;
+                    UCcuenta.instance.BringToFront();
+                    TituloText.Text = btn.Text;
+
+                }
+                else
+                {
+                    UCcuenta.instance.BringToFront();
+                    TituloText.Text = btn.Text;
+                }
+                //    Limpiar();
+                //   button2.BackColor = SystemColors.HotTrack;
+            }
+            else if (btn.Text.Equals("Gestionar Cuenta"))
+            {
+                if (!panel1.Controls.Contains(UCactualizarCuenta.instance))
+                {
+                    panel1.Controls.Add(UCactualizarCuenta.instance);
+                    UCactualizarCuenta.instance.Dock = DockStyle.Fill;
+                    UCactualizarCuenta.instance.BringToFront();
+                    TituloText.Text = btn.Text;
+
+                }
+                else
+                {
+                    UCactualizarCuenta.instance.BringToFront();
+                    TituloText.Text = btn.Text;
+                }
+                //    Limpiar();
+                //   button2.BackColor = SystemColors.HotTrack;
+            }
+            else if (btn.Text.Equals("Realizar Préstamo"))
+            {
+                if (!panel1.Controls.Contains(UCPrestamos.instance))
+                {
+                    panel1.Controls.Add(UCPrestamos.instance);
+                    UCPrestamos.instance.Dock = DockStyle.Fill;
+                    UCPrestamos.instance.BringToFront();
+                    TituloText.Text = btn.Text;
+
+                }
+                else
+                {
+                    UCPrestamos.instance.BringToFront();
+                    TituloText.Text = btn.Text;
+                }
+                //    Limpiar();
+                //   button2.BackColor = SystemColors.HotTrack;
+            }
+            else if (btn.Text.Equals("Refinanciar"))
+            {
+                if (!panel1.Controls.Contains(UCrefinanciar.instance))
+                {
+                    panel1.Controls.Add(UCrefinanciar.instance);
+                    UCrefinanciar.instance.Dock = DockStyle.Fill;
+                    UCrefinanciar.instance.BringToFront();
+                    TituloText.Text = btn.Text;
+
+                }
+                else
+                {
+                    UCrefinanciar.instance.BringToFront();
+                    TituloText.Text = btn.Text;
+                }
+                //    Limpiar();
+                //   button2.BackColor = SystemColors.HotTrack;
+            }
+            else if (btn.Text.Equals("Solicitar Chequera"))
+            {
+                if (!panel1.Controls.Contains(UCchequeras.instance))
+                {
+                    panel1.Controls.Add(UCchequeras.instance);
+                    UCchequeras.instance.Dock = DockStyle.Fill;
+                    UCchequeras.instance.BringToFront();
+                    TituloText.Text = btn.Text;
+
+                }
+                else
+                {
+                    UCchequeras.instance.BringToFront();
+                    TituloText.Text = btn.Text;
+                }
+                //    Limpiar();
+                //   button2.BackColor = SystemColors.HotTrack;
+            }
             #endregion
 
 
@@ -268,12 +359,16 @@ namespace Sistema_Bancario
                 case 1:
                     Button AbrirCuenta = new Button();
                     this.CrearBoton(AbrirCuenta, "Abrir Cuenta", 0);
-                    Button ActualizatCuenta = new Button();
-                    this.CrearBoton(ActualizatCuenta, "Actualizar Cuenta", 50);
+                    Button GestionarCuenta = new Button();
+                    this.CrearBoton(GestionarCuenta, "Gestionar Cuenta", 50);
                     Button RealizarPrestamo = new Button();
-                    this.CrearBoton(RealizarPrestamo, "Relalizar Prestamo", 100);
+                    this.CrearBoton(RealizarPrestamo, "Realizar Préstamo", 100);
                     Button Refinanciar = new Button();
                     this.CrearBoton(Refinanciar, "Refinanciar", 150);
+                    Button SolicitarChequera = new Button();
+                    this.CrearBoton(SolicitarChequera, "Solicitar Chequera", 200);
+                    Button GestionarChequera = new Button();
+                    this.CrearBoton(GestionarChequera, "Gestionar Chequera", 250);
                     break;
                 case 2:
                     Button Cliente = new Button();
@@ -301,9 +396,9 @@ namespace Sistema_Bancario
                     Button Pago_Servicios = new Button();
 
                     this.CrearBoton(Retiros, "Retiros", 0);
-                    this.CrearBoton(Depositos, "Depositos", 50);
+                    this.CrearBoton(Depositos, "Depósitos", 50);
                     this.CrearBoton(Transferencias, "Transferencias", 100);
-                    this.CrearBoton(Envio_Giros, "Envio Giros", 150);
+                    this.CrearBoton(Envio_Giros, "Envío Giros", 150);
                     this.CrearBoton(Cobro_Giros, "Cobro Giros", 200);
                     this.CrearBoton(Pago_tarjetas, "Pago tarjetas", 250);
                     this.CrearBoton(Pago_Cuotas, "Pago Cuotas", 300);
@@ -321,7 +416,7 @@ namespace Sistema_Bancario
 
         private void button14_Click(object sender, EventArgs e)
         {
-            BTManteniminetos.BackColor = SystemColors.HotTrack;
+            BTPlataforma.BackColor = SystemColors.HotTrack;
             panel2.Controls.Clear();
             this.Componentes(1);
 

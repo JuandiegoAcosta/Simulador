@@ -10,28 +10,29 @@ using System.Windows.Forms;
 
 namespace Sistema_Bancario.Plataforma
 {
-    public partial class UCcuenta : UserControl
+    public partial class UCrefinanciar : UserControl
     {
-        public UCcuenta()
+        public UCrefinanciar()
         {
             InitializeComponent();
         }
-        private static UCcuenta _instance;
-        public static UCcuenta instance
+
+        private void UCrefinanciar_Load(object sender, EventArgs e)
+        {
+
+        }
+        private static UCrefinanciar _instance;
+        public static  UCrefinanciar  instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new UCcuenta();
+                    _instance = new UCrefinanciar();
                 }
 
                 return _instance;
             }
-        }
-        private void UCcuenta_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

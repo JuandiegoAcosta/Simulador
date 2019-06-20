@@ -17,12 +17,29 @@ namespace Sistema_Bancario.Plataforma
         private string gUsuario;
         private BLChequeras BLChequeras = new BLChequeras();
 
+
+        public UCchequeras()
+        {
+            InitializeComponent();
+        }
         public UCchequeras(string usuario)
         {
             InitializeComponent();
             this.gUsuario = usuario;
         }
+        private static UCchequeras _instance;
+        public static UCchequeras instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new UCchequeras();
+                }
 
+                return _instance;
+            }
+        }
         private void MantenimientoChequeras_Load(object sender, EventArgs e)
         {
 

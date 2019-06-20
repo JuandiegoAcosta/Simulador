@@ -36,7 +36,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 3);
+            this.label1.Location = new System.Drawing.Point(3, 6);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(82, 13);
@@ -45,15 +45,15 @@
             // 
             // TBNroDocumento
             // 
-            this.TBNroDocumento.Location = new System.Drawing.Point(88, 3);
-            this.TBNroDocumento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TBNroDocumento.Location = new System.Drawing.Point(91, 2);
+            this.TBNroDocumento.Margin = new System.Windows.Forms.Padding(2);
             this.TBNroDocumento.Name = "TBNroDocumento";
             this.TBNroDocumento.Size = new System.Drawing.Size(186, 20);
             this.TBNroDocumento.TabIndex = 1;
             // 
             // btnNumero
             // 
-            this.btnNumero.Location = new System.Drawing.Point(279, 0);
+            this.btnNumero.Location = new System.Drawing.Point(282, 1);
             this.btnNumero.Name = "btnNumero";
             this.btnNumero.Size = new System.Drawing.Size(37, 23);
             this.btnNumero.TabIndex = 20;
@@ -67,7 +67,7 @@
             this.Controls.Add(this.btnNumero);
             this.Controls.Add(this.TBNroDocumento);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Nro_Documento";
             this.Size = new System.Drawing.Size(323, 26);
             this.ResumeLayout(false);

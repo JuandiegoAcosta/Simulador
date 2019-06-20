@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.txtApMaterno = new System.Windows.Forms.TextBox();
@@ -44,6 +46,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.txtApMaterno);
@@ -56,14 +60,34 @@
             this.groupBox1.Controls.Add(this.nro_Documento1);
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(374, 239);
+            this.groupBox1.Size = new System.Drawing.Size(369, 234);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label6.Location = new System.Drawing.Point(100, 32);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(32, 16);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "------";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(15, 35);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(61, 13);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "Nro Cuenta";
+            // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(103, 198);
+            this.txtNombre.Location = new System.Drawing.Point(103, 200);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(240, 20);
             this.txtNombre.TabIndex = 18;
@@ -77,14 +101,14 @@
             // 
             // txtApMaterno
             // 
-            this.txtApMaterno.Location = new System.Drawing.Point(103, 168);
+            this.txtApMaterno.Location = new System.Drawing.Point(103, 170);
             this.txtApMaterno.Name = "txtApMaterno";
             this.txtApMaterno.Size = new System.Drawing.Size(240, 20);
             this.txtApMaterno.TabIndex = 16;
             // 
             // txtApPaterno
             // 
-            this.txtApPaterno.Location = new System.Drawing.Point(103, 138);
+            this.txtApPaterno.Location = new System.Drawing.Point(103, 140);
             this.txtApPaterno.Name = "txtApPaterno";
             this.txtApPaterno.Size = new System.Drawing.Size(240, 20);
             this.txtApPaterno.TabIndex = 15;
@@ -92,7 +116,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 170);
+            this.label4.Location = new System.Drawing.Point(15, 172);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(86, 13);
             this.label4.TabIndex = 14;
@@ -101,7 +125,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 141);
+            this.label3.Location = new System.Drawing.Point(15, 143);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 13);
             this.label3.TabIndex = 13;
@@ -110,7 +134,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 198);
+            this.label2.Location = new System.Drawing.Point(15, 200);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 13);
             this.label2.TabIndex = 12;
@@ -122,7 +146,7 @@
             this.comboBox1.Items.AddRange(new object[] {
             "DNI",
             "PASAPORTE"});
-            this.comboBox1.Location = new System.Drawing.Point(103, 34);
+            this.comboBox1.Location = new System.Drawing.Point(103, 61);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(100, 21);
             this.comboBox1.TabIndex = 11;
@@ -130,7 +154,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 38);
+            this.label1.Location = new System.Drawing.Point(15, 65);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 13);
             this.label1.TabIndex = 10;
@@ -138,8 +162,8 @@
             // 
             // nro_Documento1
             // 
-            this.nro_Documento1.Location = new System.Drawing.Point(15, 67);
-            this.nro_Documento1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nro_Documento1.Location = new System.Drawing.Point(12, 94);
+            this.nro_Documento1.Margin = new System.Windows.Forms.Padding(2);
             this.nro_Documento1.Name = "nro_Documento1";
             this.nro_Documento1.Size = new System.Drawing.Size(339, 27);
             this.nro_Documento1.TabIndex = 9;
@@ -150,7 +174,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox1);
             this.Name = "DatosPersona";
-            this.Size = new System.Drawing.Size(382, 246);
+            this.Size = new System.Drawing.Size(376, 241);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -170,5 +194,7 @@
         private System.Windows.Forms.TextBox txtApMaterno;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
     }
 }

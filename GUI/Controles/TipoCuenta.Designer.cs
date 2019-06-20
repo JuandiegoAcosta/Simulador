@@ -31,15 +31,17 @@
             this.RBAhorros = new System.Windows.Forms.RadioButton();
             this.RBCredito = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tipoMoneda1 = new Sistema_Bancario.Controles.TipoMoneda();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // RBAhorros
             // 
             this.RBAhorros.AutoSize = true;
-            this.RBAhorros.Location = new System.Drawing.Point(6, 21);
+            this.RBAhorros.Location = new System.Drawing.Point(9, 22);
+            this.RBAhorros.Margin = new System.Windows.Forms.Padding(2);
             this.RBAhorros.Name = "RBAhorros";
-            this.RBAhorros.Size = new System.Drawing.Size(79, 21);
+            this.RBAhorros.Size = new System.Drawing.Size(61, 17);
             this.RBAhorros.TabIndex = 0;
             this.RBAhorros.TabStop = true;
             this.RBAhorros.Text = "Ahorros";
@@ -48,32 +50,45 @@
             // RBCredito
             // 
             this.RBCredito.AutoSize = true;
-            this.RBCredito.Location = new System.Drawing.Point(91, 21);
+            this.RBCredito.Location = new System.Drawing.Point(73, 22);
+            this.RBCredito.Margin = new System.Windows.Forms.Padding(2);
             this.RBCredito.Name = "RBCredito";
-            this.RBCredito.Size = new System.Drawing.Size(74, 21);
+            this.RBCredito.Size = new System.Drawing.Size(58, 17);
             this.RBCredito.TabIndex = 1;
             this.RBCredito.TabStop = true;
-            this.RBCredito.Text = "Credito";
+            this.RBCredito.Text = "Crédito";
             this.RBCredito.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.tipoMoneda1);
             this.groupBox1.Controls.Add(this.RBCredito);
             this.groupBox1.Controls.Add(this.RBAhorros);
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Location = new System.Drawing.Point(2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(173, 57);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Size = new System.Drawing.Size(162, 78);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cuenta";
             // 
+            // tipoMoneda1
+            // 
+            this.tipoMoneda1.Location = new System.Drawing.Point(4, 43);
+            this.tipoMoneda1.Margin = new System.Windows.Forms.Padding(2);
+            this.tipoMoneda1.Name = "tipoMoneda1";
+            this.tipoMoneda1.Size = new System.Drawing.Size(149, 24);
+            this.tipoMoneda1.TabIndex = 2;
+            // 
             // TipoCuenta
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "TipoCuenta";
-            this.Size = new System.Drawing.Size(184, 64);
+            this.Size = new System.Drawing.Size(168, 84);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -84,5 +99,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         public System.Windows.Forms.RadioButton RBAhorros;
         public System.Windows.Forms.RadioButton RBCredito;
+        private TipoMoneda tipoMoneda1;
     }
 }

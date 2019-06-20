@@ -1,6 +1,6 @@
 ﻿namespace Sistema_Bancario.Plataforma
 {
-    partial class UCcuenta
+    partial class UCactualizarCuenta
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,45 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.datosPersona1 = new Sistema_Bancario.Controles.DatosPersona();
             this.proceder1 = new Sistema_Bancario.Controles.Proceder();
-            this.tipoCuenta1 = new Sistema_Bancario.Controles.TipoCuenta();
+            this.datosPersona1 = new Sistema_Bancario.Controles.DatosPersona();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.SuspendLayout();
-            // 
-            // datosPersona1
-            // 
-            this.datosPersona1.Location = new System.Drawing.Point(20, 16);
-            this.datosPersona1.Name = "datosPersona1";
-            this.datosPersona1.Size = new System.Drawing.Size(382, 244);
-            this.datosPersona1.TabIndex = 3;
             // 
             // proceder1
             // 
-            this.proceder1.Location = new System.Drawing.Point(277, 298);
+            this.proceder1.Location = new System.Drawing.Point(428, 325);
             this.proceder1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.proceder1.Name = "proceder1";
             this.proceder1.Size = new System.Drawing.Size(111, 40);
             this.proceder1.TabIndex = 0;
             // 
-            // tipoCuenta1
+            // datosPersona1
             // 
-            this.tipoCuenta1.Location = new System.Drawing.Point(20, 265);
-            this.tipoCuenta1.Margin = new System.Windows.Forms.Padding(2);
-            this.tipoCuenta1.Name = "tipoCuenta1";
-            this.tipoCuenta1.Size = new System.Drawing.Size(168, 84);
-            this.tipoCuenta1.TabIndex = 4;
+            this.datosPersona1.Location = new System.Drawing.Point(24, 24);
+            this.datosPersona1.Name = "datosPersona1";
+            this.datosPersona1.Size = new System.Drawing.Size(376, 241);
+            this.datosPersona1.TabIndex = 1;
             // 
-            // UCcuenta
+            // groupBox1
+            // 
+            this.groupBox1.Location = new System.Drawing.Point(27, 265);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(373, 100);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Tarjeta";
+            // 
+            // UCactualizarCuenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.tipoCuenta1);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.datosPersona1);
             this.Controls.Add(this.proceder1);
-            this.Name = "UCcuenta";
-            this.Size = new System.Drawing.Size(412, 352);
-            this.Load += new System.EventHandler(this.UCcuenta_Load);
+            this.Name = "UCactualizarCuenta";
+            this.Size = new System.Drawing.Size(557, 381);
+            this.Load += new System.EventHandler(this.UCactualizarCuenta_Load);
             this.ResumeLayout(false);
 
         }
@@ -75,6 +75,6 @@
 
         private Controles.Proceder proceder1;
         private Controles.DatosPersona datosPersona1;
-        private Controles.TipoCuenta tipoCuenta1;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
