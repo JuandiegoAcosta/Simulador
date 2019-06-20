@@ -1,10 +1,7 @@
 {
   "ExpandedNodes": [
     "",
-    "\\CDatos\\Manager",
-    "\\Modelos",
-    "\\Plataforma"
+    "\\GUI"
   ],
-  "SelectedNode": "\\Plataforma.sln",
   "PreviewInSolutionExplorer": false
 }
