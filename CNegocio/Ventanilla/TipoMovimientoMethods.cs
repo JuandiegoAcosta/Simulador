@@ -10,11 +10,11 @@ namespace CNegocio.Ventanilla
 {
     public class TipoMovimientoMethods
     {
-        private ManagerMovimientosVentanillaModel ADMovimientoVentanillaManager;
+        private MovimientosVentanillaManager ADMovimientoVentanillaManager;
 
         public TipoMovimientoMethods()
         {
-            ADMovimientoVentanillaManager = new ManagerMovimientosVentanillaModel();
+            ADMovimientoVentanillaManager = new MovimientosVentanillaManager();
         }
         public bool Crear(MovimientosVentanillaModel aMovimientoVentanilla)
         {

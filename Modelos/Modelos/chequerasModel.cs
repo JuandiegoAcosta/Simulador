@@ -8,7 +8,6 @@ namespace Modelos.Modelos
 {
     public class ChequerasModel
     {
-
         #region Properties
 
         /// <summary>

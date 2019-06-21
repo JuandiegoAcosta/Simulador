@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Modelos.Modelos
 {
-    public class AseguradorasModel
+    public class HorariosAtencionModel
     {
-
         #region Properties
 
         /// <summary>
@@ -18,39 +17,21 @@ namespace Modelos.Modelos
         { get; set; }
 
         /// <summary>
-        /// Gets or sets the Nombre value.
+        /// Gets or sets the Fecha value.
         /// </summary>
-        public string Nombre
+        public DateTime Fecha
         { get; set; }
 
         /// <summary>
-        /// Gets or sets the Mesesvigencia value.
+        /// Gets or sets the Hora_inicio value.
         /// </summary>
-        public int Mesesvigencia
+        public TimeSpan Hora_inicio
         { get; set; }
 
         /// <summary>
-        /// Gets or sets the Fechacontrato value.
+        /// Gets or sets the Hora_fin value.
         /// </summary>
-        public DateTime Fechacontrato
-        { get; set; }
-
-        /// <summary>
-        /// Gets or sets the Vigente value.
-        /// </summary>
-        public bool Vigente
-        { get; set; }
-
-        /// <summary>
-        /// Gets or sets the Descripcion value.
-        /// </summary>
-        public string Descripcion
-        { get; set; }
-
-        /// <summary>
-        /// Gets or sets the Usuario_creador value.
-        /// </summary>
-        public string Usuario_creador
+        public TimeSpan? Hora_fin
         { get; set; }
 
         /// <summary>
@@ -60,15 +41,21 @@ namespace Modelos.Modelos
         { get; set; }
 
         /// <summary>
-        /// Gets or sets the Usuario_modificador value.
-        /// </summary>
-        public string Usuario_modificador
-        { get; set; }
-
-        /// <summary>
         /// Gets or sets the Fecha_modificacion value.
         /// </summary>
         public DateTime? Fecha_modificacion
+        { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Usuario_creador value.
+        /// </summary>
+        public string Usuario_creador
+        { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Usuario_modificador value.
+        /// </summary>
+        public string Usuario_modificador
         { get; set; }
 
 

@@ -6,7 +6,7 @@ using Modelos.Modelos;
 
 namespace CDatos.Manager
 {
-    public class ManagerTurnoUsuarioModel
+    public class TurnoUsuarioManager
     {
         #region Methods
         /// <summary>

@@ -9,7 +9,7 @@ using Modelos.Modelos;
 
 namespace CDatos.Manager
 {
-    public class ManagerBancoModel
+    public class BancoManager
     {
         #region Methods
         /// <summary>
@@ -345,7 +345,6 @@ namespace CDatos.Manager
             }
         }
         #endregion
-
     }
 
 }

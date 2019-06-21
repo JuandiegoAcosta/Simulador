@@ -9,7 +9,6 @@ namespace Modelos.Modelos
 {
     public class TipoMovimientoModel
     {
-
         #region Properties
 
         /// <summary>

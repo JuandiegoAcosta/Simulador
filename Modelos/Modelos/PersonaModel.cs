@@ -8,7 +8,6 @@ namespace Modelos.Modelos
 {
     public class PersonaModel
     {
-
         #region Properties
 
         /// <summary>

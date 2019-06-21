@@ -8,7 +8,6 @@ namespace Modelos.Modelos
 {
     public class SucursalModel
     {
-
         #region Properties
 
         /// <summary>

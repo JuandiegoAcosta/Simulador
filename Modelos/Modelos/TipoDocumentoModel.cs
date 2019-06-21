@@ -8,7 +8,6 @@ namespace Modelos.Modelos
 {
     public class TipoDocumentoModel
     {
-
         #region Properties
 
         /// <summary>

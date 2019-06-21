@@ -10,11 +10,11 @@ namespace CNegocio.Backend
 {
     public class PermisosUsuarioMethods
     {
-        private ManagerPermisosUsuarioModel ADPermisosUsuarioManager;
+        private PermisosUsuarioManager ADPermisosUsuarioManager;
 
         public PermisosUsuarioMethods()
         {
-            ADPermisosUsuarioManager = new ManagerPermisosUsuarioModel();
+            ADPermisosUsuarioManager = new PermisosUsuarioManager();
         }
         public bool Crear(PermisosUsuarioModel aPermisosUsuario)
         {

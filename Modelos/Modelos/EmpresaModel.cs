@@ -9,7 +9,6 @@ namespace Modelos.Modelos
 {
     public class EmpresaModel
     {
-
         #region Properties
 
         /// <summary>

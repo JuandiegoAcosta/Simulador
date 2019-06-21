@@ -10,11 +10,11 @@ namespace CNegocio.Backend
 {
     public class TurnoUsuarioMethods
     {
-        private ManagerTurnoUsuarioModel ADTurnoUsuarioManager;
+        private TurnoUsuarioManager ADTurnoUsuarioManager;
 
         public TurnoUsuarioMethods()
         {
-            ADTurnoUsuarioManager = new ManagerTurnoUsuarioModel();
+            ADTurnoUsuarioManager = new TurnoUsuarioManager();
         }
         public bool Crear(TurnoUsuarioModel aTurnoUsuario)
         {

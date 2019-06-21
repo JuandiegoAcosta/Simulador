@@ -10,11 +10,11 @@ namespace CNegocio.Ventanilla
 {
     public class CobroChequeMethods
     {
-        private ManagerCobroChequesModel ADCobroChqueManager;
+        private CobroChequeManager ADCobroChqueManager;
 
         public CobroChequeMethods()
         {
-            ADCobroChqueManager = new ManagerCobroChequesModel();
+            ADCobroChqueManager = new CobroChequeManager();
         }
         public bool Crear(CobroChequesModel aCobroCheque)
         {

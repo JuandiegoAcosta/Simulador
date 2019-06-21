@@ -9,7 +9,6 @@ namespace Modelos.Modelos
 {
     public class PagoServiciosModel
     {
-
         #region Properties
 
         /// <summary>

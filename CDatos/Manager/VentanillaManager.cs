@@ -6,7 +6,7 @@ using Modelos.Modelos;
 
 namespace CDatos.Manager
 {
-    public class ManagerVentanillaModel
+    public class VentanillaManager
     {
         #region Methods
         /// <summary>

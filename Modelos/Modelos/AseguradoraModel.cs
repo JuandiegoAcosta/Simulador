@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Modelos.Modelos
 {
-    public class Horarios_AtencionModel
+    public class AseguradoraModel
     {
-
         #region Properties
 
         /// <summary>
@@ -18,33 +17,33 @@ namespace Modelos.Modelos
         { get; set; }
 
         /// <summary>
-        /// Gets or sets the Fecha value.
+        /// Gets or sets the Nombre value.
         /// </summary>
-        public DateTime Fecha
+        public string Nombre
         { get; set; }
 
         /// <summary>
-        /// Gets or sets the Hora_inicio value.
+        /// Gets or sets the Mesesvigencia value.
         /// </summary>
-        public TimeSpan Hora_inicio
+        public int Mesesvigencia
         { get; set; }
 
         /// <summary>
-        /// Gets or sets the Hora_fin value.
+        /// Gets or sets the Fechacontrato value.
         /// </summary>
-        public TimeSpan? Hora_fin
+        public DateTime Fechacontrato
         { get; set; }
 
         /// <summary>
-        /// Gets or sets the Fecha_creacion value.
+        /// Gets or sets the Vigente value.
         /// </summary>
-        public DateTime Fecha_creacion
+        public bool Vigente
         { get; set; }
 
         /// <summary>
-        /// Gets or sets the Fecha_modificacion value.
+        /// Gets or sets the Descripcion value.
         /// </summary>
-        public DateTime? Fecha_modificacion
+        public string Descripcion
         { get; set; }
 
         /// <summary>
@@ -54,9 +53,21 @@ namespace Modelos.Modelos
         { get; set; }
 
         /// <summary>
+        /// Gets or sets the Fecha_creacion value.
+        /// </summary>
+        public DateTime Fecha_creacion
+        { get; set; }
+
+        /// <summary>
         /// Gets or sets the Usuario_modificador value.
         /// </summary>
         public string Usuario_modificador
+        { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Fecha_modificacion value.
+        /// </summary>
+        public DateTime? Fecha_modificacion
         { get; set; }
 
 

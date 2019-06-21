@@ -9,7 +9,6 @@ namespace Modelos.Modelos
 {
     public class CobroChequesModel
     {
-
         #region Properties
 
         /// <summary>

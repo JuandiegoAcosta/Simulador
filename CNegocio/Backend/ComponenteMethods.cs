@@ -10,11 +10,11 @@ namespace CNegocio.Backend
 {
     public class ComponenteMethods
     {
-        private ManagerComponenteModel ADComponenteManager;
+        private ComponenteManager ADComponenteManager;
 
         public ComponenteMethods()
         {
-            ADComponenteManager = new ManagerComponenteModel();
+            ADComponenteManager = new ComponenteManager();
         }
         public bool Crear(ComponenteModel aComponente)
         {

@@ -9,7 +9,7 @@ using Modelos.Modelos;
 
 namespace CDatos.Manager
 {
-    public class ManagerTipoCambioManager
+    public class TipoMonedaManager
     {
         #region Methods
         /// <summary>
@@ -17,7 +17,7 @@ namespace CDatos.Manager
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>		
-        public bool Insert(TipoCambioModel aTipoCambioModel)
+        public bool Insert(TipoMonedaModel aTipoMonedaModel)
         {
             try
             {
@@ -31,12 +31,12 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
-                    command.Parameters.AddWithValue("@ID", aTipoCambioModel.Id);
-                    //command.Parameters.AddWithValue("@Nombre", aTipoCambioModel.Nombre);
-                    command.Parameters.AddWithValue("@FECHA_CREACION", aTipoCambioModel.Fecha_creacion);
-                    command.Parameters.AddWithValue("@FECHA_MODIFICACION", aTipoCambioModel.Fecha_modificacion == null ? (object)DBNull.Value : aTipoCambioModel.Fecha_modificacion);
-                    command.Parameters.AddWithValue("@USUARIO_CREADOR", aTipoCambioModel.Usuario_creador);
-                    command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aTipoCambioModel.Usuario_modificador == null ? (object)DBNull.Value : aTipoCambioModel.Usuario_modificador);
+                    command.Parameters.AddWithValue("@ID", aTipoMonedaModel.Id);
+                    //command.Parameters.AddWithValue("@Nombre", aTipoMonedaModel.Nombre);
+                    command.Parameters.AddWithValue("@FECHA_CREACION", aTipoMonedaModel.Fecha_creacion);
+                    command.Parameters.AddWithValue("@FECHA_MODIFICACION", aTipoMonedaModel.Fecha_modificacion == null ? (object)DBNull.Value : aTipoMonedaModel.Fecha_modificacion);
+                    command.Parameters.AddWithValue("@USUARIO_CREADOR", aTipoMonedaModel.Usuario_creador);
+                    command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aTipoMonedaModel.Usuario_modificador == null ? (object)DBNull.Value : aTipoMonedaModel.Usuario_modificador);
 
 
                     command.CommandType = CommandType.StoredProcedure;
@@ -68,7 +68,7 @@ namespace CDatos.Manager
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>
-        public bool Update(TipoCambioModel aTipoCambioModel)
+        public bool Update(TipoCambioModel aTipoMonedaModel)
         {
             try
             {
@@ -82,12 +82,12 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
-                    command.Parameters.AddWithValue("@ID", aTipoCambioModel.Id);
-                    //command.Parameters.AddWithValue("@Nombre", aTipoCambioModel.Nombre);
-                    command.Parameters.AddWithValue("@FECHA_CREACION", aTipoCambioModel.Fecha_creacion);
-                    command.Parameters.AddWithValue("@FECHA_MODIFICACION", aTipoCambioModel.Fecha_modificacion == null ? (object)DBNull.Value : aTipoCambioModel.Fecha_modificacion);
-                    command.Parameters.AddWithValue("@USUARIO_CREADOR", aTipoCambioModel.Usuario_creador);
-                    command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aTipoCambioModel.Usuario_modificador == null ? (object)DBNull.Value : aTipoCambioModel.Usuario_modificador);
+                    command.Parameters.AddWithValue("@ID", aTipoMonedaModel.Id);
+                    //command.Parameters.AddWithValue("@Nombre", aTipoMonedaModel.Nombre);
+                    command.Parameters.AddWithValue("@FECHA_CREACION", aTipoMonedaModel.Fecha_creacion);
+                    command.Parameters.AddWithValue("@FECHA_MODIFICACION", aTipoMonedaModel.Fecha_modificacion == null ? (object)DBNull.Value : aTipoMonedaModel.Fecha_modificacion);
+                    command.Parameters.AddWithValue("@USUARIO_CREADOR", aTipoMonedaModel.Usuario_creador);
+                    command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aTipoMonedaModel.Usuario_modificador == null ? (object)DBNull.Value : aTipoMonedaModel.Usuario_modificador);
 
 
                     command.CommandType = CommandType.StoredProcedure;

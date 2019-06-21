@@ -9,7 +9,6 @@ namespace Modelos.Modelos
 {
     public class VentanillaModel
     {
-
         #region Properties
 
         /// <summary>

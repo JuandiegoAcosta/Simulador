@@ -10,11 +10,11 @@ namespace CNegocio.Backend
 {
     public class BancoMethods
     {
-        private ManagerBancoModel ADBancoManager;
+        private BancoManager ADBancoManager;
 
         public BancoMethods()
         {
-            ADBancoManager = new ManagerBancoModel();
+            ADBancoManager = new BancoManager();
         }
         public bool Crear(BancoModel aBanco)
         {
