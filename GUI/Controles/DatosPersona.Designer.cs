@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.gbDatos = new System.Windows.Forms.GroupBox();
-            this.btnClean = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.txtNumDoc = new System.Windows.Forms.TextBox();
             this.lblNumDoc = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -44,7 +44,7 @@
             // 
             // gbDatos
             // 
-            this.gbDatos.Controls.Add(this.btnClean);
+            this.gbDatos.Controls.Add(this.btnSearch);
             this.gbDatos.Controls.Add(this.txtNumDoc);
             this.gbDatos.Controls.Add(this.lblNumDoc);
             this.gbDatos.Controls.Add(this.txtNombre);
@@ -61,27 +61,28 @@
             this.gbDatos.TabStop = false;
             this.gbDatos.Text = "Datos";
             // 
-            // btnClean
+            // btnSearch
             // 
-            this.btnClean.BackColor = System.Drawing.Color.ForestGreen;
-            this.btnClean.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClean.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClean.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnClean.Location = new System.Drawing.Point(275, 26);
-            this.btnClean.Name = "btnClean";
-            this.btnClean.Size = new System.Drawing.Size(68, 35);
-            this.btnClean.TabIndex = 23;
-            this.btnClean.Text = "Limpiar";
-            this.btnClean.UseVisualStyleBackColor = false;
-            this.btnClean.Click += new System.EventHandler(this.btnClean_Click);
+            this.btnSearch.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSearch.Location = new System.Drawing.Point(275, 26);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(68, 35);
+            this.btnSearch.TabIndex = 23;
+            this.btnSearch.Text = "Buscar";
+            this.btnSearch.UseVisualStyleBackColor = false;
             // 
             // txtNumDoc
             // 
             this.txtNumDoc.Location = new System.Drawing.Point(103, 34);
+            this.txtNumDoc.MaxLength = 11;
             this.txtNumDoc.Name = "txtNumDoc";
             this.txtNumDoc.Size = new System.Drawing.Size(166, 20);
             this.txtNumDoc.TabIndex = 22;
             this.txtNumDoc.TextChanged += new System.EventHandler(this.txtNumDoc_TextChanged);
+            this.txtNumDoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumDoc_KeyPress);
             // 
             // lblNumDoc
             // 
@@ -179,6 +180,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox txtNumDoc;
         private System.Windows.Forms.Label lblNumDoc;
-        private System.Windows.Forms.Button btnClean;
+        private System.Windows.Forms.Button btnSearch;
     }
 }
