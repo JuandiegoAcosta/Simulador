@@ -9,7 +9,7 @@ using Modelos.Modelos;
 
 namespace CDatos.Manager
 {
-    public class ManagerTarjetasModel
+    public class TarjetaManager
     {
         #region Methods
         /// <summary>
@@ -17,7 +17,7 @@ namespace CDatos.Manager
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>		
-        public bool Insert(TarjetasModel aTarjetasModel)
+        public bool Insert(TarjetaModel aTarjetasModel)
         {
             try
             {
@@ -72,7 +72,7 @@ namespace CDatos.Manager
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>
-        public bool Update(TarjetasModel aTarjetasModel)
+        public bool Update(TarjetaModel aTarjetasModel)
         {
             try
             {
@@ -170,9 +170,9 @@ namespace CDatos.Manager
         /// <summary>
         /// Selects the Single object of TarjetasModel table.
         /// </summary>
-        public TarjetasModel GetTarjetasModel(int aNumero)
+        public TarjetaModel GetTarjetasModel(int aNumero)
         {
-            TarjetasModel TarjetasModel = null;
+            TarjetaModel TarjetasModel = null;
 
             try
             {
@@ -207,7 +207,7 @@ namespace CDatos.Manager
                             int? USUARIO_MODIFICADOR = reader["USUARIO_MODIFICADOR"] as int?;
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
 
-                            TarjetasModel = new TarjetasModel
+                            TarjetasModel = new TarjetaModel
                             {
                                 Numero = Numero,
                                 Password = Password,
@@ -237,10 +237,10 @@ namespace CDatos.Manager
         /// <summary>
         /// Selects all the objects of TarjetasModel table.
         /// </summary>
-        public List<TarjetasModel> TarjetasModelSelectAll()
+        public List<TarjetaModel> TarjetasModelSelectAll()
         {
 
-            List<TarjetasModel> TarjetasModellist = new List<TarjetasModel>();
+            List<TarjetaModel> TarjetasModellist = new List<TarjetaModel>();
 
             try
             {
@@ -272,7 +272,7 @@ namespace CDatos.Manager
                             int? USUARIO_MODIFICADOR = reader["USUARIO_MODIFICADOR"] as int?;
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
 
-                            TarjetasModellist.Add(new TarjetasModel
+                            TarjetasModellist.Add(new TarjetaModel
                             {
                                 Numero = Numero,
                                 Password = Password,
@@ -302,10 +302,10 @@ namespace CDatos.Manager
         /// <summary>
         /// Selects the Multiple objects of TarjetasModel table by a given criteria.
         /// </summary>
-        public List<TarjetasModel> TarjetasModelSelectbyUNKNOW(string aValue)
+        public List<TarjetaModel> TarjetasModelSelectbyUNKNOW(string aValue)
         {
 
-            List<TarjetasModel> TarjetasModellist = new List<TarjetasModel>();
+            List<TarjetaModel> TarjetasModellist = new List<TarjetaModel>();
 
             try
             {
@@ -339,7 +339,7 @@ namespace CDatos.Manager
                             int? USUARIO_MODIFICADOR = reader["USUARIO_MODIFICADOR"] as int?;
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
 
-                            TarjetasModellist.Add(new TarjetasModel
+                            TarjetasModellist.Add(new TarjetaModel
                             {
                                 Numero = Numero,
                                 Password = Password,

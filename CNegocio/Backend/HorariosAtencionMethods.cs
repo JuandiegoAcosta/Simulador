@@ -10,18 +10,18 @@ namespace CNegocio.Backend
 {
     public class HorariosAtencionMethods
     {
-        private ManagerHorarios_AtencionModel ADHorariosAtencionManager;
+        private HorariosAtencionManager ADHorariosAtencionManager;
 
         public HorariosAtencionMethods()
         {
-            ADHorariosAtencionManager = new ManagerHorarios_AtencionModel();
+            ADHorariosAtencionManager = new HorariosAtencionManager();
         }
-        public bool Crear(Horarios_AtencionModel aHorariosAtencion)
+        public bool Crear(HorariosAtencionModel aHorariosAtencion)
         {
             return ADHorariosAtencionManager.Insert(aHorariosAtencion);
         }
 
-        public bool Editar(Horarios_AtencionModel aHorariosAtencion)
+        public bool Editar(HorariosAtencionModel aHorariosAtencion)
         {
             return ADHorariosAtencionManager.Update(aHorariosAtencion);
         }
@@ -31,12 +31,12 @@ namespace CNegocio.Backend
             return ADHorariosAtencionManager.Delete(aID_HorariosAtencion);
         }
 
-        public Horarios_AtencionModel ObtenerUno(int aID_HorariosAtencion)
+        public HorariosAtencionModel ObtenerUno(int aID_HorariosAtencion)
         {
             return ADHorariosAtencionManager.GetHorarios_AtencionModel(aID_HorariosAtencion);
         }
 
-        public List<Horarios_AtencionModel> ObtenerTodos()
+        public List<HorariosAtencionModel> ObtenerTodos()
         {
             return ADHorariosAtencionManager.Horarios_AtencionModelSelectAll();
         }

@@ -12,11 +12,11 @@ namespace CNegocio.Ventanilla
     {
 
         //Tipo de cambio? o tipoMoenda ?  
-        private ManagerTipoCambioManager ADTipoMonedaManager;
+        private TipoMonedaManager ADTipoMonedaManager;
 
         public TipoMonedaMethods()
         {
-            ADTipoMonedaManager = new ManagerTipoCambioManager();
+            ADTipoMonedaManager = new TipoMonedaManager();
         }
         //public bool Crear(TipoMonedaModel aTipoMoneda)
         //{

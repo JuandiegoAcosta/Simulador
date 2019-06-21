@@ -9,7 +9,7 @@ using Modelos.Modelos;
 
 namespace CDatos.Manager
 {
-    public class ManagerMovimientosVentanillaModel
+    public class MovimientosVentanillaManager
     {
         #region Methods
         /// <summary>

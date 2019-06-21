@@ -11,11 +11,11 @@ namespace CNegocio.Ventanilla
 {
     public class EmpresaMethods
     {
-        private ManagerEmpresaModel ADEmpresaManager;
+        private EmpresaManager ADEmpresaManager;
 
         public EmpresaMethods()
         {
-            ADEmpresaManager = new ManagerEmpresaModel();
+            ADEmpresaManager = new EmpresaManager();
         }
         public bool Crear(EmpresaModel aEmpresaModel)
         {

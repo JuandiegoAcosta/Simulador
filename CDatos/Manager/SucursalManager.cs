@@ -6,7 +6,7 @@ using Modelos.Modelos;
 
 namespace CDatos.Manager
 {
-    public class ManagerSucursalModel
+    public class SucursalManager
     {
         #region Methods
         /// <summary>

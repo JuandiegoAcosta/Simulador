@@ -17,7 +17,7 @@ namespace CDatos.Manager
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>		
-        public bool Insert(ChequerasModel aChequerasModel)
+        public bool Insert(ChequeraModel aChequerasModel)
         {
             try
             {
@@ -72,7 +72,7 @@ namespace CDatos.Manager
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>
-        public bool Update(ChequerasModel aChequerasModel)
+        public bool Update(ChequeraModel aChequerasModel)
         {
             try
             {
@@ -170,9 +170,9 @@ namespace CDatos.Manager
         /// <summary>
         /// Selects the Single object of ChequerasModel table.
         /// </summary>
-        public ChequerasModel GetChequerasModel(int aNumero)
+        public ChequeraModel GetChequerasModel(int aNumero)
         {
-            ChequerasModel ChequerasModel = null;
+            ChequeraModel ChequerasModel = null;
 
             try
             {
@@ -207,7 +207,7 @@ namespace CDatos.Manager
                             string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
 
-                            ChequerasModel = new ChequerasModel
+                            ChequerasModel = new ChequeraModel
                             {
                                 Numero = Numero,
                                 Estado = Estado,
@@ -237,10 +237,10 @@ namespace CDatos.Manager
         /// <summary>
         /// Selects all the objects of ChequerasModel table.
         /// </summary>
-        public List<ChequerasModel> ChequerasModelSelectAll()
+        public List<ChequeraModel> ChequerasModelSelectAll()
         {
 
-            List<ChequerasModel> ChequerasModellist = new List<ChequerasModel>();
+            List<ChequeraModel> ChequerasModellist = new List<ChequeraModel>();
 
             try
             {
@@ -272,7 +272,7 @@ namespace CDatos.Manager
                             string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
 
-                            ChequerasModellist.Add(new ChequerasModel
+                            ChequerasModellist.Add(new ChequeraModel
                             {
                                 Numero = Numero,
                                 Estado = Estado,
@@ -302,10 +302,10 @@ namespace CDatos.Manager
         /// <summary>
         /// Selects the Multiple objects of ChequerasModel table by a given criteria.
         /// </summary>
-        public List<ChequerasModel> ChequerasModelSelectbyUNKNOW(string aValue)
+        public List<ChequeraModel> ChequerasModelSelectbyUNKNOW(string aValue)
         {
 
-            List<ChequerasModel> ChequerasModellist = new List<ChequerasModel>();
+            List<ChequeraModel> ChequerasModellist = new List<ChequeraModel>();
 
             try
             {
@@ -339,7 +339,7 @@ namespace CDatos.Manager
                             string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
 
-                            ChequerasModellist.Add(new ChequerasModel
+                            ChequerasModellist.Add(new ChequeraModel
                             {
                                 Numero = Numero,
                                 Estado = Estado,

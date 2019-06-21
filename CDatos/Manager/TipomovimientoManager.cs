@@ -6,7 +6,7 @@ using Modelos.Modelos;
 
 namespace CDatos.Manager
 {
-    public class ManagerTipoMovimientoModel
+    public class TipoMovimientoManager
     {
         #region Methods
         /// <summary>

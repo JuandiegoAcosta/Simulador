@@ -10,11 +10,11 @@ namespace CNegocio.Backend
 {
     public class RolesMethods
     {
-        private ManagerRolesModel ADRolesManager;
+        private RolesManager ADRolesManager;
 
         public RolesMethods()
         {
-            ADRolesManager = new ManagerRolesModel();
+            ADRolesManager = new RolesManager();
         }
         public bool Crear(RolesModel aRoles)
         {

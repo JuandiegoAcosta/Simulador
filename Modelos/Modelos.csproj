@@ -41,19 +41,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Modelos\AseguradoresModel.cs" />
+    <Compile Include="Modelos\AseguradoraModel.cs" />
     <Compile Include="Modelos\AuditoriaModel.cs" />
     <Compile Include="Modelos\BancoModel.cs" />
-    <Compile Include="Modelos\Caja_ChicaModel.cs" />
-    <Compile Include="Modelos\ChequerasModel.cs" />
-    <Compile Include="Modelos\ChequesModel.cs" />
+    <Compile Include="Modelos\CajaChicaModel.cs" />
+    <Compile Include="Modelos\ChequeraModel.cs" />
+    <Compile Include="Modelos\ChequeModel.cs" />
     <Compile Include="Modelos\CobroChequesModel.cs" />
     <Compile Include="Modelos\ComponenteModel.cs" />
     <Compile Include="Modelos\ControlErroresModel.cs" />
     <Compile Include="Modelos\CronogramaPagosModel.cs" />
     <Compile Include="Modelos\CuentasModel.cs" />
     <Compile Include="Modelos\EmpresaModel.cs" />
-    <Compile Include="Modelos\Horarios_AtencionModel.cs" />
+    <Compile Include="Modelos\HorariosAtencionModel.cs" />
     <Compile Include="Modelos\MovimientosVentanillaModel.cs" />
     <Compile Include="Modelos\PagoServiciosModel.cs" />
     <Compile Include="Modelos\PermisosUsuarioModel.cs" />
@@ -63,7 +63,7 @@
     <Compile Include="Modelos\RolesModel.cs" />
     <Compile Include="Modelos\RolUsuarioModel.cs" />
     <Compile Include="Modelos\SucursalModel.cs" />
-    <Compile Include="Modelos\TarjetasModel.cs" />
+    <Compile Include="Modelos\TarjetaModel.cs" />
     <Compile Include="Modelos\TipoDocumentoModel.cs" />
     <Compile Include="Modelos\TipoMonedaModel.cs" />
     <Compile Include="Modelos\TipoMovimientoModel.cs" />

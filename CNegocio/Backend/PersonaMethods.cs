@@ -10,11 +10,11 @@ namespace CNegocio.Backend
 {
     public class PersonaMethods
     {
-        private ManagerPersonaModel ADPersonaManager;
+        private PersonaManager ADPersonaManager;
 
         public PersonaMethods()
         {
-            ADPersonaManager = new ManagerPersonaModel();
+            ADPersonaManager = new PersonaManager();
         }
         public bool Crear(PersonaModel aPersona)
         {

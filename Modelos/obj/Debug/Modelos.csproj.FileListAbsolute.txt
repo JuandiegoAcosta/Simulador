@@ -18,3 +18,9 @@ C:\Users\kat\Source\Repos\JuandiegoAcosta\Simulador\Modelos\obj\Debug\Modelos.cs
 C:\Users\kat\Source\Repos\JuandiegoAcosta\Simulador\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
 C:\Users\kat\Source\Repos\JuandiegoAcosta\Simulador\Modelos\obj\Debug\Modelos.dll
 C:\Users\kat\Source\Repos\JuandiegoAcosta\Simulador\Modelos\obj\Debug\Modelos.pdb
+D:\Simulador Bancario\Simulador\Modelos\bin\Debug\Modelos.dll
+D:\Simulador Bancario\Simulador\Modelos\bin\Debug\Modelos.pdb
+D:\Simulador Bancario\Simulador\Modelos\obj\Debug\Modelos.csprojAssemblyReference.cache
+D:\Simulador Bancario\Simulador\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
+D:\Simulador Bancario\Simulador\Modelos\obj\Debug\Modelos.dll
+D:\Simulador Bancario\Simulador\Modelos\obj\Debug\Modelos.pdb
