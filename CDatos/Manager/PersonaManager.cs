@@ -181,7 +181,7 @@ namespace CDatos.Manager
         /// <summary>
         /// Selects the Single object of PersonaModel table.
         /// </summary>
-        public PersonaModel GetPersonaModel(int aId)
+        public PersonaModel GetPersonaModel(int aId, int aTdoc)
         {
             PersonaModel PersonaModel = null;
 

@@ -8,5 +8,9 @@ namespace CNegocio.Plataforma
 {
     public class BLCuenta
     {
+
+
+
+
     }
 }
