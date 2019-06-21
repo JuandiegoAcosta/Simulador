@@ -394,6 +394,7 @@ namespace Sistema_Bancario
                     Button Pago_Cuotas = new Button();
                     Button Tipo_Cambio = new Button();
                     Button Pago_Servicios = new Button();
+                    Button Resumen_caja_chica = new Button();
 
                     this.CrearBoton(Retiros, "Retiros", 0);
                     this.CrearBoton(Depositos, "Depósitos", 50);
@@ -404,6 +405,7 @@ namespace Sistema_Bancario
                     this.CrearBoton(Pago_Cuotas, "Pago Cuotas", 300);
                     this.CrearBoton(Tipo_Cambio, "Tipo Cambio", 350);
                     this.CrearBoton(Pago_Servicios, "Pago Servicios", 400);
+                    this.CrearBoton(Resumen_caja_chica, "Resumen caja chica", 450);
                     break;
             }
         }

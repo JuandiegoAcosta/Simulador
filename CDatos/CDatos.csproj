@@ -50,6 +50,7 @@
     <Compile Include="Manager\ControlerroresManager.cs" />
     <Compile Include="Manager\CronogramapagoManager.cs" />
     <Compile Include="Manager\CuentaManager.cs" />
+    <Compile Include="Manager\CuotasPrestamosManager.cs" />
     <Compile Include="Manager\EmpresaManager.cs" />
     <Compile Include="Manager\Horarios_atencionManager.cs" />
     <Compile Include="Manager\MovimientosventanillaManager.cs" />

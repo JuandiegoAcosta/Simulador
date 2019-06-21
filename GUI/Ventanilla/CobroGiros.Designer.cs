@@ -34,6 +34,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
+            // proceder1
+            // 
+            this.proceder1.Location = new System.Drawing.Point(8, 313);
+            this.proceder1.Size = new System.Drawing.Size(653, 49);
+            // 
             // dni1
             // 
             this.dni1.Location = new System.Drawing.Point(29, 14);
@@ -47,18 +52,18 @@
             this.clave1.Location = new System.Drawing.Point(29, 51);
             this.clave1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.clave1.Name = "clave1";
-            this.clave1.Size = new System.Drawing.Size(397, 32);
+            this.clave1.Size = new System.Drawing.Size(232, 32);
             this.clave1.TabIndex = 3;
             // 
             // dataGridView1
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(29, 97);
+            this.dataGridView1.Location = new System.Drawing.Point(11, 97);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(629, 157);
+            this.dataGridView1.Size = new System.Drawing.Size(647, 157);
             this.dataGridView1.TabIndex = 4;
             // 
             // CobroGiros

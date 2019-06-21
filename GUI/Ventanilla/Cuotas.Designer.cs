@@ -39,6 +39,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
+            // proceder1
+            // 
+            this.proceder1.Location = new System.Drawing.Point(8, 478);
+            this.proceder1.Size = new System.Drawing.Size(663, 49);
+            // 
             // nro_Documento1
             // 
             this.nro_Documento1.Location = new System.Drawing.Point(11, 14);
@@ -60,6 +65,7 @@
             this.BTBuscarCuota.TabIndex = 4;
             this.BTBuscarCuota.Text = "Buscar";
             this.BTBuscarCuota.UseVisualStyleBackColor = false;
+            this.BTBuscarCuota.Click += new System.EventHandler(this.BTBuscarCuota_Click);
             // 
             // dataGridView1
             // 
@@ -128,6 +134,14 @@
             this.Name = "Cuotas";
             this.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Size = new System.Drawing.Size(679, 534);
+            this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.nro_Documento1, 0);
+            this.Controls.SetChildIndex(this.BTBuscarCuota, 0);
+            this.Controls.SetChildIndex(this.dataGridView1, 0);
+            this.Controls.SetChildIndex(this.textBox1, 0);
+            this.Controls.SetChildIndex(this.dataGridView2, 0);
+            this.Controls.SetChildIndex(this.BTFiltrarCuotas, 0);
+            this.Controls.SetChildIndex(this.proceder1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);

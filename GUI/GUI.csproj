@@ -68,6 +68,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Backend\Resumen_caja_chica.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Backend\Resumen_caja_chica.Designer.cs">
+      <DependentUpon>Resumen_caja_chica.cs</DependentUpon>
+    </Compile>
     <Compile Include="Botones\BTRetiros.cs">
       <SubType>UserControl</SubType>
     </Compile>
