@@ -10,11 +10,20 @@ using System.Windows.Forms;
 
 namespace Sistema_Bancario.Plataforma
 {
-    public partial class UCactualizarCuenta : UserControl
+     //           Se hereda del control base  vvvv  donde se encuentra el boton proceder 
+    public partial class UCactualizarCuenta : Base
     {
         public UCactualizarCuenta()
         {
             InitializeComponent();
+            //se crea el evento click del boton proceder
+            proceder1.BTProceder.Click += BTProceder_Click;
+        }
+
+        private void BTProceder_Click(object sender, EventArgs e)
+        {
+            //Evento Click del boton proceder
+            throw new NotImplementedException();
         }
 
         private void UCactualizarCuenta_Load(object sender, EventArgs e)

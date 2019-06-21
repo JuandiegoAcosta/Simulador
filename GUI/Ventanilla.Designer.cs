@@ -54,20 +54,20 @@
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(209, 126);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Location = new System.Drawing.Point(279, 155);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(682, 539);
+            this.panel1.Size = new System.Drawing.Size(909, 663);
             this.panel1.TabIndex = 1;
             // 
             // panel2
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
-            this.panel2.Location = new System.Drawing.Point(0, 126);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Location = new System.Drawing.Point(0, 155);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 508);
+            this.panel2.Size = new System.Drawing.Size(267, 625);
             this.panel2.TabIndex = 7;
             // 
             // label1
@@ -75,9 +75,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(28, 18);
+            this.label1.Location = new System.Drawing.Point(37, 22);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 29);
+            this.label1.Size = new System.Drawing.Size(183, 36);
             this.label1.TabIndex = 11;
             this.label1.Text = "Sis Bancario";
             // 
@@ -86,18 +87,20 @@
             this.panel5.BackColor = System.Drawing.Color.ForestGreen;
             this.panel5.Controls.Add(this.Rol);
             this.panel5.Controls.Add(this.label2);
-            this.panel5.Location = new System.Drawing.Point(0, 68);
+            this.panel5.Location = new System.Drawing.Point(0, 84);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(200, 58);
+            this.panel5.Size = new System.Drawing.Size(267, 71);
             this.panel5.TabIndex = 9;
             // 
             // Rol
             // 
             this.Rol.AutoSize = true;
             this.Rol.ForeColor = System.Drawing.Color.White;
-            this.Rol.Location = new System.Drawing.Point(14, 35);
+            this.Rol.Location = new System.Drawing.Point(19, 43);
+            this.Rol.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Rol.Name = "Rol";
-            this.Rol.Size = new System.Drawing.Size(23, 13);
+            this.Rol.Size = new System.Drawing.Size(29, 17);
             this.Rol.TabIndex = 3;
             this.Rol.Text = "Rol";
             // 
@@ -105,9 +108,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(14, 12);
+            this.label2.Location = new System.Drawing.Point(19, 15);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 13);
+            this.label2.Size = new System.Drawing.Size(123, 17);
             this.label2.TabIndex = 0;
             this.label2.Text = "Nombre y Apellido";
             // 
@@ -121,10 +125,10 @@
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button11.ForeColor = System.Drawing.SystemColors.Window;
-            this.button11.Location = new System.Drawing.Point(0, 634);
-            this.button11.Margin = new System.Windows.Forms.Padding(2);
+            this.button11.Location = new System.Drawing.Point(0, 780);
+            this.button11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(200, 41);
+            this.button11.Size = new System.Drawing.Size(267, 50);
             this.button11.TabIndex = 10;
             this.button11.Text = "Cerrar Session";
             this.button11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -137,10 +141,10 @@
             this.panel3.Controls.Add(this.BTReportes);
             this.panel3.Controls.Add(this.BTGestion);
             this.panel3.Controls.Add(this.BTPlataforma);
-            this.panel3.Location = new System.Drawing.Point(200, 36);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2);
+            this.panel3.Location = new System.Drawing.Point(267, 44);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(701, 32);
+            this.panel3.Size = new System.Drawing.Size(935, 39);
             this.panel3.TabIndex = 8;
             // 
             // BTOperaciones
@@ -152,8 +156,9 @@
             this.BTOperaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTOperaciones.ForeColor = System.Drawing.Color.White;
             this.BTOperaciones.Location = new System.Drawing.Point(0, 0);
+            this.BTOperaciones.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BTOperaciones.Name = "BTOperaciones";
-            this.BTOperaciones.Size = new System.Drawing.Size(84, 32);
+            this.BTOperaciones.Size = new System.Drawing.Size(112, 39);
             this.BTOperaciones.TabIndex = 8;
             this.BTOperaciones.Text = "Operaciones";
             this.BTOperaciones.UseVisualStyleBackColor = false;
@@ -167,9 +172,10 @@
             this.BTReportes.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
             this.BTReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTReportes.ForeColor = System.Drawing.Color.White;
-            this.BTReportes.Location = new System.Drawing.Point(253, 0);
+            this.BTReportes.Location = new System.Drawing.Point(337, 0);
+            this.BTReportes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BTReportes.Name = "BTReportes";
-            this.BTReportes.Size = new System.Drawing.Size(75, 32);
+            this.BTReportes.Size = new System.Drawing.Size(100, 39);
             this.BTReportes.TabIndex = 11;
             this.BTReportes.Text = "Reportes";
             this.BTReportes.UseVisualStyleBackColor = false;
@@ -183,9 +189,10 @@
             this.BTGestion.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
             this.BTGestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTGestion.ForeColor = System.Drawing.Color.White;
-            this.BTGestion.Location = new System.Drawing.Point(84, 0);
+            this.BTGestion.Location = new System.Drawing.Point(112, 0);
+            this.BTGestion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BTGestion.Name = "BTGestion";
-            this.BTGestion.Size = new System.Drawing.Size(75, 32);
+            this.BTGestion.Size = new System.Drawing.Size(100, 39);
             this.BTGestion.TabIndex = 9;
             this.BTGestion.Text = "Gestion";
             this.BTGestion.UseVisualStyleBackColor = false;
@@ -199,9 +206,10 @@
             this.BTPlataforma.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
             this.BTPlataforma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTPlataforma.ForeColor = System.Drawing.Color.White;
-            this.BTPlataforma.Location = new System.Drawing.Point(159, 0);
+            this.BTPlataforma.Location = new System.Drawing.Point(212, 0);
+            this.BTPlataforma.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BTPlataforma.Name = "BTPlataforma";
-            this.BTPlataforma.Size = new System.Drawing.Size(94, 32);
+            this.BTPlataforma.Size = new System.Drawing.Size(125, 39);
             this.BTPlataforma.TabIndex = 10;
             this.BTPlataforma.Text = "Plataforma";
             this.BTPlataforma.UseVisualStyleBackColor = false;
@@ -216,9 +224,10 @@
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.SystemColors.Window;
-            this.button7.Location = new System.Drawing.Point(653, 1);
+            this.button7.Location = new System.Drawing.Point(871, 1);
+            this.button7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(45, 33);
+            this.button7.Size = new System.Drawing.Size(60, 41);
             this.button7.TabIndex = 7;
             this.button7.Text = "X";
             this.button7.UseVisualStyleBackColor = false;
@@ -230,10 +239,9 @@
             this.TituloText.BackColor = System.Drawing.Color.Transparent;
             this.TituloText.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TituloText.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.TituloText.Location = new System.Drawing.Point(210, 80);
-            this.TituloText.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.TituloText.Location = new System.Drawing.Point(280, 98);
             this.TituloText.Name = "TituloText";
-            this.TituloText.Size = new System.Drawing.Size(74, 29);
+            this.TituloText.Size = new System.Drawing.Size(87, 33);
             this.TituloText.TabIndex = 6;
             this.TituloText.Text = "Titulo";
             this.TituloText.Visible = false;
@@ -249,10 +257,10 @@
             // 
             this.panel6.BackColor = System.Drawing.SystemColors.HotTrack;
             this.panel6.Controls.Add(this.button7);
-            this.panel6.Location = new System.Drawing.Point(200, 0);
-            this.panel6.Margin = new System.Windows.Forms.Padding(2);
+            this.panel6.Location = new System.Drawing.Point(267, 0);
+            this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(700, 36);
+            this.panel6.Size = new System.Drawing.Size(933, 44);
             this.panel6.TabIndex = 12;
             // 
             // panel4
@@ -261,16 +269,17 @@
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(200, 126);
+            this.panel4.Size = new System.Drawing.Size(267, 155);
             this.panel4.TabIndex = 12;
             // 
             // Form2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(900, 674);
+            this.BackColor = System.Drawing.Color.Gainsboro;
+            this.ClientSize = new System.Drawing.Size(1200, 830);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -279,7 +288,7 @@
             this.Controls.Add(this.button11);
             this.Controls.Add(this.TituloText);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form2";
             this.Text = "Form2";
             this.panel5.ResumeLayout(false);

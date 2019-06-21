@@ -34,11 +34,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // proceder1
-            // 
-            this.proceder1.Location = new System.Drawing.Point(8, 313);
-            this.proceder1.Size = new System.Drawing.Size(653, 49);
-            // 
             // dni1
             // 
             this.dni1.Location = new System.Drawing.Point(29, 14);

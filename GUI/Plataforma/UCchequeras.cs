@@ -12,7 +12,7 @@ using Modelos.Modelos;
 
 namespace Sistema_Bancario.Plataforma
 {
-    public partial class UCchequeras : UserControl
+    public partial class UCchequeras : Base
     {
         private string gUsuario;
         private BLChequeras BLChequeras = new BLChequeras();
@@ -21,7 +21,16 @@ namespace Sistema_Bancario.Plataforma
         public UCchequeras()
         {
             InitializeComponent();
+            //se crea el evento click del boton proceder
+            proceder1.BTProceder.Click += BTProceder_Click;
         }
+
+        private void BTProceder_Click(object sender, EventArgs e)
+        {
+            //Evento Click del boton proceder
+            throw new NotImplementedException();
+        }
+
         public UCchequeras(string usuario)
         {
             InitializeComponent();
@@ -51,10 +60,7 @@ namespace Sistema_Bancario.Plataforma
             dtpFechaRegistro.Value = System.DateTime.Now;
         }
 
-        private void proceder1_Load(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void Guardar()
         {

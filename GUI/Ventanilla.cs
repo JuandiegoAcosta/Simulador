@@ -118,7 +118,7 @@ namespace Sistema_Bancario
                 // Limpiar();
                 //   button9.BackColor = SystemColors.HotTrack;
             }
-            else if (btn.Text.Equals("Depositos"))
+            else if (btn.Text.Equals("Depósitos"))
             {
                 if (!panel1.Controls.Contains(Depositos.instance))
                 {
@@ -154,7 +154,7 @@ namespace Sistema_Bancario
                 //    Limpiar();
                 //   button2.BackColor = SystemColors.HotTrack;
             }
-            else if (btn.Text.Equals("Envio Giros"))
+            else if (btn.Text.Equals("Envío Giros"))
             {
                 if (!panel1.Controls.Contains(Envio_Giros.instance))
                 {

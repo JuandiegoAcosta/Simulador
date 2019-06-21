@@ -34,10 +34,10 @@
             // proceder1
             // 
             this.proceder1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.proceder1.Location = new System.Drawing.Point(510, 291);
+            this.proceder1.Location = new System.Drawing.Point(10, 293);
             this.proceder1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.proceder1.Name = "proceder1";
-            this.proceder1.Size = new System.Drawing.Size(148, 49);
+            this.proceder1.Size = new System.Drawing.Size(651, 49);
             this.proceder1.TabIndex = 0;
             // 
             // Base

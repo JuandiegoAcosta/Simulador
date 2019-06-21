@@ -215,22 +215,22 @@
     <Compile Include="Ventanilla.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Froms opciones\CobroGiros.cs">
+    <Compile Include="Ventanilla\CobroGiros.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Froms opciones\CobroGiros.Designer.cs">
+    <Compile Include="Ventanilla\CobroGiros.Designer.cs">
       <DependentUpon>CobroGiros.cs</DependentUpon>
     </Compile>
-    <Compile Include="Froms opciones\Cuotas.cs">
+    <Compile Include="Ventanilla\Cuotas.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Froms opciones\Cuotas.Designer.cs">
+    <Compile Include="Ventanilla\Cuotas.Designer.cs">
       <DependentUpon>Cuotas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Froms opciones\Base.cs">
+    <Compile Include="Ventanilla\Base.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Froms opciones\Base.Designer.cs">
+    <Compile Include="Ventanilla\Base.Designer.cs">
       <DependentUpon>Base.cs</DependentUpon>
     </Compile>
     <Compile Include="Controles\Monto.cs">
@@ -245,46 +245,46 @@
     <Compile Include="Controles\NroDocumento.Designer.cs">
       <DependentUpon>NroDocumento.cs</DependentUpon>
     </Compile>
-    <Compile Include="Froms opciones\Depositos.cs">
+    <Compile Include="Ventanilla\Depositos.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Froms opciones\Depositos.Designer.cs">
+    <Compile Include="Ventanilla\Depositos.Designer.cs">
       <DependentUpon>Depositos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Froms opciones\Envio Giros.cs">
+    <Compile Include="Ventanilla\Envio Giros.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Froms opciones\Envio Giros.Designer.cs">
+    <Compile Include="Ventanilla\Envio Giros.Designer.cs">
       <DependentUpon>Envio Giros.cs</DependentUpon>
     </Compile>
-    <Compile Include="Froms opciones\Tipo_de_Cambio.cs">
+    <Compile Include="Ventanilla\Tipo_de_Cambio.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Froms opciones\Tipo_de_Cambio.Designer.cs">
+    <Compile Include="Ventanilla\Tipo_de_Cambio.Designer.cs">
       <DependentUpon>Tipo_de_Cambio.cs</DependentUpon>
     </Compile>
-    <Compile Include="Froms opciones\Retiros.cs">
+    <Compile Include="Ventanilla\Retiros.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Froms opciones\Retiros.Designer.cs">
+    <Compile Include="Ventanilla\Retiros.Designer.cs">
       <DependentUpon>Retiros.cs</DependentUpon>
     </Compile>
-    <Compile Include="Froms opciones\Servicios.cs">
+    <Compile Include="Ventanilla\Servicios.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Froms opciones\Servicios.Designer.cs">
+    <Compile Include="Ventanilla\Servicios.Designer.cs">
       <DependentUpon>Servicios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Froms opciones\Tarjetas.cs">
+    <Compile Include="Ventanilla\Tarjetas.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Froms opciones\Tarjetas.Designer.cs">
+    <Compile Include="Ventanilla\Tarjetas.Designer.cs">
       <DependentUpon>Tarjetas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Froms opciones\Transferencias.cs">
+    <Compile Include="Ventanilla\Transferencias.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Froms opciones\Transferencias.Designer.cs">
+    <Compile Include="Ventanilla\Transferencias.Designer.cs">
       <DependentUpon>Transferencias.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -346,7 +346,7 @@
     <EmbeddedResource Include="Controles\TopBar.resx">
       <DependentUpon>TopBar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Froms opciones\Envio Giros.resx">
+    <EmbeddedResource Include="Ventanilla\Envio Giros.resx">
       <DependentUpon>Envio Giros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
@@ -370,10 +370,10 @@
     <EmbeddedResource Include="Ventanilla.resx">
       <DependentUpon>Ventanilla.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Froms opciones\CobroGiros.resx">
+    <EmbeddedResource Include="Ventanilla\CobroGiros.resx">
       <DependentUpon>CobroGiros.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Froms opciones\Cuotas.resx">
+    <EmbeddedResource Include="Ventanilla\Cuotas.resx">
       <DependentUpon>Cuotas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controles\Monto.resx">
@@ -382,25 +382,25 @@
     <EmbeddedResource Include="Controles\NroDocumento.resx">
       <DependentUpon>NroDocumento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Froms opciones\Base.resx">
+    <EmbeddedResource Include="Ventanilla\Base.resx">
       <DependentUpon>Base.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Froms opciones\Depositos.resx">
+    <EmbeddedResource Include="Ventanilla\Depositos.resx">
       <DependentUpon>Depositos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Froms opciones\Tipo_de_Cambio.resx">
+    <EmbeddedResource Include="Ventanilla\Tipo_de_Cambio.resx">
       <DependentUpon>Tipo_de_Cambio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Froms opciones\Retiros.resx">
+    <EmbeddedResource Include="Ventanilla\Retiros.resx">
       <DependentUpon>Retiros.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Froms opciones\Servicios.resx">
+    <EmbeddedResource Include="Ventanilla\Servicios.resx">
       <DependentUpon>Servicios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Froms opciones\Tarjetas.resx">
+    <EmbeddedResource Include="Ventanilla\Tarjetas.resx">
       <DependentUpon>Tarjetas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Froms opciones\Transferencias.resx">
+    <EmbeddedResource Include="Ventanilla\Transferencias.resx">
       <DependentUpon>Transferencias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
