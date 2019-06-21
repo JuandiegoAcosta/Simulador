@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.gbDatos = new System.Windows.Forms.GroupBox();
+            this.btnClear = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtNumDoc = new System.Windows.Forms.TextBox();
             this.lblNumDoc = new System.Windows.Forms.Label();
@@ -44,6 +45,7 @@
             // 
             // gbDatos
             // 
+            this.gbDatos.Controls.Add(this.btnClear);
             this.gbDatos.Controls.Add(this.btnSearch);
             this.gbDatos.Controls.Add(this.txtNumDoc);
             this.gbDatos.Controls.Add(this.lblNumDoc);
@@ -61,17 +63,30 @@
             this.gbDatos.TabStop = false;
             this.gbDatos.Text = "Datos";
             // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.LightGray;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnClear.Image = global::Sistema_Bancario.Properties.Resources.limpiar;
+            this.btnClear.Location = new System.Drawing.Point(305, 26);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(38, 35);
+            this.btnClear.TabIndex = 26;
+            this.btnClear.UseVisualStyleBackColor = false;
+            // 
             // btnSearch
             // 
-            this.btnSearch.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnSearch.BackColor = System.Drawing.Color.LightGray;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSearch.Location = new System.Drawing.Point(275, 26);
+            this.btnSearch.Image = global::Sistema_Bancario.Properties.Resources.buscar;
+            this.btnSearch.Location = new System.Drawing.Point(263, 26);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(68, 35);
-            this.btnSearch.TabIndex = 23;
-            this.btnSearch.Text = "Buscar";
+            this.btnSearch.Size = new System.Drawing.Size(38, 35);
+            this.btnSearch.TabIndex = 25;
             this.btnSearch.UseVisualStyleBackColor = false;
             // 
             // txtNumDoc
@@ -79,7 +94,7 @@
             this.txtNumDoc.Location = new System.Drawing.Point(103, 34);
             this.txtNumDoc.MaxLength = 11;
             this.txtNumDoc.Name = "txtNumDoc";
-            this.txtNumDoc.Size = new System.Drawing.Size(166, 20);
+            this.txtNumDoc.Size = new System.Drawing.Size(154, 20);
             this.txtNumDoc.TabIndex = 22;
             this.txtNumDoc.TextChanged += new System.EventHandler(this.txtNumDoc_TextChanged);
             this.txtNumDoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumDoc_KeyPress);
@@ -161,7 +176,6 @@
             this.Controls.Add(this.gbDatos);
             this.Name = "DatosPersona";
             this.Size = new System.Drawing.Size(376, 207);
-            this.Load += new System.EventHandler(this.DatosPersona_Load);
             this.gbDatos.ResumeLayout(false);
             this.gbDatos.PerformLayout();
             this.ResumeLayout(false);
@@ -180,6 +194,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox txtNumDoc;
         private System.Windows.Forms.Label lblNumDoc;
+        private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnSearch;
     }
 }

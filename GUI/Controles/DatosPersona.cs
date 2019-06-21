@@ -14,26 +14,17 @@ namespace Sistema_Bancario.Controles
     public partial class DatosPersona : UserControl
     {
         public bool DatosValidos { get; set; }
-        private Regex regex = new Regex(@"^[0-9]*$");
+
         public DatosPersona()
         {
-            
+
             InitializeComponent();
-            Clear();
             gbDatos.Size = new Size(369, 89);
-        }
-
-        private void DatosPersona_Load(object sender, EventArgs e)
-        {
-
-        }
-        private void Mostrar()
-        {
         }
 
         private void txtNumDoc_TextChanged(object sender, EventArgs e)
         {
-            
+            Regex regex = new Regex(@"^[0-9]*$");
             MatchCollection matches = regex.Matches(txtNumDoc.Text);
 
             if (matches.Count > 0)
@@ -68,20 +59,24 @@ namespace Sistema_Bancario.Controles
                     gbDatos.Size = new Size(369, 89);
                 }
             }
-            
+            else
+                txtNumDoc.Clear();
         }
 
-        private void Clear()
+        private void txtNumDoc_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
         {
             foreach (Control txtbox in this.gbDatos.Controls.OfType<TextBox>().ToList())
             {
                 txtbox.Text = string.Empty;
             }
-        }
-
-        private void txtNumDoc_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
         }
     }
 }
