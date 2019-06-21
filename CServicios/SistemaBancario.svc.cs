@@ -313,12 +313,12 @@ namespace ServiciosBancarios
         #endregion
 
         #region [ Horarios Atencion ]
-        public bool HorariosAtencion_Crear(HorariosAtencionModel aHorariosAtencion)
+        public bool HorariosAtencion_Crear(Horarios_AtencionModel aHorariosAtencion)
         {
             return BLHorariosAtencion.Crear(aHorariosAtencion);
         }
 
-        public bool HorariosAtencion_Editar(HorariosAtencionModel aHorariosAtencion)
+        public bool HorariosAtencion_Editar(Horarios_AtencionModel aHorariosAtencion)
         {
             return BLHorariosAtencion.Editar(aHorariosAtencion);
         }
@@ -328,12 +328,12 @@ namespace ServiciosBancarios
             return BLHorariosAtencion.Eliminar(aID_HorariosAtencion);
         }
 
-        public HorariosAtencionModel HorariosAtencion_ObtenerUno(int aID_HorariosAtencion)
+        public Horarios_AtencionModel HorariosAtencion_ObtenerUno(int aID_HorariosAtencion)
         {
             return BLHorariosAtencion.ObtenerUno(aID_HorariosAtencion);
         }
 
-        public List<HorariosAtencionModel> HorariosAtencion_ObtenerTodos()
+        public List<Horarios_AtencionModel> HorariosAtencion_ObtenerTodos()
         {
             return BLHorariosAtencion.ObtenerTodos();
         }

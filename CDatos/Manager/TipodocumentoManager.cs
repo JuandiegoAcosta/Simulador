@@ -6,7 +6,7 @@ using Modelos.Modelos;
 
 namespace CDatos.Manager
 {
-    public class TipoDocumentoManager
+    public class ManagerTipoDocumentoModel
     {
         #region Methods
         /// <summary>

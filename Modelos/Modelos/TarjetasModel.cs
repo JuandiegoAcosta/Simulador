@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Modelos.Modelos
 {
-    public class TarjetaModel
+    public class TarjetasModel
     {
 
         #region Properties

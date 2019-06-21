@@ -9,17 +9,15 @@ using Modelos.Modelos;
 
 namespace CDatos.Manager
 {
-    public class TipoMonedaManager
+    public class ManagerTipoCambioManager
     {
-        ///Cambiar el modelo de Tipo de Cambio por el modelo de tipo de Moneda
-
         #region Methods
         /// <summary>
         /// Saves a record to the TipoCambioModel table.
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>		
-        public bool Insert(TipoMonedaModel aTipoCambioModel)
+        public bool Insert(TipoCambioModel aTipoCambioModel)
         {
             try
             {

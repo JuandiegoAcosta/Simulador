@@ -43,5 +43,11 @@ namespace Sistema_Bancario.Plataforma
         {
 
         }
+
+        private void GenerarCronograma()
+        {
+
+        }
+
     }
 }

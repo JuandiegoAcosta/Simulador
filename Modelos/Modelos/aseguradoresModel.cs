@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Modelos.Modelos
 {
-    public class AseguradoraModel
+    public class AseguradorasModel
     {
+
         #region Properties
 
         /// <summary>

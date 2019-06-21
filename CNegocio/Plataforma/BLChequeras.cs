@@ -14,13 +14,13 @@ namespace CNegocio.Plataforma
 
         #region Methods
 
-        public bool Ingresar(ChequeraModel aChequerasModel)
+        public bool Ingresar(ChequerasModel aChequerasModel)
         {
             return this.chequerasManager.Insert(aChequerasModel);
         }
 
 
-        public bool Actualizar(ChequeraModel aChequerasModel)
+        public bool Actualizar(ChequerasModel aChequerasModel)
         {
             return this.chequerasManager.Update(aChequerasModel);
         }
@@ -33,7 +33,7 @@ namespace CNegocio.Plataforma
         }
 
 
-        public ChequeraModel obtenerCheque(int aNumero)
+        public ChequerasModel obtenerCheque(int aNumero)
         {
             return this.chequerasManager.GetChequerasModel(aNumero);
         }
@@ -42,7 +42,7 @@ namespace CNegocio.Plataforma
         /// <summary>
         /// Selects all the objects of ChequesModel table.
         /// </summary>
-        public List<ChequeraModel> obtenerTodosCheques()
+        public List<ChequerasModel> obtenerTodosCheques()
         {
             return this.chequerasManager.ChequerasModelSelectAll();
         }

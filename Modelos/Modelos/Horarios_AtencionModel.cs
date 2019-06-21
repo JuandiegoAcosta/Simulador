@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Modelos.Modelos
 {
-    public class HorariosAtencionModel
+    public class Horarios_AtencionModel
     {
 
         #region Properties

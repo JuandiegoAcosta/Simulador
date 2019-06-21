@@ -10,11 +10,11 @@ namespace CNegocio.Backend
 {
     public class SucursalMethods
     {
-        private SucursalManager ADSucursalManager;
+        private ManagerSucursalModel ADSucursalManager;
 
         public SucursalMethods()
         {
-            ADSucursalManager = new SucursalManager();
+            ADSucursalManager = new ManagerSucursalModel();
         }
         public bool Crear(SucursalModel aSucursal)
         {

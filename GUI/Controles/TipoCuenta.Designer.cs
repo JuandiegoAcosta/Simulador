@@ -38,7 +38,7 @@
             // RBAhorros
             // 
             this.RBAhorros.AutoSize = true;
-            this.RBAhorros.Location = new System.Drawing.Point(9, 22);
+            this.RBAhorros.Location = new System.Drawing.Point(11, 22);
             this.RBAhorros.Margin = new System.Windows.Forms.Padding(2);
             this.RBAhorros.Name = "RBAhorros";
             this.RBAhorros.Size = new System.Drawing.Size(61, 17);
@@ -50,7 +50,7 @@
             // RBCredito
             // 
             this.RBCredito.AutoSize = true;
-            this.RBCredito.Location = new System.Drawing.Point(73, 22);
+            this.RBCredito.Location = new System.Drawing.Point(92, 22);
             this.RBCredito.Margin = new System.Windows.Forms.Padding(2);
             this.RBCredito.Name = "RBCredito";
             this.RBCredito.Size = new System.Drawing.Size(58, 17);
@@ -89,6 +89,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "TipoCuenta";
             this.Size = new System.Drawing.Size(168, 84);
+            this.Load += new System.EventHandler(this.TipoCuenta_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

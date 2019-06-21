@@ -9,7 +9,7 @@ using Modelos.Modelos;
 
 namespace CDatos.Manager
 {
-    public class ControlErroresManager
+    public class ManagerControlErroresModel
     {
         #region Methods
         /// <summary>

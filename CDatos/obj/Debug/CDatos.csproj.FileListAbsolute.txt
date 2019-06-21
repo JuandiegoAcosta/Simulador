@@ -27,12 +27,3 @@ C:\Users\kat\Source\Repos\JuandiegoAcosta\Simulador\CDatos\obj\Debug\CDatos.cspr
 C:\Users\kat\Source\Repos\JuandiegoAcosta\Simulador\CDatos\obj\Debug\CDatos.csproj.CopyComplete
 C:\Users\kat\Source\Repos\JuandiegoAcosta\Simulador\CDatos\obj\Debug\CDatos.dll
 C:\Users\kat\Source\Repos\JuandiegoAcosta\Simulador\CDatos\obj\Debug\CDatos.pdb
-D:\Simulador Bancario\Simulador\CDatos\bin\Debug\CDatos.dll
-D:\Simulador Bancario\Simulador\CDatos\bin\Debug\CDatos.pdb
-D:\Simulador Bancario\Simulador\CDatos\bin\Debug\Modelos.dll
-D:\Simulador Bancario\Simulador\CDatos\bin\Debug\Modelos.pdb
-D:\Simulador Bancario\Simulador\CDatos\obj\Debug\CDatos.csprojAssemblyReference.cache
-D:\Simulador Bancario\Simulador\CDatos\obj\Debug\CDatos.csproj.CoreCompileInputs.cache
-D:\Simulador Bancario\Simulador\CDatos\obj\Debug\CDatos.csproj.CopyComplete
-D:\Simulador Bancario\Simulador\CDatos\obj\Debug\CDatos.dll
-D:\Simulador Bancario\Simulador\CDatos\obj\Debug\CDatos.pdb

@@ -7,11 +7,11 @@ namespace CNegocio.Ventanilla
 {
     public class VentanillaMethods
     {
-        private VentanillaManager ADVentanillaManager;
+        private ManagerVentanillaModel ADVentanillaManager;
 
         public VentanillaMethods()
         {
-            ADVentanillaManager = new VentanillaManager();
+            ADVentanillaManager = new ManagerVentanillaModel();
         }
         public bool Crear(VentanillaModel aVentanilla)
         {

@@ -6,7 +6,7 @@ using Modelos.Modelos;
 
 namespace CDatos.Manager
 {
-    public class HorariosAtencionManager
+    public class ManagerHorarios_AtencionModel
     {
         #region Methods
         /// <summary>
@@ -14,7 +14,7 @@ namespace CDatos.Manager
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>		
-        public bool Insert(HorariosAtencionModel aHorarios_AtencionModel)
+        public bool Insert(Horarios_AtencionModel aHorarios_AtencionModel)
         {
             try
             {
@@ -64,7 +64,7 @@ namespace CDatos.Manager
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>
-        public bool Update(HorariosAtencionModel aHorarios_AtencionModel)
+        public bool Update(Horarios_AtencionModel aHorarios_AtencionModel)
         {
             try
             {
@@ -160,9 +160,9 @@ namespace CDatos.Manager
         /// <summary>
         /// Selects the Single object of Horarios_AtencionModel table.
         /// </summary>
-        public HorariosAtencionModel GetHorarios_AtencionModel(int aId)
+        public Horarios_AtencionModel GetHorarios_AtencionModel(int aId)
         {
-            HorariosAtencionModel Horarios_AtencionModel = null;
+            Horarios_AtencionModel Horarios_AtencionModel = null;
 
             try
             {
@@ -196,7 +196,7 @@ namespace CDatos.Manager
                             string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
                             string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
 
-                            Horarios_AtencionModel = new HorariosAtencionModel
+                            Horarios_AtencionModel = new Horarios_AtencionModel
                             {
                                 Id = Id,
                                 Fecha = Fecha,
@@ -224,10 +224,10 @@ namespace CDatos.Manager
         /// <summary>
         /// Selects all the objects of Horarios_AtencionModel table.
         /// </summary>
-        public List<HorariosAtencionModel> Horarios_AtencionModelSelectAll()
+        public List<Horarios_AtencionModel> Horarios_AtencionModelSelectAll()
         {
 
-            List<HorariosAtencionModel> Horarios_AtencionModellist = new List<HorariosAtencionModel>();
+            List<Horarios_AtencionModel> Horarios_AtencionModellist = new List<Horarios_AtencionModel>();
 
             try
             {
@@ -258,7 +258,7 @@ namespace CDatos.Manager
                             string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
                             string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
 
-                            Horarios_AtencionModellist.Add(new HorariosAtencionModel
+                            Horarios_AtencionModellist.Add(new Horarios_AtencionModel
                             {
                                 Id = Id,
                                 Fecha = Fecha,
@@ -286,10 +286,10 @@ namespace CDatos.Manager
         /// <summary>
         /// Selects the Multiple objects of Horarios_AtencionModel table by a given criteria.
         /// </summary>
-        public List<HorariosAtencionModel> Horarios_AtencionModelSelectbyUNKNOW(string aValue)
+        public List<Horarios_AtencionModel> Horarios_AtencionModelSelectbyUNKNOW(string aValue)
         {
 
-            List<HorariosAtencionModel> Horarios_AtencionModellist = new List<HorariosAtencionModel>();
+            List<Horarios_AtencionModel> Horarios_AtencionModellist = new List<Horarios_AtencionModel>();
 
             try
             {
@@ -321,7 +321,7 @@ namespace CDatos.Manager
                             string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
                             string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
 
-                            Horarios_AtencionModellist.Add(new HorariosAtencionModel
+                            Horarios_AtencionModellist.Add(new Horarios_AtencionModel
                             {
                                 Id = Id,
                                 Fecha = Fecha,

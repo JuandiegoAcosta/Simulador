@@ -10,11 +10,11 @@ namespace CNegocio.Backend
 {
     public class TipoDocumentoMethods
     {
-        private TipoDocumentoManager ADTipoDocumentosManager;
+        private ManagerTipoDocumentoModel ADTipoDocumentosManager;
 
         public TipoDocumentoMethods()
         {
-            ADTipoDocumentosManager = new TipoDocumentoManager();
+            ADTipoDocumentosManager = new ManagerTipoDocumentoModel();
         }
         public bool Crear(TipoDocumentoModel aTipoDocumento)
         {

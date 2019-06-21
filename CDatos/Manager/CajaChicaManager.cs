@@ -9,7 +9,7 @@ using Modelos.Modelos;
 
 namespace CDatos.Manager
 {
-    public class CajaChicaManager
+    public class ManagerCajaChicaModel
     {
         #region Methods
         /// <summary>
@@ -17,7 +17,7 @@ namespace CDatos.Manager
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>		
-        public bool Insert(CajaChicaModel aCaja_ChicaModel)
+        public bool Insert(Caja_ChicaModel aCaja_ChicaModel)
         {
             try
             {
@@ -73,7 +73,7 @@ namespace CDatos.Manager
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>
-        public bool Update(CajaChicaModel aCaja_ChicaModel)
+        public bool Update(Caja_ChicaModel aCaja_ChicaModel)
         {
             try
             {
@@ -137,10 +137,10 @@ namespace CDatos.Manager
         /// <summary>
         /// Selects all the objects of Caja_ChicaModel table.
         /// </summary>
-        public List<CajaChicaModel> Caja_ChicaModelSelectAll()
+        public List<Caja_ChicaModel> Caja_ChicaModelSelectAll()
         {
 
-            List<CajaChicaModel> Caja_ChicaModellist = new List<CajaChicaModel>();
+            List<Caja_ChicaModel> Caja_ChicaModellist = new List<Caja_ChicaModel>();
 
             try
             {
@@ -173,7 +173,7 @@ namespace CDatos.Manager
                             string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
                             DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
 
-                            Caja_ChicaModellist.Add(new CajaChicaModel
+                            Caja_ChicaModellist.Add(new Caja_ChicaModel
                             {
                                 Id = ID,
                                 Tipo = Tipo,
@@ -204,10 +204,10 @@ namespace CDatos.Manager
         /// <summary>
         /// Selects the Multiple objects of Caja_ChicaModel table by a given criteria.
         /// </summary>
-        public List<CajaChicaModel> Caja_ChicaModelSelectbyUNKNOW(string aValue)
+        public List<Caja_ChicaModel> Caja_ChicaModelSelectbyUNKNOW(string aValue)
         {
 
-            List<CajaChicaModel> Caja_ChicaModellist = new List<CajaChicaModel>();
+            List<Caja_ChicaModel> Caja_ChicaModellist = new List<Caja_ChicaModel>();
 
             try
             {
@@ -242,7 +242,7 @@ namespace CDatos.Manager
                             string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
                             DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
 
-                            Caja_ChicaModellist.Add(new CajaChicaModel
+                            Caja_ChicaModellist.Add(new Caja_ChicaModel
                             {
                                 Id = ID,
                                 Tipo = Tipo,

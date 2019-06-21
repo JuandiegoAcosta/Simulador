@@ -16,5 +16,10 @@ namespace Sistema_Bancario.Controles
         {
             InitializeComponent();
         }
+
+        private void TipoCuenta_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

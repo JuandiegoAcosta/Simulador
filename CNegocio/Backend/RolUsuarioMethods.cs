@@ -10,11 +10,11 @@ namespace CNegocio.Backend
 {
     public class RolUsuarioMethods
     {
-        private RolUsuarioManager ADRolUsuarioManager;
+        private ManagerRolUsuarioModel ADRolUsuarioManager;
 
         public RolUsuarioMethods()
         {
-            ADRolUsuarioManager = new RolUsuarioManager();
+            ADRolUsuarioManager = new ManagerRolUsuarioModel();
         }
         public bool Crear(RolUsuarioModel aRolUsuario)
         {

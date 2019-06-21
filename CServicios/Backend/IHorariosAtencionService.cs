@@ -11,18 +11,18 @@ namespace ServiciosBancarios.Backend
     interface IHorariosAtencionService
     {
         [OperationContract]
-        bool HorariosAtencion_Crear(HorariosAtencionModel aHorariosAtencion);
+        bool HorariosAtencion_Crear(Horarios_AtencionModel aHorariosAtencion);
 
         [OperationContract]
-        bool HorariosAtencion_Editar(HorariosAtencionModel aHorariosAtencion);
+        bool HorariosAtencion_Editar(Horarios_AtencionModel aHorariosAtencion);
 
         [OperationContract]
         bool HorariosAtencion_Eliminar(int aID_HorariosAtencion);
 
         [OperationContract]
-        HorariosAtencionModel HorariosAtencion_ObtenerUno(int aID_HorariosAtencion);
+        Horarios_AtencionModel HorariosAtencion_ObtenerUno(int aID_HorariosAtencion);
 
         [OperationContract]
-        List<HorariosAtencionModel> HorariosAtencion_ObtenerTodos();
+        List<Horarios_AtencionModel> HorariosAtencion_ObtenerTodos();
     }
 }

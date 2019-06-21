@@ -28,69 +28,77 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.gbDatos = new System.Windows.Forms.GroupBox();
+            this.btnClean = new System.Windows.Forms.Button();
+            this.txtNumDoc = new System.Windows.Forms.TextBox();
+            this.lblNumDoc = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.txtApMaterno = new System.Windows.Forms.TextBox();
             this.txtApPaterno = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.nro_Documento1 = new Sistema_Bancario.Nro_Documento();
-            this.groupBox1.SuspendLayout();
+            this.lblApMaterno = new System.Windows.Forms.Label();
+            this.lblApPaterno = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.gbDatos.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // gbDatos
             // 
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.txtNombre);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.txtApMaterno);
-            this.groupBox1.Controls.Add(this.txtApPaterno);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.nro_Documento1);
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(369, 234);
-            this.groupBox1.TabIndex = 9;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Datos";
+            this.gbDatos.Controls.Add(this.btnClean);
+            this.gbDatos.Controls.Add(this.txtNumDoc);
+            this.gbDatos.Controls.Add(this.lblNumDoc);
+            this.gbDatos.Controls.Add(this.txtNombre);
+            this.gbDatos.Controls.Add(this.textBox1);
+            this.gbDatos.Controls.Add(this.txtApMaterno);
+            this.gbDatos.Controls.Add(this.txtApPaterno);
+            this.gbDatos.Controls.Add(this.lblApMaterno);
+            this.gbDatos.Controls.Add(this.lblApPaterno);
+            this.gbDatos.Controls.Add(this.lblNombre);
+            this.gbDatos.Location = new System.Drawing.Point(3, 3);
+            this.gbDatos.Name = "gbDatos";
+            this.gbDatos.Size = new System.Drawing.Size(369, 190);
+            this.gbDatos.TabIndex = 9;
+            this.gbDatos.TabStop = false;
+            this.gbDatos.Text = "Datos";
             // 
-            // label6
+            // btnClean
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label6.Location = new System.Drawing.Point(100, 32);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(32, 16);
-            this.label6.TabIndex = 20;
-            this.label6.Text = "------";
+            this.btnClean.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnClean.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClean.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClean.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnClean.Location = new System.Drawing.Point(275, 26);
+            this.btnClean.Name = "btnClean";
+            this.btnClean.Size = new System.Drawing.Size(68, 35);
+            this.btnClean.TabIndex = 23;
+            this.btnClean.Text = "Limpiar";
+            this.btnClean.UseVisualStyleBackColor = false;
+            this.btnClean.Click += new System.EventHandler(this.btnClean_Click);
             // 
-            // label5
+            // txtNumDoc
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(15, 35);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 13);
-            this.label5.TabIndex = 19;
-            this.label5.Text = "Nro Cuenta";
+            this.txtNumDoc.Location = new System.Drawing.Point(103, 34);
+            this.txtNumDoc.Name = "txtNumDoc";
+            this.txtNumDoc.Size = new System.Drawing.Size(166, 20);
+            this.txtNumDoc.TabIndex = 22;
+            this.txtNumDoc.TextChanged += new System.EventHandler(this.txtNumDoc_TextChanged);
+            // 
+            // lblNumDoc
+            // 
+            this.lblNumDoc.AutoSize = true;
+            this.lblNumDoc.Location = new System.Drawing.Point(15, 37);
+            this.lblNumDoc.Name = "lblNumDoc";
+            this.lblNumDoc.Size = new System.Drawing.Size(82, 13);
+            this.lblNumDoc.TabIndex = 21;
+            this.lblNumDoc.Text = "Nro Documento";
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(103, 200);
+            this.txtNombre.Location = new System.Drawing.Point(103, 159);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(240, 20);
             this.txtNombre.TabIndex = 18;
+            this.txtNombre.Visible = false;
             // 
             // textBox1
             // 
@@ -101,100 +109,76 @@
             // 
             // txtApMaterno
             // 
-            this.txtApMaterno.Location = new System.Drawing.Point(103, 170);
+            this.txtApMaterno.Location = new System.Drawing.Point(103, 129);
             this.txtApMaterno.Name = "txtApMaterno";
             this.txtApMaterno.Size = new System.Drawing.Size(240, 20);
             this.txtApMaterno.TabIndex = 16;
+            this.txtApMaterno.Visible = false;
             // 
             // txtApPaterno
             // 
-            this.txtApPaterno.Location = new System.Drawing.Point(103, 140);
+            this.txtApPaterno.Location = new System.Drawing.Point(103, 99);
             this.txtApPaterno.Name = "txtApPaterno";
             this.txtApPaterno.Size = new System.Drawing.Size(240, 20);
             this.txtApPaterno.TabIndex = 15;
+            this.txtApPaterno.Visible = false;
             // 
-            // label4
+            // lblApMaterno
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 172);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 13);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "Apellido Materno";
+            this.lblApMaterno.AutoSize = true;
+            this.lblApMaterno.Location = new System.Drawing.Point(15, 131);
+            this.lblApMaterno.Name = "lblApMaterno";
+            this.lblApMaterno.Size = new System.Drawing.Size(86, 13);
+            this.lblApMaterno.TabIndex = 14;
+            this.lblApMaterno.Text = "Apellido Materno";
+            this.lblApMaterno.Visible = false;
             // 
-            // label3
+            // lblApPaterno
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 143);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 13);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Apellido Paterno";
+            this.lblApPaterno.AutoSize = true;
+            this.lblApPaterno.Location = new System.Drawing.Point(15, 102);
+            this.lblApPaterno.Name = "lblApPaterno";
+            this.lblApPaterno.Size = new System.Drawing.Size(84, 13);
+            this.lblApPaterno.TabIndex = 13;
+            this.lblApPaterno.Text = "Apellido Paterno";
+            this.lblApPaterno.Visible = false;
             // 
-            // label2
+            // lblNombre
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 200);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 13);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Nombres";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "DNI",
-            "PASAPORTE"});
-            this.comboBox1.Location = new System.Drawing.Point(103, 61);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(100, 21);
-            this.comboBox1.TabIndex = 11;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 65);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 13);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Tipo Documento";
-            // 
-            // nro_Documento1
-            // 
-            this.nro_Documento1.Location = new System.Drawing.Point(12, 94);
-            this.nro_Documento1.Margin = new System.Windows.Forms.Padding(2);
-            this.nro_Documento1.Name = "nro_Documento1";
-            this.nro_Documento1.Size = new System.Drawing.Size(339, 27);
-            this.nro_Documento1.TabIndex = 9;
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(15, 159);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(49, 13);
+            this.lblNombre.TabIndex = 12;
+            this.lblNombre.Text = "Nombres";
+            this.lblNombre.Visible = false;
             // 
             // DatosPersona
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gbDatos);
             this.Name = "DatosPersona";
-            this.Size = new System.Drawing.Size(376, 241);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.Size = new System.Drawing.Size(376, 207);
+            this.Load += new System.EventHandler(this.DatosPersona_Load);
+            this.gbDatos.ResumeLayout(false);
+            this.gbDatos.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbDatos;
         private System.Windows.Forms.TextBox txtApPaterno;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label1;
-        private Nro_Documento nro_Documento1;
+        private System.Windows.Forms.Label lblApMaterno;
+        private System.Windows.Forms.Label lblApPaterno;
+        private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.TextBox txtApMaterno;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtNumDoc;
+        private System.Windows.Forms.Label lblNumDoc;
+        private System.Windows.Forms.Button btnClean;
     }
 }

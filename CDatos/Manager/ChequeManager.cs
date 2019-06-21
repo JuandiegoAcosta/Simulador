@@ -9,7 +9,7 @@ using Modelos.Modelos;
 
 namespace CDatos.Manager
 {
-    public class ChequeManager
+    public class ManagerChequesModel
     {
         #region Methods
         /// <summary>
@@ -17,7 +17,7 @@ namespace CDatos.Manager
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>		
-        public bool Insert(ChequeModel aChequesModel)
+        public bool Insert(ChequesModel aChequesModel)
         {
             try
             {
@@ -73,7 +73,7 @@ namespace CDatos.Manager
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>
-        public bool Update(ChequeModel aChequesModel)
+        public bool Update(ChequesModel aChequesModel)
         {
             try
             {
@@ -172,9 +172,9 @@ namespace CDatos.Manager
         /// <summary>
         /// Selects the Single object of ChequesModel table.
         /// </summary>
-        public ChequeModel GetChequesModel(int aNumero)
+        public ChequesModel GetChequesModel(int aNumero)
         {
-            ChequeModel ChequesModel = null;
+            ChequesModel ChequesModel = null;
 
             try
             {
@@ -210,7 +210,7 @@ namespace CDatos.Manager
                             string USUARIO_CREACION = (string)(reader["USUARIO_CREACION"]);
                             string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
 
-                            ChequesModel = new ChequeModel
+                            ChequesModel = new ChequesModel
                             {
                                 Numero = Numero,
                                 Fechaemision = FechaEmision,
@@ -241,10 +241,10 @@ namespace CDatos.Manager
         /// <summary>
         /// Selects all the objects of ChequesModel table.
         /// </summary>
-        public List<ChequeModel> ChequesModelSelectAll()
+        public List<ChequesModel> ChequesModelSelectAll()
         {
 
-            List<ChequeModel> ChequesModellist = new List<ChequeModel>();
+            List<ChequesModel> ChequesModellist = new List<ChequesModel>();
 
             try
             {
@@ -277,7 +277,7 @@ namespace CDatos.Manager
                             string USUARIO_CREACION = (string)(reader["USUARIO_CREACION"]);
                             string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
 
-                            ChequesModellist.Add(new ChequeModel
+                            ChequesModellist.Add(new ChequesModel
                             {
                                 Numero = Numero,
                                 Fechaemision = FechaEmision,
@@ -308,10 +308,10 @@ namespace CDatos.Manager
         /// <summary>
         /// Selects the Multiple objects of ChequesModel table by a given criteria.
         /// </summary>
-        public List<ChequeModel> ChequesModelSelectbyUNKNOW(string aValue)
+        public List<ChequesModel> ChequesModelSelectbyUNKNOW(string aValue)
         {
 
-            List<ChequeModel> ChequesModellist = new List<ChequeModel>();
+            List<ChequesModel> ChequesModellist = new List<ChequesModel>();
 
             try
             {
@@ -346,7 +346,7 @@ namespace CDatos.Manager
                             string USUARIO_CREACION = (string)(reader["USUARIO_CREACION"]);
                             string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
 
-                            ChequesModellist.Add(new ChequeModel
+                            ChequesModellist.Add(new ChequesModel
                             {
                                 Numero = Numero,
                                 Fechaemision = FechaEmision,

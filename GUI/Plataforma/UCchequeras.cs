@@ -71,7 +71,7 @@ namespace Sistema_Bancario.Plataforma
             //quitar numero
             int numero = Convert.ToInt32(this.txtNumero.Text);
 
-            ChequeraModel chequerasModel = new ChequeraModel()
+            ChequerasModel chequerasModel = new ChequerasModel()
             {
                 Fecharegistro = fecharegistro,
                 Estado = estado,

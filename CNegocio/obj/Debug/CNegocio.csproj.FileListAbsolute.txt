@@ -37,14 +37,3 @@ C:\Users\kat\Source\Repos\JuandiegoAcosta\Simulador\CNegocio\obj\Debug\CNegocio.
 C:\Users\kat\Source\Repos\JuandiegoAcosta\Simulador\CNegocio\obj\Debug\CNegocio.csproj.CopyComplete
 C:\Users\kat\Source\Repos\JuandiegoAcosta\Simulador\CNegocio\obj\Debug\CNegocio.dll
 C:\Users\kat\Source\Repos\JuandiegoAcosta\Simulador\CNegocio\obj\Debug\CNegocio.pdb
-D:\Simulador Bancario\Simulador\CNegocio\bin\Debug\CNegocio.dll
-D:\Simulador Bancario\Simulador\CNegocio\bin\Debug\CNegocio.pdb
-D:\Simulador Bancario\Simulador\CNegocio\bin\Debug\CDatos.dll
-D:\Simulador Bancario\Simulador\CNegocio\bin\Debug\Modelos.dll
-D:\Simulador Bancario\Simulador\CNegocio\bin\Debug\CDatos.pdb
-D:\Simulador Bancario\Simulador\CNegocio\bin\Debug\Modelos.pdb
-D:\Simulador Bancario\Simulador\CNegocio\obj\Debug\CNegocio.csprojAssemblyReference.cache
-D:\Simulador Bancario\Simulador\CNegocio\obj\Debug\CNegocio.csproj.CoreCompileInputs.cache
-D:\Simulador Bancario\Simulador\CNegocio\obj\Debug\CNegocio.csproj.CopyComplete
-D:\Simulador Bancario\Simulador\CNegocio\obj\Debug\CNegocio.dll
-D:\Simulador Bancario\Simulador\CNegocio\obj\Debug\CNegocio.pdb

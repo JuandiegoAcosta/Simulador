@@ -10,11 +10,11 @@ namespace CNegocio.Ventanilla
 {
     public class PagoServicioMethods
     {
-        private PagoServicioManager ADPagoServicios;
+        private ManagerPagoServiciosModel ADPagoServicios;
 
         public PagoServicioMethods()
         {
-            ADPagoServicios = new PagoServicioManager();
+            ADPagoServicios = new ManagerPagoServiciosModel();
         }
         public bool Crear(PagoServiciosModel aPagoServicios)
         {

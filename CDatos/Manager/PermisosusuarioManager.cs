@@ -6,7 +6,7 @@ using Modelos.Modelos;
 
 namespace CDatos.Manager
 {
-    public class PermisosUsuarioManager
+    public class ManagerPermisosUsuarioModel
     {
         #region Methods
         /// <summary>

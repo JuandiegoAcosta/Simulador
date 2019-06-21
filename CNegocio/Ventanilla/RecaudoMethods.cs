@@ -10,11 +10,11 @@ namespace CNegocio.Ventanilla
 {
     public class RecaudoMethods
     {
-        private RecaudoManager ADRecaudosManager;
+        private ManagerRecaudosModel ADRecaudosManager;
 
         public RecaudoMethods()
         {
-            ADRecaudosManager = new RecaudoManager();
+            ADRecaudosManager = new ManagerRecaudosModel();
         }
         public bool Crear(RecaudosModel aRecaudos)
         {

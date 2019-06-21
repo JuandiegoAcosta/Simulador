@@ -6,33 +6,21 @@ using System.Threading.Tasks;
 
 namespace Modelos.Modelos
 {
-    public class ChequeModel
+    public class Caja_ChicaModel
     {
 
         #region Properties
 
         /// <summary>
-        /// Gets or sets the Numero value.
+        /// Gets or sets the Id value.
         /// </summary>
-        public int Numero
+        public int Id
         { get; set; }
 
         /// <summary>
-        /// Gets or sets the Fechaemision value.
+        /// Gets or sets the Tipo value.
         /// </summary>
-        public DateTime Fechaemision
-        { get; set; }
-
-        /// <summary>
-        /// Gets or sets the Fechacobro value.
-        /// </summary>
-        public DateTime? Fechacobro
-        { get; set; }
-
-        /// <summary>
-        /// Gets or sets the Destinatario value.
-        /// </summary>
-        public string Destinatario
+        public string Tipo
         { get; set; }
 
         /// <summary>
@@ -42,15 +30,33 @@ namespace Modelos.Modelos
         { get; set; }
 
         /// <summary>
-        /// Gets or sets the Idchequera value.
+        /// Gets or sets the Id_persona value.
         /// </summary>
-        public int Idchequera
+        public int Id_persona
         { get; set; }
 
         /// <summary>
-        /// Gets or sets the Estado value.
+        /// Gets or sets the Hora value.
         /// </summary>
-        public string Estado
+        public TimeSpan Hora
+        { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Fecha value.
+        /// </summary>
+        public DateTime Fecha
+        { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Id_ventanilla value.
+        /// </summary>
+        public int Id_ventanilla
+        { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Usuario_creador value.
+        /// </summary>
+        public string Usuario_creador
         { get; set; }
 
         /// <summary>
@@ -60,21 +66,15 @@ namespace Modelos.Modelos
         { get; set; }
 
         /// <summary>
-        /// Gets or sets the Fecha_modificacion value.
-        /// </summary>
-        public DateTime? Fecha_modificacion
-        { get; set; }
-
-        /// <summary>
-        /// Gets or sets the Usuario_creacion value.
-        /// </summary>
-        public string Usuario_creacion
-        { get; set; }
-
-        /// <summary>
         /// Gets or sets the Usuario_modificador value.
         /// </summary>
         public string Usuario_modificador
+        { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Fecha_modificacion value.
+        /// </summary>
+        public DateTime? Fecha_modificacion
         { get; set; }
 
 

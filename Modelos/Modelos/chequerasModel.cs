@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Modelos.Modelos
 {
-    public class ChequeraModel
+    public class ChequerasModel
     {
 
         #region Properties

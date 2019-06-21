@@ -9,7 +9,7 @@ using Modelos.Modelos;
 
 namespace CDatos.Manager
 {
-    public class CuentaManager
+    public class ManagerCuentasModel
     {
         #region Methods
         /// <summary>

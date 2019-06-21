@@ -10,11 +10,11 @@ namespace CNegocio.Backend
 {
     public class TurnosMethods
     {
-        private TurnosManager ADTurnosManager;
+        private ManagerTurnosModel ADTurnosManager;
 
         public TurnosMethods()
         {
-            ADTurnosManager = new TurnosManager();
+            ADTurnosManager = new ManagerTurnosModel();
         }
         public bool Crear(TurnosModel aTurnos)
         {
