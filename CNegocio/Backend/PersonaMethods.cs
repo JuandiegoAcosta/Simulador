@@ -51,7 +51,7 @@ namespace CNegocio.Backend
 
         public PersonaModel ObtenerUno(int aID_Persona)
         {
-            return ADPersonaManager.GetPersonaModel(aID_Persona);
+            return ADPersonaManager.GetPersonaModel(aID_Persona,123);//corregir
         }
 
         public List<PersonaModel> ObtenerTodos()

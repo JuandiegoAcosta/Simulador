@@ -20,5 +20,10 @@ namespace CNegocio.Ventanilla
         {
             return cuotasPrestamosManager.CuotasPrestamosSelect(avalue);
         }
+        //CuotasSelect
+        public List<object> CuotasSelect(int avalue)
+        {
+            return cuotasPrestamosManager.CuotasSelect(avalue);
+        }
     }
 }

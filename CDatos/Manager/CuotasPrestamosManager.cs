@@ -36,22 +36,26 @@ namespace CDatos.Manager
                         while (reader.Read())
                         {
 
-                            string Nro_cuenta = (string)(reader["Nrocuenta"]);
-                            decimal SaldoContable = (decimal)(reader["SaldoContable"]);
-                            decimal SaldoDisponible = (decimal)(reader["SaldoDisponible"]);
-                            string TipoCuenta = (string)(reader["TipoCuenta"]);
-                            string Moneda = (string)(reader["Moneda"]);
-      
+                        //   int Nro_cuenta = (int)(reader[0]);
+                        //   DateTime SaldoContable = (DateTime)(reader[1]);
+                        //   decimal SaldoDisponible = (decimal)(reader["SaldoDisponible"]);
+                        //  string TipoCuenta = (string)(reader["TipoCuenta"]);
+                        //  string Moneda = (string)(reader["Moneda"]);
 
-                            Prestamos.Add(new
+                        /*ID	FechaPrestamo	MontoPrestamo	Moneda	PlazoMeses	Interes	Descripcion	Interes_Moratorio	DiaPago
+*/
+                        Prestamos.Add(new
                             {
-                                Nro_cuenta,
-                                SaldoContable,
-                                SaldoDisponible,
-                                TipoCuenta,
-                                Moneda
-
-                            });
+                            ID = reader[0],
+                            FechaPrestamo = reader[1],
+                            MontoPrestamo = reader[2],
+                            Moneda = reader[3],
+                            PlazoMeses = reader[4],
+                            Interes = reader[5],
+                            Descripcion = reader[6],
+                            Interes_Moratorio = reader[7],
+                            DiaPago = reader[8]
+                        });
                         }
                     }
                 }
@@ -59,6 +63,45 @@ namespace CDatos.Manager
                 return Prestamos;
             
            
+        }
+        public List<object> CuotasSelect(int aValue)
+        {
+
+            List<object> cuotas = new List<object>();
+
+
+            using (var connection = Util.ConnectionFactory.conexion())
+            {
+                connection.Open();
+
+                SqlCommand command = connection.CreateCommand();
+
+                command.Parameters.AddWithValue("@ID", aValue);
+
+                command.CommandType = CommandType.StoredProcedure;
+
+                command.CommandText = "SelectCuotasID";
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+
+                        cuotas.Add(new
+                        {
+                            Cuota = reader[0],
+                            Monto = reader[1],
+                            Estado = reader[2]
+                        });
+                    }
+                }
+            }
+
+            return cuotas;
+
+
         }
 
     }

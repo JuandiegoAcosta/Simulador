@@ -40,7 +40,30 @@ namespace Sistema_Bancario
         {
             GetCuotasMethods = new CuotasMethods();
             
-            MessageBox.Show(GetCuotasMethods.ObtenerPrestamos(nro_Documento1.TBNroDocumento.Text).ToString());
+       //     MessageBox.Show(GetCuotasMethods.ObtenerPrestamos(nroCuenta1.TBNroCuenta.Text).ToString());
+            var bindingList = new BindingList<object>(GetCuotasMethods.ObtenerPrestamos(nroCuenta1.TBNroCuenta.Text));
+            var source = new BindingSource(bindingList, null);
+            GridPrestamos.DataSource = source;
+           // this.GridPrestamos.DataSource = GetCuotasMethods.ObtenerPrestamos(nroCuenta1.TBNroCuenta.Text);
+            //   this.GridPrestamos.DataSource = new BindingSource(GetCuotasMethods.ObtenerPrestamos(nroCuenta1.TBNroCuenta.Text));
+        }
+
+        private void GridPrestamos_SelectionChanged(object sender, EventArgs e)
+        {
+         //   DataGridViewRow selectedRow = GridPrestamos.Rows[e.];
+          //  GridPrestamos.SelectedRows.
+        }
+
+        private void GridPrestamos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int i = e.RowIndex;
+            DataGridViewRow selectedRow = GridPrestamos.Rows[i];
+            int ID = (int)selectedRow.Cells[0].Value;
+            //CuotasSelect           
+            var bindingList = new BindingList<object>(GetCuotasMethods.CuotasSelect(ID));
+            var source = new BindingSource(bindingList, null);
+            GridCuotas.DataSource = source;
+
         }
     }
 }

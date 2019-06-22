@@ -19,7 +19,7 @@ namespace Sistema_Bancario.Controles
         {
 
             InitializeComponent();
-            gbDatos.Size = new Size(369, 89);
+          //  gbDatos.Size = new Size(369, 89);
         }
 
         private void txtNumDoc_TextChanged(object sender, EventArgs e)

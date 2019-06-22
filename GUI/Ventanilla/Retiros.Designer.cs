@@ -34,6 +34,11 @@
             this.clave1 = new Sistema_Bancario.Controles.Clave();
             this.SuspendLayout();
             // 
+            // proceder1
+            // 
+            this.proceder1.Location = new System.Drawing.Point(8, 216);
+            this.proceder1.Size = new System.Drawing.Size(646, 49);
+            // 
             // monto1
             // 
             this.monto1.Location = new System.Drawing.Point(11, 10);
@@ -63,7 +68,7 @@
             this.clave1.Location = new System.Drawing.Point(11, 124);
             this.clave1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.clave1.Name = "clave1";
-            this.clave1.Size = new System.Drawing.Size(397, 34);
+            this.clave1.Size = new System.Drawing.Size(228, 34);
             this.clave1.TabIndex = 6;
             // 
             // Retiros
@@ -77,6 +82,7 @@
             this.Name = "Retiros";
             this.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Size = new System.Drawing.Size(662, 272);
+            this.Controls.SetChildIndex(this.proceder1, 0);
             this.Controls.SetChildIndex(this.monto1, 0);
             this.Controls.SetChildIndex(this.disponible1, 0);
             this.Controls.SetChildIndex(this.nro_Tarjeta1, 0);

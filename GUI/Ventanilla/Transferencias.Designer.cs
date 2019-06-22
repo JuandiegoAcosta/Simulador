@@ -33,10 +33,15 @@
             this.nroCuenta1 = new Sistema_Bancario.Controles.NroCuenta();
             this.nroCuenta2 = new Sistema_Bancario.Controles.NroCuenta();
             this.SuspendLayout();
-          
+            // 
+            // proceder1
+            // 
+            this.proceder1.Location = new System.Drawing.Point(10, 301);
+            this.proceder1.Size = new System.Drawing.Size(661, 49);
+            // 
             // disponible1
             // 
-            this.disponible1.Location = new System.Drawing.Point(396, 12);
+            this.disponible1.Location = new System.Drawing.Point(376, 12);
             this.disponible1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.disponible1.Name = "disponible1";
             this.disponible1.Size = new System.Drawing.Size(215, 35);
@@ -72,7 +77,7 @@
             this.Controls.Add(this.disponible1);
             this.Name = "Transferencias";
             this.Size = new System.Drawing.Size(681, 360);
-          
+            this.Controls.SetChildIndex(this.proceder1, 0);
             this.Controls.SetChildIndex(this.disponible1, 0);
             this.Controls.SetChildIndex(this.monto1, 0);
             this.Controls.SetChildIndex(this.nroCuenta1, 0);

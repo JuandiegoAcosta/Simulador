@@ -39,7 +39,7 @@
             // proceder1
             // 
             this.proceder1.Location = new System.Drawing.Point(8, 312);
-            this.proceder1.Size = new System.Drawing.Size(664, 49);
+            this.proceder1.Size = new System.Drawing.Size(544, 49);
             // 
             // tipo1
             // 
@@ -62,7 +62,7 @@
             this.tipoMoneda1.Location = new System.Drawing.Point(332, 85);
             this.tipoMoneda1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tipoMoneda1.Name = "tipoMoneda1";
-            this.tipoMoneda1.Size = new System.Drawing.Size(325, 35);
+            this.tipoMoneda1.Size = new System.Drawing.Size(228, 35);
             this.tipoMoneda1.TabIndex = 5;
             // 
             // tipoMoneda2
@@ -70,7 +70,7 @@
             this.tipoMoneda2.Location = new System.Drawing.Point(332, 124);
             this.tipoMoneda2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tipoMoneda2.Name = "tipoMoneda2";
-            this.tipoMoneda2.Size = new System.Drawing.Size(333, 30);
+            this.tipoMoneda2.Size = new System.Drawing.Size(214, 30);
             this.tipoMoneda2.TabIndex = 7;
             // 
             // conversion2
@@ -83,7 +83,7 @@
             // 
             // fecha1
             // 
-            this.fecha1.Location = new System.Drawing.Point(457, 21);
+            this.fecha1.Location = new System.Drawing.Point(332, 21);
             this.fecha1.Name = "fecha1";
             this.fecha1.Size = new System.Drawing.Size(204, 35);
             this.fecha1.TabIndex = 11;
@@ -100,7 +100,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Tipo_de_Cambio";
             this.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.Size = new System.Drawing.Size(680, 368);
+            this.Size = new System.Drawing.Size(560, 368);
             this.Controls.SetChildIndex(this.tipo1, 0);
             this.Controls.SetChildIndex(this.monto1, 0);
             this.Controls.SetChildIndex(this.tipoMoneda1, 0);
