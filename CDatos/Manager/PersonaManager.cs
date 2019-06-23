@@ -408,26 +408,32 @@ namespace CDatos.Manager
 
         public bool ValidarUsuario(string usuario, string password)
         {
-            int acceso = 0;
+            //int acceso = 0;
 
             try
             {
                 using (var connection = Util.ConnectionFactory.conexion())
                 {
                     connection.Open();
-
                     SqlCommand command = connection.CreateCommand();
+
+                    command.CommandText = "sp_ValidaUsuario";
+                    command.CommandType = CommandType.StoredProcedure;
+
 
                     command.Parameters.AddWithValue("@Usuario", usuario);
                     command.Parameters.AddWithValue("@Password", password);
 
-                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@Existe", SqlDbType.Int).Direction = ParameterDirection.Output;
 
-                    command.CommandText = "ValidaUsuario";
 
-                    SqlDataReader reader = command.ExecuteReader();
-                    acceso = command.ExecuteNonQuery();
-                    if (acceso > 0)
+                    //SqlDataReader reader = command.ExecuteReader();
+                    command.ExecuteNonQuery();
+
+                    int existe = Convert.ToInt32(command.Parameters["@Existe"].Value.ToString());
+
+                    connection.Close();
+                    if (existe > 0)
                         return true;
                     else
                         return false;
@@ -445,7 +451,7 @@ namespace CDatos.Manager
 
         public bool CambiarContraseña(string Usuario, string Password, string NewPassword)
         {
-            int acceso = 0;
+            //int acceso = 0;
 
             try
             {
@@ -455,17 +461,23 @@ namespace CDatos.Manager
 
                     SqlCommand command = connection.CreateCommand();
 
+                    command.CommandText = "spCambiarContrasena";
+
+                    command.CommandType = CommandType.StoredProcedure;
+
                     command.Parameters.AddWithValue("@Usuario", Usuario);
                     command.Parameters.AddWithValue("@Password", Password);
                     command.Parameters.AddWithValue("@NewPassword", NewPassword);
 
-                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@afectados", SqlDbType.Int).Direction = ParameterDirection.Output;
 
-                    command.CommandText = "spCambiarContrasena";
+                    //SqlDataReader reader = command.ExecuteReader();
+                    command.ExecuteNonQuery();
 
-                    SqlDataReader reader = command.ExecuteReader();
-                    acceso = command.ExecuteNonQuery();
-                    if (acceso > 0)
+                    int afectado = Convert.ToInt32(command.Parameters["@afectados"].Value.ToString());
+
+                    connection.Close();
+                    if (afectado > 0)
                         return true;
                     else
                         return false;
