@@ -9,6 +9,7 @@ using Modelos.Modelos;
 
 namespace CDatos.Manager
 {
+    //comentario de clay --
     public class BancoManager
     {
         #region Methods
