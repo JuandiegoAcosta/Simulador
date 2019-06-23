@@ -23,3 +23,8 @@ C:\Users\Usuario\Source\Repos\JuandiegoAcosta\Simulador\Modelos\obj\Debug\Modelo
 C:\Users\Usuario\Source\Repos\JuandiegoAcosta\Simulador\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
 C:\Users\Usuario\Source\Repos\JuandiegoAcosta\Simulador\Modelos\obj\Debug\Modelos.dll
 C:\Users\Usuario\Source\Repos\JuandiegoAcosta\Simulador\Modelos\obj\Debug\Modelos.pdb
+C:\Users\Saurom Lamderth\Source\Repos\JuandiegoAcosta\Simulador\Modelos\bin\Debug\Modelos.dll
+C:\Users\Saurom Lamderth\Source\Repos\JuandiegoAcosta\Simulador\Modelos\bin\Debug\Modelos.pdb
+C:\Users\Saurom Lamderth\Source\Repos\JuandiegoAcosta\Simulador\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
+C:\Users\Saurom Lamderth\Source\Repos\JuandiegoAcosta\Simulador\Modelos\obj\Debug\Modelos.dll
+C:\Users\Saurom Lamderth\Source\Repos\JuandiegoAcosta\Simulador\Modelos\obj\Debug\Modelos.pdb

@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace ServiciosBancarios.Ventanilla
 {
+    [ServiceContract]
     public interface ICobroChequeService
     {
         [OperationContract]

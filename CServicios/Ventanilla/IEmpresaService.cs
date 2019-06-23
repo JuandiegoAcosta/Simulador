@@ -7,6 +7,7 @@ using System.Web;
 
 namespace ServiciosBancarios.Ventanilla
 {
+    [ServiceContract]
     public interface IEmpresaService 
     {
         [OperationContract]

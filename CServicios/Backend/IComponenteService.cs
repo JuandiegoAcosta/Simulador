@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace ServiciosBancarios.Backend
 {
+    [ServiceContract]
     interface IComponenteService
     {
         [OperationContract]
