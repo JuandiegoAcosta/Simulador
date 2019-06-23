@@ -19,7 +19,7 @@ namespace Modelos.Modelos
         /// <summary>
         /// Gets or sets the Tipo value.
         /// </summary>
-        public string Tipo
+        public string Tipo_Accion
         { get; set; }
 
         /// <summary>
@@ -31,7 +31,7 @@ namespace Modelos.Modelos
         /// <summary>
         /// Gets or sets the Id_persona value.
         /// </summary>
-        public int Id_persona
+        public int Id_TurnoUsuario
         { get; set; }
 
         /// <summary>
@@ -44,12 +44,6 @@ namespace Modelos.Modelos
         /// Gets or sets the Fecha value.
         /// </summary>
         public DateTime Fecha
-        { get; set; }
-
-        /// <summary>
-        /// Gets or sets the Id_ventanilla value.
-        /// </summary>
-        public int Id_ventanilla
         { get; set; }
 
         /// <summary>

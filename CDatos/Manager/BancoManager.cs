@@ -9,7 +9,6 @@ using Modelos.Modelos;
 
 namespace CDatos.Manager
 {
-    //comentario de clay --
     public class BancoManager
     {
         #region Methods
@@ -42,7 +41,7 @@ namespace CDatos.Manager
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "spBanco";
+                    command.CommandText = "sp_pBanco";
 
                     int afectados = command.ExecuteNonQuery();
 
@@ -95,7 +94,7 @@ namespace CDatos.Manager
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "spBanco";
+                    command.CommandText = "sp_pBanco";
 
                     int afectados = command.ExecuteNonQuery();
 
@@ -142,7 +141,7 @@ namespace CDatos.Manager
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "spBanco";
+                    command.CommandText = "sp_pBanco";
                     int afectados = command.ExecuteNonQuery();
 
                     // Commit the transaction.
@@ -185,7 +184,7 @@ namespace CDatos.Manager
 
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.CommandText = "spBanco";
+                    command.CommandText = "sp_pBanco";
 
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -245,7 +244,7 @@ namespace CDatos.Manager
                     command.Parameters.AddWithValue("@pMode", 1);
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.CommandText = "spBanco";
+                    command.CommandText = "sp_pBanco";
 
                     SqlDataReader reader = command.ExecuteReader();
 

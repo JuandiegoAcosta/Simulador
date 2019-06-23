@@ -31,21 +31,18 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
+                    command.Parameters.AddWithValue("@pMode", 4);
                     command.Parameters.AddWithValue("@ID", aCaja_ChicaModel.Id);
-                    command.Parameters.AddWithValue("@Tipo", aCaja_ChicaModel.Tipo);
+                    command.Parameters.AddWithValue("@Tipo_Accion", aCaja_ChicaModel.Tipo_Accion);
                     command.Parameters.AddWithValue("@Monto", aCaja_ChicaModel.Monto);
-                    command.Parameters.AddWithValue("@ID_Persona", aCaja_ChicaModel.Id_persona);
+                    command.Parameters.AddWithValue("@Id_TurnoUsuario", aCaja_ChicaModel.Id_TurnoUsuario);
                     command.Parameters.AddWithValue("@Hora", aCaja_ChicaModel.Hora);
                     command.Parameters.AddWithValue("@Fecha", aCaja_ChicaModel.Fecha);
-                    command.Parameters.AddWithValue("@ID_Ventanilla", aCaja_ChicaModel.Id_ventanilla);
                     command.Parameters.AddWithValue("@USUARIO_CREADOR", aCaja_ChicaModel.Usuario_creador);
                     command.Parameters.AddWithValue("@FECHA_CREACION", aCaja_ChicaModel.Fecha_creacion);
-                    command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aCaja_ChicaModel.Usuario_modificador == null ? (object)DBNull.Value : aCaja_ChicaModel.Usuario_modificador);
-                    command.Parameters.AddWithValue("@FECHA_MODIFICACION", aCaja_ChicaModel.Fecha_modificacion == null ? (object)DBNull.Value : aCaja_ChicaModel.Fecha_modificacion);
-
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "Caja_ChicaModelInsert";
+                    command.CommandText = "sp_tCajaChica";
 
                     int afectados = command.ExecuteNonQuery();
 
@@ -87,22 +84,60 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
+                    command.Parameters.AddWithValue("@pMode", 5);
                     command.Parameters.AddWithValue("@ID", aCaja_ChicaModel.Id);
-                    command.Parameters.AddWithValue("@Tipo", aCaja_ChicaModel.Tipo);
+                    command.Parameters.AddWithValue("@Tipo_Accion", aCaja_ChicaModel.Tipo_Accion);
                     command.Parameters.AddWithValue("@Monto", aCaja_ChicaModel.Monto);
-                    command.Parameters.AddWithValue("@ID_Persona", aCaja_ChicaModel.Id_persona);
+                    command.Parameters.AddWithValue("@Id_TurnoUsuario", aCaja_ChicaModel.Id_TurnoUsuario);
                     command.Parameters.AddWithValue("@Hora", aCaja_ChicaModel.Hora);
                     command.Parameters.AddWithValue("@Fecha", aCaja_ChicaModel.Fecha);
-                    command.Parameters.AddWithValue("@ID_Ventanilla", aCaja_ChicaModel.Id_ventanilla);
-                    command.Parameters.AddWithValue("@USUARIO_CREADOR", aCaja_ChicaModel.Usuario_creador);
-                    command.Parameters.AddWithValue("@FECHA_CREACION", aCaja_ChicaModel.Fecha_creacion);
                     command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aCaja_ChicaModel.Usuario_modificador == null ? (object)DBNull.Value : aCaja_ChicaModel.Usuario_modificador);
                     command.Parameters.AddWithValue("@FECHA_MODIFICACION", aCaja_ChicaModel.Fecha_modificacion == null ? (object)DBNull.Value : aCaja_ChicaModel.Fecha_modificacion);
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "Caja_ChicaModelUpdate";
+                    command.CommandText = "sp_tCajaChica";
 
+                    int afectados = command.ExecuteNonQuery();
+
+                    // Commit the transaction.
+                    sqlTran.Commit();
+
+                    connection.Close();
+                    connection.Dispose();
+
+                    if (afectados > 0)
+                        return true;
+                    else
+                        return false;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool Delete(int aID)
+        {
+            try
+            {
+                using (var connection = Util.ConnectionFactory.conexion())
+                {
+                    connection.Open();
+
+                    SqlTransaction sqlTran = connection.BeginTransaction();
+
+                    SqlCommand command = connection.CreateCommand();
+
+                    command.Transaction = sqlTran;
+
+                    command.Parameters.AddWithValue("@pMode", 6);
+                    command.Parameters.AddWithValue("@ID", aID);
+
+
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.CommandText = "sp_tCajaChica";
                     int afectados = command.ExecuteNonQuery();
 
                     // Commit the transaction.
@@ -137,6 +172,71 @@ namespace CDatos.Manager
         /// <summary>
         /// Selects all the objects of Caja_ChicaModel table.
         /// </summary>
+        ///
+        public CajaChicaModel GetCajaChicaModel(int aID)
+        {
+            CajaChicaModel GetCajaChicaModel = null;
+
+            try
+            {
+                using (var connection = Util.ConnectionFactory.conexion())
+                {
+                    connection.Open();
+
+                    SqlCommand command = connection.CreateCommand();
+
+                    command.Parameters.AddWithValue("@pMode", 2);
+                    command.Parameters.AddWithValue("@ID", aID);
+
+
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.CommandText = "sp_pBanco";
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+
+                            int ID = (int)(reader["ID"]);
+                            string Tipo_Accion = (string)(reader["Tipo_Accion"]);
+                            decimal Monto = (decimal)(reader["Monto"]);
+                            int Id_TurnoUsuario = (int)(reader["Id_TurnoUsuario"]);
+                            TimeSpan Hora = (TimeSpan)(reader["Hora"]);
+                            DateTime Fecha = (DateTime)(reader["Fecha"]);
+                            string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
+                            DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
+                            string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
+                            DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
+
+                            GetCajaChicaModel = new CajaChicaModel
+                            {
+                                Id = ID,
+                                Tipo_Accion = Tipo_Accion,
+                                Monto = Monto,
+                                Id_TurnoUsuario = Id_TurnoUsuario,
+                                Hora = Hora,
+                                Fecha = Fecha,
+                                Usuario_creador = USUARIO_CREADOR,
+                                Fecha_creacion = FECHA_CREACION,
+                                Usuario_modificador = USUARIO_MODIFICADOR,
+                                Fecha_modificacion = FECHA_MODIFICACION,
+
+                            };
+                        }
+                    }
+                }
+
+                return GetCajaChicaModel;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
         public List<CajaChicaModel> Caja_ChicaModelSelectAll()
         {
 
@@ -151,8 +251,9 @@ namespace CDatos.Manager
                     SqlCommand command = connection.CreateCommand();
 
                     command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@pMode", 1);
 
-                    command.CommandText = "Caja_ChicaModelSelectAll";
+                    command.CommandText = "sp_tCajaChica";
 
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -162,12 +263,11 @@ namespace CDatos.Manager
                         {
 
                             int ID = (int)(reader["ID"]);
-                            string Tipo = (string)(reader["Tipo"]);
+                            string Tipo_Accion = (string)(reader["Tipo_Accion"]);
                             decimal Monto = (decimal)(reader["Monto"]);
-                            int ID_Persona = (int)(reader["ID_Persona"]);
+                            int Id_TurnoUsuario = (int)(reader["Id_TurnoUsuario"]);
                             TimeSpan Hora = (TimeSpan)(reader["Hora"]);
                             DateTime Fecha = (DateTime)(reader["Fecha"]);
-                            int ID_Ventanilla = (int)(reader["ID_Ventanilla"]);
                             string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
                             string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
@@ -176,12 +276,11 @@ namespace CDatos.Manager
                             Caja_ChicaModellist.Add(new CajaChicaModel
                             {
                                 Id = ID,
-                                Tipo = Tipo,
+                                Tipo_Accion = Tipo_Accion,
                                 Monto = Monto,
-                                Id_persona = ID_Persona,
+                                Id_TurnoUsuario = Id_TurnoUsuario,
                                 Hora = Hora,
                                 Fecha = Fecha,
-                                Id_ventanilla = ID_Ventanilla,
                                 Usuario_creador = USUARIO_CREADOR,
                                 Fecha_creacion = FECHA_CREACION,
                                 Usuario_modificador = USUARIO_MODIFICADOR,
@@ -236,7 +335,6 @@ namespace CDatos.Manager
                             int ID_Persona = (int)(reader["ID_Persona"]);
                             TimeSpan Hora = (TimeSpan)(reader["Hora"]);
                             DateTime Fecha = (DateTime)(reader["Fecha"]);
-                            int ID_Ventanilla = (int)(reader["ID_Ventanilla"]);
                             string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
                             string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
@@ -245,12 +343,11 @@ namespace CDatos.Manager
                             Caja_ChicaModellist.Add(new CajaChicaModel
                             {
                                 Id = ID,
-                                Tipo = Tipo,
+                                Tipo_Accion = Tipo,
                                 Monto = Monto,
-                                Id_persona = ID_Persona,
+                                Id_TurnoUsuario = ID_Persona,
                                 Hora = Hora,
                                 Fecha = Fecha,
-                                Id_ventanilla = ID_Ventanilla,
                                 Usuario_creador = USUARIO_CREADOR,
                                 Fecha_creacion = FECHA_CREACION,
                                 Usuario_modificador = USUARIO_MODIFICADOR,
