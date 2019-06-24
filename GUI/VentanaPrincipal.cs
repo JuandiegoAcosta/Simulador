@@ -11,14 +11,15 @@ using Sistema_Bancario.Froms_opciones;
 using Sistema_Bancario.Plataforma;
 using Modelos.Modelos;
 using Sistema_Bancario.Ventanilla;
+//using Sistema_Bancario.Ventanilla;
 
 namespace Sistema_Bancario
 {
-    public partial class Form2 : Form
+    public partial class VentanaPrincipal : Form
     {
         List<PermisosUsuarioModel> Usuario =  new List<PermisosUsuarioModel>(); 
        // public object Opciones;
-        public Form2()
+        public VentanaPrincipal()
         {
             InitializeComponent();
            // this.cargarcomponentes(user);
@@ -348,7 +349,7 @@ namespace Sistema_Bancario
                 }
                 //    Limpiar();
                 //   button2.BackColor = SystemColors.HotTrack;
-            }else if (btn.Text.Equals("Balancin"))
+            }else if (btn.Text.Equals("Sistema_Bancario.Ventanilla.Balancin"))
             {
                 if (!panel1.Controls.Contains(Balancin.instance))
                 {
@@ -438,7 +439,7 @@ namespace Sistema_Bancario
                     this.CrearBoton(Pago_Cuotas, "Pago Cuotas", 300);
                     this.CrearBoton(Tipo_Cambio, "Tipo Cambio", 350);
                     this.CrearBoton(Pago_Servicios, "Pago Servicios", 400);
-                    this.CrearBoton(Balancin, "Balancin", 450);
+                    this.CrearBoton(Balancin, "Sistema_Bancario.Ventanilla.Balancin", 450);
                     this.CrearBoton(Resumen_total, "Resumen total",500);
                     break;
             }

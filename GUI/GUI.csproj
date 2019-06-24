@@ -218,7 +218,7 @@
     <Compile Include="Plataforma\UCrefinanciar.Designer.cs">
       <DependentUpon>UCrefinanciar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ventanilla.cs">
+    <Compile Include="VentanaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Ventanilla\Balancin.cs">
@@ -307,8 +307,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Ventanilla.Designer.cs">
-      <DependentUpon>Ventanilla.cs</DependentUpon>
+    <Compile Include="VentanaPrincipal.Designer.cs">
+      <DependentUpon>VentanaPrincipal.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Botones\BTRetiros.resx">
       <DependentUpon>BTRetiros.cs</DependentUpon>
@@ -388,8 +388,8 @@
     <EmbeddedResource Include="Plataforma\UCrefinanciar.resx">
       <DependentUpon>UCrefinanciar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventanilla.resx">
-      <DependentUpon>Ventanilla.cs</DependentUpon>
+    <EmbeddedResource Include="VentanaPrincipal.resx">
+      <DependentUpon>VentanaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanilla\CobroGiros.resx">
       <DependentUpon>CobroGiros.cs</DependentUpon>

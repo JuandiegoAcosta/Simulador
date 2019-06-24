@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Sistema_Bancario
 {
-    public partial class Ventanilla : Form
+    public partial class Login : Form
     {
-        public Ventanilla()
+        public Login()
         {
             InitializeComponent();
         }

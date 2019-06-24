@@ -1,6 +1,6 @@
 ﻿namespace Sistema_Bancario
 {
-    partial class Form2
+    partial class VentanaPrincipal
     {
         /// <summary>
         /// Required designer variable.
