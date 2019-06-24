@@ -37,7 +37,7 @@ namespace CDatos.Manager
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "sp_Turnos";
+                    command.CommandText = "sp_tTurnos";
 
                     int afectados = command.ExecuteNonQuery();
 
@@ -89,7 +89,7 @@ namespace CDatos.Manager
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "sp_Turnos";
+                    command.CommandText = "sp_tTurnos";
 
                     int afectados = command.ExecuteNonQuery();
 
@@ -136,7 +136,7 @@ namespace CDatos.Manager
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "sp_Turnos";
+                    command.CommandText = "sp_tTurnos";
                     int afectados = command.ExecuteNonQuery();
 
                     // Commit the transaction.
@@ -179,7 +179,7 @@ namespace CDatos.Manager
 
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.CommandText = "sp_Turnos";
+                    command.CommandText = "sp_tTurnos";
 
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -241,7 +241,7 @@ namespace CDatos.Manager
                     command.Parameters.AddWithValue("@pMode", 1);
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.CommandText = "sp_Turnos";
+                    command.CommandText = "sp_tTurnos";
 
                     SqlDataReader reader = command.ExecuteReader();
 

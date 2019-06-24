@@ -35,12 +35,6 @@ namespace Modelos.Modelos
         { get; set; }
 
         /// <summary>
-        /// Gets or sets the Fecha value.
-        /// </summary>
-        public DateTime? Fecha
-        { get; set; }
-
-        /// <summary>
         /// Gets or sets the Estado value.
         /// </summary>
         public bool Estado
@@ -80,6 +74,9 @@ namespace Modelos.Modelos
         /// Gets or sets the Tipodocumento value.
         /// </summary>
         public int Tipodocumento
+        { get; set; }
+
+        public string Tipo_Persona
         { get; set; }
 
         /// <summary>

@@ -31,20 +31,19 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
+                    command.Parameters.AddWithValue("@pMode", 4);
                     command.Parameters.AddWithValue("@Nombre", aComponenteModel.Nombre);
                     command.Parameters.AddWithValue("@Descripcion", aComponenteModel.Descripcion);
                     command.Parameters.AddWithValue("@Id_aplicacion", aComponenteModel.Id_aplicacion == null ? (object)DBNull.Value : aComponenteModel.Id_aplicacion);
                     command.Parameters.AddWithValue("@Estado", aComponenteModel.Estado);
                     command.Parameters.AddWithValue("@Codigo", aComponenteModel.Codigo);
-                    //command.Parameters.AddWithValue("@Id_ComponenteModel", aComponenteModel.Id_componente == null ? (object)DBNull.Value : aComponenteModel.Id_ComponenteModel);
+                    command.Parameters.AddWithValue("@IdPadre", aComponenteModel.IdPadre == null ? (object)DBNull.Value : aComponenteModel.IdPadre);
                     command.Parameters.AddWithValue("@USUARIO_CREADOR", aComponenteModel.Usuario_creador);
                     command.Parameters.AddWithValue("@FECHA_CREACION", aComponenteModel.Fecha_creacion);
-                    command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aComponenteModel.Usuario_modificador == null ? (object)DBNull.Value : aComponenteModel.Usuario_modificador);
-                    command.Parameters.AddWithValue("@FECHA_MODIFICACION", aComponenteModel.Fecha_modificacion == null ? (object)DBNull.Value : aComponenteModel.Fecha_modificacion);
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "ComponenteModelInsert";
+                    command.CommandText = "sp_tComponente";
 
                     int afectados = command.ExecuteNonQuery();
 
@@ -86,21 +85,20 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
+                    command.Parameters.AddWithValue("@pMode", 5);
                     command.Parameters.AddWithValue("@Id", aComponenteModel.Id);
                     command.Parameters.AddWithValue("@Nombre", aComponenteModel.Nombre);
                     command.Parameters.AddWithValue("@Descripcion", aComponenteModel.Descripcion);
                     command.Parameters.AddWithValue("@Id_aplicacion", aComponenteModel.Id_aplicacion == null ? (object)DBNull.Value : aComponenteModel.Id_aplicacion);
                     command.Parameters.AddWithValue("@Estado", aComponenteModel.Estado);
                     command.Parameters.AddWithValue("@Codigo", aComponenteModel.Codigo);
-                    //command.Parameters.AddWithValue("@Id_ComponenteModel", aComponenteModel.Id_componente == null ? (object)DBNull.Value : aComponenteModel.Id_ComponenteModel);
-                    command.Parameters.AddWithValue("@USUARIO_CREADOR", aComponenteModel.Usuario_creador);
-                    command.Parameters.AddWithValue("@FECHA_CREACION", aComponenteModel.Fecha_creacion);
+                    command.Parameters.AddWithValue("@IdPadre", aComponenteModel.IdPadre == null ? (object)DBNull.Value : aComponenteModel.IdPadre);
                     command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aComponenteModel.Usuario_modificador == null ? (object)DBNull.Value : aComponenteModel.Usuario_modificador);
                     command.Parameters.AddWithValue("@FECHA_MODIFICACION", aComponenteModel.Fecha_modificacion == null ? (object)DBNull.Value : aComponenteModel.Fecha_modificacion);
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "ComponenteModelUpdate";
+                    command.CommandText = "sp_tComponente";
 
                     int afectados = command.ExecuteNonQuery();
 
@@ -142,11 +140,12 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
+                    command.Parameters.AddWithValue("@pMode", 6);
                     command.Parameters.AddWithValue("@Id", aId);
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "ComponenteModelDelete";
+                    command.CommandText = "sp_tComponente";
                     int afectados = command.ExecuteNonQuery();
 
                     // Commit the transaction.
@@ -183,12 +182,13 @@ namespace CDatos.Manager
 
                     SqlCommand command = connection.CreateCommand();
 
+                    command.Parameters.AddWithValue("@pMode", 2);
                     command.Parameters.AddWithValue("@Id", aId);
 
 
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.CommandText = "ComponenteModelSelect";
+                    command.CommandText = "sp_tComponente";
 
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -203,7 +203,7 @@ namespace CDatos.Manager
                             int? Id_aplicacion = reader["Id_aplicacion"] as int?;
                             bool Estado = (bool)(reader["Estado"]);
                             string Codigo = (string)(reader["Codigo"]);
-                            int? Id_ComponenteModel = reader["Id_ComponenteModel"] as int?;
+                            int? IdPadre = reader["IdPadre"] as int?;
                             string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
                             string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
@@ -217,7 +217,7 @@ namespace CDatos.Manager
                                 Id_aplicacion = Id_aplicacion,
                                 Estado = Estado,
                                 Codigo = Codigo,
-                                Id_componente = Id_ComponenteModel,
+                                IdPadre = IdPadre,
                                 Usuario_creador = USUARIO_CREADOR,
                                 Fecha_creacion = FECHA_CREACION,
                                 Usuario_modificador = USUARIO_MODIFICADOR,
@@ -255,7 +255,7 @@ namespace CDatos.Manager
 
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.CommandText = "ComponenteModelSelectAll";
+                    command.CommandText = "sp_tComponente";
 
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -270,7 +270,7 @@ namespace CDatos.Manager
                             int? Id_aplicacion = reader["Id_aplicacion"] as int?;
                             bool Estado = (bool)(reader["Estado"]);
                             string Codigo = (string)(reader["Codigo"]);
-                            int? Id_ComponenteModel = reader["Id_ComponenteModel"] as int?;
+                            int? IdPadre = reader["IdPadre"] as int?;
                             string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
                             string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
@@ -284,7 +284,7 @@ namespace CDatos.Manager
                                 Id_aplicacion = Id_aplicacion,
                                 Estado = Estado,
                                 Codigo = Codigo,
-                                Id_componente = Id_ComponenteModel,
+                                IdPadre = IdPadre,
                                 Usuario_creador = USUARIO_CREADOR,
                                 Fecha_creacion = FECHA_CREACION,
                                 Usuario_modificador = USUARIO_MODIFICADOR,
@@ -339,7 +339,7 @@ namespace CDatos.Manager
                             int? Id_aplicacion = reader["Id_aplicacion"] as int?;
                             bool Estado = (bool)(reader["Estado"]);
                             string Codigo = (string)(reader["Codigo"]);
-                            int? Id_ComponenteModel = reader["Id_ComponenteModel"] as int?;
+                            int? IdPadre = reader["IdPadre"] as int?;
                             string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
                             string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
@@ -353,7 +353,7 @@ namespace CDatos.Manager
                                 Id_aplicacion = Id_aplicacion,
                                 Estado = Estado,
                                 Codigo = Codigo,
-                                Id_componente = Id_ComponenteModel,
+                                IdPadre = IdPadre,
                                 Usuario_creador = USUARIO_CREADOR,
                                 Fecha_creacion = FECHA_CREACION,
                                 Usuario_modificador = USUARIO_MODIFICADOR,

@@ -49,7 +49,7 @@ namespace Modelos.Modelos
         /// <summary>
         /// Gets or sets the Id_componente value.
         /// </summary>
-        public int? Id_componente
+        public int? IdPadre
         { get; set; }
 
         /// <summary>

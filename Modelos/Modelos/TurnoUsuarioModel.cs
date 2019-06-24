@@ -16,23 +16,6 @@ namespace Modelos.Modelos
         public int Id
         { get; set; }
 
-        /// <summary>
-        /// Gets or sets the Fecha value.
-        /// </summary>
-        public DateTime Fecha
-        { get; set; }
-
-        /// <summary>
-        /// Gets or sets the Horainicio value.
-        /// </summary>
-        public TimeSpan Horainicio
-        { get; set; }
-
-        /// <summary>
-        /// Gets or sets the Horafin value.
-        /// </summary>
-        public TimeSpan Horafin
-        { get; set; }
 
         /// <summary>
         /// Gets or sets the Id_usuario value.
@@ -47,15 +30,9 @@ namespace Modelos.Modelos
         { get; set; }
 
         /// <summary>
-        /// Gets or sets the Id_horarios_atencion value.
-        /// </summary>
-        public int Id_horarios_atencion
-        { get; set; }
-
-        /// <summary>
         /// Gets or sets the Id_turnos value.
         /// </summary>
-        public int? Id_turnos
+        public int? Id_turno
         { get; set; }
 
         /// <summary>

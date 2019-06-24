@@ -38,7 +38,7 @@ namespace CDatos.Manager
                     command.Parameters.AddWithValue("@FECHA_CREACION", aPermisosUsuarioModel.Fecha_creacion);
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "spPermisosUsuario";
+                    command.CommandText = "sp_tPermisosUsuario";
 
                     int afectados = command.ExecuteNonQuery();
 
@@ -92,7 +92,7 @@ namespace CDatos.Manager
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "spPermisosUsuario";
+                    command.CommandText = "sp_tPermisosUsuario";
 
                     int afectados = command.ExecuteNonQuery();
 
@@ -139,7 +139,7 @@ namespace CDatos.Manager
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "spPermisosUsuario";
+                    command.CommandText = "sp_tPermisosUsuario";
                     int afectados = command.ExecuteNonQuery();
 
                     // Commit the transaction.
@@ -182,7 +182,7 @@ namespace CDatos.Manager
 
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.CommandText = "spPermisosUsuario";
+                    command.CommandText = "sp_tPermisosUsuario";
 
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -245,7 +245,7 @@ namespace CDatos.Manager
 
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.CommandText = "spPermisosUsuario";
+                    command.CommandText = "sp_tPermisosUsuario";
 
                     SqlDataReader reader = command.ExecuteReader();
 

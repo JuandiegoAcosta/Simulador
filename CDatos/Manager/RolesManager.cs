@@ -35,7 +35,7 @@ namespace CDatos.Manager
                     command.Parameters.AddWithValue("@USUARIO_CREADOR", aRolesModel.Usuario_creador);
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "sp_Roles";
+                    command.CommandText = "sp_tRoles";
 
                     int afectados = command.ExecuteNonQuery();
 
@@ -85,7 +85,7 @@ namespace CDatos.Manager
                     command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aRolesModel.Usuario_modificador == null ? (object)DBNull.Value : aRolesModel.Usuario_modificador);
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "sp_Roles";
+                    command.CommandText = "sp_tRoles";
 
                     int afectados = command.ExecuteNonQuery();
 
@@ -131,7 +131,7 @@ namespace CDatos.Manager
                     command.Parameters.AddWithValue("@Id", aId);
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "sp_Roles";
+                    command.CommandText = "sp_tRoles";
                     int afectados = command.ExecuteNonQuery();
 
                     // Commit the transaction.
@@ -173,7 +173,7 @@ namespace CDatos.Manager
 
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.CommandText = "sp_Roles";
+                    command.CommandText = "sp_tRoles";
 
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -227,9 +227,10 @@ namespace CDatos.Manager
 
                     SqlCommand command = connection.CreateCommand();
 
+                    command.Parameters.AddWithValue("@pMode", 1);
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.CommandText = "RolesModelSelectAll";
+                    command.CommandText = "sp_tRoles";
 
                     SqlDataReader reader = command.ExecuteReader();
 

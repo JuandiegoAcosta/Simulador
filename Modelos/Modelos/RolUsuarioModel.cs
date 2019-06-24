@@ -19,13 +19,13 @@ namespace Modelos.Modelos
         /// <summary>
         /// Gets or sets the Id_personas value.
         /// </summary>
-        public int? Id_personas
+        public int? Id_persona
         { get; set; }
 
         /// <summary>
         /// Gets or sets the Id_roles value.
         /// </summary>
-        public int? Id_roles
+        public int? Id_rol
         { get; set; }
 
         /// <summary>

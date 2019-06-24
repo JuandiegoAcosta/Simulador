@@ -29,15 +29,15 @@ namespace CDatos.Manager
                     command.Transaction = sqlTran;
 
                     command.Parameters.AddWithValue("@pMode", 4);
-                    command.Parameters.AddWithValue("@Id_Personas", aRolUsuarioModel.Id_personas == null ? (object)DBNull.Value : aRolUsuarioModel.Id_personas);
-                    command.Parameters.AddWithValue("@Id_roles", aRolUsuarioModel.Id_roles == null ? (object)DBNull.Value : aRolUsuarioModel.Id_roles);
+                    command.Parameters.AddWithValue("@Id_Persona", aRolUsuarioModel.Id_persona == null ? (object)DBNull.Value : aRolUsuarioModel.Id_persona);
+                    command.Parameters.AddWithValue("@Id_rol", aRolUsuarioModel.Id_rol == null ? (object)DBNull.Value : aRolUsuarioModel.Id_rol);
                     command.Parameters.AddWithValue("@Activo", aRolUsuarioModel.Activo);
                     command.Parameters.AddWithValue("@FECHA_CREACION", aRolUsuarioModel.Fecha_creacion);
                     command.Parameters.AddWithValue("@USUARIO_CREADOR", aRolUsuarioModel.Usuario_creador);
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "spRolUsuario";
+                    command.CommandText = "sp_tRolUsuario";
 
                     int afectados = command.ExecuteNonQuery();
 
@@ -81,15 +81,15 @@ namespace CDatos.Manager
 
                     command.Parameters.AddWithValue("@pMode", 5);
                     command.Parameters.AddWithValue("@Id", aRolUsuarioModel.Id);
-                    command.Parameters.AddWithValue("@Id_Personas", aRolUsuarioModel.Id_personas == null ? (object)DBNull.Value : aRolUsuarioModel.Id_personas);
-                    command.Parameters.AddWithValue("@Id_roles", aRolUsuarioModel.Id_roles == null ? (object)DBNull.Value : aRolUsuarioModel.Id_roles);
+                    command.Parameters.AddWithValue("@Id_Persona", aRolUsuarioModel.Id_persona == null ? (object)DBNull.Value : aRolUsuarioModel.Id_persona);
+                    command.Parameters.AddWithValue("@Id_rol", aRolUsuarioModel.Id_rol == null ? (object)DBNull.Value : aRolUsuarioModel.Id_rol);
                     command.Parameters.AddWithValue("@Activo", aRolUsuarioModel.Activo);
                     command.Parameters.AddWithValue("@FECHA_MODIFICACION", aRolUsuarioModel.Fecha_modificacion == null ? (object)DBNull.Value : aRolUsuarioModel.Fecha_modificacion);
                     command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aRolUsuarioModel.Usuario_modificador == null ? (object)DBNull.Value : aRolUsuarioModel.Usuario_modificador);
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "spRolUsuario";
+                    command.CommandText = "sp_tRolUsuario";
 
                     int afectados = command.ExecuteNonQuery();
 
@@ -136,7 +136,7 @@ namespace CDatos.Manager
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "spRolUsuario";
+                    command.CommandText = "sp_tRolUsuario";
                     int afectados = command.ExecuteNonQuery();
 
                     // Commit the transaction.
@@ -179,7 +179,7 @@ namespace CDatos.Manager
 
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.CommandText = "spRolUsuario";
+                    command.CommandText = "sp_tRolUsuario";
 
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -189,8 +189,8 @@ namespace CDatos.Manager
                         {
 
                             int Id = (int)(reader["Id"]);
-                            int? Id_Personas = reader["Id_Personas"] as int?;
-                            int? Id_roles = reader["Id_roles"] as int?;
+                            int? Id_Persona = reader["Id_Persona"] as int?;
+                            int? Id_rol = reader["Id_rol"] as int?;
                             bool Activo = (bool)(reader["Activo"]);
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
                             DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
@@ -200,8 +200,8 @@ namespace CDatos.Manager
                             RolUsuarioModel = new RolUsuarioModel
                             {
                                 Id = Id,
-                                Id_personas = Id_Personas,
-                                Id_roles = Id_roles,
+                                Id_persona = Id_Persona,
+                                Id_rol = Id_rol,
                                 Activo = Activo,
                                 Fecha_creacion = FECHA_CREACION,
                                 Fecha_modificacion = FECHA_MODIFICACION,
@@ -242,7 +242,7 @@ namespace CDatos.Manager
 
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.CommandText = "spRolUsuario";
+                    command.CommandText = "sp_tRolUsuario";
 
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -252,8 +252,8 @@ namespace CDatos.Manager
                         {
 
                             int Id = (int)(reader["Id"]);
-                            int? Id_Personas = reader["Id_Personas"] as int?;
-                            int? Id_roles = reader["Id_roles"] as int?;
+                            int? Id_Persona = reader["Id_Persona"] as int?;
+                            int? Id_rol = reader["Id_rol"] as int?;
                             bool Activo = (bool)(reader["Activo"]);
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
                             DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
@@ -263,8 +263,8 @@ namespace CDatos.Manager
                             RolUsuarioModellist.Add(new RolUsuarioModel
                             {
                                 Id = Id,
-                                Id_personas = Id_Personas,
-                                Id_roles = Id_roles,
+                                Id_persona = Id_Persona,
+                                Id_rol = Id_rol,
                                 Activo = Activo,
                                 Fecha_creacion = FECHA_CREACION,
                                 Fecha_modificacion = FECHA_MODIFICACION,
@@ -313,29 +313,29 @@ namespace CDatos.Manager
                     {
                         while (reader.Read())
                         {
-
-                            int Id = (int)(reader["Id"]);
-                            int? Id_Personas = reader["Id_Personas"] as int?;
-                            int? Id_roles = reader["Id_roles"] as int?;
-                            bool Activo = (bool)(reader["Activo"]);
-                            DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
-                            DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
-                            string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
-                            string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
-
-                            RolUsuarioModellist.Add(new RolUsuarioModel
-                            {
-                                Id = Id,
-                                Id_personas = Id_Personas,
-                                Id_roles = Id_roles,
-                                Activo = Activo,
-                                Fecha_creacion = FECHA_CREACION,
-                                Fecha_modificacion = FECHA_MODIFICACION,
-                                Usuario_creador = USUARIO_CREADOR,
-                                Usuario_modificador = USUARIO_MODIFICADOR,
-
-                            });
-                        }
+                            //
+                            // int Id = (int)(reader["Id"]);
+                            // int? Id_Personas = reader["Id_Personas"] as int?;
+                            // int? Id_roles = reader["Id_roles"] as int?;
+                            // bool Activo = (bool)(reader["Activo"]);
+                            // DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
+                            // DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
+                            // string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
+                            // string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
+                            //
+                            // RolUsuarioModellist.Add(new RolUsuarioModel
+                            // {
+                            //     Id = Id,
+                            //     Id_personas = Id_Personas,
+                            //     Id_roles = Id_roles,
+                            //     Activo = Activo,
+                            //     Fecha_creacion = FECHA_CREACION,
+                            //     Fecha_modificacion = FECHA_MODIFICACION,
+                            //     Usuario_creador = USUARIO_CREADOR,
+                            //     Usuario_modificador = USUARIO_MODIFICADOR,
+                            //
+                            // });
+                        }  //
                     }
                 }
 
