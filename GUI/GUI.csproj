@@ -221,6 +221,12 @@
     <Compile Include="Ventanilla.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Ventanilla\Balancin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ventanilla\Balancin.Designer.cs">
+      <DependentUpon>Balancin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ventanilla\CobroGiros.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -262,6 +268,12 @@
     </Compile>
     <Compile Include="Ventanilla\Envio Giros.Designer.cs">
       <DependentUpon>Envio Giros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanilla\ResumenTotal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ventanilla\ResumenTotal.Designer.cs">
+      <DependentUpon>ResumenTotal.cs</DependentUpon>
     </Compile>
     <Compile Include="Ventanilla\Tipo_de_Cambio.cs">
       <SubType>UserControl</SubType>
@@ -352,6 +364,9 @@
     <EmbeddedResource Include="Controles\TopBar.resx">
       <DependentUpon>TopBar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ventanilla\Balancin.resx">
+      <DependentUpon>Balancin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ventanilla\Envio Giros.resx">
       <DependentUpon>Envio Giros.cs</DependentUpon>
     </EmbeddedResource>
@@ -393,6 +408,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanilla\Depositos.resx">
       <DependentUpon>Depositos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventanilla\ResumenTotal.resx">
+      <DependentUpon>ResumenTotal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanilla\Tipo_de_Cambio.resx">
       <DependentUpon>Tipo_de_Cambio.cs</DependentUpon>

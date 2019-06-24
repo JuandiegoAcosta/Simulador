@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Sistema_Bancario.Froms_opciones;
 using Sistema_Bancario.Plataforma;
 using Modelos.Modelos;
+using Sistema_Bancario.Ventanilla;
 
 namespace Sistema_Bancario
 {
@@ -347,6 +348,37 @@ namespace Sistema_Bancario
                 }
                 //    Limpiar();
                 //   button2.BackColor = SystemColors.HotTrack;
+            }else if (btn.Text.Equals("Balancin"))
+            {
+                if (!panel1.Controls.Contains(Balancin.instance))
+                {
+                    panel1.Controls.Add(Balancin.instance);
+                    Balancin.instance.Dock = DockStyle.Fill;
+                    Balancin.instance.BringToFront();
+                    TituloText.Text = btn.Text;
+
+                }
+                else
+                {
+                    Balancin.instance.BringToFront();
+                    TituloText.Text = btn.Text;
+                }
+            }
+            else if (btn.Text.Equals("Resumen total"))
+            {
+                if (!panel1.Controls.Contains(ResumenTotal.instance))
+                {
+                    panel1.Controls.Add(ResumenTotal.instance);
+                    ResumenTotal.instance.Dock = DockStyle.Fill;
+                    ResumenTotal.instance.BringToFront();
+                    TituloText.Text = btn.Text;
+
+                }
+                else
+                {
+                    ResumenTotal.instance.BringToFront();
+                    TituloText.Text = btn.Text;
+                }
             }
             #endregion
 
@@ -394,7 +426,8 @@ namespace Sistema_Bancario
                     Button Pago_Cuotas = new Button();
                     Button Tipo_Cambio = new Button();
                     Button Pago_Servicios = new Button();
-                    Button Resumen_caja_chica = new Button();
+                    Button Resumen_total = new Button();
+                    Button Balancin = new Button();
 
                     this.CrearBoton(Retiros, "Retiros", 0);
                     this.CrearBoton(Depositos, "Depósitos", 50);
@@ -405,7 +438,8 @@ namespace Sistema_Bancario
                     this.CrearBoton(Pago_Cuotas, "Pago Cuotas", 300);
                     this.CrearBoton(Tipo_Cambio, "Tipo Cambio", 350);
                     this.CrearBoton(Pago_Servicios, "Pago Servicios", 400);
-                    this.CrearBoton(Resumen_caja_chica, "Resumen caja chica", 450);
+                    this.CrearBoton(Balancin, "Balancin", 450);
+                    this.CrearBoton(Resumen_total, "Resumen total",500);
                     break;
             }
         }
@@ -424,17 +458,17 @@ namespace Sistema_Bancario
 
 
         }
-        private void button12_Click(object sender, EventArgs e)
-        {
-            BTOperaciones.BackColor = SystemColors.HotTrack;
-            panel2.Controls.Clear();
-            this.Componentes(3);
-
-        }
 
         private void button15_Click(object sender, EventArgs e)
         {
             BTReportes.BackColor = SystemColors.HotTrack;
+        }
+
+        private void BTOperaciones_Click(object sender, EventArgs e)
+        {
+            BTOperaciones.BackColor = SystemColors.HotTrack;
+            panel2.Controls.Clear();
+            this.Componentes(3);
         }
     }
 }

@@ -56,17 +56,17 @@
             this.panel1.Location = new System.Drawing.Point(279, 155);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(909, 663);
+            this.panel1.Size = new System.Drawing.Size(910, 683);
             this.panel1.TabIndex = 1;
             // 
             // panel2
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
-            this.panel2.Location = new System.Drawing.Point(0, 155);
+            this.panel2.Location = new System.Drawing.Point(-2, 155);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(267, 625);
+            this.panel2.Size = new System.Drawing.Size(267, 663);
             this.panel2.TabIndex = 7;
             // 
             // label1
@@ -87,7 +87,7 @@
             this.panel5.Controls.Add(this.Rol);
             this.panel5.Controls.Add(this.label2);
             this.panel5.Location = new System.Drawing.Point(0, 84);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(267, 71);
             this.panel5.TabIndex = 9;
@@ -124,7 +124,7 @@
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button11.ForeColor = System.Drawing.SystemColors.Window;
-            this.button11.Location = new System.Drawing.Point(0, 780);
+            this.button11.Location = new System.Drawing.Point(-2, 817);
             this.button11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(267, 50);
@@ -155,13 +155,13 @@
             this.BTOperaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTOperaciones.ForeColor = System.Drawing.Color.White;
             this.BTOperaciones.Location = new System.Drawing.Point(0, 0);
-            this.BTOperaciones.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BTOperaciones.Margin = new System.Windows.Forms.Padding(4);
             this.BTOperaciones.Name = "BTOperaciones";
             this.BTOperaciones.Size = new System.Drawing.Size(112, 39);
             this.BTOperaciones.TabIndex = 8;
             this.BTOperaciones.Text = "Operaciones";
             this.BTOperaciones.UseVisualStyleBackColor = false;
-            this.BTOperaciones.Click += new System.EventHandler(this.button12_Click);
+            this.BTOperaciones.Click += new System.EventHandler(this.BTOperaciones_Click);
             // 
             // BTReportes
             // 
@@ -172,7 +172,7 @@
             this.BTReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTReportes.ForeColor = System.Drawing.Color.White;
             this.BTReportes.Location = new System.Drawing.Point(337, 0);
-            this.BTReportes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BTReportes.Margin = new System.Windows.Forms.Padding(4);
             this.BTReportes.Name = "BTReportes";
             this.BTReportes.Size = new System.Drawing.Size(100, 39);
             this.BTReportes.TabIndex = 11;
@@ -189,7 +189,7 @@
             this.BTGestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTGestion.ForeColor = System.Drawing.Color.White;
             this.BTGestion.Location = new System.Drawing.Point(112, 0);
-            this.BTGestion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BTGestion.Margin = new System.Windows.Forms.Padding(4);
             this.BTGestion.Name = "BTGestion";
             this.BTGestion.Size = new System.Drawing.Size(100, 39);
             this.BTGestion.TabIndex = 9;
@@ -206,7 +206,7 @@
             this.BTPlataforma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTPlataforma.ForeColor = System.Drawing.Color.White;
             this.BTPlataforma.Location = new System.Drawing.Point(212, 0);
-            this.BTPlataforma.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BTPlataforma.Margin = new System.Windows.Forms.Padding(4);
             this.BTPlataforma.Name = "BTPlataforma";
             this.BTPlataforma.Size = new System.Drawing.Size(125, 39);
             this.BTPlataforma.TabIndex = 10;
@@ -224,7 +224,7 @@
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.SystemColors.Window;
             this.button7.Location = new System.Drawing.Point(1140, 0);
-            this.button7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button7.Margin = new System.Windows.Forms.Padding(4);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(60, 44);
             this.button7.TabIndex = 7;
@@ -268,7 +268,7 @@
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(267, 155);
             this.panel4.TabIndex = 12;
@@ -278,7 +278,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(1200, 830);
+            this.ClientSize = new System.Drawing.Size(1196, 867);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel4);
