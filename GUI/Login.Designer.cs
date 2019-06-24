@@ -1,6 +1,6 @@
 ﻿namespace Sistema_Bancario
 {
-    partial class Login
+    partial class Ventanilla
     {
         /// <summary>
         /// Required designer variable.
