@@ -28,4 +28,9 @@ C:\Users\Saurom Lamderth\Source\Repos\JuandiegoAcosta\Simulador\Modelos\bin\Debu
 C:\Users\Saurom Lamderth\Source\Repos\JuandiegoAcosta\Simulador\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
 C:\Users\Saurom Lamderth\Source\Repos\JuandiegoAcosta\Simulador\Modelos\obj\Debug\Modelos.dll
 C:\Users\Saurom Lamderth\Source\Repos\JuandiegoAcosta\Simulador\Modelos\obj\Debug\Modelos.pdb
-C:\Users\Pablo\Desktop\SistemaBancario\Simulador 2\Simulador\Modelos\obj\Debug\Modelos.csprojAssemblyReference.cache
+E:\Documents\cursos\VI semestre\distribuidas\SimuladorBanco\Simulador\Modelos\bin\Debug\Modelos.dll
+E:\Documents\cursos\VI semestre\distribuidas\SimuladorBanco\Simulador\Modelos\bin\Debug\Modelos.pdb
+E:\Documents\cursos\VI semestre\distribuidas\SimuladorBanco\Simulador\Modelos\obj\Debug\Modelos.csprojAssemblyReference.cache
+E:\Documents\cursos\VI semestre\distribuidas\SimuladorBanco\Simulador\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
+E:\Documents\cursos\VI semestre\distribuidas\SimuladorBanco\Simulador\Modelos\obj\Debug\Modelos.dll
+E:\Documents\cursos\VI semestre\distribuidas\SimuladorBanco\Simulador\Modelos\obj\Debug\Modelos.pdb

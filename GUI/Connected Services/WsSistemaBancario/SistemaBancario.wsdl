@@ -1,0 +1,1801 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SistemaBancario" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:50786/SistemaBancario.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:50786/SistemaBancario.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:50786/SistemaBancario.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Modelos.Modelos" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICobroChequeService_CobroCheque_Crear_InputMessage">
+    <wsdl:part name="parameters" element="tns:CobroCheque_Crear" />
+  </wsdl:message>
+  <wsdl:message name="ICobroChequeService_CobroCheque_Crear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CobroCheque_CrearResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICobroChequeService_CobroCheque_Editar_InputMessage">
+    <wsdl:part name="parameters" element="tns:CobroCheque_Editar" />
+  </wsdl:message>
+  <wsdl:message name="ICobroChequeService_CobroCheque_Editar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CobroCheque_EditarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICobroChequeService_CobroCheque_Eliminar_InputMessage">
+    <wsdl:part name="parameters" element="tns:CobroCheque_Eliminar" />
+  </wsdl:message>
+  <wsdl:message name="ICobroChequeService_CobroCheque_Eliminar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CobroCheque_EliminarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICobroChequeService_CobroCheque_ObtenerUno_InputMessage">
+    <wsdl:part name="parameters" element="tns:CobroCheque_ObtenerUno" />
+  </wsdl:message>
+  <wsdl:message name="ICobroChequeService_CobroCheque_ObtenerUno_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CobroCheque_ObtenerUnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICobroChequeService_CobroCheque_ObtenerTodos_InputMessage">
+    <wsdl:part name="parameters" element="tns:CobroCheque_ObtenerTodos" />
+  </wsdl:message>
+  <wsdl:message name="ICobroChequeService_CobroCheque_ObtenerTodos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CobroCheque_ObtenerTodosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmpresaService_Empresa_Crear_InputMessage">
+    <wsdl:part name="parameters" element="tns:Empresa_Crear" />
+  </wsdl:message>
+  <wsdl:message name="IEmpresaService_Empresa_Crear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Empresa_CrearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmpresaService_Empresa_Editar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Empresa_Editar" />
+  </wsdl:message>
+  <wsdl:message name="IEmpresaService_Empresa_Editar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Empresa_EditarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmpresaService_Empresa_Eliminar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Empresa_Eliminar" />
+  </wsdl:message>
+  <wsdl:message name="IEmpresaService_Empresa_Eliminar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Empresa_EliminarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmpresaService_Empresa_ObtenerUno_InputMessage">
+    <wsdl:part name="parameters" element="tns:Empresa_ObtenerUno" />
+  </wsdl:message>
+  <wsdl:message name="IEmpresaService_Empresa_ObtenerUno_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Empresa_ObtenerUnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmpresaService_Empresa_ObtenerTodos_InputMessage">
+    <wsdl:part name="parameters" element="tns:Empresa_ObtenerTodos" />
+  </wsdl:message>
+  <wsdl:message name="IEmpresaService_Empresa_ObtenerTodos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Empresa_ObtenerTodosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPagoServicioService_PagoServicio_Crear_InputMessage">
+    <wsdl:part name="parameters" element="tns:PagoServicio_Crear" />
+  </wsdl:message>
+  <wsdl:message name="IPagoServicioService_PagoServicio_Crear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PagoServicio_CrearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPagoServicioService_PagoServicio_Editar_InputMessage">
+    <wsdl:part name="parameters" element="tns:PagoServicio_Editar" />
+  </wsdl:message>
+  <wsdl:message name="IPagoServicioService_PagoServicio_Editar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PagoServicio_EditarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPagoServicioService_PagoServicio_Eliminar_InputMessage">
+    <wsdl:part name="parameters" element="tns:PagoServicio_Eliminar" />
+  </wsdl:message>
+  <wsdl:message name="IPagoServicioService_PagoServicio_Eliminar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PagoServicio_EliminarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPagoServicioService_PagoServicio_ObtenerUno_InputMessage">
+    <wsdl:part name="parameters" element="tns:PagoServicio_ObtenerUno" />
+  </wsdl:message>
+  <wsdl:message name="IPagoServicioService_PagoServicio_ObtenerUno_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PagoServicio_ObtenerUnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPagoServicioService_PagoServicio_ObtenerTodos_InputMessage">
+    <wsdl:part name="parameters" element="tns:PagoServicio_ObtenerTodos" />
+  </wsdl:message>
+  <wsdl:message name="IPagoServicioService_PagoServicio_ObtenerTodos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PagoServicio_ObtenerTodosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRecaudosService_Recaudos_Crear_InputMessage">
+    <wsdl:part name="parameters" element="tns:Recaudos_Crear" />
+  </wsdl:message>
+  <wsdl:message name="IRecaudosService_Recaudos_Crear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Recaudos_CrearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRecaudosService_Recaudos_Editar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Recaudos_Editar" />
+  </wsdl:message>
+  <wsdl:message name="IRecaudosService_Recaudos_Editar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Recaudos_EditarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRecaudosService_Recaudos_Eliminar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Recaudos_Eliminar" />
+  </wsdl:message>
+  <wsdl:message name="IRecaudosService_Recaudos_Eliminar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Recaudos_EliminarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRecaudosService_Recaudos_ObtenerUno_InputMessage">
+    <wsdl:part name="parameters" element="tns:Recaudos_ObtenerUno" />
+  </wsdl:message>
+  <wsdl:message name="IRecaudosService_Recaudos_ObtenerUno_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Recaudos_ObtenerUnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRecaudosService_Recaudos_ObtenerTodos_InputMessage">
+    <wsdl:part name="parameters" element="tns:Recaudos_ObtenerTodos" />
+  </wsdl:message>
+  <wsdl:message name="IRecaudosService_Recaudos_ObtenerTodos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Recaudos_ObtenerTodosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITipoMovimientoService_TipoMovimiento_Crear_InputMessage">
+    <wsdl:part name="parameters" element="tns:TipoMovimiento_Crear" />
+  </wsdl:message>
+  <wsdl:message name="ITipoMovimientoService_TipoMovimiento_Crear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TipoMovimiento_CrearResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITipoMovimientoService_TipoMovimiento_Editar_InputMessage">
+    <wsdl:part name="parameters" element="tns:TipoMovimiento_Editar" />
+  </wsdl:message>
+  <wsdl:message name="ITipoMovimientoService_TipoMovimiento_Editar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TipoMovimiento_EditarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITipoMovimientoService_TipoMovimiento_Eliminar_InputMessage">
+    <wsdl:part name="parameters" element="tns:TipoMovimiento_Eliminar" />
+  </wsdl:message>
+  <wsdl:message name="ITipoMovimientoService_TipoMovimiento_Eliminar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TipoMovimiento_EliminarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITipoMovimientoService_TipoMovimiento_ObtenerUno_InputMessage">
+    <wsdl:part name="parameters" element="tns:TipoMovimiento_ObtenerUno" />
+  </wsdl:message>
+  <wsdl:message name="ITipoMovimientoService_TipoMovimiento_ObtenerUno_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TipoMovimiento_ObtenerUnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITipoMovimientoService_TipoMovimiento_ObtenerTodos_InputMessage">
+    <wsdl:part name="parameters" element="tns:TipoMovimiento_ObtenerTodos" />
+  </wsdl:message>
+  <wsdl:message name="ITipoMovimientoService_TipoMovimiento_ObtenerTodos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TipoMovimiento_ObtenerTodosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVentanillaService_Ventanilla_Crear_InputMessage">
+    <wsdl:part name="parameters" element="tns:Ventanilla_Crear" />
+  </wsdl:message>
+  <wsdl:message name="IVentanillaService_Ventanilla_Crear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Ventanilla_CrearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVentanillaService_Ventanilla_Editar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Ventanilla_Editar" />
+  </wsdl:message>
+  <wsdl:message name="IVentanillaService_Ventanilla_Editar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Ventanilla_EditarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVentanillaService_Ventanilla_Eliminar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Ventanilla_Eliminar" />
+  </wsdl:message>
+  <wsdl:message name="IVentanillaService_Ventanilla_Eliminar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Ventanilla_EliminarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVentanillaService_Ventanilla_ObtenerUno_InputMessage">
+    <wsdl:part name="parameters" element="tns:Ventanilla_ObtenerUno" />
+  </wsdl:message>
+  <wsdl:message name="IVentanillaService_Ventanilla_ObtenerUno_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Ventanilla_ObtenerUnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVentanillaService_Ventanilla_ObtenerTodos_InputMessage">
+    <wsdl:part name="parameters" element="tns:Ventanilla_ObtenerTodos" />
+  </wsdl:message>
+  <wsdl:message name="IVentanillaService_Ventanilla_ObtenerTodos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Ventanilla_ObtenerTodosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancoService_Banco_Crear_InputMessage">
+    <wsdl:part name="parameters" element="tns:Banco_Crear" />
+  </wsdl:message>
+  <wsdl:message name="IBancoService_Banco_Crear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Banco_CrearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancoService_Banco_Editar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Banco_Editar" />
+  </wsdl:message>
+  <wsdl:message name="IBancoService_Banco_Editar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Banco_EditarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancoService_Banco_Eliminar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Banco_Eliminar" />
+  </wsdl:message>
+  <wsdl:message name="IBancoService_Banco_Eliminar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Banco_EliminarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancoService_Banco_ObtenerUno_InputMessage">
+    <wsdl:part name="parameters" element="tns:Banco_ObtenerUno" />
+  </wsdl:message>
+  <wsdl:message name="IBancoService_Banco_ObtenerUno_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Banco_ObtenerUnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancoService_Banco_ObtenerTodos_InputMessage">
+    <wsdl:part name="parameters" element="tns:Banco_ObtenerTodos" />
+  </wsdl:message>
+  <wsdl:message name="IBancoService_Banco_ObtenerTodos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Banco_ObtenerTodosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComponenteService_Componente_Crear_InputMessage">
+    <wsdl:part name="parameters" element="tns:Componente_Crear" />
+  </wsdl:message>
+  <wsdl:message name="IComponenteService_Componente_Crear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Componente_CrearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComponenteService_Componente_Editar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Componente_Editar" />
+  </wsdl:message>
+  <wsdl:message name="IComponenteService_Componente_Editar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Componente_EditarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComponenteService_Componente_Eliminar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Componente_Eliminar" />
+  </wsdl:message>
+  <wsdl:message name="IComponenteService_Componente_Eliminar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Componente_EliminarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComponenteService_Componente_ObtenerUno_InputMessage">
+    <wsdl:part name="parameters" element="tns:Componente_ObtenerUno" />
+  </wsdl:message>
+  <wsdl:message name="IComponenteService_Componente_ObtenerUno_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Componente_ObtenerUnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComponenteService_Componente_ObtenerTodos_InputMessage">
+    <wsdl:part name="parameters" element="tns:Componente_ObtenerTodos" />
+  </wsdl:message>
+  <wsdl:message name="IComponenteService_Componente_ObtenerTodos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Componente_ObtenerTodosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHorariosAtencionService_HorariosAtencion_Crear_InputMessage">
+    <wsdl:part name="parameters" element="tns:HorariosAtencion_Crear" />
+  </wsdl:message>
+  <wsdl:message name="IHorariosAtencionService_HorariosAtencion_Crear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HorariosAtencion_CrearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHorariosAtencionService_HorariosAtencion_Editar_InputMessage">
+    <wsdl:part name="parameters" element="tns:HorariosAtencion_Editar" />
+  </wsdl:message>
+  <wsdl:message name="IHorariosAtencionService_HorariosAtencion_Editar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HorariosAtencion_EditarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHorariosAtencionService_HorariosAtencion_Eliminar_InputMessage">
+    <wsdl:part name="parameters" element="tns:HorariosAtencion_Eliminar" />
+  </wsdl:message>
+  <wsdl:message name="IHorariosAtencionService_HorariosAtencion_Eliminar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HorariosAtencion_EliminarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHorariosAtencionService_HorariosAtencion_ObtenerUno_InputMessage">
+    <wsdl:part name="parameters" element="tns:HorariosAtencion_ObtenerUno" />
+  </wsdl:message>
+  <wsdl:message name="IHorariosAtencionService_HorariosAtencion_ObtenerUno_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HorariosAtencion_ObtenerUnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHorariosAtencionService_HorariosAtencion_ObtenerTodos_InputMessage">
+    <wsdl:part name="parameters" element="tns:HorariosAtencion_ObtenerTodos" />
+  </wsdl:message>
+  <wsdl:message name="IHorariosAtencionService_HorariosAtencion_ObtenerTodos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HorariosAtencion_ObtenerTodosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPermisosUsuarioService_PermisosUsuario_Crear_InputMessage">
+    <wsdl:part name="parameters" element="tns:PermisosUsuario_Crear" />
+  </wsdl:message>
+  <wsdl:message name="IPermisosUsuarioService_PermisosUsuario_Crear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PermisosUsuario_CrearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPermisosUsuarioService_PermisosUsuario_Editar_InputMessage">
+    <wsdl:part name="parameters" element="tns:PermisosUsuario_Editar" />
+  </wsdl:message>
+  <wsdl:message name="IPermisosUsuarioService_PermisosUsuario_Editar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PermisosUsuario_EditarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPermisosUsuarioService_PermisosUsuario_Eliminar_InputMessage">
+    <wsdl:part name="parameters" element="tns:PermisosUsuario_Eliminar" />
+  </wsdl:message>
+  <wsdl:message name="IPermisosUsuarioService_PermisosUsuario_Eliminar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PermisosUsuario_EliminarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPermisosUsuarioService_PermisosUsuario_ObtenerUno_InputMessage">
+    <wsdl:part name="parameters" element="tns:PermisosUsuario_ObtenerUno" />
+  </wsdl:message>
+  <wsdl:message name="IPermisosUsuarioService_PermisosUsuario_ObtenerUno_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PermisosUsuario_ObtenerUnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPermisosUsuarioService_PermisosUsuario_ObtenerTodos_InputMessage">
+    <wsdl:part name="parameters" element="tns:PermisosUsuario_ObtenerTodos" />
+  </wsdl:message>
+  <wsdl:message name="IPermisosUsuarioService_PermisosUsuario_ObtenerTodos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PermisosUsuario_ObtenerTodosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPersonaService_Persona_Crear_InputMessage">
+    <wsdl:part name="parameters" element="tns:Persona_Crear" />
+  </wsdl:message>
+  <wsdl:message name="IPersonaService_Persona_Crear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Persona_CrearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPersonaService_Persona_Editar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Persona_Editar" />
+  </wsdl:message>
+  <wsdl:message name="IPersonaService_Persona_Editar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Persona_EditarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPersonaService_Persona_Eliminar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Persona_Eliminar" />
+  </wsdl:message>
+  <wsdl:message name="IPersonaService_Persona_Eliminar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Persona_EliminarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPersonaService_Persona_ObtenerUno_InputMessage">
+    <wsdl:part name="parameters" element="tns:Persona_ObtenerUno" />
+  </wsdl:message>
+  <wsdl:message name="IPersonaService_Persona_ObtenerUno_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Persona_ObtenerUnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPersonaService_Persona_ObtenerTodos_InputMessage">
+    <wsdl:part name="parameters" element="tns:Persona_ObtenerTodos" />
+  </wsdl:message>
+  <wsdl:message name="IPersonaService_Persona_ObtenerTodos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Persona_ObtenerTodosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPersonaService_Persona_ValidarUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:Persona_ValidarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IPersonaService_Persona_ValidarUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Persona_ValidarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPersonaService_Persona_CambiarContraseña_InputMessage">
+    <wsdl:part name="parameters" element="tns:Persona_CambiarContraseña" />
+  </wsdl:message>
+  <wsdl:message name="IPersonaService_Persona_CambiarContraseña_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Persona_CambiarContraseñaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRolesService_Roles_Crear_InputMessage">
+    <wsdl:part name="parameters" element="tns:Roles_Crear" />
+  </wsdl:message>
+  <wsdl:message name="IRolesService_Roles_Crear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Roles_CrearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRolesService_Roles_Editar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Roles_Editar" />
+  </wsdl:message>
+  <wsdl:message name="IRolesService_Roles_Editar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Roles_EditarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRolesService_Roles_Eliminar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Roles_Eliminar" />
+  </wsdl:message>
+  <wsdl:message name="IRolesService_Roles_Eliminar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Roles_EliminarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRolesService_Roles_ObtenerUno_InputMessage">
+    <wsdl:part name="parameters" element="tns:Roles_ObtenerUno" />
+  </wsdl:message>
+  <wsdl:message name="IRolesService_Roles_ObtenerUno_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Roles_ObtenerUnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRolesService_Roles_ObtenerTodos_InputMessage">
+    <wsdl:part name="parameters" element="tns:Roles_ObtenerTodos" />
+  </wsdl:message>
+  <wsdl:message name="IRolesService_Roles_ObtenerTodos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Roles_ObtenerTodosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRolUsuarioService_RolUsuario_Crear_InputMessage">
+    <wsdl:part name="parameters" element="tns:RolUsuario_Crear" />
+  </wsdl:message>
+  <wsdl:message name="IRolUsuarioService_RolUsuario_Crear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RolUsuario_CrearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRolUsuarioService_RolUsuario_Editar_InputMessage">
+    <wsdl:part name="parameters" element="tns:RolUsuario_Editar" />
+  </wsdl:message>
+  <wsdl:message name="IRolUsuarioService_RolUsuario_Editar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RolUsuario_EditarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRolUsuarioService_RolUsuario_Eliminar_InputMessage">
+    <wsdl:part name="parameters" element="tns:RolUsuario_Eliminar" />
+  </wsdl:message>
+  <wsdl:message name="IRolUsuarioService_RolUsuario_Eliminar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RolUsuario_EliminarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRolUsuarioService_RolUsuario_ObtenerUno_InputMessage">
+    <wsdl:part name="parameters" element="tns:RolUsuario_ObtenerUno" />
+  </wsdl:message>
+  <wsdl:message name="IRolUsuarioService_RolUsuario_ObtenerUno_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RolUsuario_ObtenerUnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRolUsuarioService_RolUsuario_ObtenerTodos_InputMessage">
+    <wsdl:part name="parameters" element="tns:RolUsuario_ObtenerTodos" />
+  </wsdl:message>
+  <wsdl:message name="IRolUsuarioService_RolUsuario_ObtenerTodos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RolUsuario_ObtenerTodosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISucursalService_Sucursal_Crear_InputMessage">
+    <wsdl:part name="parameters" element="tns:Sucursal_Crear" />
+  </wsdl:message>
+  <wsdl:message name="ISucursalService_Sucursal_Crear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Sucursal_CrearResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISucursalService_Sucursal_Editar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Sucursal_Editar" />
+  </wsdl:message>
+  <wsdl:message name="ISucursalService_Sucursal_Editar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Sucursal_EditarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISucursalService_Sucursal_Eliminar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Sucursal_Eliminar" />
+  </wsdl:message>
+  <wsdl:message name="ISucursalService_Sucursal_Eliminar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Sucursal_EliminarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISucursalService_Sucursal_ObtenerUno_InputMessage">
+    <wsdl:part name="parameters" element="tns:Sucursal_ObtenerUno" />
+  </wsdl:message>
+  <wsdl:message name="ISucursalService_Sucursal_ObtenerUno_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Sucursal_ObtenerUnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISucursalService_Sucursal_ObtenerTodos_InputMessage">
+    <wsdl:part name="parameters" element="tns:Sucursal_ObtenerTodos" />
+  </wsdl:message>
+  <wsdl:message name="ISucursalService_Sucursal_ObtenerTodos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Sucursal_ObtenerTodosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITipoDocumentoService_TipoDocumento_Crear_InputMessage">
+    <wsdl:part name="parameters" element="tns:TipoDocumento_Crear" />
+  </wsdl:message>
+  <wsdl:message name="ITipoDocumentoService_TipoDocumento_Crear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TipoDocumento_CrearResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITipoDocumentoService_TipoDocumento_Editar_InputMessage">
+    <wsdl:part name="parameters" element="tns:TipoDocumento_Editar" />
+  </wsdl:message>
+  <wsdl:message name="ITipoDocumentoService_TipoDocumento_Editar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TipoDocumento_EditarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITipoDocumentoService_TipoDocumento_Eliminar_InputMessage">
+    <wsdl:part name="parameters" element="tns:TipoDocumento_Eliminar" />
+  </wsdl:message>
+  <wsdl:message name="ITipoDocumentoService_TipoDocumento_Eliminar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TipoDocumento_EliminarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITipoDocumentoService_TipoDocumento_ObtenerUno_InputMessage">
+    <wsdl:part name="parameters" element="tns:TipoDocumento_ObtenerUno" />
+  </wsdl:message>
+  <wsdl:message name="ITipoDocumentoService_TipoDocumento_ObtenerUno_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TipoDocumento_ObtenerUnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITipoDocumentoService_TipoDocumento_ObtenerTodos_InputMessage">
+    <wsdl:part name="parameters" element="tns:TipoDocumento_ObtenerTodos" />
+  </wsdl:message>
+  <wsdl:message name="ITipoDocumentoService_TipoDocumento_ObtenerTodos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TipoDocumento_ObtenerTodosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITurnosService_Turnos_Crear_InputMessage">
+    <wsdl:part name="parameters" element="tns:Turnos_Crear" />
+  </wsdl:message>
+  <wsdl:message name="ITurnosService_Turnos_Crear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Turnos_CrearResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITurnosService_Turnos_Editar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Turnos_Editar" />
+  </wsdl:message>
+  <wsdl:message name="ITurnosService_Turnos_Editar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Turnos_EditarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITurnosService_Turnos_Eliminar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Turnos_Eliminar" />
+  </wsdl:message>
+  <wsdl:message name="ITurnosService_Turnos_Eliminar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Turnos_EliminarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITurnosService_Turnos_ObtenerUno_InputMessage">
+    <wsdl:part name="parameters" element="tns:Turnos_ObtenerUno" />
+  </wsdl:message>
+  <wsdl:message name="ITurnosService_Turnos_ObtenerUno_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Turnos_ObtenerUnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITurnosService_Turnos_ObtenerTodos_InputMessage">
+    <wsdl:part name="parameters" element="tns:Turnos_ObtenerTodos" />
+  </wsdl:message>
+  <wsdl:message name="ITurnosService_Turnos_ObtenerTodos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Turnos_ObtenerTodosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITurnoUsuarioService_TurnoUsuario_Crear_InputMessage">
+    <wsdl:part name="parameters" element="tns:TurnoUsuario_Crear" />
+  </wsdl:message>
+  <wsdl:message name="ITurnoUsuarioService_TurnoUsuario_Crear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TurnoUsuario_CrearResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITurnoUsuarioService_TurnoUsuario_Editar_InputMessage">
+    <wsdl:part name="parameters" element="tns:TurnoUsuario_Editar" />
+  </wsdl:message>
+  <wsdl:message name="ITurnoUsuarioService_TurnoUsuario_Editar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TurnoUsuario_EditarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITurnoUsuarioService_TurnoUsuario_Eliminar_InputMessage">
+    <wsdl:part name="parameters" element="tns:TurnoUsuario_Eliminar" />
+  </wsdl:message>
+  <wsdl:message name="ITurnoUsuarioService_TurnoUsuario_Eliminar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TurnoUsuario_EliminarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITurnoUsuarioService_TurnoUsuario_ObtenerUno_InputMessage">
+    <wsdl:part name="parameters" element="tns:TurnoUsuario_ObtenerUno" />
+  </wsdl:message>
+  <wsdl:message name="ITurnoUsuarioService_TurnoUsuario_ObtenerUno_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TurnoUsuario_ObtenerUnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITurnoUsuarioService_TurnoUsuario_ObtenerTodos_InputMessage">
+    <wsdl:part name="parameters" element="tns:TurnoUsuario_ObtenerTodos" />
+  </wsdl:message>
+  <wsdl:message name="ITurnoUsuarioService_TurnoUsuario_ObtenerTodos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TurnoUsuario_ObtenerTodosResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ICobroChequeService">
+    <wsdl:operation name="CobroCheque_Crear">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICobroChequeService/CobroCheque_Crear" message="tns:ICobroChequeService_CobroCheque_Crear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICobroChequeService/CobroCheque_CrearResponse" message="tns:ICobroChequeService_CobroCheque_Crear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CobroCheque_Editar">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICobroChequeService/CobroCheque_Editar" message="tns:ICobroChequeService_CobroCheque_Editar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICobroChequeService/CobroCheque_EditarResponse" message="tns:ICobroChequeService_CobroCheque_Editar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CobroCheque_Eliminar">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICobroChequeService/CobroCheque_Eliminar" message="tns:ICobroChequeService_CobroCheque_Eliminar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICobroChequeService/CobroCheque_EliminarResponse" message="tns:ICobroChequeService_CobroCheque_Eliminar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CobroCheque_ObtenerUno">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICobroChequeService/CobroCheque_ObtenerUno" message="tns:ICobroChequeService_CobroCheque_ObtenerUno_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICobroChequeService/CobroCheque_ObtenerUnoResponse" message="tns:ICobroChequeService_CobroCheque_ObtenerUno_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CobroCheque_ObtenerTodos">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICobroChequeService/CobroCheque_ObtenerTodos" message="tns:ICobroChequeService_CobroCheque_ObtenerTodos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICobroChequeService/CobroCheque_ObtenerTodosResponse" message="tns:ICobroChequeService_CobroCheque_ObtenerTodos_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IEmpresaService">
+    <wsdl:operation name="Empresa_Crear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmpresaService/Empresa_Crear" message="tns:IEmpresaService_Empresa_Crear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmpresaService/Empresa_CrearResponse" message="tns:IEmpresaService_Empresa_Crear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Empresa_Editar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmpresaService/Empresa_Editar" message="tns:IEmpresaService_Empresa_Editar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmpresaService/Empresa_EditarResponse" message="tns:IEmpresaService_Empresa_Editar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Empresa_Eliminar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmpresaService/Empresa_Eliminar" message="tns:IEmpresaService_Empresa_Eliminar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmpresaService/Empresa_EliminarResponse" message="tns:IEmpresaService_Empresa_Eliminar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Empresa_ObtenerUno">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmpresaService/Empresa_ObtenerUno" message="tns:IEmpresaService_Empresa_ObtenerUno_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmpresaService/Empresa_ObtenerUnoResponse" message="tns:IEmpresaService_Empresa_ObtenerUno_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Empresa_ObtenerTodos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmpresaService/Empresa_ObtenerTodos" message="tns:IEmpresaService_Empresa_ObtenerTodos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmpresaService/Empresa_ObtenerTodosResponse" message="tns:IEmpresaService_Empresa_ObtenerTodos_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IPagoServicioService">
+    <wsdl:operation name="PagoServicio_Crear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPagoServicioService/PagoServicio_Crear" message="tns:IPagoServicioService_PagoServicio_Crear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPagoServicioService/PagoServicio_CrearResponse" message="tns:IPagoServicioService_PagoServicio_Crear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PagoServicio_Editar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPagoServicioService/PagoServicio_Editar" message="tns:IPagoServicioService_PagoServicio_Editar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPagoServicioService/PagoServicio_EditarResponse" message="tns:IPagoServicioService_PagoServicio_Editar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PagoServicio_Eliminar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPagoServicioService/PagoServicio_Eliminar" message="tns:IPagoServicioService_PagoServicio_Eliminar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPagoServicioService/PagoServicio_EliminarResponse" message="tns:IPagoServicioService_PagoServicio_Eliminar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PagoServicio_ObtenerUno">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPagoServicioService/PagoServicio_ObtenerUno" message="tns:IPagoServicioService_PagoServicio_ObtenerUno_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPagoServicioService/PagoServicio_ObtenerUnoResponse" message="tns:IPagoServicioService_PagoServicio_ObtenerUno_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PagoServicio_ObtenerTodos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPagoServicioService/PagoServicio_ObtenerTodos" message="tns:IPagoServicioService_PagoServicio_ObtenerTodos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPagoServicioService/PagoServicio_ObtenerTodosResponse" message="tns:IPagoServicioService_PagoServicio_ObtenerTodos_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IRecaudosService">
+    <wsdl:operation name="Recaudos_Crear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecaudosService/Recaudos_Crear" message="tns:IRecaudosService_Recaudos_Crear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecaudosService/Recaudos_CrearResponse" message="tns:IRecaudosService_Recaudos_Crear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Recaudos_Editar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecaudosService/Recaudos_Editar" message="tns:IRecaudosService_Recaudos_Editar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecaudosService/Recaudos_EditarResponse" message="tns:IRecaudosService_Recaudos_Editar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Recaudos_Eliminar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecaudosService/Recaudos_Eliminar" message="tns:IRecaudosService_Recaudos_Eliminar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecaudosService/Recaudos_EliminarResponse" message="tns:IRecaudosService_Recaudos_Eliminar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Recaudos_ObtenerUno">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecaudosService/Recaudos_ObtenerUno" message="tns:IRecaudosService_Recaudos_ObtenerUno_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecaudosService/Recaudos_ObtenerUnoResponse" message="tns:IRecaudosService_Recaudos_ObtenerUno_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Recaudos_ObtenerTodos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecaudosService/Recaudos_ObtenerTodos" message="tns:IRecaudosService_Recaudos_ObtenerTodos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecaudosService/Recaudos_ObtenerTodosResponse" message="tns:IRecaudosService_Recaudos_ObtenerTodos_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ITipoMovimientoService">
+    <wsdl:operation name="TipoMovimiento_Crear">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITipoMovimientoService/TipoMovimiento_Crear" message="tns:ITipoMovimientoService_TipoMovimiento_Crear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITipoMovimientoService/TipoMovimiento_CrearResponse" message="tns:ITipoMovimientoService_TipoMovimiento_Crear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TipoMovimiento_Editar">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITipoMovimientoService/TipoMovimiento_Editar" message="tns:ITipoMovimientoService_TipoMovimiento_Editar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITipoMovimientoService/TipoMovimiento_EditarResponse" message="tns:ITipoMovimientoService_TipoMovimiento_Editar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TipoMovimiento_Eliminar">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITipoMovimientoService/TipoMovimiento_Eliminar" message="tns:ITipoMovimientoService_TipoMovimiento_Eliminar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITipoMovimientoService/TipoMovimiento_EliminarResponse" message="tns:ITipoMovimientoService_TipoMovimiento_Eliminar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TipoMovimiento_ObtenerUno">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITipoMovimientoService/TipoMovimiento_ObtenerUno" message="tns:ITipoMovimientoService_TipoMovimiento_ObtenerUno_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITipoMovimientoService/TipoMovimiento_ObtenerUnoResponse" message="tns:ITipoMovimientoService_TipoMovimiento_ObtenerUno_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TipoMovimiento_ObtenerTodos">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITipoMovimientoService/TipoMovimiento_ObtenerTodos" message="tns:ITipoMovimientoService_TipoMovimiento_ObtenerTodos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITipoMovimientoService/TipoMovimiento_ObtenerTodosResponse" message="tns:ITipoMovimientoService_TipoMovimiento_ObtenerTodos_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IVentanillaService">
+    <wsdl:operation name="Ventanilla_Crear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVentanillaService/Ventanilla_Crear" message="tns:IVentanillaService_Ventanilla_Crear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVentanillaService/Ventanilla_CrearResponse" message="tns:IVentanillaService_Ventanilla_Crear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Ventanilla_Editar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVentanillaService/Ventanilla_Editar" message="tns:IVentanillaService_Ventanilla_Editar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVentanillaService/Ventanilla_EditarResponse" message="tns:IVentanillaService_Ventanilla_Editar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Ventanilla_Eliminar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVentanillaService/Ventanilla_Eliminar" message="tns:IVentanillaService_Ventanilla_Eliminar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVentanillaService/Ventanilla_EliminarResponse" message="tns:IVentanillaService_Ventanilla_Eliminar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Ventanilla_ObtenerUno">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVentanillaService/Ventanilla_ObtenerUno" message="tns:IVentanillaService_Ventanilla_ObtenerUno_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVentanillaService/Ventanilla_ObtenerUnoResponse" message="tns:IVentanillaService_Ventanilla_ObtenerUno_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Ventanilla_ObtenerTodos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVentanillaService/Ventanilla_ObtenerTodos" message="tns:IVentanillaService_Ventanilla_ObtenerTodos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVentanillaService/Ventanilla_ObtenerTodosResponse" message="tns:IVentanillaService_Ventanilla_ObtenerTodos_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IBancoService">
+    <wsdl:operation name="Banco_Crear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancoService/Banco_Crear" message="tns:IBancoService_Banco_Crear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancoService/Banco_CrearResponse" message="tns:IBancoService_Banco_Crear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Banco_Editar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancoService/Banco_Editar" message="tns:IBancoService_Banco_Editar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancoService/Banco_EditarResponse" message="tns:IBancoService_Banco_Editar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Banco_Eliminar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancoService/Banco_Eliminar" message="tns:IBancoService_Banco_Eliminar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancoService/Banco_EliminarResponse" message="tns:IBancoService_Banco_Eliminar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Banco_ObtenerUno">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancoService/Banco_ObtenerUno" message="tns:IBancoService_Banco_ObtenerUno_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancoService/Banco_ObtenerUnoResponse" message="tns:IBancoService_Banco_ObtenerUno_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Banco_ObtenerTodos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancoService/Banco_ObtenerTodos" message="tns:IBancoService_Banco_ObtenerTodos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancoService/Banco_ObtenerTodosResponse" message="tns:IBancoService_Banco_ObtenerTodos_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IComponenteService">
+    <wsdl:operation name="Componente_Crear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComponenteService/Componente_Crear" message="tns:IComponenteService_Componente_Crear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComponenteService/Componente_CrearResponse" message="tns:IComponenteService_Componente_Crear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Componente_Editar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComponenteService/Componente_Editar" message="tns:IComponenteService_Componente_Editar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComponenteService/Componente_EditarResponse" message="tns:IComponenteService_Componente_Editar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Componente_Eliminar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComponenteService/Componente_Eliminar" message="tns:IComponenteService_Componente_Eliminar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComponenteService/Componente_EliminarResponse" message="tns:IComponenteService_Componente_Eliminar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Componente_ObtenerUno">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComponenteService/Componente_ObtenerUno" message="tns:IComponenteService_Componente_ObtenerUno_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComponenteService/Componente_ObtenerUnoResponse" message="tns:IComponenteService_Componente_ObtenerUno_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Componente_ObtenerTodos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComponenteService/Componente_ObtenerTodos" message="tns:IComponenteService_Componente_ObtenerTodos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComponenteService/Componente_ObtenerTodosResponse" message="tns:IComponenteService_Componente_ObtenerTodos_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IHorariosAtencionService">
+    <wsdl:operation name="HorariosAtencion_Crear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHorariosAtencionService/HorariosAtencion_Crear" message="tns:IHorariosAtencionService_HorariosAtencion_Crear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHorariosAtencionService/HorariosAtencion_CrearResponse" message="tns:IHorariosAtencionService_HorariosAtencion_Crear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HorariosAtencion_Editar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHorariosAtencionService/HorariosAtencion_Editar" message="tns:IHorariosAtencionService_HorariosAtencion_Editar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHorariosAtencionService/HorariosAtencion_EditarResponse" message="tns:IHorariosAtencionService_HorariosAtencion_Editar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HorariosAtencion_Eliminar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHorariosAtencionService/HorariosAtencion_Eliminar" message="tns:IHorariosAtencionService_HorariosAtencion_Eliminar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHorariosAtencionService/HorariosAtencion_EliminarResponse" message="tns:IHorariosAtencionService_HorariosAtencion_Eliminar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HorariosAtencion_ObtenerUno">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHorariosAtencionService/HorariosAtencion_ObtenerUno" message="tns:IHorariosAtencionService_HorariosAtencion_ObtenerUno_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHorariosAtencionService/HorariosAtencion_ObtenerUnoResponse" message="tns:IHorariosAtencionService_HorariosAtencion_ObtenerUno_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HorariosAtencion_ObtenerTodos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHorariosAtencionService/HorariosAtencion_ObtenerTodos" message="tns:IHorariosAtencionService_HorariosAtencion_ObtenerTodos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHorariosAtencionService/HorariosAtencion_ObtenerTodosResponse" message="tns:IHorariosAtencionService_HorariosAtencion_ObtenerTodos_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IPermisosUsuarioService">
+    <wsdl:operation name="PermisosUsuario_Crear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPermisosUsuarioService/PermisosUsuario_Crear" message="tns:IPermisosUsuarioService_PermisosUsuario_Crear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPermisosUsuarioService/PermisosUsuario_CrearResponse" message="tns:IPermisosUsuarioService_PermisosUsuario_Crear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PermisosUsuario_Editar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPermisosUsuarioService/PermisosUsuario_Editar" message="tns:IPermisosUsuarioService_PermisosUsuario_Editar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPermisosUsuarioService/PermisosUsuario_EditarResponse" message="tns:IPermisosUsuarioService_PermisosUsuario_Editar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PermisosUsuario_Eliminar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPermisosUsuarioService/PermisosUsuario_Eliminar" message="tns:IPermisosUsuarioService_PermisosUsuario_Eliminar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPermisosUsuarioService/PermisosUsuario_EliminarResponse" message="tns:IPermisosUsuarioService_PermisosUsuario_Eliminar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PermisosUsuario_ObtenerUno">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPermisosUsuarioService/PermisosUsuario_ObtenerUno" message="tns:IPermisosUsuarioService_PermisosUsuario_ObtenerUno_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPermisosUsuarioService/PermisosUsuario_ObtenerUnoResponse" message="tns:IPermisosUsuarioService_PermisosUsuario_ObtenerUno_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PermisosUsuario_ObtenerTodos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPermisosUsuarioService/PermisosUsuario_ObtenerTodos" message="tns:IPermisosUsuarioService_PermisosUsuario_ObtenerTodos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPermisosUsuarioService/PermisosUsuario_ObtenerTodosResponse" message="tns:IPermisosUsuarioService_PermisosUsuario_ObtenerTodos_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IPersonaService">
+    <wsdl:operation name="Persona_Crear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPersonaService/Persona_Crear" message="tns:IPersonaService_Persona_Crear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPersonaService/Persona_CrearResponse" message="tns:IPersonaService_Persona_Crear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Persona_Editar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPersonaService/Persona_Editar" message="tns:IPersonaService_Persona_Editar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPersonaService/Persona_EditarResponse" message="tns:IPersonaService_Persona_Editar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Persona_Eliminar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPersonaService/Persona_Eliminar" message="tns:IPersonaService_Persona_Eliminar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPersonaService/Persona_EliminarResponse" message="tns:IPersonaService_Persona_Eliminar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Persona_ObtenerUno">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPersonaService/Persona_ObtenerUno" message="tns:IPersonaService_Persona_ObtenerUno_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPersonaService/Persona_ObtenerUnoResponse" message="tns:IPersonaService_Persona_ObtenerUno_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Persona_ObtenerTodos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPersonaService/Persona_ObtenerTodos" message="tns:IPersonaService_Persona_ObtenerTodos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPersonaService/Persona_ObtenerTodosResponse" message="tns:IPersonaService_Persona_ObtenerTodos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Persona_ValidarUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPersonaService/Persona_ValidarUsuario" message="tns:IPersonaService_Persona_ValidarUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPersonaService/Persona_ValidarUsuarioResponse" message="tns:IPersonaService_Persona_ValidarUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Persona_CambiarContraseña">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPersonaService/Persona_CambiarContraseña" message="tns:IPersonaService_Persona_CambiarContraseña_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPersonaService/Persona_CambiarContraseñaResponse" message="tns:IPersonaService_Persona_CambiarContraseña_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IRolesService">
+    <wsdl:operation name="Roles_Crear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRolesService/Roles_Crear" message="tns:IRolesService_Roles_Crear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRolesService/Roles_CrearResponse" message="tns:IRolesService_Roles_Crear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Roles_Editar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRolesService/Roles_Editar" message="tns:IRolesService_Roles_Editar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRolesService/Roles_EditarResponse" message="tns:IRolesService_Roles_Editar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Roles_Eliminar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRolesService/Roles_Eliminar" message="tns:IRolesService_Roles_Eliminar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRolesService/Roles_EliminarResponse" message="tns:IRolesService_Roles_Eliminar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Roles_ObtenerUno">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRolesService/Roles_ObtenerUno" message="tns:IRolesService_Roles_ObtenerUno_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRolesService/Roles_ObtenerUnoResponse" message="tns:IRolesService_Roles_ObtenerUno_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Roles_ObtenerTodos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRolesService/Roles_ObtenerTodos" message="tns:IRolesService_Roles_ObtenerTodos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRolesService/Roles_ObtenerTodosResponse" message="tns:IRolesService_Roles_ObtenerTodos_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IRolUsuarioService">
+    <wsdl:operation name="RolUsuario_Crear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRolUsuarioService/RolUsuario_Crear" message="tns:IRolUsuarioService_RolUsuario_Crear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRolUsuarioService/RolUsuario_CrearResponse" message="tns:IRolUsuarioService_RolUsuario_Crear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RolUsuario_Editar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRolUsuarioService/RolUsuario_Editar" message="tns:IRolUsuarioService_RolUsuario_Editar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRolUsuarioService/RolUsuario_EditarResponse" message="tns:IRolUsuarioService_RolUsuario_Editar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RolUsuario_Eliminar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRolUsuarioService/RolUsuario_Eliminar" message="tns:IRolUsuarioService_RolUsuario_Eliminar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRolUsuarioService/RolUsuario_EliminarResponse" message="tns:IRolUsuarioService_RolUsuario_Eliminar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RolUsuario_ObtenerUno">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRolUsuarioService/RolUsuario_ObtenerUno" message="tns:IRolUsuarioService_RolUsuario_ObtenerUno_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRolUsuarioService/RolUsuario_ObtenerUnoResponse" message="tns:IRolUsuarioService_RolUsuario_ObtenerUno_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RolUsuario_ObtenerTodos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRolUsuarioService/RolUsuario_ObtenerTodos" message="tns:IRolUsuarioService_RolUsuario_ObtenerTodos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRolUsuarioService/RolUsuario_ObtenerTodosResponse" message="tns:IRolUsuarioService_RolUsuario_ObtenerTodos_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ISucursalService">
+    <wsdl:operation name="Sucursal_Crear">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISucursalService/Sucursal_Crear" message="tns:ISucursalService_Sucursal_Crear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISucursalService/Sucursal_CrearResponse" message="tns:ISucursalService_Sucursal_Crear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Sucursal_Editar">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISucursalService/Sucursal_Editar" message="tns:ISucursalService_Sucursal_Editar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISucursalService/Sucursal_EditarResponse" message="tns:ISucursalService_Sucursal_Editar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Sucursal_Eliminar">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISucursalService/Sucursal_Eliminar" message="tns:ISucursalService_Sucursal_Eliminar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISucursalService/Sucursal_EliminarResponse" message="tns:ISucursalService_Sucursal_Eliminar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Sucursal_ObtenerUno">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISucursalService/Sucursal_ObtenerUno" message="tns:ISucursalService_Sucursal_ObtenerUno_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISucursalService/Sucursal_ObtenerUnoResponse" message="tns:ISucursalService_Sucursal_ObtenerUno_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Sucursal_ObtenerTodos">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISucursalService/Sucursal_ObtenerTodos" message="tns:ISucursalService_Sucursal_ObtenerTodos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISucursalService/Sucursal_ObtenerTodosResponse" message="tns:ISucursalService_Sucursal_ObtenerTodos_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ITipoDocumentoService">
+    <wsdl:operation name="TipoDocumento_Crear">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITipoDocumentoService/TipoDocumento_Crear" message="tns:ITipoDocumentoService_TipoDocumento_Crear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITipoDocumentoService/TipoDocumento_CrearResponse" message="tns:ITipoDocumentoService_TipoDocumento_Crear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TipoDocumento_Editar">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITipoDocumentoService/TipoDocumento_Editar" message="tns:ITipoDocumentoService_TipoDocumento_Editar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITipoDocumentoService/TipoDocumento_EditarResponse" message="tns:ITipoDocumentoService_TipoDocumento_Editar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TipoDocumento_Eliminar">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITipoDocumentoService/TipoDocumento_Eliminar" message="tns:ITipoDocumentoService_TipoDocumento_Eliminar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITipoDocumentoService/TipoDocumento_EliminarResponse" message="tns:ITipoDocumentoService_TipoDocumento_Eliminar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TipoDocumento_ObtenerUno">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITipoDocumentoService/TipoDocumento_ObtenerUno" message="tns:ITipoDocumentoService_TipoDocumento_ObtenerUno_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITipoDocumentoService/TipoDocumento_ObtenerUnoResponse" message="tns:ITipoDocumentoService_TipoDocumento_ObtenerUno_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TipoDocumento_ObtenerTodos">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITipoDocumentoService/TipoDocumento_ObtenerTodos" message="tns:ITipoDocumentoService_TipoDocumento_ObtenerTodos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITipoDocumentoService/TipoDocumento_ObtenerTodosResponse" message="tns:ITipoDocumentoService_TipoDocumento_ObtenerTodos_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ITurnosService">
+    <wsdl:operation name="Turnos_Crear">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITurnosService/Turnos_Crear" message="tns:ITurnosService_Turnos_Crear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITurnosService/Turnos_CrearResponse" message="tns:ITurnosService_Turnos_Crear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Turnos_Editar">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITurnosService/Turnos_Editar" message="tns:ITurnosService_Turnos_Editar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITurnosService/Turnos_EditarResponse" message="tns:ITurnosService_Turnos_Editar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Turnos_Eliminar">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITurnosService/Turnos_Eliminar" message="tns:ITurnosService_Turnos_Eliminar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITurnosService/Turnos_EliminarResponse" message="tns:ITurnosService_Turnos_Eliminar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Turnos_ObtenerUno">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITurnosService/Turnos_ObtenerUno" message="tns:ITurnosService_Turnos_ObtenerUno_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITurnosService/Turnos_ObtenerUnoResponse" message="tns:ITurnosService_Turnos_ObtenerUno_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Turnos_ObtenerTodos">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITurnosService/Turnos_ObtenerTodos" message="tns:ITurnosService_Turnos_ObtenerTodos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITurnosService/Turnos_ObtenerTodosResponse" message="tns:ITurnosService_Turnos_ObtenerTodos_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ITurnoUsuarioService">
+    <wsdl:operation name="TurnoUsuario_Crear">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITurnoUsuarioService/TurnoUsuario_Crear" message="tns:ITurnoUsuarioService_TurnoUsuario_Crear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITurnoUsuarioService/TurnoUsuario_CrearResponse" message="tns:ITurnoUsuarioService_TurnoUsuario_Crear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TurnoUsuario_Editar">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITurnoUsuarioService/TurnoUsuario_Editar" message="tns:ITurnoUsuarioService_TurnoUsuario_Editar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITurnoUsuarioService/TurnoUsuario_EditarResponse" message="tns:ITurnoUsuarioService_TurnoUsuario_Editar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TurnoUsuario_Eliminar">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITurnoUsuarioService/TurnoUsuario_Eliminar" message="tns:ITurnoUsuarioService_TurnoUsuario_Eliminar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITurnoUsuarioService/TurnoUsuario_EliminarResponse" message="tns:ITurnoUsuarioService_TurnoUsuario_Eliminar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TurnoUsuario_ObtenerUno">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITurnoUsuarioService/TurnoUsuario_ObtenerUno" message="tns:ITurnoUsuarioService_TurnoUsuario_ObtenerUno_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITurnoUsuarioService/TurnoUsuario_ObtenerUnoResponse" message="tns:ITurnoUsuarioService_TurnoUsuario_ObtenerUno_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TurnoUsuario_ObtenerTodos">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITurnoUsuarioService/TurnoUsuario_ObtenerTodos" message="tns:ITurnoUsuarioService_TurnoUsuario_ObtenerTodos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITurnoUsuarioService/TurnoUsuario_ObtenerTodosResponse" message="tns:ITurnoUsuarioService_TurnoUsuario_ObtenerTodos_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ICobroChequeService" type="tns:ICobroChequeService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CobroCheque_Crear">
+      <soap:operation soapAction="http://tempuri.org/ICobroChequeService/CobroCheque_Crear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CobroCheque_Editar">
+      <soap:operation soapAction="http://tempuri.org/ICobroChequeService/CobroCheque_Editar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CobroCheque_Eliminar">
+      <soap:operation soapAction="http://tempuri.org/ICobroChequeService/CobroCheque_Eliminar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CobroCheque_ObtenerUno">
+      <soap:operation soapAction="http://tempuri.org/ICobroChequeService/CobroCheque_ObtenerUno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CobroCheque_ObtenerTodos">
+      <soap:operation soapAction="http://tempuri.org/ICobroChequeService/CobroCheque_ObtenerTodos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IEmpresaService" type="tns:IEmpresaService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Empresa_Crear">
+      <soap:operation soapAction="http://tempuri.org/IEmpresaService/Empresa_Crear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Empresa_Editar">
+      <soap:operation soapAction="http://tempuri.org/IEmpresaService/Empresa_Editar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Empresa_Eliminar">
+      <soap:operation soapAction="http://tempuri.org/IEmpresaService/Empresa_Eliminar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Empresa_ObtenerUno">
+      <soap:operation soapAction="http://tempuri.org/IEmpresaService/Empresa_ObtenerUno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Empresa_ObtenerTodos">
+      <soap:operation soapAction="http://tempuri.org/IEmpresaService/Empresa_ObtenerTodos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IPagoServicioService" type="tns:IPagoServicioService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PagoServicio_Crear">
+      <soap:operation soapAction="http://tempuri.org/IPagoServicioService/PagoServicio_Crear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PagoServicio_Editar">
+      <soap:operation soapAction="http://tempuri.org/IPagoServicioService/PagoServicio_Editar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PagoServicio_Eliminar">
+      <soap:operation soapAction="http://tempuri.org/IPagoServicioService/PagoServicio_Eliminar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PagoServicio_ObtenerUno">
+      <soap:operation soapAction="http://tempuri.org/IPagoServicioService/PagoServicio_ObtenerUno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PagoServicio_ObtenerTodos">
+      <soap:operation soapAction="http://tempuri.org/IPagoServicioService/PagoServicio_ObtenerTodos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IRecaudosService" type="tns:IRecaudosService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Recaudos_Crear">
+      <soap:operation soapAction="http://tempuri.org/IRecaudosService/Recaudos_Crear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Recaudos_Editar">
+      <soap:operation soapAction="http://tempuri.org/IRecaudosService/Recaudos_Editar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Recaudos_Eliminar">
+      <soap:operation soapAction="http://tempuri.org/IRecaudosService/Recaudos_Eliminar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Recaudos_ObtenerUno">
+      <soap:operation soapAction="http://tempuri.org/IRecaudosService/Recaudos_ObtenerUno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Recaudos_ObtenerTodos">
+      <soap:operation soapAction="http://tempuri.org/IRecaudosService/Recaudos_ObtenerTodos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_ITipoMovimientoService" type="tns:ITipoMovimientoService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="TipoMovimiento_Crear">
+      <soap:operation soapAction="http://tempuri.org/ITipoMovimientoService/TipoMovimiento_Crear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TipoMovimiento_Editar">
+      <soap:operation soapAction="http://tempuri.org/ITipoMovimientoService/TipoMovimiento_Editar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TipoMovimiento_Eliminar">
+      <soap:operation soapAction="http://tempuri.org/ITipoMovimientoService/TipoMovimiento_Eliminar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TipoMovimiento_ObtenerUno">
+      <soap:operation soapAction="http://tempuri.org/ITipoMovimientoService/TipoMovimiento_ObtenerUno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TipoMovimiento_ObtenerTodos">
+      <soap:operation soapAction="http://tempuri.org/ITipoMovimientoService/TipoMovimiento_ObtenerTodos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IVentanillaService" type="tns:IVentanillaService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Ventanilla_Crear">
+      <soap:operation soapAction="http://tempuri.org/IVentanillaService/Ventanilla_Crear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ventanilla_Editar">
+      <soap:operation soapAction="http://tempuri.org/IVentanillaService/Ventanilla_Editar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ventanilla_Eliminar">
+      <soap:operation soapAction="http://tempuri.org/IVentanillaService/Ventanilla_Eliminar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ventanilla_ObtenerUno">
+      <soap:operation soapAction="http://tempuri.org/IVentanillaService/Ventanilla_ObtenerUno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ventanilla_ObtenerTodos">
+      <soap:operation soapAction="http://tempuri.org/IVentanillaService/Ventanilla_ObtenerTodos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IBancoService" type="tns:IBancoService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Banco_Crear">
+      <soap:operation soapAction="http://tempuri.org/IBancoService/Banco_Crear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Banco_Editar">
+      <soap:operation soapAction="http://tempuri.org/IBancoService/Banco_Editar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Banco_Eliminar">
+      <soap:operation soapAction="http://tempuri.org/IBancoService/Banco_Eliminar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Banco_ObtenerUno">
+      <soap:operation soapAction="http://tempuri.org/IBancoService/Banco_ObtenerUno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Banco_ObtenerTodos">
+      <soap:operation soapAction="http://tempuri.org/IBancoService/Banco_ObtenerTodos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IComponenteService" type="tns:IComponenteService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Componente_Crear">
+      <soap:operation soapAction="http://tempuri.org/IComponenteService/Componente_Crear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Componente_Editar">
+      <soap:operation soapAction="http://tempuri.org/IComponenteService/Componente_Editar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Componente_Eliminar">
+      <soap:operation soapAction="http://tempuri.org/IComponenteService/Componente_Eliminar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Componente_ObtenerUno">
+      <soap:operation soapAction="http://tempuri.org/IComponenteService/Componente_ObtenerUno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Componente_ObtenerTodos">
+      <soap:operation soapAction="http://tempuri.org/IComponenteService/Componente_ObtenerTodos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IHorariosAtencionService" type="tns:IHorariosAtencionService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HorariosAtencion_Crear">
+      <soap:operation soapAction="http://tempuri.org/IHorariosAtencionService/HorariosAtencion_Crear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HorariosAtencion_Editar">
+      <soap:operation soapAction="http://tempuri.org/IHorariosAtencionService/HorariosAtencion_Editar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HorariosAtencion_Eliminar">
+      <soap:operation soapAction="http://tempuri.org/IHorariosAtencionService/HorariosAtencion_Eliminar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HorariosAtencion_ObtenerUno">
+      <soap:operation soapAction="http://tempuri.org/IHorariosAtencionService/HorariosAtencion_ObtenerUno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HorariosAtencion_ObtenerTodos">
+      <soap:operation soapAction="http://tempuri.org/IHorariosAtencionService/HorariosAtencion_ObtenerTodos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IPermisosUsuarioService" type="tns:IPermisosUsuarioService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PermisosUsuario_Crear">
+      <soap:operation soapAction="http://tempuri.org/IPermisosUsuarioService/PermisosUsuario_Crear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PermisosUsuario_Editar">
+      <soap:operation soapAction="http://tempuri.org/IPermisosUsuarioService/PermisosUsuario_Editar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PermisosUsuario_Eliminar">
+      <soap:operation soapAction="http://tempuri.org/IPermisosUsuarioService/PermisosUsuario_Eliminar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PermisosUsuario_ObtenerUno">
+      <soap:operation soapAction="http://tempuri.org/IPermisosUsuarioService/PermisosUsuario_ObtenerUno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PermisosUsuario_ObtenerTodos">
+      <soap:operation soapAction="http://tempuri.org/IPermisosUsuarioService/PermisosUsuario_ObtenerTodos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IPersonaService" type="tns:IPersonaService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Persona_Crear">
+      <soap:operation soapAction="http://tempuri.org/IPersonaService/Persona_Crear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Persona_Editar">
+      <soap:operation soapAction="http://tempuri.org/IPersonaService/Persona_Editar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Persona_Eliminar">
+      <soap:operation soapAction="http://tempuri.org/IPersonaService/Persona_Eliminar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Persona_ObtenerUno">
+      <soap:operation soapAction="http://tempuri.org/IPersonaService/Persona_ObtenerUno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Persona_ObtenerTodos">
+      <soap:operation soapAction="http://tempuri.org/IPersonaService/Persona_ObtenerTodos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Persona_ValidarUsuario">
+      <soap:operation soapAction="http://tempuri.org/IPersonaService/Persona_ValidarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Persona_CambiarContraseña">
+      <soap:operation soapAction="http://tempuri.org/IPersonaService/Persona_CambiarContraseña" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IRolesService" type="tns:IRolesService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Roles_Crear">
+      <soap:operation soapAction="http://tempuri.org/IRolesService/Roles_Crear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Roles_Editar">
+      <soap:operation soapAction="http://tempuri.org/IRolesService/Roles_Editar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Roles_Eliminar">
+      <soap:operation soapAction="http://tempuri.org/IRolesService/Roles_Eliminar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Roles_ObtenerUno">
+      <soap:operation soapAction="http://tempuri.org/IRolesService/Roles_ObtenerUno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Roles_ObtenerTodos">
+      <soap:operation soapAction="http://tempuri.org/IRolesService/Roles_ObtenerTodos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IRolUsuarioService" type="tns:IRolUsuarioService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RolUsuario_Crear">
+      <soap:operation soapAction="http://tempuri.org/IRolUsuarioService/RolUsuario_Crear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RolUsuario_Editar">
+      <soap:operation soapAction="http://tempuri.org/IRolUsuarioService/RolUsuario_Editar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RolUsuario_Eliminar">
+      <soap:operation soapAction="http://tempuri.org/IRolUsuarioService/RolUsuario_Eliminar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RolUsuario_ObtenerUno">
+      <soap:operation soapAction="http://tempuri.org/IRolUsuarioService/RolUsuario_ObtenerUno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RolUsuario_ObtenerTodos">
+      <soap:operation soapAction="http://tempuri.org/IRolUsuarioService/RolUsuario_ObtenerTodos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_ISucursalService" type="tns:ISucursalService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Sucursal_Crear">
+      <soap:operation soapAction="http://tempuri.org/ISucursalService/Sucursal_Crear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sucursal_Editar">
+      <soap:operation soapAction="http://tempuri.org/ISucursalService/Sucursal_Editar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sucursal_Eliminar">
+      <soap:operation soapAction="http://tempuri.org/ISucursalService/Sucursal_Eliminar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sucursal_ObtenerUno">
+      <soap:operation soapAction="http://tempuri.org/ISucursalService/Sucursal_ObtenerUno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sucursal_ObtenerTodos">
+      <soap:operation soapAction="http://tempuri.org/ISucursalService/Sucursal_ObtenerTodos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_ITipoDocumentoService" type="tns:ITipoDocumentoService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="TipoDocumento_Crear">
+      <soap:operation soapAction="http://tempuri.org/ITipoDocumentoService/TipoDocumento_Crear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TipoDocumento_Editar">
+      <soap:operation soapAction="http://tempuri.org/ITipoDocumentoService/TipoDocumento_Editar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TipoDocumento_Eliminar">
+      <soap:operation soapAction="http://tempuri.org/ITipoDocumentoService/TipoDocumento_Eliminar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TipoDocumento_ObtenerUno">
+      <soap:operation soapAction="http://tempuri.org/ITipoDocumentoService/TipoDocumento_ObtenerUno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TipoDocumento_ObtenerTodos">
+      <soap:operation soapAction="http://tempuri.org/ITipoDocumentoService/TipoDocumento_ObtenerTodos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_ITurnosService" type="tns:ITurnosService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Turnos_Crear">
+      <soap:operation soapAction="http://tempuri.org/ITurnosService/Turnos_Crear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Turnos_Editar">
+      <soap:operation soapAction="http://tempuri.org/ITurnosService/Turnos_Editar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Turnos_Eliminar">
+      <soap:operation soapAction="http://tempuri.org/ITurnosService/Turnos_Eliminar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Turnos_ObtenerUno">
+      <soap:operation soapAction="http://tempuri.org/ITurnosService/Turnos_ObtenerUno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Turnos_ObtenerTodos">
+      <soap:operation soapAction="http://tempuri.org/ITurnosService/Turnos_ObtenerTodos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_ITurnoUsuarioService" type="tns:ITurnoUsuarioService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="TurnoUsuario_Crear">
+      <soap:operation soapAction="http://tempuri.org/ITurnoUsuarioService/TurnoUsuario_Crear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TurnoUsuario_Editar">
+      <soap:operation soapAction="http://tempuri.org/ITurnoUsuarioService/TurnoUsuario_Editar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TurnoUsuario_Eliminar">
+      <soap:operation soapAction="http://tempuri.org/ITurnoUsuarioService/TurnoUsuario_Eliminar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TurnoUsuario_ObtenerUno">
+      <soap:operation soapAction="http://tempuri.org/ITurnoUsuarioService/TurnoUsuario_ObtenerUno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TurnoUsuario_ObtenerTodos">
+      <soap:operation soapAction="http://tempuri.org/ITurnoUsuarioService/TurnoUsuario_ObtenerTodos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SistemaBancario">
+    <wsdl:port name="BasicHttpBinding_ICobroChequeService" binding="tns:BasicHttpBinding_ICobroChequeService">
+      <soap:address location="http://localhost:50786/SistemaBancario.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IEmpresaService" binding="tns:BasicHttpBinding_IEmpresaService">
+      <soap:address location="http://localhost:50786/SistemaBancario.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IPagoServicioService" binding="tns:BasicHttpBinding_IPagoServicioService">
+      <soap:address location="http://localhost:50786/SistemaBancario.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IRecaudosService" binding="tns:BasicHttpBinding_IRecaudosService">
+      <soap:address location="http://localhost:50786/SistemaBancario.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_ITipoMovimientoService" binding="tns:BasicHttpBinding_ITipoMovimientoService">
+      <soap:address location="http://localhost:50786/SistemaBancario.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IVentanillaService" binding="tns:BasicHttpBinding_IVentanillaService">
+      <soap:address location="http://localhost:50786/SistemaBancario.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IBancoService" binding="tns:BasicHttpBinding_IBancoService">
+      <soap:address location="http://localhost:50786/SistemaBancario.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IComponenteService" binding="tns:BasicHttpBinding_IComponenteService">
+      <soap:address location="http://localhost:50786/SistemaBancario.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IHorariosAtencionService" binding="tns:BasicHttpBinding_IHorariosAtencionService">
+      <soap:address location="http://localhost:50786/SistemaBancario.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IPermisosUsuarioService" binding="tns:BasicHttpBinding_IPermisosUsuarioService">
+      <soap:address location="http://localhost:50786/SistemaBancario.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IPersonaService" binding="tns:BasicHttpBinding_IPersonaService">
+      <soap:address location="http://localhost:50786/SistemaBancario.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IRolesService" binding="tns:BasicHttpBinding_IRolesService">
+      <soap:address location="http://localhost:50786/SistemaBancario.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IRolUsuarioService" binding="tns:BasicHttpBinding_IRolUsuarioService">
+      <soap:address location="http://localhost:50786/SistemaBancario.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_ISucursalService" binding="tns:BasicHttpBinding_ISucursalService">
+      <soap:address location="http://localhost:50786/SistemaBancario.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_ITipoDocumentoService" binding="tns:BasicHttpBinding_ITipoDocumentoService">
+      <soap:address location="http://localhost:50786/SistemaBancario.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_ITurnosService" binding="tns:BasicHttpBinding_ITurnosService">
+      <soap:address location="http://localhost:50786/SistemaBancario.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_ITurnoUsuarioService" binding="tns:BasicHttpBinding_ITurnoUsuarioService">
+      <soap:address location="http://localhost:50786/SistemaBancario.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

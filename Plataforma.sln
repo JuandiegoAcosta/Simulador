@@ -12,6 +12,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CServicios", "CServicios\CServicios.csproj", "{4D344881-6E47-4F46-AA36-93B84E62C338}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "GUI\GUI.csproj", "{D362364A-03B1-482F-B992-474C30F1E7EB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4D344881-6E47-4F46-AA36-93B84E62C338} = {4D344881-6E47-4F46-AA36-93B84E62C338}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

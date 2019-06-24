@@ -16,5 +16,18 @@ namespace Sistema_Bancario
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string nick = txtUsuario.Text;
+            string pass = txtPass.Text;
+            using (WsSistemaBancario.PersonaServiceClient user= new WsSistemaBancario.PersonaServiceClient())
+            {
+                if (user.Persona_ValidarUsuario(nick, pass))
+                {
+                    MessageBox.Show("credenciales autenticas");
+                }else MessageBox.Show("error");
+            }
+        }
     }
 }

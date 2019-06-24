@@ -57,6 +57,8 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -79,6 +81,11 @@
     </Compile>
     <Compile Include="Botones\BTRetiros.Designer.cs">
       <DependentUpon>BTRetiros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\WsSistemaBancario\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Controles\DatosPersona.cs">
       <SubType>UserControl</SubType>
@@ -218,8 +225,14 @@
     <Compile Include="Plataforma\UCrefinanciar.Designer.cs">
       <DependentUpon>UCrefinanciar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ventanilla.cs">
+    <Compile Include="VentanaPrincipal.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanilla\Balancin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ventanilla\Balancin.Designer.cs">
+      <DependentUpon>Balancin.cs</DependentUpon>
     </Compile>
     <Compile Include="Ventanilla\CobroGiros.cs">
       <SubType>UserControl</SubType>
@@ -263,6 +276,12 @@
     <Compile Include="Ventanilla\Envio Giros.Designer.cs">
       <DependentUpon>Envio Giros.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ventanilla\ResumenTotal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ventanilla\ResumenTotal.Designer.cs">
+      <DependentUpon>ResumenTotal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ventanilla\Tipo_de_Cambio.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -295,8 +314,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Ventanilla.Designer.cs">
-      <DependentUpon>Ventanilla.cs</DependentUpon>
+    <Compile Include="VentanaPrincipal.Designer.cs">
+      <DependentUpon>VentanaPrincipal.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Botones\BTRetiros.resx">
       <DependentUpon>BTRetiros.cs</DependentUpon>
@@ -352,6 +371,9 @@
     <EmbeddedResource Include="Controles\TopBar.resx">
       <DependentUpon>TopBar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ventanilla\Balancin.resx">
+      <DependentUpon>Balancin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ventanilla\Envio Giros.resx">
       <DependentUpon>Envio Giros.cs</DependentUpon>
     </EmbeddedResource>
@@ -373,8 +395,8 @@
     <EmbeddedResource Include="Plataforma\UCrefinanciar.resx">
       <DependentUpon>UCrefinanciar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventanilla.resx">
-      <DependentUpon>Ventanilla.cs</DependentUpon>
+    <EmbeddedResource Include="VentanaPrincipal.resx">
+      <DependentUpon>VentanaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanilla\CobroGiros.resx">
       <DependentUpon>CobroGiros.cs</DependentUpon>
@@ -393,6 +415,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanilla\Depositos.resx">
       <DependentUpon>Depositos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventanilla\ResumenTotal.resx">
+      <DependentUpon>ResumenTotal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanilla\Tipo_de_Cambio.resx">
       <DependentUpon>Tipo_de_Cambio.cs</DependentUpon>
@@ -419,6 +444,33 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Connected Services\WsSistemaBancario\SistemaBancario.wsdl" />
+    <None Include="Connected Services\WsSistemaBancario\SistemaBancario.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WsSistemaBancario\SistemaBancario1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WsSistemaBancario\SistemaBancario2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\DataSources\Modelos.Modelos.BancoModel.datasource" />
+    <None Include="Properties\DataSources\Modelos.Modelos.CobroChequesModel.datasource" />
+    <None Include="Properties\DataSources\Modelos.Modelos.ComponenteModel.datasource" />
+    <None Include="Properties\DataSources\Modelos.Modelos.EmpresaModel.datasource" />
+    <None Include="Properties\DataSources\Modelos.Modelos.HorariosAtencionModel.datasource" />
+    <None Include="Properties\DataSources\Modelos.Modelos.MovimientosVentanillaModel.datasource" />
+    <None Include="Properties\DataSources\Modelos.Modelos.PagoServiciosModel.datasource" />
+    <None Include="Properties\DataSources\Modelos.Modelos.PermisosUsuarioModel.datasource" />
+    <None Include="Properties\DataSources\Modelos.Modelos.PersonaModel.datasource" />
+    <None Include="Properties\DataSources\Modelos.Modelos.RecaudosModel.datasource" />
+    <None Include="Properties\DataSources\Modelos.Modelos.RolesModel.datasource" />
+    <None Include="Properties\DataSources\Modelos.Modelos.RolUsuarioModel.datasource" />
+    <None Include="Properties\DataSources\Modelos.Modelos.SucursalModel.datasource" />
+    <None Include="Properties\DataSources\Modelos.Modelos.TipoDocumentoModel.datasource" />
+    <None Include="Properties\DataSources\Modelos.Modelos.TurnosModel.datasource" />
+    <None Include="Properties\DataSources\Modelos.Modelos.TurnoUsuarioModel.datasource" />
+    <None Include="Properties\DataSources\Modelos.Modelos.VentanillaModel.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -459,6 +511,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\limpiar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\WsSistemaBancario\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WsSistemaBancario\SistemaBancario.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WsSistemaBancario\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WsSistemaBancario\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WsSistemaBancario\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

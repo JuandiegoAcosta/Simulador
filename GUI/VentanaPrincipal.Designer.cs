@@ -1,6 +1,6 @@
 ﻿namespace Sistema_Bancario
 {
-    partial class Form2
+    partial class VentanaPrincipal
     {
         /// <summary>
         /// Required designer variable.
@@ -56,17 +56,17 @@
             this.panel1.Location = new System.Drawing.Point(279, 155);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(909, 663);
+            this.panel1.Size = new System.Drawing.Size(910, 683);
             this.panel1.TabIndex = 1;
             // 
             // panel2
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
-            this.panel2.Location = new System.Drawing.Point(-1, 155);
+            this.panel2.Location = new System.Drawing.Point(-2, 155);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(267, 625);
+            this.panel2.Size = new System.Drawing.Size(267, 663);
             this.panel2.TabIndex = 7;
             // 
             // label1
@@ -124,7 +124,7 @@
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button11.ForeColor = System.Drawing.SystemColors.Window;
-            this.button11.Location = new System.Drawing.Point(0, 780);
+            this.button11.Location = new System.Drawing.Point(-2, 817);
             this.button11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(267, 50);
@@ -161,7 +161,7 @@
             this.BTOperaciones.TabIndex = 8;
             this.BTOperaciones.Text = "Operaciones";
             this.BTOperaciones.UseVisualStyleBackColor = false;
-            this.BTOperaciones.Click += new System.EventHandler(this.button12_Click);
+            this.BTOperaciones.Click += new System.EventHandler(this.BTOperaciones_Click);
             // 
             // BTReportes
             // 
@@ -278,7 +278,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(1200, 830);
+            this.ClientSize = new System.Drawing.Size(1196, 867);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel4);
