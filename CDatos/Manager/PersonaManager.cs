@@ -43,7 +43,7 @@ namespace CDatos.Manager
                     command.Parameters.AddWithValue("@Telefono", aPersonaModel.Telefono == null ? (object)DBNull.Value : aPersonaModel.Telefono);
                     command.Parameters.AddWithValue("@NroDocumento", aPersonaModel.Nrodocumento);
                     command.Parameters.AddWithValue("@TipoDocumento", aPersonaModel.Tipodocumento);
-                    command.Parameters.AddWithValue("@Tipo_Persona", aPersonaModel.Tipo_Persona);
+                    command.Parameters.AddWithValue("@Tipo_Persona", aPersonaModel.Tipo_Persona == null ? (object)DBNull.Value : aPersonaModel.Tipo_Persona);
                     command.Parameters.AddWithValue("@FECHA_CREACION", aPersonaModel.Fecha_creacion);
                     command.Parameters.AddWithValue("@USUARIO_CREADOR", aPersonaModel.Usuario_creador);
 
@@ -104,7 +104,7 @@ namespace CDatos.Manager
                     command.Parameters.AddWithValue("@Telefono", aPersonaModel.Telefono == null ? (object)DBNull.Value : aPersonaModel.Telefono);
                     command.Parameters.AddWithValue("@NroDocumento", aPersonaModel.Nrodocumento);
                     command.Parameters.AddWithValue("@TipoDocumento", aPersonaModel.Tipodocumento);
-                    command.Parameters.AddWithValue("@Tipo_Persona", aPersonaModel.Tipo_Persona);
+                    command.Parameters.AddWithValue("@Tipo_Persona", aPersonaModel.Tipo_Persona == null ? (object)DBNull.Value : aPersonaModel.Tipo_Persona);
                     command.Parameters.AddWithValue("@FECHA_MODIFICACION", aPersonaModel.Fecha_modificacion == null ? (object)DBNull.Value : aPersonaModel.Fecha_modificacion);
                     command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aPersonaModel.Usuario_modificador == null ? (object)DBNull.Value : aPersonaModel.Usuario_modificador);
 
@@ -220,7 +220,7 @@ namespace CDatos.Manager
                         string Telefono = (reader["Telefono"]) == DBNull.Value ? null : (string)(reader["Telefono"]);
                         string NroDocumento = (string)(reader["NroDocumento"]);
                         int TipoDocumento = (int)(reader["TipoDocumento"]);
-                        string Tipo_Persona = (string)(reader["Tipo_Persona"]);
+                        string Tipo_Persona = (reader["Tipo_Persona"]) == DBNull.Value ? null : (string)(reader["Tipo_Persona"]);
                         DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
                         DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
                         string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
@@ -412,9 +412,9 @@ namespace CDatos.Manager
             }
         }
 
-        public bool ValidarUsuario(string usuario, string password)
+        public PersonaModel ValidarUsuario(string usuario, string password)
         {
-            //int acceso = 0;
+            PersonaModel PersonaModel = null;
 
             try
             {
@@ -430,26 +430,54 @@ namespace CDatos.Manager
                     command.Parameters.AddWithValue("@Usuario", usuario);
                     command.Parameters.AddWithValue("@Password", password);
 
-                    command.Parameters.AddWithValue("@Existe", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    SqlDataReader reader = command.ExecuteReader();
 
+                    if (reader.HasRows)
+                    {
+                        reader.Read();
+                        int Id = (int)(reader["Id"]);
+                        string NombreUsuario = (string)(reader["NombreUsuario"]);
+                        string Pass = (string)(reader["Pass"]);
+                        string Correo = (reader["Correo"]) == DBNull.Value ? null : (string)(reader["Correo"]);
+                        bool Estado = (bool)(reader["Estado"]);
+                        string Nombres = (string)(reader["Nombres"]);
+                        string Apellidos = (string)(reader["Apellidos"]);
+                        DateTime FechaNacimiento = (DateTime)(reader["FechaNacimiento"]);
+                        string Telefono = (reader["Telefono"]) == DBNull.Value ? null : (string)(reader["Telefono"]);
+                        string NroDocumento = (string)(reader["NroDocumento"]);
+                        int TipoDocumento = (int)(reader["TipoDocumento"]);
+                        string Tipo_Persona = (reader["Tipo_Persona"]) == DBNull.Value ? null : (string)(reader["Tipo_Persona"]);
+                        DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
+                        DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
+                        string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
+                        string USUARIO_MODIFICADOR = (reader["USUARIO_MODIFICADOR"]) == DBNull.Value ? null : (string)(reader["USUARIO_MODIFICADOR"]);
 
-                    //SqlDataReader reader = command.ExecuteReader();
-                    command.ExecuteNonQuery();
-
-                    int existe = Convert.ToInt32(command.Parameters["@Existe"].Value.ToString());
-
-                    connection.Close();
-                    if (existe > 0)
-                        return true;
-                    else
-                        return false;
-
+                        PersonaModel = new PersonaModel
+                        {
+                            Id = Id,
+                            Nombreusuario = NombreUsuario,
+                            Pass = Pass,
+                            Correo = Correo,
+                            Estado = Estado,
+                            Nombres = Nombres,
+                            Apellidos = Apellidos,
+                            Fechanacimiento = FechaNacimiento,
+                            Telefono = Telefono,
+                            Nrodocumento = NroDocumento,
+                            Tipodocumento = TipoDocumento,
+                            Tipo_Persona = Tipo_Persona,
+                            Fecha_creacion = FECHA_CREACION,
+                            Fecha_modificacion = FECHA_MODIFICACION,
+                            Usuario_creador = USUARIO_CREADOR,
+                            Usuario_modificador = USUARIO_MODIFICADOR,
+                        };
+                    }
+                    return PersonaModel;
                 }
-
             }
             catch (Exception)
             {
-                return false;
+                return PersonaModel;
             }
 
         }

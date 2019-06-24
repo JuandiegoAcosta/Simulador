@@ -59,7 +59,7 @@ namespace CNegocio.Backend
             return ADPersonaManager.PersonaModelSelectAll();
         }
 
-        public bool ValidarUsuario(string aUsuario, string aContraseña)
+        public PersonaModel ValidarUsuario(string aUsuario, string aContraseña)
         {
             return ADPersonaManager.ValidarUsuario(aUsuario, aContraseña);
         }
