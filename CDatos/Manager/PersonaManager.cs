@@ -43,7 +43,7 @@ namespace CDatos.Manager
                     command.Parameters.AddWithValue("@Telefono", aPersonaModel.Telefono == null ? (object)DBNull.Value : aPersonaModel.Telefono);
                     command.Parameters.AddWithValue("@NroDocumento", aPersonaModel.Nrodocumento);
                     command.Parameters.AddWithValue("@TipoDocumento", aPersonaModel.Tipodocumento);
-                    command.Parameters.AddWithValue("@Tipo_Persona", aPersonaModel.Tipo_Persona);
+                    command.Parameters.AddWithValue("@Tipo_Persona", aPersonaModel.Tipo_Persona == null ? (object)DBNull.Value : aPersonaModel.Tipo_Persona);
                     command.Parameters.AddWithValue("@FECHA_CREACION", aPersonaModel.Fecha_creacion);
                     command.Parameters.AddWithValue("@USUARIO_CREADOR", aPersonaModel.Usuario_creador);
 
@@ -65,7 +65,7 @@ namespace CDatos.Manager
                         return false;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return false;
             }
@@ -75,7 +75,7 @@ namespace CDatos.Manager
         /// <summary>
         /// Updates a record to the PersonaModel table.
         /// returns True if value saved successfully else false
-        /// Throw exception with message value EXISTS if the data is duplicate
+        /// Throw exception with message value EXISTS if| the data is duplicate
         /// </summary>
         public bool Update(PersonaModel aPersonaModel)
         {
@@ -104,7 +104,7 @@ namespace CDatos.Manager
                     command.Parameters.AddWithValue("@Telefono", aPersonaModel.Telefono == null ? (object)DBNull.Value : aPersonaModel.Telefono);
                     command.Parameters.AddWithValue("@NroDocumento", aPersonaModel.Nrodocumento);
                     command.Parameters.AddWithValue("@TipoDocumento", aPersonaModel.Tipodocumento);
-                    command.Parameters.AddWithValue("@Tipo_Persona", aPersonaModel.Tipo_Persona);
+                    command.Parameters.AddWithValue("@Tipo_Persona", aPersonaModel.Tipo_Persona == null ? (object)DBNull.Value : aPersonaModel.Tipo_Persona);
                     command.Parameters.AddWithValue("@FECHA_MODIFICACION", aPersonaModel.Fecha_modificacion == null ? (object)DBNull.Value : aPersonaModel.Fecha_modificacion);
                     command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aPersonaModel.Usuario_modificador == null ? (object)DBNull.Value : aPersonaModel.Usuario_modificador);
 
@@ -220,7 +220,7 @@ namespace CDatos.Manager
                         string Telefono = (reader["Telefono"]) == DBNull.Value ? null : (string)(reader["Telefono"]);
                         string NroDocumento = (string)(reader["NroDocumento"]);
                         int TipoDocumento = (int)(reader["TipoDocumento"]);
-                        string Tipo_Persona = (string)(reader["Tipo_Persona"]);
+                            string Tipo_Persona = (reader["Tipo_Persona"])== DBNull.Value ? null : (string)(reader["Tipo_Persona"]);
                         DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
                         DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
                         string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
@@ -297,7 +297,7 @@ namespace CDatos.Manager
                             string Telefono = (reader["Telefono"]) == DBNull.Value ? null : (string)(reader["Telefono"]);
                             string NroDocumento = (string)(reader["NroDocumento"]);
                             int TipoDocumento = (int)(reader["TipoDocumento"]);
-                            string Tipo_Persona = (string)(reader["Tipo_Persona"]);
+                            string Tipo_Persona = (reader["Tipo_Persona"])== DBNull.Value ? null : (string)(reader["Tipo_Persona"]);
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
                             DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
                             string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
@@ -446,7 +446,7 @@ namespace CDatos.Manager
                         string Telefono = (reader["Telefono"]) == DBNull.Value ? null : (string)(reader["Telefono"]);
                         string NroDocumento = (string)(reader["NroDocumento"]);
                         int TipoDocumento = (int)(reader["TipoDocumento"]);
-                        string Tipo_Persona = (string)(reader["Tipo_Persona"]);
+                        string Tipo_Persona = (reader["Tipo_Persona"])== DBNull.Value ? null : (string)(reader["Tipo_Persona"]);
                         DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
                         DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
                         string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
@@ -477,7 +477,7 @@ namespace CDatos.Manager
                 return PersonaModel;
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return PersonaModel;
             }

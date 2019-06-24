@@ -22,8 +22,8 @@ namespace CNegocio.Backend
             try
             {
 
-                bool ValidacionUsuario = ValidarUsuario(aPersona.Nombreusuario, aPersona.Pass);
-                if (ValidacionUsuario == true)
+                PersonaModel ValidacionUsuario = ValidarUsuario(aPersona.Nombreusuario, aPersona.Pass);
+                if (ValidacionUsuario != null)
                 {
                     return false;
                 }
