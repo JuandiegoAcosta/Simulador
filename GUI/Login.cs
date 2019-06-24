@@ -23,9 +23,13 @@ namespace Sistema_Bancario
             string pass = txtPass.Text;
             using (WsSistemaBancario.PersonaServiceClient user= new WsSistemaBancario.PersonaServiceClient())
             {
+                //var persona = user.Persona_ValidarUsuario(nick, pass);
+
+                VentanaPrincipal x = new VentanaPrincipal();
                 if (user.Persona_ValidarUsuario(nick, pass))
                 {
-                    MessageBox.Show("credenciales autenticas");
+                   
+
                 }else MessageBox.Show("error");
             }
         }

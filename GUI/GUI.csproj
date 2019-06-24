@@ -82,6 +82,7 @@
     <Compile Include="Botones\BTRetiros.Designer.cs">
       <DependentUpon>BTRetiros.cs</DependentUpon>
     </Compile>
+    <Compile Include="Config\User.cs" />
     <Compile Include="Connected Services\WsSistemaBancario\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -497,6 +498,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CDatos\CDatos.csproj">
+      <Project>{f7e7bf20-35a7-446d-b271-460f418b65d9}</Project>
+      <Name>CDatos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Modelos\Modelos.csproj">
       <Project>{9fe05416-88df-4058-97ba-3966308a94e5}</Project>
       <Name>Modelos</Name>

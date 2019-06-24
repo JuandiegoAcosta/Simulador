@@ -22,6 +22,7 @@ namespace Sistema_Bancario
         public VentanaPrincipal()
         {
             InitializeComponent();
+            Show();
            // this.cargarcomponentes(user);
 
         }
