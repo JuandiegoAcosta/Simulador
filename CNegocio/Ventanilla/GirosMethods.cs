@@ -1,4 +1,5 @@
 ﻿using CDatos.Manager;
+using Modelos.Modelos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,16 +11,43 @@ namespace CNegocio.Ventanilla
     public class GirosMethods
     {
         //SelectGirosbyDocClave
-        private GirosPersonaManager cuotasPrestamosManager;
+        private GiroManager ADGirosPersonaManager;
 
         public GirosMethods()
         {
-            cuotasPrestamosManager = new GirosPersonaManager();
+            ADGirosPersonaManager = new GiroManager();
+        }
+        public bool Crear(GiroModel aEmpresaModel)
+        {
+            return ADGirosPersonaManager.Insert(aEmpresaModel);
         }
 
-        public List<object> SelectGirosbyDocClave(string avalue,Int16 clave)
+        public bool Editar(GiroModel aEmpresaModel)
         {
-            return cuotasPrestamosManager.SelectGirosbyDocClave(avalue,clave);
+            return ADGirosPersonaManager.Update(aEmpresaModel);
+        }
+
+        public bool Eliminar(int aID_EmpresaModel)
+        {
+            return ADGirosPersonaManager.Delete(aID_EmpresaModel);
+        }
+
+        public EmpresaModel ObtenerUno(int aID_EmpresaModel)
+        {
+            return ADGirosPersonaManager.GetEmpresaModel(aID_EmpresaModel);
+        }
+
+        public List<EmpresaModel> ObtenerTodos()
+        {
+            return ADGirosPersonaManager.EmpresaModelSelectAll();
+        }
+        public List<EmpresaModel> BuscarEmpresa(string Nombre)
+        {
+            return ADGirosPersonaManager.BuscarEmpresa(Nombre);
+        }
+        public List<RecaudosModel> PagoServicioEmpresa(int id)
+        {
+            return ADGirosPersonaManager.PagoServicioEmpresa(id);
         }
     }
 }

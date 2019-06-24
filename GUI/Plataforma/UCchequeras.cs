@@ -27,6 +27,7 @@ namespace Sistema_Bancario.Plataforma
 
         private void BTProceder_Click(object sender, EventArgs e)
         {
+
             //Evento Click del boton proceder
             throw new NotImplementedException();
         }
