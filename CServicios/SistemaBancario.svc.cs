@@ -396,7 +396,7 @@ namespace ServiciosBancarios
             return BLPersona.ObtenerTodos();
         }
 
-        public PersonaModel Persona_ValidarUsuario(string aUsuario, string aContraseña)
+        public bool Persona_ValidarUsuario(string aUsuario, string aContraseña)
         {
             return BLPersona.ValidarUsuario(aUsuario, aContraseña);
         }

@@ -1078,10 +1078,10 @@ namespace Sistema_Bancario.WsSistemaBancario {
         System.Threading.Tasks.Task<Modelos.Modelos.PersonaModel[]> Persona_ObtenerTodosAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/Persona_ValidarUsuario", ReplyAction="http://tempuri.org/IPersonaService/Persona_ValidarUsuarioResponse")]
-        Modelos.Modelos.PersonaModel Persona_ValidarUsuario(string aUsuario, string aContraseña);
+        bool Persona_ValidarUsuario(string aUsuario, string aContraseña);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/Persona_ValidarUsuario", ReplyAction="http://tempuri.org/IPersonaService/Persona_ValidarUsuarioResponse")]
-        System.Threading.Tasks.Task<Modelos.Modelos.PersonaModel> Persona_ValidarUsuarioAsync(string aUsuario, string aContraseña);
+        System.Threading.Tasks.Task<bool> Persona_ValidarUsuarioAsync(string aUsuario, string aContraseña);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/Persona_CambiarContraseña", ReplyAction="http://tempuri.org/IPersonaService/Persona_CambiarContraseñaResponse")]
         bool Persona_CambiarContraseña(string aUsuario, string aPassword, string aNewPassword);
@@ -1157,11 +1157,11 @@ namespace Sistema_Bancario.WsSistemaBancario {
             return base.Channel.Persona_ObtenerTodosAsync();
         }
         
-        public Modelos.Modelos.PersonaModel Persona_ValidarUsuario(string aUsuario, string aContraseña) {
+        public bool Persona_ValidarUsuario(string aUsuario, string aContraseña) {
             return base.Channel.Persona_ValidarUsuario(aUsuario, aContraseña);
         }
         
-        public System.Threading.Tasks.Task<Modelos.Modelos.PersonaModel> Persona_ValidarUsuarioAsync(string aUsuario, string aContraseña) {
+        public System.Threading.Tasks.Task<bool> Persona_ValidarUsuarioAsync(string aUsuario, string aContraseña) {
             return base.Channel.Persona_ValidarUsuarioAsync(aUsuario, aContraseña);
         }
         

@@ -22,8 +22,8 @@ namespace CNegocio.Backend
             try
             {
 
-                PersonaModel ValidacionUsuario = ValidarUsuario(aPersona.Nombreusuario, aPersona.Pass);
-                if (ValidacionUsuario != null)
+                bool ValidacionUsuario = ValidarUsuario(aPersona.Nombreusuario, aPersona.Pass);
+                if (ValidacionUsuario == true)
                 {
                     return false;
                 }
@@ -59,7 +59,7 @@ namespace CNegocio.Backend
             return ADPersonaManager.PersonaModelSelectAll();
         }
 
-        public PersonaModel ValidarUsuario(string aUsuario, string aContraseña)
+        public bool ValidarUsuario(string aUsuario, string aContraseña)
         {
 
             return ADPersonaManager.ValidarUsuario(aUsuario, aContraseña);
