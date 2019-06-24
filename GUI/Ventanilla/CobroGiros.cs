@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CNegocio.Ventanilla;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -33,6 +34,15 @@ namespace Sistema_Bancario.Froms_opciones
 
                 return _instance;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            GirosMethods girosMethods = new GirosMethods();          
+            var bindingList = new BindingList<object>(girosMethods.SelectGirosbyDocClave(dni1.TBDoi.Text, Convert.ToInt16(clave1.TBClave.Text)));
+            var source = new BindingSource(bindingList, null);
+            GVCobroGiros.DataSource = source;
+
         }
     }
 }

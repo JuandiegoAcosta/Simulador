@@ -43,7 +43,7 @@
             this.datosPersona1.Location = new System.Drawing.Point(27, 20);
             this.datosPersona1.Margin = new System.Windows.Forms.Padding(5);
             this.datosPersona1.Name = "datosPersona1";
-            this.datosPersona1.Size = new System.Drawing.Size(509, 300);
+            this.datosPersona1.Size = new System.Drawing.Size(520, 300);
             this.datosPersona1.TabIndex = 3;
             // 
             // tipoCuenta1

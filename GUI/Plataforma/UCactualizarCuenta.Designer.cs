@@ -35,7 +35,7 @@
             // proceder1
             // 
             this.proceder1.Location = new System.Drawing.Point(10, 481);
-            this.proceder1.Size = new System.Drawing.Size(723, 49);
+            this.proceder1.Size = new System.Drawing.Size(548, 49);
             // 
             // datosPersona1
             // 
@@ -43,12 +43,12 @@
             this.datosPersona1.Location = new System.Drawing.Point(36, 20);
             this.datosPersona1.Margin = new System.Windows.Forms.Padding(5);
             this.datosPersona1.Name = "datosPersona1";
-            this.datosPersona1.Size = new System.Drawing.Size(501, 297);
+            this.datosPersona1.Size = new System.Drawing.Size(521, 297);
             this.datosPersona1.TabIndex = 1;
             // 
             // groupBox1
             // 
-            this.groupBox1.Location = new System.Drawing.Point(36, 326);
+            this.groupBox1.Location = new System.Drawing.Point(46, 302);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
@@ -65,7 +65,7 @@
             this.Controls.Add(this.datosPersona1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UCactualizarCuenta";
-            this.Size = new System.Drawing.Size(743, 540);
+            this.Size = new System.Drawing.Size(568, 540);
             this.Load += new System.EventHandler(this.UCactualizarCuenta_Load);
             this.Controls.SetChildIndex(this.datosPersona1, 0);
             this.Controls.SetChildIndex(this.groupBox1, 0);

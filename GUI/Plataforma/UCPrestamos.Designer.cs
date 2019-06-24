@@ -49,14 +49,17 @@
             // 
             // proceder1
             // 
-            this.proceder1.Location = new System.Drawing.Point(6, 291);
-            this.proceder1.Size = new System.Drawing.Size(703, 40);
+            this.proceder1.Location = new System.Drawing.Point(8, 643);
+            this.proceder1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.proceder1.Size = new System.Drawing.Size(536, 49);
             // 
             // datosPersona1
             // 
-            this.datosPersona1.Location = new System.Drawing.Point(14, 22);
+            this.datosPersona1.DatosValidos = false;
+            this.datosPersona1.Location = new System.Drawing.Point(19, 27);
+            this.datosPersona1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.datosPersona1.Name = "datosPersona1";
-            this.datosPersona1.Size = new System.Drawing.Size(376, 243);
+            this.datosPersona1.Size = new System.Drawing.Size(517, 299);
             this.datosPersona1.TabIndex = 15;
             // 
             // groupPrestamo
@@ -74,94 +77,105 @@
             this.groupPrestamo.Controls.Add(this.cmbSeguro);
             this.groupPrestamo.Controls.Add(this.cmbCuenta);
             this.groupPrestamo.Controls.Add(this.label2);
-            this.groupPrestamo.Location = new System.Drawing.Point(396, 22);
+            this.groupPrestamo.Location = new System.Drawing.Point(21, 290);
+            this.groupPrestamo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupPrestamo.Name = "groupPrestamo";
-            this.groupPrestamo.Size = new System.Drawing.Size(310, 253);
+            this.groupPrestamo.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupPrestamo.Size = new System.Drawing.Size(503, 311);
             this.groupPrestamo.TabIndex = 16;
             this.groupPrestamo.TabStop = false;
             this.groupPrestamo.Text = "Préstamo";
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(152, 211);
+            this.textBox2.Location = new System.Drawing.Point(203, 260);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(133, 20);
+            this.textBox2.Size = new System.Drawing.Size(176, 22);
             this.textBox2.TabIndex = 26;
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textInteres
             // 
-            this.textInteres.Location = new System.Drawing.Point(135, 150);
+            this.textInteres.Location = new System.Drawing.Point(180, 185);
+            this.textInteres.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textInteres.Name = "textInteres";
-            this.textInteres.Size = new System.Drawing.Size(150, 20);
+            this.textInteres.Size = new System.Drawing.Size(199, 22);
             this.textInteres.TabIndex = 26;
             this.textInteres.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(22, 214);
+            this.label7.Location = new System.Drawing.Point(29, 263);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(124, 13);
+            this.label7.Size = new System.Drawing.Size(167, 17);
             this.label7.TabIndex = 25;
             this.label7.Text = "Porcentaje de moratorios";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(22, 182);
+            this.label6.Location = new System.Drawing.Point(29, 224);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(41, 13);
+            this.label6.Size = new System.Drawing.Size(54, 17);
             this.label6.TabIndex = 25;
             this.label6.Text = "Seguro";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(22, 153);
+            this.label5.Location = new System.Drawing.Point(29, 188);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(107, 13);
+            this.label5.Size = new System.Drawing.Size(143, 17);
             this.label5.TabIndex = 25;
             this.label5.Text = "Porcentaje de interés";
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(109, 118);
+            this.numericUpDown1.Location = new System.Drawing.Point(145, 145);
+            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(78, 20);
+            this.numericUpDown1.Size = new System.Drawing.Size(104, 22);
             this.numericUpDown1.TabIndex = 24;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(22, 122);
+            this.label4.Location = new System.Drawing.Point(29, 150);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 13);
+            this.label4.Size = new System.Drawing.Size(108, 17);
             this.label4.TabIndex = 22;
             this.label4.Text = "Plazo en meses";
             // 
             // tipoMoneda1
             // 
-            this.tipoMoneda1.Location = new System.Drawing.Point(20, 58);
-            this.tipoMoneda1.Margin = new System.Windows.Forms.Padding(2);
+            this.tipoMoneda1.Location = new System.Drawing.Point(27, 71);
+            this.tipoMoneda1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tipoMoneda1.Name = "tipoMoneda1";
-            this.tipoMoneda1.Size = new System.Drawing.Size(182, 24);
+            this.tipoMoneda1.Size = new System.Drawing.Size(243, 30);
             this.tipoMoneda1.TabIndex = 21;
             // 
             // textMonto
             // 
-            this.textMonto.Location = new System.Drawing.Point(78, 89);
+            this.textMonto.Location = new System.Drawing.Point(104, 110);
+            this.textMonto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textMonto.Name = "textMonto";
-            this.textMonto.Size = new System.Drawing.Size(109, 20);
+            this.textMonto.Size = new System.Drawing.Size(144, 22);
             this.textMonto.TabIndex = 20;
             this.textMonto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 92);
+            this.label3.Location = new System.Drawing.Point(29, 113);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 13);
+            this.label3.Size = new System.Drawing.Size(47, 17);
             this.label3.TabIndex = 19;
             this.label3.Text = "Monto";
             // 
@@ -171,9 +185,10 @@
             this.cmbSeguro.Items.AddRange(new object[] {
             "DNI",
             "PASAPORTE"});
-            this.cmbSeguro.Location = new System.Drawing.Point(78, 180);
+            this.cmbSeguro.Location = new System.Drawing.Point(104, 222);
+            this.cmbSeguro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbSeguro.Name = "cmbSeguro";
-            this.cmbSeguro.Size = new System.Drawing.Size(207, 21);
+            this.cmbSeguro.Size = new System.Drawing.Size(275, 24);
             this.cmbSeguro.TabIndex = 18;
             // 
             // cmbCuenta
@@ -182,32 +197,34 @@
             this.cmbCuenta.Items.AddRange(new object[] {
             "DNI",
             "PASAPORTE"});
-            this.cmbCuenta.Location = new System.Drawing.Point(78, 32);
+            this.cmbCuenta.Location = new System.Drawing.Point(104, 39);
+            this.cmbCuenta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbCuenta.Name = "cmbCuenta";
-            this.cmbCuenta.Size = new System.Drawing.Size(207, 21);
+            this.cmbCuenta.Size = new System.Drawing.Size(275, 24);
             this.cmbCuenta.TabIndex = 18;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(22, 37);
+            this.label2.Location = new System.Drawing.Point(29, 46);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 13);
+            this.label2.Size = new System.Drawing.Size(53, 17);
             this.label2.TabIndex = 17;
             this.label2.Text = "Cuenta";
             // 
             // UCPrestamos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.groupPrestamo);
             this.Controls.Add(this.datosPersona1);
-            this.Margin = new System.Windows.Forms.Padding(3);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "UCPrestamos";
-            this.Padding = new System.Windows.Forms.Padding(6);
-            this.Size = new System.Drawing.Size(715, 337);
+            this.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.Size = new System.Drawing.Size(552, 699);
             this.Load += new System.EventHandler(this.UCPrestamos_Load);
             this.Controls.SetChildIndex(this.proceder1, 0);
             this.Controls.SetChildIndex(this.datosPersona1, 0);

@@ -28,7 +28,7 @@ namespace CDatos.Manager
                     command.CommandType = CommandType.StoredProcedure;
 
                     command.CommandText = "PrestamosSelect_NroCuenta";
-
+          
                     SqlDataReader reader = command.ExecuteReader();
 
                     if (reader.HasRows)

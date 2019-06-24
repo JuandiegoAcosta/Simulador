@@ -67,6 +67,6 @@
         #endregion
 
         private System.Windows.Forms.Label DOY;
-        private System.Windows.Forms.TextBox TBDoi;
+        public System.Windows.Forms.TextBox TBDoi;
     }
 }

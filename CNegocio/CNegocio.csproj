@@ -61,6 +61,7 @@
     <Compile Include="Ventanilla\CobroChequeMethods.cs" />
     <Compile Include="Ventanilla\CuotasMethods.cs" />
     <Compile Include="Ventanilla\EmpresaMethods.cs" />
+    <Compile Include="Ventanilla\GirosMethods.cs" />
     <Compile Include="Ventanilla\PagoServicioMethods.cs" />
     <Compile Include="Ventanilla\RecaudoMethods.cs" />
     <Compile Include="Ventanilla\TipoMonedaMethods.cs" />

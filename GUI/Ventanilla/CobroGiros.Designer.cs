@@ -30,14 +30,15 @@
         {
             this.dni1 = new Sistema_Bancario.Dni();
             this.clave1 = new Sistema_Bancario.Controles.Clave();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.GVCobroGiros = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.GVCobroGiros)).BeginInit();
             this.SuspendLayout();
             // 
             // proceder1
             // 
             this.proceder1.Location = new System.Drawing.Point(8, 313);
-            this.proceder1.Size = new System.Drawing.Size(653, 49);
+            this.proceder1.Size = new System.Drawing.Size(744, 49);
             // 
             // dni1
             // 
@@ -55,32 +56,44 @@
             this.clave1.Size = new System.Drawing.Size(232, 32);
             this.clave1.TabIndex = 3;
             // 
-            // dataGridView1
+            // GVCobroGiros
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(11, 97);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(647, 157);
-            this.dataGridView1.TabIndex = 4;
+            this.GVCobroGiros.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.GVCobroGiros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GVCobroGiros.Location = new System.Drawing.Point(11, 97);
+            this.GVCobroGiros.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.GVCobroGiros.Name = "GVCobroGiros";
+            this.GVCobroGiros.RowTemplate.Height = 24;
+            this.GVCobroGiros.Size = new System.Drawing.Size(738, 157);
+            this.GVCobroGiros.TabIndex = 4;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(267, 51);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(78, 32);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Buscar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // CobroGiros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.GVCobroGiros);
             this.Controls.Add(this.clave1);
             this.Controls.Add(this.dni1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CobroGiros";
             this.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.Size = new System.Drawing.Size(669, 369);
+            this.Size = new System.Drawing.Size(760, 369);
             this.Controls.SetChildIndex(this.proceder1, 0);
             this.Controls.SetChildIndex(this.dni1, 0);
             this.Controls.SetChildIndex(this.clave1, 0);
-            this.Controls.SetChildIndex(this.dataGridView1, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Controls.SetChildIndex(this.GVCobroGiros, 0);
+            this.Controls.SetChildIndex(this.button1, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.GVCobroGiros)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -89,6 +102,7 @@
 
         private Dni dni1;
         private Controles.Clave clave1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView GVCobroGiros;
+        private System.Windows.Forms.Button button1;
     }
 }
