@@ -57,6 +57,8 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -79,6 +81,11 @@
     </Compile>
     <Compile Include="Botones\BTRetiros.Designer.cs">
       <DependentUpon>BTRetiros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\WsSistemaBancario\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Controles\DatosPersona.cs">
       <SubType>UserControl</SubType>
@@ -437,6 +444,33 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Connected Services\WsSistemaBancario\SistemaBancario.wsdl" />
+    <None Include="Connected Services\WsSistemaBancario\SistemaBancario.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WsSistemaBancario\SistemaBancario1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WsSistemaBancario\SistemaBancario2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\DataSources\Modelos.Modelos.BancoModel.datasource" />
+    <None Include="Properties\DataSources\Modelos.Modelos.CobroChequesModel.datasource" />
+    <None Include="Properties\DataSources\Modelos.Modelos.ComponenteModel.datasource" />
+    <None Include="Properties\DataSources\Modelos.Modelos.EmpresaModel.datasource" />
+    <None Include="Properties\DataSources\Modelos.Modelos.HorariosAtencionModel.datasource" />
+    <None Include="Properties\DataSources\Modelos.Modelos.MovimientosVentanillaModel.datasource" />
+    <None Include="Properties\DataSources\Modelos.Modelos.PagoServiciosModel.datasource" />
+    <None Include="Properties\DataSources\Modelos.Modelos.PermisosUsuarioModel.datasource" />
+    <None Include="Properties\DataSources\Modelos.Modelos.PersonaModel.datasource" />
+    <None Include="Properties\DataSources\Modelos.Modelos.RecaudosModel.datasource" />
+    <None Include="Properties\DataSources\Modelos.Modelos.RolesModel.datasource" />
+    <None Include="Properties\DataSources\Modelos.Modelos.RolUsuarioModel.datasource" />
+    <None Include="Properties\DataSources\Modelos.Modelos.SucursalModel.datasource" />
+    <None Include="Properties\DataSources\Modelos.Modelos.TipoDocumentoModel.datasource" />
+    <None Include="Properties\DataSources\Modelos.Modelos.TurnosModel.datasource" />
+    <None Include="Properties\DataSources\Modelos.Modelos.TurnoUsuarioModel.datasource" />
+    <None Include="Properties\DataSources\Modelos.Modelos.VentanillaModel.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -477,6 +511,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\limpiar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\WsSistemaBancario\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WsSistemaBancario\SistemaBancario.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WsSistemaBancario\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WsSistemaBancario\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WsSistemaBancario\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

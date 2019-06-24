@@ -47,3 +47,17 @@ C:\Users\Saurom Lamderth\Source\Repos\JuandiegoAcosta\Simulador\CServicios\obj\D
 C:\Users\Saurom Lamderth\Source\Repos\JuandiegoAcosta\Simulador\CServicios\obj\Debug\CServicios.csproj.CopyComplete
 C:\Users\Saurom Lamderth\Source\Repos\JuandiegoAcosta\Simulador\CServicios\obj\Debug\ServiciosBancarios.dll
 C:\Users\Saurom Lamderth\Source\Repos\JuandiegoAcosta\Simulador\CServicios\obj\Debug\ServiciosBancarios.pdb
+E:\Documents\cursos\VI semestre\distribuidas\SimuladorBanco\Simulador\CServicios\bin\ServiciosBancarios.dll.config
+E:\Documents\cursos\VI semestre\distribuidas\SimuladorBanco\Simulador\CServicios\bin\ServiciosBancarios.dll
+E:\Documents\cursos\VI semestre\distribuidas\SimuladorBanco\Simulador\CServicios\bin\ServiciosBancarios.pdb
+E:\Documents\cursos\VI semestre\distribuidas\SimuladorBanco\Simulador\CServicios\bin\CNegocio.dll
+E:\Documents\cursos\VI semestre\distribuidas\SimuladorBanco\Simulador\CServicios\bin\Modelos.dll
+E:\Documents\cursos\VI semestre\distribuidas\SimuladorBanco\Simulador\CServicios\bin\CDatos.dll
+E:\Documents\cursos\VI semestre\distribuidas\SimuladorBanco\Simulador\CServicios\bin\CNegocio.pdb
+E:\Documents\cursos\VI semestre\distribuidas\SimuladorBanco\Simulador\CServicios\bin\Modelos.pdb
+E:\Documents\cursos\VI semestre\distribuidas\SimuladorBanco\Simulador\CServicios\bin\CDatos.pdb
+E:\Documents\cursos\VI semestre\distribuidas\SimuladorBanco\Simulador\CServicios\obj\Debug\CServicios.csprojAssemblyReference.cache
+E:\Documents\cursos\VI semestre\distribuidas\SimuladorBanco\Simulador\CServicios\obj\Debug\CServicios.csproj.CoreCompileInputs.cache
+E:\Documents\cursos\VI semestre\distribuidas\SimuladorBanco\Simulador\CServicios\obj\Debug\CServicios.csproj.CopyComplete
+E:\Documents\cursos\VI semestre\distribuidas\SimuladorBanco\Simulador\CServicios\obj\Debug\ServiciosBancarios.dll
+E:\Documents\cursos\VI semestre\distribuidas\SimuladorBanco\Simulador\CServicios\obj\Debug\ServiciosBancarios.pdb
