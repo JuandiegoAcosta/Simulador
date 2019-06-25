@@ -210,16 +210,16 @@ namespace CDatos.Manager
 
                             GiroModel = new GiroModel
                             {
-                                Id_empresa = ID_GiroModel,
-                                Nombre_empresa = Nombre_GiroModel,
-                                Descripcion = Descripcion,
-                                Nro_cuenta = Nro_Cuenta,
-                                Comisiones = Comisiones,
-                                Empresa_asume_comision = GiroModel_Asume_Comision,
-                                Fecha_creacion = FECHA_CREACION,
-                                Fecha_modificacion = FECHA_MODIFICACION,
-                                Usuario_creador = USUARIO_CREADOR,
-                                Usuario_modificador = USUARIO_MODIFICADOR,
+                                Id = ID_GiroModel,
+                                //Nombre_empresa = Nombre_GiroModel,
+                                //Descripcion = Descripcion,
+                                //Nro_cuenta = Nro_Cuenta,
+                                //Comisiones = Comisiones,
+                                //Empresa_asume_comision = GiroModel_Asume_Comision,
+                                FECHA_CREACION = FECHA_CREACION,
+                                FECHA_MODIFICACION = FECHA_MODIFICACION,
+                                USUARIO_CREADOR = USUARIO_CREADOR,
+                                USUARIO_MODIFICADOR = USUARIO_MODIFICADOR,
 
                             };
                         }
@@ -275,16 +275,16 @@ namespace CDatos.Manager
 
                             GiroModellist.Add(new GiroModel
                             {
-                                Id_empresa = ID_GiroModel,
-                                Nombre_empresa = Nombre_GiroModel,
-                                Descripcion = Descripcion,
-                                Nro_cuenta = Nro_Cuenta,
-                                Comisiones = Comisiones,
-                                Empresa_asume_comision = GiroModel_Asume_Comision,
-                                Fecha_creacion = FECHA_CREACION,
-                                Fecha_modificacion = FECHA_MODIFICACION,
-                                Usuario_creador = USUARIO_CREADOR,
-                                Usuario_modificador = USUARIO_MODIFICADOR,
+                                Id = ID_GiroModel,
+                                //Nombre_empresa = Nombre_GiroModel,
+                                //Descripcion = Descripcion,
+                                //Nro_cuenta = Nro_Cuenta,
+                                //Comisiones = Comisiones,
+                                //Empresa_asume_comision = GiroModel_Asume_Comision,
+                                FECHA_CREACION = FECHA_CREACION,
+                                FECHA_MODIFICACION = FECHA_MODIFICACION,
+                                USUARIO_CREADOR = USUARIO_CREADOR,
+                                USUARIO_MODIFICADOR = USUARIO_MODIFICADOR,
 
                             });
                         }
@@ -342,16 +342,16 @@ namespace CDatos.Manager
 
                             GiroModellist.Add(new GiroModel
                             {
-                                Id_empresa = ID_GiroModel,
-                                Nombre_empresa = Nombre_GiroModel,
-                                Descripcion = Descripcion,
-                                Nro_cuenta = Nro_Cuenta,
-                                Comisiones = Comisiones,
-                                Empresa_asume_comision = GiroModel_Asume_Comision,
-                                Fecha_creacion = FECHA_CREACION,
-                                Fecha_modificacion = FECHA_MODIFICACION,
-                                Usuario_creador = USUARIO_CREADOR,
-                                Usuario_modificador = USUARIO_MODIFICADOR,
+                                Id = ID_GiroModel,
+                                //Nombre_empresa = Nombre_GiroModel,
+                                //Descripcion = Descripcion,
+                                //Nro_cuenta = Nro_Cuenta,
+                                //Comisiones = Comisiones,
+                                //Empresa_asume_comision = GiroModel_Asume_Comision,
+                                FECHA_CREACION = FECHA_CREACION,
+                                FECHA_MODIFICACION = FECHA_MODIFICACION,
+                                USUARIO_CREADOR = USUARIO_CREADOR,
+                                USUARIO_MODIFICADOR = USUARIO_MODIFICADOR,
 
                             });
                         }
@@ -366,10 +366,10 @@ namespace CDatos.Manager
             }
         }
 
-        public List<GiroModel> BuscarEmpresa(string nombre)
+        public List<EmpresaModel> BuscarEmpresa(string nombre)
         {
 
-            List<GiroModel> GiroModellist = new List<GiroModel>();
+            List<EmpresaModel> EmpresaModellist = new List<EmpresaModel>();
 
             try
             {
@@ -395,7 +395,7 @@ namespace CDatos.Manager
                             int ID_GiroModel = (int)(reader["ID_Empresa"]);
                             string Nombre_GiroModel = (string)(reader["Nombre_Empresa"]);
 
-                            GiroModellist.Add(new GiroModel
+                            EmpresaModellist.Add(new EmpresaModel
                             {
                                 Id_empresa = ID_GiroModel,
                                 Nombre_empresa = Nombre_GiroModel
@@ -404,11 +404,11 @@ namespace CDatos.Manager
                     }
                 }
 
-                return GiroModellist;
+                return EmpresaModellist;
             }
             catch (Exception)
             {
-                return GiroModellist;
+                return EmpresaModellist;
             }
         }
 
@@ -462,6 +462,8 @@ namespace CDatos.Manager
                 return GiroModellist;
             }
         }
+
+
 
         #endregion
     }

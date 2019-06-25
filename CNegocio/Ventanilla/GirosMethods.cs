@@ -2,6 +2,7 @@
 using Modelos.Modelos;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,12 +35,14 @@ namespace CNegocio.Ventanilla
 
         public EmpresaModel ObtenerUno(int aID_EmpresaModel)
         {
-            return ADGirosPersonaManager.GetEmpresaModel(aID_EmpresaModel);
+            //return ADGirosPersonaManager.GetEmpresaModel(aID_EmpresaModel);
+            return null;
         }
 
         public List<EmpresaModel> ObtenerTodos()
         {
-            return ADGirosPersonaManager.EmpresaModelSelectAll();
+            //return ADGirosPersonaManager.EmpresaModelSelectAll();
+            return null;
         }
         public List<EmpresaModel> BuscarEmpresa(string Nombre)
         {
@@ -49,5 +52,11 @@ namespace CNegocio.Ventanilla
         {
             return ADGirosPersonaManager.PagoServicioEmpresa(id);
         }
+
+        public BindingList<object> SelectGirosbyDocClave(string doi, int clave)
+        {
+            return null;
+        }
+
     }
 }

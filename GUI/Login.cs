@@ -26,7 +26,7 @@ namespace Sistema_Bancario
                 //var persona = user.Persona_ValidarUsuario(nick, pass);
 
                 VentanaPrincipal x = new VentanaPrincipal();
-                if (user.Persona_ValidarUsuario(nick, pass))
+                if (user.Persona_ValidarUsuario(nick, pass) != null)
                 {
                    
 

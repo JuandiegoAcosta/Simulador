@@ -34,8 +34,8 @@
             // 
             // proceder1
             // 
-            this.proceder1.Location = new System.Drawing.Point(10, 445);
-            this.proceder1.Size = new System.Drawing.Size(891, 49);
+            //this.proceder1.Location = new System.Drawing.Point(10, 445);
+            //this.proceder1.Size = new System.Drawing.Size(891, 49);
             // 
             // datosPersona1
             // 
@@ -67,7 +67,7 @@
             this.Load += new System.EventHandler(this.UCcuenta_Load);
             this.Controls.SetChildIndex(this.datosPersona1, 0);
             this.Controls.SetChildIndex(this.tipoCuenta1, 0);
-            this.Controls.SetChildIndex(this.proceder1, 0);
+            //this.Controls.SetChildIndex(this.proceder1, 0);
             this.ResumeLayout(false);
 
         }

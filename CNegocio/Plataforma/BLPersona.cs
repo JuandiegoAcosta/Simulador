@@ -32,9 +32,9 @@ namespace CNegocio.Plataforma
         }
 
 
-        public PersonaModel obtenerPersona(int numeroDocumento, int tipoDocumento)
+        public PersonaModel obtenerPersona(int numeroDocumento)
         {
-            return this.personaManager.GetPersonaModel(numeroDocumento, tipoDocumento);
+            return this.personaManager.GetPersonaModel(numeroDocumento);
         }
 
 
