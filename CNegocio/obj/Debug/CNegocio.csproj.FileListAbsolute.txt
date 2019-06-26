@@ -81,3 +81,14 @@ C:\Users\Usuario\Source\Repos\Simulador\CNegocio\obj\Debug\CNegocio.csproj.CoreC
 C:\Users\Usuario\Source\Repos\Simulador\CNegocio\obj\Debug\CNegocio.csproj.CopyComplete
 C:\Users\Usuario\Source\Repos\Simulador\CNegocio\obj\Debug\CNegocio.dll
 C:\Users\Usuario\Source\Repos\Simulador\CNegocio\obj\Debug\CNegocio.pdb
+C:\Users\Usuario\Desktop\Simulador\CNegocio\obj\Debug\CNegocio.csprojAssemblyReference.cache
+C:\Users\Usuario\Desktop\Simulador\CNegocio\obj\Debug\CNegocio.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\Simulador\CNegocio\bin\Debug\CNegocio.dll
+C:\Users\Usuario\Desktop\Simulador\CNegocio\bin\Debug\CNegocio.pdb
+C:\Users\Usuario\Desktop\Simulador\CNegocio\bin\Debug\CDatos.dll
+C:\Users\Usuario\Desktop\Simulador\CNegocio\bin\Debug\Modelos.dll
+C:\Users\Usuario\Desktop\Simulador\CNegocio\bin\Debug\CDatos.pdb
+C:\Users\Usuario\Desktop\Simulador\CNegocio\bin\Debug\Modelos.pdb
+C:\Users\Usuario\Desktop\Simulador\CNegocio\obj\Debug\CNegocio.csproj.CopyComplete
+C:\Users\Usuario\Desktop\Simulador\CNegocio\obj\Debug\CNegocio.dll
+C:\Users\Usuario\Desktop\Simulador\CNegocio\obj\Debug\CNegocio.pdb
