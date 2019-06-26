@@ -64,6 +64,7 @@
     <Compile Include="Ventanilla\GirosMethods.cs" />
     <Compile Include="Ventanilla\PagoServicioMethods.cs" />
     <Compile Include="Ventanilla\RecaudoMethods.cs" />
+    <Compile Include="Ventanilla\RetirosMethods.cs" />
     <Compile Include="Ventanilla\TipoMonedaMethods.cs" />
     <Compile Include="Ventanilla\TipoMovimientoMethods.cs" />
     <Compile Include="Ventanilla\VentanillaMethods.cs" />

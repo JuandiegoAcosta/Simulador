@@ -44,8 +44,12 @@ namespace Sistema_Bancario.Froms_opciones
         {
             EmpresaMethods empresaMethods = new EmpresaMethods();
           //  GEmpresas.Rows.Add(empresaMethods.BuscarEmpresa(empresa1.TBEmpresa.Text)[0].Id_empresa);
-            GEmpresas.Rows.Add(empresaMethods.BuscarEmpresa(empresa1.TBEmpresa.Text)[0].Nombre_empresa);
+          //  GEmpresas.Rows.Add(empresaMethods.BuscarEmpresa(empresa1.TBEmpresa.Text)[0].Nombre_empresa);
 
+
+          //  var bindingList = new BindingList<EmpresaModel>(empresaMethods.BuscarEmpresa(empresa1.TBEmpresa.Text));
+           // var source = new BindingSource(bindingList, null);
+            GEmpresas.DataSource = empresaMethods.BuscarEmpresa(empresa1.TBEmpresa.Text);
             /*this.gEmpresaModel = new EmpresaModel()
             {
                 Nombre_empresa = empresa1.TBEmpresa.Text,
@@ -58,11 +62,12 @@ namespace Sistema_Bancario.Froms_opciones
             //empresaMethods.PagoServicioEmpresa(1);
             GNroContrato.Rows.Add(empresaMethods.PagoServicioEmpresa(1)[0].Monto);
 
-         /*   int nrocontrato = Convert.ToInt32(this.nroContrato1.TBNroContrato.Text);
-            this.gPagomodels = new PagoServiciosModel()
-            {
-                Nro_contrato = nrocontrato
-            };*/
+
+            /*   int nrocontrato = Convert.ToInt32(this.nroContrato1.TBNroContrato.Text);
+               this.gPagomodels = new PagoServiciosModel()
+               {
+                   Nro_contrato = nrocontrato
+               };*/
         }
     }
 }

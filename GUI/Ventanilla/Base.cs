@@ -19,7 +19,7 @@ namespace Sistema_Bancario
         }
         private void Base_Load(object sender, EventArgs e)
         {
-           // var x = Config.User.Nombre;
+
         }
     }
 }

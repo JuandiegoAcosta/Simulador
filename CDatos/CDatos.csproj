@@ -60,6 +60,7 @@
     <Compile Include="Manager\PersonaManager.cs" />
     <Compile Include="Manager\PrestamoManager.cs" />
     <Compile Include="Manager\RecaudoManager.cs" />
+    <Compile Include="Manager\RetirosManager.cs" />
     <Compile Include="Manager\RolesManager.cs" />
     <Compile Include="Manager\RolUsuarioManager.cs" />
     <Compile Include="Manager\SucursalManager.cs" />

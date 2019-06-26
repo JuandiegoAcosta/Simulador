@@ -44,19 +44,14 @@ namespace CNegocio.Ventanilla
             //return ADGirosPersonaManager.EmpresaModelSelectAll();
             return null;
         }
-        public List<EmpresaModel> BuscarEmpresa(string Nombre)
+   
+        public List<object> SelectGirosbyDocClave(string avalue, Int16 clave)
         {
-            return ADGirosPersonaManager.BuscarEmpresa(Nombre);
+            return ADGirosPersonaManager.SelectGirosbyDocClave(avalue, clave);
         }
-        public List<RecaudosModel> PagoServicioEmpresa(int id)
+        public bool EnviarGiro(double monto, int clave, int origen, int destino)
         {
-            return ADGirosPersonaManager.PagoServicioEmpresa(id);
+            return ADGirosPersonaManager.EnviarGiro(monto, clave, origen, destino);
         }
-
-        public BindingList<object> SelectGirosbyDocClave(string doi, int clave)
-        {
-            return null;
-        }
-
     }
 }

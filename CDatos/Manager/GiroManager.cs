@@ -365,103 +365,89 @@ namespace CDatos.Manager
                 return GiroModellist;
             }
         }
-
-        public List<EmpresaModel> BuscarEmpresa(string nombre)
+        public List<object> SelectGirosbyDocClave(string aValue, Int16 clave)
         {
 
-            List<EmpresaModel> EmpresaModellist = new List<EmpresaModel>();
+            List<object> Giros = new List<object>();
 
+            using (var connection = Util.ConnectionFactory.conexion())
+            {
+                connection.Open();
+
+                SqlCommand command = connection.CreateCommand();
+
+                command.Parameters.AddWithValue("@NroDocumento", aValue);
+                command.Parameters.AddWithValue("@Clave", clave);
+
+                command.CommandType = CommandType.StoredProcedure;
+
+                command.CommandText = "GiroPerosonaSelectByDocClave";
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        Giros.Add(new
+                        {
+                            Origen = reader[0],
+                            Destino = reader[1],
+                            Monto = reader[2],
+                            FechaGiro = reader[3],
+                            FechaRetiro = reader[4],
+                            Estado = reader[5]
+                        });
+                    }
+                }
+            }
+            return Giros;
+        }
+
+        public bool EnviarGiro(double monto,int clave,int origen,int destino)
+        {
             try
             {
                 using (var connection = Util.ConnectionFactory.conexion())
                 {
                     connection.Open();
 
+                    SqlTransaction sqlTran = connection.BeginTransaction();
+
                     SqlCommand command = connection.CreateCommand();
 
-                    command.Parameters.AddWithValue("@nombre", nombre);
-
+                    command.Transaction = sqlTran;
+        
+                    command.Parameters.AddWithValue("@monto", monto);              
+                    command.Parameters.AddWithValue("@clave", clave);
+                    command.Parameters.AddWithValue("@NroDocOrigen", origen);
+                    command.Parameters.AddWithValue("@NroDocDestino", destino);    
                     command.CommandType = CommandType.StoredProcedure;
+                    command.CommandText = "GiroInsert";
 
-                    command.CommandText = "BuscarEmpresa";
+                    int afectados = command.ExecuteNonQuery();
 
-                    SqlDataReader reader = command.ExecuteReader();
+                    // Commit the transaction.
+                    sqlTran.Commit();
 
-                    if (reader.HasRows)
-                    {
-                        while (reader.Read())
-                        {
+                    connection.Close();
+                    connection.Dispose();
 
-                            int ID_GiroModel = (int)(reader["ID_Empresa"]);
-                            string Nombre_GiroModel = (string)(reader["Nombre_Empresa"]);
-
-                            EmpresaModellist.Add(new EmpresaModel
-                            {
-                                Id_empresa = ID_GiroModel,
-                                Nombre_empresa = Nombre_GiroModel
-                            });
-                        }
-                    }
+                    if (afectados > 0)
+                        return true;
+                    else
+                        return false;
                 }
-
-                return EmpresaModellist;
             }
             catch (Exception)
             {
-                return EmpresaModellist;
+                return false;
             }
         }
 
 
-        public List<RecaudosModel> PagoServicioEmpresa(int id)
-        {
 
-            List<RecaudosModel> GiroModellist = new List<RecaudosModel>();
 
-            try
-            {
-                using (var connection = Util.ConnectionFactory.conexion())
-                {
-                    connection.Open();
-
-                    SqlCommand command = connection.CreateCommand();
-
-                    command.Parameters.AddWithValue("@id", id);
-
-                    command.CommandType = CommandType.StoredProcedure;
-
-                    command.CommandText = "PagoEmpresa";
-
-                    SqlDataReader reader = command.ExecuteReader();
-
-                    if (reader.HasRows)
-                    {
-                        while (reader.Read())
-                        {
-
-                            int ID_GiroModel = (int)(reader["ID_Empresa"]);
-                            decimal MontoModel = (decimal)(reader["Monto"]);
-                            DateTime FechaVencimiento = (DateTime)(reader["Fecha_Vencimiento"]);
-                            bool EstadoRecaudo = (bool)(reader["Estado_Recaudo"]);
-
-                            GiroModellist.Add(new RecaudosModel
-                            {
-                                Id_empresa = ID_GiroModel,
-                                Monto = MontoModel,
-                                Fecha_vencimiento = FechaVencimiento,
-                                Estado_recaudo = EstadoRecaudo
-                            });
-                        }
-                    }
-                }
-
-                return GiroModellist;
-            }
-            catch (Exception)
-            {
-                return GiroModellist;
-            }
-        }
 
 
 
