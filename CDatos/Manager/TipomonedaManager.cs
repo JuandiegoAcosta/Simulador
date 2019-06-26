@@ -13,7 +13,7 @@ namespace CDatos.Manager
     {
         #region Methods
         /// <summary>
-        /// Saves a record to the TipoCambioModel table.
+        /// Saves a record to the TipoMonedaModel table.
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>		
@@ -40,7 +40,7 @@ namespace CDatos.Manager
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "TipoCambioModelInsert";
+                    command.CommandText = "TipoMonedaModelInsert";
 
                     int afectados = command.ExecuteNonQuery();
 
@@ -64,11 +64,11 @@ namespace CDatos.Manager
 
 
         /// <summary>
-        /// Updates a record to the TipoCambioModel table.
+        /// Updates a record to the TipoMonedaModel table.
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>
-        public bool Update(TipoCambioModel aTipoMonedaModel)
+        public bool Update(TipoMonedaModel aTipoMonedaModel)
         {
             try
             {
@@ -91,7 +91,7 @@ namespace CDatos.Manager
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "TipoCambioModelUpdate";
+                    command.CommandText = "TipoMonedaModelUpdate";
 
                     int afectados = command.ExecuteNonQuery();
 
@@ -115,11 +115,11 @@ namespace CDatos.Manager
 
 
         /// <summary>
-        /// Deletes record to the TipoCambioModel table.
+        /// Deletes record to the TipoMonedaModel table.
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>
-        public bool Delete(short aID)
+        public bool Delete(int aID)
         {
             try
             {
@@ -137,7 +137,7 @@ namespace CDatos.Manager
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "TipoCambioModelDelete";
+                    command.CommandText = "TipoMonedaModelDelete";
                     int afectados = command.ExecuteNonQuery();
 
                     // Commit the transaction.
@@ -160,11 +160,11 @@ namespace CDatos.Manager
 
 
         /// <summary>
-        /// Selects the Single object of TipoCambioModel table.
+        /// Selects the Single object of TipoMonedaModel table.
         /// </summary>
-        public TipoCambioModel GetTipoCambioModel(short aID)
+        public TipoMonedaModel GetTipoMonedaModel(int aID)
         {
-            TipoCambioModel TipoCambioModel = null;
+            TipoMonedaModel tipoMonedaModel = null;
 
             try
             {
@@ -179,7 +179,7 @@ namespace CDatos.Manager
 
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.CommandText = "TipoCambioModelSelect";
+                    command.CommandText = "TipoMonedaModelSelect";
 
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -195,7 +195,7 @@ namespace CDatos.Manager
                             string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
                             string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
 
-                            TipoCambioModel = new TipoCambioModel
+                            tipoMonedaModel = new TipoMonedaModel
                             {
                                 Id = ID,
                                 //Nombre = Nombre,
@@ -209,7 +209,7 @@ namespace CDatos.Manager
                     }
                 }
 
-                return TipoCambioModel;
+                return tipoMonedaModel;
             }
             catch (Exception)
             {
@@ -219,12 +219,12 @@ namespace CDatos.Manager
 
 
         /// <summary>
-        /// Selects all the objects of TipoCambioModel table.
+        /// Selects all the objects of TipoMonedaModel table.
         /// </summary>
-        public List<TipoCambioModel> TipoCambioModelSelectAll()
+        public List<TipoMonedaModel> TipoMonedaModelSelectAll()
         {
 
-            List<TipoCambioModel> TipoCambioModellist = new List<TipoCambioModel>();
+            List<TipoMonedaModel> TipoMonedaModellist = new List<TipoMonedaModel>();
 
             try
             {
@@ -236,7 +236,7 @@ namespace CDatos.Manager
 
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.CommandText = "TipoCambioModelSelectAll";
+                    command.CommandText = "TipoMonedaModelSelectAll";
 
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -252,10 +252,10 @@ namespace CDatos.Manager
                             string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
                             string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
 
-                            TipoCambioModellist.Add(new TipoCambioModel
+                            TipoMonedaModellist.Add(new TipoMonedaModel
                             {
                                 Id = ID,
-                             //   Nombre = Nombre,
+                                //   Nombre = Nombre,
                                 Fecha_creacion = FECHA_CREACION,
                                 Fecha_modificacion = FECHA_MODIFICACION,
                                 Usuario_creador = USUARIO_CREADOR,
@@ -266,22 +266,22 @@ namespace CDatos.Manager
                     }
                 }
 
-                return TipoCambioModellist;
+                return TipoMonedaModellist;
             }
             catch (Exception)
             {
-                return TipoCambioModellist;
+                return TipoMonedaModellist;
             }
         }
 
 
         /// <summary>
-        /// Selects the Multiple objects of TipoCambioModel table by a given criteria.
+        /// Selects the Multiple objects of TipoMonedaModel table by a given criteria.
         /// </summary>
-        public List<TipoCambioModel> TipoCambioModelSelectbyUNKNOW(string aValue)
+        public List<TipoMonedaModel> TipoMonedaModelSelectbyUNKNOW(string aValue)
         {
 
-            List<TipoCambioModel> TipoCambioModellist = new List<TipoCambioModel>();
+            List<TipoMonedaModel> TipoMonedaModellist = new List<TipoMonedaModel>();
 
             try
             {
@@ -295,7 +295,7 @@ namespace CDatos.Manager
 
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.CommandText = "TipoCambioModelSelectbyUNKNOW";
+                    command.CommandText = "TipoMonedaModelSelectbyUNKNOW";
 
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -311,10 +311,10 @@ namespace CDatos.Manager
                             string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
                             string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
 
-                            TipoCambioModellist.Add(new TipoCambioModel
+                            TipoMonedaModellist.Add(new TipoMonedaModel
                             {
                                 Id = ID,
-                               // Nombre = Nombre,
+                                // Nombre = Nombre,
                                 Fecha_creacion = FECHA_CREACION,
                                 Fecha_modificacion = FECHA_MODIFICACION,
                                 Usuario_creador = USUARIO_CREADOR,
@@ -325,11 +325,11 @@ namespace CDatos.Manager
                     }
                 }
 
-                return TipoCambioModellist;
+                return TipoMonedaModellist;
             }
             catch (Exception)
             {
-                return TipoCambioModellist;
+                return TipoMonedaModellist;
             }
         }
         #endregion

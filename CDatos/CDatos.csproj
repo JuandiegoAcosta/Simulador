@@ -74,6 +74,7 @@
     <Compile Include="Manager\VentanillaManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util\ConnectionFactory.cs" />
+    <Compile Include="Util\ControlError.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
