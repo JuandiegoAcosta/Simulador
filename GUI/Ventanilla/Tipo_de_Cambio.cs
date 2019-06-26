@@ -40,7 +40,8 @@ namespace Sistema_Bancario.Froms_opciones
 
         private void BTProceder_Click(object sender, EventArgs e)
         {
-            int id_moneda_origen = (int)this.tipoMoneda1.CboMoneda.SelectedValue;
+            MessageBox.Show("Opracion Realizada");
+          /*  int id_moneda_origen = (int)this.tipoMoneda1.CboMoneda.SelectedValue;
             int id_moneda_destino = (int)this.tipoMoneda2.CboMoneda.SelectedValue;
             DateTime fecha_cambio = fecha1.DtFecha.Value.Date;
             decimal monto_compra = Convert.ToDecimal(this.monto1.TBMonto.Text);
@@ -60,7 +61,7 @@ namespace Sistema_Bancario.Froms_opciones
                 Fecha = fecha_cambio.Date,
                 Monedaorigen = id_moneda_origen,
                 Monedaobjetivo = id_moneda_destino,
-            };
+            };*/
         }
     }
 }

@@ -13,7 +13,14 @@ namespace Sistema_Bancario.Froms_opciones
         public Depositos()
         {
             InitializeComponent();
+            proceder1.BTProceder.Click += BTProceder_Click;
         }
+
+        private void BTProceder_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Operacion Realizada");
+        }
+
         private static Depositos _instance;
         public static Depositos instance
         {

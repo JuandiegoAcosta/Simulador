@@ -13,8 +13,15 @@ namespace Sistema_Bancario.Froms_opciones
         public Transferencias()
         {
             InitializeComponent();
+            proceder1.BTProceder.Click += BTProceder_Click;
             
         }
+
+        private void BTProceder_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Operacion Realizada");
+        }
+
         private static Transferencias _instance;
         public static Transferencias instance
         {

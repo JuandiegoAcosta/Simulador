@@ -100,10 +100,10 @@
             this.bunifuTileButton1.Font = new System.Drawing.Font("Century Gothic", 15.75F);
             this.bunifuTileButton1.ForeColor = System.Drawing.Color.White;
             this.bunifuTileButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuTileButton1.Image")));
-            this.bunifuTileButton1.ImagePosition = 10;
-            this.bunifuTileButton1.ImageZoom = 80;
-            this.bunifuTileButton1.LabelPosition = 0;
-            this.bunifuTileButton1.LabelText = "";
+            this.bunifuTileButton1.ImagePosition = 0;
+            this.bunifuTileButton1.ImageZoom = 70;
+            this.bunifuTileButton1.LabelPosition = 35;
+            this.bunifuTileButton1.LabelText = "Bienvenido";
             this.bunifuTileButton1.Location = new System.Drawing.Point(191, 37);
             this.bunifuTileButton1.Margin = new System.Windows.Forms.Padding(6);
             this.bunifuTileButton1.Name = "bunifuTileButton1";
