@@ -78,5 +78,10 @@ namespace Sistema_Bancario.Controles
                 txtbox.Text = string.Empty;
             }
         }
+
+        private void DatosPersona_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

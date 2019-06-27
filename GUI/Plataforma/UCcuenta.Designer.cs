@@ -34,40 +34,41 @@
             // 
             // proceder1
             // 
-            //this.proceder1.Location = new System.Drawing.Point(10, 445);
-            //this.proceder1.Size = new System.Drawing.Size(891, 49);
+            this.proceder1.Location = new System.Drawing.Point(6, 364);
+            this.proceder1.Size = new System.Drawing.Size(765, 40);
             // 
             // datosPersona1
             // 
             this.datosPersona1.DatosValidos = false;
-            this.datosPersona1.Location = new System.Drawing.Point(27, 20);
-            this.datosPersona1.Margin = new System.Windows.Forms.Padding(5);
+            this.datosPersona1.Location = new System.Drawing.Point(20, 16);
+            this.datosPersona1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.datosPersona1.Name = "datosPersona1";
-            this.datosPersona1.Size = new System.Drawing.Size(520, 300);
+            this.datosPersona1.Size = new System.Drawing.Size(392, 209);
             this.datosPersona1.TabIndex = 3;
             // 
             // tipoCuenta1
             // 
-            this.tipoCuenta1.Location = new System.Drawing.Point(27, 326);
-            this.tipoCuenta1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tipoCuenta1.Location = new System.Drawing.Point(20, 265);
+            this.tipoCuenta1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tipoCuenta1.Name = "tipoCuenta1";
-            this.tipoCuenta1.Size = new System.Drawing.Size(224, 103);
+            this.tipoCuenta1.Size = new System.Drawing.Size(234, 84);
             this.tipoCuenta1.TabIndex = 4;
             // 
             // UCcuenta
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.tipoCuenta1);
             this.Controls.Add(this.datosPersona1);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.Name = "UCcuenta";
-            this.Size = new System.Drawing.Size(911, 504);
+            this.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Size = new System.Drawing.Size(777, 410);
             this.Load += new System.EventHandler(this.UCcuenta_Load);
+            this.Controls.SetChildIndex(this.proceder1, 0);
             this.Controls.SetChildIndex(this.datosPersona1, 0);
             this.Controls.SetChildIndex(this.tipoCuenta1, 0);
-            //this.Controls.SetChildIndex(this.proceder1, 0);
             this.ResumeLayout(false);
 
         }

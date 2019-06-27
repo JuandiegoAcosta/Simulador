@@ -208,6 +208,12 @@
     <Compile Include="Plataforma\UCchequeras.Designer.cs">
       <DependentUpon>UCchequeras.cs</DependentUpon>
     </Compile>
+    <Compile Include="Plataforma\UCCliente.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Plataforma\UCCliente.Designer.cs">
+      <DependentUpon>UCCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Plataforma\UCcuenta.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -371,6 +377,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controles\TopBar.resx">
       <DependentUpon>TopBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Plataforma\UCCliente.resx">
+      <DependentUpon>UCCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanilla\Balancin.resx">
       <DependentUpon>Balancin.cs</DependentUpon>

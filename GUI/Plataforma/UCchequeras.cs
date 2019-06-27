@@ -17,7 +17,6 @@ namespace Sistema_Bancario.Plataforma
         private string gUsuario;
         private BLChequeras BLChequeras = new BLChequeras();
 
-
         public UCchequeras()
         {
             InitializeComponent();
@@ -29,7 +28,8 @@ namespace Sistema_Bancario.Plataforma
         {
 
             //Evento Click del boton proceder
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            Guardar();
         }
 
         public UCchequeras(string usuario)
