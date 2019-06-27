@@ -13,8 +13,7 @@ namespace CDatos.Manager
     {
         public bool Insert(Deposito Dep)
         {
-            try
-            {
+            
                 using (var connection = Util.ConnectionFactory.conexion())
                 {
                     connection.Open();
@@ -25,15 +24,15 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
-                    command.Parameters.AddWithValue("@NroCuenta", Dep.NroCuenta);
-                    command.Parameters.AddWithValue("@Monto", Dep.Monto);
-                    command.Parameters.AddWithValue("@doi", Dep.Doi);
+                    command.Parameters.AddWithValue("@NroCuenta", 12345);
+                    command.Parameters.AddWithValue("@Monto", 1000);
+                    command.Parameters.AddWithValue("@doi", 12345);
 
 
                     command.CommandType = CommandType.StoredProcedure;
                     command.CommandText = "DepositosInsert";
 
-                    int afectados = command.ExecuteNonQuery();
+                     command.ExecuteNonQuery();
 
                     // Commit the transaction.
                     sqlTran.Commit();
@@ -41,16 +40,12 @@ namespace CDatos.Manager
                     connection.Close();
                     connection.Dispose();
 
-                    if (afectados > 0)
+                    //if (afectados > 0)
                         return true;
-                    else
-                        return false;
+                    //else
+                    //    return false;
                 }
-            }
-            catch (Exception)
-            {
-                return false;
-            }
+           
         }
     }
 }

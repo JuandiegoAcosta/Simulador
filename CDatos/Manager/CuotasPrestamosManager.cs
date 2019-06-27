@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CDatos.Manager
 {
-    public class DepositoManager
+    public class CuotasPrestamosManager
     {
         //PrestamosSelect_NroCuenta
         public List<object> CuotasPrestamosSelect(string aValue)
