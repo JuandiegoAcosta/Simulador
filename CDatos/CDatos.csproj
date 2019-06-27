@@ -51,6 +51,7 @@
     <Compile Include="Manager\CronogramaPagoManager.cs" />
     <Compile Include="Manager\CuentaManager.cs" />
     <Compile Include="Manager\CuotasPrestamosManager.cs" />
+    <Compile Include="Manager\DepositoManager.cs" />
     <Compile Include="Manager\EmpresaManager.cs" />
     <Compile Include="Manager\GiroManager.cs" />
     <Compile Include="Manager\HorariosAtencionManager.cs" />
