@@ -1,4 +1,5 @@
 ﻿using CDatos.Manager;
+using Modelos.Modelos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,8 +16,11 @@ namespace CNegocio.Ventanilla
         public DepositoMethods()
         {
             depositoManager = new DepositoManager();
-         //   depositoManager.Insert();
-
+           
+        }
+        public bool Insert(Deposito deposito)
+        {
+           return depositoManager.Insert(deposito);
         }
     }
 }

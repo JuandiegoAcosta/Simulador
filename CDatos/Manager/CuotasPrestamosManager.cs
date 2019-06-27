@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Modelos.Modelos;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -102,6 +103,47 @@ namespace CDatos.Manager
             return cuotas;
 
 
+        }
+        public bool Insert(Deposito Dep)
+        {
+            try
+            {
+                using (var connection = Util.ConnectionFactory.conexion())
+                {
+                    connection.Open();
+
+                    SqlTransaction sqlTran = connection.BeginTransaction();
+
+                    SqlCommand command = connection.CreateCommand();
+
+                    command.Transaction = sqlTran;
+
+                    command.Parameters.AddWithValue("@NroCuenta", Dep.NroCuenta);
+                    command.Parameters.AddWithValue("@Monto", Dep.Monto);
+                    command.Parameters.AddWithValue("@doi", Dep.Doi);
+
+
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.CommandText = "DepositosInsert";
+
+                    int afectados = command.ExecuteNonQuery();
+
+                    // Commit the transaction.
+                    sqlTran.Commit();
+
+                    connection.Close();
+                    connection.Dispose();
+
+                    if (afectados > 0)
+                        return true;
+                    else
+                        return false;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
     }
