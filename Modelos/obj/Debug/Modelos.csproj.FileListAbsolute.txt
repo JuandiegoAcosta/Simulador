@@ -40,9 +40,10 @@ C:\Users\Usuario\Source\Repos\Simulador\Modelos\obj\Debug\Modelos.csprojAssembly
 C:\Users\Usuario\Source\Repos\Simulador\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
 C:\Users\Usuario\Source\Repos\Simulador\Modelos\obj\Debug\Modelos.dll
 C:\Users\Usuario\Source\Repos\Simulador\Modelos\obj\Debug\Modelos.pdb
-C:\Users\Usuario\Desktop\Simulador\Modelos\bin\Debug\Modelos.dll
-C:\Users\Usuario\Desktop\Simulador\Modelos\bin\Debug\Modelos.pdb
-C:\Users\Usuario\Desktop\Simulador\Modelos\obj\Debug\Modelos.csprojAssemblyReference.cache
-C:\Users\Usuario\Desktop\Simulador\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
-C:\Users\Usuario\Desktop\Simulador\Modelos\obj\Debug\Modelos.dll
-C:\Users\Usuario\Desktop\Simulador\Modelos\obj\Debug\Modelos.pdb
+C:\Users\Usuario\Downloads\Simulador-master\Simulador-master\Modelos\bin\Debug\Modelos.dll
+C:\Users\Usuario\Downloads\Simulador-master\Simulador-master\Modelos\bin\Debug\Modelos.pdb
+C:\Users\Usuario\Downloads\Simulador-master\Simulador-master\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Downloads\Simulador-master\Simulador-master\Modelos\obj\Debug\Modelos.dll
+C:\Users\Usuario\Downloads\Simulador-master\Simulador-master\Modelos\obj\Debug\Modelos.pdb
+C:\Users\Usuario\Downloads\Simulador-master\Simulador-master\Modelos\obj\Debug\Modelos.csprojAssemblyReference.cache
+C:\Users\Pablo\Desktop\SistemaBancario\Simulador 2\Simulador\Modelos\obj\Debug\Modelos.csprojAssemblyReference.cache

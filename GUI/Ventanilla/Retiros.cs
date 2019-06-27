@@ -24,7 +24,7 @@ namespace Sistema_Bancario.Froms_opciones
             retirosMethods.InsertaRetiro
                 (Convert.ToDecimal(monto1.TBMonto.Text),
                 Convert.ToInt32(nro_Tarjeta1.TBNroTarjeta.Text),
-                Convert.ToInt32(clave1.TBClave.Text));
+                Convert.ToInt32(clave1.TBClave.Text),dni1.TBDoi.Text);
 
             MessageBox.Show("Retiro con exito");
         }

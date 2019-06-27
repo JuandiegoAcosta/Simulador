@@ -15,7 +15,7 @@ namespace Sistema_Bancario.Plataforma
     public partial class UCchequeras : Base
     {
         private string gUsuario;
-        private ChequerasMethods BLChequeras = new ChequerasMethods();
+        private BLChequeras BLChequeras = new BLChequeras();
 
 
         public UCchequeras()

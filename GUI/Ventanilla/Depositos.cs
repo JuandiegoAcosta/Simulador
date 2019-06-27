@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CNegocio.Ventanilla;
+using Modelos.Modelos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,6 +20,12 @@ namespace Sistema_Bancario.Froms_opciones
 
         private void BTProceder_Click(object sender, EventArgs e)
         {
+            DepositoMethods depositos = new DepositoMethods();
+            Deposito dep = new Deposito();
+            dep.NroCuenta = nroCuenta1.TBNroCuenta.Text;
+            dep.Monto = Convert.ToDecimal(monto1.TBMonto.Text);
+            dep.Doi = dni1.TBDoi.Text;
+            depositos.insert(dep);
             MessageBox.Show("Operacion Realizada");
         }
 
