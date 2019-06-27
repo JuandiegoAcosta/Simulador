@@ -11,7 +11,7 @@ namespace CDatos.Manager
 {
    public class RetirosManager
     {
-        public int RetiroInsert(decimal Monto,int Tarjeta,int Clave)
+        public int RetiroInsert(decimal Monto,int Tarjeta,int Clave,string doi)
         {
             int afectados=0;
             try
@@ -29,7 +29,8 @@ namespace CDatos.Manager
 
                     command.Parameters.AddWithValue("@Monto",Monto);
                     command.Parameters.AddWithValue("@Tarjeta",Tarjeta);
-                    command.Parameters.AddWithValue("@Clave",Clave);              
+                    command.Parameters.AddWithValue("@Clave",Clave);
+                    command.Parameters.AddWithValue("@doi", doi);
 
                     command.CommandType = CommandType.StoredProcedure;
                     command.CommandText = "RetirosInsert";
