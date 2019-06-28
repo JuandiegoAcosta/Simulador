@@ -1,6 +1,6 @@
 ﻿namespace Sistema_Bancario.Plataforma
 {
-    partial class UCPrestamos
+    partial class UCprestamos
     {
         /// <summary> 
         /// Required designer variable.
@@ -56,7 +56,7 @@
             // 
             // datosPersona1
             // 
-            this.datosPersona1.DatosValidos = false;
+
             this.datosPersona1.Location = new System.Drawing.Point(14, 22);
             this.datosPersona1.Margin = new System.Windows.Forms.Padding(4);
             this.datosPersona1.Name = "datosPersona1";

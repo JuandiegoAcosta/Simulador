@@ -47,7 +47,7 @@
             // 
             // datosPersona1
             // 
-            this.datosPersona1.DatosValidos = false;
+
             this.datosPersona1.Location = new System.Drawing.Point(15, 20);
             this.datosPersona1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.datosPersona1.Name = "datosPersona1";

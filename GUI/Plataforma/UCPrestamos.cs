@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Sistema_Bancario.Plataforma
 {
-    public partial class UCPrestamos : Base
+    public partial class UCprestamos : Base
     {
-        public UCPrestamos()
+        public UCprestamos()
         {
             InitializeComponent();
             //se crea el evento click del boton proceder
@@ -26,14 +26,14 @@ namespace Sistema_Bancario.Plataforma
             throw new NotImplementedException();
         }
 
-        private static UCPrestamos _instance;
-        public static UCPrestamos instance
+        private static UCprestamos _instance;
+        public static UCprestamos instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new UCPrestamos();
+                    _instance = new UCprestamos();
                 }
 
                 return _instance;

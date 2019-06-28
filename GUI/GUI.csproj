@@ -208,11 +208,11 @@
     <Compile Include="Plataforma\UCchequeras.Designer.cs">
       <DependentUpon>UCchequeras.cs</DependentUpon>
     </Compile>
-    <Compile Include="Plataforma\UCCliente.cs">
+    <Compile Include="Plataforma\UCcliente.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Plataforma\UCCliente.Designer.cs">
-      <DependentUpon>UCCliente.cs</DependentUpon>
+    <Compile Include="Plataforma\UCcliente.Designer.cs">
+      <DependentUpon>UCcliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Plataforma\UCcuenta.cs">
       <SubType>UserControl</SubType>
@@ -220,11 +220,11 @@
     <Compile Include="Plataforma\UCcuenta.Designer.cs">
       <DependentUpon>UCcuenta.cs</DependentUpon>
     </Compile>
-    <Compile Include="Plataforma\UCPrestamos.cs">
+    <Compile Include="Plataforma\UCprestamos.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Plataforma\UCPrestamos.Designer.cs">
-      <DependentUpon>UCPrestamos.cs</DependentUpon>
+    <Compile Include="Plataforma\UCprestamos.Designer.cs">
+      <DependentUpon>UCprestamos.cs</DependentUpon>
     </Compile>
     <Compile Include="Plataforma\UCrefinanciar.cs">
       <SubType>UserControl</SubType>
@@ -378,8 +378,8 @@
     <EmbeddedResource Include="Controles\TopBar.resx">
       <DependentUpon>TopBar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Plataforma\UCCliente.resx">
-      <DependentUpon>UCCliente.cs</DependentUpon>
+    <EmbeddedResource Include="Plataforma\UCcliente.resx">
+      <DependentUpon>UCcliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanilla\Balancin.resx">
       <DependentUpon>Balancin.cs</DependentUpon>
@@ -399,8 +399,8 @@
     <EmbeddedResource Include="Plataforma\UCcuenta.resx">
       <DependentUpon>UCcuenta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Plataforma\UCPrestamos.resx">
-      <DependentUpon>UCPrestamos.cs</DependentUpon>
+    <EmbeddedResource Include="Plataforma\UCprestamos.resx">
+      <DependentUpon>UCprestamos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Plataforma\UCrefinanciar.resx">
       <DependentUpon>UCrefinanciar.cs</DependentUpon>

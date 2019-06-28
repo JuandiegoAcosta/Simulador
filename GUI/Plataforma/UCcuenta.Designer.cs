@@ -39,7 +39,7 @@
             // 
             // datosPersona1
             // 
-            this.datosPersona1.DatosValidos = false;
+
             this.datosPersona1.Location = new System.Drawing.Point(20, 16);
             this.datosPersona1.Margin = new System.Windows.Forms.Padding(4);
             this.datosPersona1.Name = "datosPersona1";
@@ -48,7 +48,7 @@
             // 
             // tipoCuenta1
             // 
-            this.tipoCuenta1.Location = new System.Drawing.Point(20, 265);
+            this.tipoCuenta1.Location = new System.Drawing.Point(439, 16);
             this.tipoCuenta1.Margin = new System.Windows.Forms.Padding(2);
             this.tipoCuenta1.Name = "tipoCuenta1";
             this.tipoCuenta1.Size = new System.Drawing.Size(276, 84);

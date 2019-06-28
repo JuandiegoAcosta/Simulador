@@ -20,14 +20,11 @@ namespace Sistema_Bancario.Plataforma
         public UCchequeras()
         {
             InitializeComponent();
-            //se crea el evento click del boton proceder
             proceder1.BTProceder.Click += BTProceder_Click;
         }
 
         private void BTProceder_Click(object sender, EventArgs e)
         {
-
-            //Evento Click del boton proceder
             //throw new NotImplementedException();
             Guardar();
         }

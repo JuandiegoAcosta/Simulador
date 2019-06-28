@@ -7,15 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CNegocio.Plataforma;
+using Modelos.Modelos;
 
 namespace Sistema_Bancario.Plataforma
 {
-    public partial class UCCliente : Base
+    public partial class UCcliente : Base
     {
-        public UCCliente()
+        private BLPersona BLPersonas = new BLPersona();
+
+        public UCcliente()
         {
             InitializeComponent();
-            //proceder1.BTProceder.Click += BTProceder_Click;
+            proceder1.BTProceder.Click += BTProceder_Click;
         }
 
         private void UCCliente_Load(object sender, EventArgs e)
@@ -25,18 +29,25 @@ namespace Sistema_Bancario.Plataforma
 
         private void BTProceder_Click(object sender, EventArgs e)
         {
-
-            //Evento Click del boton proceder
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            MessageBox.Show(UCPersona.ApPaterno);
         }
-        private static UCcuenta _instance;
-        public static UCcuenta instance
+
+        private void Nuevo()
+        {
+            txtTelefono.Text = "";
+            txtEmail.Text = "";
+            dtFechaNac.Value = System.DateTime.Now;
+        }
+
+        private static UCcliente _instance;
+        public static UCcliente instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new UCcuenta();
+                    _instance = new UCcliente();
                 }
 
                 return _instance;

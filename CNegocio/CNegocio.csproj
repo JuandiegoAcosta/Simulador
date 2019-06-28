@@ -54,6 +54,7 @@
     <Compile Include="Backend\TurnoUsuarioMethods.cs" />
     <Compile Include="Plataforma\BLChequeras.cs" />
     <Compile Include="Plataforma\BLCheques.cs" />
+    <Compile Include="Plataforma\BLCliente.cs" />
     <Compile Include="Plataforma\BLCuenta.cs" />
     <Compile Include="Plataforma\BLPersona.cs" />
     <Compile Include="Plataforma\BLTipoMoneda.cs" />

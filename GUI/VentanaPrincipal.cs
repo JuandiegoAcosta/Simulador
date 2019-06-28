@@ -299,17 +299,17 @@ namespace Sistema_Bancario
             }
             else if (btn.Text.Equals("Realizar Préstamo"))
             {
-                if (!panel1.Controls.Contains(UCPrestamos.instance))
+                if (!panel1.Controls.Contains(UCprestamos.instance))
                 {
-                    panel1.Controls.Add(UCPrestamos.instance);
-                    UCPrestamos.instance.Dock = DockStyle.Fill;
-                    UCPrestamos.instance.BringToFront();
+                    panel1.Controls.Add(UCprestamos.instance);
+                    UCprestamos.instance.Dock = DockStyle.Fill;
+                    UCprestamos.instance.BringToFront();
                     TituloText.Text = btn.Text;
 
                 }
                 else
                 {
-                    UCPrestamos.instance.BringToFront();
+                    UCprestamos.instance.BringToFront();
                     TituloText.Text = btn.Text;
                 }
                 //    Limpiar();
@@ -385,16 +385,16 @@ namespace Sistema_Bancario
             }
             else if (btn.Text.Equals("Cliente"))
             {
-                if (!panel1.Controls.Contains(UCCliente.instance))
+                if (!panel1.Controls.Contains(UCcliente.instance))
                 {
-                    panel1.Controls.Add(UCCliente.instance);
-                    UCCliente.instance.Dock = DockStyle.Fill;
-                    UCCliente.instance.BringToFront();
+                    panel1.Controls.Add(UCcliente.instance);
+                    UCcliente.instance.Dock = DockStyle.Fill;
+                    UCcliente.instance.BringToFront();
                     TituloText.Text = btn.Text;
                 }
                 else
                 {
-                    UCCliente.instance.BringToFront();
+                    UCcliente.instance.BringToFront();
                     TituloText.Text = btn.Text;
                 }
             }

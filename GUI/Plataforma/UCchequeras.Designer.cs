@@ -45,6 +45,7 @@
             // 
             this.proceder1.Location = new System.Drawing.Point(6, 259);
             this.proceder1.Size = new System.Drawing.Size(357, 40);
+            this.proceder1.Click += new System.EventHandler(this.BTProceder_Click);
             // 
             // label1
             // 

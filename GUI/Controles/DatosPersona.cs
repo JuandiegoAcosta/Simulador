@@ -13,7 +13,11 @@ namespace Sistema_Bancario.Controles
 {
     public partial class DatosPersona : UserControl
     {
-        public bool DatosValidos { get; set; }
+        public string NumDoc;
+        public int TipoDoc;
+        public string ApPaterno;
+        public string ApMaterno;
+        public string Nombres;
 
         public DatosPersona()
         {
@@ -36,6 +40,7 @@ namespace Sistema_Bancario.Controles
                     lblApPaterno.Visible = true;
                     txtApPaterno.Visible = true;
                     gbDatos.Size = new Size(369, 129);
+                    TipoDoc = 1;
                 }
                 else if (lng < 9 && lng > 7)
                 {
@@ -47,6 +52,7 @@ namespace Sistema_Bancario.Controles
                     txtApMaterno.Visible = true;
                     txtNombre.Visible = true;
                     gbDatos.Size = new Size(369, 200);
+                    TipoDoc = 2;
                 }
                 else
                 {
@@ -81,7 +87,7 @@ namespace Sistema_Bancario.Controles
 
         private void DatosPersona_Load(object sender, EventArgs e)
         {
-
+             
         }
     }
 }

@@ -58,7 +58,7 @@
             this.gbDatos.Controls.Add(this.lblNombre);
             this.gbDatos.Location = new System.Drawing.Point(3, 3);
             this.gbDatos.Name = "gbDatos";
-            this.gbDatos.Size = new System.Drawing.Size(355, 197);
+            this.gbDatos.Size = new System.Drawing.Size(355, 75);
             this.gbDatos.TabIndex = 9;
             this.gbDatos.TabStop = false;
             this.gbDatos.Text = "Datos";
