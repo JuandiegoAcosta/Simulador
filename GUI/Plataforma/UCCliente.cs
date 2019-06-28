@@ -29,6 +29,18 @@ namespace Sistema_Bancario.Plataforma
             //Evento Click del boton proceder
             throw new NotImplementedException();
         }
-        
+        private static UCcuenta _instance;
+        public static UCcuenta instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new UCcuenta();
+                }
+
+                return _instance;
+            }
+        }
     }
 }

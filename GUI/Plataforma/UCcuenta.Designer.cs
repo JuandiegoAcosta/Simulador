@@ -41,7 +41,7 @@
             // 
             this.datosPersona1.DatosValidos = false;
             this.datosPersona1.Location = new System.Drawing.Point(20, 16);
-            this.datosPersona1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.datosPersona1.Margin = new System.Windows.Forms.Padding(4);
             this.datosPersona1.Name = "datosPersona1";
             this.datosPersona1.Size = new System.Drawing.Size(392, 209);
             this.datosPersona1.TabIndex = 3;
@@ -49,9 +49,9 @@
             // tipoCuenta1
             // 
             this.tipoCuenta1.Location = new System.Drawing.Point(20, 265);
-            this.tipoCuenta1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tipoCuenta1.Margin = new System.Windows.Forms.Padding(2);
             this.tipoCuenta1.Name = "tipoCuenta1";
-            this.tipoCuenta1.Size = new System.Drawing.Size(234, 84);
+            this.tipoCuenta1.Size = new System.Drawing.Size(276, 84);
             this.tipoCuenta1.TabIndex = 4;
             // 
             // UCcuenta
@@ -61,9 +61,9 @@
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.tipoCuenta1);
             this.Controls.Add(this.datosPersona1);
-            this.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.Margin = new System.Windows.Forms.Padding(3);
             this.Name = "UCcuenta";
-            this.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Padding = new System.Windows.Forms.Padding(6);
             this.Size = new System.Drawing.Size(777, 410);
             this.Load += new System.EventHandler(this.UCcuenta_Load);
             this.Controls.SetChildIndex(this.proceder1, 0);

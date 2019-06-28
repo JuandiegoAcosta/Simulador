@@ -39,7 +39,7 @@ namespace Sistema_Bancario
             {
                 BTGestion.BackColor = SystemColors.HotTrack;
                 panel2.Controls.Clear();
-                this.Componentes(1);
+                this.Componentes(2);
                 return true;
             }
             else if (keyData == (Keys.F3))
@@ -55,7 +55,7 @@ namespace Sistema_Bancario
             }
                 return base.ProcessCmdKey(ref msg, keyData);
         }
-        private void button7_Click(object sender, EventArgs e)
+        private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -102,7 +102,8 @@ namespace Sistema_Bancario
         {
             Button btn = sender as Button;
             TituloText.Visible = true;
-            #region 
+
+            #region Botones
             if (btn.Text.Equals("Retiros"))
             {
                 if (!panel1.Controls.Contains(Retiros.instance))
@@ -111,7 +112,6 @@ namespace Sistema_Bancario
                     Retiros.instance.Dock = DockStyle.Fill;
                     Retiros.instance.BringToFront();
                     TituloText.Text = btn.Text;
-
                 }
                 else
                 {
@@ -350,7 +350,8 @@ namespace Sistema_Bancario
                 }
                 //    Limpiar();
                 //   button2.BackColor = SystemColors.HotTrack;
-            }else if (btn.Text.Equals("Balancin Caja"))
+            }
+            else if (btn.Text.Equals("Balancin Caja"))
             {
                 if (!panel1.Controls.Contains(Balancin.instance))
                 {
@@ -382,9 +383,22 @@ namespace Sistema_Bancario
                     TituloText.Text = btn.Text;
                 }
             }
+            else if (btn.Text.Equals("Cliente"))
+            {
+                if (!panel1.Controls.Contains(UCCliente.instance))
+                {
+                    panel1.Controls.Add(UCCliente.instance);
+                    UCCliente.instance.Dock = DockStyle.Fill;
+                    UCCliente.instance.BringToFront();
+                    TituloText.Text = btn.Text;
+                }
+                else
+                {
+                    UCCliente.instance.BringToFront();
+                    TituloText.Text = btn.Text;
+                }
+            }
             #endregion
-
-
         }
         private void Componentes(int x)
         {
@@ -445,32 +459,42 @@ namespace Sistema_Bancario
                     break;
             }
         }
-        private void button13_Click(object sender, EventArgs e)
+        
+        private void BTGestion_Click(object sender, EventArgs e)
         {
-            BTGestion.BackColor = SystemColors.HotTrack;
+            Marcar(sender);
             panel2.Controls.Clear();
             this.Componentes(2);
         }
 
-        private void button14_Click(object sender, EventArgs e)
-        {
-            BTPlataforma.BackColor = SystemColors.HotTrack;
+        private void BTPlataforma_Click(object sender, EventArgs e)
+        {            
+            Marcar(sender);
             panel2.Controls.Clear();
             this.Componentes(1);
-
-
         }
 
-        private void button15_Click(object sender, EventArgs e)
+        private void BTReportes_Click(object sender, EventArgs e)
         {
-            BTReportes.BackColor = SystemColors.HotTrack;
+            Marcar(sender);
         }
 
         private void BTOperaciones_Click(object sender, EventArgs e)
         {
-            BTOperaciones.BackColor = SystemColors.HotTrack;
+            Marcar(sender);
             panel2.Controls.Clear();
             this.Componentes(3);
+        }
+
+        private void Marcar(object boton)
+        {
+            Button BotonMenu;
+            BotonMenu = boton as Button;
+            BTOperaciones.BackColor = Color.Transparent;
+            BTReportes.BackColor = Color.Transparent;
+            BTGestion.BackColor = Color.Transparent;
+            BTPlataforma.BackColor = Color.Transparent;
+            BotonMenu.BackColor = SystemColors.HotTrack;
         }
     }
 }
