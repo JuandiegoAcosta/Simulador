@@ -76,6 +76,7 @@
     <Compile Include="Backend\ITipoDocumentoService.cs" />
     <Compile Include="Backend\ITurnosService.cs" />
     <Compile Include="Backend\ITurnoUsuarioService.cs" />
+    <Compile Include="Plataforma\IPersonaService.cs" />
     <Compile Include="SistemaBancario.svc.cs">
       <DependentUpon>SistemaBancario.svc</DependentUpon>
     </Compile>
@@ -90,7 +91,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Plataforma\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Web.Debug.config">
