@@ -82,6 +82,10 @@
     <Compile Include="Botones\BTRetiros.Designer.cs">
       <DependentUpon>BTRetiros.cs</DependentUpon>
     </Compile>
+    <Compile Include="Config\CloseApplication.cs" />
+    <Compile Include="Config\UIButton.cs" />
+    <Compile Include="Config\UIForm.cs" />
+    <Compile Include="Config\UIPanel.cs" />
     <Compile Include="Connected Services\WsSistemaBancario\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -135,6 +139,9 @@
     <Compile Include="Controles\Empresa.Designer.cs">
       <DependentUpon>Empresa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controles\GradentPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controles\NroContrato.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -152,6 +159,9 @@
     </Compile>
     <Compile Include="Controles\Precios.Designer.cs">
       <DependentUpon>Precios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TextBoxViewPassword.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controles\TipoCuenta.cs">
       <SubType>UserControl</SubType>
@@ -545,6 +555,30 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\estudiante.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sucursal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\database.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\server.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profesor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\none.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\view.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

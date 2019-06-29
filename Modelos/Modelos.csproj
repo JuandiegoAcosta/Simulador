@@ -74,9 +74,9 @@
     <Compile Include="Modelos\VentanillaModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Modelos\TipoCambioModel.cs" />
+    <Compile Include="Session\ISession.cs" />
+    <Compile Include="Session\Session.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Session\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

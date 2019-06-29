@@ -24,4 +24,4 @@ namespace ServiciosBancarios.Plataforma
         List<CuentasModel> Cuenta_ObtenerTodos(int aID_Persona);
 
     }
-}11
+}

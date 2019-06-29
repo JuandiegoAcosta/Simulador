@@ -108,3 +108,12 @@ C:\Users\Jean\Desktop\sim2\Simulador\CDatos\obj\Debug\CDatos.csproj.CoreCompileI
 C:\Users\Jean\Desktop\sim2\Simulador\CDatos\obj\Debug\CDatos.csproj.CopyComplete
 C:\Users\Jean\Desktop\sim2\Simulador\CDatos\obj\Debug\CDatos.dll
 C:\Users\Jean\Desktop\sim2\Simulador\CDatos\obj\Debug\CDatos.pdb
+C:\Users\elife\Desktop\ISUR\Simulador\CDatos\bin\Debug\CDatos.dll
+C:\Users\elife\Desktop\ISUR\Simulador\CDatos\bin\Debug\CDatos.pdb
+C:\Users\elife\Desktop\ISUR\Simulador\CDatos\bin\Debug\Modelos.dll
+C:\Users\elife\Desktop\ISUR\Simulador\CDatos\bin\Debug\Modelos.pdb
+C:\Users\elife\Desktop\ISUR\Simulador\CDatos\obj\Debug\CDatos.csprojAssemblyReference.cache
+C:\Users\elife\Desktop\ISUR\Simulador\CDatos\obj\Debug\CDatos.csproj.CoreCompileInputs.cache
+C:\Users\elife\Desktop\ISUR\Simulador\CDatos\obj\Debug\CDatos.csproj.CopyComplete
+C:\Users\elife\Desktop\ISUR\Simulador\CDatos\obj\Debug\CDatos.dll
+C:\Users\elife\Desktop\ISUR\Simulador\CDatos\obj\Debug\CDatos.pdb
