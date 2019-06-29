@@ -117,3 +117,17 @@ C:\Users\Jean\Desktop\Simulador\Simulador\CServicios\obj\Debug\CServicios.csproj
 C:\Users\Jean\Desktop\Simulador\Simulador\CServicios\obj\Debug\CServicios.csproj.CopyComplete
 C:\Users\Jean\Desktop\Simulador\Simulador\CServicios\obj\Debug\ServiciosBancarios.dll
 C:\Users\Jean\Desktop\Simulador\Simulador\CServicios\obj\Debug\ServiciosBancarios.pdb
+C:\Users\ASUS\Source\Repos\Simulador\CServicios\bin\ServiciosBancarios.dll.config
+C:\Users\ASUS\Source\Repos\Simulador\CServicios\bin\ServiciosBancarios.dll
+C:\Users\ASUS\Source\Repos\Simulador\CServicios\bin\ServiciosBancarios.pdb
+C:\Users\ASUS\Source\Repos\Simulador\CServicios\bin\CNegocio.dll
+C:\Users\ASUS\Source\Repos\Simulador\CServicios\bin\Modelos.dll
+C:\Users\ASUS\Source\Repos\Simulador\CServicios\bin\CDatos.dll
+C:\Users\ASUS\Source\Repos\Simulador\CServicios\bin\CNegocio.pdb
+C:\Users\ASUS\Source\Repos\Simulador\CServicios\bin\Modelos.pdb
+C:\Users\ASUS\Source\Repos\Simulador\CServicios\bin\CDatos.pdb
+C:\Users\ASUS\Source\Repos\Simulador\CServicios\obj\Debug\CServicios.csprojAssemblyReference.cache
+C:\Users\ASUS\Source\Repos\Simulador\CServicios\obj\Debug\CServicios.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Source\Repos\Simulador\CServicios\obj\Debug\CServicios.csproj.CopyComplete
+C:\Users\ASUS\Source\Repos\Simulador\CServicios\obj\Debug\ServiciosBancarios.dll
+C:\Users\ASUS\Source\Repos\Simulador\CServicios\obj\Debug\ServiciosBancarios.pdb

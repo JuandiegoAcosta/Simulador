@@ -29,13 +29,21 @@ namespace Sistema_Bancario
             {
                 usuarioLogin = user.Persona_ValidarUsuario(nick, pass);
 
-                VentanaPrincipal x = new VentanaPrincipal();
                 if (usuarioLogin != null)
                 {
+                    VentanaPrincipal x = new VentanaPrincipal();
                     SucursalUsuario = user.Persona_ObtenerSucursal(usuarioLogin.Id);
+                    this.LimpiarControles();
+                    this.Hide();
                 }
-                else MessageBox.Show("error");
+                else MessageBox.Show("Credenciales incorrectas");
+                //else MessageBox.Show("error");
             }
+        }
+        private void LimpiarControles()
+        {
+            this.txtUsuario.Text = "";
+            this.txtPass.Text = "";
         }
     }
 }
