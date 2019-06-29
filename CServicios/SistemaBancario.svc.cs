@@ -405,6 +405,11 @@ namespace ServiciosBancarios
         {
             return BLPersona.CambiarContraseña(aUsuario, aContraseña, aNuevaContraseña);
         }
+
+        public SucursalModel Persona_ObtenerSucursal(int idUsuario)
+        {
+            return BLPersona.ObtenerSucursal(idUsuario);
+        }
         #endregion
 
         #region [ Roles ]

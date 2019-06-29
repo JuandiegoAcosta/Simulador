@@ -525,7 +525,67 @@ namespace CDatos.Manager
             }
         }
 
+        /// <summary>
+        /// Obtiene la sucursal del usuario
+        /// </summary>
+        public Modelos.Modelos.SucursalModel ObtenerSucursal(int idUsuario)
+        {
+            SucursalModel SucursalModel = null;
 
+            try
+            {
+                using (var connection = Util.ConnectionFactory.conexion())
+                {
+                    connection.Open();
+
+                    SqlCommand command = connection.CreateCommand();
+
+                    command.Parameters.AddWithValue("@Id", idUsuario);
+
+
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.CommandText = "spSucursalUsuario";
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+
+                            int Id = (int)(reader["Id"]);
+                            string Nombre = (string)(reader["Nombre"]);
+                            string Ubicacion = (string)(reader["Ubicacion"]);
+                            int IdBanco = (int)(reader["IdBanco"]);
+                            DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
+                            DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
+                            string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
+                            string USUARIO_MODIFICADOR = (reader["USUARIO_MODIFICADOR"]) == DBNull.Value ? null : (string)(reader["USUARIO_MODIFICADOR"]);
+
+                            SucursalModel = new SucursalModel
+                            {
+                                Id = Id,
+                                Nombre = Nombre,
+                                Ubicacion = Ubicacion,
+                                Idbanco = IdBanco,
+                                Fecha_creacion = FECHA_CREACION,
+                                Fecha_modificacion = FECHA_MODIFICACION,
+                                Usuario_creador = USUARIO_CREADOR,
+                                Usuario_modificador = USUARIO_MODIFICADOR,
+
+                            };
+                        }
+                    }
+                }
+
+                return SucursalModel;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
 
 
         #endregion

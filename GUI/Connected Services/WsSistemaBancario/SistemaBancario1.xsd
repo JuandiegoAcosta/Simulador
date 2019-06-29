@@ -224,6 +224,19 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfPersonaModel" nillable="true" type="tns:ArrayOfPersonaModel" />
+  <xs:complexType name="SucursalModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Fecha_creacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Fecha_modificacion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Idbanco" type="xs:int" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ubicacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Usuario_creador" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Usuario_modificador" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SucursalModel" nillable="true" type="tns:SucursalModel" />
   <xs:complexType name="RolesModel">
     <xs:sequence>
       <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
@@ -260,19 +273,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfRolUsuarioModel" nillable="true" type="tns:ArrayOfRolUsuarioModel" />
-  <xs:complexType name="SucursalModel">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Fecha_creacion" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="Fecha_modificacion" nillable="true" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="Id" type="xs:int" />
-      <xs:element minOccurs="0" name="Idbanco" type="xs:int" />
-      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Ubicacion" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Usuario_creador" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Usuario_modificador" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="SucursalModel" nillable="true" type="tns:SucursalModel" />
   <xs:complexType name="ArrayOfSucursalModel">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="SucursalModel" nillable="true" type="tns:SucursalModel" />

@@ -57,13 +57,13 @@
     <Compile Include="Manager\HorariosAtencionManager.cs" />
     <Compile Include="Manager\MovimientosVentanillaManager.cs" />
     <Compile Include="Manager\PagoServicioManager.cs" />
-    <Compile Include="Manager\PermisosUsuarioManager.cs" />
-    <Compile Include="Manager\PersonaManager.cs" />
+    <Compile Include="Seguridad\PermisosUsuarioManager.cs" />
+    <Compile Include="Seguridad\PersonaManager.cs" />
     <Compile Include="Manager\PrestamoManager.cs" />
     <Compile Include="Manager\RecaudoManager.cs" />
     <Compile Include="Manager\RetirosManager.cs" />
-    <Compile Include="Manager\RolesManager.cs" />
-    <Compile Include="Manager\RolUsuarioManager.cs" />
+    <Compile Include="Seguridad\RolesManager.cs" />
+    <Compile Include="Seguridad\RolUsuarioManager.cs" />
     <Compile Include="Manager\SucursalManager.cs" />
     <Compile Include="Manager\TarjetaManager.cs" />
     <Compile Include="Manager\TipoCambioManager.cs" />

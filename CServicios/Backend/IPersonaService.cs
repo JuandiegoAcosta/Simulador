@@ -31,5 +31,8 @@ namespace ServiciosBancarios.Backend
 
         [OperationContract]
         bool Persona_CambiarContraseña(string aUsuario, string aPassword, string aNewPassword);
+
+        [OperationContract]
+        SucursalModel Persona_ObtenerSucursal(int idUsuario);
     }
 }

@@ -1088,6 +1088,12 @@ namespace Sistema_Bancario.WsSistemaBancario {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/Persona_CambiarContraseña", ReplyAction="http://tempuri.org/IPersonaService/Persona_CambiarContraseñaResponse")]
         System.Threading.Tasks.Task<bool> Persona_CambiarContraseñaAsync(string aUsuario, string aPassword, string aNewPassword);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/Persona_ObtenerSucursal", ReplyAction="http://tempuri.org/IPersonaService/Persona_ObtenerSucursalResponse")]
+        Modelos.Modelos.SucursalModel Persona_ObtenerSucursal(int idUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/Persona_ObtenerSucursal", ReplyAction="http://tempuri.org/IPersonaService/Persona_ObtenerSucursalResponse")]
+        System.Threading.Tasks.Task<Modelos.Modelos.SucursalModel> Persona_ObtenerSucursalAsync(int idUsuario);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1171,6 +1177,14 @@ namespace Sistema_Bancario.WsSistemaBancario {
         
         public System.Threading.Tasks.Task<bool> Persona_CambiarContraseñaAsync(string aUsuario, string aPassword, string aNewPassword) {
             return base.Channel.Persona_CambiarContraseñaAsync(aUsuario, aPassword, aNewPassword);
+        }
+        
+        public Modelos.Modelos.SucursalModel Persona_ObtenerSucursal(int idUsuario) {
+            return base.Channel.Persona_ObtenerSucursal(idUsuario);
+        }
+        
+        public System.Threading.Tasks.Task<Modelos.Modelos.SucursalModel> Persona_ObtenerSucursalAsync(int idUsuario) {
+            return base.Channel.Persona_ObtenerSucursalAsync(idUsuario);
         }
     }
     

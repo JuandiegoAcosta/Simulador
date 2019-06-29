@@ -349,6 +349,12 @@
   <wsdl:message name="IPersonaService_Persona_CambiarContraseña_OutputMessage">
     <wsdl:part name="parameters" element="tns:Persona_CambiarContraseñaResponse" />
   </wsdl:message>
+  <wsdl:message name="IPersonaService_Persona_ObtenerSucursal_InputMessage">
+    <wsdl:part name="parameters" element="tns:Persona_ObtenerSucursal" />
+  </wsdl:message>
+  <wsdl:message name="IPersonaService_Persona_ObtenerSucursal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Persona_ObtenerSucursalResponse" />
+  </wsdl:message>
   <wsdl:message name="IRolesService_Roles_Crear_InputMessage">
     <wsdl:part name="parameters" element="tns:Roles_Crear" />
   </wsdl:message>
@@ -777,6 +783,10 @@
     <wsdl:operation name="Persona_CambiarContraseña">
       <wsdl:input wsaw:Action="http://tempuri.org/IPersonaService/Persona_CambiarContraseña" message="tns:IPersonaService_Persona_CambiarContraseña_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IPersonaService/Persona_CambiarContraseñaResponse" message="tns:IPersonaService_Persona_CambiarContraseña_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Persona_ObtenerSucursal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPersonaService/Persona_ObtenerSucursal" message="tns:IPersonaService_Persona_ObtenerSucursal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPersonaService/Persona_ObtenerSucursalResponse" message="tns:IPersonaService_Persona_ObtenerSucursal_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IRolesService">
@@ -1449,6 +1459,15 @@
     </wsdl:operation>
     <wsdl:operation name="Persona_CambiarContraseña">
       <soap:operation soapAction="http://tempuri.org/IPersonaService/Persona_CambiarContraseña" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Persona_ObtenerSucursal">
+      <soap:operation soapAction="http://tempuri.org/IPersonaService/Persona_ObtenerSucursal" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

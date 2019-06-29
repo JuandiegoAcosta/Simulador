@@ -70,5 +70,10 @@ namespace CNegocio.Backend
             return ADPersonaManager.CambiarContraseña(aUsuario, aContraseña, aNuevaContraseña);
         }
 
+        public SucursalModel ObtenerSucursal(int idUsuario)
+        {
+            return ADPersonaManager.ObtenerSucursal(idUsuario);
+        }
+
     }
 }

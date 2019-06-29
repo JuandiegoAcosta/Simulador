@@ -10,12 +10,16 @@ using System.Windows.Forms;
 
 namespace Sistema_Bancario
 {
+
     public partial class Login : Form
     {
         public Login()
         {
             InitializeComponent();
         }
+        //Variables globales
+        public Modelos.Modelos.PersonaModel usuarioLogin;
+        public Modelos.Modelos.SucursalModel SucursalUsuario;
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -23,14 +27,14 @@ namespace Sistema_Bancario
             string pass = txtPass.Text;
             using (WsSistemaBancario.PersonaServiceClient user= new WsSistemaBancario.PersonaServiceClient())
             {
-                //var persona = user.Persona_ValidarUsuario(nick, pass);
+                usuarioLogin = user.Persona_ValidarUsuario(nick, pass);
 
                 VentanaPrincipal x = new VentanaPrincipal();
-                if (user.Persona_ValidarUsuario(nick, pass) != null)
+                if (usuarioLogin != null)
                 {
-                   
-
-                }else MessageBox.Show("error");
+                    SucursalUsuario = user.Persona_ObtenerSucursal(usuarioLogin.Id);
+                }
+                else MessageBox.Show("error");
             }
         }
     }
