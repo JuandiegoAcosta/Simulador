@@ -82,7 +82,6 @@
     <Compile Include="Botones\BTRetiros.Designer.cs">
       <DependentUpon>BTRetiros.cs</DependentUpon>
     </Compile>
-    <Compile Include="Config\User.cs" />
     <Compile Include="Connected Services\WsSistemaBancario\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
