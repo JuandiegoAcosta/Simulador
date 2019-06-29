@@ -53,3 +53,8 @@ C:\Users\RithardLL\Source\Repos\Simulador4\Modelos\obj\Debug\Modelos.csprojAssem
 C:\Users\RithardLL\Source\Repos\Simulador4\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
 C:\Users\RithardLL\Source\Repos\Simulador4\Modelos\obj\Debug\Modelos.dll
 C:\Users\RithardLL\Source\Repos\Simulador4\Modelos\obj\Debug\Modelos.pdb
+C:\Users\Jean\Desktop\Simulador\Simulador\Modelos\bin\Debug\Modelos.dll
+C:\Users\Jean\Desktop\Simulador\Simulador\Modelos\bin\Debug\Modelos.pdb
+C:\Users\Jean\Desktop\Simulador\Simulador\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
+C:\Users\Jean\Desktop\Simulador\Simulador\Modelos\obj\Debug\Modelos.dll
+C:\Users\Jean\Desktop\Simulador\Simulador\Modelos\obj\Debug\Modelos.pdb

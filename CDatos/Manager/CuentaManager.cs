@@ -249,7 +249,7 @@ namespace CDatos.Manager
         /// <summary>
         /// Selects all the objects of CuentasModel table.
         /// </summary>
-        public List<CuentasModel> CuentasModelSelectAll()
+        public List<CuentasModel> CuentasModelSelectByUser(int aUsuario)
         {
 
             List<CuentasModel> CuentasModellist = new List<CuentasModel>();
@@ -264,7 +264,11 @@ namespace CDatos.Manager
 
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.CommandText = "CuentasModelSelectAll";
+                    command.Parameters.AddWithValue("@aUsuario", aUsuario);
+
+                    //Falta crear el procedimiento en la DB
+
+                    command.CommandText = "CuentasModelSelectByUser";
 
                     SqlDataReader reader = command.ExecuteReader();
 
