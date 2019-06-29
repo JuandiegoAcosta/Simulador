@@ -75,5 +75,11 @@ namespace CNegocio.Backend
             return ADPersonaManager.ObtenerSucursal(idUsuario);
         }
 
+        public List<ComponenteModel> GetComponentes(int idUsuario)
+        {
+            return ADPersonaManager.GetComponentes(idUsuario);
+        }
+
+
     }
 }

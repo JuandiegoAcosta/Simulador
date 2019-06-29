@@ -24,12 +24,12 @@ namespace CNegocio.Plataforma
             return this.cuentaManager.Update(aCuentasModel);
         }
         
-        public CuentasModel obtenerCuenta(string aNumero)
+        public CuentasModel ObtenerCuenta(string aNumero)
         {
             return this.cuentaManager.GetCuentasModel(aNumero);
         }
 
-        public List<CuentasModel> obtenerTodosCheques(int aUsuario)
+        public List<CuentasModel> ObtenerTodosCuentasUsuario(int aUsuario)
         {
             return this.cuentaManager.CuentasModelSelectByUser(aUsuario);
         }

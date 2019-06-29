@@ -1,8 +1,10 @@
 ﻿using CNegocio.Ventanilla;
 using CNegocio.Backend;
+using CNegocio.Plataforma;
 using Modelos.Modelos;
 using ServiciosBancarios.Backend;
 using ServiciosBancarios.Ventanilla;
+using ServiciosBancarios.Plataforma;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +17,7 @@ namespace ServiciosBancarios
 {
     // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de clase "Service1" en el código, en svc y en el archivo de configuración.
     // NOTE: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione Service1.svc o Service1.svc.cs en el Explorador de soluciones e inicie la depuración.
-     public class SistemaBancario : ICobroChequeService, IEmpresaService, IPagoServicioService, IRecaudosService, ITipoMonedaService, ITipoMovimientoService, IVentanillaService, IBancoService, IComponenteService, IHorariosAtencionService, IPermisosUsuarioService, IPersonaService, IRolesService, IRolUsuarioService, ISucursalService, ITipoDocumentoService, ITurnosService, ITurnoUsuarioService
+     public class SistemaBancario : ICobroChequeService, IEmpresaService, IPagoServicioService, IRecaudosService, ITipoMonedaService, ITipoMovimientoService, IVentanillaService, IBancoService, IComponenteService, IHorariosAtencionService, IPermisosUsuarioService, IPersonaService, IRolesService, IRolUsuarioService, ISucursalService, ITipoDocumentoService, ITurnosService, ITurnoUsuarioService, ICuentaService
     {
         #region [ Varibles Globales ]
         #region [ Ventanilla Front ]
@@ -43,8 +45,11 @@ namespace ServiciosBancarios
         #endregion
 
         #region [ Plataforma ]
-        //pon tus variables aqui :)
+
+        private BLCuenta BLCuenta;
+
         #endregion
+
         #endregion
 
         public SistemaBancario()
@@ -74,7 +79,9 @@ namespace ServiciosBancarios
             #endregion
 
             #region [ Plataforma ]
-            //pon tus variables aqui :)
+
+            BLCuenta = new BLCuenta();
+
             #endregion
         }
 
@@ -410,6 +417,12 @@ namespace ServiciosBancarios
         {
             return BLPersona.ObtenerSucursal(idUsuario);
         }
+
+        public List<ComponenteModel> Persona_GetComponentes(int idUsuario)
+        {
+            return BLPersona.GetComponentes(idUsuario);
+        }
+
         #endregion
 
         #region [ Roles ]
@@ -592,13 +605,35 @@ namespace ServiciosBancarios
         }
 
         #endregion
-        
+
         #endregion
 
-
-
         #region [ Plataforma ]
-        //pon tus metodos aqui :)
+
+        #region [ Cuentas ]
+
+        public bool Cuenta_Crear(CuentasModel aCuenta)
+        {
+            return BLCuenta.Crear(aCuenta);
+        }
+
+        public bool Cuenta_Editar(CuentasModel aCuenta)
+        {
+            return BLCuenta.Actualizar(aCuenta);
+        }
+
+        public CuentasModel Cuenta_ObtenerUno(string aNro_Cuenta)
+        {
+            return BLCuenta.ObtenerCuenta(aNro_Cuenta);
+        }
+
+        public List<CuentasModel> Cuenta_ObtenerTodos(int aID_Persona)
+        {
+            return BLCuenta.ObtenerTodosCuentasUsuario(aID_Persona);
+        }
+
+        #endregion
+
         #endregion
     }
 }
