@@ -8,5 +8,8 @@ namespace CNegocio.Plataforma
 {
     public class BLTipoMoneda
     {
+
+
+
     }
 }
