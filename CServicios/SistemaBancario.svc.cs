@@ -417,6 +417,12 @@ namespace ServiciosBancarios
         {
             return BLPersona.ObtenerSucursal(idUsuario);
         }
+
+        public List<ComponenteModel> Persona_GetComponentes(int idUsuario)
+        {
+            return BLPersona.GetComponentes(idUsuario);
+        }
+
         #endregion
 
         #region [ Roles ]

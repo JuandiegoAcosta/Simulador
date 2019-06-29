@@ -34,5 +34,8 @@ namespace ServiciosBancarios.Backend
 
         [OperationContract]
         SucursalModel Persona_ObtenerSucursal(int idUsuario);
+
+        [OperationContract]
+        List<ComponenteModel> Persona_GetComponentes(int idUsuario);
     }
 }
