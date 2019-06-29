@@ -24,9 +24,9 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
-                    command.Parameters.AddWithValue("@NroCuenta", 12345);
-                    command.Parameters.AddWithValue("@Monto", 1000);
-                    command.Parameters.AddWithValue("@doi", 12345);
+                    command.Parameters.AddWithValue("@NroCuenta", Dep.NroCuenta);
+                    command.Parameters.AddWithValue("@Monto", Dep.Monto);
+                    command.Parameters.AddWithValue("@doi", Dep.Doi);
 
 
                     command.CommandType = CommandType.StoredProcedure;
