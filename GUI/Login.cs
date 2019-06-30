@@ -1,4 +1,5 @@
 ﻿using Modelos.Session;
+using Sistema_Bancario.Clases;
 using Sistema_Bancario.Config;
 using System;
 using System.Collections.Generic;
@@ -46,21 +47,25 @@ namespace Sistema_Bancario
 
       private void SetLogin()
       {
-         try
-         {
-
             if (!string.IsNullOrEmpty(this.txtUsuario.Text.Trim()))
-            { this.m_username = this.txtUsuario.Text.Trim(); }
+                {
+                    this.m_username = this.txtUsuario.Text.Trim();
+                }
             else
-            { this.m_username = null; }
+                {
+                    MessageBox.Show("No se permite estacios vacios");
+                    return;
+                }
 
             if (!string.IsNullOrEmpty(this.txtPass.Text.Trim()))
-            { this.m_password = this.txtPass.Text.Trim(); }
+                {
+                    this.m_password = this.txtPass.Text.Trim();
+                }
             else
-            { this.m_password = null; }
-         }
-         catch (Exception)
-         { return; }
+                {
+                    MessageBox.Show("No se permite estacios vacios");
+                    return;
+                }
       }
 
       private void ClearLogin()
@@ -76,7 +81,8 @@ namespace Sistema_Bancario
 
             using (WsSistemaBancario.PersonaServiceClient user = new WsSistemaBancario.PersonaServiceClient())
             {
-               usuarioLogin = user.Persona_ValidarUsuario(this.m_username, this.m_password);
+               string passEncrypt = Encrypt.GetSHA256(this.m_password);
+               usuarioLogin = user.Persona_ValidarUsuario(this.m_username, passEncrypt);
                SucursalUsuario = user.Persona_ObtenerSucursal(usuarioLogin.Id);
                if (usuarioLogin != null && SucursalUsuario != null)
                {
@@ -96,14 +102,14 @@ namespace Sistema_Bancario
             }
             return false;
          }
-         catch (Exception)
+         catch (Exception ex)
          {
             return false;
          }
       }
       private void button1_Click(object sender, EventArgs e)
       {
-         SetLogin();
+            SetLogin();
             if (StartLogin())
             {
                 VentanaPrincipal ventanaPrincipal = new VentanaPrincipal(Session);

@@ -449,7 +449,7 @@ namespace CDatos.Manager
                         DateTime FechaNacimiento = (DateTime)(reader["FechaNacimiento"]);
                         string Telefono = (reader["Telefono"]) == DBNull.Value ? null : (string)(reader["Telefono"]);
                         string NroDocumento = (string)(reader["NroDocumento"]);
-                        int TipoDocumento = (int)(reader["TipoDocumento"]);
+                        byte TipoDocumento = (byte)(reader["TipoDocumento"]);
                         string Tipo_Persona = (reader["Tipo_Persona"]) == DBNull.Value ? "" : (string)(reader["Tipo_Persona"]);
                         DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
                         DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
@@ -468,7 +468,7 @@ namespace CDatos.Manager
                             Fechanacimiento = FechaNacimiento,
                             Telefono = Telefono,
                             Nrodocumento = NroDocumento,
-                            Tipodocumento = TipoDocumento,
+                            Tipodocumento = (int)TipoDocumento,
                             Tipo_Persona = Tipo_Persona,
                             Fecha_creacion = FECHA_CREACION,
                             Fecha_modificacion = FECHA_MODIFICACION,
