@@ -79,3 +79,8 @@ C:\Users\Pablo\Desktop\SistemaBancario\Simulador 2\Nueva carpeta\Simulador\Model
 C:\Users\Pablo\Desktop\SistemaBancario\Simulador 2\Nueva carpeta\Simulador\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
 C:\Users\Pablo\Desktop\SistemaBancario\Simulador 2\Nueva carpeta\Simulador\Modelos\obj\Debug\Modelos.dll
 C:\Users\Pablo\Desktop\SistemaBancario\Simulador 2\Nueva carpeta\Simulador\Modelos\obj\Debug\Modelos.pdb
+C:\Users\ASUS\Source\Repos\Simulador3\Modelos\bin\Debug\Modelos.dll
+C:\Users\ASUS\Source\Repos\Simulador3\Modelos\bin\Debug\Modelos.pdb
+C:\Users\ASUS\Source\Repos\Simulador3\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Source\Repos\Simulador3\Modelos\obj\Debug\Modelos.dll
+C:\Users\ASUS\Source\Repos\Simulador3\Modelos\obj\Debug\Modelos.pdb

@@ -82,6 +82,7 @@
     <Compile Include="Botones\BTRetiros.Designer.cs">
       <DependentUpon>BTRetiros.cs</DependentUpon>
     </Compile>
+    <Compile Include="Clases\Encrypt.cs" />
     <Compile Include="Config\CloseApplication.cs" />
     <Compile Include="Config\UIButton.cs" />
     <Compile Include="Config\UIForm.cs" />
