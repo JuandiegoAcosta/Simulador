@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using Modelos.Modelos;
 
 namespace Sistema_Bancario.Controles
 {
@@ -88,6 +89,34 @@ namespace Sistema_Bancario.Controles
         private void DatosPersona_Load(object sender, EventArgs e)
         {
              
+        }
+
+        /// <summary>
+        /// Devuelve el resultado de una búsqueda
+        /// </summary>
+        /// <returns>Retorna un modelo de Persona</returns>
+        public PersonaModel ObtenerPersona()
+        {
+            NumDoc.Trim();
+            ApPaterno.Trim();
+            ApMaterno.Trim();
+            Nombres.Trim();
+
+            if (string.IsNullOrEmpty(NumDoc)) { return null; }
+            if (string.IsNullOrEmpty(ApPaterno)) { return null; }
+            if (string.IsNullOrEmpty(ApMaterno)) { return null; }
+            if (string.IsNullOrEmpty(Nombres)) { return null; }
+            if (TipoDoc == 0) { return null; }
+
+            PersonaModel persona = new PersonaModel()
+            {
+                Apellidos = string.Concat(ApPaterno, " ", ApMaterno),
+                Nrodocumento = NumDoc,
+                Tipodocumento = TipoDoc,
+                Nombres = Nombres
+            };
+
+            return persona;
         }
     }
 }

@@ -22,5 +22,30 @@ namespace Sistema_Bancario.Controles
         {
 
         }
+
+        private void PoblarCbxMonedas()
+        {
+            //using (WsSistemaBancario user = new WsSistemaBancario.PersonaServiceClient())
+            //{
+            //    usuarioLogin = user.Persona_ValidarUsuario(this.m_username, this.m_password);
+            //    SucursalUsuario = user.Persona_ObtenerSucursal(usuarioLogin.Id);
+            //    if (usuarioLogin != null && SucursalUsuario != null)
+            //    {
+            //        Session = new Session();
+            //        Session.UserCodigo = usuarioLogin.Id.ToString();
+            //        Session.UserName = usuarioLogin.Nombreusuario;
+            //        Session.UserNombreCompleto = usuarioLogin.Nombres;
+
+            //        Session.SucursalCodigo = SucursalUsuario.Id.ToString();
+            //        Session.SucursalNombre = SucursalUsuario.Nombre;
+            //        Session.SucursalUbicacion = SucursalUsuario.Ubicacion;
+            //        Session.SucursalCodigoBanco = SucursalUsuario.Idbanco.ToString();
+
+            //        return true;
+            //    }
+
+            //}
+        }
+
     }
 }

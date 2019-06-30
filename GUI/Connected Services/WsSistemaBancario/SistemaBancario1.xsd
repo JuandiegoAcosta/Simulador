@@ -334,4 +334,28 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfTurnoUsuarioModel" nillable="true" type="tns:ArrayOfTurnoUsuarioModel" />
+  <xs:complexType name="CuentasModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cliente" type="xs:int" />
+      <xs:element minOccurs="0" name="Estado" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Fecha_creacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Fecha_modificacion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id_tarjeta" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Nrocuenta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Saldocontable" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Saldodisponible" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Sobregiro" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Tipocuenta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tipomoneda" type="xs:short" />
+      <xs:element minOccurs="0" name="Usuario_creador" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Usuario_modificador" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CuentasModel" nillable="true" type="tns:CuentasModel" />
+  <xs:complexType name="ArrayOfCuentasModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CuentasModel" nillable="true" type="tns:CuentasModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCuentasModel" nillable="true" type="tns:ArrayOfCuentasModel" />
 </xs:schema>

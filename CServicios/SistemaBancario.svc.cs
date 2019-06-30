@@ -199,6 +199,31 @@ namespace ServiciosBancarios
 
         #region [ Tipo Moneda ]
 
+        public bool Moneda_Crear(TipoMonedaModel aTipoMonedaModel)
+        {
+            return BLTipoMoneda.Crear(aTipoMonedaModel);
+        }
+
+        public bool Moneda_Editar(TipoMonedaModel aTipoMonedaModel)
+        {
+            return BLTipoMoneda.Editar(aTipoMonedaModel);
+        }
+
+        public bool Moneda_Eliminar(int aID_TipoMonedaModel)
+        {
+            return BLTipoMoneda.Eliminar(aID_TipoMonedaModel);
+        }
+
+        public TipoMonedaModel Moneda_ObtenerUno(int aID_TipoMonedaModel)
+        {
+            return BLTipoMoneda.ObtenerUno(aID_TipoMonedaModel);
+        }
+
+        public List<TipoMonedaModel> Moneda_ObtenerTodos()
+        {
+            return BLTipoMoneda.ObtenerTodos();
+        }
+
         #endregion
 
         #region [ Tipo Movimiento ]

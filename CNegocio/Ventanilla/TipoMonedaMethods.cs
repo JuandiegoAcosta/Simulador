@@ -10,37 +10,36 @@ namespace CNegocio.Ventanilla
 {
     public  class TipoMonedaMethods
     {
-
-        //Tipo de cambio? o tipoMoenda ?  
-        private TipoCambioManager ADTipoMonedaManager;
+        private TipoMonedaManager ADTipoMonedaManager;
 
         public TipoMonedaMethods()
         {
-            ADTipoMonedaManager = new TipoCambioManager();
+            ADTipoMonedaManager = new TipoMonedaManager();
         }
-        //public bool Crear(TipoMonedaModel aTipoMoneda)
-        //{
-        //    return ADTipoMonedaManager.Insert(aTipoMoneda);
-        //}
 
-        //public bool Editar(TipoMonedaModel aTipoMoneda)
-        //{
-        //    return ADTipoMonedaManager.Update(aTipoMoneda);
-        //}
+        public bool Crear(TipoMonedaModel aTipoMoneda)
+        {
+            return ADTipoMonedaManager.Insert(aTipoMoneda);
+        }
 
-        //public bool Eliminar(int aID_Cheque, int aID_Movimiento)
-        //{
-        //    return ADTipoMonedaManager.Delete(aID_Cheque, aID_Movimiento);
-        //}
+        public bool Editar(TipoMonedaModel aTipoMoneda)
+        {
+            return ADTipoMonedaManager.Update(aTipoMoneda);
+        }
 
-        //public TipoMonedaModel ObtenerUno(int aID_Cheque, int aID_Movimiento)
-        //{
-        //    return ADTipoMonedaManager.GetCobroChequesModel(aID_Cheque, aID_Movimiento);
-        //}
+        public bool Eliminar(int aID_Moneda)
+        {
+            return ADTipoMonedaManager.Delete(aID_Moneda);
+        }
 
-        //public List<TipoMonedaModel> ObtenerTodos()
-        //{
-        //    return ADTipoMonedaManager.CobroChequesModelSelectAll();
-        //}
+        public TipoMonedaModel ObtenerUno(int aID_Moneda)
+        {
+            return ADTipoMonedaManager.GetTipoMonedaModel(aID_Moneda);
+        }
+
+        public List<TipoMonedaModel> ObtenerTodos()
+        {
+            return ADTipoMonedaManager.TipoMonedaModelSelectAll();
+        }
     }
 }
