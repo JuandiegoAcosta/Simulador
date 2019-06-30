@@ -266,9 +266,8 @@
          // toolStripStatusLabel10
          // 
          this.toolStripStatusLabel10.Name = "toolStripStatusLabel10";
-         this.toolStripStatusLabel10.Size = new System.Drawing.Size(370, 17);
-         this.toolStripStatusLabel10.Text = "                                                                                 " +
-    "                                        ";
+         this.toolStripStatusLabel10.Size = new System.Drawing.Size(40, 17);
+         this.toolStripStatusLabel10.Text = "     |     ";
          // 
          // toolStripStatusLabel9
          // 
