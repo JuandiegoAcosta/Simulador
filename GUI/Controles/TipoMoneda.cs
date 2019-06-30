@@ -32,26 +32,15 @@ namespace Sistema_Bancario.Controles
 
         private void PoblarCboMoneda()
         {
-            //using (WsSistemaBancario user = new WsSistemaBancario.PersonaServiceClient())
-            //{
-            //    usuarioLogin = user.Persona_ValidarUsuario(this.m_username, this.m_password);
-            //    SucursalUsuario = user.Persona_ObtenerSucursal(usuarioLogin.Id);
-            //    if (usuarioLogin != null && SucursalUsuario != null)
-            //    {
-            //        Session = new Session();
-            //        Session.UserCodigo = usuarioLogin.Id.ToString();
-            //        Session.UserName = usuarioLogin.Nombreusuario;
-            //        Session.UserNombreCompleto = usuarioLogin.Nombres;
+            using (WsSistemaBancario.TipoMonedaServiceClient tipoMoneda = new WsSistemaBancario.TipoMonedaServiceClient())
+            {
+                List<TipoMonedaModel> monedas = new List<TipoMonedaModel>();
+                monedas = tipoMoneda.Moneda_ObtenerTodos().ToList();
 
-            //        Session.SucursalCodigo = SucursalUsuario.Id.ToString();
-            //        Session.SucursalNombre = SucursalUsuario.Nombre;
-            //        Session.SucursalUbicacion = SucursalUsuario.Ubicacion;
-            //        Session.SucursalCodigoBanco = SucursalUsuario.Idbanco.ToString();
-
-            //        return true;
-            //    }
-
-            //}
+                this.CboMoneda.DataSource = monedas;
+                this.CboMoneda.DisplayMember = "Nombre";
+                this.CboMoneda.SelectedIndex = 0;
+            }
         }
 
     }

@@ -79,6 +79,23 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfRecaudosModel" nillable="true" type="tns:ArrayOfRecaudosModel" />
+  <xs:complexType name="TipoMonedaModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Fecha_creacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Fecha_modificacion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:short" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Usuario_creador" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Usuario_modificador" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TipoMonedaModel" nillable="true" type="tns:TipoMonedaModel" />
+  <xs:complexType name="ArrayOfTipoMonedaModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TipoMonedaModel" nillable="true" type="tns:TipoMonedaModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTipoMonedaModel" nillable="true" type="tns:ArrayOfTipoMonedaModel" />
   <xs:complexType name="MovimientosVentanillaModel">
     <xs:sequence>
       <xs:element minOccurs="0" name="Fecha_creacion" type="xs:dateTime" />

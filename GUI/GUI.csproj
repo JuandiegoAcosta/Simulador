@@ -488,6 +488,7 @@
     <None Include="Properties\DataSources\Modelos.Modelos.RolUsuarioModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.SucursalModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.TipoDocumentoModel.datasource" />
+    <None Include="Properties\DataSources\Modelos.Modelos.TipoMonedaModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.TurnosModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.TurnoUsuarioModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.VentanillaModel.datasource" />

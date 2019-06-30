@@ -76,7 +76,7 @@
     <Compile Include="Backend\ITipoDocumentoService.cs" />
     <Compile Include="Backend\ITurnosService.cs" />
     <Compile Include="Backend\ITurnoUsuarioService.cs" />
-    <Compile Include="Plataforma\IPersonaService.cs" />
+    <Compile Include="Plataforma\ICuentaService.cs" />
     <Compile Include="SistemaBancario.svc.cs">
       <DependentUpon>SistemaBancario.svc</DependentUpon>
     </Compile>

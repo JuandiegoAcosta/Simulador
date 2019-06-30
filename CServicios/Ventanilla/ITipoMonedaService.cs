@@ -8,7 +8,7 @@ using Modelos.Modelos;
 
 namespace ServiciosBancarios.Ventanilla
 {
-    
+    [ServiceContract]
     public interface ITipoMonedaService
     {
         [OperationContract]

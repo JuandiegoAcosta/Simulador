@@ -20,14 +20,26 @@ namespace Sistema_Bancario.Controles
 
         private void TipoCuenta_Load(object sender, EventArgs e)
         {
-
         }
 
         public string ObtenerTipoCuenta()
         {
-            if (RBAhorros.Checked) return "AHORROS";
-            else if (RBCredito.Checked) return "CREDITO";
-            else return "CORRIENTE";
+            if (RBAhorros.Checked)
+            {
+                return "AHORROS";
+            }
+            else if (RBCredito.Checked)
+            {
+                return "CREDITO";
+            }
+            else if (RBCredito.Checked)
+            {
+                return "CORRIENTE";
+            }
+            else
+            {
+                return null;
+            }
         }
 
         public TipoMonedaModel ObtenerMoneda()

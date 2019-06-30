@@ -424,6 +424,109 @@ namespace Sistema_Bancario.WsSistemaBancario {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WsSistemaBancario.ITipoMonedaService")]
+    public interface ITipoMonedaService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITipoMonedaService/Moneda_Crear", ReplyAction="http://tempuri.org/ITipoMonedaService/Moneda_CrearResponse")]
+        bool Moneda_Crear(Modelos.Modelos.TipoMonedaModel aTipoMonedaModel);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITipoMonedaService/Moneda_Crear", ReplyAction="http://tempuri.org/ITipoMonedaService/Moneda_CrearResponse")]
+        System.Threading.Tasks.Task<bool> Moneda_CrearAsync(Modelos.Modelos.TipoMonedaModel aTipoMonedaModel);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITipoMonedaService/Moneda_Editar", ReplyAction="http://tempuri.org/ITipoMonedaService/Moneda_EditarResponse")]
+        bool Moneda_Editar(Modelos.Modelos.TipoMonedaModel aTipoMonedaModel);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITipoMonedaService/Moneda_Editar", ReplyAction="http://tempuri.org/ITipoMonedaService/Moneda_EditarResponse")]
+        System.Threading.Tasks.Task<bool> Moneda_EditarAsync(Modelos.Modelos.TipoMonedaModel aTipoMonedaModel);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITipoMonedaService/Moneda_Eliminar", ReplyAction="http://tempuri.org/ITipoMonedaService/Moneda_EliminarResponse")]
+        bool Moneda_Eliminar(int aID_TipoMonedaModel);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITipoMonedaService/Moneda_Eliminar", ReplyAction="http://tempuri.org/ITipoMonedaService/Moneda_EliminarResponse")]
+        System.Threading.Tasks.Task<bool> Moneda_EliminarAsync(int aID_TipoMonedaModel);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITipoMonedaService/Moneda_ObtenerUno", ReplyAction="http://tempuri.org/ITipoMonedaService/Moneda_ObtenerUnoResponse")]
+        Modelos.Modelos.TipoMonedaModel Moneda_ObtenerUno(int aID_TipoMonedaModel);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITipoMonedaService/Moneda_ObtenerUno", ReplyAction="http://tempuri.org/ITipoMonedaService/Moneda_ObtenerUnoResponse")]
+        System.Threading.Tasks.Task<Modelos.Modelos.TipoMonedaModel> Moneda_ObtenerUnoAsync(int aID_TipoMonedaModel);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITipoMonedaService/Moneda_ObtenerTodos", ReplyAction="http://tempuri.org/ITipoMonedaService/Moneda_ObtenerTodosResponse")]
+        Modelos.Modelos.TipoMonedaModel[] Moneda_ObtenerTodos();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITipoMonedaService/Moneda_ObtenerTodos", ReplyAction="http://tempuri.org/ITipoMonedaService/Moneda_ObtenerTodosResponse")]
+        System.Threading.Tasks.Task<Modelos.Modelos.TipoMonedaModel[]> Moneda_ObtenerTodosAsync();
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface ITipoMonedaServiceChannel : Sistema_Bancario.WsSistemaBancario.ITipoMonedaService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class TipoMonedaServiceClient : System.ServiceModel.ClientBase<Sistema_Bancario.WsSistemaBancario.ITipoMonedaService>, Sistema_Bancario.WsSistemaBancario.ITipoMonedaService {
+        
+        public TipoMonedaServiceClient() {
+        }
+        
+        public TipoMonedaServiceClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public TipoMonedaServiceClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public TipoMonedaServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public TipoMonedaServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public bool Moneda_Crear(Modelos.Modelos.TipoMonedaModel aTipoMonedaModel) {
+            return base.Channel.Moneda_Crear(aTipoMonedaModel);
+        }
+        
+        public System.Threading.Tasks.Task<bool> Moneda_CrearAsync(Modelos.Modelos.TipoMonedaModel aTipoMonedaModel) {
+            return base.Channel.Moneda_CrearAsync(aTipoMonedaModel);
+        }
+        
+        public bool Moneda_Editar(Modelos.Modelos.TipoMonedaModel aTipoMonedaModel) {
+            return base.Channel.Moneda_Editar(aTipoMonedaModel);
+        }
+        
+        public System.Threading.Tasks.Task<bool> Moneda_EditarAsync(Modelos.Modelos.TipoMonedaModel aTipoMonedaModel) {
+            return base.Channel.Moneda_EditarAsync(aTipoMonedaModel);
+        }
+        
+        public bool Moneda_Eliminar(int aID_TipoMonedaModel) {
+            return base.Channel.Moneda_Eliminar(aID_TipoMonedaModel);
+        }
+        
+        public System.Threading.Tasks.Task<bool> Moneda_EliminarAsync(int aID_TipoMonedaModel) {
+            return base.Channel.Moneda_EliminarAsync(aID_TipoMonedaModel);
+        }
+        
+        public Modelos.Modelos.TipoMonedaModel Moneda_ObtenerUno(int aID_TipoMonedaModel) {
+            return base.Channel.Moneda_ObtenerUno(aID_TipoMonedaModel);
+        }
+        
+        public System.Threading.Tasks.Task<Modelos.Modelos.TipoMonedaModel> Moneda_ObtenerUnoAsync(int aID_TipoMonedaModel) {
+            return base.Channel.Moneda_ObtenerUnoAsync(aID_TipoMonedaModel);
+        }
+        
+        public Modelos.Modelos.TipoMonedaModel[] Moneda_ObtenerTodos() {
+            return base.Channel.Moneda_ObtenerTodos();
+        }
+        
+        public System.Threading.Tasks.Task<Modelos.Modelos.TipoMonedaModel[]> Moneda_ObtenerTodosAsync() {
+            return base.Channel.Moneda_ObtenerTodosAsync();
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WsSistemaBancario.ITipoMovimientoService")]
     public interface ITipoMovimientoService {
         
