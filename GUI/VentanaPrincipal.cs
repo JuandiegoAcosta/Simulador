@@ -11,21 +11,65 @@ using Sistema_Bancario.Froms_opciones;
 using Sistema_Bancario.Plataforma;
 using Modelos.Modelos;
 using Sistema_Bancario.Ventanilla;
+using Sistema_Bancario.Config;
+using Modelos.Session;
 //using Sistema_Bancario.Ventanilla;
 
 namespace Sistema_Bancario
 {
     public partial class VentanaPrincipal : Form
     {
-        List<PermisosUsuarioModel> Usuario =  new List<PermisosUsuarioModel>(); 
-       // public object Opciones;
-        public VentanaPrincipal()
-        {
-            InitializeComponent();
-            Show();
-           // this.cargarcomponentes(user);
 
-        }
+      #region [ View Config ]
+      private const int m_Shadow = 0x0020000;
+
+      protected override CreateParams CreateParams
+      {
+         get
+         {
+            CreateParams _cp = base.CreateParams;
+            _cp.ClassStyle |= m_Shadow;
+            return _cp;
+         }
+      }
+
+      #endregion
+
+      private ISession Session;
+      public VentanaPrincipal(ISession session)
+      {
+         InitializeComponent();
+         try
+         {
+            Session = session;
+            EvaluarUsuario();
+            UIForm.SetRound(this, 7);
+            Show();
+         }
+         catch (Exception)
+         { }
+      }
+
+      private void EvaluarUsuario()
+      {
+         //if (Session.isAdmin)
+         //{
+
+         //}
+         //else if (Session.User == 1)
+         //{
+         lblUsertType.Image = Properties.Resources.estudiante;
+         //}
+
+         SetSessionValues();
+      }
+
+      private void SetSessionValues()
+      {
+         lblUserValueType.Text = Session.UserNombreCompleto;
+         lblSucursal.Text = Session.SucursalNombre;
+      }
+
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             if (keyData == (Keys.F1))
@@ -496,5 +540,18 @@ namespace Sistema_Bancario
             BTPlataforma.BackColor = Color.Transparent;
             BotonMenu.BackColor = SystemColors.HotTrack;
         }
-    }
+
+      private void PbxClose_Click(object sender, EventArgs e)
+      {
+         this.Close();
+      }
+
+      private void Button11_Click(object sender, EventArgs e)
+      {
+         Login lg = new Login();
+         lg.Show();
+
+         this.Close();
+      }
+   }
 }
