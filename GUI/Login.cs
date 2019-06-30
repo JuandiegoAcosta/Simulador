@@ -104,12 +104,13 @@ namespace Sistema_Bancario
       private void button1_Click(object sender, EventArgs e)
       {
          SetLogin();
-         if (StartLogin())
-         {
-            VentanaPrincipal ventanaPrincipal = new VentanaPrincipal(Session);
-            ClearLogin();
-            Close();
-         }
+            if (StartLogin())
+            {
+                VentanaPrincipal ventanaPrincipal = new VentanaPrincipal(Session);
+                ClearLogin();
+                Close();
+            }
+            else MessageBox.Show("Error en las credenciales");
       }
 
       private void PbxClose_Click(object sender, EventArgs e)
