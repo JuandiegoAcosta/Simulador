@@ -32,6 +32,7 @@
             this.monto1 = new Sistema_Bancario.Monto();
             this.nroCuenta1 = new Sistema_Bancario.Controles.NroCuenta();
             this.nroCuenta2 = new Sistema_Bancario.Controles.NroCuenta();
+            this.Destino = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // proceder1
@@ -63,14 +64,24 @@
             // 
             // nroCuenta2
             // 
-            this.nroCuenta2.Location = new System.Drawing.Point(10, 90);
+            this.nroCuenta2.Location = new System.Drawing.Point(13, 90);
             this.nroCuenta2.Name = "nroCuenta2";
-            this.nroCuenta2.Size = new System.Drawing.Size(360, 37);
+            this.nroCuenta2.Size = new System.Drawing.Size(361, 37);
             this.nroCuenta2.TabIndex = 5;
+            // 
+            // Destino
+            // 
+            this.Destino.AutoSize = true;
+            this.Destino.Location = new System.Drawing.Point(380, 99);
+            this.Destino.Name = "Destino";
+            this.Destino.Size = new System.Drawing.Size(56, 17);
+            this.Destino.TabIndex = 6;
+            this.Destino.Text = "Destino";
             // 
             // Transferencias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.Controls.Add(this.Destino);
             this.Controls.Add(this.nroCuenta2);
             this.Controls.Add(this.nroCuenta1);
             this.Controls.Add(this.monto1);
@@ -82,7 +93,9 @@
             this.Controls.SetChildIndex(this.monto1, 0);
             this.Controls.SetChildIndex(this.nroCuenta1, 0);
             this.Controls.SetChildIndex(this.nroCuenta2, 0);
+            this.Controls.SetChildIndex(this.Destino, 0);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -92,5 +105,6 @@
         private Monto monto1;
         private Controles.NroCuenta nroCuenta1;
         private Controles.NroCuenta nroCuenta2;
+        private System.Windows.Forms.Label Destino;
     }
 }

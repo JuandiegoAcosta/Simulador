@@ -20,35 +20,36 @@ namespace Sistema_Bancario
     public partial class VentanaPrincipal : Form
     {
 
-      #region [ View Config ]
-      private const int m_Shadow = 0x0020000;
+        #region [ View Config ]
+        private const int m_Shadow = 0x0020000;
 
-      protected override CreateParams CreateParams
-      {
-         get
-         {
-            CreateParams _cp = base.CreateParams;
-            _cp.ClassStyle |= m_Shadow;
-            return _cp;
-         }
-      }
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams _cp = base.CreateParams;
+                _cp.ClassStyle |= m_Shadow;
+                return _cp;
+            }
+        }
 
-      #endregion
+        #endregion
 
-      private ISession Session;
-      public VentanaPrincipal(ISession session)
-      {
-         InitializeComponent();
-         try
-         {
-            Session = session;
-            EvaluarUsuario();
-            UIForm.SetRound(this, 7);
-            Show();
-         }
-         catch (Exception)
-         { }
-      }
+        private ISession Session;
+        public VentanaPrincipal(ISession session)
+        {
+            InitializeComponent();
+            try
+            {
+                Session = session;
+                EvaluarUsuario();
+                UIForm.SetRound(this, 7);
+                Show();
+            }
+            catch (Exception)
+            { }
+        }
+        public VentanaPrincipal() { InitializeComponent(); } 
 
       private void EvaluarUsuario()
       {
@@ -553,5 +554,20 @@ namespace Sistema_Bancario
 
          this.Close();
       }
-   }
+
+        private void pbxClose_MouseHover(object sender, EventArgs e)
+        {
+            pbxClose.BackColor = Color.Red;
+        }
+
+        private void pbxClose_MouseLeave(object sender, EventArgs e)
+        {
+            pbxClose.BackColor = Color.Transparent;
+        }
+
+        private void pbxClose_DragOver(object sender, DragEventArgs e)
+        {
+
+        }
+    }
 }

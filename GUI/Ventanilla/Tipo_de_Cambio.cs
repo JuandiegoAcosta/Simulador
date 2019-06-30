@@ -41,6 +41,8 @@ namespace Sistema_Bancario.Froms_opciones
         private void BTProceder_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Opracion Realizada");
+
+
           /*  int id_moneda_origen = (int)this.tipoMoneda1.CboMoneda.SelectedValue;
             int id_moneda_destino = (int)this.tipoMoneda2.CboMoneda.SelectedValue;
             DateTime fecha_cambio = fecha1.DtFecha.Value.Date;
