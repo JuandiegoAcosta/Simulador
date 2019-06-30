@@ -30,6 +30,11 @@ namespace Sistema_Bancario.Controles
 
         private void txtNumDoc_TextChanged(object sender, EventArgs e)
         {
+            OrganizarElementos();
+        }
+
+        private void OrganizarElementos()
+        {
             Regex regex = new Regex(@"^[0-9]*$");
             MatchCollection matches = regex.Matches(txtNumDoc.Text);
 
@@ -91,6 +96,7 @@ namespace Sistema_Bancario.Controles
         private void CargarDatos(PersonaModel user)
         {
             this.txtNumDoc.Text = user.Nrodocumento;
+            OrganizarElementos();
             this.txtNombre.Text = user.Nombres;
             this.txtApMaterno.Text = user.Apellidos;
             this.txtApPaterno.Text = user.Apellidos;
@@ -132,12 +138,12 @@ namespace Sistema_Bancario.Controles
         {
             string numeroDocumento = txtNumDoc.Text;
             if (string.IsNullOrEmpty(numeroDocumento)) { return; }
-            if (!int.TryParse(numeroDocumento, out int result)){ MessageBox.Show("Ingrese un número correcto"); return; }
+            if (!int.TryParse(numeroDocumento, out int result)) { MessageBox.Show("Ingrese un número correcto"); return; }
 
             using (WsSistemaBancario.PersonaServiceClient user = new WsSistemaBancario.PersonaServiceClient())
             {
                 persona = user.Persona_ObtenerUno(result);
-                
+
                 if (persona != null)
                 {
                     CargarDatos(persona);

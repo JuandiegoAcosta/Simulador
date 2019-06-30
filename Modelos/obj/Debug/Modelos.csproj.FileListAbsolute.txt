@@ -79,4 +79,3 @@ C:\Users\Pablo\Desktop\SistemaBancario\Simulador 2\Nueva carpeta\Simulador\Model
 C:\Users\Pablo\Desktop\SistemaBancario\Simulador 2\Nueva carpeta\Simulador\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
 C:\Users\Pablo\Desktop\SistemaBancario\Simulador 2\Nueva carpeta\Simulador\Modelos\obj\Debug\Modelos.dll
 C:\Users\Pablo\Desktop\SistemaBancario\Simulador 2\Nueva carpeta\Simulador\Modelos\obj\Debug\Modelos.pdb
-C:\Users\Jean\Desktop\Simulador\Simulador\Modelos\obj\Debug\Modelos.csprojAssemblyReference.cache

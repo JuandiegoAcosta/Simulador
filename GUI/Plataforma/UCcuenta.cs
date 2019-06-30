@@ -33,8 +33,10 @@ namespace Sistema_Bancario.Plataforma
             if (Session == null) { MessageBox.Show("La sesión ha expirado"); this.Dispose(); }
 
             cliente = datosPersona1.ObtenerPersona();
+            moneda = tipoCuenta1.ObtenerMoneda();
+            tipoCuenta = tipoCuenta1.ObtenerTipoCuenta();
 
-            if (cliente == null) { MessageBox.Show("Selecciona un cliente"); }
+            if (cliente == null) { MessageBox.Show("Selecciona un cliente"); return; }
             if (moneda == null) { MessageBox.Show("Selecciona una moneda"); return; }
             if (string.IsNullOrEmpty(tipoCuenta)) { MessageBox.Show("Selecciona un tipo de cuenta"); return; }
         }
