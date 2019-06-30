@@ -14,6 +14,8 @@ namespace Sistema_Bancario.Controles
 {
     public partial class DatosPersona : UserControl
     {
+        private PersonaModel persona;
+
         public string NumDoc;
         public int TipoDoc;
         public string ApPaterno;
@@ -22,7 +24,6 @@ namespace Sistema_Bancario.Controles
 
         public DatosPersona()
         {
-
             InitializeComponent();
           //  gbDatos.Size = new Size(369, 89);
         }
@@ -80,10 +81,19 @@ namespace Sistema_Bancario.Controles
 
         private void btnClear_Click(object sender, EventArgs e)
         {
+            persona = null;
             foreach (Control txtbox in this.gbDatos.Controls.OfType<TextBox>().ToList())
             {
                 txtbox.Text = string.Empty;
             }
+        }
+
+        private void CargarDatos(PersonaModel user)
+        {
+            this.txtNumDoc.Text = user.Nrodocumento;
+            this.txtNombre.Text = user.Nombres;
+            this.txtApMaterno.Text = user.Apellidos;
+            this.txtApPaterno.Text = user.Apellidos;
         }
 
         private void DatosPersona_Load(object sender, EventArgs e)
@@ -97,26 +107,46 @@ namespace Sistema_Bancario.Controles
         /// <returns>Retorna un modelo de Persona</returns>
         public PersonaModel ObtenerPersona()
         {
-            NumDoc.Trim();
-            ApPaterno.Trim();
-            ApMaterno.Trim();
-            Nombres.Trim();
-
-            if (string.IsNullOrEmpty(NumDoc)) { return null; }
-            if (string.IsNullOrEmpty(ApPaterno)) { return null; }
-            if (string.IsNullOrEmpty(ApMaterno)) { return null; }
-            if (string.IsNullOrEmpty(Nombres)) { return null; }
-            if (TipoDoc == 0) { return null; }
-
-            PersonaModel persona = new PersonaModel()
+            if (persona == null)
             {
-                Apellidos = string.Concat(ApPaterno, " ", ApMaterno),
-                Nrodocumento = NumDoc,
-                Tipodocumento = TipoDoc,
-                Nombres = Nombres
-            };
+                if (string.IsNullOrEmpty(NumDoc)) { return null; }
+                if (string.IsNullOrEmpty(ApPaterno)) { return null; }
+                if (string.IsNullOrEmpty(ApMaterno)) { return null; }
+                if (string.IsNullOrEmpty(Nombres)) { return null; }
+                if (TipoDoc == 0) { return null; }
+
+                persona = new PersonaModel()
+                {
+                    Apellidos = string.Concat(ApPaterno, " ", ApMaterno),
+                    Nrodocumento = NumDoc,
+                    Tipodocumento = TipoDoc,
+                    Nombres = Nombres
+                };
+            }
+            
 
             return persona;
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string numeroDocumento = txtNumDoc.Text;
+            if (string.IsNullOrEmpty(numeroDocumento)) { return; }
+            if (!int.TryParse(numeroDocumento, out int result)){ MessageBox.Show("Ingrese un número correcto"); return; }
+
+            using (WsSistemaBancario.PersonaServiceClient user = new WsSistemaBancario.PersonaServiceClient())
+            {
+                persona = user.Persona_ObtenerUno(result);
+                
+                if (persona != null)
+                {
+                    CargarDatos(persona);
+                }
+                else
+                {
+                    MessageBox.Show("No se ha encontrado ningún resultado");
+                }
+            }
         }
     }
 }

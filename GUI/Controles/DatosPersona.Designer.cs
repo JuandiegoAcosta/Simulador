@@ -88,6 +88,7 @@
             this.btnSearch.Size = new System.Drawing.Size(38, 35);
             this.btnSearch.TabIndex = 25;
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtNumDoc
             // 

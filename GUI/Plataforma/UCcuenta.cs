@@ -14,24 +14,23 @@ namespace Sistema_Bancario.Plataforma
 {
     public partial class UCcuenta : Base
     {
-        private static Session session;
+        public ISession Session; 
         private PersonaModel cliente;
         private TipoMonedaModel moneda;
         private string tipoCuenta;
 
-        public UCcuenta(Session session_nueva)
+        public UCcuenta()
         {
             InitializeComponent();
             //se crea el evento click del boton proceder
             proceder1.BTProceder.Click += BTProceder_Click;
-            session = session_nueva;
         }
 
         private void BTProceder_Click(object sender, EventArgs e)
         {
             //Evento Click del boton proceder
             //Comprobaciones
-            if (session == null) { MessageBox.Show("La sesión ha expirado"); return; }
+            if (Session == null) { MessageBox.Show("La sesión ha expirado"); this.Dispose(); }
 
             cliente = datosPersona1.ObtenerPersona();
 
@@ -47,15 +46,16 @@ namespace Sistema_Bancario.Plataforma
             {
                 if (_instance == null)
                 {
-                    _instance = new UCcuenta(session);
+                    _instance = new UCcuenta();
                 }
 
                 return _instance;
             }
         }
+            
         private void UCcuenta_Load(object sender, EventArgs e)
         {
-
+            //pruebalo aver, espera te muestro donde se implementa 
         }
     }
 }
