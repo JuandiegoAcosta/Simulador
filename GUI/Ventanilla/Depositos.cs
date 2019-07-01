@@ -1,46 +1,81 @@
-﻿using CNegocio.Ventanilla;
-using Modelos.Modelos;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using CNegocio.Ventanilla;
+using Modelos.Modelos;
 
-namespace Sistema_Bancario.Froms_opciones
+namespace Sistema_Bancario.Ventanilla
 {
-    public partial class Depositos : Sistema_Bancario.Base
-    {
-        public Depositos()
-        {
-            InitializeComponent();
-            proceder1.BTProceder.Click += BTProceder_Click;
-        }
+   public partial class Depositos : Base
+   {
+      private DepositoMethods m_depositoMethods;
+      private Deposito m_deposito;
+      public Depositos()
+      {
+         InitializeComponent();
+         proceder1.BTProceder.Click += BTProceder_Click;
+      }
 
-        private void BTProceder_Click(object sender, EventArgs e)
-        {
-            DepositoMethods depositos = new DepositoMethods();
-            Deposito dep = new Deposito();
-            dep.NroCuenta = nroCuenta1.TBNroCuenta.Text;
-            dep.Monto = Convert.ToDecimal(monto1.TBMonto.Text);
-            dep.Doi = dni1.TBDoi.Text;
-            depositos.insert(dep);
+
+      private bool SetItem()
+      {
+         try
+         {
+            m_deposito = new Deposito();
+
+            if (!string.IsNullOrEmpty(this.txtNroCuenta.Text.Trim()))
+            { m_deposito.NroCuenta = this.txtNroCuenta.Text.Trim(); }
+            else
+            { return false; }
+
+            if (!string.IsNullOrEmpty(this.txtMonto.Text.Trim()))
+            { m_deposito.Monto = Convert.ToDecimal(this.txtMonto.Text.Trim()); }
+            else
+            { return false; }
+
+            if (!string.IsNullOrEmpty(this.txtDoi.Text.Trim()))
+            { m_deposito.Doi = this.txtDoi.Text.Trim(); }
+            else
+            { return false; }
+
+            return true;
+         }
+         catch (Exception)
+         {
+            return false;
+         }
+      }
+
+      private void BTProceder_Click(object sender, EventArgs e)
+      {
+         if (SetItem())
+         {
+            m_depositoMethods = new DepositoMethods();
+            m_depositoMethods.insert(m_deposito);
+
             MessageBox.Show("Operacion Realizada");
-        }
+         }
+      }
 
-        private static Depositos _instance;
-        public static Depositos instance
-        {
-            get
+
+      private static Depositos _instance;
+      public static Depositos instance
+      {
+         get
+         {
+            if (_instance == null)
             {
-                if (_instance == null)
-                {
-                    _instance = new Depositos();
-                }
-
-                return _instance;
+               _instance = new Depositos();
             }
-        }
-    }
+
+            return _instance;
+         }
+      }
+   }
 }

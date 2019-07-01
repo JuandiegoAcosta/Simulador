@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-         this.DNI = new System.Windows.Forms.Label();
+         this.txtDNIDestino = new System.Windows.Forms.TextBox();
+         this.label5 = new System.Windows.Forms.Label();
+         this.label4 = new System.Windows.Forms.Label();
+         this.txtDNIOrigen = new System.Windows.Forms.TextBox();
+         this.txtMonto = new System.Windows.Forms.TextBox();
          this.label2 = new System.Windows.Forms.Label();
-         this.monto1 = new Sistema_Bancario.Monto();
-         this.clave1 = new Sistema_Bancario.Controles.Clave();
-         this.dni1 = new Sistema_Bancario.Controles.DNI();
-         this.dni2 = new Sistema_Bancario.Controles.DNI();
+         this.label3 = new System.Windows.Forms.Label();
+         this.txtClave = new Sistema_Bancario.Controles.TextBoxViewPassword();
          this.SuspendLayout();
          // 
          // proceder1
@@ -42,87 +44,112 @@
          this.proceder1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
          this.proceder1.Size = new System.Drawing.Size(862, 40);
          // 
-         // DNI
+         // txtDNIDestino
          // 
-         this.DNI.AutoSize = true;
-         this.DNI.Location = new System.Drawing.Point(13, 29);
-         this.DNI.Name = "DNI";
-         this.DNI.Size = new System.Drawing.Size(26, 13);
-         this.DNI.TabIndex = 6;
-         this.DNI.Text = "DNI";
+         this.txtDNIDestino.Location = new System.Drawing.Point(471, 37);
+         this.txtDNIDestino.Name = "txtDNIDestino";
+         this.txtDNIDestino.Size = new System.Drawing.Size(201, 20);
+         this.txtDNIDestino.TabIndex = 34;
+         // 
+         // label5
+         // 
+         this.label5.AutoSize = true;
+         this.label5.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.label5.Location = new System.Drawing.Point(370, 40);
+         this.label5.Name = "label5";
+         this.label5.Size = new System.Drawing.Size(95, 13);
+         this.label5.TabIndex = 33;
+         this.label5.Text = "DNI (Destino) :";
+         // 
+         // label4
+         // 
+         this.label4.AutoSize = true;
+         this.label4.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.label4.Location = new System.Drawing.Point(27, 37);
+         this.label4.Name = "label4";
+         this.label4.Size = new System.Drawing.Size(90, 13);
+         this.label4.TabIndex = 32;
+         this.label4.Text = "DNI (Origen) :";
+         // 
+         // txtDNIOrigen
+         // 
+         this.txtDNIOrigen.Location = new System.Drawing.Point(133, 37);
+         this.txtDNIOrigen.Name = "txtDNIOrigen";
+         this.txtDNIOrigen.Size = new System.Drawing.Size(201, 20);
+         this.txtDNIOrigen.TabIndex = 31;
+         // 
+         // txtMonto
+         // 
+         this.txtMonto.Location = new System.Drawing.Point(133, 63);
+         this.txtMonto.Name = "txtMonto";
+         this.txtMonto.Size = new System.Drawing.Size(201, 20);
+         this.txtMonto.TabIndex = 29;
          // 
          // label2
          // 
          this.label2.AutoSize = true;
-         this.label2.Location = new System.Drawing.Point(184, 29);
+         this.label2.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.label2.Location = new System.Drawing.Point(416, 66);
          this.label2.Name = "label2";
-         this.label2.Size = new System.Drawing.Size(65, 13);
-         this.label2.TabIndex = 7;
-         this.label2.Text = "DNI Destino";
+         this.label2.Size = new System.Drawing.Size(49, 13);
+         this.label2.TabIndex = 28;
+         this.label2.Text = "Clave :";
          // 
-         // monto1
+         // label3
          // 
-         this.monto1.Location = new System.Drawing.Point(10, 61);
-         this.monto1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-         this.monto1.Name = "monto1";
-         this.monto1.Size = new System.Drawing.Size(236, 25);
-         this.monto1.TabIndex = 10;
+         this.label3.AutoSize = true;
+         this.label3.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.label3.Location = new System.Drawing.Point(67, 66);
+         this.label3.Name = "label3";
+         this.label3.Size = new System.Drawing.Size(50, 13);
+         this.label3.TabIndex = 27;
+         this.label3.Text = "Monto :";
          // 
-         // clave1
+         // txtClave
          // 
-         this.clave1.Location = new System.Drawing.Point(10, 100);
-         this.clave1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-         this.clave1.Name = "clave1";
-         this.clave1.Size = new System.Drawing.Size(225, 26);
-         this.clave1.TabIndex = 11;
-         // 
-         // dni1
-         // 
-         this.dni1.Location = new System.Drawing.Point(38, 24);
-         this.dni1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-         this.dni1.Name = "dni1";
-         this.dni1.Size = new System.Drawing.Size(147, 25);
-         this.dni1.TabIndex = 12;
-         // 
-         // dni2
-         // 
-         this.dni2.Location = new System.Drawing.Point(251, 24);
-         this.dni2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-         this.dni2.Name = "dni2";
-         this.dni2.Size = new System.Drawing.Size(147, 25);
-         this.dni2.TabIndex = 13;
+         this.txtClave.Location = new System.Drawing.Point(471, 63);
+         this.txtClave.Name = "txtClave";
+         this.txtClave.PasswordChar = '*';
+         this.txtClave.Size = new System.Drawing.Size(201, 20);
+         this.txtClave.TabIndex = 35;
          // 
          // Envio_Giros
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-         this.Controls.Add(this.dni2);
-         this.Controls.Add(this.dni1);
-         this.Controls.Add(this.clave1);
-         this.Controls.Add(this.monto1);
+         this.Controls.Add(this.txtClave);
+         this.Controls.Add(this.txtDNIDestino);
+         this.Controls.Add(this.label5);
+         this.Controls.Add(this.label4);
+         this.Controls.Add(this.txtDNIOrigen);
+         this.Controls.Add(this.txtMonto);
          this.Controls.Add(this.label2);
-         this.Controls.Add(this.DNI);
-         this.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
+         this.Controls.Add(this.label3);
+         this.Margin = new System.Windows.Forms.Padding(3);
          this.Name = "Envio_Giros";
-         this.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-         this.Size = new System.Drawing.Size(874, 618);
-         this.Controls.SetChildIndex(this.DNI, 0);
-         this.Controls.SetChildIndex(this.label2, 0);
-         this.Controls.SetChildIndex(this.monto1, 0);
-         this.Controls.SetChildIndex(this.clave1, 0);
-         this.Controls.SetChildIndex(this.dni1, 0);
-         this.Controls.SetChildIndex(this.dni2, 0);
+         this.Padding = new System.Windows.Forms.Padding(6);
          this.Controls.SetChildIndex(this.proceder1, 0);
+         this.Controls.SetChildIndex(this.label3, 0);
+         this.Controls.SetChildIndex(this.label2, 0);
+         this.Controls.SetChildIndex(this.txtMonto, 0);
+         this.Controls.SetChildIndex(this.txtDNIOrigen, 0);
+         this.Controls.SetChildIndex(this.label4, 0);
+         this.Controls.SetChildIndex(this.label5, 0);
+         this.Controls.SetChildIndex(this.txtDNIDestino, 0);
+         this.Controls.SetChildIndex(this.txtClave, 0);
          this.ResumeLayout(false);
          this.PerformLayout();
 
         }
 
-        #endregion
-        private System.Windows.Forms.Label DNI;
-        private System.Windows.Forms.Label label2;
-        private Monto monto1;
-        private Controles.Clave clave1;
-        private Controles.DNI dni1;
-        private Controles.DNI dni2;
-    }
+      #endregion
+
+      private System.Windows.Forms.TextBox txtDNIDestino;
+      private System.Windows.Forms.Label label5;
+      private System.Windows.Forms.Label label4;
+      private System.Windows.Forms.TextBox txtDNIOrigen;
+      private System.Windows.Forms.TextBox txtMonto;
+      private System.Windows.Forms.Label label2;
+      private System.Windows.Forms.Label label3;
+      private Controles.TextBoxViewPassword txtClave;
+   }
 }

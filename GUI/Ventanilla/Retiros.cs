@@ -31,8 +31,7 @@ namespace Sistema_Bancario.Froms_opciones
       {
          try
          {
-            retirosMethods = new RetirosMethods();
-
+            
             if (!string.IsNullOrEmpty(this.txtMonto.Text.Trim()))
             { m_monto = Convert.ToDecimal(this.txtMonto.Text.Trim()); }
             else
@@ -65,6 +64,7 @@ namespace Sistema_Bancario.Froms_opciones
         {
          if (SetItem())
          {
+            retirosMethods = new RetirosMethods();
             retirosMethods.InsertaRetiro(this.m_monto, this.m_nroTarjeta, this.m_clave, this.m_doi);
 
             MessageBox.Show("Retiro con exito");

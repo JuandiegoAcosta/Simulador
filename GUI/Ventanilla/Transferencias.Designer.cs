@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-         this.disponible1 = new Sistema_Bancario.Controles.Disponible();
-         this.monto1 = new Sistema_Bancario.Monto();
-         this.nroCuenta1 = new Sistema_Bancario.Controles.NroCuenta();
-         this.nroCuenta2 = new Sistema_Bancario.Controles.NroCuenta();
-         this.Destino = new System.Windows.Forms.Label();
+         this.txtEstado = new System.Windows.Forms.TextBox();
+         this.label5 = new System.Windows.Forms.Label();
+         this.label4 = new System.Windows.Forms.Label();
+         this.txtNroCuentaOrigen = new System.Windows.Forms.TextBox();
+         this.txtMonto = new System.Windows.Forms.TextBox();
+         this.label3 = new System.Windows.Forms.Label();
+         this.label1 = new System.Windows.Forms.Label();
+         this.txtNroCuentaDestino = new System.Windows.Forms.TextBox();
          this.SuspendLayout();
          // 
          // proceder1
@@ -40,76 +43,110 @@
          this.proceder1.Location = new System.Drawing.Point(6, 572);
          this.proceder1.Size = new System.Drawing.Size(862, 40);
          // 
-         // disponible1
+         // txtEstado
          // 
-         this.disponible1.Location = new System.Drawing.Point(282, 10);
-         this.disponible1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-         this.disponible1.Name = "disponible1";
-         this.disponible1.Size = new System.Drawing.Size(161, 28);
-         this.disponible1.TabIndex = 2;
+         this.txtEstado.Location = new System.Drawing.Point(551, 33);
+         this.txtEstado.Name = "txtEstado";
+         this.txtEstado.Size = new System.Drawing.Size(201, 20);
+         this.txtEstado.TabIndex = 32;
          // 
-         // monto1
+         // label5
          // 
-         this.monto1.Location = new System.Drawing.Point(10, 43);
-         this.monto1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-         this.monto1.Name = "monto1";
-         this.monto1.Size = new System.Drawing.Size(303, 25);
-         this.monto1.TabIndex = 3;
+         this.label5.AutoSize = true;
+         this.label5.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.label5.Location = new System.Drawing.Point(491, 36);
+         this.label5.Name = "label5";
+         this.label5.Size = new System.Drawing.Size(54, 13);
+         this.label5.TabIndex = 31;
+         this.label5.Text = "Estado :";
          // 
-         // nroCuenta1
+         // label4
          // 
-         this.nroCuenta1.Location = new System.Drawing.Point(8, 11);
-         this.nroCuenta1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-         this.nroCuenta1.Name = "nroCuenta1";
-         this.nroCuenta1.Size = new System.Drawing.Size(270, 30);
-         this.nroCuenta1.TabIndex = 4;
+         this.label4.AutoSize = true;
+         this.label4.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.label4.Location = new System.Drawing.Point(40, 62);
+         this.label4.Name = "label4";
+         this.label4.Size = new System.Drawing.Size(133, 13);
+         this.label4.TabIndex = 30;
+         this.label4.Text = "Nro Cuenta (Origen) :";
          // 
-         // nroCuenta2
+         // txtNroCuentaOrigen
          // 
-         this.nroCuenta2.Location = new System.Drawing.Point(10, 73);
-         this.nroCuenta2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-         this.nroCuenta2.Name = "nroCuenta2";
-         this.nroCuenta2.Size = new System.Drawing.Size(271, 30);
-         this.nroCuenta2.TabIndex = 5;
+         this.txtNroCuentaOrigen.Location = new System.Drawing.Point(189, 59);
+         this.txtNroCuentaOrigen.Name = "txtNroCuentaOrigen";
+         this.txtNroCuentaOrigen.Size = new System.Drawing.Size(201, 20);
+         this.txtNroCuentaOrigen.TabIndex = 29;
          // 
-         // Destino
+         // txtMonto
          // 
-         this.Destino.AutoSize = true;
-         this.Destino.Location = new System.Drawing.Point(285, 80);
-         this.Destino.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-         this.Destino.Name = "Destino";
-         this.Destino.Size = new System.Drawing.Size(43, 13);
-         this.Destino.TabIndex = 6;
-         this.Destino.Text = "Destino";
+         this.txtMonto.Location = new System.Drawing.Point(189, 33);
+         this.txtMonto.Name = "txtMonto";
+         this.txtMonto.Size = new System.Drawing.Size(201, 20);
+         this.txtMonto.TabIndex = 28;
+         // 
+         // label3
+         // 
+         this.label3.AutoSize = true;
+         this.label3.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.label3.Location = new System.Drawing.Point(123, 36);
+         this.label3.Name = "label3";
+         this.label3.Size = new System.Drawing.Size(50, 13);
+         this.label3.TabIndex = 27;
+         this.label3.Text = "Monto :";
+         // 
+         // label1
+         // 
+         this.label1.AutoSize = true;
+         this.label1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.label1.Location = new System.Drawing.Point(407, 59);
+         this.label1.Name = "label1";
+         this.label1.Size = new System.Drawing.Size(138, 13);
+         this.label1.TabIndex = 34;
+         this.label1.Text = "Nro Cuenta (Destino) :";
+         // 
+         // txtNroCuentaDestino
+         // 
+         this.txtNroCuentaDestino.Location = new System.Drawing.Point(551, 59);
+         this.txtNroCuentaDestino.Name = "txtNroCuentaDestino";
+         this.txtNroCuentaDestino.Size = new System.Drawing.Size(201, 20);
+         this.txtNroCuentaDestino.TabIndex = 33;
          // 
          // Transferencias
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-         this.Controls.Add(this.Destino);
-         this.Controls.Add(this.nroCuenta2);
-         this.Controls.Add(this.nroCuenta1);
-         this.Controls.Add(this.monto1);
-         this.Controls.Add(this.disponible1);
+         this.Controls.Add(this.label1);
+         this.Controls.Add(this.txtNroCuentaDestino);
+         this.Controls.Add(this.txtEstado);
+         this.Controls.Add(this.label5);
+         this.Controls.Add(this.label4);
+         this.Controls.Add(this.txtNroCuentaOrigen);
+         this.Controls.Add(this.txtMonto);
+         this.Controls.Add(this.label3);
          this.Name = "Transferencias";
-         this.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-         this.Size = new System.Drawing.Size(874, 618);
+         this.Padding = new System.Windows.Forms.Padding(6);
          this.Controls.SetChildIndex(this.proceder1, 0);
-         this.Controls.SetChildIndex(this.disponible1, 0);
-         this.Controls.SetChildIndex(this.monto1, 0);
-         this.Controls.SetChildIndex(this.nroCuenta1, 0);
-         this.Controls.SetChildIndex(this.nroCuenta2, 0);
-         this.Controls.SetChildIndex(this.Destino, 0);
+         this.Controls.SetChildIndex(this.label3, 0);
+         this.Controls.SetChildIndex(this.txtMonto, 0);
+         this.Controls.SetChildIndex(this.txtNroCuentaOrigen, 0);
+         this.Controls.SetChildIndex(this.label4, 0);
+         this.Controls.SetChildIndex(this.label5, 0);
+         this.Controls.SetChildIndex(this.txtEstado, 0);
+         this.Controls.SetChildIndex(this.txtNroCuentaDestino, 0);
+         this.Controls.SetChildIndex(this.label1, 0);
          this.ResumeLayout(false);
          this.PerformLayout();
 
         }
 
-        #endregion
+      #endregion
 
-        private Controles.Disponible disponible1;
-        private Monto monto1;
-        private Controles.NroCuenta nroCuenta1;
-        private Controles.NroCuenta nroCuenta2;
-        private System.Windows.Forms.Label Destino;
-    }
+      private System.Windows.Forms.TextBox txtEstado;
+      private System.Windows.Forms.Label label5;
+      private System.Windows.Forms.Label label4;
+      private System.Windows.Forms.TextBox txtNroCuentaOrigen;
+      private System.Windows.Forms.TextBox txtMonto;
+      private System.Windows.Forms.Label label3;
+      private System.Windows.Forms.Label label1;
+      private System.Windows.Forms.TextBox txtNroCuentaDestino;
+   }
 }

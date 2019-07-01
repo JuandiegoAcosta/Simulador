@@ -11,22 +11,61 @@ namespace Sistema_Bancario.Froms_opciones
 {
     public partial class Envio_Giros : Sistema_Bancario.Base
     {
-        public Envio_Giros()
+      private GirosMethods girosMethods;
+
+      #region [ Variables Globales ]
+      private int DNIorigen = default;
+      private int DNIdestino = default;
+      private double monto = default;
+      private int clave = default;
+      #endregion
+      public Envio_Giros()
         {
             InitializeComponent();
             proceder1.BTProceder.Click += BTProceder_Click;
         }
 
-        private void BTProceder_Click(object sender, EventArgs e)
+      private bool SetItem()
+      {
+         try
+         {
+            if (!string.IsNullOrEmpty(this.txtMonto.Text.Trim()))
+            { monto = Convert.ToDouble(this.txtMonto.Text.Trim()); }
+            else
+            { return false; }
+
+            if (!string.IsNullOrEmpty(this.txtClave.Text.Trim()))
+            { clave = Convert.ToInt32(this.txtClave.Text.Trim()); }
+            else
+            { return false; }
+
+            if (!string.IsNullOrEmpty(this.txtDNIOrigen.Text.Trim()))
+            { DNIorigen= Convert.ToInt32(this.txtDNIOrigen.Text.Trim()); }
+            else
+            { return false; }
+
+            if (!string.IsNullOrEmpty(this.txtDNIDestino.Text.Trim()))
+            { DNIdestino = Convert.ToInt32(this.txtDNIDestino.Text.Trim()); }
+            else
+            { return false; }
+
+            return true;
+         }
+         catch (Exception)
+         {
+            return false;
+         }
+      }
+
+      private void BTProceder_Click(object sender, EventArgs e)
         {
-            GirosMethods methods = new GirosMethods();
-            if (methods.EnviarGiro(Convert.ToDouble(monto1.TBMonto.Text),
-                Convert.ToInt32(clave1.TBClave.Text),
-                Convert.ToInt32(dni1.TBDni.Text),
-                Convert.ToInt32(dni2.TBDni.Text)) == true)
-            {
-                MessageBox.Show("Giro Enviado");
-            }
+         if (SetItem())
+         {
+            girosMethods = new GirosMethods();
+            girosMethods.EnviarGiro(monto, clave, DNIorigen, DNIdestino);
+
+            MessageBox.Show("Giro Enviado");
+         }
         }
 
         private static Envio_Giros _instance;

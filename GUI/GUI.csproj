@@ -398,6 +398,9 @@
     <EmbeddedResource Include="Ventanilla\Balancin.resx">
       <DependentUpon>Balancin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ventanilla\Depositos.resx">
+      <DependentUpon>Depositos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ventanilla\Envio Giros.resx">
       <DependentUpon>Envio Giros.cs</DependentUpon>
     </EmbeddedResource>
@@ -436,9 +439,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanilla\Base.resx">
       <DependentUpon>Base.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Ventanilla\Depositos.resx">
-      <DependentUpon>Depositos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanilla\ResumenTotal.resx">
       <DependentUpon>ResumenTotal.cs</DependentUpon>
