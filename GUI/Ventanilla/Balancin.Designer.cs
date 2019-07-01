@@ -79,39 +79,41 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Location = new System.Drawing.Point(13, 17);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(434, 536);
+            this.groupBox1.Size = new System.Drawing.Size(845, 428);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Balancín caja";
             // 
             // nudNroBilletes
             // 
-            this.nudNroBilletes.Location = new System.Drawing.Point(183, 120);
+            this.nudNroBilletes.Location = new System.Drawing.Point(370, 94);
             this.nudNroBilletes.Name = "nudNroBilletes";
             this.nudNroBilletes.Size = new System.Drawing.Size(227, 22);
             this.nudNroBilletes.TabIndex = 7;
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(335, 167);
+            this.btnAgregar.Location = new System.Drawing.Point(489, 123);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.Size = new System.Drawing.Size(107, 40);
             this.btnAgregar.TabIndex = 6;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnQuitar
             // 
-            this.btnQuitar.Location = new System.Drawing.Point(183, 167);
+            this.btnQuitar.Location = new System.Drawing.Point(376, 123);
             this.btnQuitar.Name = "btnQuitar";
-            this.btnQuitar.Size = new System.Drawing.Size(75, 23);
+            this.btnQuitar.Size = new System.Drawing.Size(107, 40);
             this.btnQuitar.TabIndex = 6;
             this.btnQuitar.Text = "Quitar";
             this.btnQuitar.UseVisualStyleBackColor = true;
+            this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(255, 465);
+            this.button2.Location = new System.Drawing.Point(653, 24);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(155, 38);
             this.button2.TabIndex = 4;
@@ -120,9 +122,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(17, 465);
+            this.button1.Location = new System.Drawing.Point(653, 78);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(148, 38);
+            this.button1.Size = new System.Drawing.Size(155, 38);
             this.button1.TabIndex = 4;
             this.button1.Text = "Estado caja";
             this.button1.UseVisualStyleBackColor = true;
@@ -130,7 +132,7 @@
             // CmbDenominaciones
             // 
             this.CmbDenominaciones.FormattingEnabled = true;
-            this.CmbDenominaciones.Location = new System.Drawing.Point(183, 85);
+            this.CmbDenominaciones.Location = new System.Drawing.Point(370, 59);
             this.CmbDenominaciones.Name = "CmbDenominaciones";
             this.CmbDenominaciones.Size = new System.Drawing.Size(227, 24);
             this.CmbDenominaciones.TabIndex = 1;
@@ -138,10 +140,7 @@
             // cmbMonedas
             // 
             this.cmbMonedas.FormattingEnabled = true;
-            this.cmbMonedas.Items.AddRange(new object[] {
-            "Dolares",
-            "Soles"});
-            this.cmbMonedas.Location = new System.Drawing.Point(183, 47);
+            this.cmbMonedas.Location = new System.Drawing.Point(370, 21);
             this.cmbMonedas.Name = "cmbMonedas";
             this.cmbMonedas.Size = new System.Drawing.Size(227, 24);
             this.cmbMonedas.TabIndex = 1;
@@ -149,7 +148,7 @@
             // 
             // txtTotal
             // 
-            this.txtTotal.Location = new System.Drawing.Point(272, 423);
+            this.txtTotal.Location = new System.Drawing.Point(459, 388);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(138, 22);
@@ -158,7 +157,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(14, 125);
+            this.label7.Location = new System.Drawing.Point(201, 99);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(79, 17);
             this.label7.TabIndex = 0;
@@ -166,16 +165,18 @@
             // 
             // dgvDenominaciones
             // 
+            this.dgvDenominaciones.AllowUserToAddRows = false;
             this.dgvDenominaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDenominaciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Denominacion,
             this.Nro_billetes,
             this.Importe});
-            this.dgvDenominaciones.Location = new System.Drawing.Point(17, 196);
+            this.dgvDenominaciones.Location = new System.Drawing.Point(74, 169);
             this.dgvDenominaciones.Name = "dgvDenominaciones";
             this.dgvDenominaciones.RowTemplate.Height = 24;
-            this.dgvDenominaciones.Size = new System.Drawing.Size(393, 213);
+            this.dgvDenominaciones.Size = new System.Drawing.Size(523, 213);
             this.dgvDenominaciones.TabIndex = 2;
+            this.dgvDenominaciones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDenominaciones_CellClick);
             // 
             // Denominacion
             // 
@@ -196,7 +197,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(14, 88);
+            this.label6.Location = new System.Drawing.Point(201, 62);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(98, 17);
             this.label6.TabIndex = 0;
@@ -205,7 +206,7 @@
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(186, 426);
+            this.lblTotal.Location = new System.Drawing.Point(373, 391);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(40, 17);
             this.lblTotal.TabIndex = 0;
@@ -214,7 +215,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(14, 50);
+            this.label5.Location = new System.Drawing.Point(201, 24);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 17);
             this.label5.TabIndex = 0;
@@ -232,23 +233,23 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(462, 17);
+            this.groupBox2.Location = new System.Drawing.Point(16, 451);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(410, 536);
+            this.groupBox2.Size = new System.Drawing.Size(842, 200);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Registrar movimientos";
             // 
             // txtCantidad
             // 
-            this.txtCantidad.Location = new System.Drawing.Point(158, 222);
+            this.txtCantidad.Location = new System.Drawing.Point(367, 156);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(227, 22);
             this.txtCantidad.TabIndex = 5;
             // 
             // btnRegistrarMov
             // 
-            this.btnRegistrarMov.Location = new System.Drawing.Point(227, 462);
+            this.btnRegistrarMov.Location = new System.Drawing.Point(647, 21);
             this.btnRegistrarMov.Name = "btnRegistrarMov";
             this.btnRegistrarMov.Size = new System.Drawing.Size(158, 38);
             this.btnRegistrarMov.TabIndex = 4;
@@ -257,9 +258,9 @@
             // 
             // btnImprimirMov
             // 
-            this.btnImprimirMov.Location = new System.Drawing.Point(12, 462);
+            this.btnImprimirMov.Location = new System.Drawing.Point(650, 75);
             this.btnImprimirMov.Name = "btnImprimirMov";
-            this.btnImprimirMov.Size = new System.Drawing.Size(120, 38);
+            this.btnImprimirMov.Size = new System.Drawing.Size(155, 38);
             this.btnImprimirMov.TabIndex = 4;
             this.btnImprimirMov.Text = "Imprimir ticket";
             this.btnImprimirMov.UseVisualStyleBackColor = true;
@@ -267,7 +268,7 @@
             // cmbPersonaRol
             // 
             this.cmbPersonaRol.FormattingEnabled = true;
-            this.cmbPersonaRol.Location = new System.Drawing.Point(158, 176);
+            this.cmbPersonaRol.Location = new System.Drawing.Point(367, 110);
             this.cmbPersonaRol.Name = "cmbPersonaRol";
             this.cmbPersonaRol.Size = new System.Drawing.Size(227, 24);
             this.cmbPersonaRol.TabIndex = 1;
@@ -275,7 +276,7 @@
             // cmbTiposRoles
             // 
             this.cmbTiposRoles.FormattingEnabled = true;
-            this.cmbTiposRoles.Location = new System.Drawing.Point(158, 132);
+            this.cmbTiposRoles.Location = new System.Drawing.Point(367, 66);
             this.cmbTiposRoles.Name = "cmbTiposRoles";
             this.cmbTiposRoles.Size = new System.Drawing.Size(227, 24);
             this.cmbTiposRoles.TabIndex = 1;
@@ -283,7 +284,7 @@
             // cmbTipoMov
             // 
             this.cmbTipoMov.FormattingEnabled = true;
-            this.cmbTipoMov.Location = new System.Drawing.Point(158, 87);
+            this.cmbTipoMov.Location = new System.Drawing.Point(367, 21);
             this.cmbTipoMov.Name = "cmbTipoMov";
             this.cmbTipoMov.Size = new System.Drawing.Size(227, 24);
             this.cmbTipoMov.TabIndex = 1;
@@ -291,7 +292,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 176);
+            this.label4.Location = new System.Drawing.Point(218, 110);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(48, 17);
             this.label4.TabIndex = 0;
@@ -300,7 +301,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 132);
+            this.label3.Location = new System.Drawing.Point(218, 66);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(78, 17);
             this.label3.TabIndex = 0;
@@ -309,7 +310,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 222);
+            this.label2.Location = new System.Drawing.Point(218, 156);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 17);
             this.label2.TabIndex = 0;
@@ -318,7 +319,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 87);
+            this.label1.Location = new System.Drawing.Point(218, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(131, 17);
             this.label1.TabIndex = 0;
@@ -331,7 +332,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Balancin";
-            this.Size = new System.Drawing.Size(890, 576);
+            this.Size = new System.Drawing.Size(890, 665);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudNroBilletes)).EndInit();

@@ -13,7 +13,8 @@ namespace Sistema_Bancario.Ventanilla
 {
     public partial class Balancin : UserControl
     {
-
+        private int IndiceDataGrid = 0;
+        private int SumaTotal = 0;
         public Balancin()
         {
             InitializeComponent();
@@ -53,6 +54,84 @@ namespace Sistema_Bancario.Ventanilla
                 cmbMonedas.DataSource = moneda.Moneda_ObtenerTodos();
                 cmbMonedas.DisplayMember = "Nombre";
             }
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            this.SumaTotal = 0;
+            int n = dgvDenominaciones.Rows.Add();
+            this.dgvDenominaciones.Rows[n].Cells[0].Value = this.CmbDenominaciones.SelectedValue;
+            this.dgvDenominaciones.Rows[n].Cells[1].Value = this.nudNroBilletes.Value;
+            this.dgvDenominaciones.Rows[n].Cells[2].Value = this.CalcularImporte((string)this.CmbDenominaciones.SelectedValue, (int)this.nudNroBilletes.Value);
+
+            //calcular el total
+
+            foreach (DataGridViewRow r in dgvDenominaciones.Rows)
+            {
+                SumaTotal = SumaTotal+(int)r.Cells[2].Value;
+            }
+            this.txtTotal.Text = this.SumaTotal.ToString();
+        }
+        /// <summary>
+        /// calcula el monto de importe segun la denominacion de moneda y la cantidad
+        /// </summary>
+        /// <param name="deno">denominacion del billete</param>
+        /// <param name="cant">cantidad de billetes</param>
+        /// <returns>importe=deno*cant</returns>
+        private int CalcularImporte(string deno,int cant)
+        {
+            switch (deno)
+            {
+                case "1 dolar":
+                    return 1 * cant;
+                case "2 dolares":
+                    return 2 * cant;   
+                case "5 dolares":
+                    return 5 * cant;
+                case "10 dolares":
+                    return 10 * cant;
+                case "20 dolares":
+                    return 20 * cant;
+                case "50 dolares":
+                    return 50 * cant;
+                case "100 dolares":
+                    return 100 * cant;
+                case "10 soles":
+                    return 10 * cant;
+                case "20 soles":
+                    return 20 * cant;
+                case "50 soles":
+                    return 50 * cant;
+                case "100 soles":
+                    return 100 * cant;
+                case "200 soles":
+                    return 200 * cant;
+            }
+            return cant;
+        }
+
+        private void dgvDenominaciones_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            IndiceDataGrid = e.RowIndex;
+            if (e.RowIndex != -1)
+            {
+                IndiceDataGrid = e.RowIndex;
+            }
+
+        }
+
+        private void btnQuitar_Click(object sender, EventArgs e)
+        {
+            this.SumaTotal = 0;
+            if (this.dgvDenominaciones.Rows.Count-1>=IndiceDataGrid & IndiceDataGrid!=-1)
+            {
+                this.dgvDenominaciones.Rows.RemoveAt(IndiceDataGrid);
+            }
+            foreach (DataGridViewRow r in dgvDenominaciones.Rows)
+            {
+                SumaTotal = SumaTotal + (int)r.Cells[2].Value;
+            }
+            this.txtTotal.Text = this.SumaTotal.ToString();
         }
     }
 }
