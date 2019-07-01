@@ -23,7 +23,7 @@ namespace CDatos.Manager
 
                     SqlCommand command = connection.CreateCommand();
 
-                    command.Parameters.AddWithValue("@NroCuenta", aValue);
+                    command.Parameters.AddWithValue("@Dni", aValue);
 
                     command.CommandType = CommandType.StoredProcedure;
 
@@ -46,7 +46,7 @@ namespace CDatos.Manager
 */
                         Prestamos.Add(new
                             {
-                            ID = reader[0],
+                            Codigo = reader[0],
                             FechaPrestamo = reader[1],
                             MontoPrestamo = reader[2],
                             Moneda = reader[3],
@@ -64,6 +64,12 @@ namespace CDatos.Manager
             
            
         }
+
+        public int CuotasInsert(object cuotaID, object usuario)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<object> CuotasSelect(int aValue)
         {
 
@@ -91,9 +97,11 @@ namespace CDatos.Manager
 
                         cuotas.Add(new
                         {
-                            Cuota = reader[0],
-                            Monto = reader[1],
-                            Estado = reader[2]
+                            //someBool ? "true" : "false";
+                            Codigo = reader[0],
+                            Cuota = reader[1],
+                            Monto = reader[2],
+                            Estado = ((int)reader[3] == 1) ? "Pagado":"Debe"
                         });
                     }
                 }
@@ -103,6 +111,35 @@ namespace CDatos.Manager
 
 
         }
+        //CronogramaPagosInsertById
+        public int CuotasInsert(int CuotaID,string Usuario)
+        {
+
+            //  List<object> cuotas = new List<object>();
+
+            int reader;
+            using (var connection = Util.ConnectionFactory.conexion())
+            {
+                connection.Open();
+
+                SqlCommand command = connection.CreateCommand();
+
+                command.Parameters.AddWithValue("@Cuota", CuotaID);
+                command.Parameters.AddWithValue("@Usuario", Usuario);
+
+                command.CommandType = CommandType.StoredProcedure;
+
+                command.CommandText = "CronogramaPagosInsertById";
+
+                reader = command.ExecuteNonQuery();
+
+            }
+
+            return reader;
+
+
+        }
+       
 
     }
 }

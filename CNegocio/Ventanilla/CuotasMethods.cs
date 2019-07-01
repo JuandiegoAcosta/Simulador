@@ -11,19 +11,13 @@ namespace CNegocio.Ventanilla
     {
         private CuotasPrestamosManager cuotasPrestamosManager;
 
-        public CuotasMethods()
-        {
-            cuotasPrestamosManager = new CuotasPrestamosManager();
-        }
+        public CuotasMethods() => cuotasPrestamosManager = new CuotasPrestamosManager();
 
-        public List<object> ObtenerPrestamos(string avalue)
-        {
-            return cuotasPrestamosManager.CuotasPrestamosSelect(avalue);
-        }
-        //CuotasSelect
-        public List<object> CuotasSelect(int avalue)
-        {
-            return cuotasPrestamosManager.CuotasSelect(avalue);
-        }
+        public List<object> ObtenerPrestamos(string avalue) => cuotasPrestamosManager.CuotasPrestamosSelect(avalue);
+        
+        public List<object> CuotasSelect(int avalue) => cuotasPrestamosManager.CuotasSelect(avalue);
+
+        public int CuotasInsert(int CuotaID, string Usuario) => cuotasPrestamosManager.CuotasInsert(CuotaID, Usuario);
+
     }
 }

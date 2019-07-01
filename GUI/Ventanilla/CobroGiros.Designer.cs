@@ -37,7 +37,7 @@
             // 
             // proceder1
             // 
-            this.proceder1.Location = new System.Drawing.Point(8, 313);
+            this.proceder1.Location = new System.Drawing.Point(8, 558);
             this.proceder1.Size = new System.Drawing.Size(744, 49);
             // 
             // dni1
@@ -64,17 +64,21 @@
             this.GVCobroGiros.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.GVCobroGiros.Name = "GVCobroGiros";
             this.GVCobroGiros.RowTemplate.Height = 24;
-            this.GVCobroGiros.Size = new System.Drawing.Size(738, 157);
+            this.GVCobroGiros.Size = new System.Drawing.Size(738, 339);
             this.GVCobroGiros.TabIndex = 4;
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.ForestGreen;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.SystemColors.Window;
             this.button1.Location = new System.Drawing.Point(267, 51);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(78, 32);
             this.button1.TabIndex = 5;
             this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // CobroGiros
@@ -87,7 +91,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CobroGiros";
             this.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.Size = new System.Drawing.Size(760, 369);
+            this.Size = new System.Drawing.Size(760, 614);
             this.Controls.SetChildIndex(this.proceder1, 0);
             this.Controls.SetChildIndex(this.dni1, 0);
             this.Controls.SetChildIndex(this.clave1, 0);
