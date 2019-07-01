@@ -82,8 +82,11 @@
     <Compile Include="Botones\BTRetiros.Designer.cs">
       <DependentUpon>BTRetiros.cs</DependentUpon>
     </Compile>
+    <Compile Include="Clases\Bodega.cs" />
     <Compile Include="Clases\Denominaciones.cs" />
     <Compile Include="Clases\Encrypt.cs" />
+    <Compile Include="Clases\TipoMovimiento.cs" />
+    <Compile Include="Clases\TiposSujeto.cs" />
     <Compile Include="Config\CloseApplication.cs" />
     <Compile Include="Config\UIButton.cs" />
     <Compile Include="Config\UIForm.cs" />
@@ -543,24 +546,6 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\WsSistemaBancario\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\WsSistemaBancario\SistemaBancario.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\WsSistemaBancario\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\WsSistemaBancario\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\WsSistemaBancario\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\estudiante.png" />
   </ItemGroup>
   <ItemGroup>
@@ -583,6 +568,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\view.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\WsSistemaBancario\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WsSistemaBancario\SistemaBancario.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WsSistemaBancario\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WsSistemaBancario\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WsSistemaBancario\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

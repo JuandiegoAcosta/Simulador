@@ -8,18 +8,36 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Sistema_Bancario.Clases;
+using Modelos.Session;
+using Modelos.Modelos;
 
 namespace Sistema_Bancario.Ventanilla
 {
     public partial class Balancin : UserControl
     {
+
+        public ISession session;
         private int IndiceDataGrid = 0;
         private int SumaTotal = 0;
-        public Balancin()
+        public Balancin(ISession sesion)
+        {
+            this.session = sesion;
+            InitializeComponent();
+            this.BackColor = Color.White;
+            this.CargarComboMoneda();
+            this.CargarComboRolesSujetos();
+            this.CargarComboSujetos();
+            this.CargarTipoMovimiento();
+        }
+        private Balancin()
         {
             InitializeComponent();
             this.BackColor = Color.White;
             this.CargarComboMoneda();
+            this.CargarComboRolesSujetos();
+            this.CargarComboSujetos();
+            this.CargarTipoMovimiento();
+
         }
         private static Balancin _instance;
         public static Balancin instance
@@ -54,6 +72,22 @@ namespace Sistema_Bancario.Ventanilla
                 cmbMonedas.DataSource = moneda.Moneda_ObtenerTodos();
                 cmbMonedas.DisplayMember = "Nombre";
             }
+        }
+        private void CargarComboRolesSujetos()
+        {
+            cmbTiposRoles.DataSource =TiposSujeto.Instance.Sujetos;
+        }
+        private void CargarComboSujetos()
+        {
+            using (WsSistemaBancario.VentanillaServiceClient ventanilla = new WsSistemaBancario.VentanillaServiceClient())
+            {
+                this.cmbPersonaRol.DataSource = ventanilla.GetVentanillasXSucursal(Convert.ToInt32(this.session.SucursalCodigo));
+                this.cmbPersonaRol.DisplayMember = "Descripcion";
+            }
+        }
+        private void CargarTipoMovimiento()
+        {
+            this.cmbTipoMov.DataSource =TipoMovimiento.Instance.Movimientos;
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -132,6 +166,27 @@ namespace Sistema_Bancario.Ventanilla
                 SumaTotal = SumaTotal + (int)r.Cells[2].Value;
             }
             this.txtTotal.Text = this.SumaTotal.ToString();
+        }
+
+        private void cmbTiposRoles_SelectedValueChanged(object sender, EventArgs e)
+        {
+            this.cmbPersonaRol.DataSource = null;
+            if (cmbTiposRoles.SelectedIndex==0)//ventanilla
+            {
+                this.CargarComboSujetos();
+            }
+            else//bodega
+            {
+                this.cmbPersonaRol.DataSource = Clases.Bodega.Instance.bodegueros;
+            }
+        }
+
+        private void btnRegistrarMov_Click(object sender, EventArgs e)
+        {
+            //using (WsSistemaBancario. ventanilla = new WsSistemaBancario.VentanillaServiceClient())
+            //{
+
+            //}
         }
     }
 }
