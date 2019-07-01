@@ -201,3 +201,17 @@ C:\Users\elife\Desktop\ISUR\Bancario\CServicios\obj\Debug\CServicios.csproj.Core
 C:\Users\elife\Desktop\ISUR\Bancario\CServicios\obj\Debug\CServicios.csproj.CopyComplete
 C:\Users\elife\Desktop\ISUR\Bancario\CServicios\obj\Debug\ServiciosBancarios.dll
 C:\Users\elife\Desktop\ISUR\Bancario\CServicios\obj\Debug\ServiciosBancarios.pdb
+C:\Users\Usuario\Desktop\Simulador\CServicios\bin\ServiciosBancarios.dll.config
+C:\Users\Usuario\Desktop\Simulador\CServicios\bin\ServiciosBancarios.dll
+C:\Users\Usuario\Desktop\Simulador\CServicios\bin\ServiciosBancarios.pdb
+C:\Users\Usuario\Desktop\Simulador\CServicios\bin\CNegocio.dll
+C:\Users\Usuario\Desktop\Simulador\CServicios\bin\Modelos.dll
+C:\Users\Usuario\Desktop\Simulador\CServicios\bin\CDatos.dll
+C:\Users\Usuario\Desktop\Simulador\CServicios\bin\CNegocio.pdb
+C:\Users\Usuario\Desktop\Simulador\CServicios\bin\Modelos.pdb
+C:\Users\Usuario\Desktop\Simulador\CServicios\bin\CDatos.pdb
+C:\Users\Usuario\Desktop\Simulador\CServicios\obj\Debug\CServicios.csprojAssemblyReference.cache
+C:\Users\Usuario\Desktop\Simulador\CServicios\obj\Debug\CServicios.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\Simulador\CServicios\obj\Debug\CServicios.csproj.CopyComplete
+C:\Users\Usuario\Desktop\Simulador\CServicios\obj\Debug\ServiciosBancarios.dll
+C:\Users\Usuario\Desktop\Simulador\CServicios\obj\Debug\ServiciosBancarios.pdb

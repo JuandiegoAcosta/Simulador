@@ -14,10 +14,10 @@ namespace Sistema_Bancario.Froms_opciones
       private RetirosMethods retirosMethods = null;
 
       #region [Variables Globales]
-      private decimal m_monto = default;
-      private int m_nroTarjeta = default;
-      private int m_clave = default;
-      private string m_doi = default;
+      private decimal m_monto = default(decimal);
+      private int m_nroTarjeta = default(int);
+      private int m_clave = default(int);
+      private string m_doi = default(string);
       #endregion
       public Retiros()
         {

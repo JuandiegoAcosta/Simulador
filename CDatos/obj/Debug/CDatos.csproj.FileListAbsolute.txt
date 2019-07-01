@@ -144,3 +144,12 @@ C:\Users\elife\Desktop\ISUR\Bancario\CDatos\obj\Debug\CDatos.csproj.CoreCompileI
 C:\Users\elife\Desktop\ISUR\Bancario\CDatos\obj\Debug\CDatos.csproj.CopyComplete
 C:\Users\elife\Desktop\ISUR\Bancario\CDatos\obj\Debug\CDatos.dll
 C:\Users\elife\Desktop\ISUR\Bancario\CDatos\obj\Debug\CDatos.pdb
+C:\Users\Usuario\Desktop\Simulador\CDatos\bin\Debug\CDatos.dll
+C:\Users\Usuario\Desktop\Simulador\CDatos\bin\Debug\CDatos.pdb
+C:\Users\Usuario\Desktop\Simulador\CDatos\bin\Debug\Modelos.dll
+C:\Users\Usuario\Desktop\Simulador\CDatos\bin\Debug\Modelos.pdb
+C:\Users\Usuario\Desktop\Simulador\CDatos\obj\Debug\CDatos.csprojAssemblyReference.cache
+C:\Users\Usuario\Desktop\Simulador\CDatos\obj\Debug\CDatos.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\Simulador\CDatos\obj\Debug\CDatos.csproj.CopyComplete
+C:\Users\Usuario\Desktop\Simulador\CDatos\obj\Debug\CDatos.dll
+C:\Users\Usuario\Desktop\Simulador\CDatos\obj\Debug\CDatos.pdb
