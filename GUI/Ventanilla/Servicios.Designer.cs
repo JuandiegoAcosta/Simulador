@@ -34,10 +34,6 @@
             this.GNroContrato = new System.Windows.Forms.DataGridView();
             this.BTBuscarEmpresa = new System.Windows.Forms.Button();
             this.BTNroContrato = new System.Windows.Forms.Button();
-            this.Id_empresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fecha_vencimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado_recaudo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.GEmpresas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GNroContrato)).BeginInit();
             this.SuspendLayout();
@@ -83,11 +79,6 @@
             this.GNroContrato.AllowUserToDeleteRows = false;
             this.GNroContrato.BackgroundColor = System.Drawing.SystemColors.Control;
             this.GNroContrato.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GNroContrato.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id_empresa,
-            this.Monto,
-            this.Fecha_vencimiento,
-            this.Estado_recaudo});
             this.GNroContrato.Location = new System.Drawing.Point(10, 251);
             this.GNroContrato.Margin = new System.Windows.Forms.Padding(2);
             this.GNroContrato.Name = "GNroContrato";
@@ -117,30 +108,6 @@
             this.BTNroContrato.Text = "Buscar";
             this.BTNroContrato.UseVisualStyleBackColor = true;
             this.BTNroContrato.Click += new System.EventHandler(this.BTNroContrato_Click);
-            // 
-            // Id_empresa
-            // 
-            this.Id_empresa.HeaderText = "Codigo";
-            this.Id_empresa.Name = "Id_empresa";
-            this.Id_empresa.ReadOnly = true;
-            // 
-            // Monto
-            // 
-            this.Monto.HeaderText = "Monto";
-            this.Monto.Name = "Monto";
-            this.Monto.ReadOnly = true;
-            // 
-            // Fecha_vencimiento
-            // 
-            this.Fecha_vencimiento.HeaderText = "Fecha vencimiento";
-            this.Fecha_vencimiento.Name = "Fecha_vencimiento";
-            this.Fecha_vencimiento.ReadOnly = true;
-            // 
-            // Estado_recaudo
-            // 
-            this.Estado_recaudo.HeaderText = "Estado recaudo";
-            this.Estado_recaudo.Name = "Estado_recaudo";
-            this.Estado_recaudo.ReadOnly = true;
             // 
             // Servicios
             // 
@@ -175,9 +142,5 @@
         private System.Windows.Forms.DataGridView GNroContrato;
         private System.Windows.Forms.Button BTBuscarEmpresa;
         private System.Windows.Forms.Button BTNroContrato;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id_empresa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Monto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha_vencimiento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Estado_recaudo;
     }
 }

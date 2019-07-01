@@ -343,7 +343,7 @@ namespace CDatos.Manager
             }
         }
 
-        public int InsertPagoServicio(int nroContrato,decimal monto)
+        public int InsertPagoServicio(int nroContrato)
         {
 
             int result=-1;
@@ -355,7 +355,6 @@ namespace CDatos.Manager
                     connection.Open();
                     SqlCommand command = connection.CreateCommand();
                     command.Parameters.AddWithValue("@nroContrato", nroContrato);
-                    command.Parameters.AddWithValue("@monto", monto);
                     command.CommandType = CommandType.StoredProcedure;
                     command.CommandText = "InserPagoServicio";                 
                     result = command.ExecuteNonQuery();
