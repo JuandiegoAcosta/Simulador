@@ -391,12 +391,13 @@ namespace CDatos.Manager
                     {
                         Giros.Add(new
                         {
-                            Origen = reader[0],
-                            Destino = reader[1],
-                            Monto = reader[2],
-                            FechaGiro = reader[3],
-                            FechaRetiro = reader[4],
-                            Estado = reader[5]
+                            Codigo = reader[0],
+                            Origen = reader[1],
+                            Destino = reader[2],
+                            Monto = reader[3],
+                            FechaGiro = reader[4],
+                            FechaRetiro = reader[5],
+                            Estado = reader[6]
                         });
                     }
                 }
@@ -442,6 +443,43 @@ namespace CDatos.Manager
             catch (Exception)
             {
                 return false;
+            }
+        }
+        //GiroUpdateById
+        public int CobrarGiro(int Codigo,string Usuario)
+        {
+            try
+            {
+                using (var connection = Util.ConnectionFactory.conexion())
+                {
+                    connection.Open();
+
+                    SqlTransaction sqlTran = connection.BeginTransaction();
+
+                    SqlCommand command = connection.CreateCommand();
+
+                    command.Transaction = sqlTran;
+
+                    command.Parameters.AddWithValue("@Codigo", Codigo);
+                    command.Parameters.AddWithValue("@Usuario", Usuario);
+
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.CommandText = "GiroUpdateById";
+
+                    int result = command.ExecuteNonQuery();
+
+                    // Commit the transaction.
+                    sqlTran.Commit();
+
+                    connection.Close();
+                    connection.Dispose();
+                    return result;
+                   
+                }
+            }
+            catch (Exception)
+            {
+                return -1;
             }
         }
 

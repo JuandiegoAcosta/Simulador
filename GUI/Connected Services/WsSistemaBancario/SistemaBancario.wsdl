@@ -127,6 +127,36 @@
   <wsdl:message name="IRecaudosService_Recaudos_ObtenerTodos_OutputMessage">
     <wsdl:part name="parameters" element="tns:Recaudos_ObtenerTodosResponse" />
   </wsdl:message>
+  <wsdl:message name="ITipoMonedaService_Moneda_Crear_InputMessage">
+    <wsdl:part name="parameters" element="tns:Moneda_Crear" />
+  </wsdl:message>
+  <wsdl:message name="ITipoMonedaService_Moneda_Crear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Moneda_CrearResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITipoMonedaService_Moneda_Editar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Moneda_Editar" />
+  </wsdl:message>
+  <wsdl:message name="ITipoMonedaService_Moneda_Editar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Moneda_EditarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITipoMonedaService_Moneda_Eliminar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Moneda_Eliminar" />
+  </wsdl:message>
+  <wsdl:message name="ITipoMonedaService_Moneda_Eliminar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Moneda_EliminarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITipoMonedaService_Moneda_ObtenerUno_InputMessage">
+    <wsdl:part name="parameters" element="tns:Moneda_ObtenerUno" />
+  </wsdl:message>
+  <wsdl:message name="ITipoMonedaService_Moneda_ObtenerUno_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Moneda_ObtenerUnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITipoMonedaService_Moneda_ObtenerTodos_InputMessage">
+    <wsdl:part name="parameters" element="tns:Moneda_ObtenerTodos" />
+  </wsdl:message>
+  <wsdl:message name="ITipoMonedaService_Moneda_ObtenerTodos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Moneda_ObtenerTodosResponse" />
+  </wsdl:message>
   <wsdl:message name="ITipoMovimientoService_TipoMovimiento_Crear_InputMessage">
     <wsdl:part name="parameters" element="tns:TipoMovimiento_Crear" />
   </wsdl:message>
@@ -355,6 +385,12 @@
   <wsdl:message name="IPersonaService_Persona_ObtenerSucursal_OutputMessage">
     <wsdl:part name="parameters" element="tns:Persona_ObtenerSucursalResponse" />
   </wsdl:message>
+  <wsdl:message name="IPersonaService_Persona_GetComponentes_InputMessage">
+    <wsdl:part name="parameters" element="tns:Persona_GetComponentes" />
+  </wsdl:message>
+  <wsdl:message name="IPersonaService_Persona_GetComponentes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Persona_GetComponentesResponse" />
+  </wsdl:message>
   <wsdl:message name="IRolesService_Roles_Crear_InputMessage">
     <wsdl:part name="parameters" element="tns:Roles_Crear" />
   </wsdl:message>
@@ -535,6 +571,30 @@
   <wsdl:message name="ITurnoUsuarioService_TurnoUsuario_ObtenerTodos_OutputMessage">
     <wsdl:part name="parameters" element="tns:TurnoUsuario_ObtenerTodosResponse" />
   </wsdl:message>
+  <wsdl:message name="ICuentaService_Cuenta_Crear_InputMessage">
+    <wsdl:part name="parameters" element="tns:Cuenta_Crear" />
+  </wsdl:message>
+  <wsdl:message name="ICuentaService_Cuenta_Crear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Cuenta_CrearResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICuentaService_Cuenta_Editar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Cuenta_Editar" />
+  </wsdl:message>
+  <wsdl:message name="ICuentaService_Cuenta_Editar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Cuenta_EditarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICuentaService_Cuenta_ObtenerUno_InputMessage">
+    <wsdl:part name="parameters" element="tns:Cuenta_ObtenerUno" />
+  </wsdl:message>
+  <wsdl:message name="ICuentaService_Cuenta_ObtenerUno_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Cuenta_ObtenerUnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICuentaService_Cuenta_ObtenerTodos_InputMessage">
+    <wsdl:part name="parameters" element="tns:Cuenta_ObtenerTodos" />
+  </wsdl:message>
+  <wsdl:message name="ICuentaService_Cuenta_ObtenerTodos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Cuenta_ObtenerTodosResponse" />
+  </wsdl:message>
   <wsdl:portType name="ICobroChequeService">
     <wsdl:operation name="CobroCheque_Crear">
       <wsdl:input wsaw:Action="http://tempuri.org/ICobroChequeService/CobroCheque_Crear" message="tns:ICobroChequeService_CobroCheque_Crear_InputMessage" />
@@ -621,6 +681,28 @@
     <wsdl:operation name="Recaudos_ObtenerTodos">
       <wsdl:input wsaw:Action="http://tempuri.org/IRecaudosService/Recaudos_ObtenerTodos" message="tns:IRecaudosService_Recaudos_ObtenerTodos_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRecaudosService/Recaudos_ObtenerTodosResponse" message="tns:IRecaudosService_Recaudos_ObtenerTodos_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ITipoMonedaService">
+    <wsdl:operation name="Moneda_Crear">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITipoMonedaService/Moneda_Crear" message="tns:ITipoMonedaService_Moneda_Crear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITipoMonedaService/Moneda_CrearResponse" message="tns:ITipoMonedaService_Moneda_Crear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Moneda_Editar">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITipoMonedaService/Moneda_Editar" message="tns:ITipoMonedaService_Moneda_Editar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITipoMonedaService/Moneda_EditarResponse" message="tns:ITipoMonedaService_Moneda_Editar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Moneda_Eliminar">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITipoMonedaService/Moneda_Eliminar" message="tns:ITipoMonedaService_Moneda_Eliminar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITipoMonedaService/Moneda_EliminarResponse" message="tns:ITipoMonedaService_Moneda_Eliminar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Moneda_ObtenerUno">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITipoMonedaService/Moneda_ObtenerUno" message="tns:ITipoMonedaService_Moneda_ObtenerUno_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITipoMonedaService/Moneda_ObtenerUnoResponse" message="tns:ITipoMonedaService_Moneda_ObtenerUno_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Moneda_ObtenerTodos">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITipoMonedaService/Moneda_ObtenerTodos" message="tns:ITipoMonedaService_Moneda_ObtenerTodos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITipoMonedaService/Moneda_ObtenerTodosResponse" message="tns:ITipoMonedaService_Moneda_ObtenerTodos_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="ITipoMovimientoService">
@@ -788,6 +870,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IPersonaService/Persona_ObtenerSucursal" message="tns:IPersonaService_Persona_ObtenerSucursal_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IPersonaService/Persona_ObtenerSucursalResponse" message="tns:IPersonaService_Persona_ObtenerSucursal_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="Persona_GetComponentes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPersonaService/Persona_GetComponentes" message="tns:IPersonaService_Persona_GetComponentes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPersonaService/Persona_GetComponentesResponse" message="tns:IPersonaService_Persona_GetComponentes_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IRolesService">
     <wsdl:operation name="Roles_Crear">
@@ -919,6 +1005,24 @@
     <wsdl:operation name="TurnoUsuario_ObtenerTodos">
       <wsdl:input wsaw:Action="http://tempuri.org/ITurnoUsuarioService/TurnoUsuario_ObtenerTodos" message="tns:ITurnoUsuarioService_TurnoUsuario_ObtenerTodos_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ITurnoUsuarioService/TurnoUsuario_ObtenerTodosResponse" message="tns:ITurnoUsuarioService_TurnoUsuario_ObtenerTodos_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ICuentaService">
+    <wsdl:operation name="Cuenta_Crear">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICuentaService/Cuenta_Crear" message="tns:ICuentaService_Cuenta_Crear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICuentaService/Cuenta_CrearResponse" message="tns:ICuentaService_Cuenta_Crear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Cuenta_Editar">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICuentaService/Cuenta_Editar" message="tns:ICuentaService_Cuenta_Editar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICuentaService/Cuenta_EditarResponse" message="tns:ICuentaService_Cuenta_Editar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Cuenta_ObtenerUno">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICuentaService/Cuenta_ObtenerUno" message="tns:ICuentaService_Cuenta_ObtenerUno_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICuentaService/Cuenta_ObtenerUnoResponse" message="tns:ICuentaService_Cuenta_ObtenerUno_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Cuenta_ObtenerTodos">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICuentaService/Cuenta_ObtenerTodos" message="tns:ICuentaService_Cuenta_ObtenerTodos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICuentaService/Cuenta_ObtenerTodosResponse" message="tns:ICuentaService_Cuenta_ObtenerTodos_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ICobroChequeService" type="tns:ICobroChequeService">
@@ -1105,6 +1209,54 @@
     </wsdl:operation>
     <wsdl:operation name="Recaudos_ObtenerTodos">
       <soap:operation soapAction="http://tempuri.org/IRecaudosService/Recaudos_ObtenerTodos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_ITipoMonedaService" type="tns:ITipoMonedaService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Moneda_Crear">
+      <soap:operation soapAction="http://tempuri.org/ITipoMonedaService/Moneda_Crear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Moneda_Editar">
+      <soap:operation soapAction="http://tempuri.org/ITipoMonedaService/Moneda_Editar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Moneda_Eliminar">
+      <soap:operation soapAction="http://tempuri.org/ITipoMonedaService/Moneda_Eliminar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Moneda_ObtenerUno">
+      <soap:operation soapAction="http://tempuri.org/ITipoMonedaService/Moneda_ObtenerUno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Moneda_ObtenerTodos">
+      <soap:operation soapAction="http://tempuri.org/ITipoMonedaService/Moneda_ObtenerTodos" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1475,6 +1627,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Persona_GetComponentes">
+      <soap:operation soapAction="http://tempuri.org/IPersonaService/Persona_GetComponentes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="BasicHttpBinding_IRolesService" type="tns:IRolesService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -1764,6 +1925,45 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_ICuentaService" type="tns:ICuentaService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Cuenta_Crear">
+      <soap:operation soapAction="http://tempuri.org/ICuentaService/Cuenta_Crear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Cuenta_Editar">
+      <soap:operation soapAction="http://tempuri.org/ICuentaService/Cuenta_Editar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Cuenta_ObtenerUno">
+      <soap:operation soapAction="http://tempuri.org/ICuentaService/Cuenta_ObtenerUno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Cuenta_ObtenerTodos">
+      <soap:operation soapAction="http://tempuri.org/ICuentaService/Cuenta_ObtenerTodos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
   <wsdl:service name="SistemaBancario">
     <wsdl:port name="BasicHttpBinding_ICobroChequeService" binding="tns:BasicHttpBinding_ICobroChequeService">
       <soap:address location="http://localhost:50786/SistemaBancario.svc" />
@@ -1775,6 +1975,9 @@
       <soap:address location="http://localhost:50786/SistemaBancario.svc" />
     </wsdl:port>
     <wsdl:port name="BasicHttpBinding_IRecaudosService" binding="tns:BasicHttpBinding_IRecaudosService">
+      <soap:address location="http://localhost:50786/SistemaBancario.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_ITipoMonedaService" binding="tns:BasicHttpBinding_ITipoMonedaService">
       <soap:address location="http://localhost:50786/SistemaBancario.svc" />
     </wsdl:port>
     <wsdl:port name="BasicHttpBinding_ITipoMovimientoService" binding="tns:BasicHttpBinding_ITipoMovimientoService">
@@ -1814,6 +2017,9 @@
       <soap:address location="http://localhost:50786/SistemaBancario.svc" />
     </wsdl:port>
     <wsdl:port name="BasicHttpBinding_ITurnoUsuarioService" binding="tns:BasicHttpBinding_ITurnoUsuarioService">
+      <soap:address location="http://localhost:50786/SistemaBancario.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_ICuentaService" binding="tns:BasicHttpBinding_ICuentaService">
       <soap:address location="http://localhost:50786/SistemaBancario.svc" />
     </wsdl:port>
   </wsdl:service>

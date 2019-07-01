@@ -21,7 +21,11 @@ namespace Sistema_Bancario
 
         private void BTProceder_Click(object sender, EventArgs e)
         {
-           
+            GetCuotasMethods = new CuotasMethods();
+            int i = GridCuotas.CurrentCell.RowIndex;
+         //   int i = GridCuotas.CurrentRow.Cells[0].Value;
+          //  Convert.ToInt32(GridCuotas[i, 0].Value);
+            GetCuotasMethods.CuotasInsert(Convert.ToInt32(GridCuotas[i,0].Value), "Usuario");
         }
 
         private static Cuotas _instance;

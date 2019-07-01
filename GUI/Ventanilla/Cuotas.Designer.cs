@@ -35,13 +35,14 @@
             this.GridCuotas = new System.Windows.Forms.DataGridView();
             this.BTFiltrarCuotas = new System.Windows.Forms.Button();
             this.nroCuenta1 = new Sistema_Bancario.Controles.NroCuenta();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.GridPrestamos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridCuotas)).BeginInit();
             this.SuspendLayout();
             // 
             // proceder1
             // 
-            this.proceder1.Location = new System.Drawing.Point(8, 602);
+            this.proceder1.Location = new System.Drawing.Point(8, 707);
             this.proceder1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.proceder1.Size = new System.Drawing.Size(868, 49);
             // 
@@ -78,7 +79,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(128, 55);
+            this.textBox1.Location = new System.Drawing.Point(120, 52);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(132, 22);
@@ -90,9 +91,9 @@
             this.label1.Location = new System.Drawing.Point(15, 55);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 17);
+            this.label1.Size = new System.Drawing.Size(97, 17);
             this.label1.TabIndex = 7;
-            this.label1.Text = "Nro Prestamo";
+            this.label1.Text = "Cod Prestamo";
             // 
             // GridCuotas
             // 
@@ -100,11 +101,11 @@
             this.GridCuotas.AllowUserToDeleteRows = false;
             this.GridCuotas.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.GridCuotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridCuotas.Location = new System.Drawing.Point(11, 278);
+            this.GridCuotas.Location = new System.Drawing.Point(12, 307);
             this.GridCuotas.Margin = new System.Windows.Forms.Padding(4);
             this.GridCuotas.Name = "GridCuotas";
             this.GridCuotas.ReadOnly = true;
-            this.GridCuotas.Size = new System.Drawing.Size(852, 294);
+            this.GridCuotas.Size = new System.Drawing.Size(852, 313);
             this.GridCuotas.TabIndex = 8;
             // 
             // BTFiltrarCuotas
@@ -128,9 +129,21 @@
             this.nroCuenta1.Size = new System.Drawing.Size(360, 37);
             this.nroCuenta1.TabIndex = 10;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label2.Location = new System.Drawing.Point(11, 274);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(93, 29);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Cuotas";
+            // 
             // Cuotas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.nroCuenta1);
             this.Controls.Add(this.BTFiltrarCuotas);
             this.Controls.Add(this.GridCuotas);
@@ -141,7 +154,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Cuotas";
             this.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.Size = new System.Drawing.Size(884, 658);
+            this.Size = new System.Drawing.Size(884, 763);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.BTBuscarCuota, 0);
             this.Controls.SetChildIndex(this.GridPrestamos, 0);
@@ -150,6 +163,7 @@
             this.Controls.SetChildIndex(this.BTFiltrarCuotas, 0);
             this.Controls.SetChildIndex(this.proceder1, 0);
             this.Controls.SetChildIndex(this.nroCuenta1, 0);
+            this.Controls.SetChildIndex(this.label2, 0);
             ((System.ComponentModel.ISupportInitialize)(this.GridPrestamos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridCuotas)).EndInit();
             this.ResumeLayout(false);
@@ -165,5 +179,6 @@
         private System.Windows.Forms.DataGridView GridCuotas;
         private System.Windows.Forms.Button BTFiltrarCuotas;
         private Controles.NroCuenta nroCuenta1;
+        private System.Windows.Forms.Label label2;
     }
 }

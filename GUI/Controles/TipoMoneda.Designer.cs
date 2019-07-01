@@ -35,8 +35,6 @@
             // CboMoneda
             // 
             this.CboMoneda.FormattingEnabled = true;
-            this.CboMoneda.Items.AddRange(new object[] {
-            "Soles"});
             this.CboMoneda.Location = new System.Drawing.Point(58, 2);
             this.CboMoneda.Margin = new System.Windows.Forms.Padding(2);
             this.CboMoneda.Name = "CboMoneda";

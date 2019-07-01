@@ -225,7 +225,7 @@ namespace CDatos.Manager
                         DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
                         string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
                         string USUARIO_MODIFICADOR = (reader["USUARIO_MODIFICADOR"]) == DBNull.Value ? null : (string)(reader["USUARIO_MODIFICADOR"]);
-
+                        //8
                         PersonaModel = new PersonaModel
                         {
                             Id = Id,

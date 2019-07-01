@@ -7,11 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Modelos.Session;
+using Modelos.Modelos;
 
 namespace Sistema_Bancario.Plataforma
 {
     public partial class UCcuenta : Base
     {
+        public ISession Session; 
+        private PersonaModel cliente;
+        private TipoMonedaModel moneda;
+        private string tipoCuenta;
+
         public UCcuenta()
         {
             InitializeComponent();
@@ -22,7 +29,16 @@ namespace Sistema_Bancario.Plataforma
         private void BTProceder_Click(object sender, EventArgs e)
         {
             //Evento Click del boton proceder
-            throw new NotImplementedException();
+            //Comprobaciones
+            if (Session == null) { MessageBox.Show("La sesión ha expirado"); this.Dispose(); }
+
+            cliente = datosPersona1.ObtenerPersona();
+            moneda = tipoCuenta1.ObtenerMoneda();
+            tipoCuenta = tipoCuenta1.ObtenerTipoCuenta();
+
+            if (cliente == null) { MessageBox.Show("Selecciona un cliente"); return; }
+            if (moneda == null) { MessageBox.Show("Selecciona una moneda"); return; }
+            if (string.IsNullOrEmpty(tipoCuenta)) { MessageBox.Show("Selecciona un tipo de cuenta"); return; }
         }
 
         private static UCcuenta _instance;
@@ -38,9 +54,10 @@ namespace Sistema_Bancario.Plataforma
                 return _instance;
             }
         }
+            
         private void UCcuenta_Load(object sender, EventArgs e)
         {
-
+            //pruebalo aver, espera te muestro donde se implementa 
         }
     }
 }

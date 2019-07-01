@@ -126,3 +126,12 @@ C:\Users\Pablo\Desktop\SistemaBancario\Simulador 2\Nueva carpeta\Simulador\CDato
 C:\Users\Pablo\Desktop\SistemaBancario\Simulador 2\Nueva carpeta\Simulador\CDatos\obj\Debug\CDatos.csproj.CopyComplete
 C:\Users\Pablo\Desktop\SistemaBancario\Simulador 2\Nueva carpeta\Simulador\CDatos\obj\Debug\CDatos.dll
 C:\Users\Pablo\Desktop\SistemaBancario\Simulador 2\Nueva carpeta\Simulador\CDatos\obj\Debug\CDatos.pdb
+C:\Users\ASUS\Source\Repos\Simulador3\CDatos\bin\Debug\CDatos.dll
+C:\Users\ASUS\Source\Repos\Simulador3\CDatos\bin\Debug\CDatos.pdb
+C:\Users\ASUS\Source\Repos\Simulador3\CDatos\bin\Debug\Modelos.dll
+C:\Users\ASUS\Source\Repos\Simulador3\CDatos\bin\Debug\Modelos.pdb
+C:\Users\ASUS\Source\Repos\Simulador3\CDatos\obj\Debug\CDatos.csprojAssemblyReference.cache
+C:\Users\ASUS\Source\Repos\Simulador3\CDatos\obj\Debug\CDatos.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Source\Repos\Simulador3\CDatos\obj\Debug\CDatos.csproj.CopyComplete
+C:\Users\ASUS\Source\Repos\Simulador3\CDatos\obj\Debug\CDatos.dll
+C:\Users\ASUS\Source\Repos\Simulador3\CDatos\obj\Debug\CDatos.pdb

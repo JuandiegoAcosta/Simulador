@@ -53,5 +53,6 @@ namespace CNegocio.Ventanilla
         {
             return ADGirosPersonaManager.EnviarGiro(monto, clave, origen, destino);
         }
+        public int CobrarGiro(int Codigo,string Usuario) => ADGirosPersonaManager.CobrarGiro(Codigo,Usuario);
     }
 }

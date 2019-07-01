@@ -292,8 +292,9 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.panel4.BackColor = System.Drawing.Color.LightSlateGray;
             this.panel4.Controls.Add(this.label2);
+            this.panel4.ForeColor = System.Drawing.SystemColors.MenuText;
             this.panel4.Location = new System.Drawing.Point(0, 31);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(267, 39);

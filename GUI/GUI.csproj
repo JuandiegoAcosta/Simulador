@@ -82,6 +82,8 @@
     <Compile Include="Botones\BTRetiros.Designer.cs">
       <DependentUpon>BTRetiros.cs</DependentUpon>
     </Compile>
+    <Compile Include="Clases\Denominaciones.cs" />
+    <Compile Include="Clases\Encrypt.cs" />
     <Compile Include="Config\CloseApplication.cs" />
     <Compile Include="Config\UIButton.cs" />
     <Compile Include="Config\UIForm.cs" />
@@ -476,6 +478,7 @@
     <None Include="Properties\DataSources\Modelos.Modelos.BancoModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.CobroChequesModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.ComponenteModel.datasource" />
+    <None Include="Properties\DataSources\Modelos.Modelos.CuentasModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.EmpresaModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.HorariosAtencionModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.MovimientosVentanillaModel.datasource" />
@@ -487,6 +490,7 @@
     <None Include="Properties\DataSources\Modelos.Modelos.RolUsuarioModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.SucursalModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.TipoDocumentoModel.datasource" />
+    <None Include="Properties\DataSources\Modelos.Modelos.TipoMonedaModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.TurnosModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.TurnoUsuarioModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.VentanillaModel.datasource" />

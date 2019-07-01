@@ -308,17 +308,18 @@ namespace Sistema_Bancario
             }
             else if (btn.Text.Equals("Abrir Cuenta"))
             {
-                if (!panel1.Controls.Contains(UCcuenta.instance))
+                UCcuenta cuenta = UCcuenta.instance;
+                if (!panel1.Controls.Contains(cuenta))
                 {
-                    panel1.Controls.Add(UCcuenta.instance);
-                    UCcuenta.instance.Dock = DockStyle.Fill;
-                    UCcuenta.instance.BringToFront();
+                    cuenta.Session = this.Session;
+                    panel1.Controls.Add(cuenta);
+                    cuenta.Dock = DockStyle.Fill;
+                    cuenta.BringToFront();
                     TituloText.Text = btn.Text;
-
                 }
                 else
                 {
-                    UCcuenta.instance.BringToFront();
+                    cuenta.BringToFront();
                     TituloText.Text = btn.Text;
                 }
                 //    Limpiar();

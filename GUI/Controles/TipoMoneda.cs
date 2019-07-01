@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Modelos.Modelos;
 
 namespace Sistema_Bancario.Controles
 {
@@ -16,11 +17,31 @@ namespace Sistema_Bancario.Controles
         public TipoMoneda()
         {
             InitializeComponent();
+            PoblarCboMoneda();
         }
 
         private void TipoMoneda_Load(object sender, EventArgs e)
         {
 
         }
+
+        public TipoMonedaModel ElegirMoneda()
+        {
+            return (TipoMonedaModel)CboMoneda.SelectedItem;
+        }
+
+        private void PoblarCboMoneda()
+        {
+            using (WsSistemaBancario.TipoMonedaServiceClient tipoMoneda = new WsSistemaBancario.TipoMonedaServiceClient())
+            {
+                List<TipoMonedaModel> monedas = new List<TipoMonedaModel>();
+                monedas = tipoMoneda.Moneda_ObtenerTodos().ToList();
+
+                this.CboMoneda.DataSource = monedas;
+                this.CboMoneda.DisplayMember = "Nombre";
+                this.CboMoneda.SelectedIndex = 0;
+            }
+        }
+
     }
 }

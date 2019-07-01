@@ -173,3 +173,17 @@ C:\Users\Pablo\Desktop\SistemaBancario\Simulador 2\Nueva carpeta\Simulador\CServ
 C:\Users\Pablo\Desktop\SistemaBancario\Simulador 2\Nueva carpeta\Simulador\CServicios\obj\Debug\CServicios.csproj.CopyComplete
 C:\Users\Pablo\Desktop\SistemaBancario\Simulador 2\Nueva carpeta\Simulador\CServicios\obj\Debug\ServiciosBancarios.dll
 C:\Users\Pablo\Desktop\SistemaBancario\Simulador 2\Nueva carpeta\Simulador\CServicios\obj\Debug\ServiciosBancarios.pdb
+C:\Users\ASUS\Source\Repos\Simulador3\CServicios\bin\ServiciosBancarios.dll.config
+C:\Users\ASUS\Source\Repos\Simulador3\CServicios\bin\ServiciosBancarios.dll
+C:\Users\ASUS\Source\Repos\Simulador3\CServicios\bin\ServiciosBancarios.pdb
+C:\Users\ASUS\Source\Repos\Simulador3\CServicios\bin\CNegocio.dll
+C:\Users\ASUS\Source\Repos\Simulador3\CServicios\bin\Modelos.dll
+C:\Users\ASUS\Source\Repos\Simulador3\CServicios\bin\CDatos.dll
+C:\Users\ASUS\Source\Repos\Simulador3\CServicios\bin\CNegocio.pdb
+C:\Users\ASUS\Source\Repos\Simulador3\CServicios\bin\Modelos.pdb
+C:\Users\ASUS\Source\Repos\Simulador3\CServicios\bin\CDatos.pdb
+C:\Users\ASUS\Source\Repos\Simulador3\CServicios\obj\Debug\CServicios.csprojAssemblyReference.cache
+C:\Users\ASUS\Source\Repos\Simulador3\CServicios\obj\Debug\CServicios.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Source\Repos\Simulador3\CServicios\obj\Debug\CServicios.csproj.CopyComplete
+C:\Users\ASUS\Source\Repos\Simulador3\CServicios\obj\Debug\ServiciosBancarios.dll
+C:\Users\ASUS\Source\Repos\Simulador3\CServicios\obj\Debug\ServiciosBancarios.pdb

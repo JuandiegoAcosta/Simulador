@@ -19,7 +19,11 @@ namespace Sistema_Bancario.Froms_opciones
 
         private void BTProceder_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("cobro Giros");
+           
+            GirosMethods girosMethods = new GirosMethods();
+            int i = GVCobroGiros.CurrentCell.RowIndex;           
+            girosMethods.CobrarGiro(Convert.ToInt32(GVCobroGiros[0, i].Value),"Usuario");
+         //   MessageBox.Show("cobro Giros");
         }
 
         private static CobroGiros _instance;
