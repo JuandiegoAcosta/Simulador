@@ -342,8 +342,33 @@ namespace CDatos.Manager
                 return PagoServiciosModellist;
             }
         }
-        #endregion
 
+        public int InsertPagoServicio(int nroContrato,decimal monto)
+        {
+
+            int result=-1;
+
+            try
+            {
+                using (var connection = Util.ConnectionFactory.conexion())
+                {
+                    connection.Open();
+                    SqlCommand command = connection.CreateCommand();
+                    command.Parameters.AddWithValue("@nroContrato", nroContrato);
+                    command.Parameters.AddWithValue("@monto", monto);
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.CommandText = "InserPagoServicio";                 
+                    result = command.ExecuteNonQuery();
+                    connection.Close();
+                }
+                return result;
+            }
+            catch (Exception)
+            {
+                return result;
+            }
+        }
+        #endregion
     }
 
 }

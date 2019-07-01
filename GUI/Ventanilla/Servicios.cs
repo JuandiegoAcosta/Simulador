@@ -23,7 +23,9 @@ namespace Sistema_Bancario.Froms_opciones
 
         private void BTProceder_Click(object sender, EventArgs e)
         {
-                             
+            PagoServicioMethods pagoServicioMethods = new PagoServicioMethods();
+            //pagoServicioMethods.InsertPagoServicio(Convert.ToInt32(nroContrato1.TBNroContrato.Text),);
+            //InsertPagoServicio
         }
 
         private static Servicios _instance;
