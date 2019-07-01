@@ -112,7 +112,7 @@
             this.Margin = new System.Windows.Forms.Padding(3);
             this.Name = "Tipo_de_Cambio";
             this.Padding = new System.Windows.Forms.Padding(6);
-            this.Size = new System.Drawing.Size(584, 285);
+            this.Size = new System.Drawing.Size(874, 618);
             this.Controls.SetChildIndex(this.tipo1, 0);
             this.Controls.SetChildIndex(this.monto1, 0);
             this.Controls.SetChildIndex(this.tipoMoneda1, 0);

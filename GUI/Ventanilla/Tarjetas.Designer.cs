@@ -66,7 +66,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Tarjetas";
             this.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.Size = new System.Drawing.Size(636, 331);
+            this.Size = new System.Drawing.Size(874, 618);
           
             this.Controls.SetChildIndex(this.nroTarjeta1, 0);
             this.Controls.SetChildIndex(this.monto1, 0);

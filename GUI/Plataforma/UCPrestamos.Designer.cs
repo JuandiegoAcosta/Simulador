@@ -218,7 +218,7 @@
             this.Margin = new System.Windows.Forms.Padding(3);
             this.Name = "UCPrestamos";
             this.Padding = new System.Windows.Forms.Padding(6);
-            this.Size = new System.Drawing.Size(414, 568);
+            this.Size = new System.Drawing.Size(874, 618);
             this.Load += new System.EventHandler(this.UCPrestamos_Load);
             this.Controls.SetChildIndex(this.proceder1, 0);
             this.Controls.SetChildIndex(this.datosPersona1, 0);

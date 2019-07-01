@@ -64,7 +64,7 @@
             this.Margin = new System.Windows.Forms.Padding(3);
             this.Name = "UCcuenta";
             this.Padding = new System.Windows.Forms.Padding(6);
-            this.Size = new System.Drawing.Size(777, 410);
+            this.Size = new System.Drawing.Size(874, 618);
             this.Load += new System.EventHandler(this.UCcuenta_Load);
             this.Controls.SetChildIndex(this.proceder1, 0);
             this.Controls.SetChildIndex(this.datosPersona1, 0);

@@ -334,7 +334,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Balancin";
-            this.Size = new System.Drawing.Size(890, 665);
+            this.Size = new System.Drawing.Size(874, 618);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudNroBilletes)).EndInit();
