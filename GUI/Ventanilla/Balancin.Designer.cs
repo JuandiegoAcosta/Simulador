@@ -255,6 +255,7 @@
             this.btnRegistrarMov.TabIndex = 4;
             this.btnRegistrarMov.Text = "Registrar movimiento";
             this.btnRegistrarMov.UseVisualStyleBackColor = true;
+            this.btnRegistrarMov.Click += new System.EventHandler(this.btnRegistrarMov_Click);
             // 
             // btnImprimirMov
             // 
@@ -280,6 +281,7 @@
             this.cmbTiposRoles.Name = "cmbTiposRoles";
             this.cmbTiposRoles.Size = new System.Drawing.Size(227, 24);
             this.cmbTiposRoles.TabIndex = 1;
+            this.cmbTiposRoles.SelectedValueChanged += new System.EventHandler(this.cmbTiposRoles_SelectedValueChanged);
             // 
             // cmbTipoMov
             // 

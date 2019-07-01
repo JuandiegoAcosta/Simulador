@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Sistema_Bancario.Clases;
 using Modelos.Session;
+using Modelos.Modelos;
 
 namespace Sistema_Bancario.Ventanilla
 {
@@ -165,6 +166,27 @@ namespace Sistema_Bancario.Ventanilla
                 SumaTotal = SumaTotal + (int)r.Cells[2].Value;
             }
             this.txtTotal.Text = this.SumaTotal.ToString();
+        }
+
+        private void cmbTiposRoles_SelectedValueChanged(object sender, EventArgs e)
+        {
+            this.cmbPersonaRol.DataSource = null;
+            if (cmbTiposRoles.SelectedIndex==0)//ventanilla
+            {
+                this.CargarComboSujetos();
+            }
+            else//bodega
+            {
+                this.cmbPersonaRol.DataSource = Clases.Bodega.Instance.bodegueros;
+            }
+        }
+
+        private void btnRegistrarMov_Click(object sender, EventArgs e)
+        {
+            //using (WsSistemaBancario. ventanilla = new WsSistemaBancario.VentanillaServiceClient())
+            //{
+
+            //}
         }
     }
 }
