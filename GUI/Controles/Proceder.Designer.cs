@@ -30,36 +30,37 @@ namespace Sistema_Bancario.Controles
         /// </summary>
         private void InitializeComponent()
         {
-            this.BTProceder = new System.Windows.Forms.Button();
-            this.SuspendLayout();
-            // 
-            // BTProceder
-            // 
-            this.BTProceder.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.BTProceder.Dock = System.Windows.Forms.DockStyle.Right;
-            this.BTProceder.FlatAppearance.BorderSize = 0;
-            this.BTProceder.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen;
-            this.BTProceder.FlatAppearance.MouseOverBackColor = System.Drawing.Color.ForestGreen;
-            this.BTProceder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BTProceder.ForeColor = System.Drawing.SystemColors.Window;
-            this.BTProceder.Location = new System.Drawing.Point(0, 0);
-            this.BTProceder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BTProceder.Name = "BTProceder";
-            this.BTProceder.Size = new System.Drawing.Size(148, 49);
-            this.BTProceder.TabIndex = 0;
-            this.BTProceder.Text = "Proceder";
-            this.BTProceder.UseVisualStyleBackColor = false;
-            this.BTProceder.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // Proceder
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.BTProceder);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "Proceder";
-            this.Size = new System.Drawing.Size(148, 49);
-            this.ResumeLayout(false);
+         this.BTProceder = new System.Windows.Forms.Button();
+         this.SuspendLayout();
+         // 
+         // BTProceder
+         // 
+         this.BTProceder.BackColor = System.Drawing.SystemColors.HotTrack;
+         this.BTProceder.Dock = System.Windows.Forms.DockStyle.Right;
+         this.BTProceder.FlatAppearance.BorderSize = 0;
+         this.BTProceder.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen;
+         this.BTProceder.FlatAppearance.MouseOverBackColor = System.Drawing.Color.ForestGreen;
+         this.BTProceder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+         this.BTProceder.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold);
+         this.BTProceder.ForeColor = System.Drawing.SystemColors.Window;
+         this.BTProceder.Location = new System.Drawing.Point(0, 0);
+         this.BTProceder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+         this.BTProceder.Name = "BTProceder";
+         this.BTProceder.Size = new System.Drawing.Size(111, 40);
+         this.BTProceder.TabIndex = 0;
+         this.BTProceder.Text = "Proceder";
+         this.BTProceder.UseVisualStyleBackColor = false;
+         this.BTProceder.Click += new System.EventHandler(this.button1_Click);
+         // 
+         // Proceder
+         // 
+         this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+         this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+         this.Controls.Add(this.BTProceder);
+         this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+         this.Name = "Proceder";
+         this.Size = new System.Drawing.Size(111, 40);
+         this.ResumeLayout(false);
 
         }
 

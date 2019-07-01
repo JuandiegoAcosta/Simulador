@@ -11,22 +11,64 @@ namespace Sistema_Bancario.Froms_opciones
 {
     public partial class Retiros : Sistema_Bancario.Base
     {
-        public Retiros()
+      private RetirosMethods retirosMethods = null;
+
+      #region [Variables Globales]
+      private decimal m_monto = default;
+      private int m_nroTarjeta = default;
+      private int m_clave = default;
+      private string m_doi = default;
+      #endregion
+      public Retiros()
         {
             InitializeComponent();
             proceder1.BTProceder.Click += BTProceder_Click;
             
         }
 
+
+      private bool SetItem()
+      {
+         try
+         {
+            retirosMethods = new RetirosMethods();
+
+            if (!string.IsNullOrEmpty(this.txtMonto.Text.Trim()))
+            { m_monto = Convert.ToDecimal(this.txtMonto.Text.Trim()); }
+            else
+            { return false; }
+
+            if (!string.IsNullOrEmpty(this.txtNroTargeta.Text.Trim()))
+            { m_nroTarjeta = Convert.ToInt32(this.txtNroTargeta.Text.Trim()); }
+            else
+            { return false; }
+
+            if (!string.IsNullOrEmpty(this.txtClave.Text.Trim()))
+            { m_clave = Convert.ToInt32(this.txtClave.Text.Trim()); }
+            else
+            { return false; }
+
+            if (!string.IsNullOrEmpty(this.txtDoi.Text.Trim()))
+            { m_doi = this.txtDoi.Text.Trim(); }
+            else
+            { return false; }
+
+            return true;
+         }
+         catch (Exception)
+         {
+            return false;
+         }
+      }
+
         private void BTProceder_Click(object sender, EventArgs e)
         {
-            RetirosMethods retirosMethods = new RetirosMethods();
-            retirosMethods.InsertaRetiro
-                (Convert.ToDecimal(monto1.TBMonto.Text),
-                Convert.ToInt32(nro_Tarjeta1.TBNroTarjeta.Text),
-                Convert.ToInt32(clave1.TBClave.Text),dni1.TBDoi.Text);
+         if (SetItem())
+         {
+            retirosMethods.InsertaRetiro(this.m_monto, this.m_nroTarjeta, this.m_clave, this.m_doi);
 
             MessageBox.Show("Retiro con exito");
+         }           
         }
 
     

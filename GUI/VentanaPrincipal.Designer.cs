@@ -1,33 +1,33 @@
 ﻿namespace Sistema_Bancario
 {
-    partial class VentanaPrincipal
-    {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+   partial class VentanaPrincipal
+   {
+      /// <summary>
+      /// Required designer variable.
+      /// </summary>
+      private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+      /// <summary>
+      /// Clean up any resources being used.
+      /// </summary>
+      /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+      protected override void Dispose(bool disposing)
+      {
+         if (disposing && (components != null))
+         {
+            components.Dispose();
+         }
+         base.Dispose(disposing);
+      }
 
-        #region Windows Form Designer generated code
+      #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
-        {
+      /// <summary>
+      /// Required method for Designer support - do not modify
+      /// the contents of this method with the code editor.
+      /// </summary>
+      private void InitializeComponent()
+      {
          this.components = new System.ComponentModel.Container();
          System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VentanaPrincipal));
          this.panel1 = new System.Windows.Forms.Panel();
@@ -66,10 +66,10 @@
          // 
          // panel1
          // 
-         this.panel1.Location = new System.Drawing.Point(209, 105);
-         this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+         this.panel1.Location = new System.Drawing.Point(200, 105);
+         this.panel1.Margin = new System.Windows.Forms.Padding(2);
          this.panel1.Name = "panel1";
-         this.panel1.Size = new System.Drawing.Size(679, 618);
+         this.panel1.Size = new System.Drawing.Size(874, 618);
          this.panel1.TabIndex = 1;
          // 
          // panel2
@@ -77,9 +77,9 @@
          this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
          this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
          this.panel2.Location = new System.Drawing.Point(0, 57);
-         this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+         this.panel2.Margin = new System.Windows.Forms.Padding(2);
          this.panel2.Name = "panel2";
-         this.panel2.Size = new System.Drawing.Size(200, 628);
+         this.panel2.Size = new System.Drawing.Size(200, 630);
          this.panel2.TabIndex = 7;
          // 
          // button11
@@ -90,12 +90,12 @@
          this.button11.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack;
          this.button11.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
          this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-         this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.button11.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold);
          this.button11.ForeColor = System.Drawing.SystemColors.Window;
-         this.button11.Location = new System.Drawing.Point(-2, 680);
-         this.button11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+         this.button11.Location = new System.Drawing.Point(0, 687);
+         this.button11.Margin = new System.Windows.Forms.Padding(2);
          this.button11.Name = "button11";
-         this.button11.Size = new System.Drawing.Size(202, 45);
+         this.button11.Size = new System.Drawing.Size(200, 36);
          this.button11.TabIndex = 10;
          this.button11.Text = "Cerrar Sesión";
          this.button11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -104,15 +104,16 @@
          // 
          // panel3
          // 
-         this.panel3.BackColor = System.Drawing.SystemColors.Highlight;
+         this.panel3.BackColor = System.Drawing.SystemColors.Control;
+         this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
          this.panel3.Controls.Add(this.BTOperaciones);
          this.panel3.Controls.Add(this.BTReportes);
          this.panel3.Controls.Add(this.BTGestion);
          this.panel3.Controls.Add(this.BTPlataforma);
-         this.panel3.Location = new System.Drawing.Point(200, 25);
-         this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+         this.panel3.Location = new System.Drawing.Point(199, 25);
+         this.panel3.Margin = new System.Windows.Forms.Padding(2);
          this.panel3.Name = "panel3";
-         this.panel3.Size = new System.Drawing.Size(701, 32);
+         this.panel3.Size = new System.Drawing.Size(883, 32);
          this.panel3.TabIndex = 8;
          // 
          // BTOperaciones
@@ -122,7 +123,8 @@
          this.BTOperaciones.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack;
          this.BTOperaciones.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
          this.BTOperaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-         this.BTOperaciones.ForeColor = System.Drawing.Color.White;
+         this.BTOperaciones.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold);
+         this.BTOperaciones.ForeColor = System.Drawing.Color.Black;
          this.BTOperaciones.Location = new System.Drawing.Point(0, 0);
          this.BTOperaciones.Name = "BTOperaciones";
          this.BTOperaciones.Size = new System.Drawing.Size(84, 32);
@@ -138,7 +140,8 @@
          this.BTReportes.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack;
          this.BTReportes.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
          this.BTReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-         this.BTReportes.ForeColor = System.Drawing.Color.White;
+         this.BTReportes.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold);
+         this.BTReportes.ForeColor = System.Drawing.Color.Black;
          this.BTReportes.Location = new System.Drawing.Point(253, 0);
          this.BTReportes.Name = "BTReportes";
          this.BTReportes.Size = new System.Drawing.Size(75, 32);
@@ -154,7 +157,8 @@
          this.BTGestion.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack;
          this.BTGestion.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
          this.BTGestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-         this.BTGestion.ForeColor = System.Drawing.Color.White;
+         this.BTGestion.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold);
+         this.BTGestion.ForeColor = System.Drawing.Color.Black;
          this.BTGestion.Location = new System.Drawing.Point(84, 0);
          this.BTGestion.Name = "BTGestion";
          this.BTGestion.Size = new System.Drawing.Size(75, 32);
@@ -170,7 +174,8 @@
          this.BTPlataforma.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack;
          this.BTPlataforma.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
          this.BTPlataforma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-         this.BTPlataforma.ForeColor = System.Drawing.Color.White;
+         this.BTPlataforma.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold);
+         this.BTPlataforma.ForeColor = System.Drawing.Color.Black;
          this.BTPlataforma.Location = new System.Drawing.Point(159, 0);
          this.BTPlataforma.Name = "BTPlataforma";
          this.BTPlataforma.Size = new System.Drawing.Size(94, 32);
@@ -183,12 +188,12 @@
          // 
          this.TituloText.AutoSize = true;
          this.TituloText.BackColor = System.Drawing.Color.Transparent;
-         this.TituloText.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.TituloText.Font = new System.Drawing.Font("Arial Narrow", 17F, System.Drawing.FontStyle.Bold);
          this.TituloText.ForeColor = System.Drawing.SystemColors.MenuHighlight;
          this.TituloText.Location = new System.Drawing.Point(208, 64);
          this.TituloText.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
          this.TituloText.Name = "TituloText";
-         this.TituloText.Size = new System.Drawing.Size(74, 29);
+         this.TituloText.Size = new System.Drawing.Size(64, 27);
          this.TituloText.TabIndex = 6;
          this.TituloText.Text = "Título";
          this.TituloText.Visible = false;
@@ -211,7 +216,7 @@
             this.toolStripStatusLabel8});
          this.stStatus.Location = new System.Drawing.Point(0, 725);
          this.stStatus.Name = "stStatus";
-         this.stStatus.Size = new System.Drawing.Size(897, 25);
+         this.stStatus.Size = new System.Drawing.Size(1074, 25);
          this.stStatus.TabIndex = 13;
          this.stStatus.Text = "statusStrip1";
          // 
@@ -287,10 +292,10 @@
          // 
          // panel4
          // 
-         this.panel4.BackColor = System.Drawing.SystemColors.HotTrack;
+         this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(72)))), ((int)(((byte)(150)))));
          this.panel4.Controls.Add(this.label2);
          this.panel4.Location = new System.Drawing.Point(0, 25);
-         this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+         this.panel4.Margin = new System.Windows.Forms.Padding(2);
          this.panel4.Name = "panel4";
          this.panel4.Size = new System.Drawing.Size(200, 32);
          this.panel4.TabIndex = 15;
@@ -298,16 +303,18 @@
          // label2
          // 
          this.label2.AutoSize = true;
+         this.label2.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold);
          this.label2.ForeColor = System.Drawing.Color.White;
          this.label2.Location = new System.Drawing.Point(9, 9);
          this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
          this.label2.Name = "label2";
-         this.label2.Size = new System.Drawing.Size(104, 13);
+         this.label2.Size = new System.Drawing.Size(116, 16);
          this.label2.TabIndex = 0;
          this.label2.Text = "Cuadro de Opciones";
          // 
          // panel6
          // 
+         this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(183)))), ((int)(((byte)(226)))));
          this.panel6.ColorBottom = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(72)))), ((int)(((byte)(150)))));
          this.panel6.ColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(183)))), ((int)(((byte)(226)))));
          this.panel6.Controls.Add(this.label1);
@@ -315,7 +322,7 @@
          this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
          this.panel6.Location = new System.Drawing.Point(0, 0);
          this.panel6.Name = "panel6";
-         this.panel6.Size = new System.Drawing.Size(897, 25);
+         this.panel6.Size = new System.Drawing.Size(1074, 25);
          this.panel6.TabIndex = 14;
          // 
          // label1
@@ -336,16 +343,13 @@
          this.pbxClose.Cursor = System.Windows.Forms.Cursors.Hand;
          this.pbxClose.Dock = System.Windows.Forms.DockStyle.Right;
          this.pbxClose.Image = ((System.Drawing.Image)(resources.GetObject("pbxClose.Image")));
-         this.pbxClose.Location = new System.Drawing.Point(866, 0);
+         this.pbxClose.Location = new System.Drawing.Point(1043, 0);
          this.pbxClose.Name = "pbxClose";
          this.pbxClose.Size = new System.Drawing.Size(31, 25);
          this.pbxClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
          this.pbxClose.TabIndex = 1;
          this.pbxClose.TabStop = false;
          this.pbxClose.Click += new System.EventHandler(this.PbxClose_Click);
-         this.pbxClose.DragOver += new System.Windows.Forms.DragEventHandler(this.pbxClose_DragOver);
-         this.pbxClose.MouseLeave += new System.EventHandler(this.pbxClose_MouseLeave);
-         this.pbxClose.MouseHover += new System.EventHandler(this.pbxClose_MouseHover);
          // 
          // MoveFrom
          // 
@@ -359,7 +363,7 @@
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          this.BackColor = System.Drawing.Color.Gainsboro;
-         this.ClientSize = new System.Drawing.Size(897, 750);
+         this.ClientSize = new System.Drawing.Size(1074, 750);
          this.Controls.Add(this.panel4);
          this.Controls.Add(this.panel6);
          this.Controls.Add(this.stStatus);
@@ -369,7 +373,7 @@
          this.Controls.Add(this.button11);
          this.Controls.Add(this.TituloText);
          this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-         this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+         this.Margin = new System.Windows.Forms.Padding(2);
          this.Name = "VentanaPrincipal";
          this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
          this.Text = "Form2";
@@ -384,19 +388,19 @@
          this.ResumeLayout(false);
          this.PerformLayout();
 
-        }
+      }
 
-        #endregion
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
-        private Bunifu.Framework.UI.BunifuCustomLabel TituloText;
-        private System.Windows.Forms.Button button11;
-        private Bunifu.Framework.UI.BunifuDragControl MoveFrom;
-        private System.Windows.Forms.Button BTReportes;
-        private System.Windows.Forms.Button BTPlataforma;
-        private System.Windows.Forms.Button BTGestion;
-        private System.Windows.Forms.Button BTOperaciones;
+      #endregion
+      private System.Windows.Forms.Panel panel1;
+      private System.Windows.Forms.Panel panel2;
+      private System.Windows.Forms.Panel panel3;
+      private Bunifu.Framework.UI.BunifuCustomLabel TituloText;
+      private System.Windows.Forms.Button button11;
+      private Bunifu.Framework.UI.BunifuDragControl MoveFrom;
+      private System.Windows.Forms.Button BTReportes;
+      private System.Windows.Forms.Button BTPlataforma;
+      private System.Windows.Forms.Button BTGestion;
+      private System.Windows.Forms.Button BTOperaciones;
       private System.Windows.Forms.StatusStrip stStatus;
       private System.Windows.Forms.ToolStripStatusLabel lblUsertType;
       private System.Windows.Forms.ToolStripStatusLabel lblUserValueType;
@@ -412,7 +416,7 @@
       private Controles.GradentPanel panel6;
       private System.Windows.Forms.PictureBox pbxClose;
       private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label2;
-    }
+      private System.Windows.Forms.Panel panel4;
+      private System.Windows.Forms.Label label2;
+   }
 }

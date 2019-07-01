@@ -28,74 +28,79 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.disponible1 = new Sistema_Bancario.Controles.Disponible();
-            this.monto1 = new Sistema_Bancario.Monto();
-            this.nroCuenta1 = new Sistema_Bancario.Controles.NroCuenta();
-            this.nroCuenta2 = new Sistema_Bancario.Controles.NroCuenta();
-            this.Destino = new System.Windows.Forms.Label();
-            this.SuspendLayout();
-            // 
-            // proceder1
-            // 
-            this.proceder1.Location = new System.Drawing.Point(10, 301);
-            this.proceder1.Size = new System.Drawing.Size(661, 49);
-            // 
-            // disponible1
-            // 
-            this.disponible1.Location = new System.Drawing.Point(376, 12);
-            this.disponible1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.disponible1.Name = "disponible1";
-            this.disponible1.Size = new System.Drawing.Size(215, 35);
-            this.disponible1.TabIndex = 2;
-            // 
-            // monto1
-            // 
-            this.monto1.Location = new System.Drawing.Point(13, 53);
-            this.monto1.Name = "monto1";
-            this.monto1.Size = new System.Drawing.Size(404, 31);
-            this.monto1.TabIndex = 3;
-            // 
-            // nroCuenta1
-            // 
-            this.nroCuenta1.Location = new System.Drawing.Point(10, 13);
-            this.nroCuenta1.Name = "nroCuenta1";
-            this.nroCuenta1.Size = new System.Drawing.Size(360, 37);
-            this.nroCuenta1.TabIndex = 4;
-            // 
-            // nroCuenta2
-            // 
-            this.nroCuenta2.Location = new System.Drawing.Point(13, 90);
-            this.nroCuenta2.Name = "nroCuenta2";
-            this.nroCuenta2.Size = new System.Drawing.Size(361, 37);
-            this.nroCuenta2.TabIndex = 5;
-            // 
-            // Destino
-            // 
-            this.Destino.AutoSize = true;
-            this.Destino.Location = new System.Drawing.Point(380, 99);
-            this.Destino.Name = "Destino";
-            this.Destino.Size = new System.Drawing.Size(56, 17);
-            this.Destino.TabIndex = 6;
-            this.Destino.Text = "Destino";
-            // 
-            // Transferencias
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.Controls.Add(this.Destino);
-            this.Controls.Add(this.nroCuenta2);
-            this.Controls.Add(this.nroCuenta1);
-            this.Controls.Add(this.monto1);
-            this.Controls.Add(this.disponible1);
-            this.Name = "Transferencias";
-            this.Size = new System.Drawing.Size(681, 360);
-            this.Controls.SetChildIndex(this.proceder1, 0);
-            this.Controls.SetChildIndex(this.disponible1, 0);
-            this.Controls.SetChildIndex(this.monto1, 0);
-            this.Controls.SetChildIndex(this.nroCuenta1, 0);
-            this.Controls.SetChildIndex(this.nroCuenta2, 0);
-            this.Controls.SetChildIndex(this.Destino, 0);
-            this.ResumeLayout(false);
-            this.PerformLayout();
+         this.disponible1 = new Sistema_Bancario.Controles.Disponible();
+         this.monto1 = new Sistema_Bancario.Monto();
+         this.nroCuenta1 = new Sistema_Bancario.Controles.NroCuenta();
+         this.nroCuenta2 = new Sistema_Bancario.Controles.NroCuenta();
+         this.Destino = new System.Windows.Forms.Label();
+         this.SuspendLayout();
+         // 
+         // proceder1
+         // 
+         this.proceder1.Location = new System.Drawing.Point(6, 572);
+         this.proceder1.Size = new System.Drawing.Size(862, 40);
+         // 
+         // disponible1
+         // 
+         this.disponible1.Location = new System.Drawing.Point(282, 10);
+         this.disponible1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+         this.disponible1.Name = "disponible1";
+         this.disponible1.Size = new System.Drawing.Size(161, 28);
+         this.disponible1.TabIndex = 2;
+         // 
+         // monto1
+         // 
+         this.monto1.Location = new System.Drawing.Point(10, 43);
+         this.monto1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+         this.monto1.Name = "monto1";
+         this.monto1.Size = new System.Drawing.Size(303, 25);
+         this.monto1.TabIndex = 3;
+         // 
+         // nroCuenta1
+         // 
+         this.nroCuenta1.Location = new System.Drawing.Point(8, 11);
+         this.nroCuenta1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+         this.nroCuenta1.Name = "nroCuenta1";
+         this.nroCuenta1.Size = new System.Drawing.Size(270, 30);
+         this.nroCuenta1.TabIndex = 4;
+         // 
+         // nroCuenta2
+         // 
+         this.nroCuenta2.Location = new System.Drawing.Point(10, 73);
+         this.nroCuenta2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+         this.nroCuenta2.Name = "nroCuenta2";
+         this.nroCuenta2.Size = new System.Drawing.Size(271, 30);
+         this.nroCuenta2.TabIndex = 5;
+         // 
+         // Destino
+         // 
+         this.Destino.AutoSize = true;
+         this.Destino.Location = new System.Drawing.Point(285, 80);
+         this.Destino.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+         this.Destino.Name = "Destino";
+         this.Destino.Size = new System.Drawing.Size(43, 13);
+         this.Destino.TabIndex = 6;
+         this.Destino.Text = "Destino";
+         // 
+         // Transferencias
+         // 
+         this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+         this.Controls.Add(this.Destino);
+         this.Controls.Add(this.nroCuenta2);
+         this.Controls.Add(this.nroCuenta1);
+         this.Controls.Add(this.monto1);
+         this.Controls.Add(this.disponible1);
+         this.Name = "Transferencias";
+         this.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+         this.Size = new System.Drawing.Size(874, 618);
+         this.Controls.SetChildIndex(this.proceder1, 0);
+         this.Controls.SetChildIndex(this.disponible1, 0);
+         this.Controls.SetChildIndex(this.monto1, 0);
+         this.Controls.SetChildIndex(this.nroCuenta1, 0);
+         this.Controls.SetChildIndex(this.nroCuenta2, 0);
+         this.Controls.SetChildIndex(this.Destino, 0);
+         this.ResumeLayout(false);
+         this.PerformLayout();
 
         }
 

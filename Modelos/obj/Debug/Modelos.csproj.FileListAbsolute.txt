@@ -84,3 +84,8 @@ C:\Users\ASUS\Source\Repos\Simulador3\Modelos\bin\Debug\Modelos.pdb
 C:\Users\ASUS\Source\Repos\Simulador3\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
 C:\Users\ASUS\Source\Repos\Simulador3\Modelos\obj\Debug\Modelos.dll
 C:\Users\ASUS\Source\Repos\Simulador3\Modelos\obj\Debug\Modelos.pdb
+C:\Users\elife\Desktop\ISUR\Bancario\Modelos\bin\Debug\Modelos.dll
+C:\Users\elife\Desktop\ISUR\Bancario\Modelos\bin\Debug\Modelos.pdb
+C:\Users\elife\Desktop\ISUR\Bancario\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
+C:\Users\elife\Desktop\ISUR\Bancario\Modelos\obj\Debug\Modelos.dll
+C:\Users\elife\Desktop\ISUR\Bancario\Modelos\obj\Debug\Modelos.pdb
