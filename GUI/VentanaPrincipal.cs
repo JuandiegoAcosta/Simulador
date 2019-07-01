@@ -53,12 +53,6 @@ namespace Sistema_Bancario
 
       private void EvaluarUsuario()
       {
-         //if (Session.isAdmin)
-         //{
-
-         //}
-         //else if (Session.User == 1)
-         //{
          lblUsertType.Image = Properties.Resources.estudiante;
          //}
 
@@ -399,17 +393,20 @@ namespace Sistema_Bancario
             }
             else if (btn.Text.Equals("Balancin Caja"))
             {
-                if (!panel1.Controls.Contains(Balancin.instance))
+                Balancin balancin =new Balancin(this.Session);
+                if (!panel1.Controls.Contains(balancin))
                 {
-                    panel1.Controls.Add(Balancin.instance);
-                    Balancin.instance.Dock = DockStyle.Fill;
-                    Balancin.instance.BringToFront();
+                    balancin.session = this.Session;
+                    panel1.Controls.Add(balancin);
+                    balancin.Dock = DockStyle.Fill;
+
+                    balancin.BringToFront();
                     TituloText.Text = btn.Text;
 
                 }
                 else
                 {
-                    Balancin.instance.BringToFront();
+                    balancin.BringToFront();
                     TituloText.Text = btn.Text;
                 }
             }

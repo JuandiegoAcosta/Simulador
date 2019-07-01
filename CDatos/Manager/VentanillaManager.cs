@@ -337,6 +337,62 @@ namespace CDatos.Manager
                 return VentanillaModellist;
             }
         }
+        public List<VentanillaModel> GetVentanillasXSucursal(int sucursal)
+        {
+            List<VentanillaModel> VentanillaModellist = new List<VentanillaModel>();
+
+            try
+            {
+                using (var connection = Util.ConnectionFactory.conexion())
+                {
+                    connection.Open();
+
+                    SqlCommand command = connection.CreateCommand();
+
+                    command.Parameters.AddWithValue("@sucursal", sucursal);
+
+
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.CommandText = "SelectVentanillasXSucursal";
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+
+                            int ID_VentanillaModel = (int)(reader["ID_Ventanilla"]);
+                            string Descripcion = (string)(reader["Descripcion"]);
+                            int IdSucursal = (int)(reader["IdSucursal"]);
+                            DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
+                            DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
+                            string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
+                            string USUARIO_MODIFICADOR = (reader["USUARIO_MODIFICADOR"]) == DBNull.Value ? null : (string)(reader["USUARIO_MODIFICADOR"]);
+
+                            VentanillaModellist.Add(new VentanillaModel
+                            {
+                                Id_ventanilla = ID_VentanillaModel,
+                                Descripcion = Descripcion,
+                                Idsucursal = IdSucursal,
+                                Fecha_creacion = FECHA_CREACION,
+                                Fecha_modificacion = FECHA_MODIFICACION,
+                                Usuario_creador = USUARIO_CREADOR,
+                                Usuario_modificador = USUARIO_MODIFICADOR,
+
+                            });
+                        }
+                    }
+                }
+
+                return VentanillaModellist;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
         #endregion
 
     }

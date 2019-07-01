@@ -37,6 +37,10 @@ namespace CNegocio.Ventanilla
         {
             return ADVentanillaManager.VentanillaModelSelectAll();
         }
+        public List<VentanillaModel> ObtenerVentanillasXSucursal(int sucursal)
+        {
+            return ADVentanillaManager.GetVentanillasXSucursal(sucursal);
+        }
     }
 
 }

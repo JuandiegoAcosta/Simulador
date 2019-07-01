@@ -280,6 +280,10 @@ namespace ServiciosBancarios
         {
             return BLVentanila.ObtenerUno(aID_VentanillaModel);
         }
+        List<VentanillaModel> IVentanillaService.GetVentanillasXSucursal(int sucursal)
+        {
+            return BLVentanila.ObtenerVentanillasXSucursal(sucursal);
+        }
         #endregion
 
         #endregion
@@ -655,6 +659,11 @@ namespace ServiciosBancarios
         public List<CuentasModel> Cuenta_ObtenerTodos(int aID_Persona)
         {
             return BLCuenta.ObtenerTodosCuentasUsuario(aID_Persona);
+        }
+
+        public List<VentanillaModel> GetVentanillasXSucursal(int Idsucursal)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

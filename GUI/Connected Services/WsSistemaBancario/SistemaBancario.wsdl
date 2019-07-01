@@ -217,6 +217,12 @@
   <wsdl:message name="IVentanillaService_Ventanilla_ObtenerTodos_OutputMessage">
     <wsdl:part name="parameters" element="tns:Ventanilla_ObtenerTodosResponse" />
   </wsdl:message>
+  <wsdl:message name="IVentanillaService_GetVentanillasXSucursal_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVentanillasXSucursal" />
+  </wsdl:message>
+  <wsdl:message name="IVentanillaService_GetVentanillasXSucursal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVentanillasXSucursalResponse" />
+  </wsdl:message>
   <wsdl:message name="IBancoService_Banco_Crear_InputMessage">
     <wsdl:part name="parameters" element="tns:Banco_Crear" />
   </wsdl:message>
@@ -747,6 +753,10 @@
     <wsdl:operation name="Ventanilla_ObtenerTodos">
       <wsdl:input wsaw:Action="http://tempuri.org/IVentanillaService/Ventanilla_ObtenerTodos" message="tns:IVentanillaService_Ventanilla_ObtenerTodos_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IVentanillaService/Ventanilla_ObtenerTodosResponse" message="tns:IVentanillaService_Ventanilla_ObtenerTodos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVentanillasXSucursal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVentanillaService/GetVentanillasXSucursal" message="tns:IVentanillaService_GetVentanillasXSucursal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVentanillaService/GetVentanillasXSucursalResponse" message="tns:IVentanillaService_GetVentanillasXSucursal_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IBancoService">
@@ -1353,6 +1363,15 @@
     </wsdl:operation>
     <wsdl:operation name="Ventanilla_ObtenerTodos">
       <soap:operation soapAction="http://tempuri.org/IVentanillaService/Ventanilla_ObtenerTodos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVentanillasXSucursal">
+      <soap:operation soapAction="http://tempuri.org/IVentanillaService/GetVentanillasXSucursal" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
