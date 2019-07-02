@@ -545,7 +545,12 @@ namespace Sistema_Bancario
          BTReportes.BackColor = Color.Transparent;
          BTGestion.BackColor = Color.Transparent;
          BTPlataforma.BackColor = Color.Transparent;
-         BotonMenu.BackColor = SystemColors.HotTrack;
+            BTOperaciones.ForeColor = Color.Black;
+            BTReportes.ForeColor = Color.Black;
+            BTGestion.ForeColor = Color.Black;
+            BTPlataforma.ForeColor = Color.Black;
+            BotonMenu.BackColor = SystemColors.HotTrack;
+            BotonMenu.ForeColor = Color.White;   
       }
 
       private void PbxClose_Click(object sender, EventArgs e)

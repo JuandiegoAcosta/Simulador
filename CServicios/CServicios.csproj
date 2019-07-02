@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Backend\IBancoService.cs" />
+    <Compile Include="Backend\ICajaChicaService.cs" />
     <Compile Include="Backend\IComponenteService.cs" />
     <Compile Include="Backend\IHorariosAtencionService.cs" />
     <Compile Include="Backend\IPermisosUsuarioService.cs" />

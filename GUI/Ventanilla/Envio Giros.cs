@@ -14,10 +14,10 @@ namespace Sistema_Bancario.Froms_opciones
       private GirosMethods girosMethods;
 
       #region [ Variables Globales ]
-      private int DNIorigen = default;
-      private int DNIdestino = default;
-      private double monto = default;
-      private int clave = default;
+      private int DNIorigen = default(int);
+      private int DNIdestino = default(int);
+      private double monto = default(double);
+      private int clave = default(int);
       #endregion
       public Envio_Giros()
         {

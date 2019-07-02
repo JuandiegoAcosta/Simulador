@@ -22,8 +22,12 @@ namespace Sistema_Bancario.Froms_opciones
            
             GirosMethods girosMethods = new GirosMethods();
             int i = GVCobroGiros.CurrentCell.RowIndex;           
-            girosMethods.CobrarGiro(Convert.ToInt32(GVCobroGiros[0, i].Value),"Usuario");
-         //   MessageBox.Show("cobro Giros");
+          int executado =  girosMethods.CobrarGiro(Convert.ToInt32(GVCobroGiros[0, i].Value),"Usuario");
+            if (executado == 1)
+            {
+                MessageBox.Show("Giro cobrado");
+            }
+           
         }
 
         private static CobroGiros _instance;

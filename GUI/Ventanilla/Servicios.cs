@@ -23,7 +23,14 @@ namespace Sistema_Bancario.Froms_opciones
 
         private void BTProceder_Click(object sender, EventArgs e)
         {
-                             
+            PagoServicioMethods pagoServicioMethods = new PagoServicioMethods();
+            int i = GNroContrato.CurrentCell.RowIndex;
+
+            //Convert.ToInt32(GridCuotas[i, 0].Value)
+
+
+            pagoServicioMethods.InsertPagoServicio(Convert.ToInt32(nroContrato1.TBNroContrato.Text));
+            //InsertPagoServicio
         }
 
         private static Servicios _instance;
@@ -60,7 +67,11 @@ namespace Sistema_Bancario.Froms_opciones
         {
             EmpresaMethods empresaMethods = new EmpresaMethods();
             //empresaMethods.PagoServicioEmpresa(1);
-            GNroContrato.Rows.Add(empresaMethods.PagoServicioEmpresa(1)[0].Monto);
+
+
+          //  var bindingList = new BindingList<object>(empresaMethods.PagoServicioEmpresa(Convert.ToInt32(nroContrato1.TBNroContrato.Text)));
+            var source = new BindingSource(empresaMethods.PagoServicioEmpresa(Convert.ToInt32(nroContrato1.TBNroContrato.Text)), null);
+            GNroContrato.DataSource = source;
 
 
             /*   int nrocontrato = Convert.ToInt32(this.nroContrato1.TBNroContrato.Text);

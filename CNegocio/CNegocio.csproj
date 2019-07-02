@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Backend\BancoMethods.cs" />
+    <Compile Include="Backend\CajaChicaMethods.cs" />
     <Compile Include="Backend\ComponenteMethods.cs" />
     <Compile Include="Backend\HorariosAtencionMethods.cs" />
     <Compile Include="Backend\PermisosUsuarioMethods.cs" />
