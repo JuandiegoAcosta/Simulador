@@ -32,6 +32,7 @@ namespace ServiciosBancarios
 
         #region [ Ventanilla Back ]
         private BancoMethods BLBanco;
+        private CajaChicaMethods BLCajaChica;
         private ComponenteMethods BLComponente;
         private HorariosAtencionMethods BLHorariosAtencion;
         private PermisosUsuarioMethods BLPermisosUsuario;
@@ -66,6 +67,7 @@ namespace ServiciosBancarios
 
             #region [ Ventanilla Back ]
             BLBanco = new BancoMethods();
+            BLCajaChica = new CajaChicaMethods();
             BLComponente = new ComponenteMethods();
             BLHorariosAtencion = new HorariosAtencionMethods();
             BLPermisosUsuario = new PermisosUsuarioMethods();
@@ -315,6 +317,36 @@ namespace ServiciosBancarios
         {
             return BLBanco.ObtenerUno(aID_Banco);
         }
+        #endregion
+
+        #region [ Caja Chica]
+
+        public bool CajaChica_Crear(CajaChicaModel aCajaChica)
+        {
+            return BLCajaChica.Crear(aCajaChica);
+        }
+
+        public bool CajaChica_Editar(CajaChicaModel aCajaChica)
+        {
+            return BLCajaChica.Editar(aCajaChica);
+        }
+
+        public bool CajaChica_Eliminar(int aID_CajaChica)
+        {
+            return BLCajaChica.Eliminar(aID_CajaChica);
+        }
+
+        public CajaChicaModel CajaChica_ObtenerUno(int aID_CajaChica)
+        {
+            return BLCajaChica.ObtenerUno(aID_CajaChica);
+        }
+
+        public List<CajaChicaModel> CajaChica_ObtenerTodos()
+        {
+            return BLCajaChica.ObtenerTodos();
+        }
+
+
         #endregion
 
         #region [ Componente ]
