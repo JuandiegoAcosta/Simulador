@@ -47,7 +47,7 @@ namespace Sistema_Bancario.Controles
                     lblApPaterno.Visible = true;
                     txtApPaterno.Visible = true;
                     gbDatos.Size = new Size(369, 129);
-                    TipoDoc = 1;
+                    TipoDoc = 2; //RUC
                 }
                 else if (lng < 9 && lng > 7)
                 {
@@ -59,7 +59,7 @@ namespace Sistema_Bancario.Controles
                     txtApMaterno.Visible = true;
                     txtNombre.Visible = true;
                     gbDatos.Size = new Size(369, 200);
-                    TipoDoc = 2;
+                    TipoDoc = 1; //DNI
                 }
                 else
                 {
@@ -95,8 +95,30 @@ namespace Sistema_Bancario.Controles
 
         private void CargarDatos(PersonaModel user)
         {
-            this.txtNumDoc.Text = user.Nrodocumento;
-            OrganizarElementos();
+            //this.txtNumDoc.Text = user.Nrodocumento;
+            //OrganizarElementos();
+            if (user.Tipodocumento == 1)
+            {
+                lblApPaterno.Text = "Apellido Paterno";
+                lblApMaterno.Visible = true;
+                lblApPaterno.Visible = true;
+                lblNombre.Visible = true;
+                txtApPaterno.Visible = true;
+                txtApMaterno.Visible = true;
+                txtNombre.Visible = true;
+                gbDatos.Size = new Size(369, 200);
+            }
+            else
+            {
+                lblApPaterno.Text = "Apellido Paterno";
+                lblApMaterno.Visible = true;
+                lblApPaterno.Visible = true;
+                lblNombre.Visible = true;
+                txtApPaterno.Visible = true;
+                txtApMaterno.Visible = true;
+                txtNombre.Visible = true;
+                gbDatos.Size = new Size(369, 200);
+            }
             this.txtNombre.Text = user.Nombres;
             this.txtApMaterno.Text = user.Apellidos;
             this.txtApPaterno.Text = user.Apellidos;
