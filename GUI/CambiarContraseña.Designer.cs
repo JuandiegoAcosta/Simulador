@@ -39,6 +39,7 @@
             this.txtNewPass = new Sistema_Bancario.Controles.TextBoxViewPassword();
             this.lblNewPassword = new System.Windows.Forms.Label();
             this.btnCambiarContraseña = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxClose)).BeginInit();
             this.SuspendLayout();
@@ -83,14 +84,14 @@
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(144, 60);
+            this.txtUsuario.Location = new System.Drawing.Point(191, 58);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(145, 20);
             this.txtUsuario.TabIndex = 17;
             // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(144, 99);
+            this.txtPass.Location = new System.Drawing.Point(191, 97);
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(145, 20);
@@ -102,11 +103,11 @@
             this.lblUsername.BackColor = System.Drawing.Color.Transparent;
             this.lblUsername.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsername.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblUsername.Location = new System.Drawing.Point(52, 61);
+            this.lblUsername.Location = new System.Drawing.Point(101, 58);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(77, 16);
+            this.lblUsername.Size = new System.Drawing.Size(66, 16);
             this.lblUsername.TabIndex = 19;
-            this.lblUsername.Text = "USERNAME :";
+            this.lblUsername.Text = "USUARIO :";
             // 
             // lblPassword
             // 
@@ -114,15 +115,15 @@
             this.lblPassword.BackColor = System.Drawing.Color.Transparent;
             this.lblPassword.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassword.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblPassword.Location = new System.Drawing.Point(49, 100);
+            this.lblPassword.Location = new System.Drawing.Point(77, 97);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(80, 16);
+            this.lblPassword.Size = new System.Drawing.Size(90, 16);
             this.lblPassword.TabIndex = 20;
-            this.lblPassword.Text = "PASSWORD :";
+            this.lblPassword.Text = "CONTRASEÑA :";
             // 
             // txtNewPass
             // 
-            this.txtNewPass.Location = new System.Drawing.Point(144, 143);
+            this.txtNewPass.Location = new System.Drawing.Point(191, 138);
             this.txtNewPass.Name = "txtNewPass";
             this.txtNewPass.PasswordChar = '*';
             this.txtNewPass.Size = new System.Drawing.Size(145, 20);
@@ -134,11 +135,11 @@
             this.lblNewPassword.BackColor = System.Drawing.Color.Transparent;
             this.lblNewPassword.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNewPassword.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblNewPassword.Location = new System.Drawing.Point(20, 145);
+            this.lblNewPassword.Location = new System.Drawing.Point(37, 138);
             this.lblNewPassword.Name = "lblNewPassword";
-            this.lblNewPassword.Size = new System.Drawing.Size(109, 16);
+            this.lblNewPassword.Size = new System.Drawing.Size(130, 16);
             this.lblNewPassword.TabIndex = 22;
-            this.lblNewPassword.Text = "NEW PASSWORD :";
+            this.lblNewPassword.Text = "NUEVA CONTRASEÑA :";
             // 
             // btnCambiarContraseña
             // 
@@ -147,7 +148,7 @@
             this.btnCambiarContraseña.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCambiarContraseña.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnCambiarContraseña.ForeColor = System.Drawing.Color.White;
-            this.btnCambiarContraseña.Location = new System.Drawing.Point(246, 177);
+            this.btnCambiarContraseña.Location = new System.Drawing.Point(46, 186);
             this.btnCambiarContraseña.Name = "btnCambiarContraseña";
             this.btnCambiarContraseña.Size = new System.Drawing.Size(145, 30);
             this.btnCambiarContraseña.TabIndex = 23;
@@ -155,12 +156,28 @@
             this.btnCambiarContraseña.UseVisualStyleBackColor = false;
             this.btnCambiarContraseña.Click += new System.EventHandler(this.btnCambiarContraseña_Click);
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.Location = new System.Drawing.Point(217, 186);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(145, 30);
+            this.btnCancelar.TabIndex = 24;
+            this.btnCancelar.Text = "CANCELAR";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // CambiarContraseña
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(413, 228);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnCambiarContraseña);
             this.Controls.Add(this.lblNewPassword);
             this.Controls.Add(this.txtNewPass);
@@ -193,5 +210,6 @@
         private Controles.TextBoxViewPassword txtNewPass;
         private System.Windows.Forms.Label lblNewPassword;
         private System.Windows.Forms.Button btnCambiarContraseña;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

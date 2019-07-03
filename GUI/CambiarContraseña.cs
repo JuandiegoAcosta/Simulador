@@ -128,6 +128,11 @@ namespace Sistema_Bancario
 
         }
 
-
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            this.Close();
+        }
     }
 }
