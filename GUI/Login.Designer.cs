@@ -37,10 +37,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtPass = new Sistema_Bancario.Controles.TextBoxViewPassword();
-            this.panel6 = new Sistema_Bancario.Controles.GradentPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pbxClose = new System.Windows.Forms.PictureBox();
             this.MoveFrom = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel6 = new Sistema_Bancario.Controles.GradentPanel();
+            this.pbxClose = new System.Windows.Forms.PictureBox();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxClose)).BeginInit();
             this.SuspendLayout();
@@ -118,18 +119,25 @@
             this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(145, 20);
             this.txtPass.TabIndex = 2;
+            this.txtPass.TextChanged += new System.EventHandler(this.txtPass_TextChanged);
             // 
-            // panel6
+            // MoveFrom
             // 
-            this.panel6.ColorBottom = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(72)))), ((int)(((byte)(150)))));
-            this.panel6.ColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(183)))), ((int)(((byte)(226)))));
-            this.panel6.Controls.Add(this.label1);
-            this.panel6.Controls.Add(this.pbxClose);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(413, 25);
-            this.panel6.TabIndex = 15;
+            this.MoveFrom.Fixed = true;
+            this.MoveFrom.Horizontal = true;
+            this.MoveFrom.TargetControl = this.panel6;
+            this.MoveFrom.Vertical = true;
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(290, 195);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(102, 13);
+            this.linkLabel1.TabIndex = 18;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Cambiar Contraseña";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // label1
             // 
@@ -142,6 +150,18 @@
             this.label1.Size = new System.Drawing.Size(91, 16);
             this.label1.TabIndex = 2;
             this.label1.Text = "::  LOGIN USER";
+            // 
+            // panel6
+            // 
+            this.panel6.ColorBottom = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(72)))), ((int)(((byte)(150)))));
+            this.panel6.ColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(183)))), ((int)(((byte)(226)))));
+            this.panel6.Controls.Add(this.label1);
+            this.panel6.Controls.Add(this.pbxClose);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(413, 25);
+            this.panel6.TabIndex = 15;
             // 
             // pbxClose
             // 
@@ -157,19 +177,13 @@
             this.pbxClose.TabStop = false;
             this.pbxClose.Click += new System.EventHandler(this.PbxClose_Click);
             // 
-            // MoveFrom
-            // 
-            this.MoveFrom.Fixed = true;
-            this.MoveFrom.Horizontal = true;
-            this.MoveFrom.TargetControl = this.panel6;
-            this.MoveFrom.Vertical = true;
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(413, 228);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -179,6 +193,7 @@
             this.Controls.Add(this.Usuario);
             this.Controls.Add(this.txtUsuario);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.HelpButton = true;
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
@@ -196,12 +211,13 @@
         private System.Windows.Forms.Label Usuario;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnIniciarSesion;
-      private Controles.GradentPanel panel6;
-      private System.Windows.Forms.Label label1;
-      private System.Windows.Forms.PictureBox pbxClose;
       private System.Windows.Forms.Label label3;
       private System.Windows.Forms.Label label4;
       private Controles.TextBoxViewPassword txtPass;
       private Bunifu.Framework.UI.BunifuDragControl MoveFrom;
-   }
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private Controles.GradentPanel panel6;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pbxClose;
+    }
 }

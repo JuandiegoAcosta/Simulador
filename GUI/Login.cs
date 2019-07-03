@@ -123,5 +123,18 @@ namespace Sistema_Bancario
       {
          this.Close();
       }
-   }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CambiarContraseña cambiarContraseña = new CambiarContraseña();
+            cambiarContraseña.Show();
+            this.Close();
+            
+        }
+
+        private void txtPass_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+    }
 }
