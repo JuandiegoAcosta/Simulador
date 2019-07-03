@@ -25,7 +25,6 @@ namespace Sistema_Bancario.Plataforma
 
         private void BTProceder_Click(object sender, EventArgs e)
         {
-            //throw new NotImplementedException();
             Guardar();
         }
 

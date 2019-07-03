@@ -34,12 +34,11 @@
             // 
             // proceder1
             // 
-            this.proceder1.Location = new System.Drawing.Point(6, 364);
-            this.proceder1.Size = new System.Drawing.Size(765, 40);
+            this.proceder1.Location = new System.Drawing.Point(6, 572);
+            this.proceder1.Size = new System.Drawing.Size(862, 40);
             // 
             // datosPersona1
             // 
-
             this.datosPersona1.Location = new System.Drawing.Point(20, 16);
             this.datosPersona1.Margin = new System.Windows.Forms.Padding(4);
             this.datosPersona1.Name = "datosPersona1";
@@ -48,7 +47,7 @@
             // 
             // tipoCuenta1
             // 
-            this.tipoCuenta1.Location = new System.Drawing.Point(439, 16);
+            this.tipoCuenta1.Location = new System.Drawing.Point(439, 17);
             this.tipoCuenta1.Margin = new System.Windows.Forms.Padding(2);
             this.tipoCuenta1.Name = "tipoCuenta1";
             this.tipoCuenta1.Size = new System.Drawing.Size(276, 84);
@@ -64,7 +63,6 @@
             this.Margin = new System.Windows.Forms.Padding(3);
             this.Name = "UCcuenta";
             this.Padding = new System.Windows.Forms.Padding(6);
-            this.Size = new System.Drawing.Size(874, 618);
             this.Load += new System.EventHandler(this.UCcuenta_Load);
             this.Controls.SetChildIndex(this.proceder1, 0);
             this.Controls.SetChildIndex(this.datosPersona1, 0);
