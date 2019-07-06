@@ -62,9 +62,10 @@ namespace Sistema_Bancario.Froms_opciones
          if (SetItem())
          {
             girosMethods = new GirosMethods();
-            girosMethods.EnviarGiro(monto, clave, DNIorigen, DNIdestino);
-
-            MessageBox.Show("Giro Enviado");
+            if (girosMethods.EnviarGiro(monto, clave, DNIorigen, DNIdestino))
+               MessageBox.Show("Giro Enviado");
+            else
+               MessageBox.Show("No se pudo realizar giros");
          }
         }
 

@@ -57,9 +57,10 @@ namespace Sistema_Bancario.Ventanilla
          if (SetItem())
          {
             m_depositoMethods = new DepositoMethods();
-            m_depositoMethods.insert(m_deposito);
-
-            MessageBox.Show("Operacion Realizada");
+            if (m_depositoMethods.insert(m_deposito))
+               MessageBox.Show("Operacion Realizada");
+            else
+               MessageBox.Show("No se pudo realizar la operación");
          }
       }
 

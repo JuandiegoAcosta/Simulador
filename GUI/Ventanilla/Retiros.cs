@@ -65,9 +65,10 @@ namespace Sistema_Bancario.Froms_opciones
          if (SetItem())
          {
             retirosMethods = new RetirosMethods();
-            retirosMethods.InsertaRetiro(this.m_monto, this.m_nroTarjeta, this.m_clave, this.m_doi);
-
-            MessageBox.Show("Retiro con exito");
+            if(retirosMethods.InsertaRetiro(this.m_monto, this.m_nroTarjeta, this.m_clave, this.m_doi) > 0)
+               MessageBox.Show("Retiro con exito");
+            else
+               MessageBox.Show("No se pudo generar el retiro");
          }           
         }
 

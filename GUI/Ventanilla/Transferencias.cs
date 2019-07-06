@@ -12,6 +12,8 @@ namespace Sistema_Bancario.Froms_opciones
 {
     public partial class Transferencias : Base
     {
+      private TransferenciasMethods transferenciasMethods;
+      private CuentasTarjetasModel CuentasTarjetasModel;
         public Transferencias()
         {
             InitializeComponent();
@@ -19,20 +21,48 @@ namespace Sistema_Bancario.Froms_opciones
             
         }
 
+      private bool SetItem()
+      {
+         CuentasTarjetasModel = new CuentasTarjetasModel();
+         if (!string.IsNullOrEmpty(this.txtMonto.Text.Trim()))
+            CuentasTarjetasModel.Monto = Convert.ToDecimal(this.txtMonto.Text.Trim());
+         else
+            return false;
+
+         if (!string.IsNullOrEmpty(this.txtNroCuentaOrigen.Text.Trim()))
+            CuentasTarjetasModel.NroCuenta = Convert.ToInt32(this.txtNroCuentaOrigen.Text.Trim());
+         else
+            return false;
+
+         if (!string.IsNullOrEmpty(this.txtNroCuentaDestino.Text.Trim()))
+            CuentasTarjetasModel.NroCuentaDestino = Convert.ToInt32(this.txtNroCuentaDestino.Text.Trim());
+         else
+            return false;
+
+         if (!string.IsNullOrEmpty(this.doi1.TBDoi.Text.Trim()))
+            CuentasTarjetasModel.doi = Convert.ToInt32(this.doi1.TBDoi.Text.Trim());
+         else
+            return false;
+
+         if (!string.IsNullOrEmpty(clave1.TBClave.Text.Trim()))
+            CuentasTarjetasModel.clave = Convert.ToInt32(clave1.TBClave.Text.Trim());
+         else
+            return false;
+
+         return true;
+      }
+
         private void BTProceder_Click(object sender, EventArgs e)
         {
-            TransferenciasMethods transferencias = new TransferenciasMethods();
-            var CuentasTrajetas = new CuentasTarjetasModel();
-            CuentasTrajetas.Monto = Convert.ToDecimal(txtMonto.Text);
-            CuentasTrajetas.NroCuenta = Convert.ToInt32(txtNroCuentaOrigen.Text);
-            CuentasTrajetas.NroCuentaDestino = Convert.ToInt32(txtNroCuentaDestino.Text);
-            CuentasTrajetas.doi = Convert.ToInt32(doi1.TBDoi.Text);
-            CuentasTrajetas.clave = Convert.ToInt32(clave1.TBClave.Text);
-            if (transferencias.RealizarTransferencia(CuentasTrajetas) > 1)
-            {
-                MessageBox.Show("Operacion Realizada");
-            }
-           
+
+         if (SetItem())
+         {
+            transferenciasMethods = new TransferenciasMethods();
+            if (transferenciasMethods.RealizarTransferencia(CuentasTarjetasModel) > 0)
+               MessageBox.Show("Operacion Realizada");
+            else
+               MessageBox.Show("No se pudo realizar la operación");
+         } 
         }
 
         private static Transferencias _instance;
