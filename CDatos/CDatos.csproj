@@ -46,6 +46,7 @@
     <Compile Include="Manager\ChequeManager.cs" />
     <Compile Include="Manager\ChequerasManager.cs" />
     <Compile Include="Manager\CobroChequeManager.cs" />
+    <Compile Include="Manager\TransferenciasManager.cs" />
     <Compile Include="Seguridad\ComponenteManager.cs" />
     <Compile Include="Manager\ControlErroresManager.cs" />
     <Compile Include="Manager\CronogramaPagoManager.cs" />

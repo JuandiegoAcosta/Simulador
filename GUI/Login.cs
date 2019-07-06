@@ -36,8 +36,9 @@ namespace Sistema_Bancario
       public Login()
       {
          InitializeComponent();
-         UIButton.SetRound(btnIniciarSesion, 15);
-         UIForm.SetRound(this, 7);
+       //  UIButton.SetRound(btnIniciarSesion, 15);
+            UIButton.SetRound(Estado, 15);
+      //   UIForm.SetRound(this, 7);
       }
       //Variables globales
       private Modelos.Modelos.PersonaModel usuarioLogin;

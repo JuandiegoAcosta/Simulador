@@ -35,10 +35,52 @@ namespace Sistema_Bancario.Plataforma
             cliente = datosPersona1.ObtenerPersona();
             moneda = tipoCuenta1.ObtenerMoneda();
             tipoCuenta = tipoCuenta1.ObtenerTipoCuenta();
+            int t_cuenta = 0;
+
+            switch (tipoCuenta)
+            {
+                case ("AHORROS"): t_cuenta = 1;
+                    break;
+                case ("CORRIENTE"): t_cuenta = 2;
+                    break;
+                case ("CREDITO"): t_cuenta = 3;
+                    break;
+            }
+
 
             if (cliente == null) { MessageBox.Show("Selecciona un cliente"); return; }
             if (moneda == null) { MessageBox.Show("Selecciona una moneda"); return; }
             if (string.IsNullOrEmpty(tipoCuenta)) { MessageBox.Show("Selecciona un tipo de cuenta"); return; }
+            Random rd = new Random();
+            string NumeroCuenta = string.Concat("00451", Session.SucursalCodigo, rd.Next(100000, 999999), moneda.Id, t_cuenta);
+            CuentasModel cuenta_nueva = new CuentasModel()
+            {
+                Cliente = cliente.Id,
+                Estado = true,
+                Nrocuenta = NumeroCuenta,
+                Tipocuenta = tipoCuenta,
+                Saldocontable = 0,
+                Saldodisponible = 0,
+                Sobregiro = 0,
+                Tipomoneda = moneda.Id,
+                Usuario_creador = Session.UserCodigo
+            };
+
+            using (WsSistemaBancario.CuentaServiceClient _Cuenta = new WsSistemaBancario.CuentaServiceClient())
+            {
+                bool result = _Cuenta.Cuenta_Crear(cuenta_nueva);
+
+                if (result)
+                {
+                    MessageBox.Show("Cuenta Creada Correctamente");
+                }
+                else
+                {
+                    MessageBox.Show("Error");
+                }
+
+            }
+
         }
 
         private static UCcuenta _instance;

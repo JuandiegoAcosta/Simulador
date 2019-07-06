@@ -31,7 +31,7 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
-                   // command.Parameters.AddWithValue("@NroCuentasModel", aCuentasModel.NroCuentasModel);
+                    //command.Parameters.AddWithValue("@NroCuentasModel", aCuentasModel.NroCuentasModel);
                     command.Parameters.AddWithValue("@Estado", aCuentasModel.Estado);
                     command.Parameters.AddWithValue("@SaldoContable", aCuentasModel.Saldocontable);
                     command.Parameters.AddWithValue("@SaldoDisponible", aCuentasModel.Saldodisponible);
@@ -41,13 +41,13 @@ namespace CDatos.Manager
                     command.Parameters.AddWithValue("@Id_Tarjeta", aCuentasModel.Id_tarjeta == null ? (object)DBNull.Value : aCuentasModel.Id_tarjeta);
                     command.Parameters.AddWithValue("@USUARIO_CREADOR", aCuentasModel.Usuario_creador);
                     command.Parameters.AddWithValue("@Cliente", aCuentasModel.Cliente);
-                    command.Parameters.AddWithValue("@FECHA_CREACION", aCuentasModel.Fecha_creacion);
+                    command.Parameters.AddWithValue("@FECHA_CREACION", DateTime.Now);
                     command.Parameters.AddWithValue("@FECHA_MODIFICACION", aCuentasModel.Fecha_modificacion == null ? (object)DBNull.Value : aCuentasModel.Fecha_modificacion);
                     command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aCuentasModel.Usuario_modificador == null ? (object)DBNull.Value : aCuentasModel.Usuario_modificador);
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "CuentasModelInsert";
+                    command.CommandText = "CuentasInsert";
 
                     int afectados = command.ExecuteNonQuery();
 
@@ -65,6 +65,7 @@ namespace CDatos.Manager
             }
             catch (Exception)
             {
+                //throw;
                 return false;
             }
         }
