@@ -70,6 +70,7 @@
     <Compile Include="Ventanilla\RetirosMethods.cs" />
     <Compile Include="Ventanilla\TipoMonedaMethods.cs" />
     <Compile Include="Ventanilla\TipoMovimientoMethods.cs" />
+    <Compile Include="Ventanilla\TransferenciasMethods.cs" />
     <Compile Include="Ventanilla\VentanillaMethods.cs" />
   </ItemGroup>
   <ItemGroup>

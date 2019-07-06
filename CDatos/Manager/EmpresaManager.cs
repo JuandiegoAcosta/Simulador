@@ -412,7 +412,7 @@ namespace CDatos.Manager
         }
 
 
-        public List<RecaudosModel> PagoServicioEmpresa(int id)
+        public List<RecaudosModel> PagoServicioEmpresa(int id,int nroContrato)
         {
 
             List<RecaudosModel> EmpresaModellist = new List<RecaudosModel>();
@@ -426,7 +426,7 @@ namespace CDatos.Manager
                     SqlCommand command = connection.CreateCommand();
 
                     command.Parameters.AddWithValue("@id", id);
-
+                    command.Parameters.AddWithValue("@nroContrato", nroContrato);
                     command.CommandType = CommandType.StoredProcedure;
 
                     command.CommandText = "PagoEmpresa";

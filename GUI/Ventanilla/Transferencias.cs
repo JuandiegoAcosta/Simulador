@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CNegocio.Ventanilla;
+using Modelos.Modelos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +21,18 @@ namespace Sistema_Bancario.Froms_opciones
 
         private void BTProceder_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Operacion Realizada");
+            TransferenciasMethods transferencias = new TransferenciasMethods();
+            var CuentasTrajetas = new CuentasTarjetasModel();
+            CuentasTrajetas.Monto = Convert.ToDecimal(txtMonto.Text);
+            CuentasTrajetas.NroCuenta = Convert.ToInt32(txtNroCuentaOrigen.Text);
+            CuentasTrajetas.NroCuentaDestino = Convert.ToInt32(txtNroCuentaDestino.Text);
+            CuentasTrajetas.doi = Convert.ToInt32(doi1.TBDoi.Text);
+            CuentasTrajetas.clave = Convert.ToInt32(clave1.TBClave.Text);
+            if (transferencias.RealizarTransferencia(CuentasTrajetas) > 1)
+            {
+                MessageBox.Show("Operacion Realizada");
+            }
+           
         }
 
         private static Transferencias _instance;

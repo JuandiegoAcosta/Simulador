@@ -105,3 +105,9 @@ C:\Users\Usuario\Desktop\Sim2\Simulador\Modelos\bin\Debug\Modelos.pdb
 C:\Users\Usuario\Desktop\Sim2\Simulador\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
 C:\Users\Usuario\Desktop\Sim2\Simulador\Modelos\obj\Debug\Modelos.dll
 C:\Users\Usuario\Desktop\Sim2\Simulador\Modelos\obj\Debug\Modelos.pdb
+C:\Users\Pablo\Source\Repos\Simulador\Modelos\bin\Debug\Modelos.dll
+C:\Users\Pablo\Source\Repos\Simulador\Modelos\bin\Debug\Modelos.pdb
+C:\Users\Pablo\Source\Repos\Simulador\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
+C:\Users\Pablo\Source\Repos\Simulador\Modelos\obj\Debug\Modelos.dll
+C:\Users\Pablo\Source\Repos\Simulador\Modelos\obj\Debug\Modelos.pdb
+C:\Users\Pablo\source\repos\Simulador\Modelos\obj\Debug\Modelos.csprojAssemblyReference.cache

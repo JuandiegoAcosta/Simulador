@@ -69,8 +69,15 @@ namespace Sistema_Bancario.Froms_opciones
             //empresaMethods.PagoServicioEmpresa(1);
 
 
-          //  var bindingList = new BindingList<object>(empresaMethods.PagoServicioEmpresa(Convert.ToInt32(nroContrato1.TBNroContrato.Text)));
-            var source = new BindingSource(empresaMethods.PagoServicioEmpresa(Convert.ToInt32(nroContrato1.TBNroContrato.Text)), null);
+         
+            int i = GEmpresas.CurrentCell.RowIndex;
+            //   int i = GridCuotas.CurrentRow.Cells[0].Value;
+            //  Convert.ToInt32(GridCuotas[i, 0].Value);
+           // empresaMethods.PagoServicioEmpresa(Convert.ToInt32(GEmpresas[0, i].Value), "Usuario");
+
+
+            //  var bindingList = new BindingList<object>(empresaMethods.PagoServicioEmpresa(Convert.ToInt32(nroContrato1.TBNroContrato.Text)));
+            var source = new BindingSource(empresaMethods.PagoServicioEmpresa(Convert.ToInt32(GEmpresas[0, i].Value), Convert.ToInt32(nroContrato1.TBNroContrato.Text)), null);
             GNroContrato.DataSource = source;
 
 

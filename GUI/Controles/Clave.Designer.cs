@@ -35,15 +35,15 @@
             // LbClave
             // 
             this.LbClave.AutoSize = true;
-            this.LbClave.Location = new System.Drawing.Point(4, 4);
+            this.LbClave.Location = new System.Drawing.Point(3, 9);
             this.LbClave.Name = "LbClave";
-            this.LbClave.Size = new System.Drawing.Size(43, 17);
+            this.LbClave.Size = new System.Drawing.Size(51, 17);
             this.LbClave.TabIndex = 0;
-            this.LbClave.Text = "Clave";
+            this.LbClave.Text = "Clave :";
             // 
             // TBClave
             // 
-            this.TBClave.Location = new System.Drawing.Point(57, 4);
+            this.TBClave.Location = new System.Drawing.Point(76, 6);
             this.TBClave.Name = "TBClave";
             this.TBClave.PasswordChar = '*';
             this.TBClave.Size = new System.Drawing.Size(159, 22);
@@ -54,7 +54,7 @@
             this.Controls.Add(this.TBClave);
             this.Controls.Add(this.LbClave);
             this.Name = "Clave";
-            this.Size = new System.Drawing.Size(229, 34);
+            this.Size = new System.Drawing.Size(316, 31);
             this.ResumeLayout(false);
             this.PerformLayout();
 

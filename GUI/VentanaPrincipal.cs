@@ -71,7 +71,10 @@ namespace Sistema_Bancario
             MessageBox.Show("Es necesario iniciar session");
          }
       }
-
+        public VentanaPrincipal()
+        {
+            InitializeComponent();
+        }
       private void SetSessionValues()
       {
          lblUserValueType.Text = Session.UserNombreCompleto;
@@ -111,21 +114,6 @@ namespace Sistema_Bancario
       {
          this.Close();
       }
-
-      public void Limpiar()
-      {
-         /*  button1.BackColor = Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
-           button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
-           button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
-           button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
-           button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
-           button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
-           button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
-           button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
-           button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
-       */
-      }
-
 
       public void CrearBoton(Button NombreButton, string Text, int x)
       {

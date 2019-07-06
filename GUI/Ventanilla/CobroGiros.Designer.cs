@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dni1 = new Sistema_Bancario.Dni();
+            this.dni1 = new Sistema_Bancario.Doi();
             this.clave1 = new Sistema_Bancario.Controles.Clave();
             this.GVCobroGiros = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
@@ -104,7 +104,7 @@
 
         #endregion
 
-        private Dni dni1;
+        private Doi dni1;
         private Controles.Clave clave1;
         private System.Windows.Forms.DataGridView GVCobroGiros;
         private System.Windows.Forms.Button button1;
