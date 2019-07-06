@@ -43,6 +43,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pbxClose = new System.Windows.Forms.PictureBox();
             this.MoveFrom = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.BTClose2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxClose)).BeginInit();
@@ -50,7 +51,7 @@
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(207, 74);
+            this.txtUsuario.Location = new System.Drawing.Point(189, 66);
             this.txtUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(192, 22);
@@ -63,7 +64,7 @@
             this.btnIniciarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIniciarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.btnIniciarSesion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnIniciarSesion.Location = new System.Drawing.Point(206, 163);
+            this.btnIniciarSesion.Location = new System.Drawing.Point(188, 155);
             this.btnIniciarSesion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnIniciarSesion.Name = "btnIniciarSesion";
             this.btnIniciarSesion.Size = new System.Drawing.Size(193, 37);
@@ -76,33 +77,34 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Window;
-            this.label3.Location = new System.Drawing.Point(88, 74);
+            this.label3.Location = new System.Drawing.Point(107, 69);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 20);
+            this.label3.Size = new System.Drawing.Size(74, 17);
             this.label3.TabIndex = 16;
-            this.label3.Text = "USUARIO :";
+            this.label3.Text = "USUARIO ";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Window;
-            this.label4.Location = new System.Drawing.Point(48, 122);
+            this.label4.Location = new System.Drawing.Point(74, 117);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(134, 20);
+            this.label4.Size = new System.Drawing.Size(107, 17);
             this.label4.TabIndex = 17;
-            this.label4.Text = "CONTRASEÑA :";
+            this.label4.Text = "CONTRASEÑA ";
             // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.Location = new System.Drawing.Point(393, 7);
+            this.linkLabel1.LinkColor = System.Drawing.Color.White;
+            this.linkLabel1.Location = new System.Drawing.Point(207, 205);
             this.linkLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(145, 19);
@@ -116,11 +118,10 @@
             this.panel1.BackColor = System.Drawing.SystemColors.Window;
             this.panel1.Controls.Add(this.Estado);
             this.panel1.Controls.Add(this.Conectado);
-            this.panel1.Controls.Add(this.linkLabel1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 246);
+            this.panel1.Location = new System.Drawing.Point(0, 257);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(551, 35);
+            this.panel1.Size = new System.Drawing.Size(534, 35);
             this.panel1.TabIndex = 19;
             // 
             // Conectado
@@ -145,7 +146,7 @@
             // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(207, 122);
+            this.txtPass.Location = new System.Drawing.Point(189, 114);
             this.txtPass.Margin = new System.Windows.Forms.Padding(4);
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '*';
@@ -155,29 +156,31 @@
             // 
             // panel6
             // 
-            this.panel6.ColorBottom = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(72)))), ((int)(((byte)(150)))));
-            this.panel6.ColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(183)))), ((int)(((byte)(226)))));
+            this.panel6.ColorBottom = System.Drawing.SystemColors.Window;
+            this.panel6.ColorTop = System.Drawing.Color.White;
+            this.panel6.Controls.Add(this.BTClose2);
             this.panel6.Controls.Add(this.label1);
             this.panel6.Controls.Add(this.pbxClose);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(551, 31);
+            this.panel6.Size = new System.Drawing.Size(534, 36);
             this.panel6.TabIndex = 15;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label1.Location = new System.Drawing.Point(3, 5);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(173, 20);
+            this.label1.Size = new System.Drawing.Size(135, 20);
             this.label1.TabIndex = 2;
-            this.label1.Text = "::  INICIAR SESIÓN";
+            this.label1.Text = "INICIAR SESIÓN";
             // 
             // pbxClose
             // 
@@ -185,10 +188,10 @@
             this.pbxClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxClose.Dock = System.Windows.Forms.DockStyle.Right;
             this.pbxClose.Image = ((System.Drawing.Image)(resources.GetObject("pbxClose.Image")));
-            this.pbxClose.Location = new System.Drawing.Point(510, 0);
+            this.pbxClose.Location = new System.Drawing.Point(493, 0);
             this.pbxClose.Margin = new System.Windows.Forms.Padding(4);
             this.pbxClose.Name = "pbxClose";
-            this.pbxClose.Size = new System.Drawing.Size(41, 31);
+            this.pbxClose.Size = new System.Drawing.Size(41, 36);
             this.pbxClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbxClose.TabIndex = 1;
             this.pbxClose.TabStop = false;
@@ -201,14 +204,29 @@
             this.MoveFrom.TargetControl = this.panel6;
             this.MoveFrom.Vertical = true;
             // 
+            // BTClose2
+            // 
+            this.BTClose2.BackColor = System.Drawing.SystemColors.Window;
+            this.BTClose2.FlatAppearance.BorderSize = 0;
+            this.BTClose2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTClose2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTClose2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BTClose2.Location = new System.Drawing.Point(489, 0);
+            this.BTClose2.Name = "BTClose2";
+            this.BTClose2.Size = new System.Drawing.Size(45, 36);
+            this.BTClose2.TabIndex = 20;
+            this.BTClose2.Text = "X";
+            this.BTClose2.UseVisualStyleBackColor = false;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.ClientSize = new System.Drawing.Size(551, 281);
+            this.ClientSize = new System.Drawing.Size(534, 292);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtPass);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel6);
@@ -245,5 +263,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button Estado;
         private System.Windows.Forms.Label Conectado;
+        private System.Windows.Forms.Button BTClose2;
     }
 }
