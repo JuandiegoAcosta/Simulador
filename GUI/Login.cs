@@ -37,6 +37,10 @@ namespace Sistema_Bancario
       {
          InitializeComponent();
          UIButton.SetRound(btnIniciarSesion, 15);
+            UIButton.SetRound(Estado, 15);
+
+         
+
          UIForm.SetRound(this, 7);
       }
       //Variables globales
