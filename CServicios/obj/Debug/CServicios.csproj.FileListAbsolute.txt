@@ -257,3 +257,17 @@ C:\Users\Pablo\Source\Repos\Simulador\CServicios\obj\Debug\CServicios.csproj.Cor
 C:\Users\Pablo\Source\Repos\Simulador\CServicios\obj\Debug\CServicios.csproj.CopyComplete
 C:\Users\Pablo\Source\Repos\Simulador\CServicios\obj\Debug\ServiciosBancarios.dll
 C:\Users\Pablo\Source\Repos\Simulador\CServicios\obj\Debug\ServiciosBancarios.pdb
+C:\Users\X\Desktop\Projects\Simulador\CServicios\bin\ServiciosBancarios.dll.config
+C:\Users\X\Desktop\Projects\Simulador\CServicios\bin\ServiciosBancarios.dll
+C:\Users\X\Desktop\Projects\Simulador\CServicios\bin\ServiciosBancarios.pdb
+C:\Users\X\Desktop\Projects\Simulador\CServicios\bin\CNegocio.dll
+C:\Users\X\Desktop\Projects\Simulador\CServicios\bin\Modelos.dll
+C:\Users\X\Desktop\Projects\Simulador\CServicios\bin\CDatos.dll
+C:\Users\X\Desktop\Projects\Simulador\CServicios\bin\CNegocio.pdb
+C:\Users\X\Desktop\Projects\Simulador\CServicios\bin\Modelos.pdb
+C:\Users\X\Desktop\Projects\Simulador\CServicios\bin\CDatos.pdb
+C:\Users\X\Desktop\Projects\Simulador\CServicios\obj\Debug\CServicios.csprojAssemblyReference.cache
+C:\Users\X\Desktop\Projects\Simulador\CServicios\obj\Debug\CServicios.csproj.CoreCompileInputs.cache
+C:\Users\X\Desktop\Projects\Simulador\CServicios\obj\Debug\CServicios.csproj.CopyComplete
+C:\Users\X\Desktop\Projects\Simulador\CServicios\obj\Debug\ServiciosBancarios.dll
+C:\Users\X\Desktop\Projects\Simulador\CServicios\obj\Debug\ServiciosBancarios.pdb
