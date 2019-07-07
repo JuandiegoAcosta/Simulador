@@ -90,9 +90,10 @@ namespace Sistema_Bancario
                   Session = new Session();
                   Session.UserCodigo = usuarioLogin.Id.ToString();
                   Session.UserName = usuarioLogin.Nombreusuario;
-                  Session.UserNombreCompleto = usuarioLogin.Nombres;
+                  Session.UserNombreCompleto = usuarioLogin.Nombres + " " + usuarioLogin.Apellidos;
 
-                  Session.SucursalCodigo = SucursalUsuario.Id.ToString();
+                  //Session.SucursalCodigo = SucursalUsuario.Id.ToString();
+                  Session.SucursalCodigo = string.Format("{0:000}", SucursalUsuario.Id);
                   Session.SucursalNombre = SucursalUsuario.Nombre;
                   Session.SucursalUbicacion = SucursalUsuario.Ubicacion;
                   Session.SucursalCodigoBanco = SucursalUsuario.Idbanco.ToString();
