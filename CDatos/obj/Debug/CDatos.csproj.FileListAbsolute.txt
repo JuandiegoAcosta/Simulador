@@ -180,3 +180,12 @@ C:\Users\Pablo\Source\Repos\Simulador\CDatos\obj\Debug\CDatos.csproj.CoreCompile
 C:\Users\Pablo\Source\Repos\Simulador\CDatos\obj\Debug\CDatos.csproj.CopyComplete
 C:\Users\Pablo\Source\Repos\Simulador\CDatos\obj\Debug\CDatos.dll
 C:\Users\Pablo\Source\Repos\Simulador\CDatos\obj\Debug\CDatos.pdb
+C:\Users\RithardLL\Source\Repos\Simulador10\CDatos\bin\Debug\CDatos.dll
+C:\Users\RithardLL\Source\Repos\Simulador10\CDatos\bin\Debug\CDatos.pdb
+C:\Users\RithardLL\Source\Repos\Simulador10\CDatos\bin\Debug\Modelos.dll
+C:\Users\RithardLL\Source\Repos\Simulador10\CDatos\bin\Debug\Modelos.pdb
+C:\Users\RithardLL\Source\Repos\Simulador10\CDatos\obj\Debug\CDatos.csprojAssemblyReference.cache
+C:\Users\RithardLL\Source\Repos\Simulador10\CDatos\obj\Debug\CDatos.csproj.CoreCompileInputs.cache
+C:\Users\RithardLL\Source\Repos\Simulador10\CDatos\obj\Debug\CDatos.csproj.CopyComplete
+C:\Users\RithardLL\Source\Repos\Simulador10\CDatos\obj\Debug\CDatos.dll
+C:\Users\RithardLL\Source\Repos\Simulador10\CDatos\obj\Debug\CDatos.pdb
