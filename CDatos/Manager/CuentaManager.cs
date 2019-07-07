@@ -13,11 +13,11 @@ namespace CDatos.Manager
     {
         #region Methods
         /// <summary>
-        /// Saves a record to the CuentasModel table.
+        /// Saves a record to the cuenta table.
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>		
-        public bool Insert(CuentasModel aCuentasModel)
+        public bool Insert(CuentasModel acuenta)
         {
             try
             {
@@ -31,19 +31,21 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
-                    //command.Parameters.AddWithValue("@NroCuentasModel", aCuentasModel.NroCuentasModel);
-                    command.Parameters.AddWithValue("@Estado", aCuentasModel.Estado);
-                    command.Parameters.AddWithValue("@SaldoContable", aCuentasModel.Saldocontable);
-                    command.Parameters.AddWithValue("@SaldoDisponible", aCuentasModel.Saldodisponible);
-                    command.Parameters.AddWithValue("@SobreGiro", aCuentasModel.Sobregiro);
-                    //command.Parameters.AddWithValue("@TipoCuentasModel", aCuentasModel.TipoCuentasModel);
-                    command.Parameters.AddWithValue("@TipoMoneda", aCuentasModel.Tipomoneda);
-                    command.Parameters.AddWithValue("@Id_Tarjeta", aCuentasModel.Id_tarjeta == null ? (object)DBNull.Value : aCuentasModel.Id_tarjeta);
-                    command.Parameters.AddWithValue("@USUARIO_CREADOR", aCuentasModel.Usuario_creador);
-                    command.Parameters.AddWithValue("@Cliente", aCuentasModel.Cliente);
-                    command.Parameters.AddWithValue("@FECHA_CREACION", DateTime.Now);
-                    command.Parameters.AddWithValue("@FECHA_MODIFICACION", aCuentasModel.Fecha_modificacion == null ? (object)DBNull.Value : aCuentasModel.Fecha_modificacion);
-                    command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aCuentasModel.Usuario_modificador == null ? (object)DBNull.Value : aCuentasModel.Usuario_modificador);
+                    command.Parameters.AddWithValue("@NroCuenta", acuenta.Nrocuenta);
+                    command.Parameters.AddWithValue("@Estado", acuenta.Estado);
+                    command.Parameters.AddWithValue("@SaldoContable", acuenta.Saldocontable);
+                    command.Parameters.AddWithValue("@SaldoDisponible", acuenta.Saldodisponible);
+                    command.Parameters.AddWithValue("@SobreGiro", acuenta.Sobregiro == null ? (object)DBNull.Value : acuenta.Sobregiro);
+                    command.Parameters.AddWithValue("@TipoCuenta", acuenta.Tipocuenta);
+                    command.Parameters.AddWithValue("@TipoMoneda", acuenta.Tipomoneda);
+                    command.Parameters.AddWithValue("@Id_Tarjeta", acuenta.Id_tarjeta == null ? (object)DBNull.Value : acuenta.Id_tarjeta);
+                    command.Parameters.AddWithValue("@ContChequeRebote1", acuenta.Contchequerebote1 == null ? (object)DBNull.Value : acuenta.Contchequerebote1);
+                    command.Parameters.AddWithValue("@ContChequeRebote2", acuenta.Contchequerebote2 == null ? (object)DBNull.Value : acuenta.Contchequerebote2);
+                    command.Parameters.AddWithValue("@USUARIO_CREADOR", acuenta.Usuario_creador);
+                    command.Parameters.AddWithValue("@Cliente", acuenta.Cliente);
+                    command.Parameters.AddWithValue("@FECHA_CREACION", acuenta.Fecha_creacion);
+                    command.Parameters.AddWithValue("@FECHA_MODIFICACION", acuenta.Fecha_modificacion == null ? (object)DBNull.Value : acuenta.Fecha_modificacion);
+                    command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", acuenta.Usuario_modificador == null ? (object)DBNull.Value : acuenta.Usuario_modificador);
 
 
                     command.CommandType = CommandType.StoredProcedure;
@@ -65,18 +67,18 @@ namespace CDatos.Manager
             }
             catch (Exception)
             {
-                //throw;
+                throw;
                 return false;
             }
         }
 
 
         /// <summary>
-        /// Updates a record to the CuentasModel table.
+        /// Updates a record to the cuenta table.
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>
-        public bool Update(CuentasModel aCuentasModel)
+        public bool Update(CuentasModel acuenta)
         {
             try
             {
@@ -90,23 +92,25 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
-                    //command.Parameters.AddWithValue("@NroCuentasModel", aCuentasModel.NroCuentasModel);
-                    command.Parameters.AddWithValue("@Estado", aCuentasModel.Estado);
-                    command.Parameters.AddWithValue("@SaldoContable", aCuentasModel.Saldocontable);
-                    command.Parameters.AddWithValue("@SaldoDisponible", aCuentasModel.Saldodisponible);
-                    command.Parameters.AddWithValue("@SobreGiro", aCuentasModel.Sobregiro);
-                    //command.Parameters.AddWithValue("@TipoCuentasModel", aCuentasModel.TipoCuentasModel);
-                    command.Parameters.AddWithValue("@TipoMoneda", aCuentasModel.Tipomoneda);
-                    command.Parameters.AddWithValue("@Id_Tarjeta", aCuentasModel.Id_tarjeta == null ? (object)DBNull.Value : aCuentasModel.Id_tarjeta);
-                    command.Parameters.AddWithValue("@USUARIO_CREADOR", aCuentasModel.Usuario_creador);
-                    command.Parameters.AddWithValue("@Cliente", aCuentasModel.Cliente);
-                    command.Parameters.AddWithValue("@FECHA_CREACION", aCuentasModel.Fecha_creacion);
-                    command.Parameters.AddWithValue("@FECHA_MODIFICACION", aCuentasModel.Fecha_modificacion == null ? (object)DBNull.Value : aCuentasModel.Fecha_modificacion);
-                    command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aCuentasModel.Usuario_modificador == null ? (object)DBNull.Value : aCuentasModel.Usuario_modificador);
+                    command.Parameters.AddWithValue("@NroCuenta", acuenta.Nrocuenta);
+                    command.Parameters.AddWithValue("@Estado", acuenta.Estado);
+                    command.Parameters.AddWithValue("@SaldoContable", acuenta.Saldocontable);
+                    command.Parameters.AddWithValue("@SaldoDisponible", acuenta.Saldodisponible);
+                    command.Parameters.AddWithValue("@SobreGiro", acuenta.Sobregiro == null ? (object)DBNull.Value : acuenta.Sobregiro);
+                    command.Parameters.AddWithValue("@TipoCuenta", acuenta.Tipocuenta);
+                    command.Parameters.AddWithValue("@TipoMoneda", acuenta.Tipomoneda);
+                    command.Parameters.AddWithValue("@Id_Tarjeta", acuenta.Id_tarjeta == null ? (object)DBNull.Value : acuenta.Id_tarjeta);
+                    command.Parameters.AddWithValue("@ContChequeRebote1", acuenta.Contchequerebote1 == null ? (object)DBNull.Value : acuenta.Contchequerebote1);
+                    command.Parameters.AddWithValue("@ContChequeRebote2", acuenta.Contchequerebote2 == null ? (object)DBNull.Value : acuenta.Contchequerebote2);
+                    command.Parameters.AddWithValue("@USUARIO_CREADOR", acuenta.Usuario_creador);
+                    command.Parameters.AddWithValue("@Cliente", acuenta.Cliente);
+                    command.Parameters.AddWithValue("@FECHA_CREACION", acuenta.Fecha_creacion);
+                    command.Parameters.AddWithValue("@FECHA_MODIFICACION", acuenta.Fecha_modificacion == null ? (object)DBNull.Value : acuenta.Fecha_modificacion);
+                    command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", acuenta.Usuario_modificador == null ? (object)DBNull.Value : acuenta.Usuario_modificador);
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "CuentasModelUpdate";
+                    command.CommandText = "CuentasUpdate";
 
                     int afectados = command.ExecuteNonQuery();
 
@@ -130,11 +134,11 @@ namespace CDatos.Manager
 
 
         /// <summary>
-        /// Deletes record to the CuentasModel table.
+        /// Deletes record to the cuenta table.
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>
-        public bool Delete(string aNroCuentasModel)
+        public bool Delete(string aNroCuenta)
         {
             try
             {
@@ -148,11 +152,11 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
-                    command.Parameters.AddWithValue("@NroCuentasModel", aNroCuentasModel);
+                    command.Parameters.AddWithValue("@NroCuenta", aNroCuenta);
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "CuentasModelDelete";
+                    command.CommandText = "CuentasDelete";
                     int afectados = command.ExecuteNonQuery();
 
                     // Commit the transaction.
@@ -175,11 +179,11 @@ namespace CDatos.Manager
 
 
         /// <summary>
-        /// Selects the Single object of CuentasModel table.
+        /// Selects the Single object of cuenta table.
         /// </summary>
-        public CuentasModel GetCuentasModel(string aNroCuentasModel)
+        public CuentasModel Getcuenta(string aNroCuenta)
         {
-            CuentasModel CuentasModel = null;
+            CuentasModel cuenta = null;
 
             try
             {
@@ -189,12 +193,12 @@ namespace CDatos.Manager
 
                     SqlCommand command = connection.CreateCommand();
 
-                    command.Parameters.AddWithValue("@NroCuentasModel", aNroCuentasModel);
+                    command.Parameters.AddWithValue("@NroCuenta", aNroCuenta);
 
 
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.CommandText = "CuentasModelSelect";
+                    command.CommandText = "CuentasSelect";
 
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -203,30 +207,34 @@ namespace CDatos.Manager
                         while (reader.Read())
                         {
 
-                            string NroCuentasModel = (string)(reader["NroCuentasModel"]);
+                            string NroCuenta = (string)(reader["NroCuenta"]);
                             bool Estado = (bool)(reader["Estado"]);
                             decimal SaldoContable = (decimal)(reader["SaldoContable"]);
                             decimal SaldoDisponible = (decimal)(reader["SaldoDisponible"]);
-                            decimal SobreGiro = (decimal)(reader["SobreGiro"]);
-                            string TipoCuentasModel = (string)(reader["TipoCuentasModel"]);
-                            short TipoMoneda = (short)(reader["TipoMoneda"]);
+                            decimal? SobreGiro = reader["SobreGiro"] as decimal?;
+                            string TipoCuenta = (string)(reader["TipoCuenta"]);
+                            int TipoMoneda = (int)(reader["TipoMoneda"]);
                             int? Id_Tarjeta = reader["Id_Tarjeta"] as int?;
+                            byte? ContChequeRebote1 = reader["ContChequeRebote1"] as byte?;
+                            byte? ContChequeRebote2 = reader["ContChequeRebote2"] as byte?;
                             string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
                             int Cliente = (int)(reader["Cliente"]);
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
                             DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
-                            string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
+                            string USUARIO_MODIFICADOR = reader["USUARIO_MODIFICADOR"] as string;
 
-                            CuentasModel = new CuentasModel
+                            cuenta = new CuentasModel
                             {
-                               // NroCuentasModel = NroCuentasModel,
+                                Nrocuenta = NroCuenta,
                                 Estado = Estado,
                                 Saldocontable = SaldoContable,
                                 Saldodisponible = SaldoDisponible,
                                 Sobregiro = SobreGiro,
-                                //TipoCuentasModel = TipoCuentasModel,
+                                Tipocuenta = TipoCuenta,
                                 Tipomoneda = TipoMoneda,
                                 Id_tarjeta = Id_Tarjeta,
+                                Contchequerebote1 = ContChequeRebote1,
+                                Contchequerebote2 = ContChequeRebote2,
                                 Usuario_creador = USUARIO_CREADOR,
                                 Cliente = Cliente,
                                 Fecha_creacion = FECHA_CREACION,
@@ -238,7 +246,7 @@ namespace CDatos.Manager
                     }
                 }
 
-                return CuentasModel;
+                return cuenta;
             }
             catch (Exception)
             {
@@ -248,12 +256,12 @@ namespace CDatos.Manager
 
 
         /// <summary>
-        /// Selects all the objects of CuentasModel table.
+        /// Selects all the objects of cuenta table.
         /// </summary>
-        public List<CuentasModel> CuentasModelSelectByUser(int aUsuario)
+        public List<CuentasModel> cuentaSelectAll()
         {
 
-            List<CuentasModel> CuentasModellist = new List<CuentasModel>();
+            List<CuentasModel> cuentalist = new List<CuentasModel>();
 
             try
             {
@@ -265,11 +273,7 @@ namespace CDatos.Manager
 
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.Parameters.AddWithValue("@aUsuario", aUsuario);
-
-                    //Falta crear el procedimiento en la DB
-
-                    command.CommandText = "CuentasModelSelectByUser";
+                    command.CommandText = "CuentasSelectAll";
 
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -278,30 +282,34 @@ namespace CDatos.Manager
                         while (reader.Read())
                         {
 
-                            string NroCuentasModel = (string)(reader["NroCuentasModel"]);
+                            string NroCuenta = (string)(reader["NroCuenta"]);
                             bool Estado = (bool)(reader["Estado"]);
                             decimal SaldoContable = (decimal)(reader["SaldoContable"]);
                             decimal SaldoDisponible = (decimal)(reader["SaldoDisponible"]);
-                            decimal SobreGiro = (decimal)(reader["SobreGiro"]);
-                            string TipoCuentasModel = (string)(reader["TipoCuentasModel"]);
+                            decimal? SobreGiro = reader["SobreGiro"] as decimal?;
+                            string TipoCuenta = (string)(reader["TipoCuenta"]);
                             short TipoMoneda = (short)(reader["TipoMoneda"]);
                             int? Id_Tarjeta = reader["Id_Tarjeta"] as int?;
+                            byte? ContChequeRebote1 = reader["ContChequeRebote1"] as byte?;
+                            byte? ContChequeRebote2 = reader["ContChequeRebote2"] as byte?;
                             string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
                             int Cliente = (int)(reader["Cliente"]);
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
                             DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
                             string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
 
-                            CuentasModellist.Add(new CuentasModel
+                            cuentalist.Add(new CuentasModel
                             {
-                                //NroCuentasModel = NroCuentasModel,
+                                Nrocuenta = NroCuenta,
                                 Estado = Estado,
                                 Saldocontable = SaldoContable,
                                 Saldodisponible = SaldoDisponible,
                                 Sobregiro = SobreGiro,
-                                //TipoCuentasModel = TipoCuentasModel,
+                                Tipocuenta = TipoCuenta,
                                 Tipomoneda = TipoMoneda,
                                 Id_tarjeta = Id_Tarjeta,
+                                Contchequerebote1 = ContChequeRebote1,
+                                Contchequerebote2 = ContChequeRebote2,
                                 Usuario_creador = USUARIO_CREADOR,
                                 Cliente = Cliente,
                                 Fecha_creacion = FECHA_CREACION,
@@ -313,22 +321,22 @@ namespace CDatos.Manager
                     }
                 }
 
-                return CuentasModellist;
+                return cuentalist;
             }
             catch (Exception)
             {
-                return CuentasModellist;
+                return cuentalist;
             }
         }
 
 
         /// <summary>
-        /// Selects the Multiple objects of CuentasModel table by a given criteria.
+        /// Selects the Multiple objects of cuenta table by a given criteria.
         /// </summary>
-        public List<CuentasModel> CuentasModelSelectbyUNKNOW(string aValue)
+        public List<CuentasModel> cuentaSelectbyId_cliente(int id_cliente)
         {
 
-            List<CuentasModel> CuentasModellist = new List<CuentasModel>();
+            List<CuentasModel> cuentalist = new List<CuentasModel>();
 
             try
             {
@@ -338,11 +346,11 @@ namespace CDatos.Manager
 
                     SqlCommand command = connection.CreateCommand();
 
-                    command.Parameters.AddWithValue("@UNKNOW", aValue);
+                    command.Parameters.AddWithValue("@Cliente", id_cliente);
 
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.CommandText = "CuentasModelSelectbyUNKNOW";
+                    command.CommandText = "CuentasSelectAllByCliente";
 
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -351,30 +359,34 @@ namespace CDatos.Manager
                         while (reader.Read())
                         {
 
-                            string NroCuentasModel = (string)(reader["NroCuentasModel"]);
+                            string NroCuenta = (string)(reader["NroCuenta"]);
                             bool Estado = (bool)(reader["Estado"]);
                             decimal SaldoContable = (decimal)(reader["SaldoContable"]);
                             decimal SaldoDisponible = (decimal)(reader["SaldoDisponible"]);
-                            decimal SobreGiro = (decimal)(reader["SobreGiro"]);
-                            string TipoCuentasModel = (string)(reader["TipoCuentasModel"]);
-                            short TipoMoneda = (short)(reader["TipoMoneda"]);
+                            decimal? SobreGiro = reader["SobreGiro"] as decimal?;
+                            string TipoCuenta = (string)(reader["TipoCuenta"]);
+                            int TipoMoneda = (int)(reader["TipoMoneda"]);
                             int? Id_Tarjeta = reader["Id_Tarjeta"] as int?;
+                            byte? ContChequeRebote1 = reader["ContChequeRebote1"] as byte?;
+                            byte? ContChequeRebote2 = reader["ContChequeRebote2"] as byte?;
                             string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
                             int Cliente = (int)(reader["Cliente"]);
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
                             DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
-                            string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
+                            string USUARIO_MODIFICADOR = reader["USUARIO_MODIFICADOR"] as string;
 
-                            CuentasModellist.Add(new CuentasModel
+                            cuentalist.Add(new CuentasModel
                             {
-                                //NroCuentasModel = NroCuentasModel,
+                                Nrocuenta = NroCuenta,
                                 Estado = Estado,
                                 Saldocontable = SaldoContable,
                                 Saldodisponible = SaldoDisponible,
                                 Sobregiro = SobreGiro,
-                                //TipoCuentasModel = TipoCuentasModel,
+                                Tipocuenta = TipoCuenta,
                                 Tipomoneda = TipoMoneda,
                                 Id_tarjeta = Id_Tarjeta,
+                                Contchequerebote1 = ContChequeRebote1,
+                                Contchequerebote2 = ContChequeRebote2,
                                 Usuario_creador = USUARIO_CREADOR,
                                 Cliente = Cliente,
                                 Fecha_creacion = FECHA_CREACION,
@@ -386,11 +398,87 @@ namespace CDatos.Manager
                     }
                 }
 
-                return CuentasModellist;
+                return cuentalist;
             }
             catch (Exception)
             {
-                return CuentasModellist;
+                return cuentalist;
+            }
+        }
+
+        /// <summary>
+        /// Selects the Multiple objects of cuenta table by a given criteria.
+        /// </summary>
+        public List<CuentasModel> cuentaSelectbyNroCuenta(string numero_cuenta)
+        {
+
+            List<CuentasModel> cuentalist = new List<CuentasModel>();
+
+            try
+            {
+                using (var connection = Util.ConnectionFactory.conexion())
+                {
+                    connection.Open();
+
+                    SqlCommand command = connection.CreateCommand();
+
+                    command.Parameters.AddWithValue("@NroCuenta", numero_cuenta);
+
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.CommandText = "CuentasSelectAllByNroCuenta";
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+
+                            string NroCuenta = (string)(reader["NroCuenta"]);
+                            bool Estado = (bool)(reader["Estado"]);
+                            decimal SaldoContable = (decimal)(reader["SaldoContable"]);
+                            decimal SaldoDisponible = (decimal)(reader["SaldoDisponible"]);
+                            decimal? SobreGiro = reader["SobreGiro"] as decimal?;
+                            string TipoCuenta = (string)(reader["TipoCuenta"]);
+                            int TipoMoneda = (int)(reader["TipoMoneda"]);
+                            int? Id_Tarjeta = reader["Id_Tarjeta"] as int?;
+                            byte? ContChequeRebote1 = reader["ContChequeRebote1"] as byte?;
+                            byte? ContChequeRebote2 = reader["ContChequeRebote2"] as byte?;
+                            string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
+                            int Cliente = (int)(reader["Cliente"]);
+                            DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
+                            DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
+                            string USUARIO_MODIFICADOR = reader["USUARIO_MODIFICADOR"] as string;
+
+                            cuentalist.Add(new CuentasModel
+                            {
+                                Nrocuenta = NroCuenta,
+                                Estado = Estado,
+                                Saldocontable = SaldoContable,
+                                Saldodisponible = SaldoDisponible,
+                                Sobregiro = SobreGiro,
+                                Tipocuenta = TipoCuenta,
+                                Tipomoneda = TipoMoneda,
+                                Id_tarjeta = Id_Tarjeta,
+                                Contchequerebote1 = ContChequeRebote1,
+                                Contchequerebote2 = ContChequeRebote2,
+                                Usuario_creador = USUARIO_CREADOR,
+                                Cliente = Cliente,
+                                Fecha_creacion = FECHA_CREACION,
+                                Fecha_modificacion = FECHA_MODIFICACION,
+                                Usuario_modificador = USUARIO_MODIFICADOR,
+
+                            });
+                        }
+                    }
+                }
+
+                return cuentalist;
+            }
+            catch (Exception)
+            {
+                return cuentalist;
             }
         }
         #endregion

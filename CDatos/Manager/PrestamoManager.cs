@@ -13,11 +13,11 @@ namespace CDatos.Manager
     {
         #region Methods
         /// <summary>
-        /// Saves a record to the PrestamosModel table.
+        /// Saves a record to the prestamo table.
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>		
-        public bool Insert(PrestamosModel aPrestamosModel)
+        public bool Insert(PrestamosModel aprestamo)
         {
             try
             {
@@ -31,22 +31,23 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
-                    command.Parameters.AddWithValue("@ID", aPrestamosModel.Id);
-                    //command.Parameters.AddWithValue("@FechaPrestamosModel", aPrestamosModel.FechaPrestamosModel);
-                    //command.Parameters.AddWithValue("@MontoPrestamosModel", aPrestamosModel.MontoPrestamosModel);
-                    command.Parameters.AddWithValue("@Moneda", aPrestamosModel.Moneda);
-                    command.Parameters.AddWithValue("@PlazoMeses", aPrestamosModel.Plazomeses);
-                    command.Parameters.AddWithValue("@Porcentaje_Interes", aPrestamosModel.Porcentaje_interes);
-                    command.Parameters.AddWithValue("@Seguro", aPrestamosModel.Seguro);
-                    command.Parameters.AddWithValue("@Cuenta", aPrestamosModel.Cuenta);
-                    command.Parameters.AddWithValue("@Interes_Moratorio", aPrestamosModel.Interes_moratorio == null ? (object)DBNull.Value : aPrestamosModel.Interes_moratorio);
-                    command.Parameters.AddWithValue("@FECHA_MODIFICACION", aPrestamosModel.Fecha_modificacion == null ? (object)DBNull.Value : aPrestamosModel.Fecha_modificacion);
-                    command.Parameters.AddWithValue("@USUARIO_CREADOR", aPrestamosModel.Usuario_creador == null ? (object)DBNull.Value : aPrestamosModel.Usuario_creador);
-                    command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aPrestamosModel.Usuario_modificador == null ? (object)DBNull.Value : aPrestamosModel.Usuario_modificador);
+                    command.Parameters.AddWithValue("@FechaPrestamo", aprestamo.Fechaprestamo);
+                    command.Parameters.AddWithValue("@MontoPrestamo", aprestamo.Montoprestamo);
+                    command.Parameters.AddWithValue("@Moneda", aprestamo.Moneda);
+                    command.Parameters.AddWithValue("@PlazoMeses", aprestamo.Plazomeses);
+                    command.Parameters.AddWithValue("@Porcentaje_Interes", aprestamo.Porcentaje_interes);
+                    command.Parameters.AddWithValue("@Seguro", aprestamo.Seguro);
+                    command.Parameters.AddWithValue("@Cuenta", aprestamo.Cuenta);
+                    command.Parameters.AddWithValue("@Interes_Moratorio", aprestamo.Interes_moratorio == null ? (object)DBNull.Value : aprestamo.Interes_moratorio);
+                    command.Parameters.AddWithValue("@FECHA_MODIFICACION", aprestamo.Fecha_modificacion == null ? (object)DBNull.Value : aprestamo.Fecha_modificacion);
+                    command.Parameters.AddWithValue("@USUARIO_CREADOR", aprestamo.Usuario_creador == null ? (object)DBNull.Value : aprestamo.Usuario_creador);
+                    command.Parameters.AddWithValue("@FECHA_CREACION", aprestamo.Fecha_creacion == null ? (object)DBNull.Value : aprestamo.Fecha_creacion);
+                    command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aprestamo.Usuario_modificador == null ? (object)DBNull.Value : aprestamo.Usuario_modificador);
+                    command.Parameters.AddWithValue("@DiaPago", aprestamo.Diapago == null ? (object)DBNull.Value : aprestamo.Diapago);
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "PrestamosModelInsert";
+                    command.CommandText = "PrestamosInsert";
 
                     int afectados = command.ExecuteNonQuery();
 
@@ -64,17 +65,18 @@ namespace CDatos.Manager
             }
             catch (Exception)
             {
+                //throw;
                 return false;
             }
         }
 
 
         /// <summary>
-        /// Updates a record to the PrestamosModel table.
+        /// Updates a record to the prestamo table.
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>
-        public bool Update(PrestamosModel aPrestamosModel)
+        public bool Update(PrestamosModel aprestamo)
         {
             try
             {
@@ -88,22 +90,24 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
-                    command.Parameters.AddWithValue("@ID", aPrestamosModel.Id);
-                    //command.Parameters.AddWithValue("@FechaPrestamosModel", aPrestamosModel.FechaPrestamosModel);
-                    //command.Parameters.AddWithValue("@MontoPrestamosModel", aPrestamosModel.MontoPrestamosModel);
-                    command.Parameters.AddWithValue("@Moneda", aPrestamosModel.Moneda);
-                    command.Parameters.AddWithValue("@PlazoMeses", aPrestamosModel.Plazomeses);
-                    command.Parameters.AddWithValue("@Porcentaje_Interes", aPrestamosModel.Porcentaje_interes);
-                    command.Parameters.AddWithValue("@Seguro", aPrestamosModel.Seguro);
-                    command.Parameters.AddWithValue("@Cuenta", aPrestamosModel.Cuenta);
-                    command.Parameters.AddWithValue("@Interes_Moratorio", aPrestamosModel.Interes_moratorio == null ? (object)DBNull.Value : aPrestamosModel.Interes_moratorio);
-                    command.Parameters.AddWithValue("@FECHA_MODIFICACION", aPrestamosModel.Fecha_modificacion == null ? (object)DBNull.Value : aPrestamosModel.Fecha_modificacion);
-                    command.Parameters.AddWithValue("@USUARIO_CREADOR", aPrestamosModel.Usuario_creador == null ? (object)DBNull.Value : aPrestamosModel.Usuario_creador);
-                    command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aPrestamosModel.Usuario_modificador == null ? (object)DBNull.Value : aPrestamosModel.Usuario_modificador);
+                    command.Parameters.AddWithValue("@ID", aprestamo.Id);
+                    command.Parameters.AddWithValue("@FechaPrestamo", aprestamo.Fechaprestamo);
+                    command.Parameters.AddWithValue("@MontoPrestamo", aprestamo.Montoprestamo);
+                    command.Parameters.AddWithValue("@Moneda", aprestamo.Moneda);
+                    command.Parameters.AddWithValue("@PlazoMeses", aprestamo.Plazomeses);
+                    command.Parameters.AddWithValue("@Porcentaje_Interes", aprestamo.Porcentaje_interes);
+                    command.Parameters.AddWithValue("@Seguro", aprestamo.Seguro);
+                    command.Parameters.AddWithValue("@Cuenta", aprestamo.Cuenta);
+                    command.Parameters.AddWithValue("@Interes_Moratorio", aprestamo.Interes_moratorio == null ? (object)DBNull.Value : aprestamo.Interes_moratorio);
+                    command.Parameters.AddWithValue("@FECHA_MODIFICACION", aprestamo.Fecha_modificacion == null ? (object)DBNull.Value : aprestamo.Fecha_modificacion);
+                    command.Parameters.AddWithValue("@USUARIO_CREADOR", aprestamo.Usuario_creador == null ? (object)DBNull.Value : aprestamo.Usuario_creador);
+                    command.Parameters.AddWithValue("@FECHA_CREACION", aprestamo.Fecha_creacion == null ? (object)DBNull.Value : aprestamo.Fecha_creacion);
+                    command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aprestamo.Usuario_modificador == null ? (object)DBNull.Value : aprestamo.Usuario_modificador);
+                    command.Parameters.AddWithValue("@DiaPago", aprestamo.Diapago == null ? (object)DBNull.Value : aprestamo.Diapago);
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "PrestamosModelUpdate";
+                    command.CommandText = "PrestamosUpdate";
 
                     int afectados = command.ExecuteNonQuery();
 
@@ -127,7 +131,7 @@ namespace CDatos.Manager
 
 
         /// <summary>
-        /// Deletes record to the PrestamosModel table.
+        /// Deletes record to the prestamo table.
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>
@@ -149,7 +153,7 @@ namespace CDatos.Manager
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "PrestamosModelDelete";
+                    command.CommandText = "prestamosDelete";
                     int afectados = command.ExecuteNonQuery();
 
                     // Commit the transaction.
@@ -172,11 +176,11 @@ namespace CDatos.Manager
 
 
         /// <summary>
-        /// Selects the Single object of PrestamosModel table.
+        /// Selects the Single object of prestamo table.
         /// </summary>
-        public PrestamosModel GetPrestamosModel(int aID)
+        public PrestamosModel Getprestamo(int aID)
         {
-            PrestamosModel PrestamosModel = null;
+            PrestamosModel prestamo = null;
 
             try
             {
@@ -191,7 +195,7 @@ namespace CDatos.Manager
 
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.CommandText = "PrestamosModelSelect";
+                    command.CommandText = "prestamosSelect";
 
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -199,25 +203,26 @@ namespace CDatos.Manager
                     {
                         while (reader.Read())
                         {
-
                             int ID = (int)(reader["ID"]);
-                            DateTime FechaPrestamosModel = (DateTime)(reader["FechaPrestamosModel"]);
-                            decimal MontoPrestamosModel = (decimal)(reader["MontoPrestamosModel"]);
-                            short Moneda = (short)(reader["Moneda"]);
-                            short PlazoMeses = (short)(reader["PlazoMeses"]);
+                            DateTime FechaPrestamo = (DateTime)(reader["FechaPrestamo"]);
+                            decimal MontoPrestamo = (decimal)(reader["MontoPrestamo"]);
+                            int Moneda = (int)(reader["Moneda"]);
+                            int PlazoMeses = (int)(reader["PlazoMeses"]);
                             decimal Porcentaje_Interes = (decimal)(reader["Porcentaje_Interes"]);
-                            int Seguro = (int)(reader["Seguro"]);
+                            bool Seguro = (bool)(reader["Seguro"]);
                             string Cuenta = (string)(reader["Cuenta"]);
                             decimal? Interes_Moratorio = reader["Interes_Moratorio"] as decimal?;
                             DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
-                            int? USUARIO_CREADOR = reader["USUARIO_CREADOR"] as int?;
-                            int? USUARIO_MODIFICADOR = reader["USUARIO_MODIFICADOR"] as int?;
+                            string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
+                            string USUARIO_MODIFICADOR = reader["USUARIO_MODIFICADOR"] as string;
+                            int? DiaPago = reader["DiaPago"] as int?;
+                            DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
 
-                            PrestamosModel = new PrestamosModel
+                            prestamo = new PrestamosModel
                             {
                                 Id = ID,
-                                //FechaPrestamosModel = FechaPrestamosModel,
-                                //MontoPrestamosModel = MontoPrestamosModel,
+                                Fechaprestamo = FechaPrestamo,
+                                Montoprestamo = MontoPrestamo,
                                 Moneda = Moneda,
                                 Plazomeses = PlazoMeses,
                                 Porcentaje_interes = Porcentaje_Interes,
@@ -227,13 +232,15 @@ namespace CDatos.Manager
                                 Fecha_modificacion = FECHA_MODIFICACION,
                                 Usuario_creador = USUARIO_CREADOR,
                                 Usuario_modificador = USUARIO_MODIFICADOR,
+                                Diapago = DiaPago,
+                                Fecha_creacion = FECHA_CREACION,
 
                             };
                         }
                     }
                 }
 
-                return PrestamosModel;
+                return prestamo;
             }
             catch (Exception)
             {
@@ -243,12 +250,12 @@ namespace CDatos.Manager
 
 
         /// <summary>
-        /// Selects all the objects of PrestamosModel table.
+        /// Selects all the objects of prestamo table.
         /// </summary>
-        public List<PrestamosModel> PrestamosModelSelectAll()
+        public List<PrestamosModel> prestamoSelectAll()
         {
 
-            List<PrestamosModel> PrestamosModellist = new List<PrestamosModel>();
+            List<PrestamosModel> prestamolist = new List<PrestamosModel>();
 
             try
             {
@@ -260,7 +267,7 @@ namespace CDatos.Manager
 
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.CommandText = "PrestamosModelSelectAll";
+                    command.CommandText = "prestamosSelectAll";
 
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -270,23 +277,25 @@ namespace CDatos.Manager
                         {
 
                             int ID = (int)(reader["ID"]);
-                            DateTime FechaPrestamosModel = (DateTime)(reader["FechaPrestamosModel"]);
-                            decimal MontoPrestamosModel = (decimal)(reader["MontoPrestamosModel"]);
-                            short Moneda = (short)(reader["Moneda"]);
-                            short PlazoMeses = (short)(reader["PlazoMeses"]);
+                            DateTime FechaPrestamo = (DateTime)(reader["FechaPrestamo"]);
+                            decimal MontoPrestamo = (decimal)(reader["MontoPrestamo"]);
+                            int Moneda = (int)(reader["Moneda"]);
+                            int PlazoMeses = (int)(reader["PlazoMeses"]);
                             decimal Porcentaje_Interes = (decimal)(reader["Porcentaje_Interes"]);
-                            int Seguro = (int)(reader["Seguro"]);
+                            bool Seguro = (bool)(reader["Seguro"]);
                             string Cuenta = (string)(reader["Cuenta"]);
                             decimal? Interes_Moratorio = reader["Interes_Moratorio"] as decimal?;
                             DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
-                            int? USUARIO_CREADOR = reader["USUARIO_CREADOR"] as int?;
-                            int? USUARIO_MODIFICADOR = reader["USUARIO_MODIFICADOR"] as int?;
+                            string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
+                            string USUARIO_MODIFICADOR = reader["USUARIO_MODIFICADOR"] as string;
+                            int? DiaPago = reader["DiaPago"] as int?;
+                            DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
 
-                            PrestamosModellist.Add(new PrestamosModel
+                            prestamolist.Add(new PrestamosModel
                             {
                                 Id = ID,
-                                //FechaPrestamosModel = FechaPrestamosModel,
-                                //MontoPrestamosModel = MontoPrestamosModel,
+                                Fechaprestamo = FechaPrestamo,
+                                Montoprestamo = MontoPrestamo,
                                 Moneda = Moneda,
                                 Plazomeses = PlazoMeses,
                                 Porcentaje_interes = Porcentaje_Interes,
@@ -296,28 +305,30 @@ namespace CDatos.Manager
                                 Fecha_modificacion = FECHA_MODIFICACION,
                                 Usuario_creador = USUARIO_CREADOR,
                                 Usuario_modificador = USUARIO_MODIFICADOR,
+                                Diapago = DiaPago,
+                                Fecha_creacion = FECHA_CREACION,
 
                             });
                         }
                     }
                 }
 
-                return PrestamosModellist;
+                return prestamolist;
             }
             catch (Exception)
             {
-                return PrestamosModellist;
+                return prestamolist;
             }
         }
 
 
         /// <summary>
-        /// Selects the Multiple objects of PrestamosModel table by a given criteria.
+        /// Selects the Multiple objects of prestamo table by a given criteria.
         /// </summary>
-        public List<PrestamosModel> PrestamosModelSelectbyUNKNOW(string aValue)
+        public List<PrestamosModel> prestamoSelectbyID(string aId)
         {
 
-            List<PrestamosModel> PrestamosModellist = new List<PrestamosModel>();
+            List<PrestamosModel> prestamolist = new List<PrestamosModel>();
 
             try
             {
@@ -327,11 +338,11 @@ namespace CDatos.Manager
 
                     SqlCommand command = connection.CreateCommand();
 
-                    command.Parameters.AddWithValue("@UNKNOW", aValue);
+                    command.Parameters.AddWithValue("@ID", aId);
 
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.CommandText = "PrestamosModelSelectbyUNKNOW";
+                    command.CommandText = "prestamosSelectbyId";
 
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -341,23 +352,24 @@ namespace CDatos.Manager
                         {
 
                             int ID = (int)(reader["ID"]);
-                            DateTime FechaPrestamosModel = (DateTime)(reader["FechaPrestamosModel"]);
-                            decimal MontoPrestamosModel = (decimal)(reader["MontoPrestamosModel"]);
-                            short Moneda = (short)(reader["Moneda"]);
-                            short PlazoMeses = (short)(reader["PlazoMeses"]);
+                            DateTime FechaPrestamo = (DateTime)(reader["FechaPrestamo"]);
+                            decimal MontoPrestamo = (decimal)(reader["MontoPrestamo"]);
+                            int Moneda = (int)(reader["Moneda"]);
+                            int PlazoMeses = (int)(reader["PlazoMeses"]);
                             decimal Porcentaje_Interes = (decimal)(reader["Porcentaje_Interes"]);
-                            int Seguro = (int)(reader["Seguro"]);
+                            bool Seguro = (bool)(reader["Seguro"]);
                             string Cuenta = (string)(reader["Cuenta"]);
                             decimal? Interes_Moratorio = reader["Interes_Moratorio"] as decimal?;
                             DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
-                            int? USUARIO_CREADOR = reader["USUARIO_CREADOR"] as int?;
-                            int? USUARIO_MODIFICADOR = reader["USUARIO_MODIFICADOR"] as int?;
+                            string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
+                            string USUARIO_MODIFICADOR = reader["USUARIO_MODIFICADOR"] as string;
+                            int? DiaPago = reader["DiaPago"] as int?;
 
-                            PrestamosModellist.Add(new PrestamosModel
+                            prestamolist.Add(new PrestamosModel
                             {
                                 Id = ID,
-                                //FechaPrestamosModel = FechaPrestamosModel,
-                                //MontoPrestamosModel = MontoPrestamosModel,
+                                Fechaprestamo = FechaPrestamo,
+                                Montoprestamo = MontoPrestamo,
                                 Moneda = Moneda,
                                 Plazomeses = PlazoMeses,
                                 Porcentaje_interes = Porcentaje_Interes,
@@ -367,17 +379,92 @@ namespace CDatos.Manager
                                 Fecha_modificacion = FECHA_MODIFICACION,
                                 Usuario_creador = USUARIO_CREADOR,
                                 Usuario_modificador = USUARIO_MODIFICADOR,
+                                Diapago = DiaPago,
 
                             });
                         }
                     }
                 }
 
-                return PrestamosModellist;
+                return prestamolist;
             }
             catch (Exception)
             {
-                return PrestamosModellist;
+                //throw;
+                return prestamolist;
+            }
+        }
+
+        /// <summary>
+        /// Selects the Multiple objects of prestamo table by a given criteria.
+        /// </summary>
+        public List<PrestamosModel> prestamoSelectbyNroCuenta(string aNumero_cuenta)
+        {
+
+            List<PrestamosModel> prestamolist = new List<PrestamosModel>();
+
+            try
+            {
+                using (var connection = Util.ConnectionFactory.conexion())
+                {
+                    connection.Open();
+
+                    SqlCommand command = connection.CreateCommand();
+
+                    command.Parameters.AddWithValue("@Cuenta", aNumero_cuenta);
+
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.CommandText = "PrestamosSelectAllByCuenta";
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+
+                            int ID = (int)(reader["ID"]);
+                            DateTime FechaPrestamo = (DateTime)(reader["FechaPrestamo"]);
+                            decimal MontoPrestamo = (decimal)(reader["MontoPrestamo"]);
+                            int Moneda = (int)(reader["Moneda"]);
+                            int PlazoMeses = (int)(reader["PlazoMeses"]);
+                            decimal Porcentaje_Interes = (decimal)(reader["Porcentaje_Interes"]);
+                            bool Seguro = (bool)(reader["Seguro"]);
+                            string Cuenta = (string)(reader["Cuenta"]);
+                            decimal? Interes_Moratorio = reader["Interes_Moratorio"] as decimal?;
+                            DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
+                            string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
+                            string USUARIO_MODIFICADOR = reader["USUARIO_MODIFICADOR"] as string;
+                            int? DiaPago = reader["DiaPago"] as int?;
+
+                            prestamolist.Add(new PrestamosModel
+                            {
+                                Id = ID,
+                                Fechaprestamo = FechaPrestamo,
+                                Montoprestamo = MontoPrestamo,
+                                Moneda = Moneda,
+                                Plazomeses = PlazoMeses,
+                                Porcentaje_interes = Porcentaje_Interes,
+                                Seguro = Seguro,
+                                Cuenta = Cuenta,
+                                Interes_moratorio = Interes_Moratorio,
+                                Fecha_modificacion = FECHA_MODIFICACION,
+                                Usuario_creador = USUARIO_CREADOR,
+                                Usuario_modificador = USUARIO_MODIFICADOR,
+                                Diapago = DiaPago,
+
+                            });
+                        }
+                    }
+                }
+
+                return prestamolist;
+            }
+            catch (Exception)
+            {
+                //throw;
+                return prestamolist;
             }
         }
         #endregion
