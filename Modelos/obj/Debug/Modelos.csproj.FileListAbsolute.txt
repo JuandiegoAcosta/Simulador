@@ -117,3 +117,8 @@ C:\Users\RithardLL\Source\Repos\Simulador10\Modelos\obj\Debug\Modelos.csprojAsse
 C:\Users\RithardLL\Source\Repos\Simulador10\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
 C:\Users\RithardLL\Source\Repos\Simulador10\Modelos\obj\Debug\Modelos.dll
 C:\Users\RithardLL\Source\Repos\Simulador10\Modelos\obj\Debug\Modelos.pdb
+C:\Users\Jordan\Source\Repos\Simulador\Modelos\bin\Debug\Modelos.dll
+C:\Users\Jordan\Source\Repos\Simulador\Modelos\bin\Debug\Modelos.pdb
+C:\Users\Jordan\Source\Repos\Simulador\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
+C:\Users\Jordan\Source\Repos\Simulador\Modelos\obj\Debug\Modelos.dll
+C:\Users\Jordan\Source\Repos\Simulador\Modelos\obj\Debug\Modelos.pdb

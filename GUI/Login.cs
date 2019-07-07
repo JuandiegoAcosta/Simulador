@@ -121,11 +121,6 @@ namespace Sistema_Bancario
             else MessageBox.Show("Error en las credenciales");
       }
 
-      private void PbxClose_Click(object sender, EventArgs e)
-      {
-         this.Close();
-      }
-
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             CambiarContraseña cambiarContraseña = new CambiarContraseña();
@@ -137,6 +132,11 @@ namespace Sistema_Bancario
         private void txtPass_TextChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void BTClose2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
