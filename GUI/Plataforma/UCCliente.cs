@@ -8,13 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CNegocio.Plataforma;
+using CNegocio.Backend;
 using Modelos.Modelos;
 
 namespace Sistema_Bancario.Plataforma
 {
     public partial class UCcliente : Base
     {
-        private BLPersona BLPersonas = new BLPersona();
+        private PersonaMethods BLPersonas = new PersonaMethods();
 
         public UCcliente()
         {

@@ -70,6 +70,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ayuda\FormHelp2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ayuda\FormHelp2.Designer.cs" />
     <Compile Include="Backend\Resumen_caja_chica.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -252,6 +256,22 @@
     <Compile Include="Plataforma\UCrefinanciar.Designer.cs">
       <DependentUpon>UCrefinanciar.cs</DependentUpon>
     </Compile>
+    <Compile Include="plataforma_controles\NuevaCuentaUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="plataforma_controles\NuevaCuentaUserControl.Designer.cs" />
+    <Compile Include="plataforma_controles\NuevoPrestamoUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="plataforma_controles\NuevoPrestamoUserControl.Designer.cs" />
+    <Compile Include="plataforma_controles\RegistrarChequera.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="plataforma_controles\RegistrarChequera.Designer.cs" />
+    <Compile Include="plataforma_controles\RegistroPersonaUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="plataforma_controles\RegistroPersonaUserControl.Designer.cs" />
     <Compile Include="VentanaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -344,6 +364,7 @@
     <Compile Include="VentanaPrincipal.Designer.cs">
       <DependentUpon>VentanaPrincipal.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Ayuda\FormHelp2.resx" />
     <EmbeddedResource Include="Botones\BTRetiros.resx">
       <DependentUpon>BTRetiros.cs</DependentUpon>
     </EmbeddedResource>
@@ -404,6 +425,10 @@
     <EmbeddedResource Include="Plataforma\UCcliente.resx">
       <DependentUpon>UCcliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="plataforma_controles\NuevaCuentaUserControl.resx" />
+    <EmbeddedResource Include="plataforma_controles\NuevoPrestamoUserControl.resx" />
+    <EmbeddedResource Include="plataforma_controles\RegistrarChequera.resx" />
+    <EmbeddedResource Include="plataforma_controles\RegistroPersonaUserControl.resx" />
     <EmbeddedResource Include="Ventanilla\Balancin.resx">
       <DependentUpon>Balancin.cs</DependentUpon>
     </EmbeddedResource>

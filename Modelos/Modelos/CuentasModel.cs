@@ -37,7 +37,7 @@ namespace Modelos.Modelos
         /// <summary>
         /// Gets or sets the Sobregiro value.
         /// </summary>
-        public decimal Sobregiro
+        public decimal? Sobregiro
         { get; set; }
 
         /// <summary>
@@ -49,13 +49,25 @@ namespace Modelos.Modelos
         /// <summary>
         /// Gets or sets the Tipomoneda value.
         /// </summary>
-        public short Tipomoneda
+        public int Tipomoneda
         { get; set; }
 
         /// <summary>
         /// Gets or sets the Id_tarjeta value.
         /// </summary>
         public int? Id_tarjeta
+        { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Contchequerebote1 value.
+        /// </summary>
+        public byte? Contchequerebote1
+        { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Contchequerebote2 value.
+        /// </summary>
+        public byte? Contchequerebote2
         { get; set; }
 
         /// <summary>
