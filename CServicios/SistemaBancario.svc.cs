@@ -675,22 +675,22 @@ namespace ServiciosBancarios
 
         public bool Cuenta_Crear(CuentasModel aCuenta)
         {
-            return BLCuenta.Crear(aCuenta);
+            return BLCuenta.Insert(aCuenta);
         }
 
         public bool Cuenta_Editar(CuentasModel aCuenta)
         {
-            return BLCuenta.Actualizar(aCuenta);
+            return BLCuenta.Update(aCuenta);
         }
 
         public CuentasModel Cuenta_ObtenerUno(string aNro_Cuenta)
         {
-            return BLCuenta.ObtenerCuenta(aNro_Cuenta);
+            return BLCuenta.Getcuenta(aNro_Cuenta);
         }
 
         public List<CuentasModel> Cuenta_ObtenerTodos(int aID_Persona)
         {
-            return BLCuenta.ObtenerTodosCuentasUsuario(aID_Persona);
+            return BLCuenta.cuentaSelectbyId_cliente(aID_Persona);
         }
 
         public List<VentanillaModel> GetVentanillasXSucursal(int Idsucursal)

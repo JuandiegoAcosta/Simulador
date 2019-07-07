@@ -19,7 +19,7 @@ namespace Sistema_Bancario.plataforma_controles
         private string modo;
 
 
-        private chequera gChequera;
+        private ChequerasModel gChequera;
 
         public RegistrarChequera()
         {
@@ -67,7 +67,7 @@ namespace Sistema_Bancario.plataforma_controles
             this.buscarCuenta(objeto);
         }
 
-        private void buscarCuenta(List<cuenta> objetos)
+        private void buscarCuenta(List<CuentasModel> objetos)
         {
             string[][] orden = new string[4][];
 
@@ -85,7 +85,7 @@ namespace Sistema_Bancario.plataforma_controles
 
                     if (formHelp1.EstaAceptado())
                     {
-                        var dato = formHelp1.getObject<cuenta>();
+                        var dato = formHelp1.getObject<CuentasModel>();
                         if (dato != null)
                         {
 

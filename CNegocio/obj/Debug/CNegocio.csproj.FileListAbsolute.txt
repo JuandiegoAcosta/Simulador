@@ -235,3 +235,14 @@ C:\Users\X\Desktop\Projects\Simulador\CNegocio\obj\Debug\CNegocio.csproj.CoreCom
 C:\Users\X\Desktop\Projects\Simulador\CNegocio\obj\Debug\CNegocio.csproj.CopyComplete
 C:\Users\X\Desktop\Projects\Simulador\CNegocio\obj\Debug\CNegocio.dll
 C:\Users\X\Desktop\Projects\Simulador\CNegocio\obj\Debug\CNegocio.pdb
+C:\Users\Jean\Desktop\S4\Simulador\CNegocio\bin\Debug\CNegocio.dll
+C:\Users\Jean\Desktop\S4\Simulador\CNegocio\bin\Debug\CNegocio.pdb
+C:\Users\Jean\Desktop\S4\Simulador\CNegocio\bin\Debug\CDatos.dll
+C:\Users\Jean\Desktop\S4\Simulador\CNegocio\bin\Debug\Modelos.dll
+C:\Users\Jean\Desktop\S4\Simulador\CNegocio\bin\Debug\CDatos.pdb
+C:\Users\Jean\Desktop\S4\Simulador\CNegocio\bin\Debug\Modelos.pdb
+C:\Users\Jean\Desktop\S4\Simulador\CNegocio\obj\Debug\CNegocio.csprojAssemblyReference.cache
+C:\Users\Jean\Desktop\S4\Simulador\CNegocio\obj\Debug\CNegocio.csproj.CoreCompileInputs.cache
+C:\Users\Jean\Desktop\S4\Simulador\CNegocio\obj\Debug\CNegocio.csproj.CopyComplete
+C:\Users\Jean\Desktop\S4\Simulador\CNegocio\obj\Debug\CNegocio.dll
+C:\Users\Jean\Desktop\S4\Simulador\CNegocio\obj\Debug\CNegocio.pdb

@@ -16,9 +16,9 @@ namespace Sistema_Bancario.plataforma_controles
     {
         public string gusuario { get; set; }
 
-        private BLPersona BLPersona = new BLPersona();
+        private PersonaMethods BLPersona = new PersonaMethods();
         private TipoDocumentoMethods BLTipo_documento = new TipoDocumentoMethods();
-        private persona gPerona;
+        private PersonaModel gPerona;
 
         public RegistroPersonaUserControl()
         {
@@ -52,7 +52,7 @@ namespace Sistema_Bancario.plataforma_controles
             this.cboTipoPersona.DisplayMember = "Value";
         }
 
-        private persona gui2persona()
+        private PersonaModel gui2persona()
         {
             try
             {
@@ -66,7 +66,7 @@ namespace Sistema_Bancario.plataforma_controles
                 string rol_persona = (string)this.cboTipoPersona.SelectedValue;
                 string telefono = this.txtTelefono.Text;
 
-                return new persona()
+                return new PersonaModel()
                 {
                     Nombres = nombres,
                     Apellidos = apellidos,
@@ -88,7 +88,7 @@ namespace Sistema_Bancario.plataforma_controles
             }
         }
 
-        private void persona2gui(persona apersona)
+        private void persona2gui(PersonaModel apersona)
         {
             this.txtCodigo.Text = apersona.Id.ToString();
             this.txtNombres.Text = apersona.Nombres;
@@ -203,7 +203,7 @@ namespace Sistema_Bancario.plataforma_controles
                 MessageBox.Show("Problemas al instanciar el nuevo objeto, revise las propiedas");
                 return;
             }
-            if (this.BLPersona.Insert(objeto))
+            if (this.BLPersona.Crear(objeto))
             {
                 this.clearForm();
                 this.modoInicial();
@@ -227,7 +227,7 @@ namespace Sistema_Bancario.plataforma_controles
             objeto.Usuario_modificador = this.gusuario;
             objeto.Fecha_modificacion = BLFechaHoraServidor.Obtener();
 
-            if (this.BLPersona.Update(objeto))
+            if (this.BLPersona.Editar(objeto))
             {
                 MessageBox.Show("El proceso ha sido correcto");
                 this.clearForm();
@@ -242,7 +242,7 @@ namespace Sistema_Bancario.plataforma_controles
                 MessageBox.Show("Problemas al obtener el objeto de base de datos");
                 return;
             }
-            if (this.BLPersona.Delete(this.gPerona.Id))
+            if (this.BLPersona.Eliminar(this.gPerona.Id))
             {
                 this.clearForm();
                 this.modoInicial();
@@ -267,7 +267,7 @@ namespace Sistema_Bancario.plataforma_controles
             this.buscarObjeto(objeto);
         }
 
-        private void buscarObjeto(List<persona> objetos)
+        private void buscarObjeto(List<PersonaModel> objetos)
         {
             string[][] orden = new string[2][];
 
@@ -283,11 +283,11 @@ namespace Sistema_Bancario.plataforma_controles
 
                     if (formHelp1.EstaAceptado())
                     {
-                        var dato = formHelp1.getObject<persona>();
+                        var dato = formHelp1.getObject<PersonaModel>();
                         if (dato != null)
                         {
                             this.clearForm();
-                            this.gPerona = this.BLPersona.Getpersona(dato.Id);
+                            this.gPerona = this.BLPersona.ObtenerUno(dato.Id);
                             this.persona2gui(this.gPerona);
                             this.modoNuevo();
                             this.modoEdicion();

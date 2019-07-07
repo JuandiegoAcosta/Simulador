@@ -21,13 +21,13 @@ namespace Sistema_Bancario.plataforma_controles
 
         private BLCuenta BLCuenta = new BLCuenta();
         private BLTipoMoneda BLTipoMoneda = new BLTipoMoneda();
-        private BLPersona BLPersona = new BLPersona();
+        private PersonaMethods BLPersona = new PersonaMethods();
         private TipoDocumentoMethods BLTipo_documento = new TipoDocumentoMethods();
 
 
         private string gUsuario;
-        private persona gPerona;
-        private cuenta gCuenta;
+        private PersonaModel gPerona;
+        private CuentasModel gCuenta;
         private string modo = "";
         public NuevaCuentaUserControl()
         {
@@ -105,7 +105,7 @@ namespace Sistema_Bancario.plataforma_controles
             this.buscarPersona(objeto);
         }
 
-        private void buscarPersona(List<persona> objetos)
+        private void buscarPersona(List<PersonaModel> objetos)
         {
             string[][] orden = new string[2][];
 
@@ -121,17 +121,17 @@ namespace Sistema_Bancario.plataforma_controles
 
                     if (formHelp1.EstaAceptado())
                     {
-                        var dato = formHelp1.getObject<persona>();
+                        PersonaModel dato = formHelp1.getObject<PersonaModel>();
                         if (dato != null)
                         {
-                            this.gPerona = this.BLPersona.Getpersona(dato.Id);
+                            this.gPerona = this.BLPersona.ObtenerUno(dato.Id);
 
                             if (this.modo == "modoInicial")
                             {
                                 if (gPerona == null)
                                     return;
 
-                                var Cuentas = this.BLCuenta.cuentaSelectbyId_cliente(this.gPerona.Id);
+                                List<CuentasModel> Cuentas = this.BLCuenta.cuentaSelectbyId_cliente(this.gPerona.Id);
                                 if (Cuentas == null || Cuentas.Count == 0 )
                                     return;
 
@@ -148,7 +148,7 @@ namespace Sistema_Bancario.plataforma_controles
             }
         }
 
-        private void buscarCuenta(List<cuenta> objetos)
+        private void buscarCuenta(List<CuentasModel> objetos)
         {
             string[][] orden = new string[4][];
 
@@ -166,7 +166,7 @@ namespace Sistema_Bancario.plataforma_controles
 
                     if (formHelp1.EstaAceptado())
                     {
-                        var dato = formHelp1.getObject<cuenta>();
+                        var dato = formHelp1.getObject<CuentasModel>();
                         if (dato != null)
                         {
                             this.clearForm();
@@ -181,19 +181,19 @@ namespace Sistema_Bancario.plataforma_controles
         }
 
 
-        private void persona2gui(persona apersona)
+        private void persona2gui(PersonaModel apersona)
         {
             this.txtNombres.Text = apersona.Nombres;
             this.txtNumero_documento.Text = apersona.Nrodocumento;
             this.cboTipo_documento.SelectedValue = apersona.Tipodocumento;
         }
 
-        private void cuenta2gui(cuenta acuenta)
+        private void cuenta2gui(CuentasModel acuenta)
         {
             if (this.gCuenta == null)
                 return;
 
-            var persona = this.BLPersona.Getpersona(this.gCuenta.Cliente);
+            var persona = this.BLPersona.ObtenerUno(this.gCuenta.Cliente);
             if (persona == null)
                 return;
 
@@ -210,7 +210,7 @@ namespace Sistema_Bancario.plataforma_controles
             this.SlblFecha_modificacion.Text = acuenta.Fecha_modificacion.ToString();
         }
 
-        private cuenta gui2cuenta()
+        private CuentasModel gui2cuenta()
         {
             try
             {
@@ -224,7 +224,7 @@ namespace Sistema_Bancario.plataforma_controles
                 int Cliente = this.gPerona.Id;
                 DateTime FECHA_CREACION = (DateTime)BLFechaHoraServidor.Obtener();
 
-                return new cuenta()
+                return new CuentasModel()
                 {
                     Nrocuenta = NroCuenta,
                     Estado = Estado,

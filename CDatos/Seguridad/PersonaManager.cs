@@ -715,7 +715,7 @@ namespace CDatos.Manager
                     return PersonaModel;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return PersonaModel;
             }

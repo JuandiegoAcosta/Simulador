@@ -70,6 +70,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ayuda\FormHelp2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ayuda\FormHelp2.Designer.cs" />
     <Compile Include="Backend\Resumen_caja_chica.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -360,6 +364,7 @@
     <Compile Include="VentanaPrincipal.Designer.cs">
       <DependentUpon>VentanaPrincipal.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Ayuda\FormHelp2.resx" />
     <EmbeddedResource Include="Botones\BTRetiros.resx">
       <DependentUpon>BTRetiros.cs</DependentUpon>
     </EmbeddedResource>

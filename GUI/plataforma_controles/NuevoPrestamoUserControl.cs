@@ -14,9 +14,9 @@ namespace Sistema_Bancario.plataforma_controles
 {
     public partial class NuevoPrestamoUserControl : UserControl
     {
-        private cuenta gCuenta;
+        private CuentasModel gCuenta;
         private string gUsuario;
-        private prestamo gPrestamo;
+        private PrestamosModel gPrestamo;
         private string modo;
 
         private BLPrestamo BLPrestamo = new BLPrestamo();
@@ -48,7 +48,7 @@ namespace Sistema_Bancario.plataforma_controles
             this.cboMoneda.ValueMember = "Id";
         }
 
-        private prestamo gui2prestamo()
+        private PrestamosModel gui2prestamo()
         {
             try
             {
@@ -68,7 +68,7 @@ namespace Sistema_Bancario.plataforma_controles
                 DateTime FECHA_CREACION = (DateTime)BLFechaHoraServidor.Obtener();
 
 
-                return new prestamo()
+                return new PrestamosModel()
                 {
                     Fechaprestamo = fechaPrestamo,
                     Montoprestamo = montoPrestamo,
@@ -89,7 +89,7 @@ namespace Sistema_Bancario.plataforma_controles
             }
         }
 
-        private void prestamo2gui(prestamo aprestamo)
+        private void prestamo2gui(PrestamosModel aprestamo)
         {
             this.txtCodigo.Text = aprestamo.Id.ToString();
             this.txtCuenta.Text = aprestamo.Cuenta;
@@ -103,7 +103,7 @@ namespace Sistema_Bancario.plataforma_controles
             this.chkEstado.Checked = aprestamo.Seguro;
         }
 
-        private void cuenta2gui(cuenta acuenta)
+        private void cuenta2gui(CuentasModel acuenta)
         {
             this.txtCuenta.Text = acuenta.Nrocuenta.ToUpper();
         }
@@ -218,7 +218,7 @@ namespace Sistema_Bancario.plataforma_controles
             this.buscarCuenta(objeto);
         }
 
-        private void buscarCuenta(List<cuenta> objetos)
+        private void buscarCuenta(List<CuentasModel> objetos)
         {
             string[][] orden = new string[4][];
 
@@ -236,7 +236,7 @@ namespace Sistema_Bancario.plataforma_controles
 
                     if (formHelp1.EstaAceptado())
                     {
-                        var dato = formHelp1.getObject<cuenta>();
+                        var dato = formHelp1.getObject<CuentasModel>();
                         if (dato != null)
                         {
                             this.clearForm();
@@ -269,7 +269,7 @@ namespace Sistema_Bancario.plataforma_controles
             }
         }
 
-        private void buscarPrestamo(List<prestamo> objetos)
+        private void buscarPrestamo(List<PrestamosModel> objetos)
         {
             string[][] orden = new string[4][];
 
@@ -288,7 +288,7 @@ namespace Sistema_Bancario.plataforma_controles
 
                     if (formHelp1.EstaAceptado())
                     {
-                        var dato = formHelp1.getObject<prestamo>();
+                        var dato = formHelp1.getObject<PrestamosModel>();
                         if (dato != null)
                         {
                             this.clearForm();
