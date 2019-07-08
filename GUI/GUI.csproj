@@ -293,6 +293,12 @@
     <Compile Include="Ventanilla\Balancin.Designer.cs">
       <DependentUpon>Balancin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ventanilla\Cheques.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ventanilla\Cheques.Designer.cs">
+      <DependentUpon>Cheques.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ventanilla\CobroGiros.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -449,6 +455,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanilla\Balancin.resx">
       <DependentUpon>Balancin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventanilla\Cheques.resx">
+      <DependentUpon>Cheques.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanilla\Depositos.resx">
       <DependentUpon>Depositos.cs</DependentUpon>
