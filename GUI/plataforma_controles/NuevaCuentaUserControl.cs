@@ -16,27 +16,24 @@ namespace Sistema_Bancario.plataforma_controles
 {
     public partial class NuevaCuentaUserControl : UserControl
     {
-
-        public Session llamoquiSesion;
-
         private BLCuenta BLCuenta = new BLCuenta();
         private BLTipoMoneda BLTipoMoneda = new BLTipoMoneda();
         private PersonaMethods BLPersona = new PersonaMethods();
         private TipoDocumentoMethods BLTipo_documento = new TipoDocumentoMethods();
 
-
         private string gUsuario;
         private PersonaModel gPerona;
         private CuentasModel gCuenta;
         private string modo = "";
-        public NuevaCuentaUserControl()
+        public NuevaCuentaUserControl(ISession isesion)
         {
             InitializeComponent();
-            //if (llamoquiSesion == null)
-            //{
-            //    this.Dispose();
-            //}
-            this.gUsuario = "ADMINI";// this.llamoquiSesion.UserCodigo;
+            if (isesion == null)
+            {
+                MessageBox.Show("La sesión ha caducado");
+                this.Dispose();
+            }
+            this.gUsuario = isesion.UserCodigo;
 
             this.poblarCboMonedas();
             this.poblarCboTipoCuenta();

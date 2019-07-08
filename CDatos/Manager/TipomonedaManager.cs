@@ -245,7 +245,7 @@ namespace CDatos.Manager
                         while (reader.Read())
                         {
 
-                            short ID = (short)(reader["ID"]);
+                            int ID = (int)(reader["ID"]);
                             string Nombre = (string)(reader["Nombre"]);
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
                             DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
@@ -270,6 +270,7 @@ namespace CDatos.Manager
             }
             catch (Exception)
             {
+                //throw;
                 return TipoMonedaModellist;
             }
         }

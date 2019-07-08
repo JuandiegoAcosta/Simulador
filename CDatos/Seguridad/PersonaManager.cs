@@ -296,7 +296,7 @@ namespace CDatos.Manager
                             string Telefono = (reader["Telefono"]) == DBNull.Value ? null : (string)(reader["Telefono"]);
                             string NroDocumento = (string)(reader["NroDocumento"]);
                             int TipoDocumento = (int)(reader["TipoDocumento"]);
-                            string Tipo_Persona = (string)(reader["Tipo_Persona"]);
+                            string Tipo_Persona = (reader["Tipo_Persona"]) == DBNull.Value ? null : (string)(reader["Tipo_Persona"]);
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
                             DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
                             string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
@@ -366,19 +366,19 @@ namespace CDatos.Manager
                             int Id = (int)(reader["Id"]);
                             string NombreUsuario = reader["NombreUsuario"] as string;
                             string Pass = reader["Pass"] as string;
-                            string Correo = (string)(reader["Correo"]);
+                            string Correo = (reader["Correo"]) == DBNull.Value ? null : (string)(reader["Correo"]);
                             bool Estado = (bool)(reader["Estado"]);
                             string Nombres = (string)(reader["Nombres"]);
                             string Apellidos = (string)(reader["Apellidos"]);
                             DateTime FechaNacimiento = (DateTime)(reader["FechaNacimiento"]);
-                            string Telefono = (string)(reader["Telefono"]);
+                            string Telefono = (reader["Telefono"]) == DBNull.Value ? null : (string)(reader["Telefono"]);
                             string NroDocumento = (string)(reader["NroDocumento"]);
                             int TipoDocumento = (int)(reader["TipoDocumento"]);
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
                             DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
                             string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
-                            string USUARIO_MODIFICADOR = reader["USUARIO_MODIFICADOR"] as string;
-                            string Tipo_Persona = (string)(reader["Tipo_Persona"]);
+                            string USUARIO_MODIFICADOR = (reader["USUARIO_MODIFICADOR"]) == DBNull.Value ? null : (string)(reader["USUARIO_MODIFICADOR"]);
+                            string Tipo_Persona = (reader["Tipo_Persona"]) == DBNull.Value ? null : (string)(reader["Tipo_Persona"]);
 
                             personalist.Add(new PersonaModel
                             {
@@ -445,19 +445,19 @@ namespace CDatos.Manager
                             int Id = (int)(reader["Id"]);
                             string NombreUsuario = reader["NombreUsuario"] as string;
                             string Pass = reader["Pass"] as string;
-                            string Correo = (string)(reader["Correo"]);
+                            string Correo = (reader["Correo"]) == DBNull.Value ? null : (string)(reader["Correo"]);
                             bool Estado = (bool)(reader["Estado"]);
                             string Nombres = (string)(reader["Nombres"]);
                             string Apellidos = (string)(reader["Apellidos"]);
                             DateTime FechaNacimiento = (DateTime)(reader["FechaNacimiento"]);
-                            string Telefono = (string)(reader["Telefono"]);
+                            string Telefono = (reader["Telefono"]) == DBNull.Value ? null : (string)(reader["Telefono"]);
                             string NroDocumento = (string)(reader["NroDocumento"]);
                             int TipoDocumento = (int)(reader["TipoDocumento"]);
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
                             DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
                             string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
-                            string USUARIO_MODIFICADOR = reader["USUARIO_MODIFICADOR"] as string;
-                            string Tipo_Persona = (string)(reader["Tipo_Persona"]);
+                            string USUARIO_MODIFICADOR = (reader["USUARIO_MODIFICADOR"]) == DBNull.Value ? null : (string)(reader["USUARIO_MODIFICADOR"]);
+                            string Tipo_Persona = (reader["Tipo_Persona"]) == DBNull.Value ? null : (string)(reader["Tipo_Persona"]);
 
                             personalist.Add(new PersonaModel
                             {
@@ -602,19 +602,19 @@ namespace CDatos.Manager
                             int Id = (int)(reader["Id"]);
                             string NombreUsuario = reader["NombreUsuario"] as string;
                             string Pass = reader["Pass"] as string;
-                            string Correo = (string)(reader["Correo"]);
+                            string Correo = (reader["Correo"]) == DBNull.Value ? null : (string)(reader["Correo"]);
                             bool Estado = (bool)(reader["Estado"]);
                             string Nombres = (string)(reader["Nombres"]);
                             string Apellidos = (string)(reader["Apellidos"]);
                             DateTime FechaNacimiento = (DateTime)(reader["FechaNacimiento"]);
-                            string Telefono = (string)(reader["Telefono"]);
+                            string Telefono = (reader["Telefono"]) == DBNull.Value ? null : (string)(reader["Telefono"]);
                             string NroDocumento = (string)(reader["NroDocumento"]);
                             int TipoDocumento = (int)(reader["TipoDocumento"]);
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
                             DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
                             string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
-                            string USUARIO_MODIFICADOR = reader["USUARIO_MODIFICADOR"] as string;
-                            string Tipo_Persona = (string)(reader["Tipo_Persona"]);
+                            string USUARIO_MODIFICADOR = (reader["USUARIO_MODIFICADOR"]) == DBNull.Value ? null : (string)(reader["USUARIO_MODIFICADOR"]);
+                            string Tipo_Persona = (reader["Tipo_Persona"]) == DBNull.Value ? null : (string)(reader["Tipo_Persona"]);
 
                             personalist.Add(new PersonaModel
                             {

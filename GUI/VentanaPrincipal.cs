@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Sistema_Bancario.Froms_opciones;
 using Sistema_Bancario.Plataforma;
+using Sistema_Bancario.plataforma_controles;
 using Modelos.Modelos;
 using Sistema_Bancario.Ventanilla;
 using Sistema_Bancario.Config;
@@ -302,15 +303,15 @@ namespace Sistema_Bancario
          }
          else if (btn.Text.Equals("Abrir Cuenta"))
          {
-            UCcuenta cuenta = UCcuenta.instance;
+                //UCcuenta cuenta = UCcuenta.instance;
+                NuevaCuentaUserControl cuenta = new NuevaCuentaUserControl(this.Session);
             if (!panel1.Controls.Contains(cuenta))
             {
-               cuenta.Session = this.Session;
-               panel1.Controls.Add(cuenta);
-               cuenta.Dock = DockStyle.Fill;
-               cuenta.BringToFront();
-               TituloText.Text = btn.Text;
-            }
+                    panel1.Controls.Add(cuenta);
+                    cuenta.Dock = DockStyle.Fill;
+                    cuenta.BringToFront();
+                    TituloText.Text = btn.Text;
+                }
             else
             {
                cuenta.BringToFront();
