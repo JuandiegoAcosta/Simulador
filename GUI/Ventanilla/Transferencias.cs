@@ -30,12 +30,12 @@ namespace Sistema_Bancario.Froms_opciones
             return false;
 
          if (!string.IsNullOrEmpty(this.txtNroCuentaOrigen.Text.Trim()))
-            CuentasTarjetasModel.NroCuenta = Convert.ToInt32(this.txtNroCuentaOrigen.Text.Trim());
+            CuentasTarjetasModel.NroCuenta = Convert.ToInt64(this.txtNroCuentaOrigen.Text.Trim());
          else
             return false;
 
          if (!string.IsNullOrEmpty(this.txtNroCuentaDestino.Text.Trim()))
-            CuentasTarjetasModel.NroCuentaDestino = Convert.ToInt32(this.txtNroCuentaDestino.Text.Trim());
+            CuentasTarjetasModel.NroCuentaDestino = Convert.ToInt64(this.txtNroCuentaDestino.Text.Trim());
          else
             return false;
 

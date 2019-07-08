@@ -46,7 +46,11 @@ namespace Sistema_Bancario.Controles
             }
             catch (Exception)
             {           
-                MessageBox.Show("Error al llamar al servicio");
+               // MessageBox.Show("Error al llamar al servicio");
+                List<string> monedas = new List<string>();
+                monedas.Add("Soles");
+                monedas.Add("Dolares");
+                this.CboMoneda.DataSource = monedas;
             }
            
         }

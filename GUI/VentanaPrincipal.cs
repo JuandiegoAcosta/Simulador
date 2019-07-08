@@ -44,6 +44,7 @@ namespace Sistema_Bancario
             Session = session;
             EvaluarUsuario();
             UIForm.SetRound(this, 7);
+
          }
          catch (Exception)
          { }
@@ -553,5 +554,15 @@ namespace Sistema_Bancario
 
          this.Close();
       }
-   }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+    }
 }

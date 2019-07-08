@@ -10,8 +10,8 @@ namespace Modelos.Modelos
     {
         public decimal Monto { get; set; }
         public int clave { get; set; }
-        public int NroCuenta { get; set; }
-        public int NroCuentaDestino { get; set; }
+        public long NroCuenta { get; set; }
+        public long NroCuentaDestino { get; set; }
         public int doi { get; set; }
 
         public CuentasTarjetasModel() { }

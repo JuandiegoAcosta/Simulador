@@ -169,6 +169,12 @@
     <Compile Include="Controles\NroCuenta.Designer.cs">
       <DependentUpon>NroCuenta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controles\OpcionesUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controles\OpcionesUsuario.Designer.cs">
+      <DependentUpon>OpcionesUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controles\Precios.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -400,6 +406,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controles\NroCuenta.resx">
       <DependentUpon>NroCuenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\OpcionesUsuario.resx">
+      <DependentUpon>OpcionesUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controles\Precios.resx">
       <DependentUpon>Precios.cs</DependentUpon>

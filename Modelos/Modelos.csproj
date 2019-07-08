@@ -49,6 +49,7 @@
     <Compile Include="Modelos\ChequeModel.cs" />
     <Compile Include="Modelos\CobroChequesModel.cs" />
     <Compile Include="Modelos\ComponenteModel.cs" />
+    <Compile Include="Modelos\ConsultaCambio.cs" />
     <Compile Include="Modelos\ControlErroresModel.cs" />
     <Compile Include="Modelos\CronogramaPagosModel.cs" />
     <Compile Include="Modelos\CuentasModel.cs" />

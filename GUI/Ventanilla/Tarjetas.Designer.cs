@@ -35,43 +35,43 @@
             // 
             // proceder1
             // 
-            this.proceder1.Location = new System.Drawing.Point(8, 435);
-            this.proceder1.Size = new System.Drawing.Size(858, 49);
+            this.proceder1.Location = new System.Drawing.Point(6, 353);
+            this.proceder1.Size = new System.Drawing.Size(644, 40);
             // 
             // nroTarjeta1
             // 
-            this.nroTarjeta1.Location = new System.Drawing.Point(34, 27);
-            this.nroTarjeta1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nroTarjeta1.Location = new System.Drawing.Point(26, 22);
+            this.nroTarjeta1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.nroTarjeta1.Name = "nroTarjeta1";
-            this.nroTarjeta1.Size = new System.Drawing.Size(347, 34);
+            this.nroTarjeta1.Size = new System.Drawing.Size(260, 28);
             this.nroTarjeta1.TabIndex = 2;
             // 
             // monto1
             // 
-            this.monto1.Location = new System.Drawing.Point(34, 107);
-            this.monto1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.monto1.Location = new System.Drawing.Point(26, 87);
+            this.monto1.Margin = new System.Windows.Forms.Padding(2);
             this.monto1.Name = "monto1";
-            this.monto1.Size = new System.Drawing.Size(347, 31);
+            this.monto1.Size = new System.Drawing.Size(298, 25);
             this.monto1.TabIndex = 3;
             // 
             // tipoMoneda1
             // 
-            this.tipoMoneda1.Location = new System.Drawing.Point(34, 65);
-            this.tipoMoneda1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tipoMoneda1.Location = new System.Drawing.Point(26, 53);
+            this.tipoMoneda1.Margin = new System.Windows.Forms.Padding(2);
             this.tipoMoneda1.Name = "tipoMoneda1";
-            this.tipoMoneda1.Size = new System.Drawing.Size(200, 29);
+            this.tipoMoneda1.Size = new System.Drawing.Size(233, 24);
             this.tipoMoneda1.TabIndex = 4;
             // 
             // Tarjetas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.Controls.Add(this.tipoMoneda1);
             this.Controls.Add(this.monto1);
             this.Controls.Add(this.nroTarjeta1);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(3);
             this.Name = "Tarjetas";
-            this.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.Size = new System.Drawing.Size(874, 491);
+            this.Padding = new System.Windows.Forms.Padding(6);
+            this.Size = new System.Drawing.Size(656, 399);
             this.Controls.SetChildIndex(this.proceder1, 0);
             this.Controls.SetChildIndex(this.nroTarjeta1, 0);
             this.Controls.SetChildIndex(this.monto1, 0);

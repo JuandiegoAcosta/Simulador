@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <metadata name="stStatus.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>127, 3</value>
+    <value>124, 22</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="toolStripStatusLabel9.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -261,14 +261,6 @@
         AiBGwN3w9/Ph1rHD54X1iLlRPLurFikAMQBALAcQyxEh/ooIkY4IkQ4g7sXaPxkRYjyAGAIg+uG3/w+I
         Ap0BRTigCB88Jj1s8Oh08UyuThkBinBA0aoPjCgRDijCAUU4oAiPHOF2FF25cuXKlStXrly5Ok0VFvb/
         w0wz75KXvKEAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="pbxClose.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        R0lGODlhEgASAIIHAHd3d93d3bu7u4iIiKqqqu7u7v///////yH/C05FVFNDQVBFMi4wAwEBAAAh+QQB
-        AAAHACwAAAAAEgASAAAIdwAPCBxIsKDBgwgJCjhIAKEAAw0VQjT40MBEgRUvYrTIsWFGAwUiCiTA0SJJ
-        jgUGGBxQsmRKhAMKtHyZkKVFmSoTfrwpsmDGAjI7UrwJNCbRngJkAg2gMibQAgEAECSwNOeBAQGgSi1I
-        gGlBrFsN9hwYNqHZAwEBADs=
 </value>
   </data>
   <metadata name="MoveFrom.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">

@@ -51,17 +51,17 @@
             this.toolStripStatusLabel10 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel9 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel8 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel4 = new Sistema_Bancario.Controles.GradentPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel6 = new Sistema_Bancario.Controles.GradentPanel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.pbxClose = new System.Windows.Forms.PictureBox();
             this.MoveFrom = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.panel3.SuspendLayout();
             this.stStatus.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxClose)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -74,12 +74,11 @@
             // 
             // panel2
             // 
-            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
             this.panel2.Location = new System.Drawing.Point(0, 57);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 657);
+            this.panel2.Size = new System.Drawing.Size(200, 658);
             this.panel2.TabIndex = 7;
             // 
             // button11
@@ -292,6 +291,8 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.panel4.ColorBottom = System.Drawing.Color.DarkBlue;
+            this.panel4.ColorTop = System.Drawing.SystemColors.HotTrack;
             this.panel4.Controls.Add(this.label2);
             this.panel4.Location = new System.Drawing.Point(0, 25);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
@@ -302,6 +303,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(9, 9);
@@ -316,13 +318,43 @@
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel6.ColorBottom = System.Drawing.Color.Silver;
             this.panel6.ColorTop = System.Drawing.Color.White;
+            this.panel6.Controls.Add(this.button2);
+            this.panel6.Controls.Add(this.button1);
             this.panel6.Controls.Add(this.label1);
-            this.panel6.Controls.Add(this.pbxClose);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1074, 25);
             this.panel6.TabIndex = 14;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button2.Location = new System.Drawing.Point(1012, 0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(31, 25);
+            this.button2.TabIndex = 16;
+            this.button2.Text = "─";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button1.Location = new System.Drawing.Point(1043, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(31, 25);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "X";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // label1
             // 
@@ -335,20 +367,6 @@
             this.label1.Size = new System.Drawing.Size(151, 16);
             this.label1.TabIndex = 2;
             this.label1.Text = "::  SISTEMA BANCARIO";
-            // 
-            // pbxClose
-            // 
-            this.pbxClose.BackColor = System.Drawing.Color.Transparent;
-            this.pbxClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbxClose.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pbxClose.Image = ((System.Drawing.Image)(resources.GetObject("pbxClose.Image")));
-            this.pbxClose.Location = new System.Drawing.Point(1043, 0);
-            this.pbxClose.Name = "pbxClose";
-            this.pbxClose.Size = new System.Drawing.Size(31, 25);
-            this.pbxClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbxClose.TabIndex = 1;
-            this.pbxClose.TabStop = false;
-            this.pbxClose.Click += new System.EventHandler(this.PbxClose_Click);
             // 
             // MoveFrom
             // 
@@ -382,7 +400,6 @@
             this.panel4.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxClose)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -412,9 +429,10 @@
       private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel9;
       private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel8;
       private Controles.GradentPanel panel6;
-      private System.Windows.Forms.PictureBox pbxClose;
       private System.Windows.Forms.Label label1;
-      private System.Windows.Forms.Panel panel4;
       private System.Windows.Forms.Label label2;
-   }
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private Controles.GradentPanel panel4;
+    }
 }

@@ -35,19 +35,20 @@
             // CboMoneda
             // 
             this.CboMoneda.FormattingEnabled = true;
-            this.CboMoneda.Location = new System.Drawing.Point(58, 2);
+            this.CboMoneda.Location = new System.Drawing.Point(120, 2);
             this.CboMoneda.Margin = new System.Windows.Forms.Padding(2);
             this.CboMoneda.Name = "CboMoneda";
-            this.CboMoneda.Size = new System.Drawing.Size(90, 21);
+            this.CboMoneda.Size = new System.Drawing.Size(131, 21);
             this.CboMoneda.TabIndex = 4;
             // 
             // LbMoneda
             // 
             this.LbMoneda.AutoSize = true;
+            this.LbMoneda.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbMoneda.Location = new System.Drawing.Point(2, 5);
             this.LbMoneda.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LbMoneda.Name = "LbMoneda";
-            this.LbMoneda.Size = new System.Drawing.Size(46, 13);
+            this.LbMoneda.Size = new System.Drawing.Size(51, 13);
             this.LbMoneda.TabIndex = 5;
             this.LbMoneda.Text = "Moneda";
             // 
@@ -59,7 +60,7 @@
             this.Controls.Add(this.CboMoneda);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "TipoMoneda";
-            this.Size = new System.Drawing.Size(155, 24);
+            this.Size = new System.Drawing.Size(253, 25);
             this.Load += new System.EventHandler(this.TipoMoneda_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -69,6 +70,6 @@
         #endregion
 
         public System.Windows.Forms.ComboBox CboMoneda;
-        private System.Windows.Forms.Label LbMoneda;
+        public System.Windows.Forms.Label LbMoneda;
     }
 }

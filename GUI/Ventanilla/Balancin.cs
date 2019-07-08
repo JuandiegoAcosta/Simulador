@@ -79,11 +79,20 @@ namespace Sistema_Bancario.Ventanilla
         }
         private void CargarComboSujetos()
         {
-            using (WsSistemaBancario.VentanillaServiceClient ventanilla = new WsSistemaBancario.VentanillaServiceClient())
+            try
             {
-                this.cmbPersonaRol.DataSource = ventanilla.GetVentanillasXSucursal(Convert.ToInt32(this.session.SucursalCodigo));
-                this.cmbPersonaRol.DisplayMember = "Descripcion";
+                using (WsSistemaBancario.VentanillaServiceClient ventanilla = new WsSistemaBancario.VentanillaServiceClient())
+                {
+                    this.cmbPersonaRol.DataSource = ventanilla.GetVentanillasXSucursal(Convert.ToInt32(this.session.SucursalCodigo));
+                    this.cmbPersonaRol.DisplayMember = "Descripcion";
+                }
             }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocurrio un error");
+               
+            }
+            
         }
         private void CargarTipoMovimiento()
         {
