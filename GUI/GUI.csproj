@@ -272,6 +272,12 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="plataforma_controles\RegistroPersonaUserControl.Designer.cs" />
+    <Compile Include="Pruebas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pruebas.Designer.cs">
+      <DependentUpon>Pruebas.cs</DependentUpon>
+    </Compile>
     <Compile Include="VentanaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -429,6 +435,9 @@
     <EmbeddedResource Include="plataforma_controles\NuevoPrestamoUserControl.resx" />
     <EmbeddedResource Include="plataforma_controles\RegistrarChequera.resx" />
     <EmbeddedResource Include="plataforma_controles\RegistroPersonaUserControl.resx" />
+    <EmbeddedResource Include="Pruebas.resx">
+      <DependentUpon>Pruebas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ventanilla\Balancin.resx">
       <DependentUpon>Balancin.cs</DependentUpon>
     </EmbeddedResource>
