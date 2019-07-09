@@ -438,9 +438,24 @@ namespace Sistema_Bancario
                UCcliente.instance.BringToFront();
                TituloText.Text = btn.Text;
             }
-         }
-         #endregion
-      }
+            }
+            else if (btn.Text.Equals("Cobro Cheques"))
+            {
+                if (!panel1.Controls.Contains(Cheques.instance))
+                {
+                    panel1.Controls.Add(Cheques.instance);
+                    Cheques.instance.Dock = DockStyle.Fill;
+                    Cheques.instance.BringToFront();
+                    TituloText.Text = btn.Text;
+                }
+                else
+                {
+                    UCcliente.instance.BringToFront();
+                    TituloText.Text = btn.Text;
+                }
+            }
+            #endregion
+        }
       private void Componentes(int x)
       {
          switch (x)
@@ -485,8 +500,9 @@ namespace Sistema_Bancario
                Button Pago_Servicios = new Button();
                Button Resumen_total = new Button();
                Button Balancin = new Button();
+               Button Cobro_Cheques = new Button();
 
-               this.CrearBoton(Retiros, "Retiros", 0);
+                    this.CrearBoton(Retiros, "Retiros", 0);
                this.CrearBoton(Depositos, "Depósitos", 50);
                this.CrearBoton(Transferencias, "Transferencias", 100);
                this.CrearBoton(Envio_Giros, "Envío Giros", 150);
@@ -495,8 +511,9 @@ namespace Sistema_Bancario
                this.CrearBoton(Pago_Cuotas, "Pago Cuotas", 300);
                this.CrearBoton(Tipo_Cambio, "Tipo Cambio", 350);
                this.CrearBoton(Pago_Servicios, "Pago Servicios", 400);
-               this.CrearBoton(Balancin, "Balancin Caja", 450);
-               this.CrearBoton(Resumen_total, "Resumen total", 500);
+               this.CrearBoton(Cobro_Cheques, "Cobro Cheques", 450);
+               this.CrearBoton(Balancin, "Balancin Caja", 500);
+               this.CrearBoton(Resumen_total, "Resumen total", 550);
                break;
          }
       }

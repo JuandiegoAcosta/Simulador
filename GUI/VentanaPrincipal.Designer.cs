@@ -66,10 +66,10 @@
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(200, 98);
+            this.panel1.Location = new System.Drawing.Point(209, 98);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(874, 618);
+            this.panel1.Size = new System.Drawing.Size(854, 608);
             this.panel1.TabIndex = 1;
             // 
             // panel2
