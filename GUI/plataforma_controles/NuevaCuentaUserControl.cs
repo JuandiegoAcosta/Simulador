@@ -22,18 +22,16 @@ namespace Sistema_Bancario.plataforma_controles
         private TipoDocumentoMethods BLTipo_documento = new TipoDocumentoMethods();
 
         private string gUsuario;
+        private string gSucursal;
         private PersonaModel gPerona;
         private CuentasModel gCuenta;
         private string modo = "";
         public NuevaCuentaUserControl(ISession isesion)
         {
             InitializeComponent();
-            if (isesion == null)
-            {
-                MessageBox.Show("La sesión ha caducado");
-                this.Dispose();
-            }
-            this.gUsuario = isesion.UserCodigo;
+            
+            this.gUsuario = isesion.UserName;
+            this.gSucursal = isesion.SucursalCodigo;
 
             this.poblarCboMonedas();
             this.poblarCboTipoCuenta();
@@ -129,8 +127,12 @@ namespace Sistema_Bancario.plataforma_controles
                                     return;
 
                                 List<CuentasModel> Cuentas = this.BLCuenta.cuentaSelectbyId_cliente(this.gPerona.Id);
-                                if (Cuentas == null || Cuentas.Count == 0 )
+                                if (Cuentas == null || Cuentas.Count == 0)
+                                {
+                                    MessageBox.Show("No tiene cuentas");
                                     return;
+                                }
+                                    
 
                                 this.buscarCuenta(Cuentas);
                             }
@@ -211,10 +213,13 @@ namespace Sistema_Bancario.plataforma_controles
         {
             try
             {
-                string NroCuenta = this.txtCodigo.Text;
+                string NroCuenta = this.gSucursal;
                 bool Estado = chkEstado.Checked;
                 decimal SaldoContable = 0m;
                 decimal SaldoDisponible = 0m;
+                decimal SobreGiro = 0m;
+                int ConteoChequesRebote1 = 0;
+                int ConteoChequesRebote2 = 0;
                 string TipoCuenta = (string)this.cboTipoCuenta.SelectedValue;
                 int TipoMoneda = (int)this.cboMoneda.SelectedValue;
                 string USUARIO_CREADOR = this.gUsuario;
@@ -227,6 +232,9 @@ namespace Sistema_Bancario.plataforma_controles
                     Estado = Estado,
                     Saldocontable = SaldoContable,
                     Saldodisponible = SaldoDisponible,
+                    Sobregiro = SobreGiro,
+                    Contchequerebote1 = ConteoChequesRebote1,
+                    Contchequerebote2 = ConteoChequesRebote2,
                     Tipocuenta = TipoCuenta,
                     Tipomoneda = TipoMoneda,
                     Usuario_creador = USUARIO_CREADOR,
@@ -238,11 +246,6 @@ namespace Sistema_Bancario.plataforma_controles
             {
                 return null;
             }
-        }
-
-        private void obtenerNumeroCuenta()
-        {
-            //string sucusal = this.llamoquiSesion.SucursalCodigo;
         }
 
         private void buttonNuevo_Click(object sender, EventArgs e)
@@ -289,6 +292,8 @@ namespace Sistema_Bancario.plataforma_controles
             this.cboTipo_documento.Enabled = true;
             this.cboMoneda.Enabled = true;
             this.cboTipoCuenta.Enabled = true;
+            this.chkEstado.Checked = true;
+
         }
 
         private void modoInicial()
@@ -331,7 +336,7 @@ namespace Sistema_Bancario.plataforma_controles
 
             if (objeto == null)
             {
-                MessageBox.Show("Problemas al instanciar el nuevo objeto, revise las propiedas");
+                MessageBox.Show("Problemas al instanciar el nuevo objeto, revise las propiedades");
                 return;
             }
             if (this.BLCuenta.Insert(objeto))

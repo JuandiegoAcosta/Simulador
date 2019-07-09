@@ -644,6 +644,7 @@ namespace CDatos.Manager
             }
             catch (Exception)
             {
+                //throw;
                 return personalist;
             }
         }

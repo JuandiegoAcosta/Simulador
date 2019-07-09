@@ -61,13 +61,13 @@ namespace Modelos.Modelos
         /// <summary>
         /// Gets or sets the Contchequerebote1 value.
         /// </summary>
-        public byte? Contchequerebote1
+        public int? Contchequerebote1
         { get; set; }
 
         /// <summary>
         /// Gets or sets the Contchequerebote2 value.
         /// </summary>
-        public byte? Contchequerebote2
+        public int? Contchequerebote2
         { get; set; }
 
         /// <summary>

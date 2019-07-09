@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Modelos.Modelos;
 using CNegocio.Plataforma;
+using Modelos.Session;
 
 namespace Sistema_Bancario.plataforma_controles
 {
@@ -23,7 +24,7 @@ namespace Sistema_Bancario.plataforma_controles
         private BLCuenta BLCuenta = new BLCuenta();
         private BLTipoMoneda BLTipoMoneda = new BLTipoMoneda();
 
-        public NuevoPrestamoUserControl()
+        public NuevoPrestamoUserControl(ISession session)
         {
             InitializeComponent();
             this.gUsuario = "ADMINI";

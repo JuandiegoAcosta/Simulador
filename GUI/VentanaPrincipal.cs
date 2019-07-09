@@ -303,21 +303,28 @@ namespace Sistema_Bancario
          }
          else if (btn.Text.Equals("Abrir Cuenta"))
          {
-                //UCcuenta cuenta = UCcuenta.instance;
-                NuevaCuentaUserControl cuenta = new NuevaCuentaUserControl(this.Session);
-            if (!panel1.Controls.Contains(cuenta))
-            {
-                    panel1.Controls.Add(cuenta);
-                    cuenta.Dock = DockStyle.Fill;
-                    cuenta.BringToFront();
-                    TituloText.Text = btn.Text;
+                NuevaCuentaUserControl cuenta;
+                if (this.Session != null)
+                {
+                    cuenta = new NuevaCuentaUserControl(this.Session);
+                    if (!panel1.Controls.Contains(cuenta))
+                    {
+                        panel1.Controls.Add(cuenta);
+                        cuenta.Dock = DockStyle.Fill;
+                        cuenta.BringToFront();
+                        TituloText.Text = btn.Text;
+                    }
+                    else
+                    {
+                        cuenta.BringToFront();
+                        TituloText.Text = btn.Text;
+                    }
                 }
-            else
-            {
-               cuenta.BringToFront();
-               TituloText.Text = btn.Text;
-            }
-            //    Limpiar();
+                else
+                {
+                    MessageBox.Show("La sesión ha caducado");
+                }
+            //   Limpiar();
             //   button2.BackColor = SystemColors.HotTrack;
          }
          else if (btn.Text.Equals("Gestionar Cuenta"))
