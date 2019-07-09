@@ -478,6 +478,7 @@ namespace CDatos.Manager
             }
             catch (Exception)
             {
+                throw;
                 return cuentalist;
             }
         }

@@ -18,7 +18,8 @@ namespace Sistema_Bancario
          Application.EnableVisualStyles();
          Application.SetCompatibleTextRenderingDefault(false);
             //CloseApplication.Run(new Login());
-            CloseApplication.Run(new VentanaPrincipal());
+            //CloseApplication.Run(new VentanaPrincipal());
+            CloseApplication.Run(new Pruebas());
 
         }
     }
