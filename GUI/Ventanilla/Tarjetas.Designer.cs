@@ -33,6 +33,7 @@
             this.tipoMoneda1 = new Sistema_Bancario.Controles.TipoMoneda();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
+            this.Monto = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,25 +45,25 @@
             // nroTarjeta1
             // 
             this.nroTarjeta1.Location = new System.Drawing.Point(26, 22);
-            this.nroTarjeta1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nroTarjeta1.Margin = new System.Windows.Forms.Padding(2);
             this.nroTarjeta1.Name = "nroTarjeta1";
             this.nroTarjeta1.Size = new System.Drawing.Size(260, 28);
             this.nroTarjeta1.TabIndex = 2;
             // 
             // monto1
             // 
-            this.monto1.Location = new System.Drawing.Point(26, 249);
+            this.monto1.Location = new System.Drawing.Point(96, 213);
             this.monto1.Margin = new System.Windows.Forms.Padding(2);
             this.monto1.Name = "monto1";
-            this.monto1.Size = new System.Drawing.Size(298, 25);
+            this.monto1.Size = new System.Drawing.Size(202, 21);
             this.monto1.TabIndex = 3;
             // 
             // tipoMoneda1
             // 
-            this.tipoMoneda1.Location = new System.Drawing.Point(26, 215);
+            this.tipoMoneda1.Location = new System.Drawing.Point(302, 210);
             this.tipoMoneda1.Margin = new System.Windows.Forms.Padding(2);
             this.tipoMoneda1.Name = "tipoMoneda1";
-            this.tipoMoneda1.Size = new System.Drawing.Size(260, 24);
+            this.tipoMoneda1.Size = new System.Drawing.Size(134, 24);
             this.tipoMoneda1.TabIndex = 4;
             // 
             // dataGridView1
@@ -83,9 +84,19 @@
             this.button1.Text = "Buscar";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // Monto
+            // 
+            this.Monto.AutoSize = true;
+            this.Monto.Location = new System.Drawing.Point(34, 216);
+            this.Monto.Name = "Monto";
+            this.Monto.Size = new System.Drawing.Size(43, 13);
+            this.Monto.TabIndex = 7;
+            this.Monto.Text = "Monto :";
+            // 
             // Tarjetas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.Controls.Add(this.Monto);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.tipoMoneda1);
@@ -95,14 +106,16 @@
             this.Name = "Tarjetas";
             this.Padding = new System.Windows.Forms.Padding(6);
             this.Size = new System.Drawing.Size(656, 399);
-            this.Controls.SetChildIndex(this.proceder1, 0);
             this.Controls.SetChildIndex(this.nroTarjeta1, 0);
             this.Controls.SetChildIndex(this.monto1, 0);
             this.Controls.SetChildIndex(this.tipoMoneda1, 0);
             this.Controls.SetChildIndex(this.dataGridView1, 0);
             this.Controls.SetChildIndex(this.button1, 0);
+            this.Controls.SetChildIndex(this.Monto, 0);
+            this.Controls.SetChildIndex(this.proceder1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -113,5 +126,6 @@
         private Controles.TipoMoneda tipoMoneda1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label Monto;
     }
 }

@@ -54,9 +54,9 @@
             // nroContrato1
             // 
             this.nroContrato1.Location = new System.Drawing.Point(10, 219);
-            this.nroContrato1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nroContrato1.Margin = new System.Windows.Forms.Padding(2);
             this.nroContrato1.Name = "nroContrato1";
-            this.nroContrato1.Size = new System.Drawing.Size(273, 28);
+            this.nroContrato1.Size = new System.Drawing.Size(261, 28);
             this.nroContrato1.TabIndex = 4;
             // 
             // GEmpresas
@@ -89,24 +89,32 @@
             // 
             // BTBuscarEmpresa
             // 
+            this.BTBuscarEmpresa.BackColor = System.Drawing.Color.ForestGreen;
+            this.BTBuscarEmpresa.FlatAppearance.BorderSize = 0;
+            this.BTBuscarEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTBuscarEmpresa.ForeColor = System.Drawing.SystemColors.Window;
             this.BTBuscarEmpresa.Location = new System.Drawing.Point(276, 11);
             this.BTBuscarEmpresa.Margin = new System.Windows.Forms.Padding(2);
             this.BTBuscarEmpresa.Name = "BTBuscarEmpresa";
             this.BTBuscarEmpresa.Size = new System.Drawing.Size(88, 25);
             this.BTBuscarEmpresa.TabIndex = 7;
             this.BTBuscarEmpresa.Text = "Buscar";
-            this.BTBuscarEmpresa.UseVisualStyleBackColor = true;
+            this.BTBuscarEmpresa.UseVisualStyleBackColor = false;
             this.BTBuscarEmpresa.Click += new System.EventHandler(this.BTBuscarEmpresa_Click);
             // 
             // BTNroContrato
             // 
+            this.BTNroContrato.BackColor = System.Drawing.Color.ForestGreen;
+            this.BTNroContrato.FlatAppearance.BorderSize = 0;
+            this.BTNroContrato.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTNroContrato.ForeColor = System.Drawing.SystemColors.Window;
             this.BTNroContrato.Location = new System.Drawing.Point(287, 219);
             this.BTNroContrato.Margin = new System.Windows.Forms.Padding(2);
             this.BTNroContrato.Name = "BTNroContrato";
             this.BTNroContrato.Size = new System.Drawing.Size(88, 28);
             this.BTNroContrato.TabIndex = 8;
             this.BTNroContrato.Text = "Buscar";
-            this.BTNroContrato.UseVisualStyleBackColor = true;
+            this.BTNroContrato.UseVisualStyleBackColor = false;
             this.BTNroContrato.Click += new System.EventHandler(this.BTNroContrato_Click);
             // 
             // Servicios

@@ -53,7 +53,7 @@
             this.clave1.Location = new System.Drawing.Point(22, 41);
             this.clave1.Margin = new System.Windows.Forms.Padding(2);
             this.clave1.Name = "clave1";
-            this.clave1.Size = new System.Drawing.Size(227, 26);
+            this.clave1.Size = new System.Drawing.Size(238, 26);
             this.clave1.TabIndex = 3;
             // 
             // GVCobroGiros
@@ -73,7 +73,7 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.SystemColors.Window;
-            this.button1.Location = new System.Drawing.Point(253, 41);
+            this.button1.Location = new System.Drawing.Point(264, 41);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(58, 26);

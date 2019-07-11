@@ -29,71 +29,43 @@
       private void InitializeComponent()
       {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cmbMoneda = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.rbtnAhorros = new System.Windows.Forms.RadioButton();
             this.rbtnCorriente = new System.Windows.Forms.RadioButton();
-            this.rbtnCredito = new System.Windows.Forms.RadioButton();
-            this.txtEstado = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtNroCuenta = new System.Windows.Forms.TextBox();
+            this.tipoMoneda2 = new Sistema_Bancario.Controles.TipoMoneda();
             this.txtDoi = new System.Windows.Forms.TextBox();
             this.txtMonto = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.nroCuenta1 = new Sistema_Bancario.Controles.NroCuenta();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // proceder1
             // 
-            this.proceder1.Location = new System.Drawing.Point(15, 700);
-            this.proceder1.Size = new System.Drawing.Size(1135, 49);
+            this.proceder1.Location = new System.Drawing.Point(11, 568);
+            this.proceder1.Size = new System.Drawing.Size(852, 40);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.cmbMoneda);
-            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.rbtnAhorros);
             this.groupBox1.Controls.Add(this.rbtnCorriente);
-            this.groupBox1.Controls.Add(this.rbtnCredito);
             this.groupBox1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(29, 26);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Location = new System.Drawing.Point(22, 21);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(521, 123);
+            this.groupBox1.Size = new System.Drawing.Size(437, 72);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "CUENTA";
             // 
-            // cmbMoneda
-            // 
-            this.cmbMoneda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbMoneda.FormattingEnabled = true;
-            this.cmbMoneda.Location = new System.Drawing.Point(300, 26);
-            this.cmbMoneda.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.cmbMoneda.Name = "cmbMoneda";
-            this.cmbMoneda.Size = new System.Drawing.Size(181, 25);
-            this.cmbMoneda.TabIndex = 5;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(187, 30);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 17);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Moneda :";
-            // 
             // rbtnAhorros
             // 
             this.rbtnAhorros.AutoSize = true;
-            this.rbtnAhorros.Location = new System.Drawing.Point(21, 23);
-            this.rbtnAhorros.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnAhorros.Checked = true;
+            this.rbtnAhorros.Location = new System.Drawing.Point(16, 19);
             this.rbtnAhorros.Name = "rbtnAhorros";
-            this.rbtnAhorros.Size = new System.Drawing.Size(86, 21);
+            this.rbtnAhorros.Size = new System.Drawing.Size(70, 17);
             this.rbtnAhorros.TabIndex = 3;
             this.rbtnAhorros.TabStop = true;
             this.rbtnAhorros.Text = "Ahorros";
@@ -102,89 +74,42 @@
             // rbtnCorriente
             // 
             this.rbtnCorriente.AutoSize = true;
-            this.rbtnCorriente.Location = new System.Drawing.Point(21, 80);
-            this.rbtnCorriente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnCorriente.Location = new System.Drawing.Point(16, 42);
             this.rbtnCorriente.Name = "rbtnCorriente";
-            this.rbtnCorriente.Size = new System.Drawing.Size(94, 21);
+            this.rbtnCorriente.Size = new System.Drawing.Size(79, 17);
             this.rbtnCorriente.TabIndex = 3;
-            this.rbtnCorriente.TabStop = true;
             this.rbtnCorriente.Text = "Corriente";
             this.rbtnCorriente.UseVisualStyleBackColor = true;
             // 
-            // rbtnCredito
+            // tipoMoneda2
             // 
-            this.rbtnCredito.AutoSize = true;
-            this.rbtnCredito.Location = new System.Drawing.Point(21, 52);
-            this.rbtnCredito.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.rbtnCredito.Name = "rbtnCredito";
-            this.rbtnCredito.Size = new System.Drawing.Size(80, 21);
-            this.rbtnCredito.TabIndex = 2;
-            this.rbtnCredito.TabStop = true;
-            this.rbtnCredito.Text = "Credito";
-            this.rbtnCredito.UseVisualStyleBackColor = true;
-            // 
-            // txtEstado
-            // 
-            this.txtEstado.Location = new System.Drawing.Point(572, 167);
-            this.txtEstado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtEstado.Name = "txtEstado";
-            this.txtEstado.Size = new System.Drawing.Size(267, 22);
-            this.txtEstado.TabIndex = 26;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(479, 171);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 17);
-            this.label5.TabIndex = 25;
-            this.label5.Text = "Estado :";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(35, 167);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(99, 17);
-            this.label4.TabIndex = 24;
-            this.label4.Text = "Nro Cuenta :";
-            // 
-            // txtNroCuenta
-            // 
-            this.txtNroCuenta.Location = new System.Drawing.Point(163, 167);
-            this.txtNroCuenta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtNroCuenta.Name = "txtNroCuenta";
-            this.txtNroCuenta.Size = new System.Drawing.Size(267, 22);
-            this.txtNroCuenta.TabIndex = 23;
+            this.tipoMoneda2.Location = new System.Drawing.Point(322, 165);
+            this.tipoMoneda2.Margin = new System.Windows.Forms.Padding(2);
+            this.tipoMoneda2.Name = "tipoMoneda2";
+            this.tipoMoneda2.Size = new System.Drawing.Size(136, 25);
+            this.tipoMoneda2.TabIndex = 4;
             // 
             // txtDoi
             // 
-            this.txtDoi.Location = new System.Drawing.Point(572, 199);
-            this.txtDoi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDoi.Location = new System.Drawing.Point(116, 191);
             this.txtDoi.Name = "txtDoi";
-            this.txtDoi.Size = new System.Drawing.Size(267, 22);
+            this.txtDoi.Size = new System.Drawing.Size(201, 20);
             this.txtDoi.TabIndex = 22;
             // 
             // txtMonto
             // 
-            this.txtMonto.Location = new System.Drawing.Point(163, 199);
-            this.txtMonto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMonto.Location = new System.Drawing.Point(116, 165);
             this.txtMonto.Name = "txtMonto";
-            this.txtMonto.Size = new System.Drawing.Size(267, 22);
+            this.txtMonto.Size = new System.Drawing.Size(201, 20);
             this.txtMonto.TabIndex = 21;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(499, 203);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(24, 194);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 17);
+            this.label2.Size = new System.Drawing.Size(39, 13);
             this.label2.TabIndex = 20;
             this.label2.Text = "DOI :";
             // 
@@ -192,39 +117,67 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(75, 203);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(24, 168);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 17);
+            this.label3.Size = new System.Drawing.Size(50, 13);
             this.label3.TabIndex = 19;
             this.label3.Text = "Monto :";
             // 
+            // nroCuenta1
+            // 
+            this.nroCuenta1.Location = new System.Drawing.Point(22, 98);
+            this.nroCuenta1.Margin = new System.Windows.Forms.Padding(2);
+            this.nroCuenta1.Name = "nroCuenta1";
+            this.nroCuenta1.Size = new System.Drawing.Size(705, 52);
+            this.nroCuenta1.TabIndex = 27;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel1.Location = new System.Drawing.Point(27, 224);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 35, 3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Padding = new System.Windows.Forms.Padding(0, 35, 0, 0);
+            this.panel1.Size = new System.Drawing.Size(670, 0);
+            this.panel1.TabIndex = 28;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.button1.Location = new System.Drawing.Point(27, 240);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(111, 23);
+            this.button1.TabIndex = 32;
+            this.button1.Text = "Cambio Moneda";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            // 
             // Depositos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.txtEstado);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtNroCuenta);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.tipoMoneda2);
+            this.Controls.Add(this.nroCuenta1);
             this.Controls.Add(this.txtDoi);
             this.Controls.Add(this.txtMonto);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Depositos";
-            this.Padding = new System.Windows.Forms.Padding(15, 12, 15, 12);
+            this.Padding = new System.Windows.Forms.Padding(11, 10, 11, 10);
             this.Controls.SetChildIndex(this.groupBox1, 0);
             this.Controls.SetChildIndex(this.label3, 0);
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.txtMonto, 0);
             this.Controls.SetChildIndex(this.txtDoi, 0);
-            this.Controls.SetChildIndex(this.txtNroCuenta, 0);
-            this.Controls.SetChildIndex(this.label4, 0);
-            this.Controls.SetChildIndex(this.label5, 0);
-            this.Controls.SetChildIndex(this.txtEstado, 0);
+            this.Controls.SetChildIndex(this.nroCuenta1, 0);
+            this.Controls.SetChildIndex(this.tipoMoneda2, 0);
+            this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.proceder1, 0);
+            this.Controls.SetChildIndex(this.button1, 0);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -235,18 +188,15 @@
       #endregion
 
       private System.Windows.Forms.GroupBox groupBox1;
-      private System.Windows.Forms.ComboBox cmbMoneda;
-      private System.Windows.Forms.Label label1;
       private System.Windows.Forms.RadioButton rbtnAhorros;
       private System.Windows.Forms.RadioButton rbtnCorriente;
-      private System.Windows.Forms.RadioButton rbtnCredito;
-      private System.Windows.Forms.TextBox txtEstado;
-      private System.Windows.Forms.Label label5;
-      private System.Windows.Forms.Label label4;
-      private System.Windows.Forms.TextBox txtNroCuenta;
       private System.Windows.Forms.TextBox txtDoi;
       private System.Windows.Forms.TextBox txtMonto;
       private System.Windows.Forms.Label label2;
       private System.Windows.Forms.Label label3;
+        private Controles.TipoMoneda tipoMoneda2;
+        private Controles.NroCuenta nroCuenta1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button1;
     }
 }

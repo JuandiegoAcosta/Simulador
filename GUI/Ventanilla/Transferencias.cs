@@ -29,13 +29,13 @@ namespace Sistema_Bancario.Froms_opciones
          else
             return false;
 
-         if (!string.IsNullOrEmpty(this.txtNroCuentaOrigen.Text.Trim()))
-            CuentasTarjetasModel.NroCuenta = Convert.ToInt64(this.txtNroCuentaOrigen.Text.Trim());
+         if (!string.IsNullOrEmpty(this.nroCuenta1.TBNroCuenta.Text.Trim()))
+            CuentasTarjetasModel.NroCuenta = Convert.ToInt64(this.nroCuenta1.TBNroCuenta.Text.Trim());
          else
             return false;
 
-         if (!string.IsNullOrEmpty(this.txtNroCuentaDestino.Text.Trim()))
-            CuentasTarjetasModel.NroCuentaDestino = Convert.ToInt64(this.txtNroCuentaDestino.Text.Trim());
+         if (!string.IsNullOrEmpty(this.nroCuenta2.TBNroCuenta.Text.Trim()))
+            CuentasTarjetasModel.NroCuentaDestino = Convert.ToInt64(this.nroCuenta2.TBNroCuenta.Text.Trim());
          else
             return false;
 

@@ -18,8 +18,8 @@ namespace Sistema_Bancario.Froms_opciones
          InitializeComponent();
          this.proceder1.BTProceder.Click += BTProceder_Click;
          monto1.TBMonto.TextChanged += TBMonto_TextChanged;
-            tipoMoneda1.LbMoneda.Text = "Moneda(origen)";
-            tipoMoneda2.LbMoneda.Text = "Moneda(destino)";
+      //      tipoMoneda1.LbMoneda.Text = "Moneda(origen)";
+      //      tipoMoneda2.LbMoneda.Text = "Moneda(destino)";
       }
 
        

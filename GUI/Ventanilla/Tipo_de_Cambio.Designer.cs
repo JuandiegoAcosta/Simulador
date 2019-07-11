@@ -32,13 +32,12 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rbtnCompra = new System.Windows.Forms.RadioButton();
             this.rbtnVenta = new System.Windows.Forms.RadioButton();
-            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.txtConversion = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.monto1 = new Sistema_Bancario.Monto();
             this.tipoMoneda1 = new Sistema_Bancario.Controles.TipoMoneda();
             this.tipoMoneda2 = new Sistema_Bancario.Controles.TipoMoneda();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -93,15 +92,6 @@
             this.rbtnVenta.UseVisualStyleBackColor = true;
             this.rbtnVenta.CheckedChanged += new System.EventHandler(this.RbtnVenta_CheckedChanged);
             // 
-            // dtpFecha
-            // 
-            this.dtpFecha.CalendarFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(260, 28);
-            this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(105, 20);
-            this.dtpFecha.TabIndex = 28;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -121,22 +111,12 @@
             this.txtConversion.Size = new System.Drawing.Size(201, 20);
             this.txtConversion.TabIndex = 29;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(210, 28);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 13);
-            this.label5.TabIndex = 34;
-            this.label5.Text = "Fecha :";
-            // 
             // monto1
             // 
-            this.monto1.Location = new System.Drawing.Point(300, 85);
+            this.monto1.Location = new System.Drawing.Point(394, 86);
             this.monto1.Margin = new System.Windows.Forms.Padding(2);
             this.monto1.Name = "monto1";
-            this.monto1.Size = new System.Drawing.Size(295, 25);
+            this.monto1.Size = new System.Drawing.Size(203, 22);
             this.monto1.TabIndex = 35;
             // 
             // tipoMoneda1
@@ -144,7 +124,7 @@
             this.tipoMoneda1.Location = new System.Drawing.Point(32, 86);
             this.tipoMoneda1.Margin = new System.Windows.Forms.Padding(2);
             this.tipoMoneda1.Name = "tipoMoneda1";
-            this.tipoMoneda1.Size = new System.Drawing.Size(255, 24);
+            this.tipoMoneda1.Size = new System.Drawing.Size(141, 24);
             this.tipoMoneda1.TabIndex = 36;
             // 
             // tipoMoneda2
@@ -152,19 +132,27 @@
             this.tipoMoneda2.Location = new System.Drawing.Point(32, 115);
             this.tipoMoneda2.Margin = new System.Windows.Forms.Padding(2);
             this.tipoMoneda2.Name = "tipoMoneda2";
-            this.tipoMoneda2.Size = new System.Drawing.Size(255, 24);
+            this.tipoMoneda2.Size = new System.Drawing.Size(141, 24);
             this.tipoMoneda2.TabIndex = 37;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(297, 90);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(43, 13);
+            this.label2.TabIndex = 38;
+            this.label2.Text = "Monto :";
             // 
             // Tipo_de_Cambio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.tipoMoneda2);
             this.Controls.Add(this.tipoMoneda1);
             this.Controls.Add(this.monto1);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtConversion);
-            this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.precios1);
             this.Margin = new System.Windows.Forms.Padding(3);
@@ -172,14 +160,13 @@
             this.Padding = new System.Windows.Forms.Padding(6);
             this.Controls.SetChildIndex(this.precios1, 0);
             this.Controls.SetChildIndex(this.groupBox1, 0);
-            this.Controls.SetChildIndex(this.dtpFecha, 0);
             this.Controls.SetChildIndex(this.txtConversion, 0);
             this.Controls.SetChildIndex(this.label1, 0);
-            this.Controls.SetChildIndex(this.label5, 0);
             this.Controls.SetChildIndex(this.monto1, 0);
             this.Controls.SetChildIndex(this.proceder1, 0);
             this.Controls.SetChildIndex(this.tipoMoneda1, 0);
             this.Controls.SetChildIndex(this.tipoMoneda2, 0);
+            this.Controls.SetChildIndex(this.label2, 0);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -192,12 +179,11 @@
       private System.Windows.Forms.GroupBox groupBox1;
       private System.Windows.Forms.RadioButton rbtnCompra;
       private System.Windows.Forms.RadioButton rbtnVenta;
-      private System.Windows.Forms.DateTimePicker dtpFecha;
       private System.Windows.Forms.Label label1;
       private System.Windows.Forms.TextBox txtConversion;
-      private System.Windows.Forms.Label label5;
         private Monto monto1;
         private Controles.TipoMoneda tipoMoneda1;
         private Controles.TipoMoneda tipoMoneda2;
+        private System.Windows.Forms.Label label2;
     }
 }

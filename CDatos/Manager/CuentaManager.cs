@@ -482,6 +482,52 @@ namespace CDatos.Manager
                 return cuentalist;
             }
         }
+
+        public CuentaPersonaMonedaModel ValidarCuenta(Int64 aNroCuenta)
+        {
+            CuentaPersonaMonedaModel cuenta = null;
+
+            try
+            {
+                using (var connection = Util.ConnectionFactory.conexion())
+                {
+                    connection.Open();
+
+                    SqlCommand command = connection.CreateCommand();
+
+                    command.Parameters.AddWithValue("@NroCuenta", aNroCuenta);
+
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.CommandText = "SelectValidarCuenta";
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                          
+                            cuenta = new CuentaPersonaMonedaModel
+                            {
+                                Cliente = (string)reader[0],
+                                TipoCuenta = (string)reader[1],
+                                Estado = (string)reader[2],
+                                Moneda = (string)reader[3]
+                            };
+                        }
+                    }
+                }
+
+                return cuenta;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+
         #endregion
 
     }

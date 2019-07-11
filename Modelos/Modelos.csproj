@@ -52,6 +52,7 @@
     <Compile Include="Modelos\ConsultaCambio.cs" />
     <Compile Include="Modelos\ControlErroresModel.cs" />
     <Compile Include="Modelos\CronogramaPagosModel.cs" />
+    <Compile Include="Modelos\CuentaPersonaMonedaModel.cs" />
     <Compile Include="Modelos\CuentasModel.cs" />
     <Compile Include="Modelos\CuentasTarjetasModel.cs" />
     <Compile Include="Modelos\Deposito.cs" />

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.BackColor = System.Drawing.SystemColors.Window;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NuevaCuentaUserControl));
             this.cboMoneda = new System.Windows.Forms.ComboBox();
             this.cboTipoCuenta = new System.Windows.Forms.ComboBox();

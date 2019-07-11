@@ -106,6 +106,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Controles\CambioMoneda.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\CambioMoneda.Designer.cs">
+      <DependentUpon>CambioMoneda.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controles\DatosPersona.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -388,6 +394,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CambiarContraseña.resx">
       <DependentUpon>CambiarContraseña.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\CambioMoneda.resx">
+      <DependentUpon>CambioMoneda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controles\DatosPersona.resx">
       <DependentUpon>DatosPersona.cs</DependentUpon>

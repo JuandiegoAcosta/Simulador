@@ -34,6 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.monto1 = new Sistema_Bancario.Monto();
             this.nroCuenta1 = new Sistema_Bancario.Controles.NroCuenta();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBox1
@@ -54,7 +55,7 @@
             // CKDeposito
             // 
             this.CKDeposito.AutoSize = true;
-            this.CKDeposito.Location = new System.Drawing.Point(101, 111);
+            this.CKDeposito.Location = new System.Drawing.Point(101, 84);
             this.CKDeposito.Name = "CKDeposito";
             this.CKDeposito.Size = new System.Drawing.Size(68, 17);
             this.CKDeposito.TabIndex = 4;
@@ -73,24 +74,34 @@
             // 
             // monto1
             // 
-            this.monto1.Location = new System.Drawing.Point(8, 64);
+            this.monto1.Location = new System.Drawing.Point(101, 53);
             this.monto1.Margin = new System.Windows.Forms.Padding(2);
             this.monto1.Name = "monto1";
-            this.monto1.Size = new System.Drawing.Size(301, 25);
+            this.monto1.Size = new System.Drawing.Size(205, 25);
             this.monto1.TabIndex = 6;
             // 
             // nroCuenta1
             // 
-            this.nroCuenta1.Location = new System.Drawing.Point(8, 146);
-            this.nroCuenta1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nroCuenta1.Location = new System.Drawing.Point(10, 106);
+            this.nroCuenta1.Margin = new System.Windows.Forms.Padding(2);
             this.nroCuenta1.Name = "nroCuenta1";
             this.nroCuenta1.Size = new System.Drawing.Size(270, 30);
             this.nroCuenta1.TabIndex = 7;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(11, 57);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(37, 13);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Monto";
             // 
             // Cheques
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.nroCuenta1);
             this.Controls.Add(this.monto1);
             this.Controls.Add(this.label1);
@@ -98,13 +109,14 @@
             this.Controls.Add(this.doi1);
             this.Controls.Add(this.textBox1);
             this.Name = "Cheques";
-            this.Controls.SetChildIndex(this.proceder1, 0);
             this.Controls.SetChildIndex(this.textBox1, 0);
             this.Controls.SetChildIndex(this.doi1, 0);
             this.Controls.SetChildIndex(this.CKDeposito, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.monto1, 0);
             this.Controls.SetChildIndex(this.nroCuenta1, 0);
+            this.Controls.SetChildIndex(this.label2, 0);
+            this.Controls.SetChildIndex(this.proceder1, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -118,5 +130,6 @@
         private System.Windows.Forms.Label label1;
         private Monto monto1;
         private Controles.NroCuenta nroCuenta1;
+        private System.Windows.Forms.Label label2;
     }
 }
