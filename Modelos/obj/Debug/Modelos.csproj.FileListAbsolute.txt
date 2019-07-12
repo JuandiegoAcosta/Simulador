@@ -133,3 +133,4 @@ C:\Users\Jordan\Source\Repos\Simulador\Modelos\bin\Debug\Modelos.pdb
 C:\Users\Jordan\Source\Repos\Simulador\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
 C:\Users\Jordan\Source\Repos\Simulador\Modelos\obj\Debug\Modelos.dll
 C:\Users\Jordan\Source\Repos\Simulador\Modelos\obj\Debug\Modelos.pdb
+C:\Users\Saurom Lamderth\Source\Repos\JuandiegoAcosta\Simulador\Modelos\obj\Debug\Modelos.csprojAssemblyReference.cache

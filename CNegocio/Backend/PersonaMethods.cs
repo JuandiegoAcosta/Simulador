@@ -114,6 +114,11 @@ namespace CNegocio.Backend
             return ADPersonaManager.GetComponentes(idUsuario);
         }
 
+        public List<RolesModel> GetRolesUsuario(string aUsuario)
+        {
+            return ADPersonaManager.GetRolesUsuario(aUsuario);
+        }
+
 
     }
 }

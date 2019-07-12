@@ -397,6 +397,12 @@
   <wsdl:message name="IPersonaService_Persona_GetComponentes_OutputMessage">
     <wsdl:part name="parameters" element="tns:Persona_GetComponentesResponse" />
   </wsdl:message>
+  <wsdl:message name="IPersonaService_Persona_GetRolesUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:Persona_GetRolesUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IPersonaService_Persona_GetRolesUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Persona_GetRolesUsuarioResponse" />
+  </wsdl:message>
   <wsdl:message name="IRolesService_Roles_Crear_InputMessage">
     <wsdl:part name="parameters" element="tns:Roles_Crear" />
   </wsdl:message>
@@ -883,6 +889,10 @@
     <wsdl:operation name="Persona_GetComponentes">
       <wsdl:input wsaw:Action="http://tempuri.org/IPersonaService/Persona_GetComponentes" message="tns:IPersonaService_Persona_GetComponentes_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IPersonaService/Persona_GetComponentesResponse" message="tns:IPersonaService_Persona_GetComponentes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Persona_GetRolesUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPersonaService/Persona_GetRolesUsuario" message="tns:IPersonaService_Persona_GetRolesUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPersonaService/Persona_GetRolesUsuarioResponse" message="tns:IPersonaService_Persona_GetRolesUsuario_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IRolesService">
@@ -1648,6 +1658,15 @@
     </wsdl:operation>
     <wsdl:operation name="Persona_GetComponentes">
       <soap:operation soapAction="http://tempuri.org/IPersonaService/Persona_GetComponentes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Persona_GetRolesUsuario">
+      <soap:operation soapAction="http://tempuri.org/IPersonaService/Persona_GetRolesUsuario" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

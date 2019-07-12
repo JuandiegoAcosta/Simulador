@@ -897,7 +897,65 @@ namespace CDatos.Manager
         }
 
 
+        /// <summary>
+        /// Devuelve todos los roles del usuario de acuerdo a su nombre de usuario
+        /// </summary>
+        public List<RolesModel> GetRolesUsuario(string Usuario)
+        {
 
+            List<RolesModel> RolModellist = new List<RolesModel>();
+
+            try
+            {
+                using (var connection = Util.ConnectionFactory.conexion())
+                {
+                    connection.Open();
+
+                    SqlCommand command = connection.CreateCommand();
+
+                    command.Parameters.AddWithValue("@usuario", Usuario);
+
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.CommandText = "sp_ObtenerRolesUsuario";
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+
+                            int Id = (int)(reader["Id"]);
+                            string Descripcion = (string)(reader["Descripcion"]);
+                            DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
+                            DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
+                            string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
+                            string USUARIO_MODIFICADOR = (reader["USUARIO_MODIFICADOR"]) == DBNull.Value ? null : (string)(reader["USUARIO_MODIFICADOR"]);
+
+
+                            RolModellist.Add(new RolesModel
+                            {
+                                Id = Id,
+                                Descripcion = Descripcion,
+                                Fecha_creacion = FECHA_CREACION,
+                                Fecha_modificacion = FECHA_MODIFICACION,
+                                Usuario_creador = USUARIO_CREADOR,
+                                Usuario_modificador = USUARIO_MODIFICADOR,
+
+
+                            });
+                        }
+                    }
+                }
+
+                return RolModellist;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
         #endregion
 
     }

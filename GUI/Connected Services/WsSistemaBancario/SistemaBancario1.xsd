@@ -83,7 +83,7 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="Fecha_creacion" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Fecha_modificacion" nillable="true" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="Id" type="xs:short" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Usuario_creador" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Usuario_modificador" nillable="true" type="xs:string" />
@@ -228,7 +228,7 @@
       <xs:element minOccurs="0" name="Nrodocumento" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Pass" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Telefono" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Tipo_Persona" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tipo_persona" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Tipodocumento" type="xs:int" />
       <xs:element minOccurs="0" name="Usuario_creador" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Usuario_modificador" nillable="true" type="xs:string" />
@@ -254,6 +254,12 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="SucursalModel" nillable="true" type="tns:SucursalModel" />
+  <xs:complexType name="ArrayOfRolesModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RolesModel" nillable="true" type="tns:RolesModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRolesModel" nillable="true" type="tns:ArrayOfRolesModel" />
   <xs:complexType name="RolesModel">
     <xs:sequence>
       <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
@@ -265,12 +271,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="RolesModel" nillable="true" type="tns:RolesModel" />
-  <xs:complexType name="ArrayOfRolesModel">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="RolesModel" nillable="true" type="tns:RolesModel" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfRolesModel" nillable="true" type="tns:ArrayOfRolesModel" />
   <xs:complexType name="RolUsuarioModel">
     <xs:sequence>
       <xs:element minOccurs="0" name="Activo" type="xs:boolean" />
@@ -354,6 +354,8 @@
   <xs:complexType name="CuentasModel">
     <xs:sequence>
       <xs:element minOccurs="0" name="Cliente" type="xs:int" />
+      <xs:element minOccurs="0" name="Contchequerebote1" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Contchequerebote2" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="Estado" type="xs:boolean" />
       <xs:element minOccurs="0" name="Fecha_creacion" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Fecha_modificacion" nillable="true" type="xs:dateTime" />
@@ -361,9 +363,9 @@
       <xs:element minOccurs="0" name="Nrocuenta" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Saldocontable" type="xs:decimal" />
       <xs:element minOccurs="0" name="Saldodisponible" type="xs:decimal" />
-      <xs:element minOccurs="0" name="Sobregiro" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Sobregiro" nillable="true" type="xs:decimal" />
       <xs:element minOccurs="0" name="Tipocuenta" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Tipomoneda" type="xs:short" />
+      <xs:element minOccurs="0" name="Tipomoneda" type="xs:int" />
       <xs:element minOccurs="0" name="Usuario_creador" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Usuario_modificador" nillable="true" type="xs:string" />
     </xs:sequence>
