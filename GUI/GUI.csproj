@@ -70,6 +70,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Administrador\Permisos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Administrador\Permisos.Designer.cs">
+      <DependentUpon>Permisos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\Personas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Administrador\Personas.Designer.cs">
+      <DependentUpon>Personas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\Roles.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Administrador\Roles.Designer.cs">
+      <DependentUpon>Roles.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ayuda\FormHelp2.cs">
       <SubType>Form</SubType>
     </Compile>

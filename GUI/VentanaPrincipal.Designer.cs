@@ -51,6 +51,7 @@
             this.toolStripStatusLabel10 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel9 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel8 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.BTAdministrador = new System.Windows.Forms.Button();
             this.panel4 = new Sistema_Bancario.Controles.GradentPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel6 = new Sistema_Bancario.Controles.GradentPanel();
@@ -103,6 +104,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.Control;
+            this.panel3.Controls.Add(this.BTAdministrador);
             this.panel3.Controls.Add(this.button11);
             this.panel3.Controls.Add(this.BTOperaciones);
             this.panel3.Controls.Add(this.BTReportes);
@@ -288,6 +290,24 @@
             this.toolStripStatusLabel8.Name = "toolStripStatusLabel8";
             this.toolStripStatusLabel8.Size = new System.Drawing.Size(0, 20);
             // 
+            // BTAdministrador
+            // 
+            this.BTAdministrador.BackColor = System.Drawing.Color.Transparent;
+            this.BTAdministrador.FlatAppearance.BorderSize = 0;
+            this.BTAdministrador.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack;
+            this.BTAdministrador.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
+            this.BTAdministrador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTAdministrador.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.BTAdministrador.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.BTAdministrador.Location = new System.Drawing.Point(364, 0);
+            this.BTAdministrador.Name = "BTAdministrador";
+            this.BTAdministrador.Size = new System.Drawing.Size(103, 32);
+            this.BTAdministrador.TabIndex = 12;
+            this.BTAdministrador.Text = "Administrador";
+            this.BTAdministrador.UseVisualStyleBackColor = false;
+            this.BTAdministrador.Visible = false;
+            this.BTAdministrador.Click += new System.EventHandler(this.BTAdministrador_Click);
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.MenuHighlight;
@@ -434,5 +454,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private Controles.GradentPanel panel4;
+        private System.Windows.Forms.Button BTAdministrador;
     }
 }

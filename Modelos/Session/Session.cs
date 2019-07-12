@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Modelos.Modelos;
 
 namespace Modelos.Session
 {
@@ -16,5 +17,8 @@ namespace Modelos.Session
       public string SucursalNombre { get; set; }
       public string SucursalUbicacion { get; set; }
       public string SucursalCodigoBanco { get; set; }
-   }
+
+      public List<RolesModel> UserRol { get; set; }
+      public List<ComponenteModel> Componentes { get; set; }
+    }
 }

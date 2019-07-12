@@ -13,6 +13,7 @@ using Sistema_Bancario.plataforma_controles;
 using Modelos.Modelos;
 using Sistema_Bancario.Ventanilla;
 using Sistema_Bancario.Config;
+using Sistema_Bancario.Administrador;
 using Modelos.Session;
 //using Sistema_Bancario.Ventanilla;
 
@@ -56,7 +57,12 @@ namespace Sistema_Bancario
          if (Session != null)
          {
             InitializeComponent();
-            Show();
+
+            if (Session.UserRol.Any(r => r.Descripcion == "Administrador"))
+            {
+                BTAdministrador.Visible = true;
+            }
+                Show();
             //if (Session.isAdmin)
             //{
 
@@ -461,6 +467,60 @@ namespace Sistema_Bancario
                     TituloText.Text = btn.Text;
                 }
             }
+
+            else if (btn.Text.Equals("Personas"))
+            {
+                if (!panel1.Controls.Contains(Personas.instance))
+                {
+                    panel1.Controls.Add(Personas.instance);
+                    Personas.instance.Dock = DockStyle.Fill;
+                    Personas.instance.BringToFront();
+                    TituloText.Text = btn.Text;
+
+                }
+                else
+                {
+                    Personas.instance.BringToFront();
+                    TituloText.Text = btn.Text;
+                }
+            }
+
+
+            else if (btn.Text.Equals("Roles"))
+            {
+                if (!panel1.Controls.Contains(Roles.instance))
+                {
+                    panel1.Controls.Add(Roles.instance);
+                    Roles.instance.Dock = DockStyle.Fill;
+                    Roles.instance.BringToFront();
+                    TituloText.Text = btn.Text;
+
+                }
+                else
+                {
+                    Roles.instance.BringToFront();
+                    TituloText.Text = btn.Text;
+                }
+            }
+
+
+            else if (btn.Text.Equals("Permisos"))
+            {
+                if (!panel1.Controls.Contains(Permisos.instance))
+                {
+                    panel1.Controls.Add(Permisos.instance);
+                    Permisos.instance.Dock = DockStyle.Fill;
+                    Permisos.instance.BringToFront();
+                    TituloText.Text = btn.Text;
+
+                }
+                else
+                {
+                    Permisos.instance.BringToFront();
+                    TituloText.Text = btn.Text;
+                }
+            }
+
             #endregion
         }
       private void Componentes(int x)
@@ -509,7 +569,7 @@ namespace Sistema_Bancario
                Button Balancin = new Button();
                Button Cobro_Cheques = new Button();
 
-                    this.CrearBoton(Retiros, "Retiros", 0);
+               this.CrearBoton(Retiros, "Retiros", 0);
                this.CrearBoton(Depositos, "Depósitos", 50);
                this.CrearBoton(Transferencias, "Transferencias", 100);
                this.CrearBoton(Envio_Giros, "Envío Giros", 150);
@@ -522,7 +582,18 @@ namespace Sistema_Bancario
                this.CrearBoton(Balancin, "Balancin Caja", 500);
                this.CrearBoton(Resumen_total, "Resumen total", 550);
                break;
-         }
+
+
+             case 4:
+               Button Personas = new Button();
+               Button Roles = new Button();
+               Button Permisos = new Button();
+
+               this.CrearBoton(Personas, "Personas", 0);
+               this.CrearBoton(Roles, "Roles", 50);
+               this.CrearBoton(Permisos, "Permisos", 100);
+               break;
+            }
       }
 
       private void BTGestion_Click(object sender, EventArgs e)
@@ -551,7 +622,14 @@ namespace Sistema_Bancario
          this.Componentes(3);
       }
 
-      private void Marcar(object boton)
+      private void BTAdministrador_Click(object sender, EventArgs e)
+      {
+          Marcar(sender);
+          panel2.Controls.Clear();
+          this.Componentes(4);
+      }
+
+        private void Marcar(object boton)
       {
          Button BotonMenu;
          BotonMenu = boton as Button;
@@ -589,5 +667,7 @@ namespace Sistema_Bancario
         {
             this.Close();
         }
+
+        
     }
 }
