@@ -409,6 +409,9 @@
     <Compile Include="Ventanilla\Utilitarios.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <EmbeddedResource Include="Administrador\Permisos.resx">
+      <DependentUpon>Permisos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ayuda\FormHelp2.resx" />
     <EmbeddedResource Include="Botones\BTRetiros.resx">
       <DependentUpon>BTRetiros.cs</DependentUpon>
