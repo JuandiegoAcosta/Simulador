@@ -27,7 +27,7 @@ namespace Sistema_Bancario.plataforma_controles
         public NuevoPrestamoUserControl(ISession session)
         {
             InitializeComponent();
-            this.gUsuario = "ADMINI";
+            this.gUsuario = session.UserName;
 
             this.poblarCboMonedas();
 
@@ -53,7 +53,7 @@ namespace Sistema_Bancario.plataforma_controles
         {
             try
             {
-                var objcuenta = this.BLCuenta.Getcuenta(this.gPrestamo.Cuenta);
+                var objcuenta = this.BLCuenta.Getcuenta(this.gCuenta.Nrocuenta);
 
 
                 DateTime fechaPrestamo = this.dtpFechaPrestamo.Value;
