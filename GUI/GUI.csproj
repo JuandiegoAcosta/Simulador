@@ -388,6 +388,9 @@
     <Compile Include="VentanaPrincipal.Designer.cs">
       <DependentUpon>VentanaPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ventanilla\Utilitarios.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <EmbeddedResource Include="Ayuda\FormHelp2.resx" />
     <EmbeddedResource Include="Botones\BTRetiros.resx">
       <DependentUpon>BTRetiros.cs</DependentUpon>

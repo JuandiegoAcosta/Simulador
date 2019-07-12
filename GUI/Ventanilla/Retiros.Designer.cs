@@ -71,7 +71,7 @@
             // 
             // tipoMoneda1
             // 
-            this.tipoMoneda1.Location = new System.Drawing.Point(288, 63);
+            this.tipoMoneda1.Location = new System.Drawing.Point(283, 59);
             this.tipoMoneda1.Margin = new System.Windows.Forms.Padding(2);
             this.tipoMoneda1.Name = "tipoMoneda1";
             this.tipoMoneda1.Size = new System.Drawing.Size(138, 26);
@@ -112,10 +112,13 @@
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(451, 64);
+            this.panel1.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel1.Location = new System.Drawing.Point(29, 153);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 35, 3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(214, 133);
-            this.panel1.TabIndex = 25;
+            this.panel1.Padding = new System.Windows.Forms.Padding(0, 35, 0, 0);
+            this.panel1.Size = new System.Drawing.Size(679, 0);
+            this.panel1.TabIndex = 29;
             // 
             // Retiros
             // 

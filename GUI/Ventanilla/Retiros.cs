@@ -1,4 +1,5 @@
 ﻿using CNegocio.Ventanilla;
+using Sistema_Bancario.Controles;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,9 +13,11 @@ namespace Sistema_Bancario.Froms_opciones
     public partial class Retiros :Base
     {
       private RetirosMethods retirosMethods = null;
+       
+        CambioMoneda cambioMoneda;
 
-      #region [Variables Globales]
-      private decimal m_monto = default(decimal);
+        #region [Variables Globales]
+        private decimal m_monto = default(decimal);
       private Int64 m_nroTarjeta = default(Int64);
       private int m_clave = default(int);
       private string m_doi = default(string);
@@ -23,11 +26,42 @@ namespace Sistema_Bancario.Froms_opciones
         {
             InitializeComponent();
             proceder1.BTProceder.Click += BTProceder_Click;
-            
+            tipoMoneda1.CboMoneda.SelectedValueChanged += CboMoneda_SelectedValueChanged;
         }
 
+        private void CboMoneda_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (!nroCuenta1.Lbmoneda.Text.Equals(tipoMoneda1.CboMoneda.Text))
+            {
+                MessageBox.Show("Se ha cambiado el tipo de moneda." +
+                    "Se hara la conversion del monto ingresado");
+                CambiarMoneda();
+            }
+            else
+            {
+                if (panel1.Controls.Count == 1)
+                {
+                    panel1.Controls.RemoveAt(0);
+                }
+            }
+        }
+        public void CambiarMoneda()
+        {
+            panel1.Height = 150;
+            cambioMoneda = new CambioMoneda();
+            cambioMoneda.txtConversion.TextChanged += TxtConversion_TextChanged;
+            int index = cambioMoneda.tipoMoneda1.CboMoneda.FindString(nroCuenta1.Lbmoneda.Text);
+            cambioMoneda.tipoMoneda1.CboMoneda.SelectedIndex = index;
+            panel1.Controls.Add(cambioMoneda);
+            monto1.TBMonto.ReadOnly = true;
+        }
 
-      private bool SetItem()
+        private void TxtConversion_TextChanged(object sender, EventArgs e)
+        {
+            monto1.TBMonto.Text = Decimal.Round(Convert.ToDecimal(cambioMoneda.txtConversion.Text), 3).ToString();
+        }
+
+        private bool SetItem()
       {
          try
          {

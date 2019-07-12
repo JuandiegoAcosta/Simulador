@@ -15,6 +15,7 @@ namespace Sistema_Bancario
         public Cuotas()
         {
             InitializeComponent();
+           
             proceder1.BTProceder.Click += BTProceder_Click;
 
         }
@@ -45,7 +46,7 @@ namespace Sistema_Bancario
             GetCuotasMethods = new CuotasMethods();
             
        //     MessageBox.Show(GetCuotasMethods.ObtenerPrestamos(nroCuenta1.TBNroCuenta.Text).ToString());
-            var bindingList = new BindingList<object>(GetCuotasMethods.ObtenerPrestamos(nroCuenta1.TBNroCuenta.Text));
+            var bindingList = new BindingList<object>(GetCuotasMethods.ObtenerPrestamos(nro_Documento1.TBNroDocumento.Text));
             var source = new BindingSource(bindingList, null);
             GridPrestamos.DataSource = source;
            // this.GridPrestamos.DataSource = GetCuotasMethods.ObtenerPrestamos(nroCuenta1.TBNroCuenta.Text);

@@ -38,8 +38,7 @@ namespace Sistema_Bancario.Ventanilla
             {
                 MessageBox.Show("Se ha cambiado el tipo de moneda." +
                     "Se hara la conversion del monto ingresado");
-                Precios TipoCambio = new Precios();
-                panel1.Controls.Add(TipoCambio);
+                CambiarMoneda();
             }
             else
             {
@@ -105,24 +104,25 @@ namespace Sistema_Bancario.Ventanilla
             return _instance;
          }
       }
-
-        private void Button1_Click(object sender, EventArgs e)
+        public void CambiarMoneda()
         {
-            panel1.Height = 150;
-            button1.Location = new Point(27,380);
+            panel1.Height = 150;        
             cambioMoneda = new CambioMoneda();
             cambioMoneda.txtConversion.TextChanged += TxtConversion_TextChanged;
-            int index=cambioMoneda.tipoMoneda1.CboMoneda.FindString(nroCuenta1.Lbmoneda.Text);
+            int index = cambioMoneda.tipoMoneda1.CboMoneda.FindString(nroCuenta1.Lbmoneda.Text);
             cambioMoneda.tipoMoneda1.CboMoneda.SelectedIndex = index;
             panel1.Controls.Add(cambioMoneda);
             txtMonto.ReadOnly = true;
-            
         }
+
 
 
         private void TxtConversion_TextChanged(object sender, EventArgs e)
         {
-            txtMonto.Text = cambioMoneda.txtConversion.Text;
+            
+           txtMonto.Text = Decimal.Round(Convert.ToDecimal(cambioMoneda.txtConversion.Text), 3).ToString();
+           
+                
         }
     }
 }

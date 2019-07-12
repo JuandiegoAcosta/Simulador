@@ -14,24 +14,41 @@ namespace Sistema_Bancario.Controles
     public partial class CambioMoneda : UserControl
     {
         private TipoCambioModel m_tipocambio;
+        int i;
+        int i2;
         public CambioMoneda()
         {
-            InitializeComponent();        
+            InitializeComponent();
             monto1.TBMonto.TextChanged += TBMonto_TextChanged;
             tipoMoneda1.CboMoneda.SelectedIndexChanged += CboMoneda_SelectedIndexChanged;
             tipoMoneda2.CboMoneda.SelectedIndexChanged += CboMoneda_SelectedIndexChanged1;
+            i = tipoMoneda1.CboMoneda.SelectedIndex;
+            i2 = tipoMoneda2.CboMoneda.SelectedIndex;
         }
 
         private void CboMoneda_SelectedIndexChanged1(object sender, EventArgs e)
         {
-            
+            if (tipoMoneda2.CboMoneda.SelectedIndex==0)
+            {
+                tipoMoneda1.CboMoneda.SelectedIndex = 1;
+             //   MessageBox.Show("Mismo tipo de Conversion");
+            }
+            else if(tipoMoneda2.CboMoneda.SelectedIndex==1)
+            {
+                tipoMoneda1.CboMoneda.SelectedIndex = 0;
+            }
         }
 
         private void CboMoneda_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (tipoMoneda1.CboMoneda.Text.Equals("Soles"))
+            if (tipoMoneda1.CboMoneda.SelectedIndex == 0)
             {
-                Divir(true);
+                tipoMoneda2.CboMoneda.SelectedIndex = 1;
+                //   MessageBox.Show("Mismo tipo de Conversion");
+            }
+            else if (tipoMoneda1.CboMoneda.SelectedIndex == 1)
+            {
+                tipoMoneda2.CboMoneda.SelectedIndex = 0;
             }
         }
 
@@ -72,7 +89,20 @@ namespace Sistema_Bancario.Controles
         }
         private void TBMonto_TextChanged(object sender, EventArgs e)
         {
-            Multiplicar(true);
+            if (tipoMoneda1.CboMoneda.Text.Equals("Soles") && tipoMoneda2.CboMoneda.Text.Equals("Dolares"))
+            {
+                Dividir(true);
+            }
+            else if (tipoMoneda1.CboMoneda.Text.Equals("Dolares") && tipoMoneda2.CboMoneda.Text.Equals("Soles"))
+            {
+                Multiplicar(true);
+            }
+            else if (tipoMoneda2.CboMoneda.Text.Equals("Euros"))
+            {
+                Multiplicar(true);
+            }
+
+
         }
         public void Multiplicar(bool flag)
         {
@@ -97,7 +127,7 @@ namespace Sistema_Bancario.Controles
                 txtConversion.Text = "";
             }
         }
-        public void Divir(bool flag)
+        public void Dividir(bool flag)
         {
             if (monto1.TBMonto.Text != "")
             {
@@ -106,7 +136,7 @@ namespace Sistema_Bancario.Controles
                 Decimal D = Convert.ToDecimal(precios1.LbVentaDolares.Text.ToString());
                 if (flag == true)
                 {
-                    Decimal C = A / B;
+                    Decimal C = B / A;
                     txtConversion.Text = Convert.ToString(C);
                 }
                 else if (flag == false)

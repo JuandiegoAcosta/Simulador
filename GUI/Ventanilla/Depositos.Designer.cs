@@ -38,7 +38,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.nroCuenta1 = new Sistema_Bancario.Controles.NroCuenta();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,7 +83,7 @@
             // 
             // tipoMoneda2
             // 
-            this.tipoMoneda2.Location = new System.Drawing.Point(322, 165);
+            this.tipoMoneda2.Location = new System.Drawing.Point(388, 162);
             this.tipoMoneda2.Margin = new System.Windows.Forms.Padding(2);
             this.tipoMoneda2.Name = "tipoMoneda2";
             this.tipoMoneda2.Size = new System.Drawing.Size(136, 25);
@@ -138,25 +138,23 @@
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 35, 3, 3);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(0, 35, 0, 0);
-            this.panel1.Size = new System.Drawing.Size(670, 0);
+            this.panel1.Size = new System.Drawing.Size(679, 0);
             this.panel1.TabIndex = 28;
             // 
-            // button1
+            // label1
             // 
-            this.button1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button1.Location = new System.Drawing.Point(27, 240);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(111, 23);
-            this.button1.TabIndex = 32;
-            this.button1.Text = "Cambio Moneda";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(323, 168);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(60, 13);
+            this.label1.TabIndex = 29;
+            this.label1.Text = "Cambiar de";
             // 
             // Depositos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tipoMoneda2);
             this.Controls.Add(this.nroCuenta1);
@@ -177,7 +175,7 @@
             this.Controls.SetChildIndex(this.tipoMoneda2, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.proceder1, 0);
-            this.Controls.SetChildIndex(this.button1, 0);
+            this.Controls.SetChildIndex(this.label1, 0);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -197,6 +195,6 @@
         private Controles.TipoMoneda tipoMoneda2;
         private Controles.NroCuenta nroCuenta1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label1;
     }
 }
