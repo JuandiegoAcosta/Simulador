@@ -37,5 +37,8 @@ namespace ServiciosBancarios.Backend
 
         [OperationContract]
         List<ComponenteModel> Persona_GetComponentes(int idUsuario);
+
+        [OperationContract]
+        List<RolesModel> Persona_GetRolesUsuario(string aUsuario);
     }
 }

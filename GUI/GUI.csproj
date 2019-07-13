@@ -70,6 +70,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Administrador\Permisos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Administrador\Permisos.Designer.cs">
+      <DependentUpon>Permisos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\Personas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Administrador\Personas.Designer.cs">
+      <DependentUpon>Personas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\Roles.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Administrador\Roles.Designer.cs">
+      <DependentUpon>Roles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ayuda\FormHelp2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ayuda\FormHelp2.Designer.cs" />
     <Compile Include="Backend\Resumen_caja_chica.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -101,6 +123,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\CambioMoneda.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\CambioMoneda.Designer.cs">
+      <DependentUpon>CambioMoneda.cs</DependentUpon>
     </Compile>
     <Compile Include="Controles\DatosPersona.cs">
       <SubType>UserControl</SubType>
@@ -164,6 +192,12 @@
     </Compile>
     <Compile Include="Controles\NroCuenta.Designer.cs">
       <DependentUpon>NroCuenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\OpcionesUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controles\OpcionesUsuario.Designer.cs">
+      <DependentUpon>OpcionesUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Controles\Precios.cs">
       <SubType>UserControl</SubType>
@@ -252,6 +286,28 @@
     <Compile Include="Plataforma\UCrefinanciar.Designer.cs">
       <DependentUpon>UCrefinanciar.cs</DependentUpon>
     </Compile>
+    <Compile Include="plataforma_controles\NuevaCuentaUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="plataforma_controles\NuevaCuentaUserControl.Designer.cs" />
+    <Compile Include="plataforma_controles\NuevoPrestamoUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="plataforma_controles\NuevoPrestamoUserControl.Designer.cs" />
+    <Compile Include="plataforma_controles\RegistrarChequera.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="plataforma_controles\RegistrarChequera.Designer.cs" />
+    <Compile Include="plataforma_controles\RegistroPersonaUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="plataforma_controles\RegistroPersonaUserControl.Designer.cs" />
+    <Compile Include="Pruebas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pruebas.Designer.cs">
+      <DependentUpon>Pruebas.cs</DependentUpon>
+    </Compile>
     <Compile Include="VentanaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -260,6 +316,12 @@
     </Compile>
     <Compile Include="Ventanilla\Balancin.Designer.cs">
       <DependentUpon>Balancin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanilla\Cheques.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ventanilla\Cheques.Designer.cs">
+      <DependentUpon>Cheques.cs</DependentUpon>
     </Compile>
     <Compile Include="Ventanilla\CobroGiros.cs">
       <SubType>UserControl</SubType>
@@ -344,11 +406,24 @@
     <Compile Include="VentanaPrincipal.Designer.cs">
       <DependentUpon>VentanaPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ventanilla\Utilitarios.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <EmbeddedResource Include="Administrador\Permisos.resx">
+      <DependentUpon>Permisos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrador\Roles.resx">
+      <DependentUpon>Roles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ayuda\FormHelp2.resx" />
     <EmbeddedResource Include="Botones\BTRetiros.resx">
       <DependentUpon>BTRetiros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CambiarContraseña.resx">
       <DependentUpon>CambiarContraseña.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\CambioMoneda.resx">
+      <DependentUpon>CambioMoneda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controles\DatosPersona.resx">
       <DependentUpon>DatosPersona.cs</DependentUpon>
@@ -380,6 +455,9 @@
     <EmbeddedResource Include="Controles\NroCuenta.resx">
       <DependentUpon>NroCuenta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controles\OpcionesUsuario.resx">
+      <DependentUpon>OpcionesUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controles\Precios.resx">
       <DependentUpon>Precios.cs</DependentUpon>
     </EmbeddedResource>
@@ -404,8 +482,18 @@
     <EmbeddedResource Include="Plataforma\UCcliente.resx">
       <DependentUpon>UCcliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="plataforma_controles\NuevaCuentaUserControl.resx" />
+    <EmbeddedResource Include="plataforma_controles\NuevoPrestamoUserControl.resx" />
+    <EmbeddedResource Include="plataforma_controles\RegistrarChequera.resx" />
+    <EmbeddedResource Include="plataforma_controles\RegistroPersonaUserControl.resx" />
+    <EmbeddedResource Include="Pruebas.resx">
+      <DependentUpon>Pruebas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ventanilla\Balancin.resx">
       <DependentUpon>Balancin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventanilla\Cheques.resx">
+      <DependentUpon>Cheques.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanilla\Depositos.resx">
       <DependentUpon>Depositos.cs</DependentUpon>

@@ -17,27 +17,32 @@ namespace Sistema_Bancario.Froms_opciones
       {
          InitializeComponent();
          this.proceder1.BTProceder.Click += BTProceder_Click;
+         monto1.TBMonto.TextChanged += TBMonto_TextChanged;
+      //      tipoMoneda1.LbMoneda.Text = "Moneda(origen)";
+      //      tipoMoneda2.LbMoneda.Text = "Moneda(destino)";
       }
 
-      private bool setItem()
+       
+
+        private bool setItem()
       {
          try
          {
 
             m_tipocambio = new TipoCambioModel();
 
-            if (this.cmbMonedaOrigen.SelectedValue != null)
-            { m_tipocambio.Monedaorigen = (int)this.cmbMonedaOrigen.SelectedValue; }
+            if (this.tipoMoneda1.CboMoneda.SelectedValue != null)
+            { m_tipocambio.Monedaorigen = (int)this.tipoMoneda1.CboMoneda.SelectedValue; }
             else
             { return false; }
 
-            if (this.cmbMonedaDestino.SelectedValue != null)
-            { m_tipocambio.Monedaorigen = (int)this.cmbMonedaDestino.SelectedValue; }
+            if (this.tipoMoneda2.CboMoneda.SelectedValue != null)
+            { m_tipocambio.Monedaorigen = (int)this.tipoMoneda2.CboMoneda.SelectedValue; }
             else
             { return false; }
 
-            if (!string.IsNullOrEmpty(this.txtMonto.Text.Trim()))
-            { m_tipocambio.Montocompra = Convert.ToDecimal(this.txtMonto.Text.Trim()); }
+            if (!string.IsNullOrEmpty(this.monto1.TBMonto.Text.Trim()))
+            { m_tipocambio.Montocompra = Convert.ToDecimal(this.monto1.TBMonto.Text.Trim()); }
             else
             { return false; }
 
@@ -77,5 +82,43 @@ namespace Sistema_Bancario.Froms_opciones
 
          }
       }
-   }
+
+        private void TBMonto_TextChanged(object sender, EventArgs e)
+        {
+            Multiplicar(true);
+        }
+
+        private void RbtnVenta_CheckedChanged(object sender, EventArgs e)
+        {
+            Multiplicar(false);
+        }
+
+        private void RbtnCompra_CheckedChanged(object sender, EventArgs e)
+        {
+            Multiplicar(true);
+        }
+        public void Multiplicar(bool flag)
+        {
+            if (monto1.TBMonto.Text != "")
+            {
+                Decimal A = Convert.ToDecimal(precios1.LbCompraDolares.Text.ToString());
+                Decimal B = Convert.ToDecimal(monto1.TBMonto.Text.ToString());
+                Decimal D = Convert.ToDecimal(precios1.LbVentaDolares.Text.ToString());
+                if (flag == true)
+                {
+                    Decimal C = A * B;
+                    txtConversion.Text = Convert.ToString(C);
+                }
+                else if (flag == false)
+                {
+                    Decimal C = D * B;
+                    txtConversion.Text = Convert.ToString(C);
+                }
+            }
+            else
+            {
+                txtConversion.Text = "";
+            }
+        }
+    }
 }

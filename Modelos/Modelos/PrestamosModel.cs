@@ -31,13 +31,13 @@ namespace Modelos.Modelos
         /// <summary>
         /// Gets or sets the Moneda value.
         /// </summary>
-        public short Moneda
+        public int Moneda
         { get; set; }
 
         /// <summary>
         /// Gets or sets the Plazomeses value.
         /// </summary>
-        public short Plazomeses
+        public int Plazomeses
         { get; set; }
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace Modelos.Modelos
         /// <summary>
         /// Gets or sets the Seguro value.
         /// </summary>
-        public int Seguro
+        public bool Seguro
         { get; set; }
 
         /// <summary>
@@ -71,15 +71,27 @@ namespace Modelos.Modelos
         { get; set; }
 
         /// <summary>
+        /// Gets or sets the Fecha_modificacion value.
+        /// </summary>
+        public DateTime Fecha_creacion
+        { get; set; }
+
+        /// <summary>
         /// Gets or sets the Usuario_creador value.
         /// </summary>
-        public int? Usuario_creador
+        public string Usuario_creador
         { get; set; }
 
         /// <summary>
         /// Gets or sets the Usuario_modificador value.
         /// </summary>
-        public int? Usuario_modificador
+        public string Usuario_modificador
+        { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Diaago value.
+        /// </summary>
+        public int? Diapago
         { get; set; }
 
 

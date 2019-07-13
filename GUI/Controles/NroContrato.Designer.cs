@@ -34,28 +34,31 @@
             // 
             // TBNroContrato
             // 
-            this.TBNroContrato.Location = new System.Drawing.Point(99, 3);
+            this.TBNroContrato.Location = new System.Drawing.Point(74, 2);
+            this.TBNroContrato.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TBNroContrato.Name = "TBNroContrato";
-            this.TBNroContrato.Size = new System.Drawing.Size(238, 22);
+            this.TBNroContrato.Size = new System.Drawing.Size(180, 20);
             this.TBNroContrato.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(4, 6);
+            this.label1.Location = new System.Drawing.Point(3, 5);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 17);
+            this.label1.Size = new System.Drawing.Size(67, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Nro Contrato";
             // 
             // NroContrato
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TBNroContrato);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "NroContrato";
-            this.Size = new System.Drawing.Size(337, 34);
+            this.Size = new System.Drawing.Size(271, 28);
             this.ResumeLayout(false);
             this.PerformLayout();
 

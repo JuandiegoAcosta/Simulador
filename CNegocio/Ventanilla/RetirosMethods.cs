@@ -16,7 +16,7 @@ namespace CNegocio.Ventanilla
             retirosManager = new RetirosManager();
         }
         //RetiroInsert
-        public int InsertaRetiro(decimal monto,int tarjeta,int clave,string doi)
+        public int InsertaRetiro(decimal monto,Int64 tarjeta,int clave,string doi)
         {
             return retirosManager.RetiroInsert(monto,tarjeta,clave,doi);
         }
