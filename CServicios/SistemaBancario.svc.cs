@@ -493,8 +493,10 @@ namespace ServiciosBancarios
             return BLPersona.GetRolesUsuario(aUsuario);
         }
 
-        
-
+        public List<PersonaModel> GetPersonasPorRol(int idRol)
+        {
+            return BLPersona.GetPersonasPorRol(idRol);
+        }
 
         #endregion
 

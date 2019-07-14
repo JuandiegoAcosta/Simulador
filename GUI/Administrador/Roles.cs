@@ -50,7 +50,7 @@ namespace Sistema_Bancario.Administrador
                     roles = rol.Roles_ObtenerTodos().ToList();
 
 
-
+                    
 
                     dgvRoles.DataSource = roles;
 
@@ -113,14 +113,53 @@ namespace Sistema_Bancario.Administrador
             {
                 txtRol.Text = dgvRoles.Rows[e.RowIndex].Cells["Descripcion"].Value.ToString();
 
-
-
+                nombreRol = dgvRoles.Rows[e.RowIndex].Cells["Descripcion"].Value.ToString();
                 idRol = Convert.ToInt16(dgvRoles.Rows[e.RowIndex].Cells["Id"].Value);
 
-
+                
 
             }
         }
+
+
+        public List<PersonaModel> usuarios;
+
+        private void llenarDGVUsuarios()
+
+        {
+
+            try
+            {
+
+                using (WsSistemaBancario.PersonaServiceClient UsuariosRol = new WsSistemaBancario.PersonaServiceClient())
+                {
+
+
+
+
+                    usuarios = UsuariosRol.GetPersonasPorRol(idRol).ToList();
+
+                    dgvUsuarios.DataSource = usuarios;
+
+                    dgvRoles.Columns["Fecha_modificacion"].Visible = false;
+                    dgvRoles.Columns["Usuario_creador"].Visible = false;
+                    dgvRoles.Columns["Usuario_modificador"].Visible = false;
+
+                }
+
+            }
+
+            catch (Exception ex)
+            {
+
+            }
+
+
+
+        }
+
+
+
 
         private void btnEditarRol_Click(object sender, EventArgs e)
         {
@@ -172,6 +211,20 @@ namespace Sistema_Bancario.Administrador
         private void btnRefrescar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
+            pnlSecundario.SendToBack();
+            pnlPrincipal.BringToFront();
+        }
+
+        private void dgvRoles_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            pnlPrincipal.SendToBack();
+            pnlSecundario.BringToFront();
+
+            llenarDGVUsuarios();
         }
     }
 }

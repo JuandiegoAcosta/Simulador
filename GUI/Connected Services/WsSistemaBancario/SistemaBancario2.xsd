@@ -922,10 +922,24 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetPersonasPorRol">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idRol" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPersonasPorRolResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="GetPersonasPorRolResult" nillable="true" type="q55:ArrayOfPersonaModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="Roles_Crear">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="aRoles" nillable="true" type="q55:RolesModel" />
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="aRoles" nillable="true" type="q56:RolesModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -939,7 +953,7 @@
   <xs:element name="Roles_Editar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="aRoles" nillable="true" type="q56:RolesModel" />
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="aRoles" nillable="true" type="q57:RolesModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -974,7 +988,7 @@
   <xs:element name="Roles_ObtenerUnoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="Roles_ObtenerUnoResult" nillable="true" type="q57:RolesModel" />
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="Roles_ObtenerUnoResult" nillable="true" type="q58:RolesModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -986,14 +1000,14 @@
   <xs:element name="Roles_ObtenerTodosResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="Roles_ObtenerTodosResult" nillable="true" type="q58:ArrayOfRolesModel" />
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="Roles_ObtenerTodosResult" nillable="true" type="q59:ArrayOfRolesModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="RolUsuario_Crear">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="aRolUsuario" nillable="true" type="q59:RolUsuarioModel" />
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="aRolUsuario" nillable="true" type="q60:RolUsuarioModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1007,7 +1021,7 @@
   <xs:element name="RolUsuario_Editar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="aRolUsuario" nillable="true" type="q60:RolUsuarioModel" />
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="aRolUsuario" nillable="true" type="q61:RolUsuarioModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1042,7 +1056,7 @@
   <xs:element name="RolUsuario_ObtenerUnoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="RolUsuario_ObtenerUnoResult" nillable="true" type="q61:RolUsuarioModel" />
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="RolUsuario_ObtenerUnoResult" nillable="true" type="q62:RolUsuarioModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1054,14 +1068,14 @@
   <xs:element name="RolUsuario_ObtenerTodosResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="RolUsuario_ObtenerTodosResult" nillable="true" type="q62:ArrayOfRolUsuarioModel" />
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="RolUsuario_ObtenerTodosResult" nillable="true" type="q63:ArrayOfRolUsuarioModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="Sucursal_Crear">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="aSucursal" nillable="true" type="q63:SucursalModel" />
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="aSucursal" nillable="true" type="q64:SucursalModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1075,7 +1089,7 @@
   <xs:element name="Sucursal_Editar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="aSucursal" nillable="true" type="q64:SucursalModel" />
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="aSucursal" nillable="true" type="q65:SucursalModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1110,7 +1124,7 @@
   <xs:element name="Sucursal_ObtenerUnoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="Sucursal_ObtenerUnoResult" nillable="true" type="q65:SucursalModel" />
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="Sucursal_ObtenerUnoResult" nillable="true" type="q66:SucursalModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1122,14 +1136,14 @@
   <xs:element name="Sucursal_ObtenerTodosResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="Sucursal_ObtenerTodosResult" nillable="true" type="q66:ArrayOfSucursalModel" />
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="Sucursal_ObtenerTodosResult" nillable="true" type="q67:ArrayOfSucursalModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="TipoDocumento_Crear">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="aTipoDocumento" nillable="true" type="q67:TipoDocumentoModel" />
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="aTipoDocumento" nillable="true" type="q68:TipoDocumentoModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1143,7 +1157,7 @@
   <xs:element name="TipoDocumento_Editar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="aTipoDocumento" nillable="true" type="q68:TipoDocumentoModel" />
+        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="aTipoDocumento" nillable="true" type="q69:TipoDocumentoModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1178,7 +1192,7 @@
   <xs:element name="TipoDocumento_ObtenerUnoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="TipoDocumento_ObtenerUnoResult" nillable="true" type="q69:TipoDocumentoModel" />
+        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="TipoDocumento_ObtenerUnoResult" nillable="true" type="q70:TipoDocumentoModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1190,14 +1204,14 @@
   <xs:element name="TipoDocumento_ObtenerTodosResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="TipoDocumento_ObtenerTodosResult" nillable="true" type="q70:ArrayOfTipoDocumentoModel" />
+        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="TipoDocumento_ObtenerTodosResult" nillable="true" type="q71:ArrayOfTipoDocumentoModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="Turnos_Crear">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="aTurnos" nillable="true" type="q71:TurnosModel" />
+        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="aTurnos" nillable="true" type="q72:TurnosModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1211,7 +1225,7 @@
   <xs:element name="Turnos_Editar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="aTurnos" nillable="true" type="q72:TurnosModel" />
+        <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="aTurnos" nillable="true" type="q73:TurnosModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1246,7 +1260,7 @@
   <xs:element name="Turnos_ObtenerUnoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="Turnos_ObtenerUnoResult" nillable="true" type="q73:TurnosModel" />
+        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="Turnos_ObtenerUnoResult" nillable="true" type="q74:TurnosModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1258,14 +1272,14 @@
   <xs:element name="Turnos_ObtenerTodosResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="Turnos_ObtenerTodosResult" nillable="true" type="q74:ArrayOfTurnosModel" />
+        <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="Turnos_ObtenerTodosResult" nillable="true" type="q75:ArrayOfTurnosModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="TurnoUsuario_Crear">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="aTurnoUsuario" nillable="true" type="q75:TurnoUsuarioModel" />
+        <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="aTurnoUsuario" nillable="true" type="q76:TurnoUsuarioModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1279,7 +1293,7 @@
   <xs:element name="TurnoUsuario_Editar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="aTurnoUsuario" nillable="true" type="q76:TurnoUsuarioModel" />
+        <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="aTurnoUsuario" nillable="true" type="q77:TurnoUsuarioModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1314,7 +1328,7 @@
   <xs:element name="TurnoUsuario_ObtenerUnoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="TurnoUsuario_ObtenerUnoResult" nillable="true" type="q77:TurnoUsuarioModel" />
+        <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="TurnoUsuario_ObtenerUnoResult" nillable="true" type="q78:TurnoUsuarioModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1326,14 +1340,14 @@
   <xs:element name="TurnoUsuario_ObtenerTodosResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="TurnoUsuario_ObtenerTodosResult" nillable="true" type="q78:ArrayOfTurnoUsuarioModel" />
+        <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="TurnoUsuario_ObtenerTodosResult" nillable="true" type="q79:ArrayOfTurnoUsuarioModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="Cuenta_Crear">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="aCuenta" nillable="true" type="q79:CuentasModel" />
+        <xs:element xmlns:q80="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="aCuenta" nillable="true" type="q80:CuentasModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1347,7 +1361,7 @@
   <xs:element name="Cuenta_Editar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q80="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="aCuenta" nillable="true" type="q80:CuentasModel" />
+        <xs:element xmlns:q81="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="aCuenta" nillable="true" type="q81:CuentasModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1368,7 +1382,7 @@
   <xs:element name="Cuenta_ObtenerUnoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q81="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="Cuenta_ObtenerUnoResult" nillable="true" type="q81:CuentasModel" />
+        <xs:element xmlns:q82="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="Cuenta_ObtenerUnoResult" nillable="true" type="q82:CuentasModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1382,7 +1396,7 @@
   <xs:element name="Cuenta_ObtenerTodosResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q82="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="Cuenta_ObtenerTodosResult" nillable="true" type="q82:ArrayOfCuentasModel" />
+        <xs:element xmlns:q83="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="Cuenta_ObtenerTodosResult" nillable="true" type="q83:ArrayOfCuentasModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
