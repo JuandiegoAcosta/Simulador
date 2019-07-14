@@ -882,6 +882,12 @@ namespace Sistema_Bancario.WsSistemaBancario {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IComponenteService/Componente_ObtenerTodos", ReplyAction="http://tempuri.org/IComponenteService/Componente_ObtenerTodosResponse")]
         System.Threading.Tasks.Task<Modelos.Modelos.ComponenteModel[]> Componente_ObtenerTodosAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IComponenteService/Componente_ObtenerComponentesRol", ReplyAction="http://tempuri.org/IComponenteService/Componente_ObtenerComponentesRolResponse")]
+        Modelos.Modelos.ComponenteModel[] Componente_ObtenerComponentesRol(int aID_Rol);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IComponenteService/Componente_ObtenerComponentesRol", ReplyAction="http://tempuri.org/IComponenteService/Componente_ObtenerComponentesRolResponse")]
+        System.Threading.Tasks.Task<Modelos.Modelos.ComponenteModel[]> Componente_ObtenerComponentesRolAsync(int aID_Rol);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -949,6 +955,14 @@ namespace Sistema_Bancario.WsSistemaBancario {
         
         public System.Threading.Tasks.Task<Modelos.Modelos.ComponenteModel[]> Componente_ObtenerTodosAsync() {
             return base.Channel.Componente_ObtenerTodosAsync();
+        }
+        
+        public Modelos.Modelos.ComponenteModel[] Componente_ObtenerComponentesRol(int aID_Rol) {
+            return base.Channel.Componente_ObtenerComponentesRol(aID_Rol);
+        }
+        
+        public System.Threading.Tasks.Task<Modelos.Modelos.ComponenteModel[]> Componente_ObtenerComponentesRolAsync(int aID_Rol) {
+            return base.Channel.Componente_ObtenerComponentesRolAsync(aID_Rol);
         }
     }
     
@@ -1223,6 +1237,12 @@ namespace Sistema_Bancario.WsSistemaBancario {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/Persona_GetRolesUsuario", ReplyAction="http://tempuri.org/IPersonaService/Persona_GetRolesUsuarioResponse")]
         System.Threading.Tasks.Task<Modelos.Modelos.RolesModel[]> Persona_GetRolesUsuarioAsync(string aUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/GetPersonasPorRol", ReplyAction="http://tempuri.org/IPersonaService/GetPersonasPorRolResponse")]
+        Modelos.Modelos.PersonaModel[] GetPersonasPorRol(int idRol);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/GetPersonasPorRol", ReplyAction="http://tempuri.org/IPersonaService/GetPersonasPorRolResponse")]
+        System.Threading.Tasks.Task<Modelos.Modelos.PersonaModel[]> GetPersonasPorRolAsync(int idRol);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1330,6 +1350,14 @@ namespace Sistema_Bancario.WsSistemaBancario {
         
         public System.Threading.Tasks.Task<Modelos.Modelos.RolesModel[]> Persona_GetRolesUsuarioAsync(string aUsuario) {
             return base.Channel.Persona_GetRolesUsuarioAsync(aUsuario);
+        }
+        
+        public Modelos.Modelos.PersonaModel[] GetPersonasPorRol(int idRol) {
+            return base.Channel.GetPersonasPorRol(idRol);
+        }
+        
+        public System.Threading.Tasks.Task<Modelos.Modelos.PersonaModel[]> GetPersonasPorRolAsync(int idRol) {
+            return base.Channel.GetPersonasPorRolAsync(idRol);
         }
     }
     

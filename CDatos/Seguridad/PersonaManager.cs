@@ -716,7 +716,7 @@ namespace CDatos.Manager
                     return PersonaModel;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return PersonaModel;
             }
@@ -956,6 +956,65 @@ namespace CDatos.Manager
                 return null;
             }
         }
+
+
+
+
+        public List<PersonaModel> GetPersonasPorRol(int idRol)
+        {
+
+            List<PersonaModel> PersonaPorRolModellist = new List<PersonaModel>();
+
+            try
+            {
+                using (var connection = Util.ConnectionFactory.conexion())
+                {
+                    connection.Open();
+
+                    SqlCommand command = connection.CreateCommand();
+
+                    command.Parameters.AddWithValue("@idrol", idRol);
+
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.CommandText = "sp_ObtenerPersonasPorRol";
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+
+                            string Nombres = (string)(reader["Nombres"]);
+                            string NombreUsuario = (string)(reader["NombreUsuario"]);
+                            //string Correo = (reader["Correo"]) == DBNull.Value ? null : (string)(reader["Correo"]);
+                            bool Estado = (bool)(reader["Estado"]);
+
+
+                            PersonaPorRolModellist.Add(new PersonaModel
+                            {
+                                Nombres = Nombres,
+                                Nombreusuario = NombreUsuario,
+                                
+                                //Correo = Correo,
+                                Estado = Estado,
+
+
+                            });
+                        }
+                    }
+                }
+
+                return PersonaPorRolModellist;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+
         #endregion
 
     }

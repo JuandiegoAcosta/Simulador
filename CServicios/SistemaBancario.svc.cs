@@ -376,6 +376,10 @@ namespace ServiciosBancarios
             return BLComponente.ObtenerTodos();
         }
 
+        public List<ComponenteModel> Componente_ObtenerComponentesRol(int aID_Rol)
+        {
+            return BLComponente.ObtenerComponentesRol(aID_Rol);
+        }
 
 
         #endregion
@@ -487,6 +491,11 @@ namespace ServiciosBancarios
         public List<RolesModel> Persona_GetRolesUsuario(string aUsuario)
         {
             return BLPersona.GetRolesUsuario(aUsuario);
+        }
+
+        public List<PersonaModel> GetPersonasPorRol(int idRol)
+        {
+            return BLPersona.GetPersonasPorRol(idRol);
         }
 
         #endregion

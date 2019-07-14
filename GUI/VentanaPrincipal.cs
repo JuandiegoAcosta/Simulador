@@ -508,6 +508,7 @@ namespace Sistema_Bancario
             {
                 if (!panel1.Controls.Contains(Permisos.instance))
                 {
+                    
                     panel1.Controls.Add(Permisos.instance);
                     Permisos.instance.Dock = DockStyle.Fill;
                     Permisos.instance.BringToFront();

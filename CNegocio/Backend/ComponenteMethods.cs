@@ -41,5 +41,10 @@ namespace CNegocio.Backend
             return ADComponenteManager.ComponenteModelSelectAll();
         }
 
+        public List<ComponenteModel> ObtenerComponentesRol(int aRol)
+        {
+            return ADComponenteManager.GetComponentesRol(aRol);
+        }
+
     }
 }

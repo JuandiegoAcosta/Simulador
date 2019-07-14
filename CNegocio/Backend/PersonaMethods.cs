@@ -120,5 +120,10 @@ namespace CNegocio.Backend
         }
 
 
+        public List<PersonaModel> GetPersonasPorRol(int idRol)
+        {
+            return ADPersonaManager.GetPersonasPorRol(idRol);
+        }
+
     }
 }

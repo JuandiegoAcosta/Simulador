@@ -371,6 +371,76 @@ namespace CDatos.Manager
                 return ComponenteModellist;
             }
         }
+
+
+        ///////////////////////
+
+
+
+
+        public List<ComponenteModel> GetComponentesRol(int aRol)
+        {
+
+            List<ComponenteModel> ComponenteModellist = new List<ComponenteModel>();
+
+            try
+            {
+                using (var connection = Util.ConnectionFactory.conexion())
+                {
+                    connection.Open();
+
+                    SqlCommand command = connection.CreateCommand();
+
+                    command.Parameters.AddWithValue("@rol", aRol);
+
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.CommandText = "sp_ObtenerPermisosRol";
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+
+                            string Nombre = (string)(reader["Nombre"]);
+                            bool Estado = (bool)(reader["Estado"]);
+                            DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
+                            DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
+
+
+
+                            ComponenteModellist.Add(new ComponenteModel
+                            {
+                               
+                                Nombre = Nombre,
+                                Estado = Estado,
+                                Fecha_creacion = FECHA_CREACION,
+                                Fecha_modificacion = FECHA_MODIFICACION,
+
+                            });
+                        }
+                    }
+                }
+
+                return ComponenteModellist;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
         #endregion
 
     }
