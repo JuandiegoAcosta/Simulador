@@ -329,6 +329,17 @@ namespace CDatos.Manager
                 return TipoMovimientoModellist;
             }
         }
+
+        /*
+         alter Procedure MovimientoTipoCambioInsert
+(
+@MontoE decimal(12,4),
+@MonedaE varchar(50),
+@MontoS decimal(12,4),
+@MonedaS varchar(50),
+@ID_TurnoUsuario int,
+@Usuario_Creador varchar(50)
+         */
         #endregion
 
     }
