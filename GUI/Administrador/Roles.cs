@@ -17,7 +17,9 @@ namespace Sistema_Bancario.Administrador
         {
             InitializeComponent();
             this.BackColor = Color.White;
-            
+            //pnlPrincipal.BringToFront();
+            //pnlAgregarUsuario.SendToBack();
+            //pnlSecundario.SendToBack();
             cargarDGV();
         }
 
@@ -139,11 +141,27 @@ namespace Sistema_Bancario.Administrador
 
                     usuarios = UsuariosRol.GetPersonasPorRol(idRol).ToList();
 
+
+
                     dgvUsuarios.DataSource = usuarios;
 
-                    dgvRoles.Columns["Fecha_modificacion"].Visible = false;
-                    dgvRoles.Columns["Usuario_creador"].Visible = false;
-                    dgvRoles.Columns["Usuario_modificador"].Visible = false;
+                    dgvUsuarios.Columns["Nombres"].DisplayIndex = 2;
+                    dgvUsuarios.Columns["Nombreusuario"].DisplayIndex = 3;
+                    dgvUsuarios.Columns["Correo"].DisplayIndex = 4;
+                    dgvUsuarios.Columns["Nrodocumento"].DisplayIndex = 5;
+                    dgvUsuarios.Columns["Estado"].DisplayIndex = 8;
+
+                    dgvUsuarios.Columns["Id"].Visible = false;
+                    dgvUsuarios.Columns["Pass"].Visible = false;
+                    dgvUsuarios.Columns["Apellidos"].Visible = false;
+                    dgvUsuarios.Columns["Fechanacimiento"].Visible = false;
+                    dgvUsuarios.Columns["Telefono"].Visible = false;
+                    dgvUsuarios.Columns["Tipodocumento"].Visible = false;
+                    dgvUsuarios.Columns["Fecha_creacion"].Visible = false;
+                    dgvUsuarios.Columns["Fecha_modificacion"].Visible = false;
+                    dgvUsuarios.Columns["Usuario_creador"].Visible = false;
+                    dgvUsuarios.Columns["Usuario_modificador"].Visible = false;
+                    dgvUsuarios.Columns["Tipo_persona"].Visible = false;
 
                 }
 
@@ -222,9 +240,44 @@ namespace Sistema_Bancario.Administrador
         private void dgvRoles_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             pnlPrincipal.SendToBack();
+            pnlAgregarUsuario.SendToBack();
+            pnlBusquedaPersona.SendToBack();
             pnlSecundario.BringToFront();
 
             llenarDGVUsuarios();
+        }
+
+        private void btnAgregarUsuario_Click(object sender, EventArgs e)
+        {
+            pnlPrincipal.SendToBack();
+            pnlSecundario.SendToBack();
+            pnlAgregarUsuario.BringToFront();
+
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            pnlAgregarUsuario.SendToBack();
+            pnlSecundario.BringToFront();
+        }
+
+        private void btnBuscarUsuario_Click(object sender, EventArgs e)
+        {
+            pnlAgregarUsuario.SendToBack();
+            pnlBusquedaPersona.BringToFront();
+        }
+
+        private void btnBuscarEnBusqueda_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancelarBusqueda_Click(object sender, EventArgs e)
+        {
+            pnlBusquedaPersona.SendToBack();
+            pnlAgregarUsuario.BringToFront();
+            pnlPrincipal.SendToBack();
+            pnlSecundario.SendToBack();
         }
     }
 }

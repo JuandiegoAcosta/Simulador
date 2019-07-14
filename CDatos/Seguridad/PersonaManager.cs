@@ -988,7 +988,8 @@ namespace CDatos.Manager
 
                             string Nombres = (string)(reader["Nombres"]);
                             string NombreUsuario = (string)(reader["NombreUsuario"]);
-                            //string Correo = (reader["Correo"]) == DBNull.Value ? null : (string)(reader["Correo"]);
+                            string NroDocumento = (string)(reader["NroDocumento"]);
+                            string Correo = (reader["Correo"]) == DBNull.Value ? null : (string)(reader["Correo"]);
                             bool Estado = (bool)(reader["Estado"]);
 
 
@@ -996,8 +997,8 @@ namespace CDatos.Manager
                             {
                                 Nombres = Nombres,
                                 Nombreusuario = NombreUsuario,
-                                
-                                //Correo = Correo,
+                                Nrodocumento = NroDocumento,
+                                Correo = Correo,
                                 Estado = Estado,
 
 
