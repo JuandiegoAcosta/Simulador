@@ -119,6 +119,6 @@ namespace CNegocio.Backend
             return ADPersonaManager.GetRolesUsuario(aUsuario);
         }
 
-
+        
     }
 }

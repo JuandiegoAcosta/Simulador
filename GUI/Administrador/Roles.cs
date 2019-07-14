@@ -17,6 +17,7 @@ namespace Sistema_Bancario.Administrador
         {
             InitializeComponent();
             this.BackColor = Color.White;
+            
             cargarDGV();
         }
 
@@ -25,6 +26,7 @@ namespace Sistema_Bancario.Administrador
         {
             get
             {
+
                 if (_instance == null)
                 {
                     _instance = new Roles();
@@ -165,6 +167,11 @@ namespace Sistema_Bancario.Administrador
             {
 
             }
+        }
+
+        private void btnRefrescar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

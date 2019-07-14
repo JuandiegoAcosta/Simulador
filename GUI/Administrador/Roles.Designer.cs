@@ -125,10 +125,10 @@
         #endregion
 
         private System.Windows.Forms.Label lblRol;
-        private System.Windows.Forms.TextBox txtRol;
         private System.Windows.Forms.DataGridView dgvRoles;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnEditarRol;
         private System.Windows.Forms.Button btnEliminarRol;
+        public System.Windows.Forms.TextBox txtRol;
     }
 }

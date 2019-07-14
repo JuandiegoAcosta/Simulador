@@ -716,7 +716,7 @@ namespace CDatos.Manager
                     return PersonaModel;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return PersonaModel;
             }
@@ -956,6 +956,10 @@ namespace CDatos.Manager
                 return null;
             }
         }
+
+
+
+        
         #endregion
 
     }

@@ -283,6 +283,12 @@
   <wsdl:message name="IComponenteService_Componente_ObtenerTodos_OutputMessage">
     <wsdl:part name="parameters" element="tns:Componente_ObtenerTodosResponse" />
   </wsdl:message>
+  <wsdl:message name="IComponenteService_Componente_ObtenerComponentesRol_InputMessage">
+    <wsdl:part name="parameters" element="tns:Componente_ObtenerComponentesRol" />
+  </wsdl:message>
+  <wsdl:message name="IComponenteService_Componente_ObtenerComponentesRol_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Componente_ObtenerComponentesRolResponse" />
+  </wsdl:message>
   <wsdl:message name="IHorariosAtencionService_HorariosAtencion_Crear_InputMessage">
     <wsdl:part name="parameters" element="tns:HorariosAtencion_Crear" />
   </wsdl:message>
@@ -807,6 +813,10 @@
     <wsdl:operation name="Componente_ObtenerTodos">
       <wsdl:input wsaw:Action="http://tempuri.org/IComponenteService/Componente_ObtenerTodos" message="tns:IComponenteService_Componente_ObtenerTodos_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IComponenteService/Componente_ObtenerTodosResponse" message="tns:IComponenteService_Componente_ObtenerTodos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Componente_ObtenerComponentesRol">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComponenteService/Componente_ObtenerComponentesRol" message="tns:IComponenteService_Componente_ObtenerComponentesRol_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComponenteService/Componente_ObtenerComponentesRolResponse" message="tns:IComponenteService_Componente_ObtenerComponentesRol_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IHorariosAtencionService">
@@ -1478,6 +1488,15 @@
     </wsdl:operation>
     <wsdl:operation name="Componente_ObtenerTodos">
       <soap:operation soapAction="http://tempuri.org/IComponenteService/Componente_ObtenerTodos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Componente_ObtenerComponentesRol">
+      <soap:operation soapAction="http://tempuri.org/IComponenteService/Componente_ObtenerComponentesRol" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
