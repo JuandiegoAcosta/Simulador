@@ -602,6 +602,9 @@
     <None Include="Connected Services\WsSistemaBancario\SistemaBancario3.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\WsSistemaBancario\SistemaBancario31.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\DataSources\Modelos.Modelos.BancoModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.CajaChicaModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.CobroChequesModel.datasource" />

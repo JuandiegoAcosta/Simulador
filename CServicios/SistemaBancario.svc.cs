@@ -260,14 +260,14 @@ namespace ServiciosBancarios
 
         #region [ Ventanilla ]
 
-        bool IVentanillaService.Ventanilla_Crear(VentanillaModel aVentanilla)
+        bool IVentanillaService.Ventanilla_Crear(VentanillaModel aVentanilla, int id_user)
         {
-            return BLVentanila.Crear(aVentanilla);
+            return BLVentanila.Crear(aVentanilla, id_user);
         }
 
-        bool IVentanillaService.Ventanilla_Editar(VentanillaModel aVentanilla)
+        bool IVentanillaService.Ventanilla_Editar(VentanillaModel aVentanilla, int id_user)
         {
-            return BLVentanila.Editar(aVentanilla);
+            return BLVentanila.Editar(aVentanilla, id_user);
         }
 
         bool IVentanillaService.Ventanilla_Eliminar(int aID_VentanillaModel)
