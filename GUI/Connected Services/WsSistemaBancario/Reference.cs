@@ -657,6 +657,12 @@ namespace Sistema_Bancario.WsSistemaBancario {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVentanillaService/Ventanilla_ObtenerUno", ReplyAction="http://tempuri.org/IVentanillaService/Ventanilla_ObtenerUnoResponse")]
         System.Threading.Tasks.Task<Modelos.Modelos.VentanillaModel> Ventanilla_ObtenerUnoAsync(int aID_VentanillaModel);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVentanillaService/Ventanilla_ObtenerUnoXusuario", ReplyAction="http://tempuri.org/IVentanillaService/Ventanilla_ObtenerUnoXusuarioResponse")]
+        Modelos.Modelos.VentanillaModel Ventanilla_ObtenerUnoXusuario(int Id_Usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVentanillaService/Ventanilla_ObtenerUnoXusuario", ReplyAction="http://tempuri.org/IVentanillaService/Ventanilla_ObtenerUnoXusuarioResponse")]
+        System.Threading.Tasks.Task<Modelos.Modelos.VentanillaModel> Ventanilla_ObtenerUnoXusuarioAsync(int Id_Usuario);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVentanillaService/Ventanilla_ObtenerTodos", ReplyAction="http://tempuri.org/IVentanillaService/Ventanilla_ObtenerTodosResponse")]
         Modelos.Modelos.VentanillaModel[] Ventanilla_ObtenerTodos();
         
@@ -727,6 +733,14 @@ namespace Sistema_Bancario.WsSistemaBancario {
         
         public System.Threading.Tasks.Task<Modelos.Modelos.VentanillaModel> Ventanilla_ObtenerUnoAsync(int aID_VentanillaModel) {
             return base.Channel.Ventanilla_ObtenerUnoAsync(aID_VentanillaModel);
+        }
+        
+        public Modelos.Modelos.VentanillaModel Ventanilla_ObtenerUnoXusuario(int Id_Usuario) {
+            return base.Channel.Ventanilla_ObtenerUnoXusuario(Id_Usuario);
+        }
+        
+        public System.Threading.Tasks.Task<Modelos.Modelos.VentanillaModel> Ventanilla_ObtenerUnoXusuarioAsync(int Id_Usuario) {
+            return base.Channel.Ventanilla_ObtenerUnoXusuarioAsync(Id_Usuario);
         }
         
         public Modelos.Modelos.VentanillaModel[] Ventanilla_ObtenerTodos() {
@@ -1829,6 +1843,12 @@ namespace Sistema_Bancario.WsSistemaBancario {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITurnosService/Turnos_ObtenerUno", ReplyAction="http://tempuri.org/ITurnosService/Turnos_ObtenerUnoResponse")]
         System.Threading.Tasks.Task<Modelos.Modelos.TurnosModel> Turnos_ObtenerUnoAsync(int aID_Turnos);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITurnosService/Turnos_ObtenerUnoXUsuario", ReplyAction="http://tempuri.org/ITurnosService/Turnos_ObtenerUnoXUsuarioResponse")]
+        Modelos.Modelos.TurnosModel Turnos_ObtenerUnoXUsuario(int Id_usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITurnosService/Turnos_ObtenerUnoXUsuario", ReplyAction="http://tempuri.org/ITurnosService/Turnos_ObtenerUnoXUsuarioResponse")]
+        System.Threading.Tasks.Task<Modelos.Modelos.TurnosModel> Turnos_ObtenerUnoXUsuarioAsync(int Id_usuario);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITurnosService/Turnos_ObtenerTodos", ReplyAction="http://tempuri.org/ITurnosService/Turnos_ObtenerTodosResponse")]
         Modelos.Modelos.TurnosModel[] Turnos_ObtenerTodos();
         
@@ -1893,6 +1913,14 @@ namespace Sistema_Bancario.WsSistemaBancario {
         
         public System.Threading.Tasks.Task<Modelos.Modelos.TurnosModel> Turnos_ObtenerUnoAsync(int aID_Turnos) {
             return base.Channel.Turnos_ObtenerUnoAsync(aID_Turnos);
+        }
+        
+        public Modelos.Modelos.TurnosModel Turnos_ObtenerUnoXUsuario(int Id_usuario) {
+            return base.Channel.Turnos_ObtenerUnoXUsuario(Id_usuario);
+        }
+        
+        public System.Threading.Tasks.Task<Modelos.Modelos.TurnosModel> Turnos_ObtenerUnoXUsuarioAsync(int Id_usuario) {
+            return base.Channel.Turnos_ObtenerUnoXUsuarioAsync(Id_usuario);
         }
         
         public Modelos.Modelos.TurnosModel[] Turnos_ObtenerTodos() {

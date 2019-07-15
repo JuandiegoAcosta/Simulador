@@ -283,6 +283,10 @@ namespace ServiciosBancarios
         {
             return BLVentanila.ObtenerUno(aID_VentanillaModel);
         }
+        VentanillaModel IVentanillaService.Ventanilla_ObtenerUnoXusuario(int Id_Usuario)
+        {
+            return BLVentanila.ObtenerUnoXUsuario(Id_Usuario);
+        }
         List<VentanillaModel> IVentanillaService.GetVentanillasXSucursal(int sucursal)
         {
             return BLVentanila.ObtenerVentanillasXSucursal(sucursal);
@@ -684,6 +688,10 @@ namespace ServiciosBancarios
         {
             return BLTurnos.ObtenerUno(aID_Turnos);
         }
+        public TurnosModel Turnos_ObtenerUnoXUsuario(int Id_usuario)
+        {
+            return BLTurnos.ObtenerUnoXUsuario(Id_usuario);
+        }
 
         public List<TurnosModel> Turnos_ObtenerTodos()
         {
@@ -754,7 +762,6 @@ namespace ServiciosBancarios
         {
             throw new NotImplementedException();
         }
-
         #endregion
 
         #endregion

@@ -217,7 +217,51 @@ namespace CDatos.Manager
             }
         }
 
+        public VentanillaModel GetVentanillaModelxUsuario(int ID_Usuario)
+        {
+            VentanillaModel VentanillaModel = null;
 
+            try
+            {
+                using (var connection = Util.ConnectionFactory.conexion())
+                {
+                    connection.Open();
+
+                    SqlCommand command = connection.CreateCommand();
+                    command.Parameters.AddWithValue("@PId_Usuario", ID_Usuario);
+
+
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.CommandText = "SelectVentanillaXUsuario";
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+
+                            int ID_VentanillaModel = (int)(reader["ID_Ventanilla"]);
+                            string Descripcion = (string)(reader["Descripcion"]);
+
+                            VentanillaModel = new VentanillaModel
+                            {
+                                Id_ventanilla = ID_VentanillaModel,
+                                Descripcion = Descripcion
+
+                            };
+                        }
+                    }
+                }
+
+                return VentanillaModel;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
         /// <summary>
         /// Selects all the objects of VentanillaModel table.
         /// </summary>

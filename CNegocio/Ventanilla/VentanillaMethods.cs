@@ -32,6 +32,10 @@ namespace CNegocio.Ventanilla
         {
             return ADVentanillaManager.GetVentanillaModel(aID_VentanillaModel);
         }
+        public VentanillaModel ObtenerUnoXUsuario(int Id_Usuario)
+        {
+            return ADVentanillaManager.GetVentanillaModelxUsuario(Id_Usuario);
+        }
 
         public List<VentanillaModel> ObtenerTodos()
         {
