@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.LblNombreControl = new System.Windows.Forms.Label();
             this.TBNroDocumento = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // label1
+            // LblNombreControl
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 6);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nro Documento";
+            this.LblNombreControl.AutoSize = true;
+            this.LblNombreControl.Location = new System.Drawing.Point(3, 6);
+            this.LblNombreControl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LblNombreControl.Name = "LblNombreControl";
+            this.LblNombreControl.Size = new System.Drawing.Size(82, 13);
+            this.LblNombreControl.TabIndex = 0;
+            this.LblNombreControl.Text = "Nro Documento";
             // 
             // TBNroDocumento
             // 
@@ -55,18 +55,17 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.TBNroDocumento);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.LblNombreControl);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Nro_Documento";
-            this.Size = new System.Drawing.Size(283, 26);
+            this.Size = new System.Drawing.Size(283, 43);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         public System.Windows.Forms.TextBox TBNroDocumento;
+        public System.Windows.Forms.Label LblNombreControl;
     }
 }

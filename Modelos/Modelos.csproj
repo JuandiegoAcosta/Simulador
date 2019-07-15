@@ -79,6 +79,7 @@
     <Compile Include="Modelos\TipoCambioModel.cs" />
     <Compile Include="Session\ISession.cs" />
     <Compile Include="Session\Session.cs" />
+    <Compile Include="Modelos\TipodeCambioModel.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

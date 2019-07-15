@@ -49,10 +49,10 @@ namespace CNegocio.Ventanilla
         {
             return ADGirosPersonaManager.SelectGirosbyDocClave(avalue, clave);
         }
-        public bool EnviarGiro(double monto, int clave, int origen, int destino)
+        public bool EnviarGiro(GiroModel giro)
         {
-            return ADGirosPersonaManager.EnviarGiro(monto, clave, origen, destino);
+            return ADGirosPersonaManager.EnviarGiro(giro);
         }
-        public int CobrarGiro(int Codigo,string Usuario) => ADGirosPersonaManager.CobrarGiro(Codigo,Usuario);
+        public int CobrarGiro(GiroModel giro) => ADGirosPersonaManager.CobrarGiro(giro);
     }
 }

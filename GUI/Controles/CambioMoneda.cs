@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Modelos.Modelos;
+using CNegocio.Ventanilla;
+using Modelos;
 
 namespace Sistema_Bancario.Controles
 {
@@ -149,6 +151,30 @@ namespace Sistema_Bancario.Controles
             {
                 txtConversion.Text = "";
             }
+        }
+
+        private void Cambiar_Click(object sender, EventArgs e)
+        {
+
+   
+
+            TipoMovimientoMethods movimiento = new TipoMovimientoMethods();
+            TipodeCambioModel tipo = new TipodeCambioModel();
+           // VentanaPrincipal ventana =new VentanaPrincipal;
+            tipo.MonedaE = tipoMoneda1.CboMoneda.Text;
+            tipo.MontoE = Convert.ToDecimal(monto1.TBMonto.Text);
+            tipo.MontoS = Convert.ToDecimal(txtConversion.Text);
+            tipo.MonedaS = tipoMoneda2.CboMoneda.Text;
+
+            //Solucionar
+            tipo.Usuario = "Carlin Yahuira Achahui";
+            if (movimiento.MovimientoTipoCambioInsert(tipo) > 0)
+            {
+                MessageBox.Show("Se realizo el Cambio");
+            };
+
+
+
         }
     }
 }

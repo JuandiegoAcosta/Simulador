@@ -17,6 +17,7 @@ namespace Sistema_Bancario
             InitializeComponent();
            
             proceder1.BTProceder.Click += BTProceder_Click;
+            nro_Documento1.LblNombreControl.Text = "Nro Documento "+"\n"+"/ Nro Cuenta";
 
         }
 
