@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace ServiciosBancarios.Backend
 {
@@ -25,5 +26,8 @@ namespace ServiciosBancarios.Backend
 
         [OperationContract]
         List<RolesModel> Roles_ObtenerTodos();
+
+        [OperationContract]
+        DataTable Roles_RolesPorPersona(int aID_Usuario);
     }
 }

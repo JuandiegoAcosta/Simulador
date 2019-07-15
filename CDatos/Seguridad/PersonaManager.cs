@@ -1121,7 +1121,61 @@ namespace CDatos.Manager
         }
 
 
+        public List<PersonaModel> UsuarioSelectAll()
+        {
 
+            List<PersonaModel> listaUsuarios = new List<PersonaModel>();
+
+            try
+            {
+                using (var connection = Util.ConnectionFactory.conexion())
+                {
+                    connection.Open();
+
+                    SqlCommand command = connection.CreateCommand();
+
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.CommandText = "sp_ObtenerUsuarios";
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+
+                            int Id = (int)(reader["Id"]);
+                            string NombreUsuario = (string)(reader["NombreUsuario"]);               
+                            string Correo = (reader["Correo"]) == DBNull.Value ? null : (string)(reader["Correo"]);
+                            string Nombres = (string)(reader["Nombres"]);
+                            string Apellidos = (string)(reader["Apellidos"]);
+                            bool Estado = (bool)(reader["Estado"]);
+
+
+                            listaUsuarios.Add(new PersonaModel
+                            {
+                                Id = Id,
+                                Nombreusuario = NombreUsuario,
+                                
+                                Correo = Correo,
+                                Estado = Estado,
+                                Nombres = Nombres,
+                                Apellidos = Apellidos
+                               
+
+                            });
+                        }
+                    }
+                }
+
+                return listaUsuarios;
+            }
+            catch (Exception)
+            {
+                return listaUsuarios;
+            }
+        }
 
 
 

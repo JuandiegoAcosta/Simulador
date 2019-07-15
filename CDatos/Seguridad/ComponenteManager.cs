@@ -403,7 +403,7 @@ namespace CDatos.Manager
                     {
                         while (reader.Read())
                         {
-
+                            int Id = (int)(reader["Id"]);
                             string Nombre = (string)(reader["Nombre"]);
                             bool Estado = (bool)(reader["Estado"]);
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
@@ -413,7 +413,7 @@ namespace CDatos.Manager
 
                             ComponenteModellist.Add(new ComponenteModel
                             {
-                               
+                                Id = Id,
                                 Nombre = Nombre,
                                 Estado = Estado,
                                 Fecha_creacion = FECHA_CREACION,

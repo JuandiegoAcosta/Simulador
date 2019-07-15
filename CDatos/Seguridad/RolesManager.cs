@@ -326,6 +326,49 @@ namespace CDatos.Manager
                 return RolesModellist;
             }
         }
+
+        public DataTable RolesPorPersona(int aID_Usuario)
+        {
+
+            DataTable rolespersona = new DataTable("Roles");
+            
+
+            try
+            {
+                using (var connection = Util.ConnectionFactory.conexion())
+                {
+                    connection.Open();
+
+                    SqlCommand command = connection.CreateCommand();
+
+                    command.Parameters.AddWithValue("@idusuario", aID_Usuario);
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.CommandText = "sp_ObtenerRolesPorPersona";
+
+
+                    SqlDataAdapter daLugares = new SqlDataAdapter(command);
+                    daLugares.Fill(rolespersona);
+
+
+                }
+                
+
+                return rolespersona;
+            }
+            catch (Exception)
+            {
+                return rolespersona;
+            }
+        }
+
+
+
+
+
+
+
+
         #endregion
 
     }
