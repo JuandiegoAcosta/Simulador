@@ -1243,6 +1243,18 @@ namespace Sistema_Bancario.WsSistemaBancario {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/GetPersonasPorRol", ReplyAction="http://tempuri.org/IPersonaService/GetPersonasPorRolResponse")]
         System.Threading.Tasks.Task<Modelos.Modelos.PersonaModel[]> GetPersonasPorRolAsync(int idRol);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/Persona_GetPersonaNombreApellidos", ReplyAction="http://tempuri.org/IPersonaService/Persona_GetPersonaNombreApellidosResponse")]
+        Modelos.Modelos.PersonaModel[] Persona_GetPersonaNombreApellidos(string nombre, string apellido);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/Persona_GetPersonaNombreApellidos", ReplyAction="http://tempuri.org/IPersonaService/Persona_GetPersonaNombreApellidosResponse")]
+        System.Threading.Tasks.Task<Modelos.Modelos.PersonaModel[]> Persona_GetPersonaNombreApellidosAsync(string nombre, string apellido);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/Persona_CrearNuevoUsuario", ReplyAction="http://tempuri.org/IPersonaService/Persona_CrearNuevoUsuarioResponse")]
+        bool Persona_CrearNuevoUsuario(int idPersona, string Usuario, string Contraseña, bool Estado);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/Persona_CrearNuevoUsuario", ReplyAction="http://tempuri.org/IPersonaService/Persona_CrearNuevoUsuarioResponse")]
+        System.Threading.Tasks.Task<bool> Persona_CrearNuevoUsuarioAsync(int idPersona, string Usuario, string Contraseña, bool Estado);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1358,6 +1370,22 @@ namespace Sistema_Bancario.WsSistemaBancario {
         
         public System.Threading.Tasks.Task<Modelos.Modelos.PersonaModel[]> GetPersonasPorRolAsync(int idRol) {
             return base.Channel.GetPersonasPorRolAsync(idRol);
+        }
+        
+        public Modelos.Modelos.PersonaModel[] Persona_GetPersonaNombreApellidos(string nombre, string apellido) {
+            return base.Channel.Persona_GetPersonaNombreApellidos(nombre, apellido);
+        }
+        
+        public System.Threading.Tasks.Task<Modelos.Modelos.PersonaModel[]> Persona_GetPersonaNombreApellidosAsync(string nombre, string apellido) {
+            return base.Channel.Persona_GetPersonaNombreApellidosAsync(nombre, apellido);
+        }
+        
+        public bool Persona_CrearNuevoUsuario(int idPersona, string Usuario, string Contraseña, bool Estado) {
+            return base.Channel.Persona_CrearNuevoUsuario(idPersona, Usuario, Contraseña, Estado);
+        }
+        
+        public System.Threading.Tasks.Task<bool> Persona_CrearNuevoUsuarioAsync(int idPersona, string Usuario, string Contraseña, bool Estado) {
+            return base.Channel.Persona_CrearNuevoUsuarioAsync(idPersona, Usuario, Contraseña, Estado);
         }
     }
     

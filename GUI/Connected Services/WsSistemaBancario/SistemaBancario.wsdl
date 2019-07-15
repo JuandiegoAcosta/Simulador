@@ -415,6 +415,18 @@
   <wsdl:message name="IPersonaService_GetPersonasPorRol_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetPersonasPorRolResponse" />
   </wsdl:message>
+  <wsdl:message name="IPersonaService_Persona_GetPersonaNombreApellidos_InputMessage">
+    <wsdl:part name="parameters" element="tns:Persona_GetPersonaNombreApellidos" />
+  </wsdl:message>
+  <wsdl:message name="IPersonaService_Persona_GetPersonaNombreApellidos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Persona_GetPersonaNombreApellidosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPersonaService_Persona_CrearNuevoUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:Persona_CrearNuevoUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IPersonaService_Persona_CrearNuevoUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Persona_CrearNuevoUsuarioResponse" />
+  </wsdl:message>
   <wsdl:message name="IRolesService_Roles_Crear_InputMessage">
     <wsdl:part name="parameters" element="tns:Roles_Crear" />
   </wsdl:message>
@@ -913,6 +925,14 @@
     <wsdl:operation name="GetPersonasPorRol">
       <wsdl:input wsaw:Action="http://tempuri.org/IPersonaService/GetPersonasPorRol" message="tns:IPersonaService_GetPersonasPorRol_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IPersonaService/GetPersonasPorRolResponse" message="tns:IPersonaService_GetPersonasPorRol_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Persona_GetPersonaNombreApellidos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPersonaService/Persona_GetPersonaNombreApellidos" message="tns:IPersonaService_Persona_GetPersonaNombreApellidos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPersonaService/Persona_GetPersonaNombreApellidosResponse" message="tns:IPersonaService_Persona_GetPersonaNombreApellidos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Persona_CrearNuevoUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPersonaService/Persona_CrearNuevoUsuario" message="tns:IPersonaService_Persona_CrearNuevoUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPersonaService/Persona_CrearNuevoUsuarioResponse" message="tns:IPersonaService_Persona_CrearNuevoUsuario_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IRolesService">
@@ -1705,6 +1725,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetPersonasPorRol">
       <soap:operation soapAction="http://tempuri.org/IPersonaService/GetPersonasPorRol" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Persona_GetPersonaNombreApellidos">
+      <soap:operation soapAction="http://tempuri.org/IPersonaService/Persona_GetPersonaNombreApellidos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Persona_CrearNuevoUsuario">
+      <soap:operation soapAction="http://tempuri.org/IPersonaService/Persona_CrearNuevoUsuario" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

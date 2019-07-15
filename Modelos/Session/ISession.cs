@@ -18,6 +18,10 @@ namespace Modelos.Session
       #region [ SUCURSAL ]
       string SucursalCodigo { get; set; }
       string SucursalNombre { get; set; }
+      string VentanillaCodigo { get; set; }
+      string VentanillaDescripcion { get; set; }
+      string TurnoCodigo { get; set; }
+      string TurnoDescripcion { get; set; }
       string SucursalUbicacion { get; set; }
       string SucursalCodigoBanco { get; set; }
 

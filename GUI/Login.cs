@@ -46,7 +46,7 @@ namespace Sistema_Bancario
       private List<Modelos.Modelos.ComponenteModel> listaComponentes;
       private List<Modelos.Modelos.RolesModel> listaRoles;
 
-        private ISession Session;
+      private ISession Session;
 
       private void SetLogin()
       {
@@ -103,6 +103,7 @@ namespace Sistema_Bancario
                   //Session.SucursalCodigo = SucursalUsuario.Id.ToString();
                   Session.SucursalCodigo = string.Format("{0:000}", SucursalUsuario.Id);
                   Session.SucursalNombre = SucursalUsuario.Nombre;
+                  //agregar aqui ventanilla ID y descripcion, turno ID y descripcion
                   Session.SucursalUbicacion = SucursalUsuario.Ubicacion;
                   Session.SucursalCodigoBanco = SucursalUsuario.Idbanco.ToString();
 

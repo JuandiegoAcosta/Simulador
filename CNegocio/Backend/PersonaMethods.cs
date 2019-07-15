@@ -125,5 +125,16 @@ namespace CNegocio.Backend
             return ADPersonaManager.GetPersonasPorRol(idRol);
         }
 
+
+        public List<PersonaModel> GetPersonaNombreApellidos(string nombre, string apellido)
+        {
+            return ADPersonaManager.GetPersonaNombreApellidos(nombre, apellido);
+        }
+
+        public bool CrearNuevoUsuario(int idPersona, string Usuario, string Contraseña, bool Estado)
+        {
+            return ADPersonaManager.CrearNuevoUsuario(idPersona,Usuario,Contraseña,Estado);
+        }
+
     }
 }

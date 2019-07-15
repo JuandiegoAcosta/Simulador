@@ -498,6 +498,16 @@ namespace ServiciosBancarios
             return BLPersona.GetPersonasPorRol(idRol);
         }
 
+        public List<PersonaModel> Persona_GetPersonaNombreApellidos(string nombre, string apellido)
+        {
+            return BLPersona.GetPersonaNombreApellidos(nombre,apellido);
+        }
+
+        public bool Persona_CrearNuevoUsuario(int idPersona, string Usuario, string Contraseña, bool Estado)
+        {
+            return BLPersona.CrearNuevoUsuario(idPersona,Usuario,Contraseña,Estado);
+        }
+
         #endregion
 
         #region [ Roles ]
