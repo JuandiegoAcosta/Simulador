@@ -43,8 +43,12 @@ namespace ServiciosBancarios.Backend
 
         [OperationContract]
         List<PersonaModel> GetPersonasPorRol(int idRol);
-        
 
+        [OperationContract]
+        List<PersonaModel> Persona_GetPersonaNombreApellidos(string nombre, string apellido);
+
+        [OperationContract]
+        bool Persona_CrearNuevoUsuario(int idPersona, string Usuario, string Contraseña, bool Estado);
 
     }
 }
