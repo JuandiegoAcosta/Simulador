@@ -212,6 +212,12 @@
   <wsdl:message name="IVentanillaService_Ventanilla_ObtenerUno_OutputMessage">
     <wsdl:part name="parameters" element="tns:Ventanilla_ObtenerUnoResponse" />
   </wsdl:message>
+  <wsdl:message name="IVentanillaService_Ventanilla_ObtenerUnoXusuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:Ventanilla_ObtenerUnoXusuario" />
+  </wsdl:message>
+  <wsdl:message name="IVentanillaService_Ventanilla_ObtenerUnoXusuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Ventanilla_ObtenerUnoXusuarioResponse" />
+  </wsdl:message>
   <wsdl:message name="IVentanillaService_Ventanilla_ObtenerTodos_InputMessage">
     <wsdl:part name="parameters" element="tns:Ventanilla_ObtenerTodos" />
   </wsdl:message>
@@ -584,6 +590,12 @@
   <wsdl:message name="ITurnosService_Turnos_ObtenerUno_OutputMessage">
     <wsdl:part name="parameters" element="tns:Turnos_ObtenerUnoResponse" />
   </wsdl:message>
+  <wsdl:message name="ITurnosService_Turnos_ObtenerUnoXUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:Turnos_ObtenerUnoXUsuario" />
+  </wsdl:message>
+  <wsdl:message name="ITurnosService_Turnos_ObtenerUnoXUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Turnos_ObtenerUnoXUsuarioResponse" />
+  </wsdl:message>
   <wsdl:message name="ITurnosService_Turnos_ObtenerTodos_InputMessage">
     <wsdl:part name="parameters" element="tns:Turnos_ObtenerTodos" />
   </wsdl:message>
@@ -792,6 +804,10 @@
     <wsdl:operation name="Ventanilla_ObtenerUno">
       <wsdl:input wsaw:Action="http://tempuri.org/IVentanillaService/Ventanilla_ObtenerUno" message="tns:IVentanillaService_Ventanilla_ObtenerUno_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IVentanillaService/Ventanilla_ObtenerUnoResponse" message="tns:IVentanillaService_Ventanilla_ObtenerUno_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Ventanilla_ObtenerUnoXusuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVentanillaService/Ventanilla_ObtenerUnoXusuario" message="tns:IVentanillaService_Ventanilla_ObtenerUnoXusuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVentanillaService/Ventanilla_ObtenerUnoXusuarioResponse" message="tns:IVentanillaService_Ventanilla_ObtenerUnoXusuario_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="Ventanilla_ObtenerTodos">
       <wsdl:input wsaw:Action="http://tempuri.org/IVentanillaService/Ventanilla_ObtenerTodos" message="tns:IVentanillaService_Ventanilla_ObtenerTodos_InputMessage" />
@@ -1060,6 +1076,10 @@
     <wsdl:operation name="Turnos_ObtenerUno">
       <wsdl:input wsaw:Action="http://tempuri.org/ITurnosService/Turnos_ObtenerUno" message="tns:ITurnosService_Turnos_ObtenerUno_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ITurnosService/Turnos_ObtenerUnoResponse" message="tns:ITurnosService_Turnos_ObtenerUno_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Turnos_ObtenerUnoXUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITurnosService/Turnos_ObtenerUnoXUsuario" message="tns:ITurnosService_Turnos_ObtenerUnoXUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITurnosService/Turnos_ObtenerUnoXUsuarioResponse" message="tns:ITurnosService_Turnos_ObtenerUnoXUsuario_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="Turnos_ObtenerTodos">
       <wsdl:input wsaw:Action="http://tempuri.org/ITurnosService/Turnos_ObtenerTodos" message="tns:ITurnosService_Turnos_ObtenerTodos_InputMessage" />
@@ -1425,6 +1445,15 @@
     </wsdl:operation>
     <wsdl:operation name="Ventanilla_ObtenerUno">
       <soap:operation soapAction="http://tempuri.org/IVentanillaService/Ventanilla_ObtenerUno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ventanilla_ObtenerUnoXusuario">
+      <soap:operation soapAction="http://tempuri.org/IVentanillaService/Ventanilla_ObtenerUnoXusuario" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -2013,6 +2042,15 @@
     </wsdl:operation>
     <wsdl:operation name="Turnos_ObtenerUno">
       <soap:operation soapAction="http://tempuri.org/ITurnosService/Turnos_ObtenerUno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Turnos_ObtenerUnoXUsuario">
+      <soap:operation soapAction="http://tempuri.org/ITurnosService/Turnos_ObtenerUnoXUsuario" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
