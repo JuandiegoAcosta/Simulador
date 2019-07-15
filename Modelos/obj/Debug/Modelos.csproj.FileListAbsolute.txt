@@ -146,3 +146,4 @@ C:\Users\RithardLL\Source\Repos\Simulador17\Modelos\obj\Debug\Modelos.csprojAsse
 C:\Users\RithardLL\Source\Repos\Simulador17\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
 C:\Users\RithardLL\Source\Repos\Simulador17\Modelos\obj\Debug\Modelos.dll
 C:\Users\RithardLL\Source\Repos\Simulador17\Modelos\obj\Debug\Modelos.pdb
+C:\Users\Jean\Desktop\s7\JuandiegoAcosta\Simulador\Modelos\obj\Debug\Modelos.csprojAssemblyReference.cache
