@@ -17,14 +17,25 @@ namespace CNegocio.Backend
             ADCajaChicaManager = new CajaChicaManager();
         }
 
+        /// <summary>
+        /// Saves a record to the caja chica table.
+        /// returns True if value saved successfully else false
+        /// Throw exception with message value EXISTS if the data is duplicate
+        /// </summary>	
         public int Crear(CajaChicaModel aCajaChica,int id_user)
         {
             return ADCajaChicaManager.Insert(aCajaChica, id_user);
         }
 
-        public bool Editar(CajaChicaModel aCajaChica)
+        /// <summary>
+        /// Updates a record to the caja chica table.
+        /// returns True if value saved successfully else false
+        /// Throw exception with message value EXISTS if the data is duplicate
+        /// </summary>
+
+        public bool Editar(CajaChicaModel aCajaChica,int id_user)
         {
-            return ADCajaChicaManager.Update(aCajaChica);
+            return ADCajaChicaManager.Update(aCajaChica, id_user);
         }
 
         public bool Eliminar(int aID_CajaChica)

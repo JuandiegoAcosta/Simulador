@@ -299,14 +299,14 @@ namespace ServiciosBancarios
         #region [ Ventanilla Back ]
 
         #region [ Banco ]
-        public bool Banco_Crear(BancoModel aBanco)
+        public bool Banco_Crear(BancoModel aBanco, int id_user)
         {
-            return BLBanco.Crear(aBanco);
+            return BLBanco.Crear(aBanco, id_user);
         }
 
-        public bool Banco_Editar(BancoModel aBanco)
+        public bool Banco_Editar(BancoModel aBanco, int id_user)
         {
-            return BLBanco.Editar(aBanco);
+            return BLBanco.Editar(aBanco, id_user);
         }
 
         public bool Banco_Eliminar(int aID_Banco)
@@ -330,14 +330,14 @@ namespace ServiciosBancarios
         #region [Detalle caja Chica]
 
 
-        public bool DetalleCajaChica_Crear(DetalleCajaChicaModel aDetalleCajaChica)
+        public bool DetalleCajaChica_Crear(DetalleCajaChicaModel aDetalleCajaChica, int id_user)
         {
-            return BLDetalleCajaChica.Crear(aDetalleCajaChica);
+            return BLDetalleCajaChica.Crear(aDetalleCajaChica, id_user);
         }
 
-        public bool DetalleCajaChica_Editar(DetalleCajaChicaModel aDetalleCajaChica)
+        public bool DetalleCajaChica_Editar(DetalleCajaChicaModel aDetalleCajaChica, int id_user)
         {
-            return BLDetalleCajaChica.Editar(aDetalleCajaChica);
+            return BLDetalleCajaChica.Editar(aDetalleCajaChica, id_user);
         }
 
         public bool DetalleCajaChica_Eliminar(int aID_DetalleCajaChica)
@@ -361,14 +361,14 @@ namespace ServiciosBancarios
 
         #region [ Componente ]
 
-        public bool Componente_Crear(ComponenteModel aComponente)
+        public bool Componente_Crear(ComponenteModel aComponente, int id_user)
         {
-            return BLComponente.Crear(aComponente);
+            return BLComponente.Crear(aComponente, id_user);
         }
 
-        public bool Componente_Editar(ComponenteModel aComponente)
+        public bool Componente_Editar(ComponenteModel aComponente, int id_user)
         {
-            return BLComponente.Editar(aComponente);
+            return BLComponente.Editar(aComponente, id_user);
         }
 
         public bool Componente_Eliminar(int aID_Componente)
@@ -424,14 +424,14 @@ namespace ServiciosBancarios
         #endregion
 
         #region [ Permisos Usuario ]
-        public bool PermisosUsuario_Crear(PermisosUsuarioModel aPermisosUsuario)
+        public bool PermisosUsuario_Crear(PermisosUsuarioModel aPermisosUsuario, int id_user)
         {
-            return BLPermisosUsuario.Crear(aPermisosUsuario);
+            return BLPermisosUsuario.Crear(aPermisosUsuario, id_user);
         }
 
-        public bool PermisosUsuario_Editar(PermisosUsuarioModel aPermisosUsuario)
+        public bool PermisosUsuario_Editar(PermisosUsuarioModel aPermisosUsuario, int id_user)
         {
-            return BLPermisosUsuario.Editar(aPermisosUsuario);
+            return BLPermisosUsuario.Editar(aPermisosUsuario, id_user);
         }
 
         public bool PermisosUsuario_Eliminar(int aID_PermisosUsuario)
@@ -453,14 +453,14 @@ namespace ServiciosBancarios
         #endregion
 
         #region [ Persona ]
-        public bool Persona_Crear(PersonaModel aPersona)
+        public bool Persona_Crear(PersonaModel aPersona, int id_user)
         {
-            return BLPersona.Crear(aPersona);
+            return BLPersona.Crear(aPersona, id_user);
         }
 
-        public bool Persona_Editar(PersonaModel aPersona)
+        public bool Persona_Editar(PersonaModel aPersona, int id_user)
         {
-            return BLPersona.Editar(aPersona);
+            return BLPersona.Editar(aPersona, id_user);
         }
 
         public bool Persona_Eliminar(int aID_Persona)
@@ -527,14 +527,14 @@ namespace ServiciosBancarios
 
         #region [ Roles ]
 
-        public bool Roles_Crear(RolesModel aRoles)
+        public bool Roles_Crear(RolesModel aRoles, int id_user)
         {
-            return BLRoles.Crear(aRoles);
+            return BLRoles.Crear(aRoles, id_user);
         }
 
-        public bool Roles_Editar(RolesModel aRoles)
+        public bool Roles_Editar(RolesModel aRoles, int id_user)
         {
-            return BLRoles.Editar(aRoles);
+            return BLRoles.Editar(aRoles, id_user);
         }
 
         public bool Roles_Eliminar(int aID_Roles)
@@ -561,14 +561,14 @@ namespace ServiciosBancarios
 
         #region [ Rol Usuario ]
 
-        public bool RolUsuario_Crear(RolUsuarioModel aRolUsuario)
+        public bool RolUsuario_Crear(RolUsuarioModel aRolUsuario, int id_user)
         {
-            return BLRolUsuario.Crear(aRolUsuario);
+            return BLRolUsuario.Crear(aRolUsuario, id_user);
         }
 
-        public bool RolUsuario_Editar(RolUsuarioModel aRolUsuario)
+        public bool RolUsuario_Editar(RolUsuarioModel aRolUsuario, int id_user)
         {
-            return BLRolUsuario.Editar(aRolUsuario);
+            return BLRolUsuario.Editar(aRolUsuario, id_user);
         }
 
         public bool RolUsuario_Eliminar(int aID_RolUsuario)
@@ -591,14 +591,14 @@ namespace ServiciosBancarios
 
         #region [ Sucursal ]
 
-        public bool Sucursal_Crear(SucursalModel aSucursal)
+        public bool Sucursal_Crear(SucursalModel aSucursal, int id_user)
         {
-            return BLSucursal.Crear(aSucursal);
+            return BLSucursal.Crear(aSucursal, id_user);
         }
 
-        public bool Sucursal_Editar(SucursalModel aSucursal)
+        public bool Sucursal_Editar(SucursalModel aSucursal, int id_user)
         {
-            return BLSucursal.Editar(aSucursal);
+            return BLSucursal.Editar(aSucursal, id_user);
         }
 
         public bool Sucursal_Eliminar(int aID_Sucursal)
@@ -650,14 +650,14 @@ namespace ServiciosBancarios
 
         #region [ Turnos ]
 
-        public bool Turnos_Crear(TurnosModel aTurnos)
+        public bool Turnos_Crear(TurnosModel aTurnos, int id_user)
         {
-            return BLTurnos.Crear(aTurnos);
+            return BLTurnos.Crear(aTurnos, id_user);
         }
 
-        public bool Turnos_Editar(TurnosModel aTurnos)
+        public bool Turnos_Editar(TurnosModel aTurnos, int id_user)
         {
-            return BLTurnos.Editar(aTurnos);
+            return BLTurnos.Editar(aTurnos, id_user);
         }
 
         public bool Turnos_Eliminar(int aID_Turnos)
@@ -686,14 +686,14 @@ namespace ServiciosBancarios
 
         #region [ Turno Usuario ]
 
-        public bool TurnoUsuario_Crear(TurnoUsuarioModel aTurnoUsuario)
+        public bool TurnoUsuario_Crear(TurnoUsuarioModel aTurnoUsuario, int id_user)
         {
-            return BLTurnoUsuario.Crear(aTurnoUsuario);
+            return BLTurnoUsuario.Crear(aTurnoUsuario, id_user);
         }
 
-        public bool TurnoUsuario_Editar(TurnoUsuarioModel aTurnoUsuario)
+        public bool TurnoUsuario_Editar(TurnoUsuarioModel aTurnoUsuario, int id_user)
         {
-            return BLTurnoUsuario.Editar(aTurnoUsuario);
+            return BLTurnoUsuario.Editar(aTurnoUsuario, id_user);
         }
 
         public bool TurnoUsuario_Eliminar(int aID_TurnoUsuario)
@@ -751,9 +751,9 @@ namespace ServiciosBancarios
             return BLCajaChica.Crear(aCajaChica,id_user);
         }
 
-        public bool Editar(CajaChicaModel aCajaChica)
+        public bool Editar(CajaChicaModel aCajaChica, int id_user)
         {
-            return BLCajaChica.Editar(aCajaChica);
+            return BLCajaChica.Editar(aCajaChica, id_user);
         }
 
         public bool Eliminar(int aID_CajaChica)

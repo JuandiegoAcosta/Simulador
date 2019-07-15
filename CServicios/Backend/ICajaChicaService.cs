@@ -16,7 +16,7 @@ namespace ServiciosBancarios.Backend
         int Crear(CajaChicaModel aCajaChica,int id_user);
 
         [OperationContract]
-        bool Editar(CajaChicaModel aCajaChica);
+        bool Editar(CajaChicaModel aCajaChica, int id_user);
 
         [OperationContract]
         bool Eliminar(int aID_CajaChica);

@@ -16,14 +16,25 @@ namespace CNegocio.Backend
         {
             ADComponenteManager = new ComponenteManager();
         }
-        public bool Crear(ComponenteModel aComponente)
+
+        /// <summary>
+        /// Saves a record to the componente table.
+        /// returns True if value saved successfully else false
+        /// Throw exception with message value EXISTS if the data is duplicate
+        /// </summary>	
+        public bool Crear(ComponenteModel aComponente, int id_user)
         {
-            return ADComponenteManager.Insert(aComponente);
+            return ADComponenteManager.Insert(aComponente, id_user);
         }
 
-        public bool Editar(ComponenteModel aComponente)
+        /// <summary>
+        /// Updates a record to the componente table.
+        /// returns True if value saved successfully else false
+        /// Throw exception with message value EXISTS if the data is duplicate
+        /// </summary>
+        public bool Editar(ComponenteModel aComponente, int id_user)
         {
-            return ADComponenteManager.Update(aComponente);
+            return ADComponenteManager.Update(aComponente, id_user);
         }
 
         public bool Eliminar(int aID_Componente)

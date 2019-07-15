@@ -12,10 +12,10 @@ namespace ServiciosBancarios.Backend
     interface IPersonaService
     {
         [OperationContract]
-        bool Persona_Crear(PersonaModel aPersona);
+        bool Persona_Crear(PersonaModel aPersona, int id_user);
 
         [OperationContract]
-        bool Persona_Editar(PersonaModel aPersona);
+        bool Persona_Editar(PersonaModel aPersona, int id_user);
 
         [OperationContract]
         bool Persona_Eliminar(int aID_Persona);

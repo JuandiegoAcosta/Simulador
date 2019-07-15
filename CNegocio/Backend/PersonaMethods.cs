@@ -17,9 +17,9 @@ namespace CNegocio.Backend
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>	
-        public bool Crear(PersonaModel aPersona)
+        public bool Crear(PersonaModel aPersona, int id_user)
         {
-            return ADPersonaManager.Insert(aPersona);
+            return ADPersonaManager.Insert(aPersona, id_user);
         }
 
         /// <summary>
@@ -27,9 +27,9 @@ namespace CNegocio.Backend
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>
-        public bool Editar(PersonaModel aPersona)
+        public bool Editar(PersonaModel aPersona, int id_user)
         {
-            return ADPersonaManager.Update(aPersona);
+            return ADPersonaManager.Update(aPersona, id_user);
         }
 
         /// <summary>

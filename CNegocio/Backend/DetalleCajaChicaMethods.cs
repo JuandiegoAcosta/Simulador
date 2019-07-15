@@ -18,15 +18,24 @@ namespace CNegocio.Backend
         {
             ADDetalleCajaChicaManager = new DetalleCajaChicaManager();
         }
-
-        public bool Crear(DetalleCajaChicaModel aCajaChica)
+        /// <summary>
+        /// Saves a record to the detalle caja chica table.
+        /// returns True if value saved successfully else false
+        /// Throw exception with message value EXISTS if the data is duplicate
+        /// </summary>	
+        public bool Crear(DetalleCajaChicaModel aCajaChica, int id_user)
         {
-            return ADDetalleCajaChicaManager.Insert(aCajaChica);
+            return ADDetalleCajaChicaManager.Insert(aCajaChica, id_user);
         }
 
-        public bool Editar(DetalleCajaChicaModel aCajaChica)
+        /// <summary>
+        /// Updates a record to the detalle caja chica table.
+        /// returns True if value saved successfully else false
+        /// Throw exception with message value EXISTS if the data is duplicate
+        /// </summary>
+        public bool Editar(DetalleCajaChicaModel aCajaChica, int id_user)
         {
-            return ADDetalleCajaChicaManager.Update(aCajaChica);
+            return ADDetalleCajaChicaManager.Update(aCajaChica, id_user);
         }
 
         public bool Eliminar(int aID_CajaChica)

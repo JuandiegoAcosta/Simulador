@@ -13,10 +13,10 @@ namespace ServiciosBancarios.Backend
     interface IRolesService
     {
         [OperationContract]
-        bool Roles_Crear(RolesModel aRoles);
+        bool Roles_Crear(RolesModel aRoles, int id_user);
 
         [OperationContract]
-        bool Roles_Editar(RolesModel aRoles);
+        bool Roles_Editar(RolesModel aRoles, int id_user);
 
         [OperationContract]
         bool Roles_Eliminar(int aID_Roles);

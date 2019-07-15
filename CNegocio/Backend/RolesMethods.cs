@@ -17,14 +17,25 @@ namespace CNegocio.Backend
         {
             ADRolesManager = new RolesManager();
         }
-        public bool Crear(RolesModel aRoles)
+
+        /// <summary>
+        /// Saves a record to the roles table.
+        /// returns True if value saved successfully else false
+        /// Throw exception with message value EXISTS if the data is duplicate
+        /// </summary>	
+        public bool Crear(RolesModel aRoles, int id_user)
         {
-            return ADRolesManager.Insert(aRoles);
+            return ADRolesManager.Insert(aRoles, id_user);
         }
 
-        public bool Editar(RolesModel aRoles)
+        /// <summary>
+        /// Updates a record to the roles table.
+        /// returns True if value saved successfully else false
+        /// Throw exception with message value EXISTS if the data is duplicate
+        /// </summary>
+        public bool Editar(RolesModel aRoles, int id_user)
         {
-            return ADRolesManager.Update(aRoles);
+            return ADRolesManager.Update(aRoles, id_user);
         }
 
         public bool Eliminar(int aID_Roles)

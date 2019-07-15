@@ -16,14 +16,26 @@ namespace CNegocio.Backend
         {
             ADBancoManager = new BancoManager();
         }
-        public bool Crear(BancoModel aBanco)
+
+        /// <summary>
+        /// Saves a record to the banco table.
+        /// returns True if value saved successfully else false
+        /// Throw exception with message value EXISTS if the data is duplicate
+        /// </summary>	
+        public bool Crear(BancoModel aBanco, int id_user)
         {
-            return ADBancoManager.Insert(aBanco);
+            return ADBancoManager.Insert(aBanco, id_user);
         }
 
-        public bool Editar(BancoModel aBanco)
+        /// <summary>
+        /// Updates a record to the banco table.
+        /// returns True if value saved successfully else false
+        /// Throw exception with message value EXISTS if the data is duplicate
+        /// </summary>
+
+        public bool Editar(BancoModel aBanco, int id_user)
         {
-            return ADBancoManager.Update(aBanco);
+            return ADBancoManager.Update(aBanco, id_user);
         }
 
         public bool Eliminar(int aID_Banco)
