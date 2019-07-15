@@ -92,12 +92,11 @@
             // 
             // precios1
             // 
-            this.precios1.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.precios1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.precios1.Location = new System.Drawing.Point(480, 0);
+            this.precios1.BackColor = System.Drawing.Color.Transparent;
+            this.precios1.Location = new System.Drawing.Point(464, 15);
             this.precios1.Margin = new System.Windows.Forms.Padding(2);
             this.precios1.Name = "precios1";
-            this.precios1.Size = new System.Drawing.Size(177, 110);
+            this.precios1.Size = new System.Drawing.Size(177, 79);
             this.precios1.TabIndex = 39;
             // 
             // Cambiar
@@ -126,7 +125,7 @@
             this.Controls.Add(this.txtConversion);
             this.Controls.Add(this.precios1);
             this.Name = "CambioMoneda";
-            this.Size = new System.Drawing.Size(657, 110);
+            this.Size = new System.Drawing.Size(657, 111);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -140,6 +139,6 @@
         public System.Windows.Forms.TextBox txtConversion;
         public TipoMoneda tipoMoneda2;
         public TipoMoneda tipoMoneda1;
-        private System.Windows.Forms.Button Cambiar;
+        public System.Windows.Forms.Button Cambiar;
     }
 }

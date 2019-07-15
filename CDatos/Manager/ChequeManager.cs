@@ -68,6 +68,9 @@ namespace CDatos.Manager
         }
 
 
+       
+
+
         /// <summary>
         /// Updates a record to the ChequesModel table.
         /// returns True if value saved successfully else false
@@ -372,6 +375,8 @@ namespace CDatos.Manager
                 return ChequesModellist;
             }
         }
+
+
         #endregion
 
     }

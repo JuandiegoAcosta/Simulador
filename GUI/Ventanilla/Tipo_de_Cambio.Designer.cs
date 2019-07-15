@@ -49,11 +49,11 @@
             // 
             // precios1
             // 
-            this.precios1.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.precios1.Location = new System.Drawing.Point(634, 28);
+            this.precios1.BackColor = System.Drawing.Color.Transparent;
+            this.precios1.Location = new System.Drawing.Point(515, 46);
             this.precios1.Margin = new System.Windows.Forms.Padding(2);
             this.precios1.Name = "precios1";
-            this.precios1.Size = new System.Drawing.Size(177, 110);
+            this.precios1.Size = new System.Drawing.Size(174, 82);
             this.precios1.TabIndex = 12;
             // 
             // groupBox1
@@ -96,7 +96,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(297, 118);
+            this.label1.Location = new System.Drawing.Point(17, 112);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 13);
             this.label1.TabIndex = 30;
@@ -105,7 +105,7 @@
             // txtConversion
             // 
             this.txtConversion.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.txtConversion.Location = new System.Drawing.Point(394, 115);
+            this.txtConversion.Location = new System.Drawing.Point(152, 105);
             this.txtConversion.Name = "txtConversion";
             this.txtConversion.ReadOnly = true;
             this.txtConversion.Size = new System.Drawing.Size(201, 20);
@@ -113,7 +113,7 @@
             // 
             // monto1
             // 
-            this.monto1.Location = new System.Drawing.Point(394, 86);
+            this.monto1.Location = new System.Drawing.Point(152, 78);
             this.monto1.Margin = new System.Windows.Forms.Padding(2);
             this.monto1.Name = "monto1";
             this.monto1.Size = new System.Drawing.Size(203, 22);
@@ -121,7 +121,7 @@
             // 
             // tipoMoneda1
             // 
-            this.tipoMoneda1.Location = new System.Drawing.Point(32, 86);
+            this.tipoMoneda1.Location = new System.Drawing.Point(359, 76);
             this.tipoMoneda1.Margin = new System.Windows.Forms.Padding(2);
             this.tipoMoneda1.Name = "tipoMoneda1";
             this.tipoMoneda1.Size = new System.Drawing.Size(141, 24);
@@ -129,16 +129,16 @@
             // 
             // tipoMoneda2
             // 
-            this.tipoMoneda2.Location = new System.Drawing.Point(32, 115);
+            this.tipoMoneda2.Location = new System.Drawing.Point(358, 104);
             this.tipoMoneda2.Margin = new System.Windows.Forms.Padding(2);
             this.tipoMoneda2.Name = "tipoMoneda2";
-            this.tipoMoneda2.Size = new System.Drawing.Size(141, 24);
+            this.tipoMoneda2.Size = new System.Drawing.Size(142, 24);
             this.tipoMoneda2.TabIndex = 37;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(297, 90);
+            this.label2.Location = new System.Drawing.Point(55, 82);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 13);
             this.label2.TabIndex = 38;
