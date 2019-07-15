@@ -289,7 +289,7 @@ namespace Sistema_Bancario
             }
             else if (btn.Text.Equals("Personas"))
             {
-                CrearControl<UserControl>(Personas.instance, btn);
+                CrearControl<UserControl>(Usuario.instance, btn);
             }
             else if (btn.Text.Equals("Roles"))
             {
