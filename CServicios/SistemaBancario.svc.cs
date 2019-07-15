@@ -17,7 +17,7 @@ namespace ServiciosBancarios
 {
     // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de clase "Service1" en el código, en svc y en el archivo de configuración.
     // NOTE: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione Service1.svc o Service1.svc.cs en el Explorador de soluciones e inicie la depuración.
-     public class SistemaBancario : ICobroChequeService, IEmpresaService, IPagoServicioService, IRecaudosService, ITipoMonedaService, ITipoMovimientoService, IVentanillaService, IBancoService, IComponenteService, IHorariosAtencionService, IPermisosUsuarioService, IPersonaService, IRolesService, IRolUsuarioService, ISucursalService, ITipoDocumentoService, ITurnosService, ITurnoUsuarioService, ICuentaService
+     public class SistemaBancario : ICobroChequeService, IEmpresaService, IPagoServicioService, IRecaudosService, ITipoMonedaService, ITipoMovimientoService, IVentanillaService, IBancoService, IComponenteService, IHorariosAtencionService, IPermisosUsuarioService, IPersonaService, IRolesService, IRolUsuarioService, ISucursalService, ITipoDocumentoService, ITurnosService, ITurnoUsuarioService, ICuentaService, IDetalleCajaChicaService
     {
         #region [ Varibles Globales ]
         #region [ Ventanilla Front ]
@@ -33,6 +33,7 @@ namespace ServiciosBancarios
         #region [ Ventanilla Back ]
         private BancoMethods BLBanco;
         private CajaChicaMethods BLCajaChica;
+        private DetalleCajaChicaMethods BLDetalleCajaChica;
         private ComponenteMethods BLComponente;
         private HorariosAtencionMethods BLHorariosAtencion;
         private PermisosUsuarioMethods BLPermisosUsuario;
@@ -352,6 +353,38 @@ namespace ServiciosBancarios
 
 
         #endregion
+
+        #region [Detalle caja Chica]
+
+
+        public bool DetalleCajaChica_Crear(DetalleCajaChicaModel aDetalleCajaChica)
+        {
+            return BLDetalleCajaChica.Crear(aDetalleCajaChica);
+        }
+
+        public bool DetalleCajaChica_Editar(DetalleCajaChicaModel aDetalleCajaChica)
+        {
+            return BLDetalleCajaChica.Editar(aDetalleCajaChica);
+        }
+
+        public bool DetalleCajaChica_Eliminar(int aID_DetalleCajaChica)
+        {
+            return BLDetalleCajaChica.Eliminar(aID_DetalleCajaChica);
+        }
+
+        public DetalleCajaChicaModel DetalleCajaChica_ObtenerUno(int aID_DetalleCajaChica)
+        {
+            return BLDetalleCajaChica.ObtenerUno(aID_DetalleCajaChica);
+        }
+
+        public List<DetalleCajaChicaModel> DetalleCajaChica_ObtenerTodos()
+        {
+            return BLDetalleCajaChica.ObtenerTodos();
+        }
+
+
+        #endregion
+
 
         #region [ Componente ]
 

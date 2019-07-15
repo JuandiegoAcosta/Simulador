@@ -23,12 +23,6 @@ namespace Modelos.Modelos
         { get; set; }
 
         /// <summary>
-        /// Gets or sets the Monto value.
-        /// </summary>
-        public decimal Monto
-        { get; set; }
-
-        /// <summary>
         /// Gets or sets the Id_persona value.
         /// </summary>
         public int Id_TurnoUsuario
@@ -40,11 +34,6 @@ namespace Modelos.Modelos
         public TimeSpan Hora
         { get; set; }
 
-        /// <summary>
-        /// Gets or sets the Fecha value.
-        /// </summary>
-        public DateTime Fecha
-        { get; set; }
 
         /// <summary>
         /// Gets or sets the Usuario_creador value.
