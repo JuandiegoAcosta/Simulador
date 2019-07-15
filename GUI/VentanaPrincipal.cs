@@ -89,6 +89,8 @@ namespace Sistema_Bancario
         {
          lblUserValueType.Text = Session.UserNombreCompleto;
          lblSucursal.Text = Session.SucursalNombre;
+            lblVentanilla.Text = Session.VentanillaDescripcion;
+            lblTurno.Text = Session.Turno.Descripcion;
         }
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
       {
