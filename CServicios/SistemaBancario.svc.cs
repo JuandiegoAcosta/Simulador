@@ -453,14 +453,14 @@ namespace ServiciosBancarios
         #endregion
 
         #region [ Persona ]
-        public bool Persona_Crear(PersonaModel aPersona, int id_user)
+        public bool Persona_Crear(PersonaModel aPersona)
         {
-            return BLPersona.Crear(aPersona, id_user);
+            return BLPersona.Crear(aPersona);
         }
 
         public bool Persona_Editar(PersonaModel aPersona, int id_user)
         {
-            return BLPersona.Editar(aPersona, id_user);
+            return BLPersona.Editar(aPersona);
         }
 
         public bool Persona_Eliminar(int aID_Persona)
@@ -529,12 +529,12 @@ namespace ServiciosBancarios
 
         public bool Roles_Crear(RolesModel aRoles, int id_user)
         {
-            return BLRoles.Crear(aRoles, id_user);
+            return BLRoles.Crear(aRoles);
         }
 
         public bool Roles_Editar(RolesModel aRoles, int id_user)
         {
-            return BLRoles.Editar(aRoles, id_user);
+            return BLRoles.Editar(aRoles);
         }
 
         public bool Roles_Eliminar(int aID_Roles)
@@ -563,12 +563,12 @@ namespace ServiciosBancarios
 
         public bool RolUsuario_Crear(RolUsuarioModel aRolUsuario, int id_user)
         {
-            return BLRolUsuario.Crear(aRolUsuario, id_user);
+            return BLRolUsuario.Crear(aRolUsuario);
         }
 
         public bool RolUsuario_Editar(RolUsuarioModel aRolUsuario, int id_user)
         {
-            return BLRolUsuario.Editar(aRolUsuario, id_user);
+            return BLRolUsuario.Editar(aRolUsuario);
         }
 
         public bool RolUsuario_Eliminar(int aID_RolUsuario)
@@ -769,6 +769,11 @@ namespace ServiciosBancarios
         public List<CajaChicaModel> ObtenerTodos()
         {
             return BLCajaChica.ObtenerTodos();
+        }
+
+        public bool Persona_Crear(PersonaModel aPersona, int id_user)
+        {
+            throw new NotImplementedException();
         }
         #endregion
 
