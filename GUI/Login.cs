@@ -115,8 +115,7 @@ namespace Sistema_Bancario
                     //agregar aqui ventanilla ID y descripcion, turno ID y descripcion
                     Session.VentanillaCodigo = ventanilla.Id_ventanilla.ToString();
                     Session.VentanillaDescripcion = ventanilla.Descripcion;
-                    Session.TurnoCodigo = turno.Id.ToString();
-                    Session.TurnoDescripcion = turno.Descripcion;
+                    Session.Turno = turno;
                     Session.SucursalUbicacion = SucursalUsuario.Ubicacion;
                     Session.SucursalCodigoBanco = SucursalUsuario.Idbanco.ToString();
                     Session.Componentes = listaComponentes;

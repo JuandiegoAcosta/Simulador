@@ -80,8 +80,10 @@ namespace Sistema_Bancario.Ventanilla
             {
                 using (WsSistemaBancario.VentanillaServiceClient ventanilla = new WsSistemaBancario.VentanillaServiceClient())
                 {
-                    this.cmbVentanillas.DataSource = ventanilla.GetVentanillasXSucursal(Convert.ToInt32(this.session.SucursalCodigo), Convert.ToInt32(this.session.TurnoCodigo));
+                    this.cmbVentanillas.DataSource = ventanilla.GetVentanillasXSucursal(Convert.ToInt32(this.session.SucursalCodigo), Convert.ToInt32(this.session.Turno.Id));
+                    this.cmbVentanillas.ValueMember = "Id_ventanilla";
                     this.cmbVentanillas.DisplayMember = "Descripcion";
+                    
                 }
             }
             catch (Exception ex)
@@ -201,6 +203,12 @@ namespace Sistema_Bancario.Ventanilla
                     dgvSoles.Rows[e.RowIndex].ErrorText = String.Empty;
                     result = this.CalcularImporte(dgvSoles.Rows[e.RowIndex].Cells[0].Value.ToString(),result);
                     dgvSoles.Rows[e.RowIndex].Cells[2].Value = result;
+                    int importe=0;
+                    foreach (DataGridViewRow r in dgvSoles.Rows)
+                    {
+                        importe += (int)r.Cells[2].Value;
+                    }
+                    this.txtTotalSoles.Text = importe.ToString();
                 }
                 catch (FormatException)
                 {
@@ -221,12 +229,41 @@ namespace Sistema_Bancario.Ventanilla
                     dgvDolares.Rows[e.RowIndex].ErrorText = String.Empty;
                     result = this.CalcularImporte(dgvDolares.Rows[e.RowIndex].Cells[0].Value.ToString(), result);
                     dgvDolares.Rows[e.RowIndex].Cells[2].Value = result;
+                    int importe = 0;
+                    foreach (DataGridViewRow r in dgvDolares.Rows)
+                    {
+                        importe += (int)r.Cells[2].Value;
+                    }
+                    this.txtTotalDolares.Text = importe.ToString();
                 }
                 catch (FormatException)
                 {
                     MessageBox.Show("Las celdas solo permiten números!", "Dato incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     dgvDolares.Rows[e.RowIndex].ErrorText = "El dato introducido no es de tipo numero";
                     e.Cancel = true;
+                }
+            }
+        }
+
+        private void btnRegistrarMov_Click_1(object sender, EventArgs e)
+        {
+            int identity;
+            using (WsSistemaBancario.CajaChicaServiceClient caja=new WsSistemaBancario.CajaChicaServiceClient())
+            {
+                Modelos.Modelos.CajaChicaModel cc = new CajaChicaModel();
+                cc.Id_TurnoUsuario1 = Convert.ToInt32(session.Turno.IdTurUsu);
+                cc.Id_TurnoUsuario2 = Convert.ToInt32(this.cmbVentanillas.SelectedValue);
+                string tipo = cmbTipoMov.SelectedValue.ToString();
+                cc.Tipo_Accion= (tipo.Equals("Cargo")?"C":"A");
+
+                identity = caja.Crear(cc, Convert.ToInt32(session.UserCodigo));
+                if (identity==0)
+                {
+                    MessageBox.Show("No se pudo registrar los datos!");
+                }
+                else
+                {
+                    return;
                 }
             }
         }

@@ -9,7 +9,8 @@ namespace Modelos.Modelos
     public class TurnosModel
     {
         #region Properties
-
+        public int IdTurUsu
+        { get; set; }
         /// <summary>
         /// Gets or sets the Id value.
         /// </summary>

@@ -377,4 +377,23 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfCuentasModel" nillable="true" type="tns:ArrayOfCuentasModel" />
+  <xs:complexType name="CajaChicaModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Fecha_creacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Fecha_modificacion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Id_TurnoUsuario1" type="xs:int" />
+      <xs:element minOccurs="0" name="Id_TurnoUsuario2" type="xs:int" />
+      <xs:element minOccurs="0" name="Tipo_Accion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Usuario_creador" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Usuario_modificador" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CajaChicaModel" nillable="true" type="tns:CajaChicaModel" />
+  <xs:complexType name="ArrayOfCajaChicaModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CajaChicaModel" nillable="true" type="tns:CajaChicaModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCajaChicaModel" nillable="true" type="tns:ArrayOfCajaChicaModel" />
 </xs:schema>

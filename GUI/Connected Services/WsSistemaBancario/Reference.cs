@@ -2123,4 +2123,107 @@ namespace Sistema_Bancario.WsSistemaBancario {
             return base.Channel.Cuenta_ObtenerTodosAsync(aID_Persona);
         }
     }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WsSistemaBancario.ICajaChicaService")]
+    public interface ICajaChicaService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICajaChicaService/Crear", ReplyAction="http://tempuri.org/ICajaChicaService/CrearResponse")]
+        int Crear(Modelos.Modelos.CajaChicaModel aCajaChica, int id_user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICajaChicaService/Crear", ReplyAction="http://tempuri.org/ICajaChicaService/CrearResponse")]
+        System.Threading.Tasks.Task<int> CrearAsync(Modelos.Modelos.CajaChicaModel aCajaChica, int id_user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICajaChicaService/Editar", ReplyAction="http://tempuri.org/ICajaChicaService/EditarResponse")]
+        bool Editar(Modelos.Modelos.CajaChicaModel aCajaChica);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICajaChicaService/Editar", ReplyAction="http://tempuri.org/ICajaChicaService/EditarResponse")]
+        System.Threading.Tasks.Task<bool> EditarAsync(Modelos.Modelos.CajaChicaModel aCajaChica);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICajaChicaService/Eliminar", ReplyAction="http://tempuri.org/ICajaChicaService/EliminarResponse")]
+        bool Eliminar(int aID_CajaChica);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICajaChicaService/Eliminar", ReplyAction="http://tempuri.org/ICajaChicaService/EliminarResponse")]
+        System.Threading.Tasks.Task<bool> EliminarAsync(int aID_CajaChica);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICajaChicaService/ObtenerUno", ReplyAction="http://tempuri.org/ICajaChicaService/ObtenerUnoResponse")]
+        Modelos.Modelos.CajaChicaModel ObtenerUno(int aID_CajaChica);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICajaChicaService/ObtenerUno", ReplyAction="http://tempuri.org/ICajaChicaService/ObtenerUnoResponse")]
+        System.Threading.Tasks.Task<Modelos.Modelos.CajaChicaModel> ObtenerUnoAsync(int aID_CajaChica);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICajaChicaService/ObtenerTodos", ReplyAction="http://tempuri.org/ICajaChicaService/ObtenerTodosResponse")]
+        Modelos.Modelos.CajaChicaModel[] ObtenerTodos();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICajaChicaService/ObtenerTodos", ReplyAction="http://tempuri.org/ICajaChicaService/ObtenerTodosResponse")]
+        System.Threading.Tasks.Task<Modelos.Modelos.CajaChicaModel[]> ObtenerTodosAsync();
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface ICajaChicaServiceChannel : Sistema_Bancario.WsSistemaBancario.ICajaChicaService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class CajaChicaServiceClient : System.ServiceModel.ClientBase<Sistema_Bancario.WsSistemaBancario.ICajaChicaService>, Sistema_Bancario.WsSistemaBancario.ICajaChicaService {
+        
+        public CajaChicaServiceClient() {
+        }
+        
+        public CajaChicaServiceClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public CajaChicaServiceClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public CajaChicaServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public CajaChicaServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public int Crear(Modelos.Modelos.CajaChicaModel aCajaChica, int id_user) {
+            return base.Channel.Crear(aCajaChica, id_user);
+        }
+        
+        public System.Threading.Tasks.Task<int> CrearAsync(Modelos.Modelos.CajaChicaModel aCajaChica, int id_user) {
+            return base.Channel.CrearAsync(aCajaChica, id_user);
+        }
+        
+        public bool Editar(Modelos.Modelos.CajaChicaModel aCajaChica) {
+            return base.Channel.Editar(aCajaChica);
+        }
+        
+        public System.Threading.Tasks.Task<bool> EditarAsync(Modelos.Modelos.CajaChicaModel aCajaChica) {
+            return base.Channel.EditarAsync(aCajaChica);
+        }
+        
+        public bool Eliminar(int aID_CajaChica) {
+            return base.Channel.Eliminar(aID_CajaChica);
+        }
+        
+        public System.Threading.Tasks.Task<bool> EliminarAsync(int aID_CajaChica) {
+            return base.Channel.EliminarAsync(aID_CajaChica);
+        }
+        
+        public Modelos.Modelos.CajaChicaModel ObtenerUno(int aID_CajaChica) {
+            return base.Channel.ObtenerUno(aID_CajaChica);
+        }
+        
+        public System.Threading.Tasks.Task<Modelos.Modelos.CajaChicaModel> ObtenerUnoAsync(int aID_CajaChica) {
+            return base.Channel.ObtenerUnoAsync(aID_CajaChica);
+        }
+        
+        public Modelos.Modelos.CajaChicaModel[] ObtenerTodos() {
+            return base.Channel.ObtenerTodos();
+        }
+        
+        public System.Threading.Tasks.Task<Modelos.Modelos.CajaChicaModel[]> ObtenerTodosAsync() {
+            return base.Channel.ObtenerTodosAsync();
+        }
+    }
 }

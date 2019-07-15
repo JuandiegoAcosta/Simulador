@@ -17,9 +17,9 @@ namespace CNegocio.Backend
             ADCajaChicaManager = new CajaChicaManager();
         }
 
-        public bool Crear(CajaChicaModel aCajaChica)
+        public int Crear(CajaChicaModel aCajaChica,int id_user)
         {
-            return ADCajaChicaManager.Insert(aCajaChica);
+            return ADCajaChicaManager.Insert(aCajaChica, id_user);
         }
 
         public bool Editar(CajaChicaModel aCajaChica)

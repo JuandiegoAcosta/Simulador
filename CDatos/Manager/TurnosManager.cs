@@ -245,13 +245,14 @@ namespace CDatos.Manager
                     {
                         while (reader.Read())
                         {
-
-                            int Id = (int)(reader["Id"]);
+                            int turusu = (int)(reader["TurUsu"]);
+                            int turno = (int)(reader["Turno"]);
                             string Descripcion = (string)(reader["Descripcion"]);
 
                             TurnosModel = new TurnosModel
                             {
-                                Id = Id,
+                                IdTurUsu=turusu,
+                                Id = turno,
                                 Descripcion = Descripcion,
 
                             };

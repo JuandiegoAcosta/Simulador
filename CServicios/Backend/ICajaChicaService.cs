@@ -13,7 +13,7 @@ namespace ServiciosBancarios.Backend
     interface ICajaChicaService
     {
         [OperationContract]
-        bool Crear(CajaChicaModel aCajaChica);
+        int Crear(CajaChicaModel aCajaChica,int id_user);
 
         [OperationContract]
         bool Editar(CajaChicaModel aCajaChica);

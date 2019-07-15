@@ -17,7 +17,7 @@ namespace CDatos.Manager
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>		
-        public bool Insert(CajaChicaModel aCaja_ChicaModel)
+        public int Insert(CajaChicaModel aCaja_ChicaModel,int id_user)
         {
             try
             {
@@ -25,40 +25,40 @@ namespace CDatos.Manager
                 {
                     connection.Open();
 
-                    SqlTransaction sqlTran = connection.BeginTransaction();
-
                     SqlCommand command = connection.CreateCommand();
 
-                    command.Transaction = sqlTran;
-
                     command.Parameters.AddWithValue("@pMode", 4);
+                    command.Parameters.AddWithValue("@ID_user", id_user);
                     command.Parameters.AddWithValue("@ID", aCaja_ChicaModel.Id);
                     command.Parameters.AddWithValue("@Tipo_Accion", aCaja_ChicaModel.Tipo_Accion);
                     command.Parameters.AddWithValue("@Id_TurnoUsuario1", aCaja_ChicaModel.Id_TurnoUsuario1);
                     command.Parameters.AddWithValue("@Id_TurnoUsuario2", aCaja_ChicaModel.Id_TurnoUsuario2);
-                    command.Parameters.AddWithValue("@USUARIO_CREADOR", aCaja_ChicaModel.Usuario_creador);
-                    command.Parameters.AddWithValue("@FECHA_CREACION", aCaja_ChicaModel.Fecha_creacion);
+                    //command.Parameters.AddWithValue("@IDENTITY",SqlDbType.Int,ParameterDirection.Output);
+                    SqlParameter paramId = new SqlParameter("@IDENTITY", SqlDbType.Int);
+                    paramId.Direction = ParameterDirection.Output;
+                    command.Parameters.Add(paramId);
 
                     command.CommandType = CommandType.StoredProcedure;
                     command.CommandText = "sp_tCajaChica";
 
-                    int afectados = command.ExecuteNonQuery();
+                    int afectados = 0;
+                    afectados= (int)command.ExecuteNonQuery();
 
-                    // Commit the transaction.
-                    sqlTran.Commit();
+                    //devuelve el identity creado
+                    int identity = Convert.ToInt32(command.Parameters["@IDENTITY"].Value.ToString());
 
                     connection.Close();
                     connection.Dispose();
 
                     if (afectados > 0)
-                        return true;
+                        return identity;
                     else
-                        return false;
+                        return 0;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return false;
+                return 0;
             }
         }
 
