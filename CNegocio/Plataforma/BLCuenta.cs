@@ -73,6 +73,11 @@ namespace CNegocio.Plataforma
             return this.managerCuenta.cuentaSelectbyNroCuenta(numero_cuenta);
         }
 
+        public List<CuentasModel> cuentaSelectbyNroCuentaPrestamo(string numero_cuenta)
+        {
+            return this.managerCuenta.cuentaSelectbyNroCuentaPrestamo(numero_cuenta);
+        }
+
         #endregion
 
     }
