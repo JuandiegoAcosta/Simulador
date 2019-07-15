@@ -24,8 +24,8 @@ namespace Sistema_Bancario.Ventanilla
             this.session = sesion;
             InitializeComponent();
             this.BackColor = Color.White;
-            this.CargarComboMoneda();
-            this.CargarComboRolesSujetos();
+            //this.CargarComboMoneda();
+            //this.CargarComboRolesSujetos();
             this.CargarComboSujetos();
             this.CargarTipoMovimiento();
         }
@@ -33,8 +33,8 @@ namespace Sistema_Bancario.Ventanilla
         {
             InitializeComponent();
             this.BackColor = Color.White;
-            this.CargarComboMoneda();
-            this.CargarComboRolesSujetos();
+            //this.CargarComboMoneda();
+            //this.CargarComboRolesSujetos();
             this.CargarComboSujetos();
             this.CargarTipoMovimiento();
 
@@ -53,30 +53,30 @@ namespace Sistema_Bancario.Ventanilla
             }
         }
 
-        private void cmbMonedas_SelectedValueChanged(object sender, EventArgs e)
-        {
-            if (cmbMonedas.SelectedIndex==0)
-            {
-                this.CmbDenominaciones.DataSource = null;
-                this.CmbDenominaciones.DataSource =Denominaciones.Instance.soles;
-            }else if(cmbMonedas.SelectedIndex==1)
-            {
-                this.CmbDenominaciones.DataSource = null;
-                this.CmbDenominaciones.DataSource = Denominaciones.Instance.dolares;
-            }
-        }
-        private void CargarComboMoneda()
-        {
-            using (WsSistemaBancario.TipoMonedaServiceClient moneda=new WsSistemaBancario.TipoMonedaServiceClient())
-            {
-                cmbMonedas.DataSource = moneda.Moneda_ObtenerTodos();
-                cmbMonedas.DisplayMember = "Nombre";
-            }
-        }
-        private void CargarComboRolesSujetos()
-        {
-            cmbTiposRoles.DataSource =TiposSujeto.Instance.Sujetos;
-        }
+        //private void cmbMonedas_SelectedValueChanged(object sender, EventArgs e)
+        //{
+        //    if (cmbMonedas.SelectedIndex==0)
+        //    {
+        //        this.CmbDenominaciones.DataSource = null;
+        //        this.CmbDenominaciones.DataSource =Denominaciones.Instance.soles;
+        //    }else if(cmbMonedas.SelectedIndex==1)
+        //    {
+        //        this.CmbDenominaciones.DataSource = null;
+        //        this.CmbDenominaciones.DataSource = Denominaciones.Instance.dolares;
+        //    }
+        //}
+        //private void CargarComboMoneda()
+        //{
+        //    using (WsSistemaBancario.TipoMonedaServiceClient moneda=new WsSistemaBancario.TipoMonedaServiceClient())
+        //    {
+        //        cmbMonedas.DataSource = moneda.Moneda_ObtenerTodos();
+        //        cmbMonedas.DisplayMember = "Nombre";
+        //    }
+        //}
+        //private void CargarComboRolesSujetos()
+        //{
+        //    cmbTiposRoles.DataSource =TiposSujeto.Instance.Sujetos;
+        //}
         private void CargarComboSujetos()
         {
             try
@@ -99,22 +99,22 @@ namespace Sistema_Bancario.Ventanilla
             this.cmbTipoMov.DataSource =TipoMovimiento.Instance.Movimientos;
         }
 
-        private void btnAgregar_Click(object sender, EventArgs e)
-        {
-            this.SumaTotal = 0;
-            int n = dgvDenominaciones.Rows.Add();
-            this.dgvDenominaciones.Rows[n].Cells[0].Value = this.CmbDenominaciones.SelectedValue;
-            this.dgvDenominaciones.Rows[n].Cells[1].Value = this.nudNroBilletes.Value;
-            this.dgvDenominaciones.Rows[n].Cells[2].Value = this.CalcularImporte((string)this.CmbDenominaciones.SelectedValue, (int)this.nudNroBilletes.Value);
+        //private void btnAgregar_Click(object sender, EventArgs e)
+        //{
+        //    this.SumaTotal = 0;
+        //    int n = dgvDenominaciones.Rows.Add();
+        //    this.dgvDenominaciones.Rows[n].Cells[0].Value = this.CmbDenominaciones.SelectedValue;
+        //    this.dgvDenominaciones.Rows[n].Cells[1].Value = this.nudNroBilletes.Value;
+        //    this.dgvDenominaciones.Rows[n].Cells[2].Value = this.CalcularImporte((string)this.CmbDenominaciones.SelectedValue, (int)this.nudNroBilletes.Value);
 
-            //calcular el total
+        //    //calcular el total
 
-            foreach (DataGridViewRow r in dgvDenominaciones.Rows)
-            {
-                SumaTotal = SumaTotal+(int)r.Cells[2].Value;
-            }
-            this.txtTotal.Text = this.SumaTotal.ToString();
-        }
+        //    foreach (DataGridViewRow r in dgvDenominaciones.Rows)
+        //    {
+        //        SumaTotal = SumaTotal+(int)r.Cells[2].Value;
+        //    }
+        //    this.txtTotal.Text = this.SumaTotal.ToString();
+        //}
         /// <summary>
         /// calcula el monto de importe segun la denominacion de moneda y la cantidad
         /// </summary>
@@ -177,18 +177,18 @@ namespace Sistema_Bancario.Ventanilla
             this.txtTotal.Text = this.SumaTotal.ToString();
         }
 
-        private void cmbTiposRoles_SelectedValueChanged(object sender, EventArgs e)
-        {
-            this.cmbPersonaRol.DataSource = null;
-            if (cmbTiposRoles.SelectedIndex==0)//ventanilla
-            {
-                this.CargarComboSujetos();
-            }
-            else//bodega
-            {
-                this.cmbPersonaRol.DataSource = Clases.Bodega.Instance.bodegueros;
-            }
-        }
+        //private void cmbTiposRoles_SelectedValueChanged(object sender, EventArgs e)
+        //{
+        //    this.cmbPersonaRol.DataSource = null;
+        //    if (cmbTiposRoles.SelectedIndex==0)//ventanilla
+        //    {
+        //        this.CargarComboSujetos();
+        //    }
+        //    else//bodega
+        //    {
+        //        this.cmbPersonaRol.DataSource = Clases.Bodega.Instance.bodegueros;
+        //    }
+        //}
 
         private void btnRegistrarMov_Click(object sender, EventArgs e)
         {
@@ -196,6 +196,16 @@ namespace Sistema_Bancario.Ventanilla
             //{
 
             //}
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
