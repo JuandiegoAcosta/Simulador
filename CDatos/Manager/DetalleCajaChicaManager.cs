@@ -39,8 +39,6 @@ namespace CDatos.Manager
                     command.Parameters.AddWithValue("@Denominacion", aDetalleCajaChicaModel.Denominacion);
                     command.Parameters.AddWithValue("@Cantidad", aDetalleCajaChicaModel.Cantidad);
                     command.Parameters.AddWithValue("@Moneda", aDetalleCajaChicaModel.Moneda);
-                    command.Parameters.AddWithValue("@USUARIO_CREADOR", aDetalleCajaChicaModel.Usuario_creador);
-                    command.Parameters.AddWithValue("@FECHA_CREACION", aDetalleCajaChicaModel.Fecha_creacion);
 
                     command.CommandType = CommandType.StoredProcedure;
                     command.CommandText = "sp_tDetalleCajaChica";

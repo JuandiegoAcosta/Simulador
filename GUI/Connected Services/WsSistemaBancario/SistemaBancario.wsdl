@@ -656,6 +656,36 @@
   <wsdl:message name="ICuentaService_Cuenta_ObtenerTodos_OutputMessage">
     <wsdl:part name="parameters" element="tns:Cuenta_ObtenerTodosResponse" />
   </wsdl:message>
+  <wsdl:message name="ICajaChicaService_Crear_InputMessage">
+    <wsdl:part name="parameters" element="tns:Crear" />
+  </wsdl:message>
+  <wsdl:message name="ICajaChicaService_Crear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CrearResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICajaChicaService_Editar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Editar" />
+  </wsdl:message>
+  <wsdl:message name="ICajaChicaService_Editar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICajaChicaService_Eliminar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Eliminar" />
+  </wsdl:message>
+  <wsdl:message name="ICajaChicaService_Eliminar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICajaChicaService_ObtenerUno_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerUno" />
+  </wsdl:message>
+  <wsdl:message name="ICajaChicaService_ObtenerUno_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerUnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICajaChicaService_ObtenerTodos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTodos" />
+  </wsdl:message>
+  <wsdl:message name="ICajaChicaService_ObtenerTodos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTodosResponse" />
+  </wsdl:message>
   <wsdl:portType name="ICobroChequeService">
     <wsdl:operation name="CobroCheque_Crear">
       <wsdl:input wsaw:Action="http://tempuri.org/ICobroChequeService/CobroCheque_Crear" message="tns:ICobroChequeService_CobroCheque_Crear_InputMessage" />
@@ -1124,6 +1154,28 @@
     <wsdl:operation name="Cuenta_ObtenerTodos">
       <wsdl:input wsaw:Action="http://tempuri.org/ICuentaService/Cuenta_ObtenerTodos" message="tns:ICuentaService_Cuenta_ObtenerTodos_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICuentaService/Cuenta_ObtenerTodosResponse" message="tns:ICuentaService_Cuenta_ObtenerTodos_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ICajaChicaService">
+    <wsdl:operation name="Crear">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICajaChicaService/Crear" message="tns:ICajaChicaService_Crear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICajaChicaService/CrearResponse" message="tns:ICajaChicaService_Crear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Editar">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICajaChicaService/Editar" message="tns:ICajaChicaService_Editar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICajaChicaService/EditarResponse" message="tns:ICajaChicaService_Editar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Eliminar">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICajaChicaService/Eliminar" message="tns:ICajaChicaService_Eliminar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICajaChicaService/EliminarResponse" message="tns:ICajaChicaService_Eliminar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUno">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICajaChicaService/ObtenerUno" message="tns:ICajaChicaService_ObtenerUno_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICajaChicaService/ObtenerUnoResponse" message="tns:ICajaChicaService_ObtenerUno_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTodos">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICajaChicaService/ObtenerTodos" message="tns:ICajaChicaService_ObtenerTodos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICajaChicaService/ObtenerTodosResponse" message="tns:ICajaChicaService_ObtenerTodos_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ICobroChequeService" type="tns:ICobroChequeService">
@@ -2155,6 +2207,54 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_ICajaChicaService" type="tns:ICajaChicaService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Crear">
+      <soap:operation soapAction="http://tempuri.org/ICajaChicaService/Crear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Editar">
+      <soap:operation soapAction="http://tempuri.org/ICajaChicaService/Editar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Eliminar">
+      <soap:operation soapAction="http://tempuri.org/ICajaChicaService/Eliminar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUno">
+      <soap:operation soapAction="http://tempuri.org/ICajaChicaService/ObtenerUno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTodos">
+      <soap:operation soapAction="http://tempuri.org/ICajaChicaService/ObtenerTodos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
   <wsdl:service name="SistemaBancario">
     <wsdl:port name="BasicHttpBinding_ICobroChequeService" binding="tns:BasicHttpBinding_ICobroChequeService">
       <soap:address location="http://localhost:50786/SistemaBancario.svc" />
@@ -2211,6 +2311,9 @@
       <soap:address location="http://localhost:50786/SistemaBancario.svc" />
     </wsdl:port>
     <wsdl:port name="BasicHttpBinding_ICuentaService" binding="tns:BasicHttpBinding_ICuentaService">
+      <soap:address location="http://localhost:50786/SistemaBancario.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_ICajaChicaService" binding="tns:BasicHttpBinding_ICajaChicaService">
       <soap:address location="http://localhost:50786/SistemaBancario.svc" />
     </wsdl:port>
   </wsdl:service>

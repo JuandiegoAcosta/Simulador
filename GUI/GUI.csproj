@@ -603,6 +603,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\DataSources\Modelos.Modelos.BancoModel.datasource" />
+    <None Include="Properties\DataSources\Modelos.Modelos.CajaChicaModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.CobroChequesModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.ComponenteModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.CuentasModel.datasource" />
@@ -695,25 +696,17 @@
     <None Include="Resources\view.png" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\WsSistemaBancario\" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Connected Services\WsSistemaBancario\SistemaBancario.disco" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Connected Services\WsSistemaBancario\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Connected Services\WsSistemaBancario\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Connected Services\WsSistemaBancario\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="Graphicloads-100-Flat-2-Bank.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Graphicloads-100-Flat-2-Bank.ico" />
+    <WCFMetadataStorage Include="Connected Services\WsSistemaBancario\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

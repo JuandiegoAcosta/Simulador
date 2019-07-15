@@ -58,6 +58,7 @@
             this.btnRegistrarMov.TabIndex = 15;
             this.btnRegistrarMov.Text = "Registrar movimiento";
             this.btnRegistrarMov.UseVisualStyleBackColor = true;
+            this.btnRegistrarMov.Click += new System.EventHandler(this.btnRegistrarMov_Click_1);
             // 
             // dgvSoles
             // 
@@ -117,6 +118,7 @@
             this.txtTotalDolares.ReadOnly = true;
             this.txtTotalDolares.Size = new System.Drawing.Size(138, 22);
             this.txtTotalDolares.TabIndex = 13;
+            this.txtTotalDolares.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label3
             // 
@@ -142,6 +144,7 @@
             this.txtTotalSoles.ReadOnly = true;
             this.txtTotalSoles.Size = new System.Drawing.Size(138, 22);
             this.txtTotalSoles.TabIndex = 14;
+            this.txtTotalSoles.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label5
             // 

@@ -20,8 +20,7 @@ namespace Modelos.Session
       string SucursalNombre { get; set; }
       string VentanillaCodigo { get; set; }
       string VentanillaDescripcion { get; set; }
-      string TurnoCodigo { get; set; }
-      string TurnoDescripcion { get; set; }
+      TurnosModel Turno{get;set; }
       string SucursalUbicacion { get; set; }
       string SucursalCodigoBanco { get; set; }
 

@@ -18,7 +18,7 @@ namespace ServiciosBancarios
 {
     // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de clase "Service1" en el código, en svc y en el archivo de configuración.
     // NOTE: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione Service1.svc o Service1.svc.cs en el Explorador de soluciones e inicie la depuración.
-     public class SistemaBancario : ICobroChequeService, IEmpresaService, IPagoServicioService, IRecaudosService, ITipoMonedaService, ITipoMovimientoService, IVentanillaService, IBancoService, IComponenteService, IHorariosAtencionService, IPermisosUsuarioService, IPersonaService, IRolesService, IRolUsuarioService, ISucursalService, ITipoDocumentoService, ITurnosService, ITurnoUsuarioService, ICuentaService, IDetalleCajaChicaService
+     public class SistemaBancario : ICobroChequeService, IEmpresaService, IPagoServicioService, IRecaudosService, ITipoMonedaService, ITipoMovimientoService, IVentanillaService, IBancoService, IComponenteService, IHorariosAtencionService, IPermisosUsuarioService, IPersonaService, IRolesService, IRolUsuarioService, ISucursalService, ITipoDocumentoService, ITurnosService, ITurnoUsuarioService, ICuentaService, IDetalleCajaChicaService,ICajaChicaService
     {
         #region [ Varibles Globales ]
         #region [ Ventanilla Front ]
@@ -325,35 +325,7 @@ namespace ServiciosBancarios
         }
         #endregion
 
-        #region [ Caja Chica]
-
-        public bool CajaChica_Crear(CajaChicaModel aCajaChica)
-        {
-            return BLCajaChica.Crear(aCajaChica);
-        }
-
-        public bool CajaChica_Editar(CajaChicaModel aCajaChica)
-        {
-            return BLCajaChica.Editar(aCajaChica);
-        }
-
-        public bool CajaChica_Eliminar(int aID_CajaChica)
-        {
-            return BLCajaChica.Eliminar(aID_CajaChica);
-        }
-
-        public CajaChicaModel CajaChica_ObtenerUno(int aID_CajaChica)
-        {
-            return BLCajaChica.ObtenerUno(aID_CajaChica);
-        }
-
-        public List<CajaChicaModel> CajaChica_ObtenerTodos()
-        {
-            return BLCajaChica.ObtenerTodos();
-        }
-
-
-        #endregion
+    
 
         #region [Detalle caja Chica]
 
@@ -766,10 +738,37 @@ namespace ServiciosBancarios
         {
             return BLCuenta.cuentaSelectbyId_cliente(aID_Persona);
         }
-
+        #endregion
         public List<VentanillaModel> GetVentanillasXSucursal(int Idsucursal)
         {
             throw new NotImplementedException();
+        }
+        #region [ Caja Chica]
+
+        
+        public int Crear(CajaChicaModel aCajaChica,int id_user)
+        {
+            return BLCajaChica.Crear(aCajaChica,id_user);
+        }
+
+        public bool Editar(CajaChicaModel aCajaChica)
+        {
+            return BLCajaChica.Editar(aCajaChica);
+        }
+
+        public bool Eliminar(int aID_CajaChica)
+        {
+            return BLCajaChica.Eliminar(aID_CajaChica);
+        }
+
+        public CajaChicaModel ObtenerUno(int aID_CajaChica)
+        {
+            return BLCajaChica.ObtenerUno(aID_CajaChica);
+        }
+
+        public List<CajaChicaModel> ObtenerTodos()
+        {
+            return BLCajaChica.ObtenerTodos();
         }
         #endregion
 

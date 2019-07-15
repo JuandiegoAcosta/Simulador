@@ -408,7 +408,7 @@ namespace CDatos.Manager
                         while (reader.Read())
                         {
 
-                            int ID_VentanillaModel = (int)(reader["ID_Ventanilla"]);
+                            int ID_VentanillaModel = (int)(reader["ID"]);
                             string Descripcion = (string)(reader["Descripcion"]);
 
                             VentanillaModellist.Add(new VentanillaModel
