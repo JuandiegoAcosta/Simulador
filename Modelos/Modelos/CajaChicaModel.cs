@@ -25,15 +25,14 @@ namespace Modelos.Modelos
         /// <summary>
         /// Gets or sets the Id_persona value.
         /// </summary>
-        public int Id_TurnoUsuario
+        public int Id_TurnoUsuario1
         { get; set; }
 
         /// <summary>
-        /// Gets or sets the Hora value.
+        /// Gets or sets the Id_persona value.
         /// </summary>
-        public TimeSpan Hora
+        public int Id_TurnoUsuario2
         { get; set; }
-
 
         /// <summary>
         /// Gets or sets the Usuario_creador value.
