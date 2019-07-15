@@ -14,7 +14,7 @@ namespace CDatos.Manager
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>		
-        public bool Insert(PermisosUsuarioModel aPermisosUsuarioModel)
+        public bool Insert(PermisosUsuarioModel aPermisosUsuarioModel, int ID_user)
         {
             try
             {
@@ -29,18 +29,22 @@ namespace CDatos.Manager
                     command.Transaction = sqlTran;
 
                     command.Parameters.AddWithValue("@pMode", 4);
+                    command.Parameters.AddWithValue("@ID_user", ID_user);
 
                     command.Parameters.AddWithValue("@Id_usuario", aPermisosUsuarioModel.Id_usuario == null ? (object)DBNull.Value : aPermisosUsuarioModel.Id_usuario);
                     command.Parameters.AddWithValue("@Id_rol", aPermisosUsuarioModel.Id_rol == null ? (object)DBNull.Value : aPermisosUsuarioModel.Id_rol);
                     command.Parameters.AddWithValue("@Id_componente", aPermisosUsuarioModel.Id_componente == null ? (object)DBNull.Value : aPermisosUsuarioModel.Id_componente);
                     command.Parameters.AddWithValue("@Estado", aPermisosUsuarioModel.Estado);
-                    command.Parameters.AddWithValue("@USUARIO_CREADOR", aPermisosUsuarioModel.Usuario_creador);
-                    command.Parameters.AddWithValue("@FECHA_CREACION", aPermisosUsuarioModel.Fecha_creacion);
+
+                    SqlParameter paramId = new SqlParameter("@IDENTITY", SqlDbType.Int);
+                    paramId.Direction = ParameterDirection.Output;
+                    command.Parameters.Add(paramId);
 
                     command.CommandType = CommandType.StoredProcedure;
                     command.CommandText = "sp_tPermisosUsuario";
 
                     int afectados = command.ExecuteNonQuery();
+                    int identity = Convert.ToInt32(command.Parameters["@IDENTITY"].Value.ToString());
 
                     // Commit the transaction.
                     sqlTran.Commit();
@@ -66,7 +70,7 @@ namespace CDatos.Manager
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>
-        public bool Update(PermisosUsuarioModel aPermisosUsuarioModel)
+        public bool Update(PermisosUsuarioModel aPermisosUsuarioModel, int ID_user)
         {
             try
             {
@@ -81,14 +85,13 @@ namespace CDatos.Manager
                     command.Transaction = sqlTran;
 
                     command.Parameters.AddWithValue("@pMode", 5);
+                    command.Parameters.AddWithValue("@ID_user", ID_user);
 
                     command.Parameters.AddWithValue("@Id", aPermisosUsuarioModel.Id);
                     command.Parameters.AddWithValue("@Id_usuario", aPermisosUsuarioModel.Id_usuario == null ? (object)DBNull.Value : aPermisosUsuarioModel.Id_usuario);
                     command.Parameters.AddWithValue("@Id_rol", aPermisosUsuarioModel.Id_rol == null ? (object)DBNull.Value : aPermisosUsuarioModel.Id_rol);
                     command.Parameters.AddWithValue("@Id_componente", aPermisosUsuarioModel.Id_componente == null ? (object)DBNull.Value : aPermisosUsuarioModel.Id_componente);
                     command.Parameters.AddWithValue("@Estado", aPermisosUsuarioModel.Estado);
-                    command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aPermisosUsuarioModel.Usuario_modificador == null ? (object)DBNull.Value : aPermisosUsuarioModel.Usuario_modificador);
-                    command.Parameters.AddWithValue("@FECHA_MODIFICACION", aPermisosUsuarioModel.Fecha_modificacion == null ? (object)DBNull.Value : aPermisosUsuarioModel.Fecha_modificacion);
 
 
                     command.CommandType = CommandType.StoredProcedure;
@@ -196,10 +199,6 @@ namespace CDatos.Manager
                             int? Id_rol = reader["Id_rol"] as int?;
                             int? Id_componente = reader["Id_componente"] as int?;
                             bool Estado = (bool)(reader["Estado"]);
-                            string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
-                            DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
-                            string USUARIO_MODIFICADOR = (reader["USUARIO_MODIFICADOR"]) == DBNull.Value ? null : (string)(reader["USUARIO_MODIFICADOR"]);
-                            DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
 
                             PermisosUsuarioModel = new PermisosUsuarioModel
                             {
@@ -208,10 +207,6 @@ namespace CDatos.Manager
                                 Id_rol = Id_rol,
                                 Id_componente = Id_componente,
                                 Estado = Estado,
-                                Usuario_creador = USUARIO_CREADOR,
-                                Fecha_creacion = FECHA_CREACION,
-                                Usuario_modificador = USUARIO_MODIFICADOR,
-                                Fecha_modificacion = FECHA_MODIFICACION,
 
                             };
                         }
@@ -259,10 +254,6 @@ namespace CDatos.Manager
                             int? Id_rol = reader["Id_rol"] as int?;
                             int? Id_componente = reader["Id_componente"] as int?;
                             bool Estado = (bool)(reader["Estado"]);
-                            string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
-                            DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
-                            string USUARIO_MODIFICADOR = (reader["USUARIO_MODIFICADOR"]) == DBNull.Value ? null : (string)(reader["USUARIO_MODIFICADOR"]);
-                            DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
 
                             PermisosUsuarioModellist.Add(new PermisosUsuarioModel
                             {
@@ -271,10 +262,6 @@ namespace CDatos.Manager
                                 Id_rol = Id_rol,
                                 Id_componente = Id_componente,
                                 Estado = Estado,
-                                Usuario_creador = USUARIO_CREADOR,
-                                Fecha_creacion = FECHA_CREACION,
-                                Usuario_modificador = USUARIO_MODIFICADOR,
-                                Fecha_modificacion = FECHA_MODIFICACION,
 
                             });
                         }
@@ -324,10 +311,6 @@ namespace CDatos.Manager
                             int? Id_rol = reader["Id_rol"] as int?;
                             int? Id_componente = reader["Id_componente"] as int?;
                             bool Estado = (bool)(reader["Estado"]);
-                            string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
-                            DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
-                            string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
-                            DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
 
                             PermisosUsuarioModellist.Add(new PermisosUsuarioModel
                             {
@@ -336,10 +319,6 @@ namespace CDatos.Manager
                                 Id_rol = Id_rol,
                                 Id_componente = Id_componente,
                                 Estado = Estado,
-                                Usuario_creador = USUARIO_CREADOR,
-                                Fecha_creacion = FECHA_CREACION,
-                                Usuario_modificador = USUARIO_MODIFICADOR,
-                                Fecha_modificacion = FECHA_MODIFICACION,
 
                             });
                         }

@@ -14,7 +14,7 @@ namespace CDatos.Manager
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>		
-        public bool Insert(TurnoUsuarioModel aTurnoUsuarioModel)
+        public bool Insert(TurnoUsuarioModel aTurnoUsuarioModel, int ID_user)
         {
             try
             {
@@ -29,17 +29,20 @@ namespace CDatos.Manager
                     command.Transaction = sqlTran;
 
                     command.Parameters.AddWithValue("@pMode", 4);
+                    command.Parameters.AddWithValue("@ID_user", ID_user);
                     command.Parameters.AddWithValue("@ID_Usuario", aTurnoUsuarioModel.Id_usuario);
                     command.Parameters.AddWithValue("@ID_Ventanilla", aTurnoUsuarioModel.Id_ventanilla);
                     command.Parameters.AddWithValue("@ID_Turno", aTurnoUsuarioModel.Id_turno == null ? (object)DBNull.Value : aTurnoUsuarioModel.Id_turno);
-                    command.Parameters.AddWithValue("@FECHA_CREACION", aTurnoUsuarioModel.Fecha_creacion);
-                    command.Parameters.AddWithValue("@USUARIO_CREADOR", aTurnoUsuarioModel.Usuario_creador);
 
+                    SqlParameter paramId = new SqlParameter("@IDENTITY", SqlDbType.Int);
+                    paramId.Direction = ParameterDirection.Output;
+                    command.Parameters.Add(paramId);
 
                     command.CommandType = CommandType.StoredProcedure;
                     command.CommandText = "sp_tTurnoUsuario";
 
                     int afectados = command.ExecuteNonQuery();
+                    int identity = Convert.ToInt32(command.Parameters["@IDENTITY"].Value.ToString());
 
                     // Commit the transaction.
                     sqlTran.Commit();
@@ -65,7 +68,7 @@ namespace CDatos.Manager
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>
-        public bool Update(TurnoUsuarioModel aTurnoUsuarioModel)
+        public bool Update(TurnoUsuarioModel aTurnoUsuarioModel, int ID_user)
         {
             try
             {
@@ -80,12 +83,11 @@ namespace CDatos.Manager
                     command.Transaction = sqlTran;
 
                     command.Parameters.AddWithValue("@pMode", 5);
+                    command.Parameters.AddWithValue("@ID_user", ID_user);
                     command.Parameters.AddWithValue("@ID", aTurnoUsuarioModel.Id);
                     command.Parameters.AddWithValue("@ID_Usuario", aTurnoUsuarioModel.Id_usuario);
                     command.Parameters.AddWithValue("@ID_Ventanilla", aTurnoUsuarioModel.Id_ventanilla);
                     command.Parameters.AddWithValue("@ID_Turno", aTurnoUsuarioModel.Id_turno == null ? (object)DBNull.Value : aTurnoUsuarioModel.Id_turno);
-                    command.Parameters.AddWithValue("@FECHA_MODIFICACION", aTurnoUsuarioModel.Fecha_modificacion == null ? (object)DBNull.Value : aTurnoUsuarioModel.Fecha_modificacion);
-                    command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aTurnoUsuarioModel.Usuario_modificador == null ? (object)DBNull.Value : aTurnoUsuarioModel.Usuario_modificador);
 
 
                     command.CommandType = CommandType.StoredProcedure;
@@ -192,10 +194,6 @@ namespace CDatos.Manager
                             int ID_Usuario = (int)(reader["ID_Usuario"]);
                             int ID_Ventanilla = (int)(reader["ID_Ventanilla"]);
                             int? ID_Turno = reader["ID_Turno"] as int?;
-                            DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
-                            DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
-                            string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
-                            string USUARIO_MODIFICADOR = (reader["USUARIO_MODIFICADOR"]) == DBNull.Value ? null : (string)(reader["USUARIO_MODIFICADOR"]);
 
                             TurnoUsuarioModel = new TurnoUsuarioModel
                             {
@@ -203,10 +201,6 @@ namespace CDatos.Manager
                                 Id_usuario = ID_Usuario,
                                 Id_ventanilla = ID_Ventanilla,
                                 Id_turno = ID_Turno,
-                                Fecha_creacion = FECHA_CREACION,
-                                Fecha_modificacion = FECHA_MODIFICACION,
-                                Usuario_creador = USUARIO_CREADOR,
-                                Usuario_modificador = USUARIO_MODIFICADOR,
 
                             };
                         }
@@ -254,10 +248,6 @@ namespace CDatos.Manager
                             int ID_Usuario = (int)(reader["ID_Usuario"]);
                             int ID_Ventanilla = (int)(reader["ID_Ventanilla"]);
                             int? ID_Turno = reader["ID_Turno"] as int?;
-                            DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
-                            DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
-                            string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
-                            string USUARIO_MODIFICADOR = (reader["USUARIO_MODIFICADOR"]) == DBNull.Value ? null : (string)(reader["USUARIO_MODIFICADOR"]);
 
                             TurnoUsuarioModellist.Add(new TurnoUsuarioModel
                             {
@@ -265,10 +255,6 @@ namespace CDatos.Manager
                                 Id_usuario = ID_Usuario,
                                 Id_ventanilla = ID_Ventanilla,
                                 Id_turno = ID_Turno,
-                                Fecha_creacion = FECHA_CREACION,
-                                Fecha_modificacion = FECHA_MODIFICACION,
-                                Usuario_creador = USUARIO_CREADOR,
-                                Usuario_modificador = USUARIO_MODIFICADOR,
 
                             });
                         }
@@ -321,10 +307,6 @@ namespace CDatos.Manager
                             int ID_Ventanilla = (int)(reader["ID_Ventanilla"]);
                             int ID_Horarios_Atencion = (int)(reader["ID_Horarios_Atencion"]);
                             int? ID_Turnos = reader["ID_Turnos"] as int?;
-                            DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
-                            DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
-                            string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
-                            string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
 
                             TurnoUsuarioModellist.Add(new TurnoUsuarioModel
                             {
@@ -332,10 +314,6 @@ namespace CDatos.Manager
                                 Id_usuario = ID_Usuario,
                                 Id_ventanilla = ID_Ventanilla,
                                 // Id_turnos = ID_Turnos,
-                                Fecha_creacion = FECHA_CREACION,
-                                Fecha_modificacion = FECHA_MODIFICACION,
-                                Usuario_creador = USUARIO_CREADOR,
-                                Usuario_modificador = USUARIO_MODIFICADOR,
 
                             });
                         }

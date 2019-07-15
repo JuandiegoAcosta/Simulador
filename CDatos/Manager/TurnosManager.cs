@@ -14,7 +14,7 @@ namespace CDatos.Manager
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>		
-        public bool Insert(TurnosModel aTurnosModel)
+        public bool Insert(TurnosModel aTurnosModel, int ID_user)
         {
             try
             {
@@ -29,17 +29,20 @@ namespace CDatos.Manager
                     command.Transaction = sqlTran;
 
                     command.Parameters.AddWithValue("@pMode", 4);
+                    command.Parameters.AddWithValue("@ID_user", ID_user);
                     command.Parameters.AddWithValue("@Descripcion", aTurnosModel.Descripcion);
                     command.Parameters.AddWithValue("@Hora_Inicio", aTurnosModel.Hora_inicio == null ? (object)DBNull.Value : aTurnosModel.Hora_inicio);
                     command.Parameters.AddWithValue("@Hora_Fin", aTurnosModel.Hora_fin == null ? (object)DBNull.Value : aTurnosModel.Hora_fin);
-                    command.Parameters.AddWithValue("@FECHA_CREACION", aTurnosModel.Fecha_creacion);
-                    command.Parameters.AddWithValue("@USUARIO_CREADOR", aTurnosModel.Usuario_creador);
 
+                    SqlParameter paramId = new SqlParameter("@IDENTITY", SqlDbType.Int);
+                    paramId.Direction = ParameterDirection.Output;
+                    command.Parameters.Add(paramId);
 
                     command.CommandType = CommandType.StoredProcedure;
                     command.CommandText = "sp_tTurnos";
 
                     int afectados = command.ExecuteNonQuery();
+                    int identity = Convert.ToInt32(command.Parameters["@IDENTITY"].Value.ToString());
 
                     // Commit the transaction.
                     sqlTran.Commit();
@@ -65,7 +68,7 @@ namespace CDatos.Manager
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>
-        public bool Update(TurnosModel aTurnosModel)
+        public bool Update(TurnosModel aTurnosModel, int ID_user)
         {
             try
             {
@@ -80,18 +83,21 @@ namespace CDatos.Manager
                     command.Transaction = sqlTran;
 
                     command.Parameters.AddWithValue("@pMode", 5);
+                    command.Parameters.AddWithValue("@ID_user", ID_user);
                     command.Parameters.AddWithValue("@Id", aTurnosModel.Id);
                     command.Parameters.AddWithValue("@Descripcion", aTurnosModel.Descripcion);
                     command.Parameters.AddWithValue("@Hora_Inicio", aTurnosModel.Hora_inicio == null ? (object)DBNull.Value : aTurnosModel.Hora_inicio);
                     command.Parameters.AddWithValue("@Hora_Fin", aTurnosModel.Hora_fin == null ? (object)DBNull.Value : aTurnosModel.Hora_fin);
-                    command.Parameters.AddWithValue("@FECHA_MODIFICACION", aTurnosModel.Fecha_modificacion == null ? (object)DBNull.Value : aTurnosModel.Fecha_modificacion);
-                    command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aTurnosModel.Usuario_modificador == null ? (object)DBNull.Value : aTurnosModel.Usuario_modificador);
 
+                    SqlParameter paramId = new SqlParameter("@IDENTITY", SqlDbType.Int);
+                    paramId.Direction = ParameterDirection.Output;
+                    command.Parameters.Add(paramId);
 
                     command.CommandType = CommandType.StoredProcedure;
                     command.CommandText = "sp_tTurnos";
 
                     int afectados = command.ExecuteNonQuery();
+                    int identity = Convert.ToInt32(command.Parameters["@IDENTITY"].Value.ToString());
 
                     // Commit the transaction.
                     sqlTran.Commit();
@@ -192,10 +198,6 @@ namespace CDatos.Manager
                             string Descripcion = (string)(reader["Descripcion"]);
                             TimeSpan? Hora_Inicio = reader["Hora_Inicio"] as TimeSpan?;
                             TimeSpan? Hora_Fin = reader["Hora_Fin"] as TimeSpan?;
-                            DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
-                            DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
-                            string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
-                            string USUARIO_MODIFICADOR = (reader["USUARIO_MODIFICADOR"]) == DBNull.Value ? null : (string)(reader["USUARIO_MODIFICADOR"]);
 
                             TurnosModel = new TurnosModel
                             {
@@ -203,10 +205,6 @@ namespace CDatos.Manager
                                 Descripcion = Descripcion,
                                 Hora_inicio = Hora_Inicio,
                                 Hora_fin = Hora_Fin,
-                                Fecha_creacion = FECHA_CREACION,
-                                Fecha_modificacion = FECHA_MODIFICACION,
-                                Usuario_creador = USUARIO_CREADOR,
-                                Usuario_modificador = USUARIO_MODIFICADOR,
 
                             };
                         }
@@ -301,10 +299,6 @@ namespace CDatos.Manager
                             string Descripcion = (string)(reader["Descripcion"]);
                             TimeSpan? Hora_Inicio = reader["Hora_Inicio"] as TimeSpan?;
                             TimeSpan? Hora_Fin = reader["Hora_Fin"] as TimeSpan?;
-                            DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
-                            DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
-                            string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
-                            string USUARIO_MODIFICADOR = (reader["USUARIO_MODIFICADOR"]) == DBNull.Value ? null : (string)(reader["USUARIO_MODIFICADOR"]);
 
                             TurnosModellist.Add(new TurnosModel
                             {
@@ -312,10 +306,6 @@ namespace CDatos.Manager
                                 Descripcion = Descripcion,
                                 Hora_inicio = Hora_Inicio,
                                 Hora_fin = Hora_Fin,
-                                Fecha_creacion = FECHA_CREACION,
-                                Fecha_modificacion = FECHA_MODIFICACION,
-                                Usuario_creador = USUARIO_CREADOR,
-                                Usuario_modificador = USUARIO_MODIFICADOR,
 
                             });
                         }
@@ -364,10 +354,6 @@ namespace CDatos.Manager
                             string Descripcion = (string)(reader["Descripcion"]);
                             TimeSpan? Hora_Inicio = reader["Hora_Inicio"] as TimeSpan?;
                             TimeSpan? Hora_Fin = reader["Hora_Fin"] as TimeSpan?;
-                            DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
-                            DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
-                            string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
-                            string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
 
                             TurnosModellist.Add(new TurnosModel
                             {
@@ -375,10 +361,6 @@ namespace CDatos.Manager
                                 Descripcion = Descripcion,
                                 Hora_inicio = Hora_Inicio,
                                 Hora_fin = Hora_Fin,
-                                Fecha_creacion = FECHA_CREACION,
-                                Fecha_modificacion = FECHA_MODIFICACION,
-                                Usuario_creador = USUARIO_CREADOR,
-                                Usuario_modificador = USUARIO_MODIFICADOR,
 
                             });
                         }

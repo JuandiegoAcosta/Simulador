@@ -17,7 +17,7 @@ namespace CDatos.Manager
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>		
-        public bool Insert(BancoModel aBancoModel)
+        public bool Insert(BancoModel aBancoModel,int ID_user)
         {
             try
             {
@@ -32,18 +32,20 @@ namespace CDatos.Manager
                     command.Transaction = sqlTran;
 
                     command.Parameters.AddWithValue("@pMode", 4);
+                    command.Parameters.AddWithValue("@ID_user", ID_user);
                     command.Parameters.AddWithValue("@Nombre", aBancoModel.Nombre);
                     command.Parameters.AddWithValue("@Ubicacion", aBancoModel.Ubicacion);
-                    command.Parameters.AddWithValue("@USUARIO_CREADOR", aBancoModel.Usuario_creador);
-                    command.Parameters.AddWithValue("@FECHA_CREACION", aBancoModel.Fecha_creacion);
-                    command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aBancoModel.Usuario_modificador == null ? (object)DBNull.Value : aBancoModel.Usuario_modificador);
-                    command.Parameters.AddWithValue("@FECHA_MODIFICACION", aBancoModel.Fecha_modificacion == null ? (object)DBNull.Value : aBancoModel.Fecha_modificacion);
 
+                    SqlParameter paramId = new SqlParameter("@IDENTITY", SqlDbType.Int);
+                    paramId.Direction = ParameterDirection.Output;
+                    command.Parameters.Add(paramId);
 
                     command.CommandType = CommandType.StoredProcedure;
                     command.CommandText = "sp_pBanco";
 
                     int afectados = command.ExecuteNonQuery();
+
+                    int identity = Convert.ToInt32(command.Parameters["@IDENTITY"].Value.ToString());
 
                     // Commit the transaction.
                     sqlTran.Commit();
@@ -69,7 +71,7 @@ namespace CDatos.Manager
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>
-        public bool Update(BancoModel aBancoModel)
+        public bool Update(BancoModel aBancoModel, int ID_user)
         {
             try
             {
@@ -84,14 +86,10 @@ namespace CDatos.Manager
                     command.Transaction = sqlTran;
 
                     command.Parameters.AddWithValue("@pMode", 5);
+                    command.Parameters.AddWithValue("@ID_user", ID_user);
                     command.Parameters.AddWithValue("@ID", aBancoModel.Id);
                     command.Parameters.AddWithValue("@Nombre", aBancoModel.Nombre);
                     command.Parameters.AddWithValue("@Ubicacion", aBancoModel.Ubicacion);
-                    command.Parameters.AddWithValue("@USUARIO_CREADOR", aBancoModel.Usuario_creador);
-                    command.Parameters.AddWithValue("@FECHA_CREACION", aBancoModel.Fecha_creacion);
-                    command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aBancoModel.Usuario_modificador == null ? (object)DBNull.Value : aBancoModel.Usuario_modificador);
-                    command.Parameters.AddWithValue("@FECHA_MODIFICACION", aBancoModel.Fecha_modificacion == null ? (object)DBNull.Value : aBancoModel.Fecha_modificacion);
-
 
                     command.CommandType = CommandType.StoredProcedure;
                     command.CommandText = "sp_pBanco";
@@ -196,21 +194,12 @@ namespace CDatos.Manager
                             int ID = (int)(reader["ID"]);
                             string Nombre = (string)(reader["Nombre"]);
                             string Ubicacion = (string)(reader["Ubicacion"]);
-                            string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
-                            DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
-                            string USUARIO_MODIFICADOR = (reader["USUARIO_MODIFICADOR"]) == DBNull.Value ? null : (string)(reader["USUARIO_MODIFICADOR"]);
-                            DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
 
                             BancoModel = new BancoModel
                             {
                                 Id = ID,
                                 Nombre = Nombre,
                                 Ubicacion = Ubicacion,
-                                Usuario_creador = USUARIO_CREADOR,
-                                Fecha_creacion = FECHA_CREACION,
-                                Usuario_modificador = USUARIO_MODIFICADOR,
-                                Fecha_modificacion = FECHA_MODIFICACION,
-
                             };
                         }
                     }
@@ -256,20 +245,12 @@ namespace CDatos.Manager
                             int ID = (int)(reader["ID"]);
                             string Nombre = (string)(reader["Nombre"]);
                             string Ubicacion = (string)(reader["Ubicacion"]);
-                            string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
-                            DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
-                            string USUARIO_MODIFICADOR = (reader["USUARIO_MODIFICADOR"]) == DBNull.Value ? null : (string)(reader["USUARIO_MODIFICADOR"]);
-                            DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
 
                             BancoModellist.Add(new BancoModel
                             {
                                 Id = ID,
                                 Nombre = Nombre,
                                 Ubicacion = Ubicacion,
-                                Usuario_creador = USUARIO_CREADOR,
-                                Fecha_creacion = FECHA_CREACION,
-                                Usuario_modificador = USUARIO_MODIFICADOR,
-                                Fecha_modificacion = FECHA_MODIFICACION,
 
                             });
                         }
@@ -317,20 +298,12 @@ namespace CDatos.Manager
                             int ID = (int)(reader["ID"]);
                             string Nombre = (string)(reader["Nombre"]);
                             string Ubicacion = (string)(reader["Ubicacion"]);
-                            string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
-                            DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
-                            string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
-                            DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
 
                             BancoModellist.Add(new BancoModel
                             {
                                 Id = ID,
                                 Nombre = Nombre,
                                 Ubicacion = Ubicacion,
-                                Usuario_creador = USUARIO_CREADOR,
-                                Fecha_creacion = FECHA_CREACION,
-                                Usuario_modificador = USUARIO_MODIFICADOR,
-                                Fecha_modificacion = FECHA_MODIFICACION,
 
                             });
                         }
