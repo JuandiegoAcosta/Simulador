@@ -1422,13 +1422,13 @@ namespace Sistema_Bancario.WsSistemaBancario {
     public interface IRolesService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRolesService/Roles_Crear", ReplyAction="http://tempuri.org/IRolesService/Roles_CrearResponse")]
-        bool Roles_Crear(Modelos.Modelos.RolesModel aRoles, int id_user);
+        bool Roles_Crear(Modelos.Modelos.RolesModel aRoles);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRolesService/Roles_Crear", ReplyAction="http://tempuri.org/IRolesService/Roles_CrearResponse")]
         System.Threading.Tasks.Task<bool> Roles_CrearAsync(Modelos.Modelos.RolesModel aRoles, int id_user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRolesService/Roles_Editar", ReplyAction="http://tempuri.org/IRolesService/Roles_EditarResponse")]
-        bool Roles_Editar(Modelos.Modelos.RolesModel aRoles, int id_user);
+        bool Roles_Editar(Modelos.Modelos.RolesModel aRoles);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRolesService/Roles_Editar", ReplyAction="http://tempuri.org/IRolesService/Roles_EditarResponse")]
         System.Threading.Tasks.Task<bool> Roles_EditarAsync(Modelos.Modelos.RolesModel aRoles, int id_user);
@@ -1485,16 +1485,16 @@ namespace Sistema_Bancario.WsSistemaBancario {
                 base(binding, remoteAddress) {
         }
         
-        public bool Roles_Crear(Modelos.Modelos.RolesModel aRoles, int id_user) {
-            return base.Channel.Roles_Crear(aRoles, id_user);
+        public bool Roles_Crear(Modelos.Modelos.RolesModel aRoles) {
+            return base.Channel.Roles_Crear(aRoles);
         }
         
         public System.Threading.Tasks.Task<bool> Roles_CrearAsync(Modelos.Modelos.RolesModel aRoles, int id_user) {
             return base.Channel.Roles_CrearAsync(aRoles, id_user);
         }
         
-        public bool Roles_Editar(Modelos.Modelos.RolesModel aRoles, int id_user) {
-            return base.Channel.Roles_Editar(aRoles, id_user);
+        public bool Roles_Editar(Modelos.Modelos.RolesModel aRoles) {
+            return base.Channel.Roles_Editar(aRoles);
         }
         
         public System.Threading.Tasks.Task<bool> Roles_EditarAsync(Modelos.Modelos.RolesModel aRoles, int id_user) {
@@ -1539,7 +1539,7 @@ namespace Sistema_Bancario.WsSistemaBancario {
     public interface IRolUsuarioService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRolUsuarioService/RolUsuario_Crear", ReplyAction="http://tempuri.org/IRolUsuarioService/RolUsuario_CrearResponse")]
-        bool RolUsuario_Crear(Modelos.Modelos.RolUsuarioModel aRolUsuario, int id_user);
+        bool RolUsuario_Crear(Modelos.Modelos.RolUsuarioModel aRolUsuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRolUsuarioService/RolUsuario_Crear", ReplyAction="http://tempuri.org/IRolUsuarioService/RolUsuario_CrearResponse")]
         System.Threading.Tasks.Task<bool> RolUsuario_CrearAsync(Modelos.Modelos.RolUsuarioModel aRolUsuario, int id_user);
@@ -1596,8 +1596,8 @@ namespace Sistema_Bancario.WsSistemaBancario {
                 base(binding, remoteAddress) {
         }
         
-        public bool RolUsuario_Crear(Modelos.Modelos.RolUsuarioModel aRolUsuario, int id_user) {
-            return base.Channel.RolUsuario_Crear(aRolUsuario, id_user);
+        public bool RolUsuario_Crear(Modelos.Modelos.RolUsuarioModel aRolUsuario) {
+            return base.Channel.RolUsuario_Crear(aRolUsuario);
         }
         
         public System.Threading.Tasks.Task<bool> RolUsuario_CrearAsync(Modelos.Modelos.RolUsuarioModel aRolUsuario, int id_user) {

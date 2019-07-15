@@ -23,9 +23,9 @@ namespace CNegocio.Backend
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>	
-        public bool Crear(RolesModel aRoles, int id_user)
+        public bool Crear(RolesModel aRoles)
         {
-            return ADRolesManager.Insert(aRoles, id_user);
+            return ADRolesManager.Insert(aRoles);
         }
 
         /// <summary>
@@ -33,9 +33,9 @@ namespace CNegocio.Backend
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>
-        public bool Editar(RolesModel aRoles, int id_user)
+        public bool Editar(RolesModel aRoles)
         {
-            return ADRolesManager.Update(aRoles, id_user);
+            return ADRolesManager.Update(aRoles);
         }
 
         public bool Eliminar(int aID_Roles)

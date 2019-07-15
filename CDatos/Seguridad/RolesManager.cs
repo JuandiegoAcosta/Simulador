@@ -14,7 +14,7 @@ namespace CDatos.Manager
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>		
-        public bool Insert(RolesModel aRolesModel, int ID_user)
+        public bool Insert(RolesModel aRolesModel)
         {
             try
             {
@@ -29,7 +29,9 @@ namespace CDatos.Manager
                     command.Transaction = sqlTran;
 
                     command.Parameters.AddWithValue("@pMode", 4);
-                    command.Parameters.AddWithValue("@ID_user", ID_user);
+                    //command.Parameters.AddWithValue("@ID_user", ID_user);
+                    command.Parameters.AddWithValue("@Usuario_creador", aRolesModel.Usuario_creador);
+                    command.Parameters.AddWithValue("@Usuario_modificador", aRolesModel.Usuario_modificador == null ? (object)DBNull.Value : aRolesModel.Usuario_modificador);
 
                     command.Parameters.AddWithValue("@Descripcion", aRolesModel.Descripcion);
 
@@ -67,7 +69,7 @@ namespace CDatos.Manager
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>
-        public bool Update(RolesModel aRolesModel, int ID_user)
+        public bool Update(RolesModel aRolesModel)
         {
             try
             {
@@ -82,7 +84,9 @@ namespace CDatos.Manager
                     command.Transaction = sqlTran;
 
                     command.Parameters.AddWithValue("@pMode", 5);
-                    command.Parameters.AddWithValue("@ID_user", ID_user);
+                    //command.Parameters.AddWithValue("@ID_user", ID_user);
+                    command.Parameters.AddWithValue("@Usuario_creador", aRolesModel.Usuario_creador);
+                    command.Parameters.AddWithValue("@Usuario_modificador", aRolesModel.Usuario_modificador == null ? (object)DBNull.Value : aRolesModel.Usuario_modificador);
 
                     command.Parameters.AddWithValue("@Id", aRolesModel.Id);
                     command.Parameters.AddWithValue("@Descripcion", aRolesModel.Descripcion);

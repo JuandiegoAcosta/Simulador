@@ -14,7 +14,7 @@ namespace CDatos.Manager
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>		
-        public bool Insert(RolUsuarioModel aRolUsuarioModel, int ID_user)
+        public bool Insert(RolUsuarioModel aRolUsuarioModel)
         {
             try
             {
@@ -29,10 +29,12 @@ namespace CDatos.Manager
                     command.Transaction = sqlTran;
 
                     command.Parameters.AddWithValue("@pMode", 4);
-                    command.Parameters.AddWithValue("@ID_user", ID_user);
+                    //command.Parameters.AddWithValue("@ID_user", ID_user);
                     command.Parameters.AddWithValue("@Id_Persona", aRolUsuarioModel.Id_persona == null ? (object)DBNull.Value : aRolUsuarioModel.Id_persona);
                     command.Parameters.AddWithValue("@Id_rol", aRolUsuarioModel.Id_rol == null ? (object)DBNull.Value : aRolUsuarioModel.Id_rol);
                     command.Parameters.AddWithValue("@Activo", aRolUsuarioModel.Activo);
+                    command.Parameters.AddWithValue("@Usuario_creador", aRolUsuarioModel.Usuario_creador);
+                    command.Parameters.AddWithValue("@Usuario_modificador", aRolUsuarioModel.Usuario_modificador == null ? (object)DBNull.Value : aRolUsuarioModel.Usuario_modificador);
 
                     SqlParameter paramId = new SqlParameter("@IDENTITY", SqlDbType.Int);
                     paramId.Direction = ParameterDirection.Output;
@@ -69,7 +71,7 @@ namespace CDatos.Manager
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>
-        public bool Update(RolUsuarioModel aRolUsuarioModel, int ID_user)
+        public bool Update(RolUsuarioModel aRolUsuarioModel)
         {
             try
             {
@@ -84,11 +86,13 @@ namespace CDatos.Manager
                     command.Transaction = sqlTran;
 
                     command.Parameters.AddWithValue("@pMode", 5);
-                    command.Parameters.AddWithValue("@ID_user", ID_user);
+                    //command.Parameters.AddWithValue("@ID_user", ID_user);
                     command.Parameters.AddWithValue("@Id", aRolUsuarioModel.Id);
                     command.Parameters.AddWithValue("@Id_Persona", aRolUsuarioModel.Id_persona == null ? (object)DBNull.Value : aRolUsuarioModel.Id_persona);
                     command.Parameters.AddWithValue("@Id_rol", aRolUsuarioModel.Id_rol == null ? (object)DBNull.Value : aRolUsuarioModel.Id_rol);
                     command.Parameters.AddWithValue("@Activo", aRolUsuarioModel.Activo);
+                    command.Parameters.AddWithValue("@Usuario_creador", aRolUsuarioModel.Usuario_creador);
+                    command.Parameters.AddWithValue("@Usuario_modificador", aRolUsuarioModel.Usuario_modificador == null ? (object)DBNull.Value : aRolUsuarioModel.Usuario_modificador);
 
                     command.CommandType = CommandType.StoredProcedure;
                     command.CommandText = "sp_tRolUsuario";
