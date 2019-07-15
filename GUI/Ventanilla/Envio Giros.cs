@@ -1,4 +1,5 @@
 ﻿using CNegocio.Ventanilla;
+using Modelos.Modelos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,8 +17,8 @@ namespace Sistema_Bancario.Froms_opciones
       #region [ Variables Globales ]
       private int DNIorigen = default(int);
       private int DNIdestino = default(int);
-      private double monto = default(double);
-      private int clave = default(int);
+      private decimal monto = default(decimal);
+      private byte clave = default(byte);
       #endregion
       public Envio_Giros()
         {
@@ -30,12 +31,12 @@ namespace Sistema_Bancario.Froms_opciones
          try
          {
             if (!string.IsNullOrEmpty(this.txtMonto.Text.Trim()))
-            { monto = Convert.ToDouble(this.txtMonto.Text.Trim()); }
+            { monto = Convert.ToDecimal(this.txtMonto.Text.Trim()); }
             else
             { return false; }
 
             if (!string.IsNullOrEmpty(this.txtClave.Text.Trim()))
-            { clave = Convert.ToInt32(this.txtClave.Text.Trim()); }
+            { clave = Convert.ToByte(this.txtClave.Text.Trim()); }
             else
             { return false; }
 
@@ -62,7 +63,15 @@ namespace Sistema_Bancario.Froms_opciones
          if (SetItem())
          {
             girosMethods = new GirosMethods();
-            if (girosMethods.EnviarGiro(monto, clave, DNIorigen, DNIdestino))
+                GiroModel giro = new GiroModel();
+                giro.Monto = monto;
+                giro.Clave = clave;
+                giro.Id_PersonaOrigen = DNIorigen;
+                giro.Id_PersonaDestino = DNIdestino;
+                giro.USUARIO_CREADOR = "Carlin Yahuira Achahui";
+                giro.Moneda = tipoMoneda1.CboMoneda.Text;
+
+            if (girosMethods.EnviarGiro(giro))
                MessageBox.Show("Giro Enviado");
             else
                MessageBox.Show("No se pudo realizar giros");

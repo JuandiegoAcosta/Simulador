@@ -31,6 +31,7 @@ namespace CDatos.Manager
                     command.Parameters.AddWithValue("@NroCuenta", Tarjeta);
                     command.Parameters.AddWithValue("@Clave",Clave);
                     command.Parameters.AddWithValue("@doi", doi);
+                    command.Parameters.AddWithValue("@Usuario", "Carlin Yahuira Achahui");
 
                     command.CommandType = CommandType.StoredProcedure;
                     command.CommandText = "RetirosInsert";

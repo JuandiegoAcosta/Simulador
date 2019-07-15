@@ -21,5 +21,7 @@ namespace Modelos.Modelos
         public string USUARIO_MODIFICADOR { get; set; }
         public DateTime FECHA_CREACION { get; set; }
         public byte Clave { get; set; }
+        public string Moneda { get; set; }
+
     }
 }

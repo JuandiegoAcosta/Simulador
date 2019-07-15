@@ -30,14 +30,26 @@ namespace Sistema_Bancario.Controles
         {
            
             CuentasMethods validar = new CuentasMethods();
-           var Cuenta=  validar.ValidarCuenta(Convert.ToInt64(TBNroCuenta.Text));
+            var Cuenta=  validar.ValidarCuenta(Convert.ToInt64(TBNroCuenta.Text));
             LbPersona.Text = "Cliente: "+Cuenta.Cliente;
-            lbTipocuenta.Text ="Tipo cuenta: " + Cuenta.TipoCuenta;
+            
             Lbestado.Text ="Estado: "+ Cuenta.Estado;
             Lbmoneda.Text = Cuenta.Moneda;
+            groupBox1.Enabled = true;
+            if (Cuenta.TipoCuenta == "CORRIENTE")
+            {
+                rbtnCorriente.Checked = true;
+            }
+            else
+            {
+               
+                rbtnAhorros.Checked = true;
+            }
+               
+            
 
             LbPersona.Visible = true;
-            lbTipocuenta.Visible = true;
+            groupBox1.Enabled = false;
             Lbestado.Visible = true;
             Lbmoneda.Visible = true;
 

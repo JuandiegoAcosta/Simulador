@@ -30,11 +30,14 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.TBNroCuenta = new System.Windows.Forms.TextBox();
-            this.lbTipocuenta = new System.Windows.Forms.Label();
             this.BtValidar = new System.Windows.Forms.Button();
             this.Lbestado = new System.Windows.Forms.Label();
             this.LbPersona = new System.Windows.Forms.Label();
             this.Lbmoneda = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbtnAhorros = new System.Windows.Forms.RadioButton();
+            this.rbtnCorriente = new System.Windows.Forms.RadioButton();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -57,16 +60,6 @@
             this.TBNroCuenta.TabIndex = 1;
             this.TBNroCuenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBNroCuenta_KeyPress);
             // 
-            // lbTipocuenta
-            // 
-            this.lbTipocuenta.AutoSize = true;
-            this.lbTipocuenta.Location = new System.Drawing.Point(559, 8);
-            this.lbTipocuenta.Name = "lbTipocuenta";
-            this.lbTipocuenta.Size = new System.Drawing.Size(85, 13);
-            this.lbTipocuenta.TabIndex = 29;
-            this.lbTipocuenta.Text = "Tipo cuenta : ??";
-            this.lbTipocuenta.Visible = false;
-            // 
             // BtValidar
             // 
             this.BtValidar.BackColor = System.Drawing.Color.ForestGreen;
@@ -84,7 +77,7 @@
             // 
             this.Lbestado.AutoSize = true;
             this.Lbestado.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbestado.Location = new System.Drawing.Point(440, 8);
+            this.Lbestado.Location = new System.Drawing.Point(183, 20);
             this.Lbestado.Name = "Lbestado";
             this.Lbestado.Size = new System.Drawing.Size(70, 13);
             this.Lbestado.TabIndex = 26;
@@ -95,7 +88,7 @@
             // 
             this.LbPersona.AutoSize = true;
             this.LbPersona.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.LbPersona.Location = new System.Drawing.Point(3, 29);
+            this.LbPersona.Location = new System.Drawing.Point(3, 34);
             this.LbPersona.Name = "LbPersona";
             this.LbPersona.Size = new System.Drawing.Size(64, 13);
             this.LbPersona.TabIndex = 30;
@@ -105,27 +98,63 @@
             // Lbmoneda
             // 
             this.Lbmoneda.AutoSize = true;
-            this.Lbmoneda.Location = new System.Drawing.Point(358, 7);
+            this.Lbmoneda.Location = new System.Drawing.Point(309, 20);
             this.Lbmoneda.Name = "Lbmoneda";
-            this.Lbmoneda.Size = new System.Drawing.Size(64, 13);
+            this.Lbmoneda.Size = new System.Drawing.Size(72, 13);
             this.Lbmoneda.TabIndex = 31;
             this.Lbmoneda.Text = "Moneda :??";
             this.Lbmoneda.Visible = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rbtnAhorros);
+            this.groupBox1.Controls.Add(this.Lbmoneda);
+            this.groupBox1.Controls.Add(this.rbtnCorriente);
+            this.groupBox1.Controls.Add(this.Lbestado);
+            this.groupBox1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(351, 7);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(387, 40);
+            this.groupBox1.TabIndex = 32;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "CUENTA";
+            // 
+            // rbtnAhorros
+            // 
+            this.rbtnAhorros.AutoSize = true;
+            this.rbtnAhorros.Checked = true;
+            this.rbtnAhorros.Location = new System.Drawing.Point(12, 20);
+            this.rbtnAhorros.Name = "rbtnAhorros";
+            this.rbtnAhorros.Size = new System.Drawing.Size(70, 17);
+            this.rbtnAhorros.TabIndex = 3;
+            this.rbtnAhorros.TabStop = true;
+            this.rbtnAhorros.Text = "Ahorros";
+            this.rbtnAhorros.UseVisualStyleBackColor = true;
+            // 
+            // rbtnCorriente
+            // 
+            this.rbtnCorriente.AutoSize = true;
+            this.rbtnCorriente.Location = new System.Drawing.Point(88, 20);
+            this.rbtnCorriente.Name = "rbtnCorriente";
+            this.rbtnCorriente.Size = new System.Drawing.Size(79, 17);
+            this.rbtnCorriente.TabIndex = 3;
+            this.rbtnCorriente.Text = "Corriente";
+            this.rbtnCorriente.UseVisualStyleBackColor = true;
             // 
             // NroCuenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.Lbmoneda);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.LbPersona);
-            this.Controls.Add(this.lbTipocuenta);
             this.Controls.Add(this.BtValidar);
-            this.Controls.Add(this.Lbestado);
             this.Controls.Add(this.TBNroCuenta);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "NroCuenta";
-            this.Size = new System.Drawing.Size(704, 49);
+            this.Size = new System.Drawing.Size(741, 53);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -135,10 +164,12 @@
 
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.TextBox TBNroCuenta;
-        private System.Windows.Forms.Label lbTipocuenta;
         private System.Windows.Forms.Label Lbestado;
         private System.Windows.Forms.Label LbPersona;
         public System.Windows.Forms.Label Lbmoneda;
         public System.Windows.Forms.Button BtValidar;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton rbtnAhorros;
+        private System.Windows.Forms.RadioButton rbtnCorriente;
     }
 }

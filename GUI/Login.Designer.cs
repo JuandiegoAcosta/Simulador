@@ -96,6 +96,7 @@
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkLabel1.LinkColor = System.Drawing.Color.White;
             this.linkLabel1.Location = new System.Drawing.Point(155, 167);
             this.linkLabel1.Name = "linkLabel1";
@@ -112,7 +113,7 @@
             this.panel1.Controls.Add(this.Conectado);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 209);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(400, 28);
             this.panel1.TabIndex = 19;
@@ -123,7 +124,7 @@
             this.Estado.FlatAppearance.BorderSize = 0;
             this.Estado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Estado.Location = new System.Drawing.Point(9, 6);
-            this.Estado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Estado.Margin = new System.Windows.Forms.Padding(2);
             this.Estado.Name = "Estado";
             this.Estado.Size = new System.Drawing.Size(15, 16);
             this.Estado.TabIndex = 20;
@@ -182,7 +183,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label1.ForeColor = System.Drawing.Color.DimGray;
             this.label1.Location = new System.Drawing.Point(6, 7);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(108, 16);
@@ -200,7 +201,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(96)))), ((int)(((byte)(147)))));
             this.ClientSize = new System.Drawing.Size(400, 237);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtPass);

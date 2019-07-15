@@ -27,9 +27,10 @@ namespace CDatos.Manager
                     command.Parameters.AddWithValue("@NroCuenta", Dep.NroCuenta);
                     command.Parameters.AddWithValue("@Monto", Dep.Monto);
                     command.Parameters.AddWithValue("@doi", Dep.Doi);
+                    command.Parameters.AddWithValue("@Usuario", Dep.Usuario= "Carlin Yahuira Achahui");
 
 
-                    command.CommandType = CommandType.StoredProcedure;
+                command.CommandType = CommandType.StoredProcedure;
                     command.CommandText = "DepositosInsert";
 
                      command.ExecuteNonQuery();

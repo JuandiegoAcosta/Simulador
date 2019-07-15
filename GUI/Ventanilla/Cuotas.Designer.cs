@@ -67,7 +67,7 @@
             this.GridPrestamos.AllowUserToDeleteRows = false;
             this.GridPrestamos.BackgroundColor = System.Drawing.SystemColors.Control;
             this.GridPrestamos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridPrestamos.Location = new System.Drawing.Point(8, 70);
+            this.GridPrestamos.Location = new System.Drawing.Point(8, 84);
             this.GridPrestamos.Margin = new System.Windows.Forms.Padding(2);
             this.GridPrestamos.Name = "GridPrestamos";
             this.GridPrestamos.ReadOnly = true;
@@ -79,7 +79,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(90, 42);
+            this.textBox1.Location = new System.Drawing.Point(90, 56);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 6;
@@ -87,7 +87,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 45);
+            this.label1.Location = new System.Drawing.Point(11, 59);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 13);
             this.label1.TabIndex = 7;
@@ -99,7 +99,7 @@
             this.GridCuotas.AllowUserToDeleteRows = false;
             this.GridCuotas.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.GridCuotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridCuotas.Location = new System.Drawing.Point(9, 249);
+            this.GridCuotas.Location = new System.Drawing.Point(9, 263);
             this.GridCuotas.Name = "GridCuotas";
             this.GridCuotas.ReadOnly = true;
             this.GridCuotas.Size = new System.Drawing.Size(639, 254);
@@ -111,7 +111,7 @@
             this.BTFiltrarCuotas.FlatAppearance.BorderSize = 0;
             this.BTFiltrarCuotas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTFiltrarCuotas.ForeColor = System.Drawing.Color.White;
-            this.BTFiltrarCuotas.Location = new System.Drawing.Point(200, 41);
+            this.BTFiltrarCuotas.Location = new System.Drawing.Point(200, 55);
             this.BTFiltrarCuotas.Margin = new System.Windows.Forms.Padding(2);
             this.BTFiltrarCuotas.Name = "BTFiltrarCuotas";
             this.BTFiltrarCuotas.Size = new System.Drawing.Size(56, 26);
@@ -124,7 +124,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(8, 223);
+            this.label2.Location = new System.Drawing.Point(8, 237);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 25);
@@ -136,7 +136,7 @@
             this.nro_Documento1.Location = new System.Drawing.Point(6, 8);
             this.nro_Documento1.Margin = new System.Windows.Forms.Padding(2);
             this.nro_Documento1.Name = "nro_Documento1";
-            this.nro_Documento1.Size = new System.Drawing.Size(280, 26);
+            this.nro_Documento1.Size = new System.Drawing.Size(280, 43);
             this.nro_Documento1.TabIndex = 12;
             // 
             // Cuotas

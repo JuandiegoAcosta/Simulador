@@ -27,6 +27,12 @@ namespace Sistema_Bancario.Froms_opciones
             InitializeComponent();
             proceder1.BTProceder.Click += BTProceder_Click;
             tipoMoneda1.CboMoneda.SelectedValueChanged += CboMoneda_SelectedValueChanged;
+            nroCuenta1.BtValidar.Click += BtValidar_Click;
+        }
+        private void BtValidar_Click(object sender, EventArgs e)
+        {
+            int index = tipoMoneda1.CboMoneda.FindString(nroCuenta1.Lbmoneda.Text);
+            tipoMoneda1.CboMoneda.SelectedIndex = index;
         }
 
         private void CboMoneda_SelectedValueChanged(object sender, EventArgs e)

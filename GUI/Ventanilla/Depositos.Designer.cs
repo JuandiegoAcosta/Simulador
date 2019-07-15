@@ -28,9 +28,6 @@
       /// </summary>
       private void InitializeComponent()
       {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbtnAhorros = new System.Windows.Forms.RadioButton();
-            this.rbtnCorriente = new System.Windows.Forms.RadioButton();
             this.tipoMoneda2 = new Sistema_Bancario.Controles.TipoMoneda();
             this.txtDoi = new System.Windows.Forms.TextBox();
             this.txtMonto = new System.Windows.Forms.TextBox();
@@ -39,51 +36,16 @@
             this.nroCuenta1 = new Sistema_Bancario.Controles.NroCuenta();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // proceder1
             // 
-            this.proceder1.Location = new System.Drawing.Point(11, 568);
-            this.proceder1.Size = new System.Drawing.Size(852, 40);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.rbtnAhorros);
-            this.groupBox1.Controls.Add(this.rbtnCorriente);
-            this.groupBox1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(22, 21);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(437, 72);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "CUENTA";
-            // 
-            // rbtnAhorros
-            // 
-            this.rbtnAhorros.AutoSize = true;
-            this.rbtnAhorros.Checked = true;
-            this.rbtnAhorros.Location = new System.Drawing.Point(16, 19);
-            this.rbtnAhorros.Name = "rbtnAhorros";
-            this.rbtnAhorros.Size = new System.Drawing.Size(70, 17);
-            this.rbtnAhorros.TabIndex = 3;
-            this.rbtnAhorros.TabStop = true;
-            this.rbtnAhorros.Text = "Ahorros";
-            this.rbtnAhorros.UseVisualStyleBackColor = true;
-            // 
-            // rbtnCorriente
-            // 
-            this.rbtnCorriente.AutoSize = true;
-            this.rbtnCorriente.Location = new System.Drawing.Point(16, 42);
-            this.rbtnCorriente.Name = "rbtnCorriente";
-            this.rbtnCorriente.Size = new System.Drawing.Size(79, 17);
-            this.rbtnCorriente.TabIndex = 3;
-            this.rbtnCorriente.Text = "Corriente";
-            this.rbtnCorriente.UseVisualStyleBackColor = true;
+            this.proceder1.Location = new System.Drawing.Point(11, 553);
+            this.proceder1.Size = new System.Drawing.Size(771, 40);
             // 
             // tipoMoneda2
             // 
-            this.tipoMoneda2.Location = new System.Drawing.Point(388, 162);
+            this.tipoMoneda2.Location = new System.Drawing.Point(379, 76);
             this.tipoMoneda2.Margin = new System.Windows.Forms.Padding(2);
             this.tipoMoneda2.Name = "tipoMoneda2";
             this.tipoMoneda2.Size = new System.Drawing.Size(136, 25);
@@ -91,14 +53,14 @@
             // 
             // txtDoi
             // 
-            this.txtDoi.Location = new System.Drawing.Point(116, 191);
+            this.txtDoi.Location = new System.Drawing.Point(107, 105);
             this.txtDoi.Name = "txtDoi";
             this.txtDoi.Size = new System.Drawing.Size(201, 20);
             this.txtDoi.TabIndex = 22;
             // 
             // txtMonto
             // 
-            this.txtMonto.Location = new System.Drawing.Point(116, 165);
+            this.txtMonto.Location = new System.Drawing.Point(107, 79);
             this.txtMonto.Name = "txtMonto";
             this.txtMonto.Size = new System.Drawing.Size(201, 20);
             this.txtMonto.TabIndex = 21;
@@ -107,7 +69,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(24, 194);
+            this.label2.Location = new System.Drawing.Point(15, 108);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 13);
             this.label2.TabIndex = 20;
@@ -117,7 +79,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(24, 168);
+            this.label3.Location = new System.Drawing.Point(15, 82);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 13);
             this.label3.TabIndex = 19;
@@ -125,16 +87,16 @@
             // 
             // nroCuenta1
             // 
-            this.nroCuenta1.Location = new System.Drawing.Point(22, 98);
+            this.nroCuenta1.Location = new System.Drawing.Point(13, 12);
             this.nroCuenta1.Margin = new System.Windows.Forms.Padding(2);
             this.nroCuenta1.Name = "nroCuenta1";
-            this.nroCuenta1.Size = new System.Drawing.Size(705, 52);
+            this.nroCuenta1.Size = new System.Drawing.Size(767, 52);
             this.nroCuenta1.TabIndex = 27;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel1.Location = new System.Drawing.Point(27, 224);
+            this.panel1.Location = new System.Drawing.Point(18, 138);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 35, 3, 3);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(0, 35, 0, 0);
@@ -144,7 +106,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(323, 168);
+            this.label1.Location = new System.Drawing.Point(314, 82);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 13);
             this.label1.TabIndex = 29;
@@ -162,11 +124,10 @@
             this.Controls.Add(this.txtMonto);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Depositos";
             this.Padding = new System.Windows.Forms.Padding(11, 10, 11, 10);
-            this.Controls.SetChildIndex(this.groupBox1, 0);
+            this.Size = new System.Drawing.Size(793, 603);
             this.Controls.SetChildIndex(this.label3, 0);
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.txtMonto, 0);
@@ -176,18 +137,12 @@
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.proceder1, 0);
             this.Controls.SetChildIndex(this.label1, 0);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
       }
 
       #endregion
-
-      private System.Windows.Forms.GroupBox groupBox1;
-      private System.Windows.Forms.RadioButton rbtnAhorros;
-      private System.Windows.Forms.RadioButton rbtnCorriente;
       private System.Windows.Forms.TextBox txtDoi;
       private System.Windows.Forms.TextBox txtMonto;
       private System.Windows.Forms.Label label2;

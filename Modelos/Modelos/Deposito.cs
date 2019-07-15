@@ -11,6 +11,8 @@ namespace Modelos.Modelos
         public string NroCuenta { get; set; }
         public decimal Monto { get; set; }
         public string Doi { get; set; }
+
+        public string Usuario { get; set; }
         public Deposito() { }
     }
 }

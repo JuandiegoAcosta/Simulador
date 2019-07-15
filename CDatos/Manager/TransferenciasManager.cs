@@ -36,7 +36,8 @@ namespace CDatos.Manager
                     command.Parameters.AddWithValue("@NroCuenta", cuentasTarjetasModel.NroCuenta);
                     command.Parameters.AddWithValue("@NroCuentaDestino", cuentasTarjetasModel.NroCuentaDestino);
                     command.Parameters.AddWithValue("@doi", cuentasTarjetasModel.doi);
-                
+                    command.Parameters.AddWithValue("@Usuario", "Carlin Yahuira Achahui");
+                    
                     command.CommandType = CommandType.StoredProcedure;
 
                     command.CommandText = "TransferenciaInsert";
