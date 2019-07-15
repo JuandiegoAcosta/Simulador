@@ -88,8 +88,8 @@ namespace Sistema_Bancario
       {
          lblUserValueType.Text = Session.UserNombreCompleto;
          lblSucursal.Text = Session.SucursalNombre;
-            lblVentanilla.Text = Session.VentanillaDescripcion;
-            lblTurno.Text = Session.TurnoDescripcion;
+         lblVentanilla.Text = Session.VentanillaDescripcion;
+         lblTurno.Text = Session.TurnoDescripcion;
       }
 
       protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
@@ -429,11 +429,12 @@ namespace Sistema_Bancario
          }
          else if (btn.Text.Equals("Balancin Caja"))
          {
-            if (!panel1.Controls.Contains(Balancin.instance))
+                Balancin balancin = new Balancin(Session);
+            if (!panel1.Controls.Contains(balancin))
             {
-               panel1.Controls.Add(Balancin.instance);
-               Balancin.instance.Dock = DockStyle.Fill;
-               Balancin.instance.BringToFront();
+               panel1.Controls.Add(balancin);
+                    balancin.Dock = DockStyle.Fill;
+                    balancin.BringToFront();
                TituloText.Text = btn.Text;
 
             }
