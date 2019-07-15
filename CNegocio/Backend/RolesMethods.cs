@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace CNegocio.Backend
 {
@@ -39,6 +40,11 @@ namespace CNegocio.Backend
         public List<RolesModel> ObtenerTodos()
         {
             return ADRolesManager.RolesModelSelectAll();
+        }
+
+        public DataTable RolesPorPersona(int aID_Usuario)
+        {
+            return ADRolesManager.RolesPorPersona(aID_Usuario);
         }
     }
 }

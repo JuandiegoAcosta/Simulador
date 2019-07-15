@@ -46,6 +46,8 @@ namespace Sistema_Bancario
       private List<Modelos.Modelos.ComponenteModel> listaComponentes;
       private List<Modelos.Modelos.RolesModel> listaRoles;
 
+        private bool estadoUsuarioLogin;
+
         private ISession Session;
 
       private void SetLogin()
@@ -69,6 +71,7 @@ namespace Sistema_Bancario
                     MessageBox.Show("No se permite estacios vacios");
                     return;
                 }
+            
       }
 
       private void ClearLogin()
@@ -92,6 +95,8 @@ namespace Sistema_Bancario
 
                listaRoles = user.Persona_GetRolesUsuario(usuarioLogin.Nombreusuario).ToList();
 
+                    estadoUsuarioLogin = usuarioLogin.Estado;
+               
 
                if (usuarioLogin != null && SucursalUsuario != null)
                {
@@ -125,15 +130,23 @@ namespace Sistema_Bancario
       }
       private void button1_Click(object sender, EventArgs e)
       {
-            SetLogin();
-            if (StartLogin())
-            {
-                VentanaPrincipal ventanaPrincipal = new VentanaPrincipal(Session);
-                ClearLogin();
-                Close();
+            
+
+                SetLogin();
+                if (StartLogin())
+                {
+                if (estadoUsuarioLogin == true)
+                {
+                    VentanaPrincipal ventanaPrincipal = new VentanaPrincipal(Session);
+                    ClearLogin();
+                    Close();
+                }
+                else MessageBox.Show("Acceso denegado >:v");
             }
-            else MessageBox.Show("Error en las credenciales");
-      }
+                else MessageBox.Show("Error en las credenciales");
+
+            
+        }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {

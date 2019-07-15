@@ -12,6 +12,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using System.Data;
 
 namespace ServiciosBancarios
 {
@@ -508,6 +509,11 @@ namespace ServiciosBancarios
             return BLPersona.CrearNuevoUsuario(idPersona,Usuario,Contraseña,Estado);
         }
 
+        public List<PersonaModel> Persona_UsuarioSelectAll()
+        {
+            return BLPersona.UsuarioSelectAll();
+        }
+
         #endregion
 
         #region [ Roles ]
@@ -537,7 +543,10 @@ namespace ServiciosBancarios
             return BLRoles.ObtenerTodos();
         }
 
-
+        public DataTable Roles_RolesPorPersona(int aID_Usuario)
+        {
+            return BLRoles.RolesPorPersona(aID_Usuario);
+        }
 
         #endregion
 

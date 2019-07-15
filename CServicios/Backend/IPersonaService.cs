@@ -50,5 +50,8 @@ namespace ServiciosBancarios.Backend
         [OperationContract]
         bool Persona_CrearNuevoUsuario(int idPersona, string Usuario, string Contraseña, bool Estado);
 
+        [OperationContract]
+        List<PersonaModel> Persona_UsuarioSelectAll();
+
     }
 }

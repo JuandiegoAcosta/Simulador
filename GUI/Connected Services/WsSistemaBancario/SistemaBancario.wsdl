@@ -5,6 +5,7 @@
       <xsd:import schemaLocation="http://localhost:50786/SistemaBancario.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:50786/SistemaBancario.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:50786/SistemaBancario.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Modelos.Modelos" />
+      <xsd:import schemaLocation="http://localhost:50786/SistemaBancario.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="ICobroChequeService_CobroCheque_Crear_InputMessage">
@@ -427,6 +428,12 @@
   <wsdl:message name="IPersonaService_Persona_CrearNuevoUsuario_OutputMessage">
     <wsdl:part name="parameters" element="tns:Persona_CrearNuevoUsuarioResponse" />
   </wsdl:message>
+  <wsdl:message name="IPersonaService_Persona_UsuarioSelectAll_InputMessage">
+    <wsdl:part name="parameters" element="tns:Persona_UsuarioSelectAll" />
+  </wsdl:message>
+  <wsdl:message name="IPersonaService_Persona_UsuarioSelectAll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Persona_UsuarioSelectAllResponse" />
+  </wsdl:message>
   <wsdl:message name="IRolesService_Roles_Crear_InputMessage">
     <wsdl:part name="parameters" element="tns:Roles_Crear" />
   </wsdl:message>
@@ -456,6 +463,12 @@
   </wsdl:message>
   <wsdl:message name="IRolesService_Roles_ObtenerTodos_OutputMessage">
     <wsdl:part name="parameters" element="tns:Roles_ObtenerTodosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRolesService_Roles_RolesPorPersona_InputMessage">
+    <wsdl:part name="parameters" element="tns:Roles_RolesPorPersona" />
+  </wsdl:message>
+  <wsdl:message name="IRolesService_Roles_RolesPorPersona_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Roles_RolesPorPersonaResponse" />
   </wsdl:message>
   <wsdl:message name="IRolUsuarioService_RolUsuario_Crear_InputMessage">
     <wsdl:part name="parameters" element="tns:RolUsuario_Crear" />
@@ -934,6 +947,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IPersonaService/Persona_CrearNuevoUsuario" message="tns:IPersonaService_Persona_CrearNuevoUsuario_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IPersonaService/Persona_CrearNuevoUsuarioResponse" message="tns:IPersonaService_Persona_CrearNuevoUsuario_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="Persona_UsuarioSelectAll">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPersonaService/Persona_UsuarioSelectAll" message="tns:IPersonaService_Persona_UsuarioSelectAll_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPersonaService/Persona_UsuarioSelectAllResponse" message="tns:IPersonaService_Persona_UsuarioSelectAll_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IRolesService">
     <wsdl:operation name="Roles_Crear">
@@ -955,6 +972,10 @@
     <wsdl:operation name="Roles_ObtenerTodos">
       <wsdl:input wsaw:Action="http://tempuri.org/IRolesService/Roles_ObtenerTodos" message="tns:IRolesService_Roles_ObtenerTodos_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRolesService/Roles_ObtenerTodosResponse" message="tns:IRolesService_Roles_ObtenerTodos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Roles_RolesPorPersona">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRolesService/Roles_RolesPorPersona" message="tns:IRolesService_Roles_RolesPorPersona_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRolesService/Roles_RolesPorPersonaResponse" message="tns:IRolesService_Roles_RolesPorPersona_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IRolUsuarioService">
@@ -1750,6 +1771,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Persona_UsuarioSelectAll">
+      <soap:operation soapAction="http://tempuri.org/IPersonaService/Persona_UsuarioSelectAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="BasicHttpBinding_IRolesService" type="tns:IRolesService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -1791,6 +1821,15 @@
     </wsdl:operation>
     <wsdl:operation name="Roles_ObtenerTodos">
       <soap:operation soapAction="http://tempuri.org/IRolesService/Roles_ObtenerTodos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Roles_RolesPorPersona">
+      <soap:operation soapAction="http://tempuri.org/IRolesService/Roles_RolesPorPersona" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -470,17 +470,17 @@ namespace Sistema_Bancario
 
             else if (btn.Text.Equals("Personas"))
             {
-                if (!panel1.Controls.Contains(Personas.instance))
+                if (!panel1.Controls.Contains(Usuario.instance))
                 {
-                    panel1.Controls.Add(Personas.instance);
-                    Personas.instance.Dock = DockStyle.Fill;
-                    Personas.instance.BringToFront();
+                    panel1.Controls.Add(Usuario.instance);
+                    Usuario.instance.Dock = DockStyle.Fill;
+                    Usuario.instance.BringToFront();
                     TituloText.Text = btn.Text;
 
                 }
                 else
                 {
-                    Personas.instance.BringToFront();
+                    Usuario.instance.BringToFront();
                     TituloText.Text = btn.Text;
                 }
             }
