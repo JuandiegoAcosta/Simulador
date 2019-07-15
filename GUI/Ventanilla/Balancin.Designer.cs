@@ -28,236 +28,220 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.txtTotal = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.dgvDenominaciones = new System.Windows.Forms.DataGridView();
-            this.lblTotal = new System.Windows.Forms.Label();
-            this.btnRegistrarMov = new System.Windows.Forms.Button();
-            this.cmbPersonaRol = new System.Windows.Forms.ComboBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.cmbVentanillas = new System.Windows.Forms.ComboBox();
+            this.txtTotalDolares = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.cmbTipoMov = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.Denominacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nro_billetes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox1.SuspendLayout();
+            this.txtTotalSoles = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDenominaciones)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // button1
             // 
-            this.groupBox1.Controls.Add(this.btnRegistrarMov);
-            this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.cmbPersonaRol);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.cmbTipoMov);
-            this.groupBox1.Controls.Add(this.txtTotal);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.dgvDenominaciones);
-            this.groupBox1.Controls.Add(this.lblTotal);
-            this.groupBox1.Location = new System.Drawing.Point(13, 17);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(845, 555);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Balancín caja";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(277, 499);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(155, 38);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Imprimir ticket";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // txtTotal
-            // 
-            this.txtTotal.Location = new System.Drawing.Point(703, 384);
-            this.txtTotal.Name = "txtTotal";
-            this.txtTotal.ReadOnly = true;
-            this.txtTotal.Size = new System.Drawing.Size(138, 22);
-            this.txtTotal.TabIndex = 3;
+            this.button1.Location = new System.Drawing.Point(616, 503);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(158, 38);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "Registrar movimiento";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // dgvDenominaciones
             // 
             this.dgvDenominaciones.AllowUserToAddRows = false;
             this.dgvDenominaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDenominaciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Denominacion,
-            this.Nro_billetes,
-            this.Importe});
-            this.dgvDenominaciones.Location = new System.Drawing.Point(438, 156);
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6});
+            this.dgvDenominaciones.Location = new System.Drawing.Point(91, 198);
             this.dgvDenominaciones.Name = "dgvDenominaciones";
             this.dgvDenominaciones.RowTemplate.Height = 24;
-            this.dgvDenominaciones.Size = new System.Drawing.Size(403, 213);
-            this.dgvDenominaciones.TabIndex = 2;
-            this.dgvDenominaciones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDenominaciones_CellClick);
+            this.dgvDenominaciones.Size = new System.Drawing.Size(497, 213);
+            this.dgvDenominaciones.TabIndex = 17;
             // 
-            // lblTotal
+            // button3
             // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(582, 389);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(77, 17);
-            this.lblTotal.TabIndex = 0;
-            this.lblTotal.Text = "Total soles";
+            this.button3.Location = new System.Drawing.Point(421, 503);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(155, 38);
+            this.button3.TabIndex = 16;
+            this.button3.Text = "Imprimir ticket";
+            this.button3.UseVisualStyleBackColor = true;
             // 
-            // btnRegistrarMov
+            // cmbVentanillas
             // 
-            this.btnRegistrarMov.Location = new System.Drawing.Point(438, 499);
-            this.btnRegistrarMov.Name = "btnRegistrarMov";
-            this.btnRegistrarMov.Size = new System.Drawing.Size(158, 38);
-            this.btnRegistrarMov.TabIndex = 4;
-            this.btnRegistrarMov.Text = "Registrar movimiento";
-            this.btnRegistrarMov.UseVisualStyleBackColor = true;
-            this.btnRegistrarMov.Click += new System.EventHandler(this.btnRegistrarMov_Click);
+            this.cmbVentanillas.FormattingEnabled = true;
+            this.cmbVentanillas.Location = new System.Drawing.Point(547, 137);
+            this.cmbVentanillas.Name = "cmbVentanillas";
+            this.cmbVentanillas.Size = new System.Drawing.Size(227, 24);
+            this.cmbVentanillas.TabIndex = 10;
             // 
-            // cmbPersonaRol
+            // txtTotalDolares
             // 
-            this.cmbPersonaRol.FormattingEnabled = true;
-            this.cmbPersonaRol.Location = new System.Drawing.Point(498, 110);
-            this.cmbPersonaRol.Name = "cmbPersonaRol";
-            this.cmbPersonaRol.Size = new System.Drawing.Size(227, 24);
-            this.cmbPersonaRol.TabIndex = 1;
+            this.txtTotalDolares.Location = new System.Drawing.Point(957, 417);
+            this.txtTotalDolares.Name = "txtTotalDolares";
+            this.txtTotalDolares.ReadOnly = true;
+            this.txtTotalDolares.Size = new System.Drawing.Size(138, 22);
+            this.txtTotalDolares.TabIndex = 13;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(398, 140);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(48, 17);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Sujeto";
             // 
             // cmbTipoMov
             // 
             this.cmbTipoMov.FormattingEnabled = true;
-            this.cmbTipoMov.Location = new System.Drawing.Point(162, 113);
+            this.cmbTipoMov.Location = new System.Drawing.Point(547, 87);
             this.cmbTipoMov.Name = "cmbTipoMov";
             this.cmbTipoMov.Size = new System.Drawing.Size(227, 24);
-            this.cmbTipoMov.TabIndex = 1;
+            this.cmbTipoMov.TabIndex = 11;
             // 
-            // label4
+            // txtTotalSoles
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(435, 116);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 17);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Sujeto";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            this.txtTotalSoles.Location = new System.Drawing.Point(450, 417);
+            this.txtTotalSoles.Name = "txtTotalSoles";
+            this.txtTotalSoles.ReadOnly = true;
+            this.txtTotalSoles.Size = new System.Drawing.Size(138, 22);
+            this.txtTotalSoles.TabIndex = 14;
             // 
-            // label1
+            // label5
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 113);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Tipo de movimiento";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(398, 87);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(131, 17);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Tipo de movimiento";
             // 
-            // dataGridView1
+            // label6
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3});
-            this.dataGridView1.Location = new System.Drawing.Point(8, 156);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(424, 213);
-            this.dataGridView1.TabIndex = 5;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(836, 422);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(91, 17);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Total dólares";
             // 
-            // label2
+            // dataGridView3
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(582, 428);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 17);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Total dolares";
+            this.dataGridView3.AllowUserToAddRows = false;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9});
+            this.dataGridView3.Location = new System.Drawing.Point(594, 198);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowTemplate.Height = 24;
+            this.dataGridView3.Size = new System.Drawing.Size(501, 213);
+            this.dataGridView3.TabIndex = 12;
             // 
-            // textBox1
+            // label7
             // 
-            this.textBox1.Location = new System.Drawing.Point(703, 423);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(138, 22);
-            this.textBox1.TabIndex = 3;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(329, 422);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(77, 17);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "Total soles";
             // 
-            // Denominacion
+            // dataGridViewTextBoxColumn4
             // 
-            this.Denominacion.HeaderText = "Dolares";
-            this.Denominacion.Name = "Denominacion";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Soles";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 200;
             // 
-            // Nro_billetes
+            // dataGridViewTextBoxColumn5
             // 
-            this.Nro_billetes.HeaderText = "Nro billetes";
-            this.Nro_billetes.Name = "Nro_billetes";
-            this.Nro_billetes.Width = 150;
+            this.dataGridViewTextBoxColumn5.HeaderText = "Cant";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Width = 50;
             // 
-            // Importe
+            // dataGridViewTextBoxColumn6
             // 
-            this.Importe.HeaderText = "Importe";
-            this.Importe.Name = "Importe";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Importe";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             // 
-            // dataGridViewTextBoxColumn1
+            // dataGridViewTextBoxColumn7
             // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Soles";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Dolares";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.Width = 200;
             // 
-            // dataGridViewTextBoxColumn2
+            // dataGridViewTextBoxColumn8
             // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nro billetes";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 150;
+            this.dataGridViewTextBoxColumn8.HeaderText = "Cant";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.Width = 50;
             // 
-            // dataGridViewTextBoxColumn3
+            // dataGridViewTextBoxColumn9
             // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Importe";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Importe";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             // 
             // Balancin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.dgvDenominaciones);
+            this.Controls.Add(this.dataGridView3);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.cmbVentanillas);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txtTotalDolares);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtTotalSoles);
+            this.Controls.Add(this.cmbTipoMov);
             this.Name = "Balancin";
-            this.Size = new System.Drawing.Size(874, 674);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.Size = new System.Drawing.Size(1145, 657);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDenominaciones)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dgvDenominaciones;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox txtTotal;
-        private System.Windows.Forms.Button btnRegistrarMov;
-        private System.Windows.Forms.ComboBox cmbPersonaRol;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ComboBox cmbVentanillas;
+        private System.Windows.Forms.TextBox txtTotalDolares;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cmbTipoMov;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Denominacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nro_billetes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Importe;
+        private System.Windows.Forms.TextBox txtTotalSoles;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
     }
 }

@@ -35,6 +35,10 @@ namespace CNegocio.Backend
         {
             return ADTurnosManager.GetTurnosModel(aID_Turnos);
         }
+        public TurnosModel ObtenerUnoXUsuario(int Id_usuario)
+        {
+            return ADTurnosManager.GetTurnosModelxUsuario(Id_usuario);
+        }
 
         public List<TurnosModel> ObtenerTodos()
         {

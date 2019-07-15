@@ -83,13 +83,13 @@ namespace Sistema_Bancario.Ventanilla
             {
                 using (WsSistemaBancario.VentanillaServiceClient ventanilla = new WsSistemaBancario.VentanillaServiceClient())
                 {
-                    this.cmbPersonaRol.DataSource = ventanilla.GetVentanillasXSucursal(Convert.ToInt32(this.session.SucursalCodigo));
-                    this.cmbPersonaRol.DisplayMember = "Descripcion";
+                    this.cmbVentanillas.DataSource = ventanilla.GetVentanillasXSucursal(Convert.ToInt32(this.session.SucursalCodigo), Convert.ToInt32(this.session.TurnoCodigo));
+                    this.cmbVentanillas.DisplayMember = "Descripcion";
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Ocurrio un error");
+                MessageBox.Show("Ocurrio un error al cargar ventanillas en el combo");
                
             }
             
@@ -174,7 +174,7 @@ namespace Sistema_Bancario.Ventanilla
             {
                 SumaTotal = SumaTotal + (int)r.Cells[2].Value;
             }
-            this.txtTotal.Text = this.SumaTotal.ToString();
+            this.txtTotalSoles.Text = this.SumaTotal.ToString();
         }
 
         //private void cmbTiposRoles_SelectedValueChanged(object sender, EventArgs e)
