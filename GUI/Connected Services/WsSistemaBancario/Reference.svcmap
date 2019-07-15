@@ -22,9 +22,10 @@
     <MetadataSource Address="http://localhost:50786/SistemaBancario.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="SistemaBancario.disco" MetadataType="Disco" ID="079afa1c-6d08-4170-81f7-2fce2f34ce49" SourceId="1" SourceUrl="http://localhost:50786/SistemaBancario.svc?disco" />
     <MetadataFile FileName="SistemaBancario.wsdl" MetadataType="Wsdl" ID="59ef95e5-517e-4db7-baf0-8e03f384f3ea" SourceId="1" SourceUrl="http://localhost:50786/SistemaBancario.svc?wsdl" />
     <MetadataFile FileName="SistemaBancario.xsd" MetadataType="Schema" ID="dc460fc6-3e69-45ee-9911-9f56b51fcd54" SourceId="1" SourceUrl="http://localhost:50786/SistemaBancario.svc?xsd=xsd1" />
+    <MetadataFile FileName="SistemaBancario.disco" MetadataType="Disco" ID="079afa1c-6d08-4170-81f7-2fce2f34ce49" SourceId="1" SourceUrl="http://localhost:50786/SistemaBancario.svc?disco" />
+    <MetadataFile FileName="SistemaBancario31.xsd" MetadataType="Schema" ID="7ca5ba44-e4bb-4325-9a9d-c10b1e4400b4" SourceId="1" SourceUrl="http://localhost:50786/SistemaBancario.svc?xsd=xsd3" />
     <MetadataFile FileName="SistemaBancario1.xsd" MetadataType="Schema" ID="5cf2dcfc-b2ac-4b58-9b62-482f2eb8c78c" SourceId="1" SourceUrl="http://localhost:50786/SistemaBancario.svc?xsd=xsd2" />
     <MetadataFile FileName="SistemaBancario2.xsd" MetadataType="Schema" ID="2059cfd3-22d3-4024-b30f-b9292b39cf69" SourceId="1" SourceUrl="http://localhost:50786/SistemaBancario.svc?xsd=xsd0" />
   </Metadata>

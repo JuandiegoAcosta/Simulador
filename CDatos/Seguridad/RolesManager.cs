@@ -14,7 +14,7 @@ namespace CDatos.Manager
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>		
-        public bool Insert(RolesModel aRolesModel)
+        public bool Insert(RolesModel aRolesModel, int ID_user)
         {
             try
             {
@@ -29,15 +29,19 @@ namespace CDatos.Manager
                     command.Transaction = sqlTran;
 
                     command.Parameters.AddWithValue("@pMode", 4);
+                    command.Parameters.AddWithValue("@ID_user", ID_user);
 
                     command.Parameters.AddWithValue("@Descripcion", aRolesModel.Descripcion);
-                    command.Parameters.AddWithValue("@FECHA_CREACION", aRolesModel.Fecha_creacion);
-                    command.Parameters.AddWithValue("@USUARIO_CREADOR", aRolesModel.Usuario_creador);
+
+                    SqlParameter paramId = new SqlParameter("@IDENTITY", SqlDbType.Int);
+                    paramId.Direction = ParameterDirection.Output;
+                    command.Parameters.Add(paramId);
 
                     command.CommandType = CommandType.StoredProcedure;
                     command.CommandText = "sp_tRoles";
 
                     int afectados = command.ExecuteNonQuery();
+                    int identity = Convert.ToInt32(command.Parameters["@IDENTITY"].Value.ToString());
 
                     // Commit the transaction.
                     sqlTran.Commit();
@@ -63,7 +67,7 @@ namespace CDatos.Manager
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>
-        public bool Update(RolesModel aRolesModel)
+        public bool Update(RolesModel aRolesModel, int ID_user)
         {
             try
             {
@@ -78,11 +82,10 @@ namespace CDatos.Manager
                     command.Transaction = sqlTran;
 
                     command.Parameters.AddWithValue("@pMode", 5);
+                    command.Parameters.AddWithValue("@ID_user", ID_user);
 
                     command.Parameters.AddWithValue("@Id", aRolesModel.Id);
                     command.Parameters.AddWithValue("@Descripcion", aRolesModel.Descripcion);
-                    command.Parameters.AddWithValue("@FECHA_MODIFICACION", aRolesModel.Fecha_modificacion == null ? (object)DBNull.Value : aRolesModel.Fecha_modificacion);
-                    command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aRolesModel.Usuario_modificador == null ? (object)DBNull.Value : aRolesModel.Usuario_modificador);
 
                     command.CommandType = CommandType.StoredProcedure;
                     command.CommandText = "sp_tRoles";
@@ -184,19 +187,12 @@ namespace CDatos.Manager
 
                             int Id = (int)(reader["Id"]);
                             string Descripcion = (string)(reader["Descripcion"]);
-                            DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
-                            DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
-                            string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
-                            string USUARIO_MODIFICADOR = (reader["USUARIO_MODIFICADOR"]) == DBNull.Value ? null : (string)(reader["USUARIO_MODIFICADOR"]);
-
+                           
                             RolesModel = new RolesModel
                             {
                                 Id = Id,
                                 Descripcion = Descripcion,
-                                Fecha_creacion = FECHA_CREACION,
-                                Fecha_modificacion = FECHA_MODIFICACION,
-                                Usuario_creador = USUARIO_CREADOR,
-                                Usuario_modificador = USUARIO_MODIFICADOR,
+                                
                             };
                         }
                     }
@@ -241,20 +237,12 @@ namespace CDatos.Manager
 
                             int Id = (int)(reader["Id"]);
                             string Descripcion = (string)(reader["Descripcion"]);
-                            DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
-                            DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
-                            string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
-                            string USUARIO_MODIFICADOR = (reader["USUARIO_MODIFICADOR"]) == DBNull.Value ? null : (string)(reader["USUARIO_MODIFICADOR"]);
-
+                            
                             RolesModellist.Add(new RolesModel
                             {
                                 Id = Id,
                                 Descripcion = Descripcion,
-                                Fecha_creacion = FECHA_CREACION,
-                                Fecha_modificacion = FECHA_MODIFICACION,
-                                Usuario_creador = USUARIO_CREADOR,
-                                Usuario_modificador = USUARIO_MODIFICADOR,
-
+                               
                             });
                         }
                     }
@@ -300,20 +288,11 @@ namespace CDatos.Manager
 
                             int Id = (int)(reader["Id"]);
                             string Descripcion = (string)(reader["Descripcion"]);
-                            DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
-                            DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
-                            string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
-                            string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
-
+                            
                             RolesModellist.Add(new RolesModel
                             {
                                 Id = Id,
                                 Descripcion = Descripcion,
-                                Fecha_creacion = FECHA_CREACION,
-                                Fecha_modificacion = FECHA_MODIFICACION,
-                                Usuario_creador = USUARIO_CREADOR,
-                                Usuario_modificador = USUARIO_MODIFICADOR,
-
                             });
                         }
                     }

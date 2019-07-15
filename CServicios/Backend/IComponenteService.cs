@@ -12,10 +12,10 @@ namespace ServiciosBancarios.Backend
     interface IComponenteService
     {
         [OperationContract]
-        bool Componente_Crear(ComponenteModel aComponente);
+        bool Componente_Crear(ComponenteModel aComponente, int id_user);
 
         [OperationContract]
-        bool Componente_Editar(ComponenteModel aComponente);
+        bool Componente_Editar(ComponenteModel aComponente, int id_user);
 
         [OperationContract]
         bool Componente_Eliminar(int aID_Componente);

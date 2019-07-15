@@ -634,16 +634,16 @@ namespace Sistema_Bancario.WsSistemaBancario {
     public interface IVentanillaService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVentanillaService/Ventanilla_Crear", ReplyAction="http://tempuri.org/IVentanillaService/Ventanilla_CrearResponse")]
-        bool Ventanilla_Crear(Modelos.Modelos.VentanillaModel aVentanilla);
+        bool Ventanilla_Crear(Modelos.Modelos.VentanillaModel aVentanilla, int id_user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVentanillaService/Ventanilla_Crear", ReplyAction="http://tempuri.org/IVentanillaService/Ventanilla_CrearResponse")]
-        System.Threading.Tasks.Task<bool> Ventanilla_CrearAsync(Modelos.Modelos.VentanillaModel aVentanilla);
+        System.Threading.Tasks.Task<bool> Ventanilla_CrearAsync(Modelos.Modelos.VentanillaModel aVentanilla, int id_user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVentanillaService/Ventanilla_Editar", ReplyAction="http://tempuri.org/IVentanillaService/Ventanilla_EditarResponse")]
-        bool Ventanilla_Editar(Modelos.Modelos.VentanillaModel aVentanilla);
+        bool Ventanilla_Editar(Modelos.Modelos.VentanillaModel aVentanilla, int id_user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVentanillaService/Ventanilla_Editar", ReplyAction="http://tempuri.org/IVentanillaService/Ventanilla_EditarResponse")]
-        System.Threading.Tasks.Task<bool> Ventanilla_EditarAsync(Modelos.Modelos.VentanillaModel aVentanilla);
+        System.Threading.Tasks.Task<bool> Ventanilla_EditarAsync(Modelos.Modelos.VentanillaModel aVentanilla, int id_user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVentanillaService/Ventanilla_Eliminar", ReplyAction="http://tempuri.org/IVentanillaService/Ventanilla_EliminarResponse")]
         bool Ventanilla_Eliminar(int aID_VentanillaModel);
@@ -703,20 +703,20 @@ namespace Sistema_Bancario.WsSistemaBancario {
                 base(binding, remoteAddress) {
         }
         
-        public bool Ventanilla_Crear(Modelos.Modelos.VentanillaModel aVentanilla) {
-            return base.Channel.Ventanilla_Crear(aVentanilla);
+        public bool Ventanilla_Crear(Modelos.Modelos.VentanillaModel aVentanilla, int id_user) {
+            return base.Channel.Ventanilla_Crear(aVentanilla, id_user);
         }
         
-        public System.Threading.Tasks.Task<bool> Ventanilla_CrearAsync(Modelos.Modelos.VentanillaModel aVentanilla) {
-            return base.Channel.Ventanilla_CrearAsync(aVentanilla);
+        public System.Threading.Tasks.Task<bool> Ventanilla_CrearAsync(Modelos.Modelos.VentanillaModel aVentanilla, int id_user) {
+            return base.Channel.Ventanilla_CrearAsync(aVentanilla, id_user);
         }
         
-        public bool Ventanilla_Editar(Modelos.Modelos.VentanillaModel aVentanilla) {
-            return base.Channel.Ventanilla_Editar(aVentanilla);
+        public bool Ventanilla_Editar(Modelos.Modelos.VentanillaModel aVentanilla, int id_user) {
+            return base.Channel.Ventanilla_Editar(aVentanilla, id_user);
         }
         
-        public System.Threading.Tasks.Task<bool> Ventanilla_EditarAsync(Modelos.Modelos.VentanillaModel aVentanilla) {
-            return base.Channel.Ventanilla_EditarAsync(aVentanilla);
+        public System.Threading.Tasks.Task<bool> Ventanilla_EditarAsync(Modelos.Modelos.VentanillaModel aVentanilla, int id_user) {
+            return base.Channel.Ventanilla_EditarAsync(aVentanilla, id_user);
         }
         
         public bool Ventanilla_Eliminar(int aID_VentanillaModel) {
@@ -765,16 +765,16 @@ namespace Sistema_Bancario.WsSistemaBancario {
     public interface IBancoService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBancoService/Banco_Crear", ReplyAction="http://tempuri.org/IBancoService/Banco_CrearResponse")]
-        bool Banco_Crear(Modelos.Modelos.BancoModel aBanco);
+        bool Banco_Crear(Modelos.Modelos.BancoModel aBanco, int id_user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBancoService/Banco_Crear", ReplyAction="http://tempuri.org/IBancoService/Banco_CrearResponse")]
-        System.Threading.Tasks.Task<bool> Banco_CrearAsync(Modelos.Modelos.BancoModel aBanco);
+        System.Threading.Tasks.Task<bool> Banco_CrearAsync(Modelos.Modelos.BancoModel aBanco, int id_user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBancoService/Banco_Editar", ReplyAction="http://tempuri.org/IBancoService/Banco_EditarResponse")]
-        bool Banco_Editar(Modelos.Modelos.BancoModel aBanco);
+        bool Banco_Editar(Modelos.Modelos.BancoModel aBanco, int id_user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBancoService/Banco_Editar", ReplyAction="http://tempuri.org/IBancoService/Banco_EditarResponse")]
-        System.Threading.Tasks.Task<bool> Banco_EditarAsync(Modelos.Modelos.BancoModel aBanco);
+        System.Threading.Tasks.Task<bool> Banco_EditarAsync(Modelos.Modelos.BancoModel aBanco, int id_user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBancoService/Banco_Eliminar", ReplyAction="http://tempuri.org/IBancoService/Banco_EliminarResponse")]
         bool Banco_Eliminar(int aID_Banco);
@@ -822,20 +822,20 @@ namespace Sistema_Bancario.WsSistemaBancario {
                 base(binding, remoteAddress) {
         }
         
-        public bool Banco_Crear(Modelos.Modelos.BancoModel aBanco) {
-            return base.Channel.Banco_Crear(aBanco);
+        public bool Banco_Crear(Modelos.Modelos.BancoModel aBanco, int id_user) {
+            return base.Channel.Banco_Crear(aBanco, id_user);
         }
         
-        public System.Threading.Tasks.Task<bool> Banco_CrearAsync(Modelos.Modelos.BancoModel aBanco) {
-            return base.Channel.Banco_CrearAsync(aBanco);
+        public System.Threading.Tasks.Task<bool> Banco_CrearAsync(Modelos.Modelos.BancoModel aBanco, int id_user) {
+            return base.Channel.Banco_CrearAsync(aBanco, id_user);
         }
         
-        public bool Banco_Editar(Modelos.Modelos.BancoModel aBanco) {
-            return base.Channel.Banco_Editar(aBanco);
+        public bool Banco_Editar(Modelos.Modelos.BancoModel aBanco, int id_user) {
+            return base.Channel.Banco_Editar(aBanco, id_user);
         }
         
-        public System.Threading.Tasks.Task<bool> Banco_EditarAsync(Modelos.Modelos.BancoModel aBanco) {
-            return base.Channel.Banco_EditarAsync(aBanco);
+        public System.Threading.Tasks.Task<bool> Banco_EditarAsync(Modelos.Modelos.BancoModel aBanco, int id_user) {
+            return base.Channel.Banco_EditarAsync(aBanco, id_user);
         }
         
         public bool Banco_Eliminar(int aID_Banco) {
@@ -868,16 +868,16 @@ namespace Sistema_Bancario.WsSistemaBancario {
     public interface IComponenteService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IComponenteService/Componente_Crear", ReplyAction="http://tempuri.org/IComponenteService/Componente_CrearResponse")]
-        bool Componente_Crear(Modelos.Modelos.ComponenteModel aComponente);
+        bool Componente_Crear(Modelos.Modelos.ComponenteModel aComponente, int id_user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IComponenteService/Componente_Crear", ReplyAction="http://tempuri.org/IComponenteService/Componente_CrearResponse")]
-        System.Threading.Tasks.Task<bool> Componente_CrearAsync(Modelos.Modelos.ComponenteModel aComponente);
+        System.Threading.Tasks.Task<bool> Componente_CrearAsync(Modelos.Modelos.ComponenteModel aComponente, int id_user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IComponenteService/Componente_Editar", ReplyAction="http://tempuri.org/IComponenteService/Componente_EditarResponse")]
-        bool Componente_Editar(Modelos.Modelos.ComponenteModel aComponente);
+        bool Componente_Editar(Modelos.Modelos.ComponenteModel aComponente, int id_user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IComponenteService/Componente_Editar", ReplyAction="http://tempuri.org/IComponenteService/Componente_EditarResponse")]
-        System.Threading.Tasks.Task<bool> Componente_EditarAsync(Modelos.Modelos.ComponenteModel aComponente);
+        System.Threading.Tasks.Task<bool> Componente_EditarAsync(Modelos.Modelos.ComponenteModel aComponente, int id_user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IComponenteService/Componente_Eliminar", ReplyAction="http://tempuri.org/IComponenteService/Componente_EliminarResponse")]
         bool Componente_Eliminar(int aID_Componente);
@@ -931,20 +931,20 @@ namespace Sistema_Bancario.WsSistemaBancario {
                 base(binding, remoteAddress) {
         }
         
-        public bool Componente_Crear(Modelos.Modelos.ComponenteModel aComponente) {
-            return base.Channel.Componente_Crear(aComponente);
+        public bool Componente_Crear(Modelos.Modelos.ComponenteModel aComponente, int id_user) {
+            return base.Channel.Componente_Crear(aComponente, id_user);
         }
         
-        public System.Threading.Tasks.Task<bool> Componente_CrearAsync(Modelos.Modelos.ComponenteModel aComponente) {
-            return base.Channel.Componente_CrearAsync(aComponente);
+        public System.Threading.Tasks.Task<bool> Componente_CrearAsync(Modelos.Modelos.ComponenteModel aComponente, int id_user) {
+            return base.Channel.Componente_CrearAsync(aComponente, id_user);
         }
         
-        public bool Componente_Editar(Modelos.Modelos.ComponenteModel aComponente) {
-            return base.Channel.Componente_Editar(aComponente);
+        public bool Componente_Editar(Modelos.Modelos.ComponenteModel aComponente, int id_user) {
+            return base.Channel.Componente_Editar(aComponente, id_user);
         }
         
-        public System.Threading.Tasks.Task<bool> Componente_EditarAsync(Modelos.Modelos.ComponenteModel aComponente) {
-            return base.Channel.Componente_EditarAsync(aComponente);
+        public System.Threading.Tasks.Task<bool> Componente_EditarAsync(Modelos.Modelos.ComponenteModel aComponente, int id_user) {
+            return base.Channel.Componente_EditarAsync(aComponente, id_user);
         }
         
         public bool Componente_Eliminar(int aID_Componente) {
@@ -1090,16 +1090,16 @@ namespace Sistema_Bancario.WsSistemaBancario {
     public interface IPermisosUsuarioService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPermisosUsuarioService/PermisosUsuario_Crear", ReplyAction="http://tempuri.org/IPermisosUsuarioService/PermisosUsuario_CrearResponse")]
-        bool PermisosUsuario_Crear(Modelos.Modelos.PermisosUsuarioModel aPermisosUsuario);
+        bool PermisosUsuario_Crear(Modelos.Modelos.PermisosUsuarioModel aPermisosUsuario, int id_user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPermisosUsuarioService/PermisosUsuario_Crear", ReplyAction="http://tempuri.org/IPermisosUsuarioService/PermisosUsuario_CrearResponse")]
-        System.Threading.Tasks.Task<bool> PermisosUsuario_CrearAsync(Modelos.Modelos.PermisosUsuarioModel aPermisosUsuario);
+        System.Threading.Tasks.Task<bool> PermisosUsuario_CrearAsync(Modelos.Modelos.PermisosUsuarioModel aPermisosUsuario, int id_user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPermisosUsuarioService/PermisosUsuario_Editar", ReplyAction="http://tempuri.org/IPermisosUsuarioService/PermisosUsuario_EditarResponse")]
-        bool PermisosUsuario_Editar(Modelos.Modelos.PermisosUsuarioModel aPermisosUsuario);
+        bool PermisosUsuario_Editar(Modelos.Modelos.PermisosUsuarioModel aPermisosUsuario, int id_user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPermisosUsuarioService/PermisosUsuario_Editar", ReplyAction="http://tempuri.org/IPermisosUsuarioService/PermisosUsuario_EditarResponse")]
-        System.Threading.Tasks.Task<bool> PermisosUsuario_EditarAsync(Modelos.Modelos.PermisosUsuarioModel aPermisosUsuario);
+        System.Threading.Tasks.Task<bool> PermisosUsuario_EditarAsync(Modelos.Modelos.PermisosUsuarioModel aPermisosUsuario, int id_user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPermisosUsuarioService/PermisosUsuario_Eliminar", ReplyAction="http://tempuri.org/IPermisosUsuarioService/PermisosUsuario_EliminarResponse")]
         bool PermisosUsuario_Eliminar(int aID_PermisosUsuario);
@@ -1147,20 +1147,20 @@ namespace Sistema_Bancario.WsSistemaBancario {
                 base(binding, remoteAddress) {
         }
         
-        public bool PermisosUsuario_Crear(Modelos.Modelos.PermisosUsuarioModel aPermisosUsuario) {
-            return base.Channel.PermisosUsuario_Crear(aPermisosUsuario);
+        public bool PermisosUsuario_Crear(Modelos.Modelos.PermisosUsuarioModel aPermisosUsuario, int id_user) {
+            return base.Channel.PermisosUsuario_Crear(aPermisosUsuario, id_user);
         }
         
-        public System.Threading.Tasks.Task<bool> PermisosUsuario_CrearAsync(Modelos.Modelos.PermisosUsuarioModel aPermisosUsuario) {
-            return base.Channel.PermisosUsuario_CrearAsync(aPermisosUsuario);
+        public System.Threading.Tasks.Task<bool> PermisosUsuario_CrearAsync(Modelos.Modelos.PermisosUsuarioModel aPermisosUsuario, int id_user) {
+            return base.Channel.PermisosUsuario_CrearAsync(aPermisosUsuario, id_user);
         }
         
-        public bool PermisosUsuario_Editar(Modelos.Modelos.PermisosUsuarioModel aPermisosUsuario) {
-            return base.Channel.PermisosUsuario_Editar(aPermisosUsuario);
+        public bool PermisosUsuario_Editar(Modelos.Modelos.PermisosUsuarioModel aPermisosUsuario, int id_user) {
+            return base.Channel.PermisosUsuario_Editar(aPermisosUsuario, id_user);
         }
         
-        public System.Threading.Tasks.Task<bool> PermisosUsuario_EditarAsync(Modelos.Modelos.PermisosUsuarioModel aPermisosUsuario) {
-            return base.Channel.PermisosUsuario_EditarAsync(aPermisosUsuario);
+        public System.Threading.Tasks.Task<bool> PermisosUsuario_EditarAsync(Modelos.Modelos.PermisosUsuarioModel aPermisosUsuario, int id_user) {
+            return base.Channel.PermisosUsuario_EditarAsync(aPermisosUsuario, id_user);
         }
         
         public bool PermisosUsuario_Eliminar(int aID_PermisosUsuario) {
@@ -1193,16 +1193,16 @@ namespace Sistema_Bancario.WsSistemaBancario {
     public interface IPersonaService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/Persona_Crear", ReplyAction="http://tempuri.org/IPersonaService/Persona_CrearResponse")]
-        bool Persona_Crear(Modelos.Modelos.PersonaModel aPersona);
+        bool Persona_Crear(Modelos.Modelos.PersonaModel aPersona, int id_user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/Persona_Crear", ReplyAction="http://tempuri.org/IPersonaService/Persona_CrearResponse")]
-        System.Threading.Tasks.Task<bool> Persona_CrearAsync(Modelos.Modelos.PersonaModel aPersona);
+        System.Threading.Tasks.Task<bool> Persona_CrearAsync(Modelos.Modelos.PersonaModel aPersona, int id_user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/Persona_Editar", ReplyAction="http://tempuri.org/IPersonaService/Persona_EditarResponse")]
-        bool Persona_Editar(Modelos.Modelos.PersonaModel aPersona);
+        bool Persona_Editar(Modelos.Modelos.PersonaModel aPersona, int id_user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/Persona_Editar", ReplyAction="http://tempuri.org/IPersonaService/Persona_EditarResponse")]
-        System.Threading.Tasks.Task<bool> Persona_EditarAsync(Modelos.Modelos.PersonaModel aPersona);
+        System.Threading.Tasks.Task<bool> Persona_EditarAsync(Modelos.Modelos.PersonaModel aPersona, int id_user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/Persona_Eliminar", ReplyAction="http://tempuri.org/IPersonaService/Persona_EliminarResponse")]
         bool Persona_Eliminar(int aID_Persona);
@@ -1304,20 +1304,20 @@ namespace Sistema_Bancario.WsSistemaBancario {
                 base(binding, remoteAddress) {
         }
         
-        public bool Persona_Crear(Modelos.Modelos.PersonaModel aPersona) {
-            return base.Channel.Persona_Crear(aPersona);
+        public bool Persona_Crear(Modelos.Modelos.PersonaModel aPersona, int id_user) {
+            return base.Channel.Persona_Crear(aPersona, id_user);
         }
         
-        public System.Threading.Tasks.Task<bool> Persona_CrearAsync(Modelos.Modelos.PersonaModel aPersona) {
-            return base.Channel.Persona_CrearAsync(aPersona);
+        public System.Threading.Tasks.Task<bool> Persona_CrearAsync(Modelos.Modelos.PersonaModel aPersona, int id_user) {
+            return base.Channel.Persona_CrearAsync(aPersona, id_user);
         }
         
-        public bool Persona_Editar(Modelos.Modelos.PersonaModel aPersona) {
-            return base.Channel.Persona_Editar(aPersona);
+        public bool Persona_Editar(Modelos.Modelos.PersonaModel aPersona, int id_user) {
+            return base.Channel.Persona_Editar(aPersona, id_user);
         }
         
-        public System.Threading.Tasks.Task<bool> Persona_EditarAsync(Modelos.Modelos.PersonaModel aPersona) {
-            return base.Channel.Persona_EditarAsync(aPersona);
+        public System.Threading.Tasks.Task<bool> Persona_EditarAsync(Modelos.Modelos.PersonaModel aPersona, int id_user) {
+            return base.Channel.Persona_EditarAsync(aPersona, id_user);
         }
         
         public bool Persona_Eliminar(int aID_Persona) {
@@ -1422,16 +1422,16 @@ namespace Sistema_Bancario.WsSistemaBancario {
     public interface IRolesService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRolesService/Roles_Crear", ReplyAction="http://tempuri.org/IRolesService/Roles_CrearResponse")]
-        bool Roles_Crear(Modelos.Modelos.RolesModel aRoles);
+        bool Roles_Crear(Modelos.Modelos.RolesModel aRoles, int id_user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRolesService/Roles_Crear", ReplyAction="http://tempuri.org/IRolesService/Roles_CrearResponse")]
-        System.Threading.Tasks.Task<bool> Roles_CrearAsync(Modelos.Modelos.RolesModel aRoles);
+        System.Threading.Tasks.Task<bool> Roles_CrearAsync(Modelos.Modelos.RolesModel aRoles, int id_user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRolesService/Roles_Editar", ReplyAction="http://tempuri.org/IRolesService/Roles_EditarResponse")]
-        bool Roles_Editar(Modelos.Modelos.RolesModel aRoles);
+        bool Roles_Editar(Modelos.Modelos.RolesModel aRoles, int id_user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRolesService/Roles_Editar", ReplyAction="http://tempuri.org/IRolesService/Roles_EditarResponse")]
-        System.Threading.Tasks.Task<bool> Roles_EditarAsync(Modelos.Modelos.RolesModel aRoles);
+        System.Threading.Tasks.Task<bool> Roles_EditarAsync(Modelos.Modelos.RolesModel aRoles, int id_user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRolesService/Roles_Eliminar", ReplyAction="http://tempuri.org/IRolesService/Roles_EliminarResponse")]
         bool Roles_Eliminar(int aID_Roles);
@@ -1485,20 +1485,20 @@ namespace Sistema_Bancario.WsSistemaBancario {
                 base(binding, remoteAddress) {
         }
         
-        public bool Roles_Crear(Modelos.Modelos.RolesModel aRoles) {
-            return base.Channel.Roles_Crear(aRoles);
+        public bool Roles_Crear(Modelos.Modelos.RolesModel aRoles, int id_user) {
+            return base.Channel.Roles_Crear(aRoles, id_user);
         }
         
-        public System.Threading.Tasks.Task<bool> Roles_CrearAsync(Modelos.Modelos.RolesModel aRoles) {
-            return base.Channel.Roles_CrearAsync(aRoles);
+        public System.Threading.Tasks.Task<bool> Roles_CrearAsync(Modelos.Modelos.RolesModel aRoles, int id_user) {
+            return base.Channel.Roles_CrearAsync(aRoles, id_user);
         }
         
-        public bool Roles_Editar(Modelos.Modelos.RolesModel aRoles) {
-            return base.Channel.Roles_Editar(aRoles);
+        public bool Roles_Editar(Modelos.Modelos.RolesModel aRoles, int id_user) {
+            return base.Channel.Roles_Editar(aRoles, id_user);
         }
         
-        public System.Threading.Tasks.Task<bool> Roles_EditarAsync(Modelos.Modelos.RolesModel aRoles) {
-            return base.Channel.Roles_EditarAsync(aRoles);
+        public System.Threading.Tasks.Task<bool> Roles_EditarAsync(Modelos.Modelos.RolesModel aRoles, int id_user) {
+            return base.Channel.Roles_EditarAsync(aRoles, id_user);
         }
         
         public bool Roles_Eliminar(int aID_Roles) {
@@ -1539,16 +1539,16 @@ namespace Sistema_Bancario.WsSistemaBancario {
     public interface IRolUsuarioService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRolUsuarioService/RolUsuario_Crear", ReplyAction="http://tempuri.org/IRolUsuarioService/RolUsuario_CrearResponse")]
-        bool RolUsuario_Crear(Modelos.Modelos.RolUsuarioModel aRolUsuario);
+        bool RolUsuario_Crear(Modelos.Modelos.RolUsuarioModel aRolUsuario, int id_user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRolUsuarioService/RolUsuario_Crear", ReplyAction="http://tempuri.org/IRolUsuarioService/RolUsuario_CrearResponse")]
-        System.Threading.Tasks.Task<bool> RolUsuario_CrearAsync(Modelos.Modelos.RolUsuarioModel aRolUsuario);
+        System.Threading.Tasks.Task<bool> RolUsuario_CrearAsync(Modelos.Modelos.RolUsuarioModel aRolUsuario, int id_user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRolUsuarioService/RolUsuario_Editar", ReplyAction="http://tempuri.org/IRolUsuarioService/RolUsuario_EditarResponse")]
-        bool RolUsuario_Editar(Modelos.Modelos.RolUsuarioModel aRolUsuario);
+        bool RolUsuario_Editar(Modelos.Modelos.RolUsuarioModel aRolUsuario, int id_user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRolUsuarioService/RolUsuario_Editar", ReplyAction="http://tempuri.org/IRolUsuarioService/RolUsuario_EditarResponse")]
-        System.Threading.Tasks.Task<bool> RolUsuario_EditarAsync(Modelos.Modelos.RolUsuarioModel aRolUsuario);
+        System.Threading.Tasks.Task<bool> RolUsuario_EditarAsync(Modelos.Modelos.RolUsuarioModel aRolUsuario, int id_user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRolUsuarioService/RolUsuario_Eliminar", ReplyAction="http://tempuri.org/IRolUsuarioService/RolUsuario_EliminarResponse")]
         bool RolUsuario_Eliminar(int aID_RolUsuario);
@@ -1596,20 +1596,20 @@ namespace Sistema_Bancario.WsSistemaBancario {
                 base(binding, remoteAddress) {
         }
         
-        public bool RolUsuario_Crear(Modelos.Modelos.RolUsuarioModel aRolUsuario) {
-            return base.Channel.RolUsuario_Crear(aRolUsuario);
+        public bool RolUsuario_Crear(Modelos.Modelos.RolUsuarioModel aRolUsuario, int id_user) {
+            return base.Channel.RolUsuario_Crear(aRolUsuario, id_user);
         }
         
-        public System.Threading.Tasks.Task<bool> RolUsuario_CrearAsync(Modelos.Modelos.RolUsuarioModel aRolUsuario) {
-            return base.Channel.RolUsuario_CrearAsync(aRolUsuario);
+        public System.Threading.Tasks.Task<bool> RolUsuario_CrearAsync(Modelos.Modelos.RolUsuarioModel aRolUsuario, int id_user) {
+            return base.Channel.RolUsuario_CrearAsync(aRolUsuario, id_user);
         }
         
-        public bool RolUsuario_Editar(Modelos.Modelos.RolUsuarioModel aRolUsuario) {
-            return base.Channel.RolUsuario_Editar(aRolUsuario);
+        public bool RolUsuario_Editar(Modelos.Modelos.RolUsuarioModel aRolUsuario, int id_user) {
+            return base.Channel.RolUsuario_Editar(aRolUsuario, id_user);
         }
         
-        public System.Threading.Tasks.Task<bool> RolUsuario_EditarAsync(Modelos.Modelos.RolUsuarioModel aRolUsuario) {
-            return base.Channel.RolUsuario_EditarAsync(aRolUsuario);
+        public System.Threading.Tasks.Task<bool> RolUsuario_EditarAsync(Modelos.Modelos.RolUsuarioModel aRolUsuario, int id_user) {
+            return base.Channel.RolUsuario_EditarAsync(aRolUsuario, id_user);
         }
         
         public bool RolUsuario_Eliminar(int aID_RolUsuario) {
@@ -1642,16 +1642,16 @@ namespace Sistema_Bancario.WsSistemaBancario {
     public interface ISucursalService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISucursalService/Sucursal_Crear", ReplyAction="http://tempuri.org/ISucursalService/Sucursal_CrearResponse")]
-        bool Sucursal_Crear(Modelos.Modelos.SucursalModel aSucursal);
+        bool Sucursal_Crear(Modelos.Modelos.SucursalModel aSucursal, int id_user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISucursalService/Sucursal_Crear", ReplyAction="http://tempuri.org/ISucursalService/Sucursal_CrearResponse")]
-        System.Threading.Tasks.Task<bool> Sucursal_CrearAsync(Modelos.Modelos.SucursalModel aSucursal);
+        System.Threading.Tasks.Task<bool> Sucursal_CrearAsync(Modelos.Modelos.SucursalModel aSucursal, int id_user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISucursalService/Sucursal_Editar", ReplyAction="http://tempuri.org/ISucursalService/Sucursal_EditarResponse")]
-        bool Sucursal_Editar(Modelos.Modelos.SucursalModel aSucursal);
+        bool Sucursal_Editar(Modelos.Modelos.SucursalModel aSucursal, int id_user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISucursalService/Sucursal_Editar", ReplyAction="http://tempuri.org/ISucursalService/Sucursal_EditarResponse")]
-        System.Threading.Tasks.Task<bool> Sucursal_EditarAsync(Modelos.Modelos.SucursalModel aSucursal);
+        System.Threading.Tasks.Task<bool> Sucursal_EditarAsync(Modelos.Modelos.SucursalModel aSucursal, int id_user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISucursalService/Sucursal_Eliminar", ReplyAction="http://tempuri.org/ISucursalService/Sucursal_EliminarResponse")]
         bool Sucursal_Eliminar(int aID_Sucursal);
@@ -1699,20 +1699,20 @@ namespace Sistema_Bancario.WsSistemaBancario {
                 base(binding, remoteAddress) {
         }
         
-        public bool Sucursal_Crear(Modelos.Modelos.SucursalModel aSucursal) {
-            return base.Channel.Sucursal_Crear(aSucursal);
+        public bool Sucursal_Crear(Modelos.Modelos.SucursalModel aSucursal, int id_user) {
+            return base.Channel.Sucursal_Crear(aSucursal, id_user);
         }
         
-        public System.Threading.Tasks.Task<bool> Sucursal_CrearAsync(Modelos.Modelos.SucursalModel aSucursal) {
-            return base.Channel.Sucursal_CrearAsync(aSucursal);
+        public System.Threading.Tasks.Task<bool> Sucursal_CrearAsync(Modelos.Modelos.SucursalModel aSucursal, int id_user) {
+            return base.Channel.Sucursal_CrearAsync(aSucursal, id_user);
         }
         
-        public bool Sucursal_Editar(Modelos.Modelos.SucursalModel aSucursal) {
-            return base.Channel.Sucursal_Editar(aSucursal);
+        public bool Sucursal_Editar(Modelos.Modelos.SucursalModel aSucursal, int id_user) {
+            return base.Channel.Sucursal_Editar(aSucursal, id_user);
         }
         
-        public System.Threading.Tasks.Task<bool> Sucursal_EditarAsync(Modelos.Modelos.SucursalModel aSucursal) {
-            return base.Channel.Sucursal_EditarAsync(aSucursal);
+        public System.Threading.Tasks.Task<bool> Sucursal_EditarAsync(Modelos.Modelos.SucursalModel aSucursal, int id_user) {
+            return base.Channel.Sucursal_EditarAsync(aSucursal, id_user);
         }
         
         public bool Sucursal_Eliminar(int aID_Sucursal) {
@@ -1848,16 +1848,16 @@ namespace Sistema_Bancario.WsSistemaBancario {
     public interface ITurnosService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITurnosService/Turnos_Crear", ReplyAction="http://tempuri.org/ITurnosService/Turnos_CrearResponse")]
-        bool Turnos_Crear(Modelos.Modelos.TurnosModel aTurnos);
+        bool Turnos_Crear(Modelos.Modelos.TurnosModel aTurnos, int id_user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITurnosService/Turnos_Crear", ReplyAction="http://tempuri.org/ITurnosService/Turnos_CrearResponse")]
-        System.Threading.Tasks.Task<bool> Turnos_CrearAsync(Modelos.Modelos.TurnosModel aTurnos);
+        System.Threading.Tasks.Task<bool> Turnos_CrearAsync(Modelos.Modelos.TurnosModel aTurnos, int id_user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITurnosService/Turnos_Editar", ReplyAction="http://tempuri.org/ITurnosService/Turnos_EditarResponse")]
-        bool Turnos_Editar(Modelos.Modelos.TurnosModel aTurnos);
+        bool Turnos_Editar(Modelos.Modelos.TurnosModel aTurnos, int id_user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITurnosService/Turnos_Editar", ReplyAction="http://tempuri.org/ITurnosService/Turnos_EditarResponse")]
-        System.Threading.Tasks.Task<bool> Turnos_EditarAsync(Modelos.Modelos.TurnosModel aTurnos);
+        System.Threading.Tasks.Task<bool> Turnos_EditarAsync(Modelos.Modelos.TurnosModel aTurnos, int id_user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITurnosService/Turnos_Eliminar", ReplyAction="http://tempuri.org/ITurnosService/Turnos_EliminarResponse")]
         bool Turnos_Eliminar(int aID_Turnos);
@@ -1911,20 +1911,20 @@ namespace Sistema_Bancario.WsSistemaBancario {
                 base(binding, remoteAddress) {
         }
         
-        public bool Turnos_Crear(Modelos.Modelos.TurnosModel aTurnos) {
-            return base.Channel.Turnos_Crear(aTurnos);
+        public bool Turnos_Crear(Modelos.Modelos.TurnosModel aTurnos, int id_user) {
+            return base.Channel.Turnos_Crear(aTurnos, id_user);
         }
         
-        public System.Threading.Tasks.Task<bool> Turnos_CrearAsync(Modelos.Modelos.TurnosModel aTurnos) {
-            return base.Channel.Turnos_CrearAsync(aTurnos);
+        public System.Threading.Tasks.Task<bool> Turnos_CrearAsync(Modelos.Modelos.TurnosModel aTurnos, int id_user) {
+            return base.Channel.Turnos_CrearAsync(aTurnos, id_user);
         }
         
-        public bool Turnos_Editar(Modelos.Modelos.TurnosModel aTurnos) {
-            return base.Channel.Turnos_Editar(aTurnos);
+        public bool Turnos_Editar(Modelos.Modelos.TurnosModel aTurnos, int id_user) {
+            return base.Channel.Turnos_Editar(aTurnos, id_user);
         }
         
-        public System.Threading.Tasks.Task<bool> Turnos_EditarAsync(Modelos.Modelos.TurnosModel aTurnos) {
-            return base.Channel.Turnos_EditarAsync(aTurnos);
+        public System.Threading.Tasks.Task<bool> Turnos_EditarAsync(Modelos.Modelos.TurnosModel aTurnos, int id_user) {
+            return base.Channel.Turnos_EditarAsync(aTurnos, id_user);
         }
         
         public bool Turnos_Eliminar(int aID_Turnos) {
@@ -1965,16 +1965,16 @@ namespace Sistema_Bancario.WsSistemaBancario {
     public interface ITurnoUsuarioService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITurnoUsuarioService/TurnoUsuario_Crear", ReplyAction="http://tempuri.org/ITurnoUsuarioService/TurnoUsuario_CrearResponse")]
-        bool TurnoUsuario_Crear(Modelos.Modelos.TurnoUsuarioModel aTurnoUsuario);
+        bool TurnoUsuario_Crear(Modelos.Modelos.TurnoUsuarioModel aTurnoUsuario, int id_user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITurnoUsuarioService/TurnoUsuario_Crear", ReplyAction="http://tempuri.org/ITurnoUsuarioService/TurnoUsuario_CrearResponse")]
-        System.Threading.Tasks.Task<bool> TurnoUsuario_CrearAsync(Modelos.Modelos.TurnoUsuarioModel aTurnoUsuario);
+        System.Threading.Tasks.Task<bool> TurnoUsuario_CrearAsync(Modelos.Modelos.TurnoUsuarioModel aTurnoUsuario, int id_user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITurnoUsuarioService/TurnoUsuario_Editar", ReplyAction="http://tempuri.org/ITurnoUsuarioService/TurnoUsuario_EditarResponse")]
-        bool TurnoUsuario_Editar(Modelos.Modelos.TurnoUsuarioModel aTurnoUsuario);
+        bool TurnoUsuario_Editar(Modelos.Modelos.TurnoUsuarioModel aTurnoUsuario, int id_user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITurnoUsuarioService/TurnoUsuario_Editar", ReplyAction="http://tempuri.org/ITurnoUsuarioService/TurnoUsuario_EditarResponse")]
-        System.Threading.Tasks.Task<bool> TurnoUsuario_EditarAsync(Modelos.Modelos.TurnoUsuarioModel aTurnoUsuario);
+        System.Threading.Tasks.Task<bool> TurnoUsuario_EditarAsync(Modelos.Modelos.TurnoUsuarioModel aTurnoUsuario, int id_user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITurnoUsuarioService/TurnoUsuario_Eliminar", ReplyAction="http://tempuri.org/ITurnoUsuarioService/TurnoUsuario_EliminarResponse")]
         bool TurnoUsuario_Eliminar(int aID_TurnoUsuario);
@@ -2022,20 +2022,20 @@ namespace Sistema_Bancario.WsSistemaBancario {
                 base(binding, remoteAddress) {
         }
         
-        public bool TurnoUsuario_Crear(Modelos.Modelos.TurnoUsuarioModel aTurnoUsuario) {
-            return base.Channel.TurnoUsuario_Crear(aTurnoUsuario);
+        public bool TurnoUsuario_Crear(Modelos.Modelos.TurnoUsuarioModel aTurnoUsuario, int id_user) {
+            return base.Channel.TurnoUsuario_Crear(aTurnoUsuario, id_user);
         }
         
-        public System.Threading.Tasks.Task<bool> TurnoUsuario_CrearAsync(Modelos.Modelos.TurnoUsuarioModel aTurnoUsuario) {
-            return base.Channel.TurnoUsuario_CrearAsync(aTurnoUsuario);
+        public System.Threading.Tasks.Task<bool> TurnoUsuario_CrearAsync(Modelos.Modelos.TurnoUsuarioModel aTurnoUsuario, int id_user) {
+            return base.Channel.TurnoUsuario_CrearAsync(aTurnoUsuario, id_user);
         }
         
-        public bool TurnoUsuario_Editar(Modelos.Modelos.TurnoUsuarioModel aTurnoUsuario) {
-            return base.Channel.TurnoUsuario_Editar(aTurnoUsuario);
+        public bool TurnoUsuario_Editar(Modelos.Modelos.TurnoUsuarioModel aTurnoUsuario, int id_user) {
+            return base.Channel.TurnoUsuario_Editar(aTurnoUsuario, id_user);
         }
         
-        public System.Threading.Tasks.Task<bool> TurnoUsuario_EditarAsync(Modelos.Modelos.TurnoUsuarioModel aTurnoUsuario) {
-            return base.Channel.TurnoUsuario_EditarAsync(aTurnoUsuario);
+        public System.Threading.Tasks.Task<bool> TurnoUsuario_EditarAsync(Modelos.Modelos.TurnoUsuarioModel aTurnoUsuario, int id_user) {
+            return base.Channel.TurnoUsuario_EditarAsync(aTurnoUsuario, id_user);
         }
         
         public bool TurnoUsuario_Eliminar(int aID_TurnoUsuario) {
@@ -2163,10 +2163,10 @@ namespace Sistema_Bancario.WsSistemaBancario {
         System.Threading.Tasks.Task<int> CrearAsync(Modelos.Modelos.CajaChicaModel aCajaChica, int id_user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICajaChicaService/Editar", ReplyAction="http://tempuri.org/ICajaChicaService/EditarResponse")]
-        bool Editar(Modelos.Modelos.CajaChicaModel aCajaChica);
+        bool Editar(Modelos.Modelos.CajaChicaModel aCajaChica, int id_user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICajaChicaService/Editar", ReplyAction="http://tempuri.org/ICajaChicaService/EditarResponse")]
-        System.Threading.Tasks.Task<bool> EditarAsync(Modelos.Modelos.CajaChicaModel aCajaChica);
+        System.Threading.Tasks.Task<bool> EditarAsync(Modelos.Modelos.CajaChicaModel aCajaChica, int id_user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICajaChicaService/Eliminar", ReplyAction="http://tempuri.org/ICajaChicaService/EliminarResponse")]
         bool Eliminar(int aID_CajaChica);
@@ -2222,12 +2222,12 @@ namespace Sistema_Bancario.WsSistemaBancario {
             return base.Channel.CrearAsync(aCajaChica, id_user);
         }
         
-        public bool Editar(Modelos.Modelos.CajaChicaModel aCajaChica) {
-            return base.Channel.Editar(aCajaChica);
+        public bool Editar(Modelos.Modelos.CajaChicaModel aCajaChica, int id_user) {
+            return base.Channel.Editar(aCajaChica, id_user);
         }
         
-        public System.Threading.Tasks.Task<bool> EditarAsync(Modelos.Modelos.CajaChicaModel aCajaChica) {
-            return base.Channel.EditarAsync(aCajaChica);
+        public System.Threading.Tasks.Task<bool> EditarAsync(Modelos.Modelos.CajaChicaModel aCajaChica, int id_user) {
+            return base.Channel.EditarAsync(aCajaChica, id_user);
         }
         
         public bool Eliminar(int aID_CajaChica) {

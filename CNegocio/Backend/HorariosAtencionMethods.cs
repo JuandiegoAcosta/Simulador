@@ -16,6 +16,13 @@ namespace CNegocio.Backend
         {
             ADHorariosAtencionManager = new HorariosAtencionManager();
         }
+
+        /// <summary>
+        /// Saves a record to the horarios table.
+        /// returns True if value saved successfully else false
+        /// Throw exception with message value EXISTS if the data is duplicate
+        /// </summary>	
+
         public bool Crear(HorariosAtencionModel aHorariosAtencion)
         {
             return ADHorariosAtencionManager.Insert(aHorariosAtencion);
