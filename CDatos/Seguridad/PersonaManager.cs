@@ -17,7 +17,7 @@ namespace CDatos.Manager
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>		
-        public bool Insert(PersonaModel apersona, int ID_user)
+        public bool Insert(PersonaModel apersona)
         {
             try
             {
@@ -31,7 +31,6 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
                     command.Parameters.AddWithValue("@pMode", 4);
-                    command.Parameters.AddWithValue("@ID_user", ID_user);
                     command.Parameters.AddWithValue("@NombreUsuario", apersona.Nombreusuario == null ? (object)DBNull.Value : apersona.Nombreusuario);
                     command.Parameters.AddWithValue("@Pass", apersona.Pass == null ? (object)DBNull.Value : apersona.Pass);
                     command.Parameters.AddWithValue("@Correo", apersona.Correo == null ? (object)DBNull.Value : apersona.Correo);
@@ -43,6 +42,8 @@ namespace CDatos.Manager
                     command.Parameters.AddWithValue("@NroDocumento", apersona.Nrodocumento);
                     command.Parameters.AddWithValue("@TipoDocumento", apersona.Tipodocumento);
                     command.Parameters.AddWithValue("@Tipo_Persona", apersona.Tipo_persona == null ? (object)DBNull.Value : apersona.Tipo_persona);
+                    command.Parameters.AddWithValue("@Usuario_creador", apersona.Usuario_creador);
+                    command.Parameters.AddWithValue("@Usuario_modificador", apersona.Usuario_modificador == null ? (object)DBNull.Value : apersona.Usuario_modificador);
 
                     SqlParameter paramId = new SqlParameter("@IDENTITY", SqlDbType.Int);
                     paramId.Direction = ParameterDirection.Output;
@@ -79,7 +80,7 @@ namespace CDatos.Manager
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>
-        public bool Update(PersonaModel apersona, int ID_user)
+        public bool Update(PersonaModel apersona)
         {
             try
             {
@@ -93,7 +94,6 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
                     command.Parameters.AddWithValue("@pMode", 5);
-                    command.Parameters.AddWithValue("@ID_user", ID_user);
                     command.Parameters.AddWithValue("@Id", apersona.Id);
                     command.Parameters.AddWithValue("@NombreUsuario", apersona.Nombreusuario == null ? (object)DBNull.Value : apersona.Nombreusuario);
                     command.Parameters.AddWithValue("@Pass", apersona.Pass == null ? (object)DBNull.Value : apersona.Pass);
@@ -106,6 +106,8 @@ namespace CDatos.Manager
                     command.Parameters.AddWithValue("@NroDocumento", apersona.Nrodocumento);
                     command.Parameters.AddWithValue("@TipoDocumento", apersona.Tipodocumento);
                     command.Parameters.AddWithValue("@Tipo_Persona", apersona.Tipo_persona == null ? (object)DBNull.Value : apersona.Tipo_persona);
+                    command.Parameters.AddWithValue("@Usuario_creador", apersona.Usuario_creador);
+                    command.Parameters.AddWithValue("@Usuario_modificador", apersona.Usuario_modificador == null ? (object)DBNull.Value : apersona.Usuario_modificador);
 
 
                     command.CommandType = CommandType.StoredProcedure;

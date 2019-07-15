@@ -82,6 +82,29 @@ namespace Modelos.Modelos
         public string Tipo_persona
         { get; set; }
 
+        /// <summary>
+        /// Gets or sets the Fecha_creacion value.
+        /// </summary>
+        public DateTime Fecha_creacion
+        { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Fecha_modificacion value.
+        /// </summary>
+        public DateTime? Fecha_modificacion
+        { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Usuario_modificador value.
+        /// </summary>
+        public string Usuario_modificador
+        { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Usuario_modificador value.
+        /// </summary>
+        public string Usuario_creador
+        { get; set; } 
 
         #endregion
     }
