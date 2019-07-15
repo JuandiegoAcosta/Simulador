@@ -272,7 +272,8 @@ namespace Sistema_Bancario
             }
             else if (btn.Text.Equals("Balancin Caja"))
             {
-                CrearControl<UserControl>(Balancin.instance, btn);
+                Balancin balancin = new Balancin(Session);
+                CrearControl<UserControl>(balancin, btn);
             }
             else if (btn.Text.Equals("Resumen total"))
             {
