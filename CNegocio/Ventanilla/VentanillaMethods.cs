@@ -41,9 +41,9 @@ namespace CNegocio.Ventanilla
         {
             return ADVentanillaManager.VentanillaModelSelectAll();
         }
-        public List<VentanillaModel> ObtenerVentanillasXSucursal(int sucursal)
+        public List<VentanillaModel> ObtenerVentanillasXSucursal(int sucursal, int turno)
         {
-            return ADVentanillaManager.GetVentanillasXSucursal(sucursal);
+            return ADVentanillaManager.GetVentanillasXSucursal(sucursal,turno);
         }
     }
 

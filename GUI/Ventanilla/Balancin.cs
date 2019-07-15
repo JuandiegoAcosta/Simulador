@@ -83,13 +83,13 @@ namespace Sistema_Bancario.Ventanilla
             {
                 using (WsSistemaBancario.VentanillaServiceClient ventanilla = new WsSistemaBancario.VentanillaServiceClient())
                 {
-                    this.cmbVentanillas.DataSource = ventanilla.GetVentanillasXSucursal(Convert.ToInt32(this.session.SucursalCodigo));
+                    this.cmbVentanillas.DataSource = ventanilla.GetVentanillasXSucursal(Convert.ToInt32(this.session.SucursalCodigo), Convert.ToInt32(this.session.TurnoCodigo));
                     this.cmbVentanillas.DisplayMember = "Descripcion";
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ocurrio un error");
+                MessageBox.Show("Ocurrio un error al cargar ventanillas en el combo");
                
             }
             

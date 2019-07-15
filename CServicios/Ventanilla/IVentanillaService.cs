@@ -30,6 +30,6 @@ namespace ServiciosBancarios.Ventanilla
         List<VentanillaModel> Ventanilla_ObtenerTodos();
 
         [OperationContract]
-        List<VentanillaModel> GetVentanillasXSucursal(int Idsucursal);
+        List<VentanillaModel> GetVentanillasXSucursal(int Idsucursal,int Idturno);
     }
 }

@@ -670,10 +670,10 @@ namespace Sistema_Bancario.WsSistemaBancario {
         System.Threading.Tasks.Task<Modelos.Modelos.VentanillaModel[]> Ventanilla_ObtenerTodosAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVentanillaService/GetVentanillasXSucursal", ReplyAction="http://tempuri.org/IVentanillaService/GetVentanillasXSucursalResponse")]
-        Modelos.Modelos.VentanillaModel[] GetVentanillasXSucursal(int Idsucursal);
+        Modelos.Modelos.VentanillaModel[] GetVentanillasXSucursal(int Idsucursal, int Idturno);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVentanillaService/GetVentanillasXSucursal", ReplyAction="http://tempuri.org/IVentanillaService/GetVentanillasXSucursalResponse")]
-        System.Threading.Tasks.Task<Modelos.Modelos.VentanillaModel[]> GetVentanillasXSucursalAsync(int Idsucursal);
+        System.Threading.Tasks.Task<Modelos.Modelos.VentanillaModel[]> GetVentanillasXSucursalAsync(int Idsucursal, int Idturno);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -751,12 +751,12 @@ namespace Sistema_Bancario.WsSistemaBancario {
             return base.Channel.Ventanilla_ObtenerTodosAsync();
         }
         
-        public Modelos.Modelos.VentanillaModel[] GetVentanillasXSucursal(int Idsucursal) {
-            return base.Channel.GetVentanillasXSucursal(Idsucursal);
+        public Modelos.Modelos.VentanillaModel[] GetVentanillasXSucursal(int Idsucursal, int Idturno) {
+            return base.Channel.GetVentanillasXSucursal(Idsucursal, Idturno);
         }
         
-        public System.Threading.Tasks.Task<Modelos.Modelos.VentanillaModel[]> GetVentanillasXSucursalAsync(int Idsucursal) {
-            return base.Channel.GetVentanillasXSucursalAsync(Idsucursal);
+        public System.Threading.Tasks.Task<Modelos.Modelos.VentanillaModel[]> GetVentanillasXSucursalAsync(int Idsucursal, int Idturno) {
+            return base.Channel.GetVentanillasXSucursalAsync(Idsucursal, Idturno);
         }
     }
     

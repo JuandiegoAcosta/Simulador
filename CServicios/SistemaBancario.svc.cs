@@ -287,9 +287,9 @@ namespace ServiciosBancarios
         {
             return BLVentanila.ObtenerUnoXUsuario(Id_Usuario);
         }
-        List<VentanillaModel> IVentanillaService.GetVentanillasXSucursal(int sucursal)
+        List<VentanillaModel> IVentanillaService.GetVentanillasXSucursal(int sucursal,int turno)
         {
-            return BLVentanila.ObtenerVentanillasXSucursal(sucursal);
+            return BLVentanila.ObtenerVentanillasXSucursal(sucursal,turno);
         }
         #endregion
 
