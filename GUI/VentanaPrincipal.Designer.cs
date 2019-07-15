@@ -34,6 +34,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.button11 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.BTAdministrador = new System.Windows.Forms.Button();
             this.BTOperaciones = new System.Windows.Forms.Button();
             this.BTReportes = new System.Windows.Forms.Button();
             this.BTGestion = new System.Windows.Forms.Button();
@@ -51,7 +52,6 @@
             this.toolStripStatusLabel10 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel9 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel8 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.BTAdministrador = new System.Windows.Forms.Button();
             this.panel4 = new Sistema_Bancario.Controles.GradentPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel6 = new Sistema_Bancario.Controles.GradentPanel();
@@ -116,12 +116,30 @@
             this.panel3.Size = new System.Drawing.Size(875, 32);
             this.panel3.TabIndex = 8;
             // 
+            // BTAdministrador
+            // 
+            this.BTAdministrador.BackColor = System.Drawing.Color.Transparent;
+            this.BTAdministrador.FlatAppearance.BorderSize = 0;
+            this.BTAdministrador.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack;
+            this.BTAdministrador.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
+            this.BTAdministrador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTAdministrador.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.BTAdministrador.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.BTAdministrador.Location = new System.Drawing.Point(364, 0);
+            this.BTAdministrador.Name = "BTAdministrador";
+            this.BTAdministrador.Size = new System.Drawing.Size(103, 32);
+            this.BTAdministrador.TabIndex = 12;
+            this.BTAdministrador.Text = "Administrador";
+            this.BTAdministrador.UseVisualStyleBackColor = false;
+            this.BTAdministrador.Visible = false;
+            this.BTAdministrador.Click += new System.EventHandler(this.BTAdministrador_Click);
+            // 
             // BTOperaciones
             // 
             this.BTOperaciones.BackColor = System.Drawing.Color.Transparent;
             this.BTOperaciones.FlatAppearance.BorderSize = 0;
-            this.BTOperaciones.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack;
-            this.BTOperaciones.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
+            this.BTOperaciones.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(96)))), ((int)(((byte)(147)))));
+            this.BTOperaciones.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(96)))), ((int)(((byte)(147)))));
             this.BTOperaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTOperaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.BTOperaciones.ForeColor = System.Drawing.SystemColors.WindowText;
@@ -189,7 +207,7 @@
             this.TituloText.AutoSize = true;
             this.TituloText.BackColor = System.Drawing.Color.Transparent;
             this.TituloText.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold);
-            this.TituloText.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.TituloText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(96)))), ((int)(((byte)(147)))));
             this.TituloText.Location = new System.Drawing.Point(204, 67);
             this.TituloText.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TituloText.Name = "TituloText";
@@ -200,7 +218,7 @@
             // 
             // stStatus
             // 
-            this.stStatus.BackColor = System.Drawing.SystemColors.Window;
+            this.stStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(96)))), ((int)(((byte)(147)))));
             this.stStatus.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.stStatus.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblUsertType,
@@ -222,6 +240,8 @@
             // 
             // lblUsertType
             // 
+            this.lblUsertType.BackColor = System.Drawing.Color.Transparent;
+            this.lblUsertType.ForeColor = System.Drawing.SystemColors.Window;
             this.lblUsertType.Image = global::Sistema_Bancario.Properties.Resources.none;
             this.lblUsertType.Name = "lblUsertType";
             this.lblUsertType.Size = new System.Drawing.Size(88, 20);
@@ -229,12 +249,16 @@
             // 
             // lblUserValueType
             // 
+            this.lblUserValueType.BackColor = System.Drawing.Color.Transparent;
+            this.lblUserValueType.ForeColor = System.Drawing.SystemColors.Window;
             this.lblUserValueType.Name = "lblUserValueType";
             this.lblUserValueType.Size = new System.Drawing.Size(12, 20);
             this.lblUserValueType.Text = "?";
             // 
             // toolStripStatusLabel7
             // 
+            this.toolStripStatusLabel7.BackColor = System.Drawing.Color.Transparent;
+            this.toolStripStatusLabel7.ForeColor = System.Drawing.SystemColors.Window;
             this.toolStripStatusLabel7.Image = global::Sistema_Bancario.Properties.Resources.sucursal;
             this.toolStripStatusLabel7.Name = "toolStripStatusLabel7";
             this.toolStripStatusLabel7.Size = new System.Drawing.Size(77, 20);
@@ -242,12 +266,16 @@
             // 
             // lblSucursal
             // 
+            this.lblSucursal.BackColor = System.Drawing.Color.Transparent;
+            this.lblSucursal.ForeColor = System.Drawing.SystemColors.Window;
             this.lblSucursal.Name = "lblSucursal";
             this.lblSucursal.Size = new System.Drawing.Size(12, 20);
             this.lblSucursal.Text = "?";
             // 
             // toolStripStatusLabel2
             // 
+            this.toolStripStatusLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.toolStripStatusLabel2.ForeColor = System.Drawing.SystemColors.Window;
             this.toolStripStatusLabel2.Image = global::Sistema_Bancario.Properties.Resources.server;
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
             this.toolStripStatusLabel2.Size = new System.Drawing.Size(76, 20);
@@ -255,12 +283,16 @@
             // 
             // lblServidor
             // 
+            this.lblServidor.BackColor = System.Drawing.Color.Transparent;
+            this.lblServidor.ForeColor = System.Drawing.SystemColors.Window;
             this.lblServidor.Name = "lblServidor";
             this.lblServidor.Size = new System.Drawing.Size(12, 20);
             this.lblServidor.Text = "?";
             // 
             // toolStripStatusLabel4
             // 
+            this.toolStripStatusLabel4.BackColor = System.Drawing.Color.Transparent;
+            this.toolStripStatusLabel4.ForeColor = System.Drawing.SystemColors.Window;
             this.toolStripStatusLabel4.Image = global::Sistema_Bancario.Properties.Resources.database;
             this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
             this.toolStripStatusLabel4.Size = new System.Drawing.Size(81, 20);
@@ -268,18 +300,24 @@
             // 
             // lblDatabase
             // 
+            this.lblDatabase.BackColor = System.Drawing.Color.Transparent;
+            this.lblDatabase.ForeColor = System.Drawing.SystemColors.Window;
             this.lblDatabase.Name = "lblDatabase";
             this.lblDatabase.Size = new System.Drawing.Size(12, 20);
             this.lblDatabase.Text = "?";
             // 
             // toolStripStatusLabel10
             // 
+            this.toolStripStatusLabel10.BackColor = System.Drawing.Color.Transparent;
+            this.toolStripStatusLabel10.ForeColor = System.Drawing.SystemColors.Window;
             this.toolStripStatusLabel10.Name = "toolStripStatusLabel10";
             this.toolStripStatusLabel10.Size = new System.Drawing.Size(40, 20);
             this.toolStripStatusLabel10.Text = "     |     ";
             // 
             // toolStripStatusLabel9
             // 
+            this.toolStripStatusLabel9.BackColor = System.Drawing.Color.Transparent;
+            this.toolStripStatusLabel9.ForeColor = System.Drawing.SystemColors.Window;
             this.toolStripStatusLabel9.Image = ((System.Drawing.Image)(resources.GetObject("toolStripStatusLabel9.Image")));
             this.toolStripStatusLabel9.Name = "toolStripStatusLabel9";
             this.toolStripStatusLabel9.Size = new System.Drawing.Size(110, 20);
@@ -287,32 +325,16 @@
             // 
             // toolStripStatusLabel8
             // 
+            this.toolStripStatusLabel8.BackColor = System.Drawing.Color.Transparent;
+            this.toolStripStatusLabel8.ForeColor = System.Drawing.SystemColors.Window;
             this.toolStripStatusLabel8.Name = "toolStripStatusLabel8";
             this.toolStripStatusLabel8.Size = new System.Drawing.Size(0, 20);
-            // 
-            // BTAdministrador
-            // 
-            this.BTAdministrador.BackColor = System.Drawing.Color.Transparent;
-            this.BTAdministrador.FlatAppearance.BorderSize = 0;
-            this.BTAdministrador.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack;
-            this.BTAdministrador.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
-            this.BTAdministrador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BTAdministrador.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.BTAdministrador.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.BTAdministrador.Location = new System.Drawing.Point(364, 0);
-            this.BTAdministrador.Name = "BTAdministrador";
-            this.BTAdministrador.Size = new System.Drawing.Size(103, 32);
-            this.BTAdministrador.TabIndex = 12;
-            this.BTAdministrador.Text = "Administrador";
-            this.BTAdministrador.UseVisualStyleBackColor = false;
-            this.BTAdministrador.Visible = false;
-            this.BTAdministrador.Click += new System.EventHandler(this.BTAdministrador_Click);
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.panel4.ColorBottom = System.Drawing.Color.DarkBlue;
-            this.panel4.ColorTop = System.Drawing.SystemColors.HotTrack;
+            this.panel4.ColorBottom = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(96)))), ((int)(((byte)(147)))));
+            this.panel4.ColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(96)))), ((int)(((byte)(147)))));
             this.panel4.Controls.Add(this.label2);
             this.panel4.Location = new System.Drawing.Point(0, 25);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
