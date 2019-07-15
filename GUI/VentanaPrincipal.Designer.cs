@@ -120,8 +120,8 @@
             // 
             this.BTAdministrador.BackColor = System.Drawing.Color.Transparent;
             this.BTAdministrador.FlatAppearance.BorderSize = 0;
-            this.BTAdministrador.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack;
-            this.BTAdministrador.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
+            this.BTAdministrador.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlLight;
+            this.BTAdministrador.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlLight;
             this.BTAdministrador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTAdministrador.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.BTAdministrador.ForeColor = System.Drawing.SystemColors.WindowText;
@@ -155,8 +155,8 @@
             // 
             this.BTReportes.BackColor = System.Drawing.Color.Transparent;
             this.BTReportes.FlatAppearance.BorderSize = 0;
-            this.BTReportes.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack;
-            this.BTReportes.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
+            this.BTReportes.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlLight;
+            this.BTReportes.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlLight;
             this.BTReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTReportes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.BTReportes.ForeColor = System.Drawing.SystemColors.WindowText;
@@ -172,8 +172,8 @@
             // 
             this.BTGestion.BackColor = System.Drawing.Color.Transparent;
             this.BTGestion.FlatAppearance.BorderSize = 0;
-            this.BTGestion.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack;
-            this.BTGestion.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
+            this.BTGestion.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlLight;
+            this.BTGestion.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlLight;
             this.BTGestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTGestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.BTGestion.ForeColor = System.Drawing.SystemColors.WindowText;
@@ -189,8 +189,8 @@
             // 
             this.BTPlataforma.BackColor = System.Drawing.Color.Transparent;
             this.BTPlataforma.FlatAppearance.BorderSize = 0;
-            this.BTPlataforma.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack;
-            this.BTPlataforma.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
+            this.BTPlataforma.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlLight;
+            this.BTPlataforma.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlLight;
             this.BTPlataforma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTPlataforma.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.BTPlataforma.ForeColor = System.Drawing.SystemColors.WindowText;
@@ -333,7 +333,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.panel4.ColorBottom = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(96)))), ((int)(((byte)(147)))));
+            this.panel4.ColorBottom = System.Drawing.Color.MidnightBlue;
             this.panel4.ColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(96)))), ((int)(((byte)(147)))));
             this.panel4.Controls.Add(this.label2);
             this.panel4.Location = new System.Drawing.Point(0, 25);
@@ -381,7 +381,7 @@
             this.button2.TabIndex = 16;
             this.button2.Text = "─";
             this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.Button2_Click);
+            this.button2.Click += new System.EventHandler(this.Minimizar_Click);
             // 
             // button1
             // 
@@ -396,7 +396,7 @@
             this.button1.TabIndex = 12;
             this.button1.Text = "X";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            this.button1.Click += new System.EventHandler(this.Cerrar_Click);
             // 
             // label1
             // 

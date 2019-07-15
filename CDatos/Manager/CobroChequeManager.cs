@@ -9,15 +9,15 @@ using Modelos.Modelos;
 
 namespace CDatos.Manager
 {
-    public class ChequeManager
+    public class CobroChequeManager
     {
         #region Methods
         /// <summary>
-        /// Saves a record to the ChequesModel table.
+        /// Saves a record to the CobroChequesModel table.
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>		
-        public bool Insert(ChequeModel aChequesModel)
+        public bool Insert(CobroChequesModel aCobroChequesModel)
         {
             try
             {
@@ -31,21 +31,18 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
-                    command.Parameters.AddWithValue("@Numero", aChequesModel.Numero);
-                    command.Parameters.AddWithValue("@FechaEmision", aChequesModel.Fechaemision);
-                    command.Parameters.AddWithValue("@FechaCobro", aChequesModel.Fechacobro == null ? (object)DBNull.Value : aChequesModel.Fechacobro);
-                    command.Parameters.AddWithValue("@Destinatario", aChequesModel.Destinatario);
-                    command.Parameters.AddWithValue("@Monto", aChequesModel.Monto);
-                   // command.Parameters.AddWithValue("@IDChequesModelra", aChequesModel.IdChequesModelra);
-                    command.Parameters.AddWithValue("@Estado", aChequesModel.Estado);
-                    command.Parameters.AddWithValue("@FECHA_CREACION", aChequesModel.Fecha_creacion);
-                    command.Parameters.AddWithValue("@FECHA_MODIFICACION", aChequesModel.Fecha_modificacion == null ? (object)DBNull.Value : aChequesModel.Fecha_modificacion);
-                    command.Parameters.AddWithValue("@USUARIO_CREACION", aChequesModel.Usuario_creacion);
-                    command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aChequesModel.Usuario_modificador == null ? (object)DBNull.Value : aChequesModel.Usuario_modificador);
+                    command.Parameters.AddWithValue("@ID_Cheque", aCobroChequesModel.Id_cheque);
+                    command.Parameters.AddWithValue("@Monto", aCobroChequesModel.Monto);
+                    command.Parameters.AddWithValue("@Estado_Cheque", aCobroChequesModel.Estado_cheque);
+                    command.Parameters.AddWithValue("@ID_Movimiento", aCobroChequesModel.Id_movimiento);
+                    command.Parameters.AddWithValue("@FECHA_CREACION", aCobroChequesModel.Fecha_creacion);
+                    command.Parameters.AddWithValue("@FECHA_MODIFICACION", aCobroChequesModel.Fecha_modificacion == null ? (object)DBNull.Value : aCobroChequesModel.Fecha_modificacion);
+                    command.Parameters.AddWithValue("@USUARIO_CREADOR", aCobroChequesModel.Usuario_creador);
+                    command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aCobroChequesModel.Usuario_modificador == null ? (object)DBNull.Value : aCobroChequesModel.Usuario_modificador);
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "ChequesModelInsert";
+                    command.CommandText = "CobroChequesModelInsert";
 
                     int afectados = command.ExecuteNonQuery();
 
@@ -68,15 +65,12 @@ namespace CDatos.Manager
         }
 
 
-       
-
-
         /// <summary>
-        /// Updates a record to the ChequesModel table.
+        /// Updates a record to the CobroChequesModel table.
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>
-        public bool Update(ChequeModel aChequesModel)
+        public bool Update(CobroChequesModel aCobroChequesModel)
         {
             try
             {
@@ -90,21 +84,18 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
-                    command.Parameters.AddWithValue("@Numero", aChequesModel.Numero);
-                    command.Parameters.AddWithValue("@FechaEmision", aChequesModel.Fechaemision);
-                    command.Parameters.AddWithValue("@FechaCobro", aChequesModel.Fechacobro == null ? (object)DBNull.Value : aChequesModel.Fechacobro);
-                    command.Parameters.AddWithValue("@Destinatario", aChequesModel.Destinatario);
-                    command.Parameters.AddWithValue("@Monto", aChequesModel.Monto);
-                   // command.Parameters.AddWithValue("@IDChequesModelra", aChequesModel.IdChequesModelra);
-                    command.Parameters.AddWithValue("@Estado", aChequesModel.Estado);
-                    command.Parameters.AddWithValue("@FECHA_CREACION", aChequesModel.Fecha_creacion);
-                    command.Parameters.AddWithValue("@FECHA_MODIFICACION", aChequesModel.Fecha_modificacion == null ? (object)DBNull.Value : aChequesModel.Fecha_modificacion);
-                    command.Parameters.AddWithValue("@USUARIO_CREACION", aChequesModel.Usuario_creacion);
-                    command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aChequesModel.Usuario_modificador == null ? (object)DBNull.Value : aChequesModel.Usuario_modificador);
+                    command.Parameters.AddWithValue("@ID_Cheque", aCobroChequesModel.Id_cheque);
+                    command.Parameters.AddWithValue("@Monto", aCobroChequesModel.Monto);
+                    command.Parameters.AddWithValue("@Estado_Cheque", aCobroChequesModel.Estado_cheque);
+                    command.Parameters.AddWithValue("@ID_Movimiento", aCobroChequesModel.Id_movimiento);
+                    command.Parameters.AddWithValue("@FECHA_CREACION", aCobroChequesModel.Fecha_creacion);
+                    command.Parameters.AddWithValue("@FECHA_MODIFICACION", aCobroChequesModel.Fecha_modificacion == null ? (object)DBNull.Value : aCobroChequesModel.Fecha_modificacion);
+                    command.Parameters.AddWithValue("@USUARIO_CREADOR", aCobroChequesModel.Usuario_creador);
+                    command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aCobroChequesModel.Usuario_modificador == null ? (object)DBNull.Value : aCobroChequesModel.Usuario_modificador);
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "ChequesModelUpdate";
+                    command.CommandText = "CobroChequesModelUpdate";
 
                     int afectados = command.ExecuteNonQuery();
 
@@ -128,11 +119,11 @@ namespace CDatos.Manager
 
 
         /// <summary>
-        /// Deletes record to the ChequesModel table.
+        /// Deletes record to the CobroChequesModel table.
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>
-        public bool Delete(int aNumero)
+        public bool Delete(int aID_Cheque, int aID_Movimiento)
         {
             try
             {
@@ -146,11 +137,12 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
-                    command.Parameters.AddWithValue("@Numero", aNumero);
+                    command.Parameters.AddWithValue("@ID_Cheque", aID_Cheque);
+                    command.Parameters.AddWithValue("@ID_Movimiento", aID_Movimiento);
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "ChequesModelDelete";
+                    command.CommandText = "CobroChequesModelDelete";
                     int afectados = command.ExecuteNonQuery();
 
                     // Commit the transaction.
@@ -173,11 +165,11 @@ namespace CDatos.Manager
 
 
         /// <summary>
-        /// Selects the Single object of ChequesModel table.
+        /// Selects the Single object of CobroChequesModel table.
         /// </summary>
-        public ChequeModel GetChequesModel(int aNumero)
+        public CobroChequesModel GetCobroChequesModel(int aID_Cheque, int aID_Movimiento)
         {
-            ChequeModel ChequesModel = null;
+            CobroChequesModel CobroChequesModel = null;
 
             try
             {
@@ -187,12 +179,13 @@ namespace CDatos.Manager
 
                     SqlCommand command = connection.CreateCommand();
 
-                    command.Parameters.AddWithValue("@Numero", aNumero);
+                    command.Parameters.AddWithValue("@ID_Cheque", aID_Cheque);
+                    command.Parameters.AddWithValue("@ID_Movimiento", aID_Movimiento);
 
 
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.CommandText = "ChequesModelSelect";
+                    command.CommandText = "CobroChequesModelSelect";
 
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -201,30 +194,24 @@ namespace CDatos.Manager
                         while (reader.Read())
                         {
 
-                            int Numero = (int)(reader["Numero"]);
-                            DateTime FechaEmision = (DateTime)(reader["FechaEmision"]);
-                            DateTime? FechaCobro = reader["FechaCobro"] as DateTime?;
-                            string Destinatario = (string)(reader["Destinatario"]);
+                            int ID_Cheque = (int)(reader["ID_Cheque"]);
                             decimal Monto = (decimal)(reader["Monto"]);
-                            int IDChequesModelra = (int)(reader["IDChequesModelra"]);
-                            string Estado = (string)(reader["Estado"]);
+                            bool Estado_Cheque = (bool)(reader["Estado_Cheque"]);
+                            int ID_Movimiento = (int)(reader["ID_Movimiento"]);
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
                             DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
-                            string USUARIO_CREACION = (string)(reader["USUARIO_CREACION"]);
+                            string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
                             string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
 
-                            ChequesModel = new ChequeModel
+                            CobroChequesModel = new CobroChequesModel
                             {
-                                Numero = Numero,
-                                Fechaemision = FechaEmision,
-                                Fechacobro = FechaCobro,
-                                Destinatario = Destinatario,
+                                Id_cheque = ID_Cheque,
                                 Monto = Monto,
-                              //  IdChequesModelra = IDChequesModelra,
-                                Estado = Estado,
+                                Estado_cheque = Estado_Cheque,
+                                Id_movimiento = ID_Movimiento,
                                 Fecha_creacion = FECHA_CREACION,
                                 Fecha_modificacion = FECHA_MODIFICACION,
-                                Usuario_creacion = USUARIO_CREACION,
+                                Usuario_creador = USUARIO_CREADOR,
                                 Usuario_modificador = USUARIO_MODIFICADOR,
 
                             };
@@ -232,7 +219,7 @@ namespace CDatos.Manager
                     }
                 }
 
-                return ChequesModel;
+                return CobroChequesModel;
             }
             catch (Exception)
             {
@@ -240,14 +227,59 @@ namespace CDatos.Manager
             }
         }
 
+        public bool CobroInsert(ChequeModel aChequesModel, string NroCuenta)
+        {
+            try
+            {
+                using (var connection = Util.ConnectionFactory.conexion())
+                {
+                    connection.Open();
+
+                    SqlTransaction sqlTran = connection.BeginTransaction();
+
+                    SqlCommand command = connection.CreateCommand();
+
+                    command.Transaction = sqlTran;
+
+                    command.Parameters.AddWithValue("@Numero", aChequesModel.Numero);
+                    // command.Parameters.AddWithValue("@Destinatario", aChequesModel.Destinatario);
+                    command.Parameters.AddWithValue("@Monto", aChequesModel.Monto);
+                    command.Parameters.AddWithValue("@cuentaReceptora", NroCuenta);
+                    // command.Parameters.AddWithValue("@IDChequesModelra", aChequesModel.IdChequesModelra);
+                    // command.Parameters.AddWithValue("@Estado", aChequesModel.Estado);                               
+                    //->  command.Parameters.AddWithValue("@USUARIO_CREACION", aChequesModel.Usuario_creacion);
+
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.CommandText = "cobroChequesInsert";
+
+                    int afectados = command.ExecuteNonQuery();
+
+                    // Commit the transaction.
+                    sqlTran.Commit();
+
+                    connection.Close();
+                    connection.Dispose();
+
+                    if (afectados > 0)
+                        return true;
+                    else
+                        return false;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
 
         /// <summary>
-        /// Selects all the objects of ChequesModel table.
+        /// Selects all the objects of CobroChequesModel table.
         /// </summary>
-        public List<ChequeModel> ChequesModelSelectAll()
+        public List<CobroChequesModel> CobroChequesModelSelectAll()
         {
 
-            List<ChequeModel> ChequesModellist = new List<ChequeModel>();
+            List<CobroChequesModel> CobroChequesModellist = new List<CobroChequesModel>();
 
             try
             {
@@ -259,7 +291,7 @@ namespace CDatos.Manager
 
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.CommandText = "ChequesModelSelectAll";
+                    command.CommandText = "CobroChequesModelSelectAll";
 
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -268,30 +300,24 @@ namespace CDatos.Manager
                         while (reader.Read())
                         {
 
-                            int Numero = (int)(reader["Numero"]);
-                            DateTime FechaEmision = (DateTime)(reader["FechaEmision"]);
-                            DateTime? FechaCobro = reader["FechaCobro"] as DateTime?;
-                            string Destinatario = (string)(reader["Destinatario"]);
+                            int ID_Cheque = (int)(reader["ID_Cheque"]);
                             decimal Monto = (decimal)(reader["Monto"]);
-                            int IDChequesModelra = (int)(reader["IDChequesModelra"]);
-                            string Estado = (string)(reader["Estado"]);
+                            bool Estado_Cheque = (bool)(reader["Estado_Cheque"]);
+                            int ID_Movimiento = (int)(reader["ID_Movimiento"]);
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
                             DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
-                            string USUARIO_CREACION = (string)(reader["USUARIO_CREACION"]);
+                            string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
                             string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
 
-                            ChequesModellist.Add(new ChequeModel
+                            CobroChequesModellist.Add(new CobroChequesModel
                             {
-                                Numero = Numero,
-                                Fechaemision = FechaEmision,
-                                Fechacobro = FechaCobro,
-                                Destinatario = Destinatario,
+                                Id_cheque = ID_Cheque,
                                 Monto = Monto,
-                            //    IdChequesModelra = IDChequesModelra,
-                                Estado = Estado,
+                                Estado_cheque = Estado_Cheque,
+                                Id_movimiento = ID_Movimiento,
                                 Fecha_creacion = FECHA_CREACION,
                                 Fecha_modificacion = FECHA_MODIFICACION,
-                                Usuario_creacion = USUARIO_CREACION,
+                                Usuario_creador = USUARIO_CREADOR,
                                 Usuario_modificador = USUARIO_MODIFICADOR,
 
                             });
@@ -299,22 +325,22 @@ namespace CDatos.Manager
                     }
                 }
 
-                return ChequesModellist;
+                return CobroChequesModellist;
             }
             catch (Exception)
             {
-                return ChequesModellist;
+                return CobroChequesModellist;
             }
         }
 
 
         /// <summary>
-        /// Selects the Multiple objects of ChequesModel table by a given criteria.
+        /// Selects the Multiple objects of CobroChequesModel table by a given criteria.
         /// </summary>
-        public List<ChequeModel> ChequesModelSelectbyUNKNOW(string aValue)
+        public List<CobroChequesModel> CobroChequesModelSelectbyUNKNOW(string aValue)
         {
 
-            List<ChequeModel> ChequesModellist = new List<ChequeModel>();
+            List<CobroChequesModel> CobroChequesModellist = new List<CobroChequesModel>();
 
             try
             {
@@ -328,7 +354,7 @@ namespace CDatos.Manager
 
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.CommandText = "ChequesModelSelectbyUNKNOW";
+                    command.CommandText = "CobroChequesModelSelectbyUNKNOW";
 
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -337,30 +363,24 @@ namespace CDatos.Manager
                         while (reader.Read())
                         {
 
-                            int Numero = (int)(reader["Numero"]);
-                            DateTime FechaEmision = (DateTime)(reader["FechaEmision"]);
-                            DateTime? FechaCobro = reader["FechaCobro"] as DateTime?;
-                            string Destinatario = (string)(reader["Destinatario"]);
+                            int ID_Cheque = (int)(reader["ID_Cheque"]);
                             decimal Monto = (decimal)(reader["Monto"]);
-                            int IDChequesModelra = (int)(reader["IDChequesModelra"]);
-                            string Estado = (string)(reader["Estado"]);
+                            bool Estado_Cheque = (bool)(reader["Estado_Cheque"]);
+                            int ID_Movimiento = (int)(reader["ID_Movimiento"]);
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
                             DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
-                            string USUARIO_CREACION = (string)(reader["USUARIO_CREACION"]);
+                            string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
                             string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
 
-                            ChequesModellist.Add(new ChequeModel
+                            CobroChequesModellist.Add(new CobroChequesModel
                             {
-                                Numero = Numero,
-                                Fechaemision = FechaEmision,
-                                Fechacobro = FechaCobro,
-                                Destinatario = Destinatario,
+                                Id_cheque = ID_Cheque,
                                 Monto = Monto,
-                                //IdChequesModelra = IDChequesModelra,
-                                Estado = Estado,
+                                Estado_cheque = Estado_Cheque,
+                                Id_movimiento = ID_Movimiento,
                                 Fecha_creacion = FECHA_CREACION,
                                 Fecha_modificacion = FECHA_MODIFICACION,
-                                Usuario_creacion = USUARIO_CREACION,
+                                Usuario_creador = USUARIO_CREADOR,
                                 Usuario_modificador = USUARIO_MODIFICADOR,
 
                             });
@@ -368,15 +388,13 @@ namespace CDatos.Manager
                     }
                 }
 
-                return ChequesModellist;
+                return CobroChequesModellist;
             }
             catch (Exception)
             {
-                return ChequesModellist;
+                return CobroChequesModellist;
             }
         }
-
-
         #endregion
 
     }

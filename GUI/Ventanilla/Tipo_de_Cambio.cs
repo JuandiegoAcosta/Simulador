@@ -18,11 +18,35 @@ namespace Sistema_Bancario.Froms_opciones
          InitializeComponent();
          this.proceder1.BTProceder.Click += BTProceder_Click;
          monto1.TBMonto.TextChanged += TBMonto_TextChanged;
-      //      tipoMoneda1.LbMoneda.Text = "Moneda(origen)";
-      //      tipoMoneda2.LbMoneda.Text = "Moneda(destino)";
+            tipoMoneda1.CboMoneda.Click += CboMoneda_Click1;
+         tipoMoneda2.CboMoneda.Click += CboMoneda_Click;            
       }
 
-       
+        private void CboMoneda_Click1(object sender, EventArgs e)
+        {
+            if (tipoMoneda2.CboMoneda.SelectedIndex == 0)
+            {
+                tipoMoneda1.CboMoneda.SelectedIndex = 1;
+                //   MessageBox.Show("Mismo tipo de Conversion");
+            }
+            else if (tipoMoneda2.CboMoneda.SelectedIndex == 1)
+            {
+                tipoMoneda1.CboMoneda.SelectedIndex = 0;
+            }
+        }
+
+        private void CboMoneda_Click(object sender, EventArgs e)
+        {
+            if (tipoMoneda1.CboMoneda.SelectedIndex == 0)
+            {
+                tipoMoneda2.CboMoneda.SelectedIndex = 1;
+                //   MessageBox.Show("Mismo tipo de Conversion");
+            }
+            else if (tipoMoneda1.CboMoneda.SelectedIndex == 1)
+            {
+                tipoMoneda2.CboMoneda.SelectedIndex = 0;
+            }
+        }
 
         private bool setItem()
       {
@@ -76,16 +100,30 @@ namespace Sistema_Bancario.Froms_opciones
 
 
       private void BTProceder_Click(object sender, EventArgs e)
-      {
-         if (setItem())
+      {           
+            if (setItem())
          {
-
+               
          }
       }
 
         private void TBMonto_TextChanged(object sender, EventArgs e)
         {
-            Multiplicar(true);
+          //  Multiplicar(true);
+
+            if (tipoMoneda1.CboMoneda.Text.Equals("Soles") && tipoMoneda2.CboMoneda.Text.Equals("Dolares"))
+            {
+                Dividir(true);
+            }
+            else if (tipoMoneda1.CboMoneda.Text.Equals("Dolares") && tipoMoneda2.CboMoneda.Text.Equals("Soles"))
+            {
+                Multiplicar(true);
+            }
+            else if (tipoMoneda2.CboMoneda.Text.Equals("Euros"))
+            {
+                Multiplicar(true);
+            }
+
         }
 
         private void RbtnVenta_CheckedChanged(object sender, EventArgs e)
@@ -96,6 +134,29 @@ namespace Sistema_Bancario.Froms_opciones
         private void RbtnCompra_CheckedChanged(object sender, EventArgs e)
         {
             Multiplicar(true);
+        }
+        public void Dividir(bool flag)
+        {
+            if (monto1.TBMonto.Text != "")
+            {
+                Decimal A = Convert.ToDecimal(precios1.LbCompraDolares.Text.ToString());
+                Decimal B = Convert.ToDecimal(monto1.TBMonto.Text.ToString());
+                Decimal D = Convert.ToDecimal(precios1.LbVentaDolares.Text.ToString());
+                if (flag == true)
+                {
+                    Decimal C = B / A;
+                    txtConversion.Text = Convert.ToString(C);
+                }
+                else if (flag == false)
+                {
+                    Decimal C = D / B;
+                    txtConversion.Text = Convert.ToString(C);
+                }
+            }
+            else
+            {
+                txtConversion.Text = "";
+            }
         }
         public void Multiplicar(bool flag)
         {

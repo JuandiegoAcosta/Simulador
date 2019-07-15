@@ -58,7 +58,6 @@ namespace Sistema_Bancario.Controles
         {
             try
             {
-
                 m_tipocambio = new TipoCambioModel();
 
                 if (this.tipoMoneda1.CboMoneda.SelectedValue != null)
@@ -103,8 +102,6 @@ namespace Sistema_Bancario.Controles
             {
                 Multiplicar(true);
             }
-
-
         }
         public void Multiplicar(bool flag)
         {
@@ -155,9 +152,6 @@ namespace Sistema_Bancario.Controles
 
         private void Cambiar_Click(object sender, EventArgs e)
         {
-
-   
-
             TipoMovimientoMethods movimiento = new TipoMovimientoMethods();
             TipodeCambioModel tipo = new TipodeCambioModel();
            // VentanaPrincipal ventana =new VentanaPrincipal;
@@ -172,9 +166,6 @@ namespace Sistema_Bancario.Controles
             {
                 MessageBox.Show("Se realizo el Cambio");
             };
-
-
-
         }
     }
 }

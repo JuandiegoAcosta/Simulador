@@ -39,9 +39,10 @@ namespace Sistema_Bancario
 
       private ISession Session = null;
       Button BtnSelecionado;
-      public VentanaPrincipal(ISession session)
-      {
-
+      List< Button> LBtn = new List<Button>();
+      List<Type> LControls = new List<Type>();
+        public VentanaPrincipal(ISession session)
+        {
          try
          {
             Session = session;
@@ -51,10 +52,10 @@ namespace Sistema_Bancario
          }
          catch (Exception)
          { }
-      }
+        }
 
-      private void EvaluarUsuario()
-      {
+        private void EvaluarUsuario()
+        {
          if (Session != null)
          {
             InitializeComponent();
@@ -79,52 +80,51 @@ namespace Sistema_Bancario
          {
             MessageBox.Show("Es necesario iniciar session");
          }
-      }
+        }
         public VentanaPrincipal()
         {
             InitializeComponent();
         }
-      private void SetSessionValues()
-      {
+        private void SetSessionValues()
+        {
          lblUserValueType.Text = Session.UserNombreCompleto;
          lblSucursal.Text = Session.SucursalNombre;
-      }
-
-      protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        }
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
       {
-         if (keyData == (Keys.F1))
-         {
-            BTGestion.BackColor = SystemColors.HotTrack;
-            panel2.Controls.Clear();
-            this.Componentes(3);
-            return true;
-         }
-         else if (keyData == (Keys.F2))
-         {
-            BTGestion.BackColor = SystemColors.HotTrack;
-            panel2.Controls.Clear();
-            this.Componentes(2);
-            return true;
-         }
-         else if (keyData == (Keys.F3))
-         {
-            BTGestion.BackColor = SystemColors.HotTrack;
-            panel2.Controls.Clear();
-            this.Componentes(1);
-            return true;
-         }
-         else if (keyData == (Keys.F4))
-         {
+            if (keyData == (Keys.F1))
+            {
+                BTGestion.BackColor = SystemColors.HotTrack;
+                panel2.Controls.Clear();
+                this.Componentes(3);
+                return true;
+            }
+            else if (keyData == (Keys.F2))
+            {
+                BTGestion.BackColor = SystemColors.HotTrack;
+                panel2.Controls.Clear();
+                this.Componentes(2);
+                return true;
+            }
+            else if (keyData == (Keys.F3))
+            {
+                BTGestion.BackColor = SystemColors.HotTrack;
+                panel2.Controls.Clear();
+                this.Componentes(1);
+                return true;
+            }
+            else if (keyData == (Keys.F4))
+            {
 
-         }
+            }
+            else if (keyData == Keys.Alt && keyData == Keys.NumPad1)
+            {
+
+            }
          return base.ProcessCmdKey(ref msg, keyData);
       }
-      private void btnCerrar_Click(object sender, EventArgs e)
-      {
-         this.Close();
-      }
 
-      public void CrearBoton(Button NombreButton, string Text, int x)
+        public void CrearBoton(Button NombreButton, string Text, int x)
       {
             //56; 96; 147
             NombreButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
@@ -143,13 +143,28 @@ namespace Sistema_Bancario
          NombreButton.UseVisualStyleBackColor = false;
          NombreButton.Location = new Point(0, x);
          NombreButton.Click += new EventHandler(Evento_Click);
-         NombreButton.Click += new EventHandler(Marcar_Click);
             panel2.Controls.Add(NombreButton);
 
       }
-        private void Marcar_Click(object sender, EventArgs e)
+
+        #region Utilitarios
+        public void CrearControl<T>(UserControl parameter, Button btn)
         {
-            Button btn = sender as Button;
+            if (!panel1.Controls.Contains(parameter))
+            {
+                panel1.Controls.Add(parameter);
+                parameter.Dock = DockStyle.Fill;
+                parameter.BringToFront();
+                TituloText.Text = btn.Text;
+            }
+            else
+            {
+                TituloText.Text = btn.Text;
+                parameter.BringToFront();
+            }
+        }
+        public void OpcionSelecionada(Button btn)
+        {
             if (BtnSelecionado != btn && BtnSelecionado != null)
             {
                 BtnSelecionado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
@@ -162,427 +177,223 @@ namespace Sistema_Bancario
                 btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(96)))), ((int)(((byte)(147)))));
                 BtnSelecionado = btn;
             }
-                   
-         }
+        }
+        private void Marcar(object boton)
+        {
+            Button BotonMenu;
+            BotonMenu = boton as Button;
+            BTOperaciones.BackColor = Color.Transparent;
+            BTReportes.BackColor = Color.Transparent;
+            BTGestion.BackColor = Color.Transparent;
+            BTPlataforma.BackColor = Color.Transparent;
+            BTOperaciones.ForeColor = Color.Black;
+            BTReportes.ForeColor = Color.Black;
+            BTGestion.ForeColor = Color.Black;
+            BTPlataforma.ForeColor = Color.Black;
+            BotonMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(96)))), ((int)(((byte)(147)))));
+            BotonMenu.ForeColor = Color.White;
+        }
+        #endregion
 
+        #region Eventos
         private void Evento_Click(object sender, EventArgs e)
         {
-         Button btn = sender as Button;
-         TituloText.Visible = true;
+            Button btn = sender as Button;
+            TituloText.Visible = true;
+            OpcionSelecionada(btn);
 
-         #region Botones
-         if (btn.Text.Equals("Retiros"))
-         {
-            if (!panel1.Controls.Contains(Retiros.instance))
-            {
-               
-               panel1.Controls.Add(Retiros.instance);
-               Retiros.instance.Dock = DockStyle.Fill;
-               Retiros.instance.BringToFront();
-               TituloText.Text = btn.Text;
-            }
-            else
-            {
-               TituloText.Text = btn.Text;
-               Retiros.instance.BringToFront();
-            }
-         }
-         else if (btn.Text.Equals("Depósitos"))
-         {
-            if (!panel1.Controls.Contains(Depositos.instance))
-            {
-               panel1.Controls.Add(Depositos.instance);
-               Depositos.instance.Dock = DockStyle.Fill;
-               Depositos.instance.BringToFront();
-               TituloText.Text = btn.Text;
-            }
-            else
-            {
-               TituloText.Text = btn.Text;
-               Depositos.instance.BringToFront();
-            }
-            //  Limpiar();
-            //   button6.BackColor = SystemColors.HotTrack;
+            #region Instancias_Controles
+            LControls.Add(typeof(Retiros));
 
-         }
-         else if (btn.Text.Equals("Transferencias"))
-         {
-            if (!panel1.Controls.Contains(Transferencias.instance))
+            if (btn.Text.Equals("Retiros"))
             {
-               panel1.Controls.Add(Transferencias.instance);
-               Transferencias.instance.Dock = DockStyle.Fill;
-               Transferencias.instance.BringToFront();
-               TituloText.Text = btn.Text;
-
+                CrearControl<UserControl>(Retiros.instance, btn);
             }
-            else
+            else if (btn.Text.Equals("Depósitos"))
             {
-               Transferencias.instance.BringToFront();
-               TituloText.Text = btn.Text;
+                CrearControl<UserControl>(Depositos.instance, btn);
             }
-            //    Limpiar();
-            //   button2.BackColor = SystemColors.HotTrack;
-         }
-         else if (btn.Text.Equals("Envío Giros"))
-         {
-            if (!panel1.Controls.Contains(Envio_Giros.instance))
+            else if (btn.Text.Equals("Transferencias"))
             {
-               panel1.Controls.Add(Envio_Giros.instance);
-               Envio_Giros.instance.Dock = DockStyle.Fill;
-               Envio_Giros.instance.BringToFront();
-               TituloText.Text = btn.Text;
+                CrearControl<UserControl>(Transferencias.instance, btn);
             }
-            else
+            else if (btn.Text.Equals("Envío Giros"))
             {
-               Envio_Giros.instance.BringToFront();
-               TituloText.Text = btn.Text;
+                CrearControl<UserControl>(Envio_Giros.instance, btn);
             }
-            // Limpiar();
-            //  button4.BackColor = SystemColors.HotTrack;
-         }
-         else if (btn.Text.Equals("Cobro Giros"))
-         {
-            if (!panel1.Controls.Contains(CobroGiros.instance))
+            else if (btn.Text.Equals("Cobro Giros"))
             {
-               panel1.Controls.Add(CobroGiros.instance);
-               CobroGiros.instance.Dock = DockStyle.Fill;
-               CobroGiros.instance.BringToFront();
-               TituloText.Text = btn.Text;
+                CrearControl<UserControl>(CobroGiros.instance, btn);
             }
-            else
+            else if (btn.Text.Equals("Pago tarjetas"))
             {
-               TituloText.Text = btn.Text;
-               CobroGiros.instance.BringToFront();
+                CrearControl<UserControl>(Tarjetas.instance, btn);
             }
-            // Limpiar();
-            //  button3.BackColor = SystemColors.HotTrack;
-         }
-         else if (btn.Text.Equals("Pago tarjetas"))
-         {
-            if (!panel1.Controls.Contains(Tarjetas.instance))
+            else if (btn.Text.Equals("Pago Cuotas"))
             {
-               panel1.Controls.Add(Tarjetas.instance);
-               Tarjetas.instance.Dock = DockStyle.Fill;
-               Tarjetas.instance.BringToFront();
-               TituloText.Text = btn.Text;
+                CrearControl<UserControl>(Cuotas.getinstance(), btn);
             }
-            else
+            else if (btn.Text.Equals("Tipo Cambio"))
             {
-               TituloText.Text = btn.Text;
-               Tarjetas.instance.BringToFront();
+                CrearControl<UserControl>(Tipo_de_Cambio.instance, btn);
             }
-            //  Limpiar();
-            //  button5.BackColor = SystemColors.HotTrack;
-         }
-         else if (btn.Text.Equals("Pago Cuotas"))
-         {
-            if (!panel1.Controls.Contains(Cuotas.getinstance()))
+            else if (btn.Text.Equals("Pago Servicios"))
             {
-               panel1.Controls.Add(Cuotas.getinstance());
-               Cuotas.getinstance().Dock = DockStyle.Fill;
-               Cuotas.getinstance().BringToFront();
-               TituloText.Text = btn.Text;
+                CrearControl<UserControl>(Servicios.instance, btn);
             }
-            else
+            else if (btn.Text.Equals("Abrir Cuenta"))
             {
-               TituloText.Text = btn.Text;
-               Cuotas.getinstance().BringToFront();
-            }
-            //   Limpiar();
-            //    button8.BackColor = SystemColors.HotTrack;
-         }
-         else if (btn.Text.Equals("Tipo Cambio"))
-         {
-            if (!panel1.Controls.Contains(Tipo_de_Cambio.instance))
-            {
-               panel1.Controls.Add(Tipo_de_Cambio.instance);
-               Tipo_de_Cambio.instance.Dock = DockStyle.Fill;
-               Tipo_de_Cambio.instance.BringToFront();
-               TituloText.Text = btn.Text;
-
-            }
-            else
-            {
-               Tipo_de_Cambio.instance.BringToFront();
-               TituloText.Text = btn.Text;
-            }
-            //  Limpiar();
-            //   button1.BackColor = SystemColors.HotTrack;
-         }
-         else if (btn.Text.Equals("Pago Servicios"))
-         {
-            if (!panel1.Controls.Contains(Servicios.instance))
-            {
-               panel1.Controls.Add(Servicios.instance);
-               Servicios.instance.Dock = DockStyle.Fill;
-               Servicios.instance.BringToFront();
-               TituloText.Text = btn.Text;
-            }
-            else
-            {
-               TituloText.Text = btn.Text;
-               Servicios.instance.BringToFront();
-            }
-
-            //  Limpiar();
-            // button10.BackColor = SystemColors.HotTrack;
-         }
-         else if (btn.Text.Equals("Abrir Cuenta"))
-         {
                 NuevaCuentaUserControl cuenta;
                 if (this.Session != null)
                 {
                     cuenta = new NuevaCuentaUserControl(this.Session);
-                    if (!panel1.Controls.Contains(cuenta))
-                    {
-                        panel1.Controls.Add(cuenta);
-                        cuenta.Dock = DockStyle.Fill;
-                        cuenta.BringToFront();
-                        TituloText.Text = btn.Text;
-                    }
-                    else
-                    {
-                        cuenta.BringToFront();
-                        TituloText.Text = btn.Text;
-                    }
+                    CrearControl<UserControl>(cuenta, btn);
                 }
                 else
                 {
                     MessageBox.Show("La sesión ha caducado");
                 }
-            //   Limpiar();
-            //   button2.BackColor = SystemColors.HotTrack;
-         }
-         else if (btn.Text.Equals("Gestionar Cuenta"))
-         {
-            if (!panel1.Controls.Contains(UCactualizarCuenta.instance))
-            {
-               panel1.Controls.Add(UCactualizarCuenta.instance);
-               UCactualizarCuenta.instance.Dock = DockStyle.Fill;
-               UCactualizarCuenta.instance.BringToFront();
-               TituloText.Text = btn.Text;
-
             }
-            else
+            else if (btn.Text.Equals("Gestionar Cuenta"))
             {
-               UCactualizarCuenta.instance.BringToFront();
-               TituloText.Text = btn.Text;
+                CrearControl<UserControl>(UCactualizarCuenta.instance, btn);
             }
-            //    Limpiar();
-            //   button2.BackColor = SystemColors.HotTrack;
-         }
-         else if (btn.Text.Equals("Realizar Préstamo"))
-         {
-            if (!panel1.Controls.Contains(UCprestamos.instance))
+            else if (btn.Text.Equals("Realizar Préstamo"))
             {
-               panel1.Controls.Add(UCprestamos.instance);
-               UCprestamos.instance.Dock = DockStyle.Fill;
-               UCprestamos.instance.BringToFront();
-               TituloText.Text = btn.Text;
-
+                CrearControl<UserControl>(UCprestamos.instance, btn);
             }
-            else
+            else if (btn.Text.Equals("Refinanciar"))
             {
-               UCprestamos.instance.BringToFront();
-               TituloText.Text = btn.Text;
+                CrearControl<UserControl>(UCrefinanciar.instance, btn);
             }
-            //    Limpiar();
-            //   button2.BackColor = SystemColors.HotTrack;
-         }
-         else if (btn.Text.Equals("Refinanciar"))
-         {
-            if (!panel1.Controls.Contains(UCrefinanciar.instance))
+            else if (btn.Text.Equals("Solicitar Chequera"))
             {
-               panel1.Controls.Add(UCrefinanciar.instance);
-               UCrefinanciar.instance.Dock = DockStyle.Fill;
-               UCrefinanciar.instance.BringToFront();
-               TituloText.Text = btn.Text;
-
+                CrearControl<UserControl>(UCchequeras.instance, btn);
             }
-            else
+            else if (btn.Text.Equals("Balancin Caja"))
             {
-               UCrefinanciar.instance.BringToFront();
-               TituloText.Text = btn.Text;
+                CrearControl<UserControl>(Balancin.instance, btn);
             }
-            //    Limpiar();
-            //   button2.BackColor = SystemColors.HotTrack;
-         }
-         else if (btn.Text.Equals("Solicitar Chequera"))
-         {
-            if (!panel1.Controls.Contains(UCchequeras.instance))
+            else if (btn.Text.Equals("Resumen total"))
             {
-               panel1.Controls.Add(UCchequeras.instance);
-               UCchequeras.instance.Dock = DockStyle.Fill;
-               UCchequeras.instance.BringToFront();
-               TituloText.Text = btn.Text;
-
+                CrearControl<UserControl>(ResumenTotal.instance, btn);
             }
-            else
+            else if (btn.Text.Equals("Cliente"))
             {
-               UCchequeras.instance.BringToFront();
-               TituloText.Text = btn.Text;
-            }
-            //    Limpiar();
-            //   button2.BackColor = SystemColors.HotTrack;
-         }
-         else if (btn.Text.Equals("Balancin Caja"))
-         {
-            if (!panel1.Controls.Contains(Balancin.instance))
-            {
-               panel1.Controls.Add(Balancin.instance);
-               Balancin.instance.Dock = DockStyle.Fill;
-               Balancin.instance.BringToFront();
-               TituloText.Text = btn.Text;
-
-            }
-            else
-            {
-               Balancin.instance.BringToFront();
-               TituloText.Text = btn.Text;
-            }
-         }
-         else if (btn.Text.Equals("Resumen total"))
-         {
-            if (!panel1.Controls.Contains(ResumenTotal.instance))
-            {
-               panel1.Controls.Add(ResumenTotal.instance);
-               ResumenTotal.instance.Dock = DockStyle.Fill;
-               ResumenTotal.instance.BringToFront();
-               TituloText.Text = btn.Text;
-
-            }
-            else
-            {
-               ResumenTotal.instance.BringToFront();
-               TituloText.Text = btn.Text;
-            }
-         }
-         else if (btn.Text.Equals("Cliente"))
-         {
-            if (!panel1.Controls.Contains(UCcliente.instance))
-            {
-               panel1.Controls.Add(UCcliente.instance);
-               UCcliente.instance.Dock = DockStyle.Fill;
-               UCcliente.instance.BringToFront();
-               TituloText.Text = btn.Text;
-            }
-            else
-            {
-               UCcliente.instance.BringToFront();
-               TituloText.Text = btn.Text;
-            }
+                CrearControl<UserControl>(UCcliente.instance, btn);
             }
             else if (btn.Text.Equals("Cobro Cheques"))
             {
-                if (!panel1.Controls.Contains(Cheques.instance))
-                {
-                    panel1.Controls.Add(Cheques.instance);
-                    Cheques.instance.Dock = DockStyle.Fill;
-                    Cheques.instance.BringToFront();
-                    TituloText.Text = btn.Text;
-                }
-                else
-                {
-                    UCcliente.instance.BringToFront();
-                    TituloText.Text = btn.Text;
-                }
+                CrearControl<UserControl>(Cheques.instance, btn);
             }
-
             else if (btn.Text.Equals("Personas"))
             {
-                if (!panel1.Controls.Contains(Personas.instance))
-                {
-                    panel1.Controls.Add(Personas.instance);
-                    Personas.instance.Dock = DockStyle.Fill;
-                    Personas.instance.BringToFront();
-                    TituloText.Text = btn.Text;
-
-                }
-                else
-                {
-                    Personas.instance.BringToFront();
-                    TituloText.Text = btn.Text;
-                }
+                CrearControl<UserControl>(Personas.instance, btn);
             }
-
-
             else if (btn.Text.Equals("Roles"))
             {
-                if (!panel1.Controls.Contains(Roles.instance))
-                {
-                    panel1.Controls.Add(Roles.instance);
-                    Roles.instance.Dock = DockStyle.Fill;
-                    Roles.instance.BringToFront();
-                    TituloText.Text = btn.Text;
-
-                }
-                else
-                {
-                    Roles.instance.BringToFront();
-                    TituloText.Text = btn.Text;
-                }
+                CrearControl<UserControl>(Roles.instance, btn);
             }
-
-
             else if (btn.Text.Equals("Permisos"))
             {
-                if (!panel1.Controls.Contains(Permisos.instance))
-                {
-                    
-                    panel1.Controls.Add(Permisos.instance);
-                    Permisos.instance.Dock = DockStyle.Fill;
-                    Permisos.instance.BringToFront();
-                    TituloText.Text = btn.Text;
-
-                }
-                else
-                {
-                    Permisos.instance.BringToFront();
-                    TituloText.Text = btn.Text;
-                }
+                CrearControl<UserControl>(Permisos.instance, btn);
             }
-
             #endregion
         }
-      private void Componentes(int x)
+        private void BTGestion_Click(object sender, EventArgs e)
+        {
+            Marcar(sender);
+            panel2.Controls.Clear();
+            this.Componentes(2);
+        }
+
+        private void BTPlataforma_Click(object sender, EventArgs e)
+        {
+            Marcar(sender);
+            panel2.Controls.Clear();
+            this.Componentes(1);
+        }
+
+        private void BTReportes_Click(object sender, EventArgs e)
+        {
+            Marcar(sender);
+        }
+
+        private void BTOperaciones_Click(object sender, EventArgs e)
+        {
+            Marcar(sender);
+            panel2.Controls.Clear();
+            this.Componentes(3);
+        }
+
+        private void BTAdministrador_Click(object sender, EventArgs e)
+        {
+            Marcar(sender);
+            panel2.Controls.Clear();
+            this.Componentes(4);
+        }
+        private void Button11_Click(object sender, EventArgs e)
+        {
+            Login lg = new Login();
+            lg.Show();
+            this.Close();
+        }
+        private void Cerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Minimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+        #endregion
+
+        private void Componentes(int x)
       {
          switch (x)
          {
             case 1:
-
+                   
                     if (Session.Componentes.Any(c => c.Nombre == "Abrir Cuenta"))
                     {
                         Button AbrirCuenta = new Button();
+                       
                         this.CrearBoton(AbrirCuenta, "Abrir Cuenta", 0);
                     }
 
                     if (Session.Componentes.Any(c => c.Nombre == "Gestionar Cuenta"))
                     {
                         Button GestionarCuenta = new Button();
+                       
                         this.CrearBoton(GestionarCuenta, "Gestionar Cuenta", 50);
                     }
 
                     if (Session.Componentes.Any(c => c.Nombre == "Realizar Préstamo"))
                     {
                         Button RealizarPrestamo = new Button();
+                       
                         this.CrearBoton(RealizarPrestamo, "Realizar Préstamo", 100);
                     }
 
                     if (Session.Componentes.Any(c => c.Nombre == "Refinanciar"))
                     {
                         Button Refinanciar = new Button();
+                        
                         this.CrearBoton(Refinanciar, "Refinanciar", 150);
                     }
 
                     if (Session.Componentes.Any(c => c.Nombre == "Solicitar Chequera"))
                     {
                         Button SolicitarChequera = new Button();
+                       
                         this.CrearBoton(SolicitarChequera, "Solicitar Chequera", 200);
                     }
 
                     if (Session.Componentes.Any(c => c.Nombre == "Gestionar Chequera"))
                     {
                         Button GestionarChequera = new Button();
+                        
                         this.CrearBoton(GestionarChequera, "Gestionar Chequera", 250);
                     }
                     break;
@@ -689,78 +500,6 @@ namespace Sistema_Bancario
             }
       }
 
-      private void BTGestion_Click(object sender, EventArgs e)
-      {
-         Marcar(sender);
-         panel2.Controls.Clear();
-         this.Componentes(2);
-      }
-
-      private void BTPlataforma_Click(object sender, EventArgs e)
-      {
-         Marcar(sender);
-         panel2.Controls.Clear();
-         this.Componentes(1);
-      }
-
-      private void BTReportes_Click(object sender, EventArgs e)
-      {
-         Marcar(sender);
-      }
-
-      private void BTOperaciones_Click(object sender, EventArgs e)
-      {
-         Marcar(sender);
-         panel2.Controls.Clear();
-         this.Componentes(3);
-      }
-
-      private void BTAdministrador_Click(object sender, EventArgs e)
-      {
-          Marcar(sender);
-          panel2.Controls.Clear();
-          this.Componentes(4);
-      }
-
-        private void Marcar(object boton)
-      {
-         Button BotonMenu;
-         BotonMenu = boton as Button;
-         BTOperaciones.BackColor = Color.Transparent;
-         BTReportes.BackColor = Color.Transparent;
-         BTGestion.BackColor = Color.Transparent;
-         BTPlataforma.BackColor = Color.Transparent;
-            BTOperaciones.ForeColor = Color.Black;
-            BTReportes.ForeColor = Color.Black;
-            BTGestion.ForeColor = Color.Black;
-            BTPlataforma.ForeColor = Color.Black;
-            BotonMenu.BackColor = SystemColors.HotTrack;
-            BotonMenu.ForeColor = Color.White;   
-      }
-
-      private void PbxClose_Click(object sender, EventArgs e)
-      {
-         this.Close();
-      }
-
-      private void Button11_Click(object sender, EventArgs e)
-      {
-         Login lg = new Login();
-         lg.Show();
-
-         this.Close();
-      }
-
-        private void Button2_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        
+      
     }
 }
