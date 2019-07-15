@@ -1016,6 +1016,115 @@ namespace CDatos.Manager
         }
 
 
+        public List<PersonaModel> GetPersonaNombreApellidos(string nombre, string apellido)
+        {
+            List<PersonaModel> PersonaModel = new List<PersonaModel>();
+
+            try
+            {
+                using (var connection = Util.ConnectionFactory.conexion())
+                {
+                    connection.Open();
+                    SqlCommand command = connection.CreateCommand();
+
+                    command.CommandText = "sp_ObtenerPersonasPorNombresApellidos";
+                    command.CommandType = CommandType.StoredProcedure;
+
+
+                    command.Parameters.AddWithValue("@nombres", nombre);
+                    command.Parameters.AddWithValue("@apellidos", apellido);
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+
+                            int Id = (int)(reader["Id"]);
+                            string Nombres = (string)(reader["Nombres"]);
+                        string NroDocumento = (string)(reader["NroDocumento"]);
+                        string TipoDocumento = (string)(reader["Descripcion"].ToString());
+
+
+
+                            PersonaModel.Add(new PersonaModel
+                            {
+                                Id = Id,
+                                Nombres = Nombres,
+                                Nrodocumento = NroDocumento,
+                                Apellidos = TipoDocumento,
+
+                            });
+                        }
+                    }
+                }
+
+                return PersonaModel;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+
+        }
+
+
+
+
+
+
+        public bool CrearNuevoUsuario(int idPersona, string Usuario, string Contraseña, bool Estado)
+        {
+            try
+            {
+                using (var connection = Util.ConnectionFactory.conexion())
+                {
+                    connection.Open();
+
+                    SqlTransaction sqlTran = connection.BeginTransaction();
+
+                    SqlCommand command = connection.CreateCommand();
+
+                    command.Transaction = sqlTran;
+
+                    command.Parameters.AddWithValue("@IDPersona", idPersona);
+                    command.Parameters.AddWithValue("@Usuario", Usuario);
+                    command.Parameters.AddWithValue("@Password", Contraseña); 
+                    command.Parameters.AddWithValue("@Estado", Estado);
+                    command.Parameters.AddWithValue("@FECHA_CREACION", DateTime.Now);
+                    command.Parameters.AddWithValue("@FECHA_MODIFICACION", DateTime.Now);
+                   
+
+
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.CommandText = "sp_CrearNuevoUsuario";
+
+                    int afectados = command.ExecuteNonQuery();
+
+                    // Commit the transaction.
+                    sqlTran.Commit();
+
+                    connection.Close();
+                    connection.Dispose();
+
+                    if (afectados > 0)
+                        return true;
+                    else
+                        return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+
+
+
+
+
         #endregion
 
     }

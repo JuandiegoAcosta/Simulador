@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Modelos.Modelos;
+using Sistema_Bancario.Clases;
 
 namespace Sistema_Bancario.Administrador
 {
@@ -267,10 +268,68 @@ namespace Sistema_Bancario.Administrador
             pnlBusquedaPersona.BringToFront();
         }
 
+
+
+        public List<PersonaModel> usuariosFiltrados;
+
         private void btnBuscarEnBusqueda_Click(object sender, EventArgs e)
         {
+            if (!string.IsNullOrEmpty(txtBusquedaNombres.Text) && !string.IsNullOrEmpty(txtBusquedaApellidos.Text))
+            {
+                llenarBusquedaUsuariosDGV();
+            }
+            else {
+                llenarBusquedaUsuariosDGV();
+            }
+        }
+
+        private void llenarBusquedaUsuariosDGV() {
+
+            try
+            {
+
+                using (WsSistemaBancario.PersonaServiceClient buscarPersonaNombresApellidos = new WsSistemaBancario.PersonaServiceClient())
+                {
+                    usuariosFiltrados = buscarPersonaNombresApellidos.Persona_GetPersonaNombreApellidos(txtBusquedaNombres.Text, txtBusquedaApellidos.Text).ToList();
+
+                    dgvBusquedaUsuarios.DataSource = usuariosFiltrados;
+                    //usuariosFiltrados = null;
+
+                    dgvBusquedaUsuarios.Columns["Nombres"].DisplayIndex = 1;
+                    dgvBusquedaUsuarios.Columns["Apellidos"].DisplayIndex = 2;
+                    dgvBusquedaUsuarios.Columns["NroDocumento"].DisplayIndex = 3;
+
+                    dgvBusquedaUsuarios.Columns[6].HeaderText = "Tipo Documento";
+
+
+                    //dgvBusquedaUsuarios.Columns["Id"].Visible = false;
+                    dgvBusquedaUsuarios.Columns["NombreUsuario"].Visible = false;
+                    dgvBusquedaUsuarios.Columns["Pass"].Visible = false;
+                    dgvBusquedaUsuarios.Columns["Fechanacimiento"].Visible = false;
+                    dgvBusquedaUsuarios.Columns["Telefono"].Visible = false;
+                    dgvBusquedaUsuarios.Columns["Tipodocumento"].Visible = false;
+                    dgvBusquedaUsuarios.Columns["Correo"].Visible = false;
+                    dgvBusquedaUsuarios.Columns["Fecha_creacion"].Visible = false;
+                    dgvBusquedaUsuarios.Columns["Fecha_modificacion"].Visible = false;
+                    dgvBusquedaUsuarios.Columns["Usuario_creador"].Visible = false;
+                    dgvBusquedaUsuarios.Columns["Usuario_modificador"].Visible = false;
+                    dgvBusquedaUsuarios.Columns["Tipo_persona"].Visible = false;
+                    dgvBusquedaUsuarios.Columns["Estado"].Visible = false;
+
+
+
+                }
+
+            }
+
+            catch (Exception ex)
+            {
+
+            }
 
         }
+
+
 
         private void btnCancelarBusqueda_Click(object sender, EventArgs e)
         {
@@ -278,6 +337,83 @@ namespace Sistema_Bancario.Administrador
             pnlAgregarUsuario.BringToFront();
             pnlPrincipal.SendToBack();
             pnlSecundario.SendToBack();
+        }
+
+        
+        private static int idPersona;
+
+        private void dgvBusquedaUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                idPersona = Convert.ToInt16(dgvBusquedaUsuarios.Rows[e.RowIndex].Cells["Id"].Value);
+            }
+        }
+
+
+        PersonaModel persona = new PersonaModel();
+
+        private void btnAceptarBusqueda_Click(object sender, EventArgs e)
+        {
+            pnlAgregarUsuario.BringToFront();
+            pnlBusquedaPersona.SendToBack();
+            txtBusquedaNombres.Text = "";
+            txtBusquedaApellidos.Text = "";
+
+
+
+
+            try
+            {
+
+                using (WsSistemaBancario.PersonaServiceClient ObtenerPersona = new WsSistemaBancario.PersonaServiceClient())
+                {
+
+
+                   persona = ObtenerPersona.Persona_ObtenerUno(idPersona);
+                    txtUsuarioBuscado.Text = persona.Nombres;
+
+                }
+
+            }
+
+            catch (Exception ex)
+            {
+
+            }
+
+
+
+        }
+
+        bool confirmarCreacion;
+        bool estadocheck;
+
+        private void btnInsertarUsuario_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string passEncrypt = Encrypt.GetSHA256(txtContraseña.Text);
+                using (WsSistemaBancario.PersonaServiceClient CrearUsuario = new WsSistemaBancario.PersonaServiceClient())
+                {
+                    //if (chbEstado.Checked == true) {
+                    //    estadocheck = true;
+                    //}
+                    //else { estadocheck =false}
+
+                    
+
+                    confirmarCreacion = CrearUsuario.Persona_CrearNuevoUsuario(idPersona,txtUsuario.Text,passEncrypt,chbEstado.Checked);
+                    txtUsuarioBuscado.Text = persona.Nombres;
+
+                }
+
+            }
+
+            catch (Exception ex)
+            {
+
+            }
         }
     }
 }
