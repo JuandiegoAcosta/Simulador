@@ -47,6 +47,7 @@
     <Compile Include="Manager\ChequerasManager.cs" />
     <Compile Include="Manager\CobroChequeManager.cs" />
     <Compile Include="Manager\ConsultaCambioManager.cs" />
+    <Compile Include="Manager\DetalleCajaChicaManager.cs" />
     <Compile Include="Manager\HoraFechaServidorManager.cs" />
     <Compile Include="Manager\TransferenciasManager.cs" />
     <Compile Include="Seguridad\ComponenteManager.cs" />

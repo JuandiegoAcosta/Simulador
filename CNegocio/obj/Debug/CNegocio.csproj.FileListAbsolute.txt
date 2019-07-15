@@ -279,3 +279,14 @@ C:\Users\Jordan\Source\Repos\Simulador\CNegocio\obj\Debug\CNegocio.csproj.CoreCo
 C:\Users\Jordan\Source\Repos\Simulador\CNegocio\obj\Debug\CNegocio.csproj.CopyComplete
 C:\Users\Jordan\Source\Repos\Simulador\CNegocio\obj\Debug\CNegocio.dll
 C:\Users\Jordan\Source\Repos\Simulador\CNegocio\obj\Debug\CNegocio.pdb
+C:\Users\RithardLL\Source\Repos\Simulador14\CNegocio\bin\Debug\CNegocio.dll
+C:\Users\RithardLL\Source\Repos\Simulador14\CNegocio\bin\Debug\CNegocio.pdb
+C:\Users\RithardLL\Source\Repos\Simulador14\CNegocio\bin\Debug\CDatos.dll
+C:\Users\RithardLL\Source\Repos\Simulador14\CNegocio\bin\Debug\Modelos.dll
+C:\Users\RithardLL\Source\Repos\Simulador14\CNegocio\bin\Debug\CDatos.pdb
+C:\Users\RithardLL\Source\Repos\Simulador14\CNegocio\bin\Debug\Modelos.pdb
+C:\Users\RithardLL\Source\Repos\Simulador14\CNegocio\obj\Debug\CNegocio.csprojAssemblyReference.cache
+C:\Users\RithardLL\Source\Repos\Simulador14\CNegocio\obj\Debug\CNegocio.csproj.CoreCompileInputs.cache
+C:\Users\RithardLL\Source\Repos\Simulador14\CNegocio\obj\Debug\CNegocio.csproj.CopyComplete
+C:\Users\RithardLL\Source\Repos\Simulador14\CNegocio\obj\Debug\CNegocio.dll
+C:\Users\RithardLL\Source\Repos\Simulador14\CNegocio\obj\Debug\CNegocio.pdb
