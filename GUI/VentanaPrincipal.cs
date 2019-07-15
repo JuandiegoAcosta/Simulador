@@ -38,6 +38,7 @@ namespace Sistema_Bancario
       #endregion
 
       private ISession Session = null;
+      Button BtnSelecionado;
       public VentanaPrincipal(ISession session)
       {
 
@@ -125,12 +126,12 @@ namespace Sistema_Bancario
 
       public void CrearBoton(Button NombreButton, string Text, int x)
       {
-
-         NombreButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            //56; 96; 147
+            NombreButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
          NombreButton.FlatAppearance.BorderSize = 0;
-         NombreButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack;
-         NombreButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
-         NombreButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+         NombreButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(96)))), ((int)(((byte)(147)))));
+            NombreButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(96)))), ((int)(((byte)(147)))));
+            NombreButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
          NombreButton.Font = new Font("Verdana", 8, FontStyle.Bold);
          NombreButton.Padding = new Padding(20, 0, 0, 0);
          NombreButton.ForeColor = System.Drawing.SystemColors.Window;
@@ -142,12 +143,30 @@ namespace Sistema_Bancario
          NombreButton.UseVisualStyleBackColor = false;
          NombreButton.Location = new Point(0, x);
          NombreButton.Click += new EventHandler(Evento_Click);
-         panel2.Controls.Add(NombreButton);
+         NombreButton.Click += new EventHandler(Marcar_Click);
+            panel2.Controls.Add(NombreButton);
 
       }
+        private void Marcar_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            if (BtnSelecionado != btn && BtnSelecionado != null)
+            {
+                BtnSelecionado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+                btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(96)))), ((int)(((byte)(147)))));
+                BtnSelecionado = btn;
 
-      private void Evento_Click(object sender, EventArgs e)
-      {
+            }
+            else
+            {
+                btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(96)))), ((int)(((byte)(147)))));
+                BtnSelecionado = btn;
+            }
+                   
+         }
+
+        private void Evento_Click(object sender, EventArgs e)
+        {
          Button btn = sender as Button;
          TituloText.Visible = true;
 
@@ -156,6 +175,7 @@ namespace Sistema_Bancario
          {
             if (!panel1.Controls.Contains(Retiros.instance))
             {
+               
                panel1.Controls.Add(Retiros.instance);
                Retiros.instance.Dock = DockStyle.Fill;
                Retiros.instance.BringToFront();
