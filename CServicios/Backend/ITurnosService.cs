@@ -24,6 +24,9 @@ namespace ServiciosBancarios.Backend
         TurnosModel Turnos_ObtenerUno(int aID_Turnos);
 
         [OperationContract]
+        TurnosModel Turnos_ObtenerUnoXUsuario(int Id_usuario);
+
+        [OperationContract]
         List<TurnosModel> Turnos_ObtenerTodos();
     }
 }

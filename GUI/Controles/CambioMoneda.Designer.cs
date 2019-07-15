@@ -35,12 +35,13 @@
             this.tipoMoneda1 = new Sistema_Bancario.Controles.TipoMoneda();
             this.monto1 = new Sistema_Bancario.Monto();
             this.precios1 = new Sistema_Bancario.Controles.Precios();
+            this.Cambiar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 43);
+            this.label2.Location = new System.Drawing.Point(23, 21);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 13);
             this.label2.TabIndex = 43;
@@ -50,7 +51,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 71);
+            this.label1.Location = new System.Drawing.Point(23, 49);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 13);
             this.label1.TabIndex = 41;
@@ -59,7 +60,7 @@
             // txtConversion
             // 
             this.txtConversion.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.txtConversion.Location = new System.Drawing.Point(110, 68);
+            this.txtConversion.Location = new System.Drawing.Point(120, 46);
             this.txtConversion.Name = "txtConversion";
             this.txtConversion.ReadOnly = true;
             this.txtConversion.Size = new System.Drawing.Size(133, 20);
@@ -67,7 +68,7 @@
             // 
             // tipoMoneda2
             // 
-            this.tipoMoneda2.Location = new System.Drawing.Point(317, 66);
+            this.tipoMoneda2.Location = new System.Drawing.Point(327, 44);
             this.tipoMoneda2.Margin = new System.Windows.Forms.Padding(2);
             this.tipoMoneda2.Name = "tipoMoneda2";
             this.tipoMoneda2.Size = new System.Drawing.Size(133, 24);
@@ -75,7 +76,7 @@
             // 
             // tipoMoneda1
             // 
-            this.tipoMoneda1.Location = new System.Drawing.Point(317, 37);
+            this.tipoMoneda1.Location = new System.Drawing.Point(327, 15);
             this.tipoMoneda1.Margin = new System.Windows.Forms.Padding(2);
             this.tipoMoneda1.Name = "tipoMoneda1";
             this.tipoMoneda1.Size = new System.Drawing.Size(133, 24);
@@ -83,7 +84,7 @@
             // 
             // monto1
             // 
-            this.monto1.Location = new System.Drawing.Point(110, 39);
+            this.monto1.Location = new System.Drawing.Point(120, 17);
             this.monto1.Margin = new System.Windows.Forms.Padding(2);
             this.monto1.Name = "monto1";
             this.monto1.Size = new System.Drawing.Size(203, 22);
@@ -91,17 +92,31 @@
             // 
             // precios1
             // 
-            this.precios1.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.precios1.Location = new System.Drawing.Point(454, 15);
+            this.precios1.BackColor = System.Drawing.Color.Transparent;
+            this.precios1.Location = new System.Drawing.Point(464, 15);
             this.precios1.Margin = new System.Windows.Forms.Padding(2);
             this.precios1.Name = "precios1";
-            this.precios1.Size = new System.Drawing.Size(177, 108);
+            this.precios1.Size = new System.Drawing.Size(177, 79);
             this.precios1.TabIndex = 39;
+            // 
+            // Cambiar
+            // 
+            this.Cambiar.BackColor = System.Drawing.Color.ForestGreen;
+            this.Cambiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Cambiar.ForeColor = System.Drawing.SystemColors.Window;
+            this.Cambiar.Location = new System.Drawing.Point(353, 78);
+            this.Cambiar.Name = "Cambiar";
+            this.Cambiar.Size = new System.Drawing.Size(106, 23);
+            this.Cambiar.TabIndex = 46;
+            this.Cambiar.Text = "Cambiar";
+            this.Cambiar.UseVisualStyleBackColor = false;
+            this.Cambiar.Click += new System.EventHandler(this.Cambiar_Click);
             // 
             // CambioMoneda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.Cambiar);
             this.Controls.Add(this.tipoMoneda2);
             this.Controls.Add(this.tipoMoneda1);
             this.Controls.Add(this.label2);
@@ -110,7 +125,7 @@
             this.Controls.Add(this.txtConversion);
             this.Controls.Add(this.precios1);
             this.Name = "CambioMoneda";
-            this.Size = new System.Drawing.Size(657, 139);
+            this.Size = new System.Drawing.Size(657, 111);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -124,5 +139,6 @@
         public System.Windows.Forms.TextBox txtConversion;
         public TipoMoneda tipoMoneda2;
         public TipoMoneda tipoMoneda1;
+        public System.Windows.Forms.Button Cambiar;
     }
 }

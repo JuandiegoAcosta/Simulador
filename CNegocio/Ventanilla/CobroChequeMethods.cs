@@ -40,5 +40,9 @@ namespace CNegocio.Ventanilla
         {
             return ADCobroChqueManager.CobroChequesModelSelectAll();
         }
+        public bool CobroInsert(ChequeModel aCobroCheque,string NroCuenta)
+        {
+            return ADCobroChqueManager.CobroInsert(aCobroCheque,NroCuenta);
+        }
     }
 }

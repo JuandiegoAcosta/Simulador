@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TBNroCheque = new System.Windows.Forms.TextBox();
             this.doi1 = new Sistema_Bancario.Doi();
             this.CKDeposito = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -37,12 +37,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox1
+            // TBNroCheque
             // 
-            this.textBox1.Location = new System.Drawing.Point(101, 29);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(199, 20);
-            this.textBox1.TabIndex = 1;
+            this.TBNroCheque.Location = new System.Drawing.Point(101, 29);
+            this.TBNroCheque.Name = "TBNroCheque";
+            this.TBNroCheque.Size = new System.Drawing.Size(199, 20);
+            this.TBNroCheque.TabIndex = 1;
             // 
             // doi1
             // 
@@ -107,9 +107,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CKDeposito);
             this.Controls.Add(this.doi1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TBNroCheque);
             this.Name = "Cheques";
-            this.Controls.SetChildIndex(this.textBox1, 0);
+            this.Controls.SetChildIndex(this.TBNroCheque, 0);
             this.Controls.SetChildIndex(this.doi1, 0);
             this.Controls.SetChildIndex(this.CKDeposito, 0);
             this.Controls.SetChildIndex(this.label1, 0);
@@ -124,7 +124,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TBNroCheque;
         private Doi doi1;
         private System.Windows.Forms.CheckBox CKDeposito;
         private System.Windows.Forms.Label label1;

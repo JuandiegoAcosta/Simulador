@@ -217,7 +217,51 @@ namespace CDatos.Manager
             }
         }
 
+        public VentanillaModel GetVentanillaModelxUsuario(int ID_Usuario)
+        {
+            VentanillaModel VentanillaModel = null;
 
+            try
+            {
+                using (var connection = Util.ConnectionFactory.conexion())
+                {
+                    connection.Open();
+
+                    SqlCommand command = connection.CreateCommand();
+                    command.Parameters.AddWithValue("@PId_Usuario", ID_Usuario);
+
+
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.CommandText = "SelectVentanillaXUsuario";
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+
+                            int ID_VentanillaModel = (int)(reader["ID_Ventanilla"]);
+                            string Descripcion = (string)(reader["Descripcion"]);
+
+                            VentanillaModel = new VentanillaModel
+                            {
+                                Id_ventanilla = ID_VentanillaModel,
+                                Descripcion = Descripcion
+
+                            };
+                        }
+                    }
+                }
+
+                return VentanillaModel;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
         /// <summary>
         /// Selects all the objects of VentanillaModel table.
         /// </summary>
@@ -337,7 +381,7 @@ namespace CDatos.Manager
                 return VentanillaModellist;
             }
         }
-        public List<VentanillaModel> GetVentanillasXSucursal(int sucursal)
+        public List<VentanillaModel> GetVentanillasXSucursal(int sucursal,int turno)
         {
             List<VentanillaModel> VentanillaModellist = new List<VentanillaModel>();
 
@@ -350,6 +394,7 @@ namespace CDatos.Manager
                     SqlCommand command = connection.CreateCommand();
 
                     command.Parameters.AddWithValue("@sucursal", sucursal);
+                    command.Parameters.AddWithValue("@turno", turno);
 
 
                     command.CommandType = CommandType.StoredProcedure;
@@ -365,21 +410,11 @@ namespace CDatos.Manager
 
                             int ID_VentanillaModel = (int)(reader["ID_Ventanilla"]);
                             string Descripcion = (string)(reader["Descripcion"]);
-                            int IdSucursal = (int)(reader["IdSucursal"]);
-                            DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
-                            DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
-                            string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
-                            string USUARIO_MODIFICADOR = (reader["USUARIO_MODIFICADOR"]) == DBNull.Value ? null : (string)(reader["USUARIO_MODIFICADOR"]);
 
                             VentanillaModellist.Add(new VentanillaModel
                             {
                                 Id_ventanilla = ID_VentanillaModel,
-                                Descripcion = Descripcion,
-                                Idsucursal = IdSucursal,
-                                Fecha_creacion = FECHA_CREACION,
-                                Fecha_modificacion = FECHA_MODIFICACION,
-                                Usuario_creador = USUARIO_CREADOR,
-                                Usuario_modificador = USUARIO_MODIFICADOR,
+                                Descripcion = Descripcion
 
                             });
                         }

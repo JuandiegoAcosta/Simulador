@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using Modelos;
 using Modelos.Modelos;
 
 namespace CDatos.Manager
@@ -329,6 +330,44 @@ namespace CDatos.Manager
                 return TipoMovimientoModellist;
             }
         }
+
+        public int MovimientoTipoCambioInsert(TipodeCambioModel aValue)
+        {
+
+            int result=-1;
+
+            try
+            {
+                using (var connection = Util.ConnectionFactory.conexion())
+                {
+                    connection.Open();
+
+                    SqlCommand command = connection.CreateCommand();
+
+                    command.Parameters.AddWithValue("@MontoE", aValue.MontoE);
+                    command.Parameters.AddWithValue("@MonedaE", aValue.MonedaE);
+                    command.Parameters.AddWithValue("@MontoS", aValue.MontoS);
+                    command.Parameters.AddWithValue("@MonedaS", aValue.MonedaS);
+                    command.Parameters.AddWithValue("@Usuario", aValue.Usuario);
+
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.CommandText = "MovimientoTipoCambioInsert";
+
+                    result = command.ExecuteNonQuery();
+
+                  
+                }
+
+                return result;
+            }
+            catch (Exception)
+            {
+                return result;
+            }
+        }
+
+
 
         /*
          alter Procedure MovimientoTipoCambioInsert

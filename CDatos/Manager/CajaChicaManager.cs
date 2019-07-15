@@ -34,10 +34,8 @@ namespace CDatos.Manager
                     command.Parameters.AddWithValue("@pMode", 4);
                     command.Parameters.AddWithValue("@ID", aCaja_ChicaModel.Id);
                     command.Parameters.AddWithValue("@Tipo_Accion", aCaja_ChicaModel.Tipo_Accion);
-                    command.Parameters.AddWithValue("@Monto", aCaja_ChicaModel.Monto);
-                    command.Parameters.AddWithValue("@Id_TurnoUsuario", aCaja_ChicaModel.Id_TurnoUsuario);
-                    command.Parameters.AddWithValue("@Hora", aCaja_ChicaModel.Hora);
-                    command.Parameters.AddWithValue("@Fecha", aCaja_ChicaModel.Fecha);
+                    command.Parameters.AddWithValue("@Id_TurnoUsuario1", aCaja_ChicaModel.Id_TurnoUsuario1);
+                    command.Parameters.AddWithValue("@Id_TurnoUsuario2", aCaja_ChicaModel.Id_TurnoUsuario2);
                     command.Parameters.AddWithValue("@USUARIO_CREADOR", aCaja_ChicaModel.Usuario_creador);
                     command.Parameters.AddWithValue("@FECHA_CREACION", aCaja_ChicaModel.Fecha_creacion);
 
@@ -87,10 +85,8 @@ namespace CDatos.Manager
                     command.Parameters.AddWithValue("@pMode", 5);
                     command.Parameters.AddWithValue("@ID", aCaja_ChicaModel.Id);
                     command.Parameters.AddWithValue("@Tipo_Accion", aCaja_ChicaModel.Tipo_Accion);
-                    command.Parameters.AddWithValue("@Monto", aCaja_ChicaModel.Monto);
-                    command.Parameters.AddWithValue("@Id_TurnoUsuario", aCaja_ChicaModel.Id_TurnoUsuario);
-                    command.Parameters.AddWithValue("@Hora", aCaja_ChicaModel.Hora);
-                    command.Parameters.AddWithValue("@Fecha", aCaja_ChicaModel.Fecha);
+                    command.Parameters.AddWithValue("@Id_TurnoUsuario1", aCaja_ChicaModel.Id_TurnoUsuario1);
+                    command.Parameters.AddWithValue("@Id_TurnoUsuario2", aCaja_ChicaModel.Id_TurnoUsuario2);
                     command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aCaja_ChicaModel.Usuario_modificador == null ? (object)DBNull.Value : aCaja_ChicaModel.Usuario_modificador);
                     command.Parameters.AddWithValue("@FECHA_MODIFICACION", aCaja_ChicaModel.Fecha_modificacion == null ? (object)DBNull.Value : aCaja_ChicaModel.Fecha_modificacion);
 
@@ -140,7 +136,7 @@ namespace CDatos.Manager
                     command.CommandText = "sp_tCajaChica";
                     int afectados = command.ExecuteNonQuery();
 
-                    // Commit the transaction.
+                    // Commit the transaction
                     sqlTran.Commit();
 
                     connection.Close();
@@ -191,7 +187,7 @@ namespace CDatos.Manager
 
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.CommandText = "sp_pBanco";
+                    command.CommandText = "sp_tCajaChica";
 
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -202,10 +198,9 @@ namespace CDatos.Manager
 
                             int ID = (int)(reader["ID"]);
                             string Tipo_Accion = (string)(reader["Tipo_Accion"]);
-                            decimal Monto = (decimal)(reader["Monto"]);
-                            int Id_TurnoUsuario = (int)(reader["Id_TurnoUsuario"]);
+                            int Id_TurnoUsuario1 = (int)(reader["Id_TurnoUsuario1"]);
+                            int Id_TurnoUsuario2 = (int)(reader["Id_TurnoUsuario2"]);
                             TimeSpan Hora = (TimeSpan)(reader["Hora"]);
-                            DateTime Fecha = (DateTime)(reader["Fecha"]);
                             string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
                             string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
@@ -215,10 +210,8 @@ namespace CDatos.Manager
                             {
                                 Id = ID,
                                 Tipo_Accion = Tipo_Accion,
-                                Monto = Monto,
-                                Id_TurnoUsuario = Id_TurnoUsuario,
-                                Hora = Hora,
-                                Fecha = Fecha,
+                                Id_TurnoUsuario1 = Id_TurnoUsuario1,
+                                Id_TurnoUsuario2 = Id_TurnoUsuario2,
                                 Usuario_creador = USUARIO_CREADOR,
                                 Fecha_creacion = FECHA_CREACION,
                                 Usuario_modificador = USUARIO_MODIFICADOR,
@@ -264,10 +257,8 @@ namespace CDatos.Manager
 
                             int ID = (int)(reader["ID"]);
                             string Tipo_Accion = (string)(reader["Tipo_Accion"]);
-                            decimal Monto = (decimal)(reader["Monto"]);
-                            int Id_TurnoUsuario = (int)(reader["Id_TurnoUsuario"]);
-                            TimeSpan Hora = (TimeSpan)(reader["Hora"]);
-                            DateTime Fecha = (DateTime)(reader["Fecha"]);
+                            int Id_TurnoUsuario1 = (int)(reader["Id_TurnoUsuario1"]);
+                            int Id_TurnoUsuario2 = (int)(reader["Id_TurnoUsuario2"]);
                             string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
                             string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
@@ -277,10 +268,8 @@ namespace CDatos.Manager
                             {
                                 Id = ID,
                                 Tipo_Accion = Tipo_Accion,
-                                Monto = Monto,
-                                Id_TurnoUsuario = Id_TurnoUsuario,
-                                Hora = Hora,
-                                Fecha = Fecha,
+                                Id_TurnoUsuario1 = Id_TurnoUsuario1,
+                                Id_TurnoUsuario2 = Id_TurnoUsuario2,
                                 Usuario_creador = USUARIO_CREADOR,
                                 Fecha_creacion = FECHA_CREACION,
                                 Usuario_modificador = USUARIO_MODIFICADOR,
@@ -331,10 +320,7 @@ namespace CDatos.Manager
 
                             int ID = (int)(reader["ID"]);
                             string Tipo = (string)(reader["Tipo"]);
-                            decimal Monto = (decimal)(reader["Monto"]);
                             int ID_Persona = (int)(reader["ID_Persona"]);
-                            TimeSpan Hora = (TimeSpan)(reader["Hora"]);
-                            DateTime Fecha = (DateTime)(reader["Fecha"]);
                             string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
                             string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
@@ -344,10 +330,7 @@ namespace CDatos.Manager
                             {
                                 Id = ID,
                                 Tipo_Accion = Tipo,
-                                Monto = Monto,
-                                Id_TurnoUsuario = ID_Persona,
-                                Hora = Hora,
-                                Fecha = Fecha,
+                                Id_TurnoUsuario1 = ID_Persona,
                                 Usuario_creador = USUARIO_CREADOR,
                                 Fecha_creacion = FECHA_CREACION,
                                 Usuario_modificador = USUARIO_MODIFICADOR,
@@ -368,5 +351,4 @@ namespace CDatos.Manager
         #endregion
 
     }
-
 }

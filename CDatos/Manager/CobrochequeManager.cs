@@ -227,6 +227,51 @@ namespace CDatos.Manager
             }
         }
 
+        public bool CobroInsert(ChequeModel aChequesModel, string NroCuenta)
+        {
+            try
+            {
+                using (var connection = Util.ConnectionFactory.conexion())
+                {
+                    connection.Open();
+
+                    SqlTransaction sqlTran = connection.BeginTransaction();
+
+                    SqlCommand command = connection.CreateCommand();
+
+                    command.Transaction = sqlTran;
+
+                    command.Parameters.AddWithValue("@Numero", aChequesModel.Numero);
+                    // command.Parameters.AddWithValue("@Destinatario", aChequesModel.Destinatario);
+                    command.Parameters.AddWithValue("@Monto", aChequesModel.Monto);
+                    command.Parameters.AddWithValue("@cuentaReceptora", NroCuenta);
+                    // command.Parameters.AddWithValue("@IDChequesModelra", aChequesModel.IdChequesModelra);
+                    // command.Parameters.AddWithValue("@Estado", aChequesModel.Estado);                               
+                    //->  command.Parameters.AddWithValue("@USUARIO_CREACION", aChequesModel.Usuario_creacion);
+
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.CommandText = "cobroChequesInsert";
+
+                    int afectados = command.ExecuteNonQuery();
+
+                    // Commit the transaction.
+                    sqlTran.Commit();
+
+                    connection.Close();
+                    connection.Dispose();
+
+                    if (afectados > 0)
+                        return true;
+                    else
+                        return false;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
 
         /// <summary>
         /// Selects all the objects of CobroChequesModel table.

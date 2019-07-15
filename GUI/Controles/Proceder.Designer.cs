@@ -35,7 +35,7 @@ namespace Sistema_Bancario.Controles
             // 
             // BTProceder
             // 
-            this.BTProceder.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.BTProceder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(96)))), ((int)(((byte)(147)))));
             this.BTProceder.Dock = System.Windows.Forms.DockStyle.Right;
             this.BTProceder.FlatAppearance.BorderSize = 0;
             this.BTProceder.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen;

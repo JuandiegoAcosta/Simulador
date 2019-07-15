@@ -24,19 +24,23 @@ namespace Sistema_Bancario.Ventanilla
             this.session = sesion;
             InitializeComponent();
             this.BackColor = Color.White;
-            this.CargarComboMoneda();
-            this.CargarComboRolesSujetos();
+            //this.CargarComboMoneda();
+            //this.CargarComboRolesSujetos();
             this.CargarComboSujetos();
             this.CargarTipoMovimiento();
+            this.CargarDgvSoles();
+            this.CargarDgvDolares();
         }
         private Balancin()
         {
             InitializeComponent();
             this.BackColor = Color.White;
-            this.CargarComboMoneda();
-            this.CargarComboRolesSujetos();
+            //this.CargarComboMoneda();
+            //this.CargarComboRolesSujetos();
             this.CargarComboSujetos();
             this.CargarTipoMovimiento();
+            this.CargarDgvSoles();
+            this.CargarDgvDolares();
 
         }
         private static Balancin _instance;
@@ -52,30 +56,23 @@ namespace Sistema_Bancario.Ventanilla
                 return _instance;
             }
         }
-
-        private void cmbMonedas_SelectedValueChanged(object sender, EventArgs e)
+        private void CargarDgvSoles()
         {
-            if (cmbMonedas.SelectedIndex==0)
-            {
-                this.CmbDenominaciones.DataSource = null;
-                this.CmbDenominaciones.DataSource =Denominaciones.Instance.soles;
-            }else if(cmbMonedas.SelectedIndex==1)
-            {
-                this.CmbDenominaciones.DataSource = null;
-                this.CmbDenominaciones.DataSource = Denominaciones.Instance.dolares;
-            }
+            dgvSoles.Rows.Add("10 soles",0,0);
+            dgvSoles.Rows.Add("20 soles", 0, 0);
+            dgvSoles.Rows.Add("50 soles", 0, 0);
+            dgvSoles.Rows.Add("100 soles", 0, 0);
+            dgvSoles.Rows.Add("200 soles", 0, 0);
         }
-        private void CargarComboMoneda()
+        private void CargarDgvDolares()
         {
-            using (WsSistemaBancario.TipoMonedaServiceClient moneda=new WsSistemaBancario.TipoMonedaServiceClient())
-            {
-                cmbMonedas.DataSource = moneda.Moneda_ObtenerTodos();
-                cmbMonedas.DisplayMember = "Nombre";
-            }
-        }
-        private void CargarComboRolesSujetos()
-        {
-            cmbTiposRoles.DataSource =TiposSujeto.Instance.Sujetos;
+            dgvDolares.Rows.Add("1 dolares", 0, 0);
+            dgvDolares.Rows.Add("2 dolares", 0, 0);
+            dgvDolares.Rows.Add("5 dolares", 0, 0);
+            dgvDolares.Rows.Add("10 dolares", 0, 0);
+            dgvDolares.Rows.Add("20 dolares", 0, 0);
+            dgvDolares.Rows.Add("50 dolares", 0, 0);
+            dgvDolares.Rows.Add("100 dolares", 0, 0);
         }
         private void CargarComboSujetos()
         {
@@ -83,13 +80,13 @@ namespace Sistema_Bancario.Ventanilla
             {
                 using (WsSistemaBancario.VentanillaServiceClient ventanilla = new WsSistemaBancario.VentanillaServiceClient())
                 {
-                    this.cmbPersonaRol.DataSource = ventanilla.GetVentanillasXSucursal(Convert.ToInt32(this.session.SucursalCodigo));
-                    this.cmbPersonaRol.DisplayMember = "Descripcion";
+                    this.cmbVentanillas.DataSource = ventanilla.GetVentanillasXSucursal(Convert.ToInt32(this.session.SucursalCodigo), Convert.ToInt32(this.session.TurnoCodigo));
+                    this.cmbVentanillas.DisplayMember = "Descripcion";
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Ocurrio un error");
+                MessageBox.Show("Ocurrio un error al cargar ventanillas en el combo");
                
             }
             
@@ -99,22 +96,22 @@ namespace Sistema_Bancario.Ventanilla
             this.cmbTipoMov.DataSource =TipoMovimiento.Instance.Movimientos;
         }
 
-        private void btnAgregar_Click(object sender, EventArgs e)
-        {
-            this.SumaTotal = 0;
-            int n = dgvDenominaciones.Rows.Add();
-            this.dgvDenominaciones.Rows[n].Cells[0].Value = this.CmbDenominaciones.SelectedValue;
-            this.dgvDenominaciones.Rows[n].Cells[1].Value = this.nudNroBilletes.Value;
-            this.dgvDenominaciones.Rows[n].Cells[2].Value = this.CalcularImporte((string)this.CmbDenominaciones.SelectedValue, (int)this.nudNroBilletes.Value);
+        //private void btnAgregar_Click(object sender, EventArgs e)
+        //{
+        //    this.SumaTotal = 0;
+        //    int n = dgvDenominaciones.Rows.Add();
+        //    this.dgvDenominaciones.Rows[n].Cells[0].Value = this.CmbDenominaciones.SelectedValue;
+        //    this.dgvDenominaciones.Rows[n].Cells[1].Value = this.nudNroBilletes.Value;
+        //    this.dgvDenominaciones.Rows[n].Cells[2].Value = this.CalcularImporte((string)this.CmbDenominaciones.SelectedValue, (int)this.nudNroBilletes.Value);
 
-            //calcular el total
+        //    //calcular el total
 
-            foreach (DataGridViewRow r in dgvDenominaciones.Rows)
-            {
-                SumaTotal = SumaTotal+(int)r.Cells[2].Value;
-            }
-            this.txtTotal.Text = this.SumaTotal.ToString();
-        }
+        //    foreach (DataGridViewRow r in dgvDenominaciones.Rows)
+        //    {
+        //        SumaTotal = SumaTotal+(int)r.Cells[2].Value;
+        //    }
+        //    this.txtTotal.Text = this.SumaTotal.ToString();
+        //}
         /// <summary>
         /// calcula el monto de importe segun la denominacion de moneda y la cantidad
         /// </summary>
@@ -166,28 +163,15 @@ namespace Sistema_Bancario.Ventanilla
         private void btnQuitar_Click(object sender, EventArgs e)
         {
             this.SumaTotal = 0;
-            if (this.dgvDenominaciones.Rows.Count-1>=IndiceDataGrid & IndiceDataGrid!=-1)
+            if (this.dgvSoles.Rows.Count-1>=IndiceDataGrid & IndiceDataGrid!=-1)
             {
-                this.dgvDenominaciones.Rows.RemoveAt(IndiceDataGrid);
+                this.dgvSoles.Rows.RemoveAt(IndiceDataGrid);
             }
-            foreach (DataGridViewRow r in dgvDenominaciones.Rows)
+            foreach (DataGridViewRow r in dgvSoles.Rows)
             {
                 SumaTotal = SumaTotal + (int)r.Cells[2].Value;
             }
-            this.txtTotal.Text = this.SumaTotal.ToString();
-        }
-
-        private void cmbTiposRoles_SelectedValueChanged(object sender, EventArgs e)
-        {
-            this.cmbPersonaRol.DataSource = null;
-            if (cmbTiposRoles.SelectedIndex==0)//ventanilla
-            {
-                this.CargarComboSujetos();
-            }
-            else//bodega
-            {
-                this.cmbPersonaRol.DataSource = Clases.Bodega.Instance.bodegueros;
-            }
+            this.txtTotalSoles.Text = this.SumaTotal.ToString();
         }
 
         private void btnRegistrarMov_Click(object sender, EventArgs e)
@@ -196,6 +180,55 @@ namespace Sistema_Bancario.Ventanilla
             //{
 
             //}
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void dgvSoles_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            if (e.ColumnIndex == 1)
+            {
+                try
+                {
+                    int result = Convert.ToInt32(e.FormattedValue);
+                    dgvSoles.Rows[e.RowIndex].ErrorText = String.Empty;
+                    result = this.CalcularImporte(dgvSoles.Rows[e.RowIndex].Cells[0].Value.ToString(),result);
+                    dgvSoles.Rows[e.RowIndex].Cells[2].Value = result;
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("Las celdas solo permiten números!","Dato incorrecto",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    dgvSoles.Rows[e.RowIndex].ErrorText = "El dato introducido no es de tipo numero";
+                    e.Cancel = true;
+                }
+            }
+        }
+
+        private void dgvDolares_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            if (e.ColumnIndex == 1)
+            {
+                try
+                {
+                    int result = Convert.ToInt32(e.FormattedValue);
+                    dgvDolares.Rows[e.RowIndex].ErrorText = String.Empty;
+                    result = this.CalcularImporte(dgvDolares.Rows[e.RowIndex].Cells[0].Value.ToString(), result);
+                    dgvDolares.Rows[e.RowIndex].Cells[2].Value = result;
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("Las celdas solo permiten números!", "Dato incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    dgvDolares.Rows[e.RowIndex].ErrorText = "El dato introducido no es de tipo numero";
+                    e.Cancel = true;
+                }
+            }
         }
     }
 }

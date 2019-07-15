@@ -1,4 +1,5 @@
 ﻿using CDatos.Manager;
+using Modelos;
 using Modelos.Modelos;
 using System;
 using System.Collections.Generic;
@@ -11,10 +12,12 @@ namespace CNegocio.Ventanilla
     public class TipoMovimientoMethods
     {
         private MovimientosVentanillaManager ADMovimientoVentanillaManager;
+        private TipoMovimientoManager ADTipoMovimientoManager;
 
         public TipoMovimientoMethods()
         {
             ADMovimientoVentanillaManager = new MovimientosVentanillaManager();
+            ADTipoMovimientoManager = new TipoMovimientoManager();
         }
         public bool Crear(MovimientosVentanillaModel aMovimientoVentanilla)
         {
@@ -39,6 +42,11 @@ namespace CNegocio.Ventanilla
         public List<MovimientosVentanillaModel> ObtenerTodos()
         {
             return ADMovimientoVentanillaManager.MovimientosVentanillaModelSelectAll();
+        }
+
+        public int MovimientoTipoCambioInsert(TipodeCambioModel tipo)
+        {
+            return ADTipoMovimientoManager.MovimientoTipoCambioInsert(tipo);
         }
     }
 }

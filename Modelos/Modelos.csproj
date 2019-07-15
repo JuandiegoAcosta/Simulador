@@ -56,6 +56,7 @@
     <Compile Include="Modelos\CuentasModel.cs" />
     <Compile Include="Modelos\CuentasTarjetasModel.cs" />
     <Compile Include="Modelos\Deposito.cs" />
+    <Compile Include="Modelos\DetalleCajaChicaModel.cs" />
     <Compile Include="Modelos\EmpresaModel.cs" />
     <Compile Include="Modelos\GiroModel.cs" />
     <Compile Include="Modelos\HorariosAtencionModel.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="Modelos\TipoCambioModel.cs" />
     <Compile Include="Session\ISession.cs" />
     <Compile Include="Session\Session.cs" />
+    <Compile Include="Modelos\TipodeCambioModel.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
