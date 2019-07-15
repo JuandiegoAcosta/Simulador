@@ -99,7 +99,7 @@ namespace Sistema_Bancario.Administrador
                         rum.Fecha_creacion = DateTime.Now;
                         rum.Usuario_creador = "Administrador";
 
-                        CrearRolUsuario.RolUsuario_Crear(rum);
+                        CrearRolUsuario.RolUsuario_Crear(rum,1);
                     }
 
 

@@ -259,13 +259,14 @@ namespace Sistema_Bancario.Ventanilla
                 identity = caja.Crear(cc, Convert.ToInt32(session.UserCodigo));
                 if (identity==0)
                 {
-                    MessageBox.Show("No se pudo registrar los datos!");
-                }
-                else
-                {
+                    MessageBox.Show("No se pudo registrar la cabecera!");
                     return;
                 }
             }
+            //using (WsSistemaBancario.)
+            //{
+
+            //}
         }
     }
 }

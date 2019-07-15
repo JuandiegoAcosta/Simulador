@@ -9,11 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Modelos.Modelos;
 using Sistema_Bancario.Clases;
+using System.ServiceModel.Channels;
+using Modelos.Session;
 
 namespace Sistema_Bancario.Administrador
 {
     public partial class Roles : UserControl
     {
+        Modelos.Session.ISession session = new Session();
         public Roles()
         {
             InitializeComponent();
@@ -87,7 +90,7 @@ namespace Sistema_Bancario.Administrador
                     //objectmodelo.Usuario_modificador = "";
 
 
-                    rol.Roles_Crear(objectmodelo);
+                    rol.Roles_Crear(objectmodelo,1);
 
 
                     cargarDGV();
@@ -193,7 +196,7 @@ namespace Sistema_Bancario.Administrador
                     objectmodelo.Descripcion = txtRol.Text;
                     objectmodelo.Fecha_modificacion = DateTime.Now;
                     objectmodelo.Usuario_modificador = "";
-                    rol.Roles_Editar(objectmodelo);
+                    rol.Roles_Editar(objectmodelo,1);
 
                     cargarDGV();
                 }
@@ -450,7 +453,7 @@ namespace Sistema_Bancario.Administrador
                         rum.Fecha_creacion = DateTime.Now;
                         rum.Usuario_creador = "Administrador";
 
-                        CrearRolUsuario.RolUsuario_Crear(rum);
+                        CrearRolUsuario.RolUsuario_Crear(rum,1);
                     }
 
 

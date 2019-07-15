@@ -156,7 +156,7 @@ namespace Sistema_Bancario.Administrador
                     ru.Fecha_creacion = DateTime.Now;
                     ru.Usuario_creador = "Saurom";
 
-                    RolUsuario.RolUsuario_Crear(ru);
+                    RolUsuario.RolUsuario_Crear(ru,1);
 
 
 

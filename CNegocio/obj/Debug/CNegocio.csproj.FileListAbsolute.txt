@@ -301,3 +301,14 @@ C:\Users\RithardLL\Source\Repos\Simulador17\CNegocio\obj\Debug\CNegocio.csproj.C
 C:\Users\RithardLL\Source\Repos\Simulador17\CNegocio\obj\Debug\CNegocio.csproj.CopyComplete
 C:\Users\RithardLL\Source\Repos\Simulador17\CNegocio\obj\Debug\CNegocio.dll
 C:\Users\RithardLL\Source\Repos\Simulador17\CNegocio\obj\Debug\CNegocio.pdb
+E:\Documents\cursos\VI semestre\distribuidas\simulador\CNegocio\bin\Debug\CNegocio.dll
+E:\Documents\cursos\VI semestre\distribuidas\simulador\CNegocio\bin\Debug\CNegocio.pdb
+E:\Documents\cursos\VI semestre\distribuidas\simulador\CNegocio\bin\Debug\CDatos.dll
+E:\Documents\cursos\VI semestre\distribuidas\simulador\CNegocio\bin\Debug\Modelos.dll
+E:\Documents\cursos\VI semestre\distribuidas\simulador\CNegocio\bin\Debug\CDatos.pdb
+E:\Documents\cursos\VI semestre\distribuidas\simulador\CNegocio\bin\Debug\Modelos.pdb
+E:\Documents\cursos\VI semestre\distribuidas\simulador\CNegocio\obj\Debug\CNegocio.csprojAssemblyReference.cache
+E:\Documents\cursos\VI semestre\distribuidas\simulador\CNegocio\obj\Debug\CNegocio.csproj.CoreCompileInputs.cache
+E:\Documents\cursos\VI semestre\distribuidas\simulador\CNegocio\obj\Debug\CNegocio.csproj.CopyComplete
+E:\Documents\cursos\VI semestre\distribuidas\simulador\CNegocio\obj\Debug\CNegocio.dll
+E:\Documents\cursos\VI semestre\distribuidas\simulador\CNegocio\obj\Debug\CNegocio.pdb
