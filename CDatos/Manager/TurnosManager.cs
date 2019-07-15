@@ -220,6 +220,52 @@ namespace CDatos.Manager
                 return null;
             }
         }
+        public TurnosModel GetTurnosModelxUsuario(int Id_usuario)
+        {
+            TurnosModel TurnosModel = null;
+
+            try
+            {
+                using (var connection = Util.ConnectionFactory.conexion())
+                {
+                    connection.Open();
+
+                    SqlCommand command = connection.CreateCommand();
+
+                    command.Parameters.AddWithValue("@PId_Usuario", Id_usuario);
+
+
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.CommandText = "SelectTurnoXUsuario";
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+
+                            int Id = (int)(reader["Id"]);
+                            string Descripcion = (string)(reader["Descripcion"]);
+
+                            TurnosModel = new TurnosModel
+                            {
+                                Id = Id,
+                                Descripcion = Descripcion,
+
+                            };
+                        }
+                    }
+                }
+
+                return TurnosModel;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
 
 
         /// <summary>
