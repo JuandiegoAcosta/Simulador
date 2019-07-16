@@ -519,7 +519,7 @@ namespace CDatos.Manager
                                 Fecha_modificacion = FECHA_MODIFICACION,
                                 Usuario_creador = USUARIO_CREADOR,
                                 Usuario_modificador = USUARIO_MODIFICADOR,
-                                Estado = estado,
+                                Estado = 0
 
                             });
                         }
