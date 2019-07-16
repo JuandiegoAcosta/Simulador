@@ -226,6 +226,7 @@
     <Compile Include="Controles\Precios.Designer.cs">
       <DependentUpon>Precios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controles\status.cs" />
     <Compile Include="Controles\TextBoxViewPassword.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -612,6 +613,9 @@
     <None Include="Connected Services\WsSistemaBancario\SistemaBancario2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\WsSistemaBancario\SistemaBancario3.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\DataSources\Modelos.Modelos.BancoModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.CajaChicaModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.CobroChequesModel.datasource" />
@@ -624,6 +628,7 @@
     <None Include="Properties\DataSources\Modelos.Modelos.PagoServiciosModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.PermisosUsuarioModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.PersonaModel.datasource" />
+    <None Include="Properties\DataSources\Modelos.Modelos.PrestamosModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.RecaudosModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.RolesModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.RolUsuarioModel.datasource" />
