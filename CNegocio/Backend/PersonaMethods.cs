@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace CNegocio.Backend
 {
@@ -118,9 +119,9 @@ namespace CNegocio.Backend
         {
             return ADPersonaManager.GetRolesUsuario(aUsuario);
         }
+    
 
-
-        public List<PersonaModel> GetPersonasPorRol(int idRol)
+        public DataTable GetPersonasPorRol(int idRol)
         {
             return ADPersonaManager.GetPersonasPorRol(idRol);
         }

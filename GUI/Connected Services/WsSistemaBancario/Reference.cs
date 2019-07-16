@@ -1267,10 +1267,10 @@ namespace Sistema_Bancario.WsSistemaBancario {
         System.Threading.Tasks.Task<Modelos.Modelos.RolesModel[]> Persona_GetRolesUsuarioAsync(string aUsuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/GetPersonasPorRol", ReplyAction="http://tempuri.org/IPersonaService/GetPersonasPorRolResponse")]
-        Modelos.Modelos.PersonaModel[] GetPersonasPorRol(int idRol);
+        System.Data.DataTable GetPersonasPorRol(int idRol);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/GetPersonasPorRol", ReplyAction="http://tempuri.org/IPersonaService/GetPersonasPorRolResponse")]
-        System.Threading.Tasks.Task<Modelos.Modelos.PersonaModel[]> GetPersonasPorRolAsync(int idRol);
+        System.Threading.Tasks.Task<System.Data.DataTable> GetPersonasPorRolAsync(int idRol);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/Persona_GetPersonaNombreApellidos", ReplyAction="http://tempuri.org/IPersonaService/Persona_GetPersonaNombreApellidosResponse")]
         Modelos.Modelos.PersonaModel[] Persona_GetPersonaNombreApellidos(string nombre, string apellido);
@@ -1416,11 +1416,11 @@ namespace Sistema_Bancario.WsSistemaBancario {
             return base.Channel.Persona_GetRolesUsuarioAsync(aUsuario);
         }
         
-        public Modelos.Modelos.PersonaModel[] GetPersonasPorRol(int idRol) {
+        public System.Data.DataTable GetPersonasPorRol(int idRol) {
             return base.Channel.GetPersonasPorRol(idRol);
         }
         
-        public System.Threading.Tasks.Task<Modelos.Modelos.PersonaModel[]> GetPersonasPorRolAsync(int idRol) {
+        public System.Threading.Tasks.Task<System.Data.DataTable> GetPersonasPorRolAsync(int idRol) {
             return base.Channel.GetPersonasPorRolAsync(idRol);
         }
         
