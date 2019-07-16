@@ -64,6 +64,13 @@
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
+            // NuevaCuentaUserControl
+            // 
+            this.Name = "NuevaCuentaUserControl";
+            this.Size = new System.Drawing.Size(645, 412);
+            this.Load += new System.EventHandler(this.NuevaCuentaUserControl_Load);
+            this.ResumeLayout(false);
+            // 
             // cboMoneda
             // 
             this.cboMoneda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;

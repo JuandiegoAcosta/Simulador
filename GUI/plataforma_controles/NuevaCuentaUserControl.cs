@@ -401,19 +401,6 @@ namespace Sistema_Bancario.plataforma_controles
             this.buscarCuenta(objeto);
         }
 
-        private void InitializeComponent()
-        {
-            this.SuspendLayout();
-            // 
-            // NuevaCuentaUserControl
-            // 
-            this.Name = "NuevaCuentaUserControl";
-            this.Size = new System.Drawing.Size(645, 412);
-            this.Load += new System.EventHandler(this.NuevaCuentaUserControl_Load);
-            this.ResumeLayout(false);
-
-        }
-
         private void NuevaCuentaUserControl_Load(object sender, EventArgs e)
         {
 
