@@ -15,6 +15,7 @@ using Sistema_Bancario.Ventanilla;
 using Sistema_Bancario.Config;
 using Sistema_Bancario.Administrador;
 using Modelos.Session;
+using Sistema_Bancario.Controles;
 //using Sistema_Bancario.Ventanilla;
 
 namespace Sistema_Bancario
@@ -89,6 +90,8 @@ namespace Sistema_Bancario
         {
          lblUserValueType.Text = Session.UserNombreCompleto;
          lblSucursal.Text = Session.SucursalNombre;
+            lblVentanilla.Text = Session.VentanillaDescripcion;
+            lblTurno.Text = Session.Turno.Descripcion;
         }
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
       {
@@ -289,7 +292,7 @@ namespace Sistema_Bancario
             }
             else if (btn.Text.Equals("Personas"))
             {
-                CrearControl<UserControl>(Personas.instance, btn);
+                CrearControl<UserControl>(Usuario.instance, btn);
             }
             else if (btn.Text.Equals("Roles"))
             {

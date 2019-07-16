@@ -234,3 +234,21 @@ C:\Users\RithardLL\Source\Repos\Simulador14\CDatos\obj\Debug\CDatos.csproj.CoreC
 C:\Users\RithardLL\Source\Repos\Simulador14\CDatos\obj\Debug\CDatos.csproj.CopyComplete
 C:\Users\RithardLL\Source\Repos\Simulador14\CDatos\obj\Debug\CDatos.dll
 C:\Users\RithardLL\Source\Repos\Simulador14\CDatos\obj\Debug\CDatos.pdb
+C:\Users\RithardLL\Source\Repos\Simulador17\CDatos\bin\Debug\CDatos.dll
+C:\Users\RithardLL\Source\Repos\Simulador17\CDatos\bin\Debug\CDatos.pdb
+C:\Users\RithardLL\Source\Repos\Simulador17\CDatos\bin\Debug\Modelos.dll
+C:\Users\RithardLL\Source\Repos\Simulador17\CDatos\bin\Debug\Modelos.pdb
+C:\Users\RithardLL\Source\Repos\Simulador17\CDatos\obj\Debug\CDatos.csprojAssemblyReference.cache
+C:\Users\RithardLL\Source\Repos\Simulador17\CDatos\obj\Debug\CDatos.csproj.CoreCompileInputs.cache
+C:\Users\RithardLL\Source\Repos\Simulador17\CDatos\obj\Debug\CDatos.csproj.CopyComplete
+C:\Users\RithardLL\Source\Repos\Simulador17\CDatos\obj\Debug\CDatos.dll
+C:\Users\RithardLL\Source\Repos\Simulador17\CDatos\obj\Debug\CDatos.pdb
+E:\Documents\cursos\VI semestre\distribuidas\simulador\CDatos\bin\Debug\CDatos.dll
+E:\Documents\cursos\VI semestre\distribuidas\simulador\CDatos\bin\Debug\CDatos.pdb
+E:\Documents\cursos\VI semestre\distribuidas\simulador\CDatos\bin\Debug\Modelos.dll
+E:\Documents\cursos\VI semestre\distribuidas\simulador\CDatos\bin\Debug\Modelos.pdb
+E:\Documents\cursos\VI semestre\distribuidas\simulador\CDatos\obj\Debug\CDatos.csprojAssemblyReference.cache
+E:\Documents\cursos\VI semestre\distribuidas\simulador\CDatos\obj\Debug\CDatos.csproj.CoreCompileInputs.cache
+E:\Documents\cursos\VI semestre\distribuidas\simulador\CDatos\obj\Debug\CDatos.csproj.CopyComplete
+E:\Documents\cursos\VI semestre\distribuidas\simulador\CDatos\obj\Debug\CDatos.dll
+E:\Documents\cursos\VI semestre\distribuidas\simulador\CDatos\obj\Debug\CDatos.pdb

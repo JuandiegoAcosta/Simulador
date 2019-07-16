@@ -29,17 +29,23 @@ namespace CDatos.Manager
                     command.Transaction = sqlTran;
 
                     command.Parameters.AddWithValue("@pMode", 4);
+                    //command.Parameters.AddWithValue("@ID_user", ID_user);
                     command.Parameters.AddWithValue("@Id_Persona", aRolUsuarioModel.Id_persona == null ? (object)DBNull.Value : aRolUsuarioModel.Id_persona);
                     command.Parameters.AddWithValue("@Id_rol", aRolUsuarioModel.Id_rol == null ? (object)DBNull.Value : aRolUsuarioModel.Id_rol);
                     command.Parameters.AddWithValue("@Activo", aRolUsuarioModel.Activo);
-                    command.Parameters.AddWithValue("@FECHA_CREACION", aRolUsuarioModel.Fecha_creacion);
-                    command.Parameters.AddWithValue("@USUARIO_CREADOR", aRolUsuarioModel.Usuario_creador);
+                    command.Parameters.AddWithValue("@Usuario_creador", aRolUsuarioModel.Usuario_creador);
+                    command.Parameters.AddWithValue("@Usuario_modificador", aRolUsuarioModel.Usuario_modificador == null ? (object)DBNull.Value : aRolUsuarioModel.Usuario_modificador);
+
+                    SqlParameter paramId = new SqlParameter("@IDENTITY", SqlDbType.Int);
+                    paramId.Direction = ParameterDirection.Output;
+                    command.Parameters.Add(paramId);
 
 
                     command.CommandType = CommandType.StoredProcedure;
                     command.CommandText = "sp_tRolUsuario";
 
                     int afectados = command.ExecuteNonQuery();
+                    int identity = Convert.ToInt32(command.Parameters["@IDENTITY"].Value.ToString());
 
                     // Commit the transaction.
                     sqlTran.Commit();
@@ -53,7 +59,7 @@ namespace CDatos.Manager
                         return false;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return false;
             }
@@ -80,13 +86,13 @@ namespace CDatos.Manager
                     command.Transaction = sqlTran;
 
                     command.Parameters.AddWithValue("@pMode", 5);
+                    //command.Parameters.AddWithValue("@ID_user", ID_user);
                     command.Parameters.AddWithValue("@Id", aRolUsuarioModel.Id);
                     command.Parameters.AddWithValue("@Id_Persona", aRolUsuarioModel.Id_persona == null ? (object)DBNull.Value : aRolUsuarioModel.Id_persona);
                     command.Parameters.AddWithValue("@Id_rol", aRolUsuarioModel.Id_rol == null ? (object)DBNull.Value : aRolUsuarioModel.Id_rol);
                     command.Parameters.AddWithValue("@Activo", aRolUsuarioModel.Activo);
-                    command.Parameters.AddWithValue("@FECHA_MODIFICACION", aRolUsuarioModel.Fecha_modificacion == null ? (object)DBNull.Value : aRolUsuarioModel.Fecha_modificacion);
-                    command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aRolUsuarioModel.Usuario_modificador == null ? (object)DBNull.Value : aRolUsuarioModel.Usuario_modificador);
-
+                    command.Parameters.AddWithValue("@Usuario_creador", aRolUsuarioModel.Usuario_creador);
+                    command.Parameters.AddWithValue("@Usuario_modificador", aRolUsuarioModel.Usuario_modificador == null ? (object)DBNull.Value : aRolUsuarioModel.Usuario_modificador);
 
                     command.CommandType = CommandType.StoredProcedure;
                     command.CommandText = "sp_tRolUsuario";
@@ -192,10 +198,6 @@ namespace CDatos.Manager
                             int? Id_Persona = reader["Id_Persona"] as int?;
                             int? Id_rol = reader["Id_rol"] as int?;
                             bool Activo = (bool)(reader["Activo"]);
-                            DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
-                            DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
-                            string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
-                            string USUARIO_MODIFICADOR = (reader["USUARIO_MODIFICADOR"]) == DBNull.Value ? null : (string)(reader["USUARIO_MODIFICADOR"]);
 
                             RolUsuarioModel = new RolUsuarioModel
                             {
@@ -203,10 +205,6 @@ namespace CDatos.Manager
                                 Id_persona = Id_Persona,
                                 Id_rol = Id_rol,
                                 Activo = Activo,
-                                Fecha_creacion = FECHA_CREACION,
-                                Fecha_modificacion = FECHA_MODIFICACION,
-                                Usuario_creador = USUARIO_CREADOR,
-                                Usuario_modificador = USUARIO_MODIFICADOR,
 
                             };
                         }
@@ -255,10 +253,6 @@ namespace CDatos.Manager
                             int? Id_Persona = reader["Id_Persona"] as int?;
                             int? Id_rol = reader["Id_rol"] as int?;
                             bool Activo = (bool)(reader["Activo"]);
-                            DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
-                            DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
-                            string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
-                            string USUARIO_MODIFICADOR = (reader["USUARIO_MODIFICADOR"]) == DBNull.Value ? null : (string)(reader["USUARIO_MODIFICADOR"]);
 
                             RolUsuarioModellist.Add(new RolUsuarioModel
                             {
@@ -266,10 +260,6 @@ namespace CDatos.Manager
                                 Id_persona = Id_Persona,
                                 Id_rol = Id_rol,
                                 Activo = Activo,
-                                Fecha_creacion = FECHA_CREACION,
-                                Fecha_modificacion = FECHA_MODIFICACION,
-                                Usuario_creador = USUARIO_CREADOR,
-                                Usuario_modificador = USUARIO_MODIFICADOR,
 
                             });
                         }

@@ -17,8 +17,7 @@ namespace Modelos.Session
       public string SucursalNombre { get; set; }
       public string VentanillaCodigo { get; set; }
       public string VentanillaDescripcion { get; set; }
-      public string TurnoCodigo { get; set; }
-      public string TurnoDescripcion { get; set; }
+      public TurnosModel Turno { get; set; }
       public string SucursalUbicacion { get; set; }
       public string SucursalCodigoBanco { get; set; }
 

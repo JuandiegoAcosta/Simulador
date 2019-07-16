@@ -16,14 +16,25 @@ namespace CNegocio.Backend
         {
             ADSucursalManager = new SucursalManager();
         }
-        public bool Crear(SucursalModel aSucursal)
+
+        /// <summary>
+        /// Saves a record to the sucursal table.
+        /// returns True if value saved successfully else false
+        /// Throw exception with message value EXISTS if the data is duplicate
+        /// </summary>	
+        public bool Crear(SucursalModel aSucursal, int id_user)
         {
-            return ADSucursalManager.Insert(aSucursal);
+            return ADSucursalManager.Insert(aSucursal, id_user);
         }
 
-        public bool Editar(SucursalModel aSucursal)
+        /// <summary>
+        /// Updates a record to the sucursal table.
+        /// returns True if value saved successfully else false
+        /// Throw exception with message value EXISTS if the data is duplicate
+        /// </summary>
+        public bool Editar(SucursalModel aSucursal, int id_user)
         {
-            return ADSucursalManager.Update(aSucursal);
+            return ADSucursalManager.Update(aSucursal, id_user);
         }
 
         public bool Eliminar(int aID_Sucursal)

@@ -11,10 +11,10 @@ namespace ServiciosBancarios.Backend
     {
 
         [OperationContract]
-        bool DetalleCajaChica_Crear(DetalleCajaChicaModel aDetalleCajaChica);
+        bool DetalleCajaChica_Crear(DetalleCajaChicaModel aDetalleCajaChica, int id_user);
 
         [OperationContract]
-        bool DetalleCajaChica_Editar(DetalleCajaChicaModel aDetalleCajaChica);
+        bool DetalleCajaChica_Editar(DetalleCajaChicaModel aDetalleCajaChica, int id_user);
 
         [OperationContract]
         bool DetalleCajaChica_Eliminar(int aID_DetalleCajaChica);

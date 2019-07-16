@@ -73,17 +73,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Administrador\AgregarNuevoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrador\AgregarNuevoUsuario.Designer.cs">
+      <DependentUpon>AgregarNuevoUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\BuscarPersona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrador\BuscarPersona.Designer.cs">
+      <DependentUpon>BuscarPersona.cs</DependentUpon>
+    </Compile>
     <Compile Include="Administrador\Permisos.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Administrador\Permisos.Designer.cs">
       <DependentUpon>Permisos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Administrador\Personas.cs">
+    <Compile Include="Administrador\Usuario.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Administrador\Personas.Designer.cs">
-      <DependentUpon>Personas.cs</DependentUpon>
+    <Compile Include="Administrador\Usuario.Designer.cs">
+      <DependentUpon>Usuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Administrador\Roles.cs">
       <SubType>UserControl</SubType>
@@ -412,11 +424,20 @@
     <Compile Include="Ventanilla\Utilitarios.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <EmbeddedResource Include="Administrador\AgregarNuevoUsuario.resx">
+      <DependentUpon>AgregarNuevoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrador\BuscarPersona.resx">
+      <DependentUpon>BuscarPersona.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Administrador\Permisos.resx">
       <DependentUpon>Permisos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Administrador\Roles.resx">
       <DependentUpon>Roles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrador\Usuario.resx">
+      <DependentUpon>Usuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ayuda\FormHelp2.resx" />
     <EmbeddedResource Include="Botones\BTRetiros.resx">
@@ -578,7 +599,11 @@
     <None Include="Connected Services\WsSistemaBancario\SistemaBancario2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\WsSistemaBancario\SistemaBancario3.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\DataSources\Modelos.Modelos.BancoModel.datasource" />
+    <None Include="Properties\DataSources\Modelos.Modelos.CajaChicaModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.CobroChequesModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.ComponenteModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.CuentasModel.datasource" />
@@ -597,6 +622,7 @@
     <None Include="Properties\DataSources\Modelos.Modelos.TurnosModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.TurnoUsuarioModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.VentanillaModel.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -670,25 +696,17 @@
     <None Include="Resources\view.png" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\WsSistemaBancario\" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Connected Services\WsSistemaBancario\SistemaBancario.disco" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Connected Services\WsSistemaBancario\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Connected Services\WsSistemaBancario\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Connected Services\WsSistemaBancario\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="Graphicloads-100-Flat-2-Bank.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Graphicloads-100-Flat-2-Bank.ico" />
+    <WCFMetadataStorage Include="Connected Services\WsSistemaBancario\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

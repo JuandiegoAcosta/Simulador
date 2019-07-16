@@ -390,7 +390,7 @@ namespace CDatos.Manager
             }
             catch (Exception)
             {
-                //throw;
+                throw;
                 return prestamolist;
             }
         }

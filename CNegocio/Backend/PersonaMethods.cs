@@ -136,5 +136,11 @@ namespace CNegocio.Backend
             return ADPersonaManager.CrearNuevoUsuario(idPersona,Usuario,Contraseña,Estado);
         }
 
+        public List<PersonaModel> UsuarioSelectAll()
+        {
+            return ADPersonaManager.UsuarioSelectAll();
+        }
+
+
     }
 }

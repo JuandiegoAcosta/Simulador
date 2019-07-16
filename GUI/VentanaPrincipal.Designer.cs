@@ -52,9 +52,7 @@
             this.toolStripStatusLabel10 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel9 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel8 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.panel4 = new Sistema_Bancario.Controles.GradentPanel();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel6 = new Sistema_Bancario.Controles.GradentPanel();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -62,26 +60,24 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3.SuspendLayout();
             this.stStatus.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(209, 98);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Location = new System.Drawing.Point(279, 121);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(854, 608);
+            this.panel1.Size = new System.Drawing.Size(1139, 748);
             this.panel1.TabIndex = 1;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
-            this.panel2.Location = new System.Drawing.Point(0, 57);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Location = new System.Drawing.Point(0, 70);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 658);
+            this.panel2.Size = new System.Drawing.Size(267, 810);
             this.panel2.TabIndex = 7;
             // 
             // button11
@@ -93,10 +89,10 @@
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.button11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button11.Location = new System.Drawing.Point(795, 0);
-            this.button11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button11.Location = new System.Drawing.Point(1060, 0);
+            this.button11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(78, 32);
+            this.button11.Size = new System.Drawing.Size(104, 39);
             this.button11.TabIndex = 10;
             this.button11.Text = "Cerrar Sesión";
             this.button11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -112,10 +108,10 @@
             this.panel3.Controls.Add(this.BTReportes);
             this.panel3.Controls.Add(this.BTGestion);
             this.panel3.Controls.Add(this.BTPlataforma);
-            this.panel3.Location = new System.Drawing.Point(199, 25);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Location = new System.Drawing.Point(265, 31);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(875, 32);
+            this.panel3.Size = new System.Drawing.Size(1167, 39);
             this.panel3.TabIndex = 8;
             // 
             // BTAdministrador
@@ -127,9 +123,10 @@
             this.BTAdministrador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTAdministrador.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.BTAdministrador.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.BTAdministrador.Location = new System.Drawing.Point(364, 0);
+            this.BTAdministrador.Location = new System.Drawing.Point(485, 0);
+            this.BTAdministrador.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BTAdministrador.Name = "BTAdministrador";
-            this.BTAdministrador.Size = new System.Drawing.Size(103, 32);
+            this.BTAdministrador.Size = new System.Drawing.Size(137, 39);
             this.BTAdministrador.TabIndex = 12;
             this.BTAdministrador.Text = "Administrador";
             this.BTAdministrador.UseVisualStyleBackColor = false;
@@ -146,8 +143,9 @@
             this.BTOperaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.BTOperaciones.ForeColor = System.Drawing.SystemColors.WindowText;
             this.BTOperaciones.Location = new System.Drawing.Point(0, 0);
+            this.BTOperaciones.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BTOperaciones.Name = "BTOperaciones";
-            this.BTOperaciones.Size = new System.Drawing.Size(110, 32);
+            this.BTOperaciones.Size = new System.Drawing.Size(147, 39);
             this.BTOperaciones.TabIndex = 8;
             this.BTOperaciones.Text = "Operaciones";
             this.BTOperaciones.UseVisualStyleBackColor = false;
@@ -162,9 +160,10 @@
             this.BTReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTReportes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.BTReportes.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.BTReportes.Location = new System.Drawing.Point(274, 0);
+            this.BTReportes.Location = new System.Drawing.Point(365, 0);
+            this.BTReportes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BTReportes.Name = "BTReportes";
-            this.BTReportes.Size = new System.Drawing.Size(88, 32);
+            this.BTReportes.Size = new System.Drawing.Size(117, 39);
             this.BTReportes.TabIndex = 11;
             this.BTReportes.Text = "Reportes";
             this.BTReportes.UseVisualStyleBackColor = false;
@@ -179,9 +178,10 @@
             this.BTGestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTGestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.BTGestion.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.BTGestion.Location = new System.Drawing.Point(106, 0);
+            this.BTGestion.Location = new System.Drawing.Point(141, 0);
+            this.BTGestion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BTGestion.Name = "BTGestion";
-            this.BTGestion.Size = new System.Drawing.Size(75, 32);
+            this.BTGestion.Size = new System.Drawing.Size(100, 39);
             this.BTGestion.TabIndex = 9;
             this.BTGestion.Text = "Gestión";
             this.BTGestion.UseVisualStyleBackColor = false;
@@ -196,9 +196,10 @@
             this.BTPlataforma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTPlataforma.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.BTPlataforma.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.BTPlataforma.Location = new System.Drawing.Point(181, 0);
+            this.BTPlataforma.Location = new System.Drawing.Point(241, 0);
+            this.BTPlataforma.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BTPlataforma.Name = "BTPlataforma";
-            this.BTPlataforma.Size = new System.Drawing.Size(94, 32);
+            this.BTPlataforma.Size = new System.Drawing.Size(125, 39);
             this.BTPlataforma.TabIndex = 10;
             this.BTPlataforma.Text = "Plataforma";
             this.BTPlataforma.UseVisualStyleBackColor = false;
@@ -210,10 +211,9 @@
             this.TituloText.BackColor = System.Drawing.Color.Transparent;
             this.TituloText.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold);
             this.TituloText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(96)))), ((int)(((byte)(147)))));
-            this.TituloText.Location = new System.Drawing.Point(204, 67);
-            this.TituloText.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.TituloText.Location = new System.Drawing.Point(272, 82);
             this.TituloText.Name = "TituloText";
-            this.TituloText.Size = new System.Drawing.Size(80, 29);
+            this.TituloText.Size = new System.Drawing.Size(93, 33);
             this.TituloText.TabIndex = 6;
             this.TituloText.Text = "Título";
             this.TituloText.Visible = false;
@@ -234,9 +234,10 @@
             this.toolStripStatusLabel10,
             this.toolStripStatusLabel9,
             this.toolStripStatusLabel8});
-            this.stStatus.Location = new System.Drawing.Point(0, 716);
+            this.stStatus.Location = new System.Drawing.Point(0, 887);
             this.stStatus.Name = "stStatus";
-            this.stStatus.Size = new System.Drawing.Size(1074, 25);
+            this.stStatus.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
+            this.stStatus.Size = new System.Drawing.Size(1432, 25);
             this.stStatus.TabIndex = 13;
             this.stStatus.Text = "statusStrip1";
             // 
@@ -246,7 +247,7 @@
             this.lblUsertType.ForeColor = System.Drawing.SystemColors.Window;
             this.lblUsertType.Image = global::Sistema_Bancario.Properties.Resources.none;
             this.lblUsertType.Name = "lblUsertType";
-            this.lblUsertType.Size = new System.Drawing.Size(88, 20);
+            this.lblUsertType.Size = new System.Drawing.Size(105, 20);
             this.lblUsertType.Text = "Estudiante :";
             // 
             // lblUserValueType
@@ -254,7 +255,7 @@
             this.lblUserValueType.BackColor = System.Drawing.Color.Transparent;
             this.lblUserValueType.ForeColor = System.Drawing.SystemColors.Window;
             this.lblUserValueType.Name = "lblUserValueType";
-            this.lblUserValueType.Size = new System.Drawing.Size(12, 20);
+            this.lblUserValueType.Size = new System.Drawing.Size(16, 20);
             this.lblUserValueType.Text = "?";
             // 
             // toolStripStatusLabel7
@@ -263,7 +264,7 @@
             this.toolStripStatusLabel7.ForeColor = System.Drawing.SystemColors.Window;
             this.toolStripStatusLabel7.Image = global::Sistema_Bancario.Properties.Resources.sucursal;
             this.toolStripStatusLabel7.Name = "toolStripStatusLabel7";
-            this.toolStripStatusLabel7.Size = new System.Drawing.Size(77, 20);
+            this.toolStripStatusLabel7.Size = new System.Drawing.Size(90, 20);
             this.toolStripStatusLabel7.Text = "Sucursal :";
             // 
             // lblSucursal
@@ -271,7 +272,7 @@
             this.lblSucursal.BackColor = System.Drawing.Color.Transparent;
             this.lblSucursal.ForeColor = System.Drawing.SystemColors.Window;
             this.lblSucursal.Name = "lblSucursal";
-            this.lblSucursal.Size = new System.Drawing.Size(12, 20);
+            this.lblSucursal.Size = new System.Drawing.Size(16, 20);
             this.lblSucursal.Text = "?";
             // 
             // toolStripStatusLabel2
@@ -280,7 +281,7 @@
             this.toolStripStatusLabel2.ForeColor = System.Drawing.SystemColors.Window;
             this.toolStripStatusLabel2.Image = global::Sistema_Bancario.Properties.Resources.server;
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(84, 20);
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(101, 20);
             this.toolStripStatusLabel2.Text = "Ventanilla :";
             // 
             // lblVentanilla
@@ -288,7 +289,7 @@
             this.lblVentanilla.BackColor = System.Drawing.Color.Transparent;
             this.lblVentanilla.ForeColor = System.Drawing.SystemColors.Window;
             this.lblVentanilla.Name = "lblVentanilla";
-            this.lblVentanilla.Size = new System.Drawing.Size(12, 20);
+            this.lblVentanilla.Size = new System.Drawing.Size(16, 20);
             this.lblVentanilla.Text = "?";
             // 
             // toolStripStatusLabel4
@@ -297,7 +298,7 @@
             this.toolStripStatusLabel4.ForeColor = System.Drawing.SystemColors.Window;
             this.toolStripStatusLabel4.Image = global::Sistema_Bancario.Properties.Resources.database;
             this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
-            this.toolStripStatusLabel4.Size = new System.Drawing.Size(62, 20);
+            this.toolStripStatusLabel4.Size = new System.Drawing.Size(70, 20);
             this.toolStripStatusLabel4.Text = "Turno:";
             // 
             // lblTurno
@@ -305,7 +306,7 @@
             this.lblTurno.BackColor = System.Drawing.Color.Transparent;
             this.lblTurno.ForeColor = System.Drawing.SystemColors.Window;
             this.lblTurno.Name = "lblTurno";
-            this.lblTurno.Size = new System.Drawing.Size(12, 20);
+            this.lblTurno.Size = new System.Drawing.Size(16, 20);
             this.lblTurno.Text = "?";
             // 
             // toolStripStatusLabel10
@@ -313,7 +314,7 @@
             this.toolStripStatusLabel10.BackColor = System.Drawing.Color.Transparent;
             this.toolStripStatusLabel10.ForeColor = System.Drawing.SystemColors.Window;
             this.toolStripStatusLabel10.Name = "toolStripStatusLabel10";
-            this.toolStripStatusLabel10.Size = new System.Drawing.Size(40, 20);
+            this.toolStripStatusLabel10.Size = new System.Drawing.Size(53, 20);
             this.toolStripStatusLabel10.Text = "     |     ";
             // 
             // toolStripStatusLabel9
@@ -322,7 +323,7 @@
             this.toolStripStatusLabel9.ForeColor = System.Drawing.SystemColors.Window;
             this.toolStripStatusLabel9.Image = ((System.Drawing.Image)(resources.GetObject("toolStripStatusLabel9.Image")));
             this.toolStripStatusLabel9.Name = "toolStripStatusLabel9";
-            this.toolStripStatusLabel9.Size = new System.Drawing.Size(110, 20);
+            this.toolStripStatusLabel9.Size = new System.Drawing.Size(133, 20);
             this.toolStripStatusLabel9.Text = "Instituto del Sur";
             // 
             // toolStripStatusLabel8
@@ -331,18 +332,6 @@
             this.toolStripStatusLabel8.ForeColor = System.Drawing.SystemColors.Window;
             this.toolStripStatusLabel8.Name = "toolStripStatusLabel8";
             this.toolStripStatusLabel8.Size = new System.Drawing.Size(0, 20);
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.panel4.ColorBottom = System.Drawing.Color.MidnightBlue;
-            this.panel4.ColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(96)))), ((int)(((byte)(147)))));
-            this.panel4.Controls.Add(this.label2);
-            this.panel4.Location = new System.Drawing.Point(0, 25);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(200, 32);
-            this.panel4.TabIndex = 15;
             // 
             // label2
             // 
@@ -356,21 +345,6 @@
             this.label2.Size = new System.Drawing.Size(132, 16);
             this.label2.TabIndex = 0;
             this.label2.Text = "Cuadro de Opciones";
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel6.ColorBottom = System.Drawing.Color.Silver;
-            this.panel6.ColorTop = System.Drawing.Color.White;
-            this.panel6.Controls.Add(this.pictureBox1);
-            this.panel6.Controls.Add(this.button2);
-            this.panel6.Controls.Add(this.button1);
-            this.panel6.Controls.Add(this.label1);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1074, 25);
-            this.panel6.TabIndex = 14;
             // 
             // button2
             // 
@@ -418,7 +392,7 @@
             // 
             this.MoveFrom.Fixed = true;
             this.MoveFrom.Horizontal = true;
-            this.MoveFrom.TargetControl = this.panel6;
+            this.MoveFrom.TargetControl = null;
             this.MoveFrom.Vertical = true;
             // 
             // pictureBox1
@@ -436,12 +410,10 @@
             // 
             // VentanaPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(1074, 741);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel6);
+            this.ClientSize = new System.Drawing.Size(1432, 912);
             this.Controls.Add(this.stStatus);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -449,17 +421,13 @@
             this.Controls.Add(this.TituloText);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "VentanaPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema Bancario";
             this.panel3.ResumeLayout(false);
             this.stStatus.ResumeLayout(false);
             this.stStatus.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -489,12 +457,12 @@
       private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel10;
       private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel9;
       private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel8;
-      private Controles.GradentPanel panel6;
+      //private Controles.GradentPanel panel6;
       private System.Windows.Forms.Label label1;
       private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private Controles.GradentPanel panel4;
+        //private Controles.GradentPanel panel4;
         private System.Windows.Forms.Button BTAdministrador;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
