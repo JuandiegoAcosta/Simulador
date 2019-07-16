@@ -160,7 +160,6 @@ C:\Users\Jean\Desktop\s7\Simulador\Modelos\obj\Debug\Modelos.dll
 C:\Users\Jean\Desktop\s7\Simulador\Modelos\obj\Debug\Modelos.pdb
 E:\Documents\cursos\VI semestre\distribuidas\simulador2\Modelos\bin\Debug\Modelos.dll
 E:\Documents\cursos\VI semestre\distribuidas\simulador2\Modelos\bin\Debug\Modelos.pdb
-E:\Documents\cursos\VI semestre\distribuidas\simulador2\Modelos\obj\Debug\Modelos.csprojAssemblyReference.cache
 E:\Documents\cursos\VI semestre\distribuidas\simulador2\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
 E:\Documents\cursos\VI semestre\distribuidas\simulador2\Modelos\obj\Debug\Modelos.dll
 E:\Documents\cursos\VI semestre\distribuidas\simulador2\Modelos\obj\Debug\Modelos.pdb
@@ -169,9 +168,4 @@ C:\Users\Jean\Desktop\s8\Simulador\Modelos\bin\Debug\Modelos.pdb
 C:\Users\Jean\Desktop\s8\Simulador\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
 C:\Users\Jean\Desktop\s8\Simulador\Modelos\obj\Debug\Modelos.dll
 C:\Users\Jean\Desktop\s8\Simulador\Modelos\obj\Debug\Modelos.pdb
-C:\Users\Jean\Desktop\z1\Simulador\Modelos\bin\Debug\Modelos.dll
-C:\Users\Jean\Desktop\z1\Simulador\Modelos\bin\Debug\Modelos.pdb
-C:\Users\Jean\Desktop\z1\Simulador\Modelos\obj\Debug\Modelos.csprojAssemblyReference.cache
-C:\Users\Jean\Desktop\z1\Simulador\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
-C:\Users\Jean\Desktop\z1\Simulador\Modelos\obj\Debug\Modelos.dll
-C:\Users\Jean\Desktop\z1\Simulador\Modelos\obj\Debug\Modelos.pdb
+C:\Users\kat\Source\Repos\JuandiegoAcosta\Simulador\Modelos\obj\Debug\Modelos.csprojAssemblyReference.cache

@@ -24,9 +24,10 @@ namespace Sistema_Bancario.Administrador
 
         public int id;
         public string nombre;
+        public string usuario;
 
 
-       // AgregarNuevoUsuario f1 = Application.OpenForms.OfType<AgregarNuevoUsuario>().SingleOrDefault();
+        // AgregarNuevoUsuario f1 = Application.OpenForms.OfType<AgregarNuevoUsuario>().SingleOrDefault();
 
 
 
@@ -51,7 +52,7 @@ namespace Sistema_Bancario.Administrador
 
 
                     //dgvBusquedaUsuarios.Columns["Id"].Visible = false;
-                    dgvBusquedaUsuarios.Columns["NombreUsuario"].Visible = false;
+                    //dgvBusquedaUsuarios.Columns["NombreUsuario"].Visible = false;
                     dgvBusquedaUsuarios.Columns["Pass"].Visible = false;
                     dgvBusquedaUsuarios.Columns["Fechanacimiento"].Visible = false;
                     dgvBusquedaUsuarios.Columns["Telefono"].Visible = false;
@@ -95,6 +96,7 @@ namespace Sistema_Bancario.Administrador
             {
                 id = Convert.ToInt16(dgvBusquedaUsuarios.Rows[e.RowIndex].Cells["Id"].Value);
                 nombre= dgvBusquedaUsuarios.Rows[e.RowIndex].Cells["Nombres"].Value.ToString();
+                usuario = dgvBusquedaUsuarios.Rows[e.RowIndex].Cells["NombreUsuario"].Value.ToString();
 
             }
         }

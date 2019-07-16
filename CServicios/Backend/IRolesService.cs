@@ -28,6 +28,6 @@ namespace ServiciosBancarios.Backend
         List<RolesModel> Roles_ObtenerTodos();
 
         [OperationContract]
-        DataTable Roles_RolesPorPersona(int aID_Usuario);
+        List<RolUsuarioModel> Roles_RolesPorPersona(int aID_Usuario);
     }
 }

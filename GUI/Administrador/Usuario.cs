@@ -79,41 +79,51 @@ namespace Sistema_Bancario.Administrador
             pnlPrincipal.SendToBack();
             pnlSecundario.BringToFront();
             llenarDGVRolesUsuario();
+            llenarDGVPeermisosUsuario();
         }
 
-
-
-        public DataTable rolesUsuario;
-        private void llenarDGVRolesUsuario()
-
+        public List<PermisosUsuarioModel> permUsuario;
+        private void llenarDGVPeermisosUsuario()
         {
-
             try
             {
-
-                using (WsSistemaBancario.RolesServiceClient RolUsuario = new WsSistemaBancario.RolesServiceClient())
+                using (WsSistemaBancario.PermisosUsuarioServiceClient per = new WsSistemaBancario.PermisosUsuarioServiceClient())
                 {
 
-                     rolesUsuario = RolUsuario.Roles_RolesPorPersona(id);
+                    permUsuario = per.PermisosUsuarioXusuario(id).ToList();
 
-                    dgvRolesUsuario.DataSource = rolesUsuario;
-
-
-
+                    foreach (var r in rolesUsuario)
+                    {
+                        dgvPermisosUsuario.Rows.Add(r.Id, r.Descripcion, r.Activo);
+                    }
                 }
-
             }
-
             catch (Exception ex)
             {
 
             }
-
-
-
         }
+        public List<RolUsuarioModel> rolesUsuario;
+        private void llenarDGVRolesUsuario()
+        {
+            try
+            {
+                using (WsSistemaBancario.RolesServiceClient RolUsuario = new WsSistemaBancario.RolesServiceClient())
+                {
 
+                     rolesUsuario = RolUsuario.Roles_RolesPorPersona(id).ToList();
 
+                    foreach (var r in rolesUsuario)
+                    {
+                        dgvRolesUsuario.Rows.Add(r.Id,r.Descripcion,r.Activo);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
 
         private void btnAgregarRol_Click(object sender, EventArgs e)
         {
@@ -257,6 +267,129 @@ namespace Sistema_Bancario.Administrador
                     }
                 }
             }
+        }
+
+        private void dgvRolesUsuario_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.ColumnIndex >= 0 && this.dgvRolesUsuario.Columns[e.ColumnIndex].Name == "EditarRol" && e.RowIndex >= 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                DataGridViewButtonCell celBoton = this.dgvRolesUsuario.Rows[e.RowIndex].Cells["EditarRol"] as DataGridViewButtonCell;
+                Bitmap bm = Resources.icons8_editar_26;
+                Image img = bm;
+                e.Graphics.DrawImage(img, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
+
+                this.dgvRolesUsuario.Rows[e.RowIndex].Height = img.Height + 10;
+                this.dgvRolesUsuario.Columns[e.ColumnIndex].Width = img.Width + 10;
+
+                e.Handled = true;
+            }
+            if (e.ColumnIndex >= 0 && this.dgvRolesUsuario.Columns[e.ColumnIndex].Name == "EliminarRol" && e.RowIndex >= 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                DataGridViewButtonCell celBoton = this.dgvRolesUsuario.Rows[e.RowIndex].Cells["EliminarRol"] as DataGridViewButtonCell;
+                Bitmap bm = Resources.icons8_eliminar_26;
+                Image img = bm;
+                e.Graphics.DrawImage(img, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
+
+                this.dgvRolesUsuario.Rows[e.RowIndex].Height = img.Height + 10;
+                this.dgvRolesUsuario.Columns[e.ColumnIndex].Width = img.Width + 10;
+
+                e.Handled = true;
+            }
+        }
+
+        private void dgvRolesUsuario_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex >= 0)
+            {
+                if (this.dgvRolesUsuario.Columns[e.ColumnIndex].Name == "EditarRol")
+                {
+                    MessageBox.Show("Editar");
+                }
+                if (this.dgvRolesUsuario.Columns[e.ColumnIndex].Name == "EliminarRol")
+                {
+                    MessageBox.Show("Eliminar");
+                }
+                if (this.dgvRolesUsuario.Columns[e.ColumnIndex].Name == "EstadoRol")
+                {
+                    DataGridViewCheckBoxCell chk = this.dgvRolesUsuario.Rows[e.RowIndex].Cells["EstadoRol"] as DataGridViewCheckBoxCell;
+                    if (chk.Value == chk.TrueValue)
+                    {
+                        chk.Value = chk.FalseValue;
+                        MessageBox.Show("Check");
+                    }
+                    else
+                    {
+                        chk.Value = chk.TrueValue;
+                        MessageBox.Show("No check");
+                    }
+                }
+            }
+        }
+
+        private void dgvPermisosUsuario_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex >= 0)
+            {
+                if (this.dgvPermisosUsuario.Columns[e.ColumnIndex].Name == "EditarPermiso")
+                {
+                    MessageBox.Show("Editar");
+                }
+                if (this.dgvPermisosUsuario.Columns[e.ColumnIndex].Name == "EliminarPermiso")
+                {
+                    MessageBox.Show("Eliminar");
+                }
+                if (this.dgvPermisosUsuario.Columns[e.ColumnIndex].Name == "EstadoPermiso")
+                {
+                    DataGridViewCheckBoxCell chk = this.dgvPermisosUsuario.Rows[e.RowIndex].Cells["EstadoPermiso"] as DataGridViewCheckBoxCell;
+                    if (chk.Value == chk.TrueValue)
+                    {
+                        chk.Value = chk.FalseValue;
+                        MessageBox.Show("Check");
+                    }
+                    else
+                    {
+                        chk.Value = chk.TrueValue;
+                        MessageBox.Show("No check");
+                    }
+                }
+            }
+        }
+
+        private void dgvPermisosUsuario_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.ColumnIndex >= 0 && this.dgvPermisosUsuario.Columns[e.ColumnIndex].Name == "EditarPermiso" && e.RowIndex >= 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                DataGridViewButtonCell celBoton = this.dgvPermisosUsuario.Rows[e.RowIndex].Cells["EditarPermiso"] as DataGridViewButtonCell;
+                Bitmap bm = Resources.icons8_editar_26;
+                Image img = bm;
+                e.Graphics.DrawImage(img, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
+
+                this.dgvPermisosUsuario.Rows[e.RowIndex].Height = img.Height + 10;
+                this.dgvPermisosUsuario.Columns[e.ColumnIndex].Width = img.Width + 10;
+
+                e.Handled = true;
+            }
+            if (e.ColumnIndex >= 0 && this.dgvPermisosUsuario.Columns[e.ColumnIndex].Name == "EliminarPermiso" && e.RowIndex >= 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                DataGridViewButtonCell celBoton = this.dgvPermisosUsuario.Rows[e.RowIndex].Cells["EliminarPermiso"] as DataGridViewButtonCell;
+                Bitmap bm = Resources.icons8_eliminar_26;
+                Image img = bm;
+                e.Graphics.DrawImage(img, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
+
+                this.dgvPermisosUsuario.Rows[e.RowIndex].Height = img.Height + 10;
+                this.dgvPermisosUsuario.Columns[e.ColumnIndex].Width = img.Width + 10;
+
+                e.Handled = true;
+            }
+
         }
     }
 }
