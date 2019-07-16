@@ -607,6 +607,7 @@
     <None Include="Properties\DataSources\Modelos.Modelos.CobroChequesModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.ComponenteModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.CuentasModel.datasource" />
+    <None Include="Properties\DataSources\Modelos.Modelos.DetalleCajaChicaModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.EmpresaModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.HorariosAtencionModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.MovimientosVentanillaModel.datasource" />

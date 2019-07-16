@@ -70,6 +70,7 @@ namespace ServiciosBancarios
             #region [ Ventanilla Back ]
             BLBanco = new BancoMethods();
             BLCajaChica = new CajaChicaMethods();
+            BLDetalleCajaChica = new DetalleCajaChicaMethods();
             BLComponente = new ComponenteMethods();
             BLHorariosAtencion = new HorariosAtencionMethods();
             BLPermisosUsuario = new PermisosUsuarioMethods();
@@ -327,36 +328,7 @@ namespace ServiciosBancarios
 
     
 
-        #region [Detalle caja Chica]
-
-
-        public bool DetalleCajaChica_Crear(DetalleCajaChicaModel aDetalleCajaChica, int id_user)
-        {
-            return BLDetalleCajaChica.Crear(aDetalleCajaChica, id_user);
-        }
-
-        public bool DetalleCajaChica_Editar(DetalleCajaChicaModel aDetalleCajaChica, int id_user)
-        {
-            return BLDetalleCajaChica.Editar(aDetalleCajaChica, id_user);
-        }
-
-        public bool DetalleCajaChica_Eliminar(int aID_DetalleCajaChica)
-        {
-            return BLDetalleCajaChica.Eliminar(aID_DetalleCajaChica);
-        }
-
-        public DetalleCajaChicaModel DetalleCajaChica_ObtenerUno(int aID_DetalleCajaChica)
-        {
-            return BLDetalleCajaChica.ObtenerUno(aID_DetalleCajaChica);
-        }
-
-        public List<DetalleCajaChicaModel> DetalleCajaChica_ObtenerTodos()
-        {
-            return BLDetalleCajaChica.ObtenerTodos();
-        }
-
-
-        #endregion
+        
 
 
         #region [ Componente ]
@@ -775,8 +747,43 @@ namespace ServiciosBancarios
         {
             throw new NotImplementedException();
         }
-        #endregion
 
+        
+
+        
+
+        
+
+        
+        #endregion
+        #region [Detalle caja Chica]
+
+        public bool DetalleCajaChica_Crear(DetalleCajaChicaModel aDetalleCajaChica, int id_user)
+        {
+            return BLDetalleCajaChica.Crear(aDetalleCajaChica, id_user);
+        }
+        public bool DetalleCajaChica_Editar(DetalleCajaChicaModel aDetalleCajaChica, int id_user)
+        {
+            return BLDetalleCajaChica.Editar(aDetalleCajaChica, id_user);
+        }
+
+        public bool DetalleCajaChica_Eliminar(int aID_DetalleCajaChica)
+        {
+            return BLDetalleCajaChica.Eliminar(aID_DetalleCajaChica);
+        }
+
+        public DetalleCajaChicaModel DetalleCajaChica_ObtenerUno(int aID_DetalleCajaChica)
+        {
+            return BLDetalleCajaChica.ObtenerUno(aID_DetalleCajaChica);
+        }
+
+        public List<DetalleCajaChicaModel> DetalleCajaChica_ObtenerTodos()
+        {
+            return BLDetalleCajaChica.ObtenerTodos();
+        }
+
+
+        #endregion
         #endregion
     }
 }

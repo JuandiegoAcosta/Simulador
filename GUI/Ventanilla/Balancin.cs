@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Sistema_Bancario.Clases;
 using Modelos.Session;
 using Modelos.Modelos;
+using System.Drawing.Printing;
 
 namespace Sistema_Bancario.Ventanilla
 {
@@ -263,10 +264,75 @@ namespace Sistema_Bancario.Ventanilla
                     return;
                 }
             }
-            //using (WsSistemaBancario.)
-            //{
+            using (WsSistemaBancario.DetalleCajaChicaServiceClient de_cc=new WsSistemaBancario.DetalleCajaChicaServiceClient())
+            {
 
-            //}
+            }
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            printTicket = new System.Drawing.Printing.PrintDocument();
+            PrinterSettings ps = new PrinterSettings();
+            printTicket.PrinterSettings = ps;
+            printTicket.PrintPage += PrintTicket_PrintPage;
+            printTicket.Print();
+        }
+
+        private void PrintTicket_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            Point ini = new Point(100,50);
+            e.Graphics.DrawString("BALANCÍN",new Font("Arial",10,FontStyle.Bold),Brushes.Black,ini.X+35,ini.Y);
+            e.Graphics.DrawString("__________________", new Font("Arial", 10, FontStyle.Bold), Brushes.Black,ini.X,ini.Y);
+            e.Graphics.DrawString("Tipo Movimiento:", new Font("Arial", 5, FontStyle.Bold), Brushes.Black, ini.X, ini.Y+=20);
+            e.Graphics.DrawString(cmbTipoMov.SelectedValue.ToString(), new Font("Arial", 5, FontStyle.Regular), Brushes.Black, ini.X+70, ini.Y);
+            e.Graphics.DrawString("De:", new Font("Arial", 5, FontStyle.Bold), Brushes.Black, ini.X, ini.Y+=20);
+            e.Graphics.DrawString(session.VentanillaDescripcion, new Font("Arial", 5, FontStyle.Regular), Brushes.Black, ini.X + 70, ini.Y);
+            e.Graphics.DrawString("Para:", new Font("Arial", 5, FontStyle.Bold), Brushes.Black, ini.X, ini.Y+=20);
+            e.Graphics.DrawString(cmbVentanillas.Text.ToString(), new Font("Arial", 5, FontStyle.Regular), Brushes.Black, ini.X + 70, ini.Y);
+            e.Graphics.DrawString("__________________", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, ini.X, ini.Y);
+            e.Graphics.DrawString("Soles:", new Font("Arial", 8, FontStyle.Bold), Brushes.Black, ini.X,ini.Y+=20);
+            //cabecera de denominacion de soles
+            e.Graphics.DrawString("Denominación", new Font("Arial", 5, FontStyle.Regular), Brushes.Black, ini.X, ini.Y+=20);
+            e.Graphics.DrawString("Cantidad", new Font("Arial", 5, FontStyle.Regular), Brushes.Black, ini.X+60, ini.Y);
+            e.Graphics.DrawString("Subtotal", new Font("Arial", 5, FontStyle.Regular), Brushes.Black, ini.X+120, ini.Y);
+            e.Graphics.DrawString("--------------------------------------------------------------", new Font("Arial", 5, FontStyle.Regular), Brushes.Black, ini.X, ini.Y+=7);
+            foreach (DataGridViewRow r in dgvSoles.Rows)
+            {
+                int col = Convert.ToInt32(r.Cells[1].Value);
+                if (col != 0)
+                {
+                    e.Graphics.DrawString(r.Cells[0].Value.ToString(), new Font("Arial", 5, FontStyle.Regular), Brushes.Black, ini.X,ini.Y+=20);
+                    e.Graphics.DrawString(r.Cells[1].Value.ToString(), new Font("Arial", 5, FontStyle.Regular), Brushes.Black, ini.X+60, ini.Y );
+                    e.Graphics.DrawString(r.Cells[2].Value.ToString(), new Font("Arial", 5, FontStyle.Regular), Brushes.Black, ini.X+120, ini.Y );
+                }
+            }
+            e.Graphics.DrawString("--------------------------------------------------------------", new Font("Arial", 5, FontStyle.Regular), Brushes.Black, ini.X, ini.Y += 7);
+            //subtotal de soles
+            e.Graphics.DrawString("Total soles:", new Font("Arial", 5, FontStyle.Regular), Brushes.Black, ini.X + 60, ini.Y+=20);
+            e.Graphics.DrawString(txtTotalSoles.Text, new Font("Arial", 5, FontStyle.Regular), Brushes.Black, ini.X + 120, ini.Y);
+            //------------------
+            e.Graphics.DrawString("Dólares:", new Font("Arial", 8, FontStyle.Bold), Brushes.Black, ini.X, ini.Y += 20);
+            //cabecera de denominacion de soles
+            e.Graphics.DrawString("Denominación", new Font("Arial", 5, FontStyle.Regular), Brushes.Black, ini.X, ini.Y += 20);
+            e.Graphics.DrawString("Cantidad", new Font("Arial", 5, FontStyle.Regular), Brushes.Black, ini.X + 60, ini.Y);
+            e.Graphics.DrawString("Subtotal", new Font("Arial", 5, FontStyle.Regular), Brushes.Black, ini.X + 120, ini.Y);
+            e.Graphics.DrawString("--------------------------------------------------------------", new Font("Arial", 5, FontStyle.Regular), Brushes.Black, ini.X, ini.Y += 7);
+            foreach (DataGridViewRow r in dgvDolares.Rows)
+            {
+                int col = Convert.ToInt32(r.Cells[1].Value);
+                if (col != 0)
+                {
+                    e.Graphics.DrawString(r.Cells[0].Value.ToString(), new Font("Arial", 5, FontStyle.Regular), Brushes.Black, ini.X, ini.Y += 20);
+                    e.Graphics.DrawString(r.Cells[1].Value.ToString(), new Font("Arial", 5, FontStyle.Regular), Brushes.Black, ini.X + 60, ini.Y);
+                    e.Graphics.DrawString(r.Cells[2].Value.ToString(), new Font("Arial", 5, FontStyle.Regular), Brushes.Black, ini.X + 120, ini.Y);
+                }
+            }
+            e.Graphics.DrawString("--------------------------------------------------------------", new Font("Arial", 5, FontStyle.Regular), Brushes.Black, ini.X, ini.Y += 7);
+            //subtotal de soles
+            e.Graphics.DrawString("Total dólares:", new Font("Arial", 5, FontStyle.Regular), Brushes.Black, ini.X + 60, ini.Y += 20);
+            e.Graphics.DrawString(txtTotalDolares.Text, new Font("Arial", 5, FontStyle.Regular), Brushes.Black, ini.X + 120, ini.Y);
+            //------------------
         }
     }
 }

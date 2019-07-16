@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 namespace ServiciosBancarios.Backend
 {
+    [ServiceContract]
     interface IDetalleCajaChicaService
     {
 

@@ -83,8 +83,8 @@ namespace Sistema_Bancario.Administrador
                     RolesModel objectmodelo = new RolesModel();
 
                     objectmodelo.Descripcion = txtRol.Text;
-                    objectmodelo.Fecha_creacion = DateTime.Now;
-                    objectmodelo.Usuario_creador = "Miau";
+                    //objectmodelo.Fecha_creacion = DateTime.Now;
+                    //objectmodelo.Usuario_creador = "Miau";
                     //objectmodelo.Fecha_modificacion = DateTime.Now;
 
                     //objectmodelo.Usuario_modificador = "";

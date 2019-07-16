@@ -2254,4 +2254,109 @@ namespace Sistema_Bancario.WsSistemaBancario {
             return base.Channel.ObtenerTodosAsync();
         }
     }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WsSistemaBancario.IDetalleCajaChicaService")]
+    public interface IDetalleCajaChicaService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_Crear", ReplyAction="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_CrearResponse")]
+        bool DetalleCajaChica_Crear(Modelos.Modelos.DetalleCajaChicaModel aDetalleCajaChica, int id_user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_Crear", ReplyAction="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_CrearResponse")]
+        System.Threading.Tasks.Task<bool> DetalleCajaChica_CrearAsync(Modelos.Modelos.DetalleCajaChicaModel aDetalleCajaChica, int id_user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_Editar", ReplyAction="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_EditarResponse")]
+        bool DetalleCajaChica_Editar(Modelos.Modelos.DetalleCajaChicaModel aDetalleCajaChica, int id_user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_Editar", ReplyAction="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_EditarResponse")]
+        System.Threading.Tasks.Task<bool> DetalleCajaChica_EditarAsync(Modelos.Modelos.DetalleCajaChicaModel aDetalleCajaChica, int id_user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_Eliminar", ReplyAction="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_EliminarResponse")]
+        bool DetalleCajaChica_Eliminar(int aID_DetalleCajaChica);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_Eliminar", ReplyAction="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_EliminarResponse")]
+        System.Threading.Tasks.Task<bool> DetalleCajaChica_EliminarAsync(int aID_DetalleCajaChica);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_ObtenerUno", ReplyAction="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_ObtenerUnoResponse")]
+        Modelos.Modelos.DetalleCajaChicaModel DetalleCajaChica_ObtenerUno(int aID_DetalleCajaChica);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_ObtenerUno", ReplyAction="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_ObtenerUnoResponse")]
+        System.Threading.Tasks.Task<Modelos.Modelos.DetalleCajaChicaModel> DetalleCajaChica_ObtenerUnoAsync(int aID_DetalleCajaChica);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_ObtenerTodos", ReplyAction="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_ObtenerTodosResponse" +
+            "")]
+        Modelos.Modelos.DetalleCajaChicaModel[] DetalleCajaChica_ObtenerTodos();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_ObtenerTodos", ReplyAction="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_ObtenerTodosResponse" +
+            "")]
+        System.Threading.Tasks.Task<Modelos.Modelos.DetalleCajaChicaModel[]> DetalleCajaChica_ObtenerTodosAsync();
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IDetalleCajaChicaServiceChannel : Sistema_Bancario.WsSistemaBancario.IDetalleCajaChicaService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class DetalleCajaChicaServiceClient : System.ServiceModel.ClientBase<Sistema_Bancario.WsSistemaBancario.IDetalleCajaChicaService>, Sistema_Bancario.WsSistemaBancario.IDetalleCajaChicaService {
+        
+        public DetalleCajaChicaServiceClient() {
+        }
+        
+        public DetalleCajaChicaServiceClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public DetalleCajaChicaServiceClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public DetalleCajaChicaServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public DetalleCajaChicaServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public bool DetalleCajaChica_Crear(Modelos.Modelos.DetalleCajaChicaModel aDetalleCajaChica, int id_user) {
+            return base.Channel.DetalleCajaChica_Crear(aDetalleCajaChica, id_user);
+        }
+        
+        public System.Threading.Tasks.Task<bool> DetalleCajaChica_CrearAsync(Modelos.Modelos.DetalleCajaChicaModel aDetalleCajaChica, int id_user) {
+            return base.Channel.DetalleCajaChica_CrearAsync(aDetalleCajaChica, id_user);
+        }
+        
+        public bool DetalleCajaChica_Editar(Modelos.Modelos.DetalleCajaChicaModel aDetalleCajaChica, int id_user) {
+            return base.Channel.DetalleCajaChica_Editar(aDetalleCajaChica, id_user);
+        }
+        
+        public System.Threading.Tasks.Task<bool> DetalleCajaChica_EditarAsync(Modelos.Modelos.DetalleCajaChicaModel aDetalleCajaChica, int id_user) {
+            return base.Channel.DetalleCajaChica_EditarAsync(aDetalleCajaChica, id_user);
+        }
+        
+        public bool DetalleCajaChica_Eliminar(int aID_DetalleCajaChica) {
+            return base.Channel.DetalleCajaChica_Eliminar(aID_DetalleCajaChica);
+        }
+        
+        public System.Threading.Tasks.Task<bool> DetalleCajaChica_EliminarAsync(int aID_DetalleCajaChica) {
+            return base.Channel.DetalleCajaChica_EliminarAsync(aID_DetalleCajaChica);
+        }
+        
+        public Modelos.Modelos.DetalleCajaChicaModel DetalleCajaChica_ObtenerUno(int aID_DetalleCajaChica) {
+            return base.Channel.DetalleCajaChica_ObtenerUno(aID_DetalleCajaChica);
+        }
+        
+        public System.Threading.Tasks.Task<Modelos.Modelos.DetalleCajaChicaModel> DetalleCajaChica_ObtenerUnoAsync(int aID_DetalleCajaChica) {
+            return base.Channel.DetalleCajaChica_ObtenerUnoAsync(aID_DetalleCajaChica);
+        }
+        
+        public Modelos.Modelos.DetalleCajaChicaModel[] DetalleCajaChica_ObtenerTodos() {
+            return base.Channel.DetalleCajaChica_ObtenerTodos();
+        }
+        
+        public System.Threading.Tasks.Task<Modelos.Modelos.DetalleCajaChicaModel[]> DetalleCajaChica_ObtenerTodosAsync() {
+            return base.Channel.DetalleCajaChica_ObtenerTodosAsync();
+        }
+    }
 }

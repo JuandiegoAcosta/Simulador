@@ -365,4 +365,20 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfCajaChicaModel" nillable="true" type="tns:ArrayOfCajaChicaModel" />
+  <xs:complexType name="DetalleCajaChicaModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cantidad" type="xs:int" />
+      <xs:element minOccurs="0" name="Denominacion" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Id_CajaChica" type="xs:int" />
+      <xs:element minOccurs="0" name="Moneda" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DetalleCajaChicaModel" nillable="true" type="tns:DetalleCajaChicaModel" />
+  <xs:complexType name="ArrayOfDetalleCajaChicaModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DetalleCajaChicaModel" nillable="true" type="tns:DetalleCajaChicaModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDetalleCajaChicaModel" nillable="true" type="tns:ArrayOfDetalleCajaChicaModel" />
 </xs:schema>

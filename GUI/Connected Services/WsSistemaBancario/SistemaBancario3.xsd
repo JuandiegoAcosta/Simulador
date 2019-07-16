@@ -1589,4 +1589,74 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="DetalleCajaChica_Crear">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q92="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="aDetalleCajaChica" nillable="true" type="q92:DetalleCajaChicaModel" />
+        <xs:element minOccurs="0" name="id_user" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DetalleCajaChica_CrearResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DetalleCajaChica_CrearResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DetalleCajaChica_Editar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q93="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="aDetalleCajaChica" nillable="true" type="q93:DetalleCajaChicaModel" />
+        <xs:element minOccurs="0" name="id_user" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DetalleCajaChica_EditarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DetalleCajaChica_EditarResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DetalleCajaChica_Eliminar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="aID_DetalleCajaChica" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DetalleCajaChica_EliminarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DetalleCajaChica_EliminarResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DetalleCajaChica_ObtenerUno">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="aID_DetalleCajaChica" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DetalleCajaChica_ObtenerUnoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q94="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="DetalleCajaChica_ObtenerUnoResult" nillable="true" type="q94:DetalleCajaChicaModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DetalleCajaChica_ObtenerTodos">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DetalleCajaChica_ObtenerTodosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q95="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="DetalleCajaChica_ObtenerTodosResult" nillable="true" type="q95:ArrayOfDetalleCajaChicaModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
