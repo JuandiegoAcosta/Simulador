@@ -129,7 +129,7 @@ namespace Sistema_Bancario.plataforma_controles
             this.txtTelefono.Text = default(string);
             this.cboTipo_documento.SelectedValue = -1;
             this.cboTipoPersona.SelectedValue = -1;
-            this.dtpFecha_nacimiento.Value = DateTime.Now;
+            this.dtpFecha_nacimiento.Value = new DateTime(2000, 01, 01);
             this.chkEstado.Checked = false;
 
             this.SlblUsuario_creador.Text = "*";
@@ -245,7 +245,7 @@ namespace Sistema_Bancario.plataforma_controles
 
             if (objeto == null)
             {
-                MessageBox.Show("Problemas al instanciar el nuevo objeto, revise las propiedas");
+                MessageBox.Show("Algunos datos no coinciden, por favor revísalos");
                 return;
             }
             if (this.BLPersona.Crear(objeto))
@@ -308,7 +308,11 @@ namespace Sistema_Bancario.plataforma_controles
 
             var objeto = this.BLPersona.personaSelectbyID(codigo);
 
-            if (objeto == null && objeto.Count <= 0) { return; }
+            if (objeto == null || objeto.Count <= 0)
+            {
+                MessageBox.Show("No se han encontrado resultados");
+                return;
+            }
             this.buscarObjeto(objeto);
         }
 
@@ -318,7 +322,11 @@ namespace Sistema_Bancario.plataforma_controles
 
             var objeto = this.BLPersona.personaSelectbyNombres(nombres);
 
-            if (objeto == null && objeto.Count <= 0) { return; }
+            if (objeto == null || objeto.Count <= 0)
+            {
+                MessageBox.Show("No se han encontrado resultados");
+                return;
+            }
             this.buscarObjeto(objeto);
         }
 
@@ -328,7 +336,11 @@ namespace Sistema_Bancario.plataforma_controles
 
             var objeto = this.BLPersona.personaSelectbyApellidos(apellidos);
 
-            if (objeto == null && objeto.Count <= 0) { return; }
+            if (objeto == null || objeto.Count <= 0)
+            {
+                MessageBox.Show("No se han encontrado resultados");
+                return;
+            }
             this.buscarObjeto(objeto);
 
         }
@@ -339,7 +351,11 @@ namespace Sistema_Bancario.plataforma_controles
 
             var objeto = this.BLPersona.personaSelectbyNroDocumento(numero_documento);
 
-            if (objeto == null && objeto.Count <= 0) { return; }
+            if (objeto == null || objeto.Count <= 0)
+            {
+                MessageBox.Show("No se han encontrado resultados");
+                return;
+            }
             this.buscarObjeto(objeto);
         }
 
