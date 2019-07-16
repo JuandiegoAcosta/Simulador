@@ -10,108 +10,46 @@ namespace CNegocio.Plataforma
 {
     public class BLChequeras
     {
-        ChequerasManager chequerasManager = new ChequerasManager();
+        ChequerasManager managerChequera = new ChequerasManager();
 
         #region Methods
 
-        public bool Ingresar(ChequerasModel aChequerasModel)
+        public bool Insert(ChequerasModel achequera)
         {
-            return this.chequerasManager.Insert(aChequerasModel);
+            achequera.Fin = achequera.Inicio + achequera.Cantidad_cheques;
+
+            return this.managerChequera.Insert(achequera);
         }
 
 
-        public bool Actualizar(ChequerasModel aChequerasModel)
+        public bool Update(ChequerasModel achequera)
         {
-            return this.chequerasManager.Update(aChequerasModel);
+            return this.managerChequera.Update(achequera);
         }
 
 
 
-        public bool Eliminar(int aNumero)
+        public bool Delete(int aNumero)
         {
-            return this.chequerasManager.Delete(aNumero);
+            return this.managerChequera.Delete(aNumero);
         }
 
 
-        public ChequerasModel obtenerCheque(int aNumero)
+        public ChequerasModel GetChequerasModel(int aNumero)
         {
-            return this.chequerasManager.GetChequerasModel(aNumero);
+            return this.managerChequera.Getchequera(aNumero);
         }
 
 
-        /// <summary>
-        /// Selects all the objects of ChequesModel table.
-        /// </summary>
         public List<ChequerasModel> obtenerTodosCheques()
         {
-            return this.chequerasManager.ChequerasModelSelectAll();
+            return this.managerChequera.chequeraSelectAll();
         }
 
-
-        //public List<ChequesModel> ChequesModelSelectbyUNKNOW(string aValue)
-        //{
-
-        //    List<ChequesModel> ChequesModellist = new List<ChequesModel>();
-
-        //    try
-        //    {
-        //        using (var connection = Util.ConnectionFactory.conexion())
-        //        {
-        //            connection.Open();
-
-        //            SqlCommand command = connection.CreateCommand();
-
-        //            command.Parameters.AddWithValue("@UNKNOW", aValue);
-
-        //            command.CommandType = CommandType.StoredProcedure;
-
-        //            command.CommandText = "ChequesModelSelectbyUNKNOW";
-
-        //            SqlDataReader reader = command.ExecuteReader();
-
-        //            if (reader.HasRows)
-        //            {
-        //                while (reader.Read())
-        //                {
-
-        //                    int Numero = (int)(reader["Numero"]);
-        //                    DateTime FechaEmision = (DateTime)(reader["FechaEmision"]);
-        //                    DateTime? FechaCobro = reader["FechaCobro"] as DateTime?;
-        //                    string Destinatario = (string)(reader["Destinatario"]);
-        //                    decimal Monto = (decimal)(reader["Monto"]);
-        //                    int IDChequesModelra = (int)(reader["IDChequesModelra"]);
-        //                    string Estado = (string)(reader["Estado"]);
-        //                    DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
-        //                    DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
-        //                    string USUARIO_CREACION = (string)(reader["USUARIO_CREACION"]);
-        //                    string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
-
-        //                    ChequesModellist.Add(new ChequesModel
-        //                    {
-        //                        Numero = Numero,
-        //                        Fechaemision = FechaEmision,
-        //                        Fechacobro = FechaCobro,
-        //                        Destinatario = Destinatario,
-        //                        Monto = Monto,
-        //                        //IdChequesModelra = IDChequesModelra,
-        //                        Estado = Estado,
-        //                        Fecha_creacion = FECHA_CREACION,
-        //                        Fecha_modificacion = FECHA_MODIFICACION,
-        //                        Usuario_creacion = USUARIO_CREACION,
-        //                        Usuario_modificador = USUARIO_MODIFICADOR,
-
-        //                    });
-        //                }
-        //            }
-        //        }
-
-        //        return ChequesModellist;
-        //    }
-        //    catch (Exception)
-        //    {
-        //        return ChequesModellist;
-        //    }
-        //}
+        public List<ChequerasModel> chequeraSelectbyCuenta(string acuenta)
+        {
+            return this.managerChequera.chequeraSelectbyCuenta(acuenta);
+        }
         #endregion
     }
 }
