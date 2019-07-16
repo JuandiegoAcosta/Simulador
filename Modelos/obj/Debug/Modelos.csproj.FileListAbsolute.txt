@@ -165,3 +165,9 @@ E:\Documents\cursos\VI semestre\distribuidas\simulador2\Modelos\obj\Debug\Modelo
 E:\Documents\cursos\VI semestre\distribuidas\simulador2\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
 E:\Documents\cursos\VI semestre\distribuidas\simulador2\Modelos\obj\Debug\Modelos.dll
 E:\Documents\cursos\VI semestre\distribuidas\simulador2\Modelos\obj\Debug\Modelos.pdb
+C:\Users\elife\Desktop\Others\ISUR\Bancario\Modelos\bin\Debug\Modelos.dll
+C:\Users\elife\Desktop\Others\ISUR\Bancario\Modelos\bin\Debug\Modelos.pdb
+C:\Users\elife\Desktop\Others\ISUR\Bancario\Modelos\obj\Debug\Modelos.csprojAssemblyReference.cache
+C:\Users\elife\Desktop\Others\ISUR\Bancario\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
+C:\Users\elife\Desktop\Others\ISUR\Bancario\Modelos\obj\Debug\Modelos.dll
+C:\Users\elife\Desktop\Others\ISUR\Bancario\Modelos\obj\Debug\Modelos.pdb

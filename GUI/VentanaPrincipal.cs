@@ -40,10 +40,10 @@ namespace Sistema_Bancario
 
       private ISession Session = null;
       Button BtnSelecionado;
-      List< Button> LBtn = new List<Button>();
+      List<Button> LBtn = new List<Button>();
       List<Type> LControls = new List<Type>();
-        public VentanaPrincipal(ISession session)
-        {
+      public VentanaPrincipal(ISession session)
+      {
          try
          {
             Session = session;
@@ -53,26 +53,33 @@ namespace Sistema_Bancario
          }
          catch (Exception)
          { }
-        }
+      }
 
-        private void EvaluarUsuario()
-        {
+      private void EvaluarUsuario()
+      {
          if (Session != null)
          {
             InitializeComponent();
 
             if (Session.UserRol.Any(r => r.Descripcion == "Administrador"))
             {
-                BTAdministrador.Visible = true;
+               BTAdministrador.Visible = true;
+               lblUsertType.Image = Properties.Resources.admin;
             }
-                Show();
+            else
+            {
+               lblUsertType.Image = Properties.Resources.estudiante;
+            }
+
+
+            Show();
             //if (Session.isAdmin)
             //{
 
             //}
             //else if (Session.User == 1)
             //{
-            lblUsertType.Image = Properties.Resources.estudiante;
+
             //}
 
             SetSessionValues();
@@ -81,60 +88,60 @@ namespace Sistema_Bancario
          {
             MessageBox.Show("Es necesario iniciar session");
          }
-        }
-        public VentanaPrincipal()
-        {
-            InitializeComponent();
-        }
-        private void SetSessionValues()
-        {
+      }
+      public VentanaPrincipal()
+      {
+         InitializeComponent();
+      }
+      private void SetSessionValues()
+      {
          lblUserValueType.Text = Session.UserNombreCompleto;
          lblSucursal.Text = Session.SucursalNombre;
-            lblVentanilla.Text = Session.VentanillaDescripcion;
-            lblTurno.Text = Session.Turno.Descripcion;
-        }
-        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+         lblVentanilla.Text = Session.VentanillaDescripcion;
+         lblTurno.Text = Session.Turno.Descripcion;
+      }
+      protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
       {
-            if (keyData == (Keys.F1))
-            {
-                BTGestion.BackColor = SystemColors.HotTrack;
-                panel2.Controls.Clear();
-                this.Componentes(3);
-                return true;
-            }
-            else if (keyData == (Keys.F2))
-            {
-                BTGestion.BackColor = SystemColors.HotTrack;
-                panel2.Controls.Clear();
-                this.Componentes(2);
-                return true;
-            }
-            else if (keyData == (Keys.F3))
-            {
-                BTGestion.BackColor = SystemColors.HotTrack;
-                panel2.Controls.Clear();
-                this.Componentes(1);
-                return true;
-            }
-            else if (keyData == (Keys.F4))
-            {
+         if (keyData == (Keys.F1))
+         {
+            BTGestion.BackColor = SystemColors.HotTrack;
+            panel2.Controls.Clear();
+            this.Componentes(3);
+            return true;
+         }
+         else if (keyData == (Keys.F2))
+         {
+            BTGestion.BackColor = SystemColors.HotTrack;
+            panel2.Controls.Clear();
+            this.Componentes(2);
+            return true;
+         }
+         else if (keyData == (Keys.F3))
+         {
+            BTGestion.BackColor = SystemColors.HotTrack;
+            panel2.Controls.Clear();
+            this.Componentes(1);
+            return true;
+         }
+         else if (keyData == (Keys.F4))
+         {
 
-            }
-            else if (keyData == Keys.Alt && keyData == Keys.NumPad1)
-            {
+         }
+         else if (keyData == Keys.Alt && keyData == Keys.NumPad1)
+         {
 
-            }
+         }
          return base.ProcessCmdKey(ref msg, keyData);
       }
 
-        public void CrearBoton(Button NombreButton, string Text, int x)
+      public void CrearBoton(Button NombreButton, string Text, int x)
       {
-            //56; 96; 147
-            NombreButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+         //56; 96; 147
+         NombreButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
          NombreButton.FlatAppearance.BorderSize = 0;
          NombreButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(96)))), ((int)(((byte)(147)))));
-            NombreButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(96)))), ((int)(((byte)(147)))));
-            NombreButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+         NombreButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(96)))), ((int)(((byte)(147)))));
+         NombreButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
          NombreButton.Font = new Font("Verdana", 8, FontStyle.Bold);
          NombreButton.Padding = new Padding(20, 0, 0, 0);
          NombreButton.ForeColor = System.Drawing.SystemColors.Window;
@@ -146,261 +153,265 @@ namespace Sistema_Bancario
          NombreButton.UseVisualStyleBackColor = false;
          NombreButton.Location = new Point(0, x);
          NombreButton.Click += new EventHandler(Evento_Click);
-            panel2.Controls.Add(NombreButton);
+         panel2.Controls.Add(NombreButton);
 
       }
 
-        #region Utilitarios
-        public void CrearControl<T>(UserControl parameter, Button btn)
-        {
-            if (!panel1.Controls.Contains(parameter))
+      #region Utilitarios
+      public void CrearControl<T>(UserControl parameter, Button btn)
+      {
+         if (!panel1.Controls.Contains(parameter))
+         {
+            panel1.Controls.Add(parameter);
+            parameter.Dock = DockStyle.Fill;
+            parameter.BringToFront();
+            TituloText.Text = btn.Text;
+         }
+         else
+         {
+            TituloText.Text = btn.Text;
+            parameter.BringToFront();
+         }
+      }
+      public void OpcionSelecionada(Button btn)
+      {
+         if (BtnSelecionado != btn && BtnSelecionado != null)
+         {
+            BtnSelecionado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(96)))), ((int)(((byte)(147)))));
+            BtnSelecionado = btn;
+
+         }
+         else
+         {
+            btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(96)))), ((int)(((byte)(147)))));
+            BtnSelecionado = btn;
+         }
+      }
+      private void Marcar(object boton)
+      {
+         Button BotonMenu;
+         BotonMenu = boton as Button;
+         BTOperaciones.BackColor = Color.Transparent;
+         BTReportes.BackColor = Color.Transparent;
+         BTGestion.BackColor = Color.Transparent;
+         BTPlataforma.BackColor = Color.Transparent;
+         BTOperaciones.ForeColor = Color.Black;
+         BTReportes.ForeColor = Color.Black;
+         BTGestion.ForeColor = Color.Black;
+         BTPlataforma.ForeColor = Color.Black;
+         BotonMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(96)))), ((int)(((byte)(147)))));
+         BotonMenu.ForeColor = Color.White;
+      }
+      #endregion
+
+      #region Eventos
+      private void Evento_Click(object sender, EventArgs e)
+      {
+         Button btn = sender as Button;
+         TituloText.Visible = true;
+         OpcionSelecionada(btn);
+
+         #region Instancias_Controles
+         LControls.Add(typeof(Retiros));
+
+         if (btn.Text.Equals("Retiros"))
+         {
+            Retiros retiro = Retiros.instance;
+            retiro.Session = Session;
+            CrearControl<UserControl>(retiro, btn);
+         }
+         else if (btn.Text.Equals("Depósitos"))
+         {
+            Depositos depositos = Depositos.instance;
+            depositos.Session = Session;
+               CrearControl<UserControl>(depositos, btn);
+         }
+         else if (btn.Text.Equals("Transferencias"))
+         {
+            CrearControl<UserControl>(Transferencias.instance, btn);
+         }
+         else if (btn.Text.Equals("Envío Giros"))
+         {
+            CrearControl<UserControl>(Envio_Giros.instance, btn);
+         }
+         else if (btn.Text.Equals("Cobro Giros"))
+         {
+            CrearControl<UserControl>(CobroGiros.instance, btn);
+         }
+         else if (btn.Text.Equals("Pago tarjetas"))
+         {
+            CrearControl<UserControl>(Tarjetas.instance, btn);
+         }
+         else if (btn.Text.Equals("Pago Cuotas"))
+         {
+            CrearControl<UserControl>(Cuotas.getinstance(), btn);
+         }
+         else if (btn.Text.Equals("Tipo Cambio"))
+         {
+            CrearControl<UserControl>(Tipo_de_Cambio.instance, btn);
+         }
+         else if (btn.Text.Equals("Pago Servicios"))
+         {
+            CrearControl<UserControl>(Servicios.instance, btn);
+         }
+         else if (btn.Text.Equals("Abrir Cuenta"))
+         {
+            NuevaCuentaUserControl cuenta;
+            if (this.Session != null)
             {
-                panel1.Controls.Add(parameter);
-                parameter.Dock = DockStyle.Fill;
-                parameter.BringToFront();
-                TituloText.Text = btn.Text;
+               cuenta = new NuevaCuentaUserControl(this.Session);
+               CrearControl<UserControl>(cuenta, btn);
             }
             else
             {
-                TituloText.Text = btn.Text;
-                parameter.BringToFront();
+               MessageBox.Show("La sesión ha caducado");
             }
-        }
-        public void OpcionSelecionada(Button btn)
-        {
-            if (BtnSelecionado != btn && BtnSelecionado != null)
-            {
-                BtnSelecionado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
-                btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(96)))), ((int)(((byte)(147)))));
-                BtnSelecionado = btn;
+         }
+         else if (btn.Text.Equals("Gestionar Cuenta"))
+         {
+            CrearControl<UserControl>(UCactualizarCuenta.instance, btn);
+         }
+         else if (btn.Text.Equals("Realizar Préstamo"))
+         {
+            CrearControl<UserControl>(UCprestamos.instance, btn);
+         }
+         else if (btn.Text.Equals("Refinanciar"))
+         {
+            CrearControl<UserControl>(UCrefinanciar.instance, btn);
+         }
+         else if (btn.Text.Equals("Solicitar Chequera"))
+         {
+            CrearControl<UserControl>(UCchequeras.instance, btn);
+         }
+         else if (btn.Text.Equals("Balancin Caja"))
+         {
+            Balancin balancin = new Balancin(Session);
+            CrearControl<UserControl>(balancin, btn);
+         }
+         else if (btn.Text.Equals("Resumen total"))
+         {
+            CrearControl<UserControl>(ResumenTotal.instance, btn);
+         }
+         else if (btn.Text.Equals("Cliente"))
+         {
+            CrearControl<UserControl>(UCcliente.instance, btn);
+         }
+         else if (btn.Text.Equals("Cobro Cheques"))
+         {
+            CrearControl<UserControl>(Cheques.instance, btn);
+         }
+         else if (btn.Text.Equals("Personas"))
+         {
+            CrearControl<UserControl>(Usuario.instance, btn);
+         }
+         else if (btn.Text.Equals("Roles"))
+         {
+            CrearControl<UserControl>(Roles.instance, btn);
+         }
+         else if (btn.Text.Equals("Permisos"))
+         {
+            CrearControl<UserControl>(Permisos.instance, btn);
+         }
+         #endregion
+      }
+      private void BTGestion_Click(object sender, EventArgs e)
+      {
+         Marcar(sender);
+         panel2.Controls.Clear();
+         this.Componentes(2);
+      }
 
-            }
-            else
-            {
-                btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(96)))), ((int)(((byte)(147)))));
-                BtnSelecionado = btn;
-            }
-        }
-        private void Marcar(object boton)
-        {
-            Button BotonMenu;
-            BotonMenu = boton as Button;
-            BTOperaciones.BackColor = Color.Transparent;
-            BTReportes.BackColor = Color.Transparent;
-            BTGestion.BackColor = Color.Transparent;
-            BTPlataforma.BackColor = Color.Transparent;
-            BTOperaciones.ForeColor = Color.Black;
-            BTReportes.ForeColor = Color.Black;
-            BTGestion.ForeColor = Color.Black;
-            BTPlataforma.ForeColor = Color.Black;
-            BotonMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(96)))), ((int)(((byte)(147)))));
-            BotonMenu.ForeColor = Color.White;
-        }
-        #endregion
+      private void BTPlataforma_Click(object sender, EventArgs e)
+      {
+         Marcar(sender);
+         panel2.Controls.Clear();
+         this.Componentes(1);
+      }
 
-        #region Eventos
-        private void Evento_Click(object sender, EventArgs e)
-        {
-            Button btn = sender as Button;
-            TituloText.Visible = true;
-            OpcionSelecionada(btn);
+      private void BTReportes_Click(object sender, EventArgs e)
+      {
+         Marcar(sender);
+      }
 
-            #region Instancias_Controles
-            LControls.Add(typeof(Retiros));
+      private void BTOperaciones_Click(object sender, EventArgs e)
+      {
+         Marcar(sender);
+         panel2.Controls.Clear();
+         this.Componentes(3);
+      }
 
-            if (btn.Text.Equals("Retiros"))
-            {
-                CrearControl<UserControl>(Retiros.instance, btn);
-            }
-            else if (btn.Text.Equals("Depósitos"))
-            {
-                CrearControl<UserControl>(Depositos.instance, btn);
-            }
-            else if (btn.Text.Equals("Transferencias"))
-            {
-                CrearControl<UserControl>(Transferencias.instance, btn);
-            }
-            else if (btn.Text.Equals("Envío Giros"))
-            {
-                CrearControl<UserControl>(Envio_Giros.instance, btn);
-            }
-            else if (btn.Text.Equals("Cobro Giros"))
-            {
-                CrearControl<UserControl>(CobroGiros.instance, btn);
-            }
-            else if (btn.Text.Equals("Pago tarjetas"))
-            {
-                CrearControl<UserControl>(Tarjetas.instance, btn);
-            }
-            else if (btn.Text.Equals("Pago Cuotas"))
-            {
-                CrearControl<UserControl>(Cuotas.getinstance(), btn);
-            }
-            else if (btn.Text.Equals("Tipo Cambio"))
-            {
-                CrearControl<UserControl>(Tipo_de_Cambio.instance, btn);
-            }
-            else if (btn.Text.Equals("Pago Servicios"))
-            {
-                CrearControl<UserControl>(Servicios.instance, btn);
-            }
-            else if (btn.Text.Equals("Abrir Cuenta"))
-            {
-                NuevaCuentaUserControl cuenta;
-                if (this.Session != null)
-                {
-                    cuenta = new NuevaCuentaUserControl(this.Session);
-                    CrearControl<UserControl>(cuenta, btn);
-                }
-                else
-                {
-                    MessageBox.Show("La sesión ha caducado");
-                }
-            }
-            else if (btn.Text.Equals("Gestionar Cuenta"))
-            {
-                CrearControl<UserControl>(UCactualizarCuenta.instance, btn);
-            }
-            else if (btn.Text.Equals("Realizar Préstamo"))
-            {
-                CrearControl<UserControl>(UCprestamos.instance, btn);
-            }
-            else if (btn.Text.Equals("Refinanciar"))
-            {
-                CrearControl<UserControl>(UCrefinanciar.instance, btn);
-            }
-            else if (btn.Text.Equals("Solicitar Chequera"))
-            {
-                CrearControl<UserControl>(UCchequeras.instance, btn);
-            }
-            else if (btn.Text.Equals("Balancin Caja"))
-            {
-                Balancin balancin = new Balancin(Session);
-                CrearControl<UserControl>(balancin, btn);
-            }
-            else if (btn.Text.Equals("Resumen total"))
-            {
-                CrearControl<UserControl>(ResumenTotal.instance, btn);
-            }
-            else if (btn.Text.Equals("Cliente"))
-            {
-                CrearControl<UserControl>(UCcliente.instance, btn);
-            }
-            else if (btn.Text.Equals("Cobro Cheques"))
-            {
-                CrearControl<UserControl>(Cheques.instance, btn);
-            }
-            else if (btn.Text.Equals("Personas"))
-            {
-                CrearControl<UserControl>(Usuario.instance, btn);
-            }
-            else if (btn.Text.Equals("Roles"))
-            {
-                CrearControl<UserControl>(Roles.instance, btn);
-            }
-            else if (btn.Text.Equals("Permisos"))
-            {
-                CrearControl<UserControl>(Permisos.instance, btn);
-            }
-            #endregion
-        }
-        private void BTGestion_Click(object sender, EventArgs e)
-        {
-            Marcar(sender);
-            panel2.Controls.Clear();
-            this.Componentes(2);
-        }
+      private void BTAdministrador_Click(object sender, EventArgs e)
+      {
+         Marcar(sender);
+         panel2.Controls.Clear();
+         this.Componentes(4);
+      }
+      private void Button11_Click(object sender, EventArgs e)
+      {
+         Login lg = new Login();
+         lg.Show();
+         this.Close();
+      }
+      private void Cerrar_Click(object sender, EventArgs e)
+      {
+         this.Close();
+      }
 
-        private void BTPlataforma_Click(object sender, EventArgs e)
-        {
-            Marcar(sender);
-            panel2.Controls.Clear();
-            this.Componentes(1);
-        }
+      private void Minimizar_Click(object sender, EventArgs e)
+      {
+         this.WindowState = FormWindowState.Minimized;
+      }
+      #endregion
 
-        private void BTReportes_Click(object sender, EventArgs e)
-        {
-            Marcar(sender);
-        }
-
-        private void BTOperaciones_Click(object sender, EventArgs e)
-        {
-            Marcar(sender);
-            panel2.Controls.Clear();
-            this.Componentes(3);
-        }
-
-        private void BTAdministrador_Click(object sender, EventArgs e)
-        {
-            Marcar(sender);
-            panel2.Controls.Clear();
-            this.Componentes(4);
-        }
-        private void Button11_Click(object sender, EventArgs e)
-        {
-            Login lg = new Login();
-            lg.Show();
-            this.Close();
-        }
-        private void Cerrar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void Minimizar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-        #endregion
-
-        private void Componentes(int x)
+      private void Componentes(int x)
       {
          switch (x)
          {
             case 1:
-                   
-                    if (Session.Componentes.Any(c => c.Nombre == "Abrir Cuenta"))
-                    {
-                        Button AbrirCuenta = new Button();
-                       
-                        this.CrearBoton(AbrirCuenta, "Abrir Cuenta", 0);
-                    }
 
-                    if (Session.Componentes.Any(c => c.Nombre == "Gestionar Cuenta"))
-                    {
-                        Button GestionarCuenta = new Button();
-                       
-                        this.CrearBoton(GestionarCuenta, "Gestionar Cuenta", 50);
-                    }
+               if (Session.Componentes.Any(c => c.Nombre == "Abrir Cuenta"))
+               {
+                  Button AbrirCuenta = new Button();
 
-                    if (Session.Componentes.Any(c => c.Nombre == "Realizar Préstamo"))
-                    {
-                        Button RealizarPrestamo = new Button();
-                       
-                        this.CrearBoton(RealizarPrestamo, "Realizar Préstamo", 100);
-                    }
+                  this.CrearBoton(AbrirCuenta, "Abrir Cuenta", 0);
+               }
 
-                    if (Session.Componentes.Any(c => c.Nombre == "Refinanciar"))
-                    {
-                        Button Refinanciar = new Button();
-                        
-                        this.CrearBoton(Refinanciar, "Refinanciar", 150);
-                    }
+               if (Session.Componentes.Any(c => c.Nombre == "Gestionar Cuenta"))
+               {
+                  Button GestionarCuenta = new Button();
 
-                    if (Session.Componentes.Any(c => c.Nombre == "Solicitar Chequera"))
-                    {
-                        Button SolicitarChequera = new Button();
-                       
-                        this.CrearBoton(SolicitarChequera, "Solicitar Chequera", 200);
-                    }
+                  this.CrearBoton(GestionarCuenta, "Gestionar Cuenta", 50);
+               }
 
-                    if (Session.Componentes.Any(c => c.Nombre == "Gestionar Chequera"))
-                    {
-                        Button GestionarChequera = new Button();
-                        
-                        this.CrearBoton(GestionarChequera, "Gestionar Chequera", 250);
-                    }
-                    break;
+               if (Session.Componentes.Any(c => c.Nombre == "Realizar Préstamo"))
+               {
+                  Button RealizarPrestamo = new Button();
+
+                  this.CrearBoton(RealizarPrestamo, "Realizar Préstamo", 100);
+               }
+
+               if (Session.Componentes.Any(c => c.Nombre == "Refinanciar"))
+               {
+                  Button Refinanciar = new Button();
+
+                  this.CrearBoton(Refinanciar, "Refinanciar", 150);
+               }
+
+               if (Session.Componentes.Any(c => c.Nombre == "Solicitar Chequera"))
+               {
+                  Button SolicitarChequera = new Button();
+
+                  this.CrearBoton(SolicitarChequera, "Solicitar Chequera", 200);
+               }
+
+               if (Session.Componentes.Any(c => c.Nombre == "Gestionar Chequera"))
+               {
+                  Button GestionarChequera = new Button();
+
+                  this.CrearBoton(GestionarChequera, "Gestionar Chequera", 250);
+               }
+               break;
             case 2:
                Button Cliente = new Button();
                Button TipoCliente = new Button();
@@ -416,83 +427,83 @@ namespace Sistema_Bancario
                this.CrearBoton(InteresesMoratorios, "Intereses Moratorios", 150);
                break;
             case 3:
-              
 
-                    if (Session.Componentes.Any(c => c.Nombre == "Retiros"))
-                    {
-                        Button Retiros = new Button();
-                        this.CrearBoton(Retiros, "Retiros", 0);
-                    }
 
-                    if (Session.Componentes.Any(c => c.Nombre == "Depósitos"))
-                    {
-                        Button Depositos = new Button();
-                        this.CrearBoton(Depositos, "Depósitos", 50);
-                    }
+               if (Session.Componentes.Any(c => c.Nombre == "Retiros"))
+               {
+                  Button Retiros = new Button();
+                  this.CrearBoton(Retiros, "Retiros", 0);
+               }
 
-                    if (Session.Componentes.Any(c => c.Nombre == "Transferencias"))
-                    {
-                        Button Transferencias = new Button();
-                        this.CrearBoton(Transferencias, "Transferencias", 100);
-                    }
+               if (Session.Componentes.Any(c => c.Nombre == "Depósitos"))
+               {
+                  Button Depositos = new Button();
+                  this.CrearBoton(Depositos, "Depósitos", 50);
+               }
 
-                    if (Session.Componentes.Any(c => c.Nombre == "Envío Giros"))
-                    {
-                        Button Envio_Giros = new Button();
-                        this.CrearBoton(Envio_Giros, "Envío Giros", 150);
-                    }
+               if (Session.Componentes.Any(c => c.Nombre == "Transferencias"))
+               {
+                  Button Transferencias = new Button();
+                  this.CrearBoton(Transferencias, "Transferencias", 100);
+               }
 
-                    if (Session.Componentes.Any(c => c.Nombre == "Cobro Giros"))
-                    {
-                        Button Cobro_Giros = new Button();
-                        this.CrearBoton(Cobro_Giros, "Cobro Giros", 200);
-                    }
+               if (Session.Componentes.Any(c => c.Nombre == "Envío Giros"))
+               {
+                  Button Envio_Giros = new Button();
+                  this.CrearBoton(Envio_Giros, "Envío Giros", 150);
+               }
 
-                    if (Session.Componentes.Any(c => c.Nombre == "Cobro Giros"))
-                    {
-                        Button Pago_tarjetas = new Button();
-                        this.CrearBoton(Pago_tarjetas, "Pago tarjetas", 250);
-                    }
+               if (Session.Componentes.Any(c => c.Nombre == "Cobro Giros"))
+               {
+                  Button Cobro_Giros = new Button();
+                  this.CrearBoton(Cobro_Giros, "Cobro Giros", 200);
+               }
 
-                    if (Session.Componentes.Any(c => c.Nombre == "Pago Cuotas"))
-                    {
-                        Button Pago_Cuotas = new Button();
-                        this.CrearBoton(Pago_Cuotas, "Pago Cuotas", 300);
-                    }
+               if (Session.Componentes.Any(c => c.Nombre == "Cobro Giros"))
+               {
+                  Button Pago_tarjetas = new Button();
+                  this.CrearBoton(Pago_tarjetas, "Pago tarjetas", 250);
+               }
 
-                    if (Session.Componentes.Any(c => c.Nombre == "Tipo Cambio"))
-                    {
-                        Button Tipo_Cambio = new Button();
-                        this.CrearBoton(Tipo_Cambio, "Tipo Cambio", 350);
-                    }
+               if (Session.Componentes.Any(c => c.Nombre == "Pago Cuotas"))
+               {
+                  Button Pago_Cuotas = new Button();
+                  this.CrearBoton(Pago_Cuotas, "Pago Cuotas", 300);
+               }
 
-                    if (Session.Componentes.Any(c => c.Nombre == "Pago Servicios"))
-                    {
-                        Button Pago_Servicios = new Button();
-                        this.CrearBoton(Pago_Servicios, "Pago Servicios", 400);
-                    }
+               if (Session.Componentes.Any(c => c.Nombre == "Tipo Cambio"))
+               {
+                  Button Tipo_Cambio = new Button();
+                  this.CrearBoton(Tipo_Cambio, "Tipo Cambio", 350);
+               }
 
-                    if (Session.Componentes.Any(c => c.Nombre == "Cobro Cheques"))
-                    {
-                        Button Cobro_Cheques = new Button();
-                        this.CrearBoton(Cobro_Cheques, "Cobro Cheques", 450);
-                    }
+               if (Session.Componentes.Any(c => c.Nombre == "Pago Servicios"))
+               {
+                  Button Pago_Servicios = new Button();
+                  this.CrearBoton(Pago_Servicios, "Pago Servicios", 400);
+               }
 
-                    if (Session.Componentes.Any(c => c.Nombre == "Balancin Caja"))
-                    {
-                        Button Balancin = new Button();
-                        this.CrearBoton(Balancin, "Balancin Caja", 500);
-                    }
+               if (Session.Componentes.Any(c => c.Nombre == "Cobro Cheques"))
+               {
+                  Button Cobro_Cheques = new Button();
+                  this.CrearBoton(Cobro_Cheques, "Cobro Cheques", 450);
+               }
 
-                    if (Session.Componentes.Any(c => c.Nombre == "Resumen Total"))
-                    {
-                        Button Resumen_total = new Button();
-                        this.CrearBoton(Resumen_total, "Resumen total", 550);
-                    }
+               if (Session.Componentes.Any(c => c.Nombre == "Balancin Caja"))
+               {
+                  Button Balancin = new Button();
+                  this.CrearBoton(Balancin, "Balancin Caja", 500);
+               }
+
+               if (Session.Componentes.Any(c => c.Nombre == "Resumen Total"))
+               {
+                  Button Resumen_total = new Button();
+                  this.CrearBoton(Resumen_total, "Resumen total", 550);
+               }
                break;
 
 
-             case 4:
+            case 4:
                Button Personas = new Button();
                Button Roles = new Button();
                Button Permisos = new Button();
@@ -501,9 +512,8 @@ namespace Sistema_Bancario
                this.CrearBoton(Roles, "Roles", 50);
                this.CrearBoton(Permisos, "Permisos", 100);
                break;
-            }
+         }
       }
 
-      
-    }
+   }
 }

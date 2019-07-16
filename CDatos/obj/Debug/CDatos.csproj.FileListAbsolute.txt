@@ -270,3 +270,12 @@ E:\Documents\cursos\VI semestre\distribuidas\simulador2\CDatos\obj\Debug\CDatos.
 E:\Documents\cursos\VI semestre\distribuidas\simulador2\CDatos\obj\Debug\CDatos.csproj.CopyComplete
 E:\Documents\cursos\VI semestre\distribuidas\simulador2\CDatos\obj\Debug\CDatos.dll
 E:\Documents\cursos\VI semestre\distribuidas\simulador2\CDatos\obj\Debug\CDatos.pdb
+C:\Users\elife\Desktop\Others\ISUR\Bancario\CDatos\bin\Debug\CDatos.dll
+C:\Users\elife\Desktop\Others\ISUR\Bancario\CDatos\bin\Debug\CDatos.pdb
+C:\Users\elife\Desktop\Others\ISUR\Bancario\CDatos\bin\Debug\Modelos.dll
+C:\Users\elife\Desktop\Others\ISUR\Bancario\CDatos\bin\Debug\Modelos.pdb
+C:\Users\elife\Desktop\Others\ISUR\Bancario\CDatos\obj\Debug\CDatos.csprojAssemblyReference.cache
+C:\Users\elife\Desktop\Others\ISUR\Bancario\CDatos\obj\Debug\CDatos.csproj.CoreCompileInputs.cache
+C:\Users\elife\Desktop\Others\ISUR\Bancario\CDatos\obj\Debug\CDatos.csproj.CopyComplete
+C:\Users\elife\Desktop\Others\ISUR\Bancario\CDatos\obj\Debug\CDatos.dll
+C:\Users\elife\Desktop\Others\ISUR\Bancario\CDatos\obj\Debug\CDatos.pdb
