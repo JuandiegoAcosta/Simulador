@@ -12,10 +12,10 @@ namespace ServiciosBancarios.Backend
     interface IPermisosUsuarioService
     {
         [OperationContract]
-        bool PermisosUsuario_Crear(PermisosUsuarioModel aPermisosUsuario);
+        bool PermisosUsuario_Crear(PermisosUsuarioModel aPermisosUsuario, int id_user);
 
         [OperationContract]
-        bool PermisosUsuario_Editar(PermisosUsuarioModel aPermisosUsuario);
+        bool PermisosUsuario_Editar(PermisosUsuarioModel aPermisosUsuario, int id_user);
 
         [OperationContract]
         bool PermisosUsuario_Eliminar(int aID_PermisosUsuario);

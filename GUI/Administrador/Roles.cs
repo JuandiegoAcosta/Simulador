@@ -9,11 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Modelos.Modelos;
 using Sistema_Bancario.Clases;
+using System.ServiceModel.Channels;
+using Modelos.Session;
 
 namespace Sistema_Bancario.Administrador
 {
     public partial class Roles : UserControl
     {
+        Modelos.Session.ISession session = new Session();
         public Roles()
         {
             InitializeComponent();
@@ -87,7 +90,7 @@ namespace Sistema_Bancario.Administrador
                     //objectmodelo.Usuario_modificador = "";
 
 
-                    rol.Roles_Crear(objectmodelo);
+                    rol.Roles_Crear(objectmodelo,1);
 
 
                     cargarDGV();
@@ -107,8 +110,8 @@ namespace Sistema_Bancario.Administrador
             }
         }
 
-        private static string nombreRol;
-        private static int idRol;
+        public static string nombreRol;
+        public static int idRol;
 
         private void dgvRoles_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -122,6 +125,7 @@ namespace Sistema_Bancario.Administrador
                 
 
             }
+            llenarDGVPermisosRol();
         }
 
 
@@ -192,7 +196,7 @@ namespace Sistema_Bancario.Administrador
                     objectmodelo.Descripcion = txtRol.Text;
                     objectmodelo.Fecha_modificacion = DateTime.Now;
                     objectmodelo.Usuario_modificador = "";
-                    rol.Roles_Editar(objectmodelo);
+                    rol.Roles_Editar(objectmodelo,1);
 
                     cargarDGV();
                 }
@@ -250,6 +254,10 @@ namespace Sistema_Bancario.Administrador
 
         private void btnAgregarUsuario_Click(object sender, EventArgs e)
         {
+            //AgregarNuevoUsuario frmAgregarNuevoUsuario = new AgregarNuevoUsuario();
+            //frmAgregarNuevoUsuario.Show();
+
+
             pnlPrincipal.SendToBack();
             pnlSecundario.SendToBack();
             pnlAgregarUsuario.BringToFront();
@@ -262,9 +270,30 @@ namespace Sistema_Bancario.Administrador
             pnlSecundario.BringToFront();
         }
 
+
+        public static string NombrePersona;
+
         private void btnBuscarUsuario_Click(object sender, EventArgs e)
         {
-            pnlAgregarUsuario.SendToBack();
+
+            using (BuscarPersona frmBuscarPersona = new BuscarPersona())
+            {
+                frmBuscarPersona.ShowDialog();
+                if (frmBuscarPersona.resultado == DialogResult.OK)
+                {
+                    idPersona = frmBuscarPersona.id;
+                    NombrePersona = frmBuscarPersona.nombre;
+                    txtUsuarioBuscado.Text = NombrePersona;
+                }
+            }
+
+
+
+
+            //BuscarPersona bp = new BuscarPersona();
+            //bp.Show();
+
+            ////pnlAgregarUsuario.SendToBack();
             pnlBusquedaPersona.BringToFront();
         }
 
@@ -278,12 +307,14 @@ namespace Sistema_Bancario.Administrador
             {
                 llenarBusquedaUsuariosDGV();
             }
-            else {
+            else
+            {
                 llenarBusquedaUsuariosDGV();
             }
         }
 
-        private void llenarBusquedaUsuariosDGV() {
+        private void llenarBusquedaUsuariosDGV()
+        {
 
             try
             {
@@ -370,7 +401,7 @@ namespace Sistema_Bancario.Administrador
                 {
 
 
-                   persona = ObtenerPersona.Persona_ObtenerUno(idPersona);
+                    persona = ObtenerPersona.Persona_ObtenerUno(idPersona);
                     txtUsuarioBuscado.Text = persona.Nombres;
 
                 }
@@ -404,7 +435,35 @@ namespace Sistema_Bancario.Administrador
                     
 
                     confirmarCreacion = CrearUsuario.Persona_CrearNuevoUsuario(idPersona,txtUsuario.Text,passEncrypt,chbEstado.Checked);
-                    txtUsuarioBuscado.Text = persona.Nombres;
+                    txtUsuarioBuscado.Text = "";
+                    txtContraseña.Text = "";
+                    txtUsuario.Text = "";
+
+
+
+
+
+                    using (WsSistemaBancario.RolUsuarioServiceClient CrearRolUsuario = new WsSistemaBancario.RolUsuarioServiceClient())
+                    {
+
+                        RolUsuarioModel rum = new RolUsuarioModel();
+                        rum.Id_persona = idPersona;
+                        rum.Id_rol = idRol;
+                        rum.Activo = true;
+                        rum.Fecha_creacion = DateTime.Now;
+                        rum.Usuario_creador = "Administrador";
+
+                        CrearRolUsuario.RolUsuario_Crear(rum,1);
+                    }
+
+
+
+
+
+                        llenarDGVUsuarios();
+                    pnlAgregarUsuario.SendToBack();
+                    
+                    pnlSecundario.BringToFront();
 
                 }
 
@@ -415,5 +474,55 @@ namespace Sistema_Bancario.Administrador
 
             }
         }
+
+
+        public List<ComponenteModel> componentesRol;
+
+        private void llenarDGVPermisosRol()
+
+        {
+
+            try
+            {
+
+                using (WsSistemaBancario.ComponenteServiceClient  PermisosPorRol= new WsSistemaBancario.ComponenteServiceClient())
+                {
+
+                    componentesRol = PermisosPorRol.Componente_ObtenerComponentesRol(idRol).ToList();
+
+
+
+                    dgvPermisosRol.DataSource = componentesRol;
+
+
+                     dgvPermisosRol.Columns["Descripcion"].Visible = false;
+                     dgvPermisosRol.Columns["Codigo"].Visible = false;
+                     dgvPermisosRol.Columns["Id_aplicacion"].Visible = false;
+                     dgvPermisosRol.Columns["Usuario_creador"].Visible = false;
+                     dgvPermisosRol.Columns["IdPadre"].Visible = false;
+                     
+                     dgvPermisosRol.Columns["Fecha_creacion"].Visible = false;
+                     dgvPermisosRol.Columns["Fecha_modificacion"].Visible = false;
+                    dgvPermisosRol.Columns["Usuario_modificador"].Visible = false;
+                    
+
+
+                }
+
+            }
+
+            catch (Exception ex)
+            {
+
+            }
+
+
+
+        }
+
+
+
+
+
     }
 }

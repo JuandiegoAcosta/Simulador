@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace CNegocio.Backend
 {
@@ -16,11 +17,22 @@ namespace CNegocio.Backend
         {
             ADRolesManager = new RolesManager();
         }
+
+        /// <summary>
+        /// Saves a record to the roles table.
+        /// returns True if value saved successfully else false
+        /// Throw exception with message value EXISTS if the data is duplicate
+        /// </summary>	
         public bool Crear(RolesModel aRoles)
         {
             return ADRolesManager.Insert(aRoles);
         }
 
+        /// <summary>
+        /// Updates a record to the roles table.
+        /// returns True if value saved successfully else false
+        /// Throw exception with message value EXISTS if the data is duplicate
+        /// </summary>
         public bool Editar(RolesModel aRoles)
         {
             return ADRolesManager.Update(aRoles);
@@ -39,6 +51,11 @@ namespace CNegocio.Backend
         public List<RolesModel> ObtenerTodos()
         {
             return ADRolesManager.RolesModelSelectAll();
+        }
+
+        public DataTable RolesPorPersona(int aID_Usuario)
+        {
+            return ADRolesManager.RolesPorPersona(aID_Usuario);
         }
     }
 }

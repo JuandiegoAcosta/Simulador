@@ -12,10 +12,10 @@ namespace ServiciosBancarios.Backend
     interface ISucursalService
     {
         [OperationContract]
-        bool Sucursal_Crear(SucursalModel aSucursal);
+        bool Sucursal_Crear(SucursalModel aSucursal, int id_user);
 
         [OperationContract]
-        bool Sucursal_Editar(SucursalModel aSucursal);
+        bool Sucursal_Editar(SucursalModel aSucursal, int id_user);
 
         [OperationContract]
         bool Sucursal_Eliminar(int aID_Sucursal);

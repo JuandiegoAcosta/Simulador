@@ -13,14 +13,14 @@ namespace CNegocio.Ventanilla
         {
             ADVentanillaManager = new VentanillaManager();
         }
-        public bool Crear(VentanillaModel aVentanilla)
+        public bool Crear(VentanillaModel aVentanilla, int id_user)
         {
-            return ADVentanillaManager.Insert(aVentanilla);
+            return ADVentanillaManager.Insert(aVentanilla, id_user);
         }
 
-        public bool Editar(VentanillaModel aVentanilla)
+        public bool Editar(VentanillaModel aVentanilla, int id_user)
         {
-            return ADVentanillaManager.Update(aVentanilla);
+            return ADVentanillaManager.Update(aVentanilla, id_user);
         }
 
         public bool Eliminar(int aID_VentanillaModel)

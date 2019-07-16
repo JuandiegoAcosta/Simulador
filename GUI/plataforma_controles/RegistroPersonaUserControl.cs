@@ -8,6 +8,7 @@ using System.Text;
 using CNegocio.Backend;
 using System.Windows.Forms;
 using Modelos.Modelos;
+using Modelos.Session;
 using CNegocio.Plataforma;
 
 namespace Sistema_Bancario.plataforma_controles
@@ -20,7 +21,7 @@ namespace Sistema_Bancario.plataforma_controles
         private TipoDocumentoMethods BLTipo_documento = new TipoDocumentoMethods();
         private PersonaModel gPerona;
 
-        public RegistroPersonaUserControl()
+        public RegistroPersonaUserControl(ISession sesion)
         {
             InitializeComponent();
             this.poblarCboTiposDocumento();

@@ -9,7 +9,8 @@ namespace Modelos.Modelos
     public class TurnosModel
     {
         #region Properties
-
+        public int IdTurUsu
+        { get; set; }
         /// <summary>
         /// Gets or sets the Id value.
         /// </summary>
@@ -33,31 +34,6 @@ namespace Modelos.Modelos
         /// </summary>
         public TimeSpan? Hora_fin
         { get; set; }
-
-        /// <summary>
-        /// Gets or sets the Fecha_creacion value.
-        /// </summary>
-        public DateTime Fecha_creacion
-        { get; set; }
-
-        /// <summary>
-        /// Gets or sets the Fecha_modificacion value.
-        /// </summary>
-        public DateTime? Fecha_modificacion
-        { get; set; }
-
-        /// <summary>
-        /// Gets or sets the Usuario_creador value.
-        /// </summary>
-        public string Usuario_creador
-        { get; set; }
-
-        /// <summary>
-        /// Gets or sets the Usuario_modificador value.
-        /// </summary>
-        public string Usuario_modificador
-        { get; set; }
-
 
         #endregion
     }

@@ -12,10 +12,10 @@ namespace ServiciosBancarios.Backend
     interface ITurnosService
     {
         [OperationContract]
-        bool Turnos_Crear(TurnosModel aTurnos);
+        bool Turnos_Crear(TurnosModel aTurnos, int id_user);
 
         [OperationContract]
-        bool Turnos_Editar(TurnosModel aTurnos);
+        bool Turnos_Editar(TurnosModel aTurnos, int id_user);
 
         [OperationContract]
         bool Turnos_Eliminar(int aID_Turnos);

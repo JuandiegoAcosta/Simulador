@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace ServiciosBancarios.Backend
 {
@@ -12,10 +13,10 @@ namespace ServiciosBancarios.Backend
     interface IRolesService
     {
         [OperationContract]
-        bool Roles_Crear(RolesModel aRoles);
+        bool Roles_Crear(RolesModel aRoles, int id_user);
 
         [OperationContract]
-        bool Roles_Editar(RolesModel aRoles);
+        bool Roles_Editar(RolesModel aRoles, int id_user);
 
         [OperationContract]
         bool Roles_Eliminar(int aID_Roles);
@@ -25,5 +26,8 @@ namespace ServiciosBancarios.Backend
 
         [OperationContract]
         List<RolesModel> Roles_ObtenerTodos();
+
+        [OperationContract]
+        DataTable Roles_RolesPorPersona(int aID_Usuario);
     }
 }

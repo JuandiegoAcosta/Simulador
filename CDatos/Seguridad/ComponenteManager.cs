@@ -17,7 +17,7 @@ namespace CDatos.Manager
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>		
-        public bool Insert(ComponenteModel aComponenteModel)
+        public bool Insert(ComponenteModel aComponenteModel, int id_user)
         {
             try
             {
@@ -32,20 +32,23 @@ namespace CDatos.Manager
                     command.Transaction = sqlTran;
 
                     command.Parameters.AddWithValue("@pMode", 4);
+                    command.Parameters.AddWithValue("@ID_user", id_user);
                     command.Parameters.AddWithValue("@Nombre", aComponenteModel.Nombre);
                     command.Parameters.AddWithValue("@Descripcion", aComponenteModel.Descripcion);
                     command.Parameters.AddWithValue("@Id_aplicacion", aComponenteModel.Id_aplicacion == null ? (object)DBNull.Value : aComponenteModel.Id_aplicacion);
                     command.Parameters.AddWithValue("@Estado", aComponenteModel.Estado);
                     command.Parameters.AddWithValue("@Codigo", aComponenteModel.Codigo);
                     command.Parameters.AddWithValue("@IdPadre", aComponenteModel.IdPadre == null ? (object)DBNull.Value : aComponenteModel.IdPadre);
-                    command.Parameters.AddWithValue("@USUARIO_CREADOR", aComponenteModel.Usuario_creador);
-                    command.Parameters.AddWithValue("@FECHA_CREACION", aComponenteModel.Fecha_creacion);
 
+                    SqlParameter paramId = new SqlParameter("@IDENTITY", SqlDbType.Int);
+                    paramId.Direction = ParameterDirection.Output;
+                    command.Parameters.Add(paramId);
 
                     command.CommandType = CommandType.StoredProcedure;
                     command.CommandText = "sp_tComponente";
 
                     int afectados = command.ExecuteNonQuery();
+                    int identity = Convert.ToInt32(command.Parameters["@IDENTITY"].Value.ToString());
 
                     // Commit the transaction.
                     sqlTran.Commit();
@@ -71,7 +74,7 @@ namespace CDatos.Manager
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>
-        public bool Update(ComponenteModel aComponenteModel)
+        public bool Update(ComponenteModel aComponenteModel, int id_user)
         {
             try
             {
@@ -86,6 +89,7 @@ namespace CDatos.Manager
                     command.Transaction = sqlTran;
 
                     command.Parameters.AddWithValue("@pMode", 5);
+                    command.Parameters.AddWithValue("@ID_user", id_user);
                     command.Parameters.AddWithValue("@Id", aComponenteModel.Id);
                     command.Parameters.AddWithValue("@Nombre", aComponenteModel.Nombre);
                     command.Parameters.AddWithValue("@Descripcion", aComponenteModel.Descripcion);
@@ -93,9 +97,6 @@ namespace CDatos.Manager
                     command.Parameters.AddWithValue("@Estado", aComponenteModel.Estado);
                     command.Parameters.AddWithValue("@Codigo", aComponenteModel.Codigo);
                     command.Parameters.AddWithValue("@IdPadre", aComponenteModel.IdPadre == null ? (object)DBNull.Value : aComponenteModel.IdPadre);
-                    command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aComponenteModel.Usuario_modificador == null ? (object)DBNull.Value : aComponenteModel.Usuario_modificador);
-                    command.Parameters.AddWithValue("@FECHA_MODIFICACION", aComponenteModel.Fecha_modificacion == null ? (object)DBNull.Value : aComponenteModel.Fecha_modificacion);
-
 
                     command.CommandType = CommandType.StoredProcedure;
                     command.CommandText = "sp_tComponente";
@@ -204,10 +205,6 @@ namespace CDatos.Manager
                             bool Estado = (bool)(reader["Estado"]);
                             string Codigo = (string)(reader["Codigo"]);
                             int? IdPadre = reader["IdPadre"] as int?;
-                            string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
-                            DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
-                            string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
-                            DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
 
                             ComponenteModel = new ComponenteModel
                             {
@@ -218,10 +215,6 @@ namespace CDatos.Manager
                                 Estado = Estado,
                                 Codigo = Codigo,
                                 IdPadre = IdPadre,
-                                Usuario_creador = USUARIO_CREADOR,
-                                Fecha_creacion = FECHA_CREACION,
-                                Usuario_modificador = USUARIO_MODIFICADOR,
-                                Fecha_modificacion = FECHA_MODIFICACION,
 
                             };
                         }
@@ -271,10 +264,6 @@ namespace CDatos.Manager
                             bool Estado = (bool)(reader["Estado"]);
                             string Codigo = (string)(reader["Codigo"]);
                             int? IdPadre = reader["IdPadre"] as int?;
-                            string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
-                            DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
-                            string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
-                            DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
 
                             ComponenteModellist.Add(new ComponenteModel
                             {
@@ -285,10 +274,6 @@ namespace CDatos.Manager
                                 Estado = Estado,
                                 Codigo = Codigo,
                                 IdPadre = IdPadre,
-                                Usuario_creador = USUARIO_CREADOR,
-                                Fecha_creacion = FECHA_CREACION,
-                                Usuario_modificador = USUARIO_MODIFICADOR,
-                                Fecha_modificacion = FECHA_MODIFICACION,
 
                             });
                         }
@@ -340,10 +325,6 @@ namespace CDatos.Manager
                             bool Estado = (bool)(reader["Estado"]);
                             string Codigo = (string)(reader["Codigo"]);
                             int? IdPadre = reader["IdPadre"] as int?;
-                            string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
-                            DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
-                            string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
-                            DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
 
                             ComponenteModellist.Add(new ComponenteModel
                             {
@@ -354,10 +335,6 @@ namespace CDatos.Manager
                                 Estado = Estado,
                                 Codigo = Codigo,
                                 IdPadre = IdPadre,
-                                Usuario_creador = USUARIO_CREADOR,
-                                Fecha_creacion = FECHA_CREACION,
-                                Usuario_modificador = USUARIO_MODIFICADOR,
-                                Fecha_modificacion = FECHA_MODIFICACION,
 
                             });
                         }
@@ -403,21 +380,16 @@ namespace CDatos.Manager
                     {
                         while (reader.Read())
                         {
-
+                            int Id = (int)(reader["Id"]);
                             string Nombre = (string)(reader["Nombre"]);
                             bool Estado = (bool)(reader["Estado"]);
-                            DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
-                            DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
-
 
 
                             ComponenteModellist.Add(new ComponenteModel
                             {
-                               
+                                Id = Id,
                                 Nombre = Nombre,
                                 Estado = Estado,
-                                Fecha_creacion = FECHA_CREACION,
-                                Fecha_modificacion = FECHA_MODIFICACION,
 
                             });
                         }

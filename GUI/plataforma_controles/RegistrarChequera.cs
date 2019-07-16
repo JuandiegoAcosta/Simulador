@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CNegocio.Plataforma;
 using Modelos.Modelos;
+using Modelos.Session;
 
 namespace Sistema_Bancario.plataforma_controles
 {
@@ -21,7 +22,7 @@ namespace Sistema_Bancario.plataforma_controles
 
         private ChequerasModel gChequera;
 
-        public RegistrarChequera()
+        public RegistrarChequera(ISession sesion)
         {
             InitializeComponent();
             this.poblarCboTipoCuenta();
