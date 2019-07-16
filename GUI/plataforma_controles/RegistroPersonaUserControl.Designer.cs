@@ -66,7 +66,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.cboTipoPersona = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.txtTelefono = new System.Windows.Forms.MaskedTextBox();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -158,6 +158,8 @@
             this.txtNumero_documento.Name = "txtNumero_documento";
             this.txtNumero_documento.Size = new System.Drawing.Size(187, 20);
             this.txtNumero_documento.TabIndex = 10;
+            this.txtNumero_documento.KeyPress += TxtNumero_documento_KeyPress;
+            this.txtNumero_documento.MaxLength = 13;
             // 
             // label6
             // 
@@ -431,6 +433,7 @@
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(268, 20);
             this.txtTelefono.TabIndex = 470;
+            txtTelefono.Mask = "(999)-000-000";
             // 
             // ResgistroPersonaUserControl
             // 
@@ -514,6 +517,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cboTipoPersona;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtTelefono;
+        private System.Windows.Forms.MaskedTextBox txtTelefono;
     }
 }

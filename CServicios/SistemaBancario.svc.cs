@@ -435,7 +435,7 @@ namespace ServiciosBancarios
             return BLPersona.Crear(aPersona);
         }
 
-        public bool Persona_Editar(PersonaModel aPersona, int id_user)
+        public bool Persona_Editar(PersonaModel aPersona)
         {
             return BLPersona.Editar(aPersona);
         }
@@ -505,6 +505,11 @@ namespace ServiciosBancarios
             return BLPersona.personaSelectbyNombres(nombres);
         }
 
+        public List<PersonaModel> PersonaSelectbyApellidos(string apellidos)
+        {
+            return BLPersona.personaSelectbyApellidos(apellidos);
+        }
+
         public bool Persona_CrearNuevoUsuario(int idPersona, string Usuario, string Contraseña, bool Estado)
         {
             return BLPersona.CrearNuevoUsuario(idPersona,Usuario,Contraseña,Estado);
@@ -514,6 +519,12 @@ namespace ServiciosBancarios
         {
             return BLPersona.UsuarioSelectAll();
         }
+
+        public List<PersonaModel> PersonaSelectbyId(string aValue)
+        {
+            return BLPersona.personaSelectbyID(aValue);
+        }
+
         public List<PersonaModel> ObtenerUsuariosSinCredenciales()
         {
             return BLPersona.ObtenerUsuariosSinCredenciales();

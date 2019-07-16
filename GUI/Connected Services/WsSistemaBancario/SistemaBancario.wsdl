@@ -464,6 +464,18 @@
   <wsdl:message name="IPersonaService_PersonaSelectbyNombres_OutputMessage">
     <wsdl:part name="parameters" element="tns:PersonaSelectbyNombresResponse" />
   </wsdl:message>
+  <wsdl:message name="IPersonaService_PersonaSelectbyApellidos_InputMessage">
+    <wsdl:part name="parameters" element="tns:PersonaSelectbyApellidos" />
+  </wsdl:message>
+  <wsdl:message name="IPersonaService_PersonaSelectbyApellidos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PersonaSelectbyApellidosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPersonaService_PersonaSelectbyId_InputMessage">
+    <wsdl:part name="parameters" element="tns:PersonaSelectbyId" />
+  </wsdl:message>
+  <wsdl:message name="IPersonaService_PersonaSelectbyId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PersonaSelectbyIdResponse" />
+  </wsdl:message>
   <wsdl:message name="IPersonaService_ObtenerUsuariosSinCredenciales_InputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerUsuariosSinCredenciales" />
   </wsdl:message>
@@ -1126,6 +1138,14 @@
     <wsdl:operation name="PersonaSelectbyNombres">
       <wsdl:input wsaw:Action="http://tempuri.org/IPersonaService/PersonaSelectbyNombres" message="tns:IPersonaService_PersonaSelectbyNombres_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IPersonaService/PersonaSelectbyNombresResponse" message="tns:IPersonaService_PersonaSelectbyNombres_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PersonaSelectbyApellidos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPersonaService/PersonaSelectbyApellidos" message="tns:IPersonaService_PersonaSelectbyApellidos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPersonaService/PersonaSelectbyApellidosResponse" message="tns:IPersonaService_PersonaSelectbyApellidos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PersonaSelectbyId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPersonaService/PersonaSelectbyId" message="tns:IPersonaService_PersonaSelectbyId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPersonaService/PersonaSelectbyIdResponse" message="tns:IPersonaService_PersonaSelectbyId_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ObtenerUsuariosSinCredenciales">
       <wsdl:input wsaw:Action="http://tempuri.org/IPersonaService/ObtenerUsuariosSinCredenciales" message="tns:IPersonaService_ObtenerUsuariosSinCredenciales_InputMessage" />
@@ -2084,6 +2104,24 @@
     </wsdl:operation>
     <wsdl:operation name="PersonaSelectbyNombres">
       <soap:operation soapAction="http://tempuri.org/IPersonaService/PersonaSelectbyNombres" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PersonaSelectbyApellidos">
+      <soap:operation soapAction="http://tempuri.org/IPersonaService/PersonaSelectbyApellidos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PersonaSelectbyId">
+      <soap:operation soapAction="http://tempuri.org/IPersonaService/PersonaSelectbyId" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
