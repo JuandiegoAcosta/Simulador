@@ -69,6 +69,7 @@ namespace CDatos.Manager
         }
 
 
+
         /// <summary>
         /// Updates a record to the ComponenteModel table.
         /// returns True if value saved successfully else false
@@ -120,6 +121,7 @@ namespace CDatos.Manager
                 return false;
             }
         }
+
 
 
         /// <summary>
