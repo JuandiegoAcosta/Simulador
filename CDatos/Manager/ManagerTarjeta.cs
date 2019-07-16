@@ -31,11 +31,11 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
-                    command.Parameters.AddWithValue("@Numero", atarjeta.Numero);
+                    //command.Parameters.AddWithValue("@Numero", atarjeta.Numero);
                     command.Parameters.AddWithValue("@Password", atarjeta.Password == null ? (object)DBNull.Value : atarjeta.Password);
                     command.Parameters.AddWithValue("@CodControl", atarjeta.Codcontrol);
                     command.Parameters.AddWithValue("@FechaVencimiento", atarjeta.Fechavencimiento == null ? (object)DBNull.Value : atarjeta.Fechavencimiento);
-                    command.Parameters.AddWithValue("@FechaVinculacion", atarjeta.Fechavinculacion == null ? (object)DBNull.Value : atarjeta.Fechavinculacion);
+                    command.Parameters.AddWithValue("@FechaVinculacion", atarjeta.Fechavinculacion == null ? System.DateTime.Now : atarjeta.Fechavinculacion);
                     command.Parameters.AddWithValue("@Estado", atarjeta.Estado);
                     command.Parameters.AddWithValue("@FECHA_MODIFICACION", atarjeta.Fecha_modificacion == null ? (object)DBNull.Value : atarjeta.Fecha_modificacion);
                     command.Parameters.AddWithValue("@USUARIO_CREADOR", atarjeta.Usuario_creador);

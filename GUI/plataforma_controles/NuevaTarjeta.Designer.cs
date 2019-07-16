@@ -62,9 +62,9 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(92, 139);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(43, 13);
+            this.label8.Size = new System.Drawing.Size(40, 13);
             this.label8.TabIndex = 526;
-            this.label8.Text = "Estado:";
+            this.label8.Text = "Activo:";
             // 
             // chkEstado
             // 
