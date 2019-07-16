@@ -45,14 +45,9 @@ namespace CDatos.Manager
                     command.Parameters.AddWithValue("@Usuario_creador", apersona.Usuario_creador);
                     command.Parameters.AddWithValue("@Usuario_modificador", apersona.Usuario_modificador == null ? (object)DBNull.Value : apersona.Usuario_modificador);
 
-                    SqlParameter paramId = new SqlParameter("@IDENTITY", SqlDbType.Int);
-                    paramId.Direction = ParameterDirection.Output;
-                    command.Parameters.Add(paramId);
-
                     command.CommandType = CommandType.StoredProcedure;
                     command.CommandText = "sp_tPersona";
 
-                    int identity = Convert.ToInt32(command.Parameters["@IDENTITY"].Value.ToString());
                     int afectados = command.ExecuteNonQuery();
 
                     // Commit the transaction.
@@ -65,11 +60,17 @@ namespace CDatos.Manager
                         return true;
                     else
                         return false;
+
+
+
+                    
+
+
                 }
             }
             catch (Exception)
             {
-                //throw;
+                throw;
                 return false;
             }
         }
@@ -249,8 +250,8 @@ namespace CDatos.Manager
                     {
                         reader.Read();
                         int Id = (int)(reader["Id"]);
-                        string NombreUsuario = (string)(reader["NombreUsuario"]);
-                        string Pass = (string)(reader["Pass"]);
+                        string NombreUsuario = (reader["NombreUsuario"]) == DBNull.Value ? null : (string)(reader["NombreUsuario"]); 
+                        string Pass = (reader["Pass"]) == DBNull.Value ? null : (string)(reader["Pass"]);
                         string Correo = (reader["Correo"]) == DBNull.Value ? null : (string)(reader["Correo"]);
                         bool Estado = (bool)(reader["Estado"]);
                         string Nombres = (string)(reader["Nombres"]);
@@ -260,7 +261,10 @@ namespace CDatos.Manager
                         string NroDocumento = (string)(reader["NroDocumento"]);
                         int TipoDocumento = (int)(reader["TipoDocumento"]);
                         string Tipo_Persona = (reader["Tipo_Persona"]) == DBNull.Value ? null : (string)(reader["Tipo_Persona"]);
+
                         
+
+
                         PersonaModel = new PersonaModel
                         {
                             Id = Id,
@@ -330,6 +334,11 @@ namespace CDatos.Manager
                             string NroDocumento = (string)(reader["NroDocumento"]);
                             int TipoDocumento = (int)(reader["TipoDocumento"]);
                             string Tipo_Persona = (reader["Tipo_Persona"]) == DBNull.Value ? null : (string)(reader["Tipo_Persona"]);
+                            string Usuario_creador = (reader["USUARIO_CREADOR"]) == DBNull.Value ? null : (string)(reader["USUARIO_CREADOR"]);
+                            string Usuario_modificador = (reader["USUARIO_MODIFICADOR"]) == DBNull.Value ? null : (string)(reader["USUARIO_MODIFICADOR"]);
+                            DateTime Fecha_creacion = (DateTime)(reader["FECHA_CREACION"]);
+                            DateTime? Fecha_modificacion = (reader["FECHA_MODIFICACION"]) == DBNull.Value ? null : (DateTime?)(reader["FECHA_MODIFICACION"]);
+
 
                             PersonaModellist.Add(new PersonaModel
                             {
@@ -345,7 +354,10 @@ namespace CDatos.Manager
                                 Nrodocumento = NroDocumento,
                                 Tipodocumento = TipoDocumento,
                                 Tipo_persona = Tipo_Persona,
-
+                                Fecha_creacion = Fecha_creacion,
+                                Fecha_modificacion = Fecha_modificacion,
+                                Usuario_creador = Usuario_creador,
+                                Usuario_modificador = Usuario_modificador
                             });
                         }
                     }

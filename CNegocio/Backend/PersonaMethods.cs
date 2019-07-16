@@ -32,6 +32,7 @@ namespace CNegocio.Backend
         {
             return ADPersonaManager.Update(aPersona);
         }
+
         public bool ActualizarEstado(int admin, int idusuario, bool estado)
         {
             return ADPersonaManager.ActualizarEstado(admin, idusuario, estado);
