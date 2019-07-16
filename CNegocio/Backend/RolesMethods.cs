@@ -53,7 +53,7 @@ namespace CNegocio.Backend
             return ADRolesManager.RolesModelSelectAll();
         }
 
-        public DataTable RolesPorPersona(int aID_Usuario)
+        public List<RolUsuarioModel> RolesPorPersona(int aID_Usuario)
         {
             return ADRolesManager.RolesPorPersona(aID_Usuario);
         }

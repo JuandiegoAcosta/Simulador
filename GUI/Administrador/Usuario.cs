@@ -83,7 +83,7 @@ namespace Sistema_Bancario.Administrador
 
 
 
-        public DataTable rolesUsuario;
+        public List<RolUsuarioModel> rolesUsuario;
         private void llenarDGVRolesUsuario()
 
         {
@@ -94,9 +94,12 @@ namespace Sistema_Bancario.Administrador
                 using (WsSistemaBancario.RolesServiceClient RolUsuario = new WsSistemaBancario.RolesServiceClient())
                 {
 
-                     rolesUsuario = RolUsuario.Roles_RolesPorPersona(id);
+                     rolesUsuario = RolUsuario.Roles_RolesPorPersona(id).ToList();
 
-                    dgvRolesUsuario.DataSource = rolesUsuario;
+                    foreach (var r in rolesUsuario)
+                    {
+                        dgvRolesUsuario.Rows.Add(r.Id,r.Descripcion,r.Activo);
+                    }
                 }
 
             }
@@ -243,6 +246,67 @@ namespace Sistema_Bancario.Administrador
                 {
                     DataGridViewCheckBoxCell chk = this.dgvUsuarios.Rows[e.RowIndex].Cells["EstadoUsuario"] as DataGridViewCheckBoxCell;
                     if (chk.Value==chk.TrueValue)
+                    {
+                        chk.Value = chk.FalseValue;
+                        MessageBox.Show("Check");
+                    }
+                    else
+                    {
+                        chk.Value = chk.TrueValue;
+                        MessageBox.Show("No check");
+                    }
+                }
+            }
+        }
+
+        private void dgvRolesUsuario_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.ColumnIndex >= 0 && this.dgvRolesUsuario.Columns[e.ColumnIndex].Name == "EditarRol" && e.RowIndex >= 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                DataGridViewButtonCell celBoton = this.dgvRolesUsuario.Rows[e.RowIndex].Cells["EditarRol"] as DataGridViewButtonCell;
+                Bitmap bm = Resources.icons8_editar_26;
+                Image img = bm;
+                e.Graphics.DrawImage(img, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
+
+                this.dgvRolesUsuario.Rows[e.RowIndex].Height = img.Height + 10;
+                this.dgvRolesUsuario.Columns[e.ColumnIndex].Width = img.Width + 10;
+
+                e.Handled = true;
+            }
+            if (e.ColumnIndex >= 0 && this.dgvRolesUsuario.Columns[e.ColumnIndex].Name == "EliminarRol" && e.RowIndex >= 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                DataGridViewButtonCell celBoton = this.dgvRolesUsuario.Rows[e.RowIndex].Cells["EliminarRol"] as DataGridViewButtonCell;
+                Bitmap bm = Resources.icons8_eliminar_26;
+                Image img = bm;
+                e.Graphics.DrawImage(img, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
+
+                this.dgvRolesUsuario.Rows[e.RowIndex].Height = img.Height + 10;
+                this.dgvRolesUsuario.Columns[e.ColumnIndex].Width = img.Width + 10;
+
+                e.Handled = true;
+            }
+        }
+
+        private void dgvRolesUsuario_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex >= 0)
+            {
+                if (this.dgvRolesUsuario.Columns[e.ColumnIndex].Name == "EditarRol")
+                {
+                    MessageBox.Show("Editar");
+                }
+                if (this.dgvRolesUsuario.Columns[e.ColumnIndex].Name == "EliminarRol")
+                {
+                    MessageBox.Show("Eliminar");
+                }
+                if (this.dgvRolesUsuario.Columns[e.ColumnIndex].Name == "EstadoRol")
+                {
+                    DataGridViewCheckBoxCell chk = this.dgvRolesUsuario.Rows[e.RowIndex].Cells["EstadoRol"] as DataGridViewCheckBoxCell;
+                    if (chk.Value == chk.TrueValue)
                     {
                         chk.Value = chk.FalseValue;
                         MessageBox.Show("Check");

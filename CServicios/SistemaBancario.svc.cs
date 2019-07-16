@@ -534,7 +534,7 @@ namespace ServiciosBancarios
             return BLRoles.ObtenerTodos();
         }
 
-        public DataTable Roles_RolesPorPersona(int aID_Usuario)
+        public List<RolUsuarioModel> Roles_RolesPorPersona(int aID_Usuario)
         {
             return BLRoles.RolesPorPersona(aID_Usuario);
         }
