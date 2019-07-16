@@ -152,3 +152,4 @@ E:\Documents\cursos\VI semestre\distribuidas\simulador\Modelos\bin\Debug\Modelos
 E:\Documents\cursos\VI semestre\distribuidas\simulador\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
 E:\Documents\cursos\VI semestre\distribuidas\simulador\Modelos\obj\Debug\Modelos.dll
 E:\Documents\cursos\VI semestre\distribuidas\simulador\Modelos\obj\Debug\Modelos.pdb
+C:\Users\Jordan\Source\Repos\Simulador\Modelos\obj\Debug\Modelos.csprojAssemblyReference.cache
