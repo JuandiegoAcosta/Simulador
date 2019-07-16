@@ -73,6 +73,7 @@ namespace Sistema_Bancario.Administrador
                    // pnlSecundario.BringToFront();
                 }
                 MessageBox.Show("Usuario agregado correctamente!","Correcto",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                this.Close();
             }
 
             catch (Exception ex)

@@ -85,6 +85,7 @@
             this.nudChequeInicial.Name = "nudChequeInicial";
             this.nudChequeInicial.Size = new System.Drawing.Size(92, 20);
             this.nudChequeInicial.TabIndex = 557;
+            this.nudChequeInicial.Click += new System.EventHandler(this.buttonCrear_Click);
             // 
             // buttonDeshacer
             // 
@@ -145,6 +146,7 @@
             this.buttonCrear.Text = "CREAR";
             this.buttonCrear.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonCrear.UseVisualStyleBackColor = true;
+            this.buttonCrear.Click += new System.EventHandler(this.buttonCrear_Click);
             // 
             // buttonNuevo
             // 
@@ -160,6 +162,7 @@
             this.buttonNuevo.Text = "NUEVO";
             this.buttonNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonNuevo.UseVisualStyleBackColor = true;
+            this.buttonNuevo.Click += new System.EventHandler(this.buttonNuevo_Click);
             // 
             // statusStrip1
             // 
@@ -242,6 +245,7 @@
             this.btnCuenta.TabIndex = 550;
             this.btnCuenta.Text = "...";
             this.btnCuenta.UseVisualStyleBackColor = true;
+            this.btnCuenta.Click += new System.EventHandler(this.btnCuenta_Click);
             // 
             // label4
             // 

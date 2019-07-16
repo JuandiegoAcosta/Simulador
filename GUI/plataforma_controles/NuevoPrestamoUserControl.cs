@@ -27,7 +27,6 @@ namespace Sistema_Bancario.plataforma_controles
         WsSistemaBancario.PrestamoServiceClient BLPrestamo = new WsSistemaBancario.PrestamoServiceClient();
         WsSistemaBancario.CuentaServiceClient BLCuenta = new WsSistemaBancario.CuentaServiceClient();
         WsSistemaBancario.TipoMonedaServiceClient BLTipoMoneda = new WsSistemaBancario.TipoMonedaServiceClient();
-        //private BLPrestamo BLPrestamo = new BLPrestamo();
 
         #endregion
 

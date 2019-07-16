@@ -88,6 +88,7 @@
             // 
             // dgvBusquedaUsuarios
             // 
+            this.dgvBusquedaUsuarios.AllowUserToAddRows = false;
             this.dgvBusquedaUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBusquedaUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdPersona,
@@ -140,6 +141,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(917, 468);
             this.Controls.Add(this.pnlBusquedaPersona);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "BuscarPersona";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
