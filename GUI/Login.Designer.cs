@@ -31,8 +31,6 @@
          this.components = new System.ComponentModel.Container();
          System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
          this.txtUsuario = new System.Windows.Forms.TextBox();
-         this.Usuario = new System.Windows.Forms.Label();
-         this.label2 = new System.Windows.Forms.Label();
          this.btnIniciarSesion = new System.Windows.Forms.Button();
          this.label3 = new System.Windows.Forms.Label();
          this.label4 = new System.Windows.Forms.Label();
@@ -51,26 +49,6 @@
          this.txtUsuario.Name = "txtUsuario";
          this.txtUsuario.Size = new System.Drawing.Size(145, 20);
          this.txtUsuario.TabIndex = 0;
-         // 
-         // Usuario
-         // 
-         this.Usuario.AutoSize = true;
-         this.Usuario.ForeColor = System.Drawing.Color.White;
-         this.Usuario.Location = new System.Drawing.Point(141, 180);
-         this.Usuario.Name = "Usuario";
-         this.Usuario.Size = new System.Drawing.Size(43, 13);
-         this.Usuario.TabIndex = 3;
-         this.Usuario.Text = "Usuario";
-         // 
-         // label2
-         // 
-         this.label2.AutoSize = true;
-         this.label2.ForeColor = System.Drawing.Color.White;
-         this.label2.Location = new System.Drawing.Point(141, 211);
-         this.label2.Name = "label2";
-         this.label2.Size = new System.Drawing.Size(61, 13);
-         this.label2.TabIndex = 4;
-         this.label2.Text = "Contraseña";
          // 
          // btnIniciarSesion
          // 
@@ -175,8 +153,6 @@
          this.Controls.Add(this.label3);
          this.Controls.Add(this.panel6);
          this.Controls.Add(this.btnIniciarSesion);
-         this.Controls.Add(this.label2);
-         this.Controls.Add(this.Usuario);
          this.Controls.Add(this.txtUsuario);
          this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
          this.Name = "Login";
@@ -193,8 +169,6 @@
         #endregion
 
         private System.Windows.Forms.TextBox txtUsuario;
-        private System.Windows.Forms.Label Usuario;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnIniciarSesion;
       private Controles.GradentPanel panel6;
       private System.Windows.Forms.Label label1;
