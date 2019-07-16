@@ -424,10 +424,10 @@ namespace CDatos.Manager
                     command.Parameters.AddWithValue("@NroDocOrigen", giro.Id_PersonaOrigen);
                     command.Parameters.AddWithValue("@NroDocDestino", giro.Id_PersonaDestino);
                     command.Parameters.AddWithValue("@Usuario", giro.USUARIO_CREADOR);
-                    command.Parameters.AddWithValue("@TipoMoneda", giro.Moneda);
+                    command.Parameters.AddWithValue("@Moneda", giro.Moneda);
                     command.CommandType = CommandType.StoredProcedure;
                     command.CommandText = "GiroInsert";
-
+                    
                     int afectados = command.ExecuteNonQuery();
 
                     // Commit the transaction.
@@ -442,8 +442,9 @@ namespace CDatos.Manager
                         return false;
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
+               string qa=  e.Message.ToString();
                 return false;
             }
         }

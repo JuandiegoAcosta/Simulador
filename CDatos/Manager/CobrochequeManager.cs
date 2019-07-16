@@ -227,8 +227,9 @@ namespace CDatos.Manager
             }
         }
 
-        public bool CobroInsert(ChequeModel aChequesModel, string NroCuenta)
+        public string CobroInsert(ChequeModel aChequesModel, string NroCuenta)
         {
+            string afectados = "";
             try
             {
                 using (var connection = Util.ConnectionFactory.conexion())
@@ -245,14 +246,23 @@ namespace CDatos.Manager
                     // command.Parameters.AddWithValue("@Destinatario", aChequesModel.Destinatario);
                     command.Parameters.AddWithValue("@Monto", aChequesModel.Monto);
                     command.Parameters.AddWithValue("@cuentaReceptora", NroCuenta);
+                    command.Parameters.AddWithValue("@Usuario", aChequesModel.Usuario_creacion);
+                    command.Parameters.AddWithValue("@DNI", aChequesModel.DOI);
                     // command.Parameters.AddWithValue("@IDChequesModelra", aChequesModel.IdChequesModelra);
                     // command.Parameters.AddWithValue("@Estado", aChequesModel.Estado);                               
                     //->  command.Parameters.AddWithValue("@USUARIO_CREACION", aChequesModel.Usuario_creacion);
 
                     command.CommandType = CommandType.StoredProcedure;
                     command.CommandText = "cobroChequesInsert";
-
-                    int afectados = command.ExecuteNonQuery();
+                    // command.ExecuteNonQuery();
+                  //  afectados = command.ExecuteScalar() == null ? -1 : (int)command.ExecuteScalar();
+                   
+                    object a = command.ExecuteScalar();
+                    if (a != null)
+                        afectados = (string)a;
+                    else
+                        afectados = "Cobrado";
+                  //  afectados = command.ExecuteNonQuery().ExecuteScalar().ToString();
 
                     // Commit the transaction.
                     sqlTran.Commit();
@@ -260,15 +270,13 @@ namespace CDatos.Manager
                     connection.Close();
                     connection.Dispose();
 
-                    if (afectados > 0)
-                        return true;
-                    else
-                        return false;
+                   
+                        return afectados;
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                return false;
+                return e.Message.ToString();
             }
         }
 
