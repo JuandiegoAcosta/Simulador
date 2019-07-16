@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
@@ -58,7 +59,10 @@ namespace Sistema_Bancario.Froms_opciones
          if (SetItem())
          {
             transferenciasMethods = new TransferenciasMethods();
-            if (transferenciasMethods.RealizarTransferencia(CuentasTarjetasModel) > 0)
+                StatusStrip o = this.TopLevelControl.Controls.Find("stStatus", true).FirstOrDefault() as StatusStrip;//o.Items[1].Text;
+                CuentasTarjetasModel.Usuario = o.Items[1].Text;
+                   
+                if (transferenciasMethods.RealizarTransferencia(CuentasTarjetasModel) > 0)
                MessageBox.Show("Operacion Realizada");
             else
                MessageBox.Show("No se pudo realizar la operación");

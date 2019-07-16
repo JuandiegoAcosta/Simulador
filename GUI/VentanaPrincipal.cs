@@ -450,44 +450,44 @@ namespace Sistema_Bancario
 
                     if (Session.Componentes.Any(c => c.Nombre == "Cobro Giros"))
                     {
-                        Button Pago_tarjetas = new Button();
-                        this.CrearBoton(Pago_tarjetas, "Pago tarjetas", 250);
+                      //  Button Pago_tarjetas = new Button();
+                     //   this.CrearBoton(Pago_tarjetas, "Pago tarjetas", 250);
                     }
 
                     if (Session.Componentes.Any(c => c.Nombre == "Pago Cuotas"))
                     {
                         Button Pago_Cuotas = new Button();
-                        this.CrearBoton(Pago_Cuotas, "Pago Cuotas", 300);
+                        this.CrearBoton(Pago_Cuotas, "Pago Cuotas", 250);
                     }
 
                     if (Session.Componentes.Any(c => c.Nombre == "Tipo Cambio"))
                     {
                         Button Tipo_Cambio = new Button();
-                        this.CrearBoton(Tipo_Cambio, "Tipo Cambio", 350);
+                        this.CrearBoton(Tipo_Cambio, "Tipo Cambio", 300);
                     }
 
                     if (Session.Componentes.Any(c => c.Nombre == "Pago Servicios"))
                     {
                         Button Pago_Servicios = new Button();
-                        this.CrearBoton(Pago_Servicios, "Pago Servicios", 400);
+                        this.CrearBoton(Pago_Servicios, "Pago Servicios", 350);
                     }
 
                     if (Session.Componentes.Any(c => c.Nombre == "Cobro Cheques"))
                     {
                         Button Cobro_Cheques = new Button();
-                        this.CrearBoton(Cobro_Cheques, "Cobro Cheques", 450);
+                        this.CrearBoton(Cobro_Cheques, "Cobro Cheques", 400);
                     }
 
                     if (Session.Componentes.Any(c => c.Nombre == "Balancin Caja"))
                     {
                         Button Balancin = new Button();
-                        this.CrearBoton(Balancin, "Balancin Caja", 500);
+                        this.CrearBoton(Balancin, "Balancin Caja", 450);
                     }
 
                     if (Session.Componentes.Any(c => c.Nombre == "Resumen Total"))
                     {
                         Button Resumen_total = new Button();
-                        this.CrearBoton(Resumen_total, "Resumen total", 550);
+                        this.CrearBoton(Resumen_total, "Resumen total", 500);
                     }
                break;
 

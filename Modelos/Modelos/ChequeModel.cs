@@ -76,6 +76,8 @@ namespace Modelos.Modelos
         public string Usuario_modificador
         { get; set; }
 
+        public string DOI { get; set; }
+
 
         #endregion
     }

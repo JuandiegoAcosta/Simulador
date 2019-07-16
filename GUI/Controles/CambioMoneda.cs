@@ -159,9 +159,9 @@ namespace Sistema_Bancario.Controles
             tipo.MontoE = Convert.ToDecimal(monto1.TBMonto.Text);
             tipo.MontoS = Convert.ToDecimal(txtConversion.Text);
             tipo.MonedaS = tipoMoneda2.CboMoneda.Text;
-
+            StatusStrip o = this.TopLevelControl.Controls.Find("stStatus", true).FirstOrDefault() as StatusStrip;//o.Items[1].Text;
             //Solucionar
-            tipo.Usuario = "Carlin Yahuira Achahui";
+            tipo.Usuario = o.Items[1].Text;
             if (movimiento.MovimientoTipoCambioInsert(tipo) > 0)
             {
                 MessageBox.Show("Se realizo el Cambio");

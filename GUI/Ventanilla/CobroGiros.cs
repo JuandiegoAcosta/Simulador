@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
@@ -25,7 +26,8 @@ namespace Sistema_Bancario.Froms_opciones
             int i = GVCobroGiros.CurrentCell.RowIndex;
             GiroModel giroModel = new GiroModel();
             giroModel.Id = Convert.ToInt32(GVCobroGiros[0, i].Value);
-            giroModel.USUARIO_CREADOR = "Carlin Yahuira Achahui";
+            StatusStrip o = this.TopLevelControl.Controls.Find("stStatus", true).FirstOrDefault() as StatusStrip;
+            giroModel.USUARIO_CREADOR = o.Items[1].Text;          
             giroModel.Id_PersonaDestino = Convert.ToInt32(dni1.TBDoi.Text);
             int executado =  girosMethods.CobrarGiro(giroModel);
             if (executado == 1)

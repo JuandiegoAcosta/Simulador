@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
@@ -25,9 +26,10 @@ namespace Sistema_Bancario
         {
             GetCuotasMethods = new CuotasMethods();
             int i = GridCuotas.CurrentCell.RowIndex;
-         //   int i = GridCuotas.CurrentRow.Cells[0].Value;
-          //  Convert.ToInt32(GridCuotas[i, 0].Value);
-            GetCuotasMethods.CuotasInsert(Convert.ToInt32(GridCuotas[i,0].Value), "Usuario");
+            //   int i = GridCuotas.CurrentRow.Cells[0].Value;
+            //  Convert.ToInt32(GridCuotas[i, 0].Value);
+            StatusStrip o = this.TopLevelControl.Controls.Find("stStatus", true).FirstOrDefault() as StatusStrip;// o.Items[1].Text
+            GetCuotasMethods.CuotasInsert(Convert.ToInt32(GridCuotas[i,0].Value), o.Items[1].Text);
         }
 
         private static Cuotas _instance;

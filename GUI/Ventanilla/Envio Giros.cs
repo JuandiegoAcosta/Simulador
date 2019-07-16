@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
@@ -64,11 +65,12 @@ namespace Sistema_Bancario.Froms_opciones
          {
             girosMethods = new GirosMethods();
                 GiroModel giro = new GiroModel();
+                StatusStrip o = this.TopLevelControl.Controls.Find("stStatus", true).FirstOrDefault() as StatusStrip;//o.Items[1].Text;               
                 giro.Monto = monto;
                 giro.Clave = clave;
                 giro.Id_PersonaOrigen = DNIorigen;
                 giro.Id_PersonaDestino = DNIdestino;
-                giro.USUARIO_CREADOR = "Carlin Yahuira Achahui";
+                giro.USUARIO_CREADOR = o.Items[1].Text;
                 giro.Moneda = tipoMoneda1.CboMoneda.Text;
 
             if (girosMethods.EnviarGiro(giro))

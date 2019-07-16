@@ -220,6 +220,7 @@
     <Compile Include="Controles\Precios.Designer.cs">
       <DependentUpon>Precios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controles\status.cs" />
     <Compile Include="Controles\TextBoxViewPassword.cs">
       <SubType>Component</SubType>
     </Compile>
