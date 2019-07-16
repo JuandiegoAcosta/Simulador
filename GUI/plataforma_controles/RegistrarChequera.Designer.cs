@@ -85,6 +85,7 @@
             this.nudChequeInicial.Name = "nudChequeInicial";
             this.nudChequeInicial.Size = new System.Drawing.Size(92, 20);
             this.nudChequeInicial.TabIndex = 557;
+            this.nudChequeInicial.Click += new System.EventHandler(this.buttonCrear_Click);
             // 
             // buttonDeshacer
             // 

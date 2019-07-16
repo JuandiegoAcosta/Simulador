@@ -31,7 +31,7 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
-                    command.Parameters.AddWithValue("@Numero", achequera.Numero);
+                    //command.Parameters.AddWithValue("@Numero", achequera.Numero);
                     command.Parameters.AddWithValue("@Estado", achequera.Estado);
                     command.Parameters.AddWithValue("@FechaRegistro", achequera.Fecharegistro == null ? (object)DBNull.Value : achequera.Fecharegistro);
                     command.Parameters.AddWithValue("@Cantidad_cheques", achequera.Cantidad_cheques);
@@ -45,7 +45,7 @@ namespace CDatos.Manager
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "chequeraInsert";
+                    command.CommandText = "ChequerasInsert";
 
                     int afectados = command.ExecuteNonQuery();
 
@@ -61,9 +61,10 @@ namespace CDatos.Manager
                         return false;
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                return false;
+                throw;
+                //return false;
             }
         }
 
@@ -367,8 +368,9 @@ namespace CDatos.Manager
 
                 return chequeralist;
             }
-            catch (Exception)
+            catch (Exception E)
             {
+                throw;
                 return chequeralist;
             }
         }
