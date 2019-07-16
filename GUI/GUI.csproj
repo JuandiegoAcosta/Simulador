@@ -628,6 +628,7 @@
     <None Include="Properties\DataSources\Modelos.Modelos.PagoServiciosModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.PermisosUsuarioModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.PersonaModel.datasource" />
+    <None Include="Properties\DataSources\Modelos.Modelos.PrestamosModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.RecaudosModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.RolesModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.RolUsuarioModel.datasource" />

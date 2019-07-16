@@ -263,7 +263,16 @@ namespace Sistema_Bancario
             }
             else if (btn.Text.Equals("Realizar Préstamo"))
             {
-                CrearControl<UserControl>(UCprestamos.instance, btn);
+                NuevoPrestamoUserControl prestamo;
+                if (this.Session != null)
+                {
+                    prestamo = new NuevoPrestamoUserControl(this.Session);
+                    CrearControl<UserControl>(prestamo, btn);
+                }
+                else
+                {
+                    MessageBox.Show("La sesión ha caducado");
+                }
             }
             else if (btn.Text.Equals("Refinanciar"))
             {

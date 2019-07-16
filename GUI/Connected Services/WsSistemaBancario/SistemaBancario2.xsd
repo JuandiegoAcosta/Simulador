@@ -1773,4 +1773,88 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="Prestamo_Crear">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q102="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="aPrestamo" nillable="true" type="q102:PrestamosModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Prestamo_CrearResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Prestamo_CrearResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Prestamo_Editar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q103="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="aPrestamo" nillable="true" type="q103:PrestamosModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Prestamo_EditarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Prestamo_EditarResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Prestamo_Borrar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="aID_Prestamo" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Prestamo_BorrarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Prestamo_BorrarResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Prestamo_ObtenerUno">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="aNro_Prestamo" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Prestamo_ObtenerUnoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q104="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="Prestamo_ObtenerUnoResult" nillable="true" type="q104:PrestamosModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Prestamo_SelecionarPorCuenta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="aID_Cuenta" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Prestamo_SelecionarPorCuentaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q105="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="Prestamo_SelecionarPorCuentaResult" nillable="true" type="q105:ArrayOfPrestamosModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Prestamo_SeleccionarPorId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="aID_Prestamo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Prestamo_SeleccionarPorIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q106="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="Prestamo_SeleccionarPorIdResult" nillable="true" type="q106:ArrayOfPrestamosModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
