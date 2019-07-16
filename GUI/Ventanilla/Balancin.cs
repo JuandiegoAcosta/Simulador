@@ -249,27 +249,91 @@ namespace Sistema_Bancario.Ventanilla
         private void btnRegistrarMov_Click_1(object sender, EventArgs e)
         {
             int identity;
-            using (WsSistemaBancario.CajaChicaServiceClient caja=new WsSistemaBancario.CajaChicaServiceClient())
+            using (WsSistemaBancario.CajaChicaServiceClient caja = new WsSistemaBancario.CajaChicaServiceClient())
             {
                 Modelos.Modelos.CajaChicaModel cc = new CajaChicaModel();
                 cc.Id_TurnoUsuario1 = Convert.ToInt32(session.Turno.IdTurUsu);
                 cc.Id_TurnoUsuario2 = Convert.ToInt32(this.cmbVentanillas.SelectedValue);
                 string tipo = cmbTipoMov.SelectedValue.ToString();
-                cc.Tipo_Accion= (tipo.Equals("Cargo")?"C":"A");
+                cc.Tipo_Accion = (tipo.Equals("Cargo") ? "C" : "A");
 
                 identity = caja.Crear(cc, Convert.ToInt32(session.UserCodigo));
-                if (identity==0)
+                if (identity == 0)
                 {
                     MessageBox.Show("No se pudo registrar la cabecera!");
                     return;
                 }
             }
-            using (WsSistemaBancario.DetalleCajaChicaServiceClient de_cc=new WsSistemaBancario.DetalleCajaChicaServiceClient())
+            using (WsSistemaBancario.DetalleCajaChicaServiceClient de_cc = new WsSistemaBancario.DetalleCajaChicaServiceClient())
             {
-
+                bool exito = false;
+                foreach (DataGridViewRow r in dgvSoles.Rows)
+                {
+                    int col = Convert.ToInt32(r.Cells[1].Value);
+                    if (col != 0)
+                    {
+                        Modelos.Modelos.DetalleCajaChicaModel det = new DetalleCajaChicaModel();
+                        det.Id_CajaChica = identity;
+                        det.Denominacion = this.DevuelveDenominacionNumero(r.Cells[0].Value.ToString());
+                        det.Cantidad = Convert.ToInt32(r.Cells[1].Value.ToString());
+                        det.Moneda = "S";
+                        exito = de_cc.DetalleCajaChica_Crear(det, Convert.ToInt32(session.UserCodigo));
+                    }
+                }
+                foreach (DataGridViewRow r in dgvDolares.Rows)
+                {
+                    int col = Convert.ToInt32(r.Cells[1].Value);
+                    if (col != 0)
+                    {
+                        Modelos.Modelos.DetalleCajaChicaModel det = new DetalleCajaChicaModel();
+                        det.Id_CajaChica = identity;
+                        det.Denominacion = this.DevuelveDenominacionNumero(r.Cells[0].Value.ToString());
+                        det.Cantidad = Convert.ToInt32(r.Cells[1].Value.ToString());
+                        det.Moneda = "D";
+                        exito = de_cc.DetalleCajaChica_Crear(det, Convert.ToInt32(session.UserCodigo));
+                    }
+                }
+                if (!exito)
+                {
+                    MessageBox.Show("No se registró correctamente!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("Se registró correctamente", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
-
+        private int DevuelveDenominacionNumero(string deno)
+        {
+            switch (deno)
+            {
+                case "1 dolar":
+                    return 1;
+                case "2 dolares":
+                    return 2;
+                case "5 dolares":
+                    return 5;
+                case "10 dolares":
+                    return 10;
+                case "20 dolares":
+                    return 20;
+                case "50 dolares":
+                    return 50;
+                case "100 dolares":
+                    return 100;
+                case "10 soles":
+                    return 10;
+                case "20 soles":
+                    return 20;
+                case "50 soles":
+                    return 50;
+                case "100 soles":
+                    return 100;
+                case "200 soles":
+                    return 200;
+            }
+            return 0;
+        }
         private void btnImprimir_Click(object sender, EventArgs e)
         {
             printTicket = new System.Drawing.Printing.PrintDocument();
