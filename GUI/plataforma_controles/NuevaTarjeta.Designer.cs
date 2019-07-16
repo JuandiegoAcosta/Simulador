@@ -147,6 +147,7 @@
             this.btnCodigo.TabIndex = 516;
             this.btnCodigo.Text = "...";
             this.btnCodigo.UseVisualStyleBackColor = true;
+            this.btnCodigo.Click += new System.EventHandler(this.btnCodigo_Click);
             // 
             // buttonDeshacer
             // 
@@ -162,6 +163,7 @@
             this.buttonDeshacer.Text = "DESHACER";
             this.buttonDeshacer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonDeshacer.UseVisualStyleBackColor = true;
+            this.buttonDeshacer.Click += new System.EventHandler(this.buttonDeshacer_Click);
             // 
             // buttonEliminar
             // 
@@ -177,6 +179,7 @@
             this.buttonEliminar.Text = "ELIMINAR";
             this.buttonEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonEliminar.UseVisualStyleBackColor = true;
+            this.buttonEliminar.Click += new System.EventHandler(this.buttonEliminar_Click);
             // 
             // buttonActualizar
             // 
@@ -192,6 +195,7 @@
             this.buttonActualizar.Text = "ACTUALIZAR";
             this.buttonActualizar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonActualizar.UseVisualStyleBackColor = true;
+            this.buttonActualizar.Click += new System.EventHandler(this.buttonActualizar_Click);
             // 
             // buttonCrear
             // 
@@ -207,6 +211,7 @@
             this.buttonCrear.Text = "CREAR";
             this.buttonCrear.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonCrear.UseVisualStyleBackColor = true;
+            this.buttonCrear.Click += new System.EventHandler(this.buttonCrear_Click);
             // 
             // buttonNuevo
             // 
@@ -222,6 +227,7 @@
             this.buttonNuevo.Text = "NUEVO";
             this.buttonNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonNuevo.UseVisualStyleBackColor = true;
+            this.buttonNuevo.Click += new System.EventHandler(this.buttonNuevo_Click);
             // 
             // statusStrip1
             // 
