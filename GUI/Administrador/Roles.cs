@@ -129,7 +129,7 @@ namespace Sistema_Bancario.Administrador
         }
 
 
-        public List<PersonaModel> usuarios;
+        public DataTable usuarios;
 
         private void llenarDGVUsuarios()
 
@@ -142,21 +142,55 @@ namespace Sistema_Bancario.Administrador
                 {
 
 
+                    //dgvUsuarios.AutoGenerateColumns = false;
 
+                    usuarios = UsuariosRol.GetPersonasPorRol(idRol);
 
-                    usuarios = UsuariosRol.GetPersonasPorRol(idRol).ToList();
-
-
+                    
 
                     dgvUsuarios.DataSource = usuarios;
 
-                    dgvUsuarios.Columns["Nombres"].DisplayIndex = 2;
-                    dgvUsuarios.Columns["Nombreusuario"].DisplayIndex = 3;
-                    dgvUsuarios.Columns["Correo"].DisplayIndex = 4;
-                    dgvUsuarios.Columns["Nrodocumento"].DisplayIndex = 5;
-                    dgvUsuarios.Columns["Estado"].DisplayIndex = 8;
+                    //dgvUsuarios.AutoGenerateColumns = false;
 
-                    dgvUsuarios.Columns["Id"].Visible = false;
+
+                    dgvUsuarios.Columns["Id"].DataPropertyName = "Id";
+
+                    //dgvUsuarios.Columns["Id"].DataPropertyName = "Id";
+
+                    dgvUsuarios.Columns["IDPersona"].DataPropertyName = "IDPersona";
+
+                    dgvUsuarios.Columns["Nombres"].DataPropertyName = "Nombres";
+                    //dgvUsuarios.Columns["Nombres"].DisplayIndex = 2;
+
+                    dgvUsuarios.Columns["Nombreusuario"].DataPropertyName = "Nombreusuario";
+                    //dgvUsuarios.Columns["Nombreusuario"].DisplayIndex = 3;
+
+
+                    //dgvUsuarios.Columns["Correo"].DisplayIndex = 4;
+                    //dgvUsuarios.Columns["Nrodocumento"].DataPropertyName = "Nrodocumento";
+                    //dgvUsuarios.Columns["Nrodocumento"].DisplayIndex = 5;
+
+
+                    dgvUsuarios.Columns["Estado"].DataPropertyName = "Estado";
+                    //dgvUsuarios.Columns["Estado"].DisplayIndex = 8;
+
+                    DataGridViewButtonColumn btnEditar = new DataGridViewButtonColumn();
+                    btnEditar.Name = "Editar";
+                    btnEditar.HeaderText = "Editar";
+                    dgvUsuarios.Columns.Add(btnEditar);
+
+                    //dgvUsuarios.Columns["Editar"].DisplayIndex = 5;
+
+                    DataGridViewButtonColumn btnEliminar = new DataGridViewButtonColumn();
+                    btnEliminar.Name = "Edliminar";
+                    btnEliminar.HeaderText = "Eliminar";
+                    dgvUsuarios.Columns.Add(btnEliminar);
+
+
+
+                    dgvUsuarios.Columns["Correo"].Visible = false;
+                    dgvUsuarios.Columns["NroDocumento"].Visible = false;
+                
                     dgvUsuarios.Columns["Pass"].Visible = false;
                     dgvUsuarios.Columns["Apellidos"].Visible = false;
                     dgvUsuarios.Columns["Fechanacimiento"].Visible = false;
@@ -282,6 +316,9 @@ namespace Sistema_Bancario.Administrador
                 if (frmBuscarPersona.resultado == DialogResult.OK)
                 {
                     idPersona = frmBuscarPersona.id;
+                    usuarioPersona = frmBuscarPersona.usuario;
+                    txtNombrePersona.Text = usuarioPersona;
+                    
                     NombrePersona = frmBuscarPersona.nombre;
                     txtUsuarioBuscado.Text = NombrePersona;
                 }
@@ -372,12 +409,15 @@ namespace Sistema_Bancario.Administrador
 
         
         private static int idPersona;
+        private static string usuarioPersona;
 
         private void dgvBusquedaUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)
             {
                 idPersona = Convert.ToInt16(dgvBusquedaUsuarios.Rows[e.RowIndex].Cells["Id"].Value);
+                usuarioPersona = (dgvBusquedaUsuarios.Rows[e.RowIndex].Cells["NombreUsuario"].Value).ToString();
+
             }
         }
 
@@ -424,20 +464,8 @@ namespace Sistema_Bancario.Administrador
         {
             try
             {
-                string passEncrypt = Encrypt.GetSHA256(txtContraseña.Text);
-                using (WsSistemaBancario.PersonaServiceClient CrearUsuario = new WsSistemaBancario.PersonaServiceClient())
-                {
-                    //if (chbEstado.Checked == true) {
-                    //    estadocheck = true;
-                    //}
-                    //else { estadocheck =false}
-
-                    
-
-                    confirmarCreacion = CrearUsuario.Persona_CrearNuevoUsuario(idPersona,txtUsuario.Text,passEncrypt,chbEstado.Checked);
-                    txtUsuarioBuscado.Text = "";
-                    txtContraseña.Text = "";
-                    txtUsuario.Text = "";
+                //string passEncrypt = Encrypt.GetSHA256(txtContraseña.Text);
+                
 
 
 
@@ -449,8 +477,8 @@ namespace Sistema_Bancario.Administrador
                         RolUsuarioModel rum = new RolUsuarioModel();
                         rum.Id_persona = idPersona;
                         rum.Id_rol = idRol;
-                        rum.Activo = true;
-                        rum.Fecha_creacion = DateTime.Now;
+                        rum.Activo = chbEstado.Checked;
+;
                         rum.Usuario_creador = "Administrador";
 
                         CrearRolUsuario.RolUsuario_Crear(rum,1);
@@ -465,7 +493,7 @@ namespace Sistema_Bancario.Administrador
                     
                     pnlSecundario.BringToFront();
 
-                }
+                
 
             }
 
@@ -520,9 +548,32 @@ namespace Sistema_Bancario.Administrador
 
         }
 
+        public int idUsuario;
+        public int idRolUsuario;
+        public string nombreusuario;
+
+        private void dgvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var senderGrid = (DataGridView)sender;
 
 
+            idRolUsuario = Convert.ToInt16(dgvUsuarios.Rows[e.RowIndex].Cells["Id"].Value);
+            idUsuario = Convert.ToInt16(dgvUsuarios.Rows[e.RowIndex].Cells["IdPersona"].Value);
+            nombreusuario = dgvUsuarios.Rows[e.RowIndex].Cells["NombreUsuario"].Value.ToString();
+            
+
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
+            {
+                ///////////using
 
 
+                Editar frmeditar = new Editar();
+
+                frmeditar.txtUsuarioEditar.Text = nombreusuario;
+                frmeditar.txtIdUsuario.Text = idUsuario.ToString() ;
+                frmeditar.idRolUsuario.Text = idRolUsuario.ToString();
+                frmeditar.Show();
+            }
+        }
     }
 }

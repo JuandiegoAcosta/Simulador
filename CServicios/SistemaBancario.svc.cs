@@ -475,7 +475,7 @@ namespace ServiciosBancarios
             return BLPersona.GetRolesUsuario(aUsuario);
         }
 
-        public List<PersonaModel> GetPersonasPorRol(int idRol)
+        public DataTable GetPersonasPorRol(int idRol)
         {
             return BLPersona.GetPersonasPorRol(idRol);
         }

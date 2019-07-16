@@ -880,10 +880,14 @@ namespace CDatos.Manager
 
 
 
-        public List<PersonaModel> GetPersonasPorRol(int idRol)
+
+
+
+        public DataTable GetPersonasPorRol(int idRol)
         {
 
-            List<PersonaModel> PersonaPorRolModellist = new List<PersonaModel>();
+            DataTable rolespersona = new DataTable("PersonaRoles");
+
 
             try
             {
@@ -894,46 +898,97 @@ namespace CDatos.Manager
                     SqlCommand command = connection.CreateCommand();
 
                     command.Parameters.AddWithValue("@idrol", idRol);
-
                     command.CommandType = CommandType.StoredProcedure;
 
                     command.CommandText = "sp_ObtenerPersonasPorRol";
 
-                    SqlDataReader reader = command.ExecuteReader();
 
-                    if (reader.HasRows)
-                    {
-                        while (reader.Read())
-                        {
-
-                            string Nombres = (string)(reader["Nombres"]);
-                            string NombreUsuario = (string)(reader["NombreUsuario"]);
-                            string NroDocumento = (string)(reader["NroDocumento"]);
-                            string Correo = (reader["Correo"]) == DBNull.Value ? null : (string)(reader["Correo"]);
-                            bool Estado = (bool)(reader["Estado"]);
+                    SqlDataAdapter daLugares = new SqlDataAdapter(command);
+                    daLugares.Fill(rolespersona);
 
 
-                            PersonaPorRolModellist.Add(new PersonaModel
-                            {
-                                Nombres = Nombres,
-                                Nombreusuario = NombreUsuario,
-                                Nrodocumento = NroDocumento,
-                                Correo = Correo,
-                                Estado = Estado,
-
-
-                            });
-                        }
-                    }
                 }
 
-                return PersonaPorRolModellist;
+
+                return rolespersona;
             }
             catch (Exception ex)
             {
-                return null;
+                return rolespersona;
             }
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //public List<PersonaModel> asdad(int idRol)
+        //{
+
+        //    List<PersonaModel> PersonaPorRolModellist = new List<PersonaModel>();
+
+        //    try
+        //    {
+        //        using (var connection = Util.ConnectionFactory.conexion())
+        //        {
+        //            connection.Open();
+
+        //            SqlCommand command = connection.CreateCommand();
+
+        //            command.Parameters.AddWithValue("@idrol", idRol);
+
+        //            command.CommandType = CommandType.StoredProcedure;
+
+        //            command.CommandText = "sp_ObtenerPersonasPorRol";
+
+        //            SqlDataReader reader = command.ExecuteReader();
+
+        //            if (reader.HasRows)
+        //            {
+        //                while (reader.Read())
+        //                {
+        //                    int Id = (int)(reader["Id"]);
+                            
+        //                    string Nombres = (string)(reader["Nombres"]);
+        //                    string NombreUsuario = (string)(reader["NombreUsuario"]);
+                            
+                     
+        //                    bool Estado = (bool)(reader["Estado"]);
+
+
+        //                    PersonaPorRolModellist.Add(new PersonaModel
+        //                    {
+        //                        Id = Id,
+        //                        Nombres = Nombres,
+                               
+        //                        Nombreusuario = NombreUsuario,
+                                
+        //                        Estado = Estado,
+
+
+        //                    });
+        //                }
+        //            }
+        //        }
+
+        //        return PersonaPorRolModellist;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return null;
+        //    }
+        //}
 
 
         public List<PersonaModel> GetPersonaNombreApellidos(string nombre, string apellido)
@@ -963,7 +1018,8 @@ namespace CDatos.Manager
 
                             int Id = (int)(reader["Id"]);
                             string Nombres = (string)(reader["Nombres"]);
-                        string NroDocumento = (string)(reader["NroDocumento"]);
+                            string NombreUsuario = (string)(reader["NombreUsuario"]);
+                            string NroDocumento = (string)(reader["NroDocumento"]);
                         string TipoDocumento = (string)(reader["Descripcion"].ToString());
 
 
@@ -971,6 +1027,7 @@ namespace CDatos.Manager
                             PersonaModel.Add(new PersonaModel
                             {
                                 Id = Id,
+                                Nombreusuario = NombreUsuario,
                                 Nombres = Nombres,
                                 Nrodocumento = NroDocumento,
                                 Apellidos = TipoDocumento,
