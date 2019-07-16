@@ -422,3 +422,7 @@ C:\Users\RithardLL\Source\Repos\Simulador22\CNegocio\obj\Debug\CNegocio.csproj.C
 C:\Users\RithardLL\Source\Repos\Simulador22\CNegocio\obj\Debug\CNegocio.csproj.CopyComplete
 C:\Users\RithardLL\Source\Repos\Simulador22\CNegocio\obj\Debug\CNegocio.dll
 C:\Users\RithardLL\Source\Repos\Simulador22\CNegocio\obj\Debug\CNegocio.pdb
+C:\Users\Jean\Desktop\z9\JuandiegoAcosta\Simulador\CNegocio\obj\Debug\CNegocio.csprojAssemblyReference.cache
+C:\Users\Jean\Desktop\z9\JuandiegoAcosta\Simulador\CNegocio\obj\Debug\CNegocio.csproj.CoreCompileInputs.cache
+C:\Users\Jean\Desktop\z9\JuandiegoAcosta\Simulador\CNegocio\obj\Debug\CNegocio.dll
+C:\Users\Jean\Desktop\z9\JuandiegoAcosta\Simulador\CNegocio\obj\Debug\CNegocio.pdb
