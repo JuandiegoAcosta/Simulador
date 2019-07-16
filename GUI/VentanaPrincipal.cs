@@ -347,8 +347,16 @@ namespace Sistema_Bancario
             }
             else if (btn.Text.Equals("Personas"))
             {
-                Usuario usuario = new Usuario(Session);
-                CrearControl<UserControl>(usuario, btn);
+                RegistroPersonaUserControl personas;
+                if (this.Session != null)
+                {
+                    personas = new RegistroPersonaUserControl(this.Session);
+                    CrearControl<UserControl>(personas, btn);
+                }
+                else
+                {
+                    MessageBox.Show("La sesión ha caducado");
+                }
             }
             else if (btn.Text.Equals("Roles"))
             {

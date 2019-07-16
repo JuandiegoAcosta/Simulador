@@ -365,6 +365,11 @@ namespace ServiciosBancarios
             return BLComponente.ObtenerComponentesRol(aID_Rol);
         }
 
+        public List<ComponenteModel> ObtenerTodosComponentes()
+        {
+            return BLComponente.ObtenerTodosComponentes();
+        }
+
 
         #endregion
 
@@ -529,6 +534,12 @@ namespace ServiciosBancarios
         {
             return BLPersona.ObtenerUsuariosSinCredenciales();
         }
+
+        public bool ActualizarEstadoRolUsuario(int admin, int idusuario, bool estado)
+        {
+            return BLPersona.ActualizarEstadoRolUsuario(admin,idusuario,estado);
+        }
+
 
         #endregion
 

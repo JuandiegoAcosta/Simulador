@@ -152,5 +152,10 @@ namespace CNegocio.Backend
         }
 
 
+        public bool ActualizarEstadoRolUsuario(int admin, int idusuario, bool estado)
+        {
+            return ADPersonaManager.ActualizarEstadoRolUsuario(admin,idusuario,estado);
+        }
+
     }
 }

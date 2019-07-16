@@ -717,13 +717,6 @@
     <None Include="Resources\view.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\roles_atras.png" />
-    <None Include="Resources\add_rol.png" />
-    <None Include="Resources\add_permiso.png" />
-    <None Include="Resources\icons8-agregar-administrador-26.png" />
-    <None Include="Resources\icons8-eliminar-26.png" />
-    <None Include="Resources\icons8-editar-26.png" />
-    <None Include="Resources\icons8-editar-32.png" />
     <None Include="Connected Services\WsSistemaBancario\SistemaBancario.disco" />
     <None Include="Connected Services\WsSistemaBancario\configuration91.svcinfo" />
     <None Include="Connected Services\WsSistemaBancario\configuration.svcinfo" />
@@ -731,6 +724,13 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="Resources\roles_atras.png" />
+    <None Include="Resources\add_rol.png" />
+    <None Include="Resources\add_permiso.png" />
+    <None Include="Resources\icons8-agregar-administrador-26.png" />
+    <None Include="Resources\icons8-eliminar-26.png" />
+    <None Include="Resources\icons8-editar-26.png" />
+    <None Include="Resources\icons8-editar-32.png" />
     <Content Include="Graphicloads-100-Flat-2-Bank.ico" />
   </ItemGroup>
   <ItemGroup>

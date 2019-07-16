@@ -481,17 +481,31 @@ C:\Users\Jean\Desktop\z6\Simulador\CServicios\obj\Debug\CServicios.csproj.CoreCo
 C:\Users\Jean\Desktop\z6\Simulador\CServicios\obj\Debug\CServicios.csproj.CopyComplete
 C:\Users\Jean\Desktop\z6\Simulador\CServicios\obj\Debug\ServiciosBancarios.dll
 C:\Users\Jean\Desktop\z6\Simulador\CServicios\obj\Debug\ServiciosBancarios.pdb
-C:\Users\Jean\Desktop\z9\JuandiegoAcosta\Simulador\CServicios\bin\ServiciosBancarios.dll.config
-C:\Users\Jean\Desktop\z9\JuandiegoAcosta\Simulador\CServicios\bin\ServiciosBancarios.dll
-C:\Users\Jean\Desktop\z9\JuandiegoAcosta\Simulador\CServicios\bin\ServiciosBancarios.pdb
-C:\Users\Jean\Desktop\z9\JuandiegoAcosta\Simulador\CServicios\bin\CNegocio.dll
-C:\Users\Jean\Desktop\z9\JuandiegoAcosta\Simulador\CServicios\bin\Modelos.dll
-C:\Users\Jean\Desktop\z9\JuandiegoAcosta\Simulador\CServicios\bin\CDatos.dll
-C:\Users\Jean\Desktop\z9\JuandiegoAcosta\Simulador\CServicios\bin\CNegocio.pdb
-C:\Users\Jean\Desktop\z9\JuandiegoAcosta\Simulador\CServicios\bin\Modelos.pdb
-C:\Users\Jean\Desktop\z9\JuandiegoAcosta\Simulador\CServicios\bin\CDatos.pdb
-C:\Users\Jean\Desktop\z9\JuandiegoAcosta\Simulador\CServicios\obj\Debug\CServicios.csprojAssemblyReference.cache
-C:\Users\Jean\Desktop\z9\JuandiegoAcosta\Simulador\CServicios\obj\Debug\CServicios.csproj.CoreCompileInputs.cache
-C:\Users\Jean\Desktop\z9\JuandiegoAcosta\Simulador\CServicios\obj\Debug\CServicios.csproj.CopyComplete
-C:\Users\Jean\Desktop\z9\JuandiegoAcosta\Simulador\CServicios\obj\Debug\ServiciosBancarios.dll
-C:\Users\Jean\Desktop\z9\JuandiegoAcosta\Simulador\CServicios\obj\Debug\ServiciosBancarios.pdb
+E:\Documents\cursos\VI semestre\distribuidas\simulador3\CServicios\bin\ServiciosBancarios.dll.config
+E:\Documents\cursos\VI semestre\distribuidas\simulador3\CServicios\bin\ServiciosBancarios.dll
+E:\Documents\cursos\VI semestre\distribuidas\simulador3\CServicios\bin\ServiciosBancarios.pdb
+E:\Documents\cursos\VI semestre\distribuidas\simulador3\CServicios\bin\CNegocio.dll
+E:\Documents\cursos\VI semestre\distribuidas\simulador3\CServicios\bin\Modelos.dll
+E:\Documents\cursos\VI semestre\distribuidas\simulador3\CServicios\bin\CDatos.dll
+E:\Documents\cursos\VI semestre\distribuidas\simulador3\CServicios\bin\CNegocio.pdb
+E:\Documents\cursos\VI semestre\distribuidas\simulador3\CServicios\bin\Modelos.pdb
+E:\Documents\cursos\VI semestre\distribuidas\simulador3\CServicios\bin\CDatos.pdb
+E:\Documents\cursos\VI semestre\distribuidas\simulador3\CServicios\obj\Debug\CServicios.csprojAssemblyReference.cache
+E:\Documents\cursos\VI semestre\distribuidas\simulador3\CServicios\obj\Debug\CServicios.csproj.CoreCompileInputs.cache
+E:\Documents\cursos\VI semestre\distribuidas\simulador3\CServicios\obj\Debug\CServicios.csproj.CopyComplete
+E:\Documents\cursos\VI semestre\distribuidas\simulador3\CServicios\obj\Debug\ServiciosBancarios.dll
+E:\Documents\cursos\VI semestre\distribuidas\simulador3\CServicios\obj\Debug\ServiciosBancarios.pdb
+C:\Users\RithardLL\Source\Repos\Simulador22\CServicios\bin\ServiciosBancarios.dll.config
+C:\Users\RithardLL\Source\Repos\Simulador22\CServicios\bin\ServiciosBancarios.dll
+C:\Users\RithardLL\Source\Repos\Simulador22\CServicios\bin\ServiciosBancarios.pdb
+C:\Users\RithardLL\Source\Repos\Simulador22\CServicios\bin\CNegocio.dll
+C:\Users\RithardLL\Source\Repos\Simulador22\CServicios\bin\Modelos.dll
+C:\Users\RithardLL\Source\Repos\Simulador22\CServicios\bin\CDatos.dll
+C:\Users\RithardLL\Source\Repos\Simulador22\CServicios\bin\CNegocio.pdb
+C:\Users\RithardLL\Source\Repos\Simulador22\CServicios\bin\Modelos.pdb
+C:\Users\RithardLL\Source\Repos\Simulador22\CServicios\bin\CDatos.pdb
+C:\Users\RithardLL\Source\Repos\Simulador22\CServicios\obj\Debug\CServicios.csprojAssemblyReference.cache
+C:\Users\RithardLL\Source\Repos\Simulador22\CServicios\obj\Debug\CServicios.csproj.CoreCompileInputs.cache
+C:\Users\RithardLL\Source\Repos\Simulador22\CServicios\obj\Debug\CServicios.csproj.CopyComplete
+C:\Users\RithardLL\Source\Repos\Simulador22\CServicios\obj\Debug\ServiciosBancarios.dll
+C:\Users\RithardLL\Source\Repos\Simulador22\CServicios\obj\Debug\ServiciosBancarios.pdb

@@ -29,5 +29,9 @@ namespace ServiciosBancarios.Backend
         [OperationContract]
         List<ComponenteModel> Componente_ObtenerComponentesRol(int aID_Rol);
 
+        [OperationContract]
+        List<ComponenteModel> ObtenerTodosComponentes();
+        
+
     }
 }
