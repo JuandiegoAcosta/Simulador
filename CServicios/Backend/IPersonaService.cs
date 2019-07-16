@@ -54,5 +54,10 @@ namespace ServiciosBancarios.Backend
         [OperationContract]
         List<PersonaModel> Persona_UsuarioSelectAll();
 
+        [OperationContract]
+        List<PersonaModel> PersonaSelectbyNroDocumento(string aValue);
+
+        [OperationContract]
+        List<PersonaModel> PersonaSelectbyNombres(string aValue);
     }
 }
