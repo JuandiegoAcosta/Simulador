@@ -190,3 +190,8 @@ C:\Users\Jean\Desktop\z6\Simulador\Modelos\obj\Debug\Modelos.csproj.CoreCompileI
 C:\Users\Jean\Desktop\z6\Simulador\Modelos\obj\Debug\Modelos.dll
 C:\Users\Jean\Desktop\z6\Simulador\Modelos\obj\Debug\Modelos.pdb
 C:\Users\kat\Source\Repos\JuandiegoAcosta\Simulador\Modelos\obj\Debug\Modelos.csprojAssemblyReference.cache
+C:\Users\Jean\Desktop\z9\JuandiegoAcosta\Simulador\Modelos\bin\Debug\Modelos.dll
+C:\Users\Jean\Desktop\z9\JuandiegoAcosta\Simulador\Modelos\bin\Debug\Modelos.pdb
+C:\Users\Jean\Desktop\z9\JuandiegoAcosta\Simulador\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
+C:\Users\Jean\Desktop\z9\JuandiegoAcosta\Simulador\Modelos\obj\Debug\Modelos.dll
+C:\Users\Jean\Desktop\z9\JuandiegoAcosta\Simulador\Modelos\obj\Debug\Modelos.pdb

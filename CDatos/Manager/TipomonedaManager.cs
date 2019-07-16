@@ -31,16 +31,14 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
-                    command.Parameters.AddWithValue("@ID", aTipoMonedaModel.Id);
                     command.Parameters.AddWithValue("@Nombre", aTipoMonedaModel.Nombre);
                     command.Parameters.AddWithValue("@FECHA_CREACION", aTipoMonedaModel.Fecha_creacion);
                     command.Parameters.AddWithValue("@FECHA_MODIFICACION", aTipoMonedaModel.Fecha_modificacion == null ? (object)DBNull.Value : aTipoMonedaModel.Fecha_modificacion);
                     command.Parameters.AddWithValue("@USUARIO_CREADOR", aTipoMonedaModel.Usuario_creador);
                     command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aTipoMonedaModel.Usuario_modificador == null ? (object)DBNull.Value : aTipoMonedaModel.Usuario_modificador);
 
-
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "TipoMonedaModelInsert";
+                    command.CommandText = "TipoMonedaInsert";
 
                     int afectados = command.ExecuteNonQuery();
 
@@ -91,7 +89,7 @@ namespace CDatos.Manager
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "TipoMonedaModelUpdate";
+                    command.CommandText = "TipoMonedaUpdate";
 
                     int afectados = command.ExecuteNonQuery();
 
@@ -137,7 +135,7 @@ namespace CDatos.Manager
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "TipoMonedaModelDelete";
+                    command.CommandText = "TipoMonedaDelete";
                     int afectados = command.ExecuteNonQuery();
 
                     // Commit the transaction.
