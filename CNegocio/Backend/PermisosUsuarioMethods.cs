@@ -16,14 +16,25 @@ namespace CNegocio.Backend
         {
             ADPermisosUsuarioManager = new PermisosUsuarioManager();
         }
-        public bool Crear(PermisosUsuarioModel aPermisosUsuario)
+
+        /// <summary>
+        /// Saves a record to the permisos usuario table.
+        /// returns True if value saved successfully else false
+        /// Throw exception with message value EXISTS if the data is duplicate
+        /// </summary>	
+        public bool Crear(PermisosUsuarioModel aPermisosUsuario, int id_user)
         {
-            return ADPermisosUsuarioManager.Insert(aPermisosUsuario);
+            return ADPermisosUsuarioManager.Insert(aPermisosUsuario, id_user);
         }
 
-        public bool Editar(PermisosUsuarioModel aPermisosUsuario)
+        /// <summary>
+        /// Updates a record to the permisos usuario table.
+        /// returns True if value saved successfully else false
+        /// Throw exception with message value EXISTS if the data is duplicate
+        /// </summary>
+        public bool Editar(PermisosUsuarioModel aPermisosUsuario, int id_user)
         {
-            return ADPermisosUsuarioManager.Update(aPermisosUsuario);
+            return ADPermisosUsuarioManager.Update(aPermisosUsuario, id_user);
         }
 
         public bool Eliminar(int aID_PermisosUsuario)

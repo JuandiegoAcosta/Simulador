@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Sistema_Bancario
 {
-    public partial class Dni : UserControl
+    public partial class Doi : UserControl
     {
-        public Dni()
+        public Doi()
         {
             InitializeComponent();
         }

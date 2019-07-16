@@ -48,6 +48,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Graphicloads-100-Flat-2-Bank.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu_UI_v1.5.3, Version=1.5.3.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -70,6 +73,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Administrador\AgregarNuevoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrador\AgregarNuevoUsuario.Designer.cs">
+      <DependentUpon>AgregarNuevoUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\BuscarPersona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrador\BuscarPersona.Designer.cs">
+      <DependentUpon>BuscarPersona.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\Permisos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Administrador\Permisos.Designer.cs">
+      <DependentUpon>Permisos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\Usuario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Administrador\Usuario.Designer.cs">
+      <DependentUpon>Usuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\Roles.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Administrador\Roles.Designer.cs">
+      <DependentUpon>Roles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ayuda\FormHelp2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ayuda\FormHelp2.Designer.cs" />
     <Compile Include="Backend\Resumen_caja_chica.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -81,6 +118,12 @@
     </Compile>
     <Compile Include="Botones\BTRetiros.Designer.cs">
       <DependentUpon>BTRetiros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CambiarContraseña.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CambiarContraseña.Designer.cs">
+      <DependentUpon>CambiarContraseña.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\Bodega.cs" />
     <Compile Include="Clases\Denominaciones.cs" />
@@ -95,6 +138,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\CambioMoneda.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\CambioMoneda.Designer.cs">
+      <DependentUpon>CambioMoneda.cs</DependentUpon>
     </Compile>
     <Compile Include="Controles\DatosPersona.cs">
       <SubType>UserControl</SubType>
@@ -158,6 +207,12 @@
     </Compile>
     <Compile Include="Controles\NroCuenta.Designer.cs">
       <DependentUpon>NroCuenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\OpcionesUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controles\OpcionesUsuario.Designer.cs">
+      <DependentUpon>OpcionesUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Controles\Precios.cs">
       <SubType>UserControl</SubType>
@@ -246,6 +301,34 @@
     <Compile Include="Plataforma\UCrefinanciar.Designer.cs">
       <DependentUpon>UCrefinanciar.cs</DependentUpon>
     </Compile>
+    <Compile Include="plataforma_controles\NuevaCuentaUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="plataforma_controles\NuevaCuentaUserControl.Designer.cs" />
+    <Compile Include="plataforma_controles\NuevaTarjeta.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="plataforma_controles\NuevaTarjeta.Designer.cs">
+      <DependentUpon>NuevaTarjeta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="plataforma_controles\NuevoPrestamoUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="plataforma_controles\NuevoPrestamoUserControl.Designer.cs" />
+    <Compile Include="plataforma_controles\RegistrarChequera.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="plataforma_controles\RegistrarChequera.Designer.cs" />
+    <Compile Include="plataforma_controles\RegistroPersonaUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="plataforma_controles\RegistroPersonaUserControl.Designer.cs" />
+    <Compile Include="Pruebas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pruebas.Designer.cs">
+      <DependentUpon>Pruebas.cs</DependentUpon>
+    </Compile>
     <Compile Include="VentanaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -254,6 +337,12 @@
     </Compile>
     <Compile Include="Ventanilla\Balancin.Designer.cs">
       <DependentUpon>Balancin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanilla\Cheques.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ventanilla\Cheques.Designer.cs">
+      <DependentUpon>Cheques.cs</DependentUpon>
     </Compile>
     <Compile Include="Ventanilla\CobroGiros.cs">
       <SubType>UserControl</SubType>
@@ -338,8 +427,33 @@
     <Compile Include="VentanaPrincipal.Designer.cs">
       <DependentUpon>VentanaPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ventanilla\Utilitarios.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <EmbeddedResource Include="Administrador\AgregarNuevoUsuario.resx">
+      <DependentUpon>AgregarNuevoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrador\BuscarPersona.resx">
+      <DependentUpon>BuscarPersona.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrador\Permisos.resx">
+      <DependentUpon>Permisos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrador\Roles.resx">
+      <DependentUpon>Roles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrador\Usuario.resx">
+      <DependentUpon>Usuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ayuda\FormHelp2.resx" />
     <EmbeddedResource Include="Botones\BTRetiros.resx">
       <DependentUpon>BTRetiros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CambiarContraseña.resx">
+      <DependentUpon>CambiarContraseña.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\CambioMoneda.resx">
+      <DependentUpon>CambioMoneda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controles\DatosPersona.resx">
       <DependentUpon>DatosPersona.cs</DependentUpon>
@@ -371,6 +485,9 @@
     <EmbeddedResource Include="Controles\NroCuenta.resx">
       <DependentUpon>NroCuenta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controles\OpcionesUsuario.resx">
+      <DependentUpon>OpcionesUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controles\Precios.resx">
       <DependentUpon>Precios.cs</DependentUpon>
     </EmbeddedResource>
@@ -395,8 +512,21 @@
     <EmbeddedResource Include="Plataforma\UCcliente.resx">
       <DependentUpon>UCcliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="plataforma_controles\NuevaCuentaUserControl.resx" />
+    <EmbeddedResource Include="plataforma_controles\NuevaTarjeta.resx">
+      <DependentUpon>NuevaTarjeta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="plataforma_controles\NuevoPrestamoUserControl.resx" />
+    <EmbeddedResource Include="plataforma_controles\RegistrarChequera.resx" />
+    <EmbeddedResource Include="plataforma_controles\RegistroPersonaUserControl.resx" />
+    <EmbeddedResource Include="Pruebas.resx">
+      <DependentUpon>Pruebas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ventanilla\Balancin.resx">
       <DependentUpon>Balancin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventanilla\Cheques.resx">
+      <DependentUpon>Cheques.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanilla\Depositos.resx">
       <DependentUpon>Depositos.cs</DependentUpon>
@@ -478,10 +608,15 @@
     <None Include="Connected Services\WsSistemaBancario\SistemaBancario2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\WsSistemaBancario\SistemaBancario3.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\DataSources\Modelos.Modelos.BancoModel.datasource" />
+    <None Include="Properties\DataSources\Modelos.Modelos.CajaChicaModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.CobroChequesModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.ComponenteModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.CuentasModel.datasource" />
+    <None Include="Properties\DataSources\Modelos.Modelos.DetalleCajaChicaModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.EmpresaModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.HorariosAtencionModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.MovimientosVentanillaModel.datasource" />
@@ -497,6 +632,7 @@
     <None Include="Properties\DataSources\Modelos.Modelos.TurnosModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.TurnoUsuarioModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.VentanillaModel.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -570,22 +706,17 @@
     <None Include="Resources\view.png" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\WsSistemaBancario\" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Connected Services\WsSistemaBancario\SistemaBancario.disco" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Connected Services\WsSistemaBancario\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Connected Services\WsSistemaBancario\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Connected Services\WsSistemaBancario\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="Graphicloads-100-Flat-2-Bank.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\WsSistemaBancario\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

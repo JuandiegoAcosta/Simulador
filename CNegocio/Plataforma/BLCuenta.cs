@@ -10,28 +10,72 @@ namespace CNegocio.Plataforma
 {
     public class BLCuenta
     {
-        CuentaManager cuentaManager = new CuentaManager(); 
+        CuentaManager managerCuenta = new CuentaManager();
 
         #region Methods
-
-        public bool Crear(CuentasModel aCuentasModel)
+        /// <summary>
+        /// Saves a record to the cuenta table.
+        /// returns True if value saved successfully else false
+        /// Throw exception with message value EXISTS if the data is duplicate
+        /// </summary>		
+        public bool Insert(CuentasModel acuenta)
         {
-            return this.cuentaManager.Insert(aCuentasModel);
-        }
-        
-        public bool Actualizar(CuentasModel aCuentasModel)
-        {
-            return this.cuentaManager.Update(aCuentasModel);
-        }
-        
-        public CuentasModel ObtenerCuenta(string aNumero)
-        {
-            return this.cuentaManager.GetCuentasModel(aNumero);
+            return this.managerCuenta.Insert(acuenta);
         }
 
-        public List<CuentasModel> ObtenerTodosCuentasUsuario(int aUsuario)
+
+        /// <summary>
+        /// Updates a record to the cuenta table.
+        /// returns True if value saved successfully else false
+        /// Throw exception with message value EXISTS if the data is duplicate
+        /// </summary>
+        public bool Update(CuentasModel acuenta)
         {
-            return this.cuentaManager.CuentasModelSelectByUser(aUsuario);
+            return this.managerCuenta.Update(acuenta);
+        }
+
+
+        /// <summary>
+        /// Deletes record to the cuenta table.
+        /// returns True if value saved successfully else false
+        /// Throw exception with message value EXISTS if the data is duplicate
+        /// </summary>
+        public bool Delete(string aNroCuenta)
+        {
+            return this.managerCuenta.Delete(aNroCuenta);
+        }
+
+
+        /// <summary>
+        /// Selects the Single object of cuenta table.
+        /// </summary>
+        public CuentasModel Getcuenta(string aNroCuenta)
+        {
+            return this.managerCuenta.Getcuenta(aNroCuenta);
+        }
+
+
+        /// <summary>
+        /// Selects all the objects of cuenta table.
+        /// </summary>
+        public List<CuentasModel> cuentaSelectAll()
+        {
+            return this.managerCuenta.cuentaSelectAll();
+        }
+
+        public List<CuentasModel> cuentaSelectbyId_cliente(int id_cliente)
+        {
+            return this.managerCuenta.cuentaSelectbyId_cliente(id_cliente);
+        }
+
+        public List<CuentasModel> cuentaSelectbyNroCuenta(string numero_cuenta)
+        {
+            return this.managerCuenta.cuentaSelectbyNroCuenta(numero_cuenta);
+        }
+
+        public List<CuentasModel> cuentaSelectbyNroCuentaPrestamo(string numero_cuenta)
+        {
+            return this.managerCuenta.cuentaSelectbyNroCuentaPrestamo(numero_cuenta);
         }
 
         #endregion

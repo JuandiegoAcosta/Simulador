@@ -9,61 +9,177 @@ using Modelos.Modelos;
 
 namespace Sistema_Bancario.Froms_opciones
 {
-    public partial class Tipo_de_Cambio : Base
-    {
-        private TipoCambioModel gTipoCambioModel;
-        private string gUsuario;
+   public partial class Tipo_de_Cambio : Base
+   {
+      private TipoCambioModel m_tipocambio;
 
-        public Tipo_de_Cambio()
+      public Tipo_de_Cambio()
+      {
+         InitializeComponent();
+         this.proceder1.BTProceder.Click += BTProceder_Click;
+         monto1.TBMonto.TextChanged += TBMonto_TextChanged;
+            tipoMoneda1.CboMoneda.Click += CboMoneda_Click1;
+         tipoMoneda2.CboMoneda.Click += CboMoneda_Click;            
+      }
+
+        private void CboMoneda_Click1(object sender, EventArgs e)
         {
-            InitializeComponent();
-            this.proceder1.BTProceder.Click += BTProceder_Click;
-            this.gUsuario = "Usuario";
-
-        
+            if (tipoMoneda2.CboMoneda.SelectedIndex == 0)
+            {
+                tipoMoneda1.CboMoneda.SelectedIndex = 1;
+                //   MessageBox.Show("Mismo tipo de Conversion");
+            }
+            else if (tipoMoneda2.CboMoneda.SelectedIndex == 1)
+            {
+                tipoMoneda1.CboMoneda.SelectedIndex = 0;
+            }
         }
 
-        private static Tipo_de_Cambio _instance;
-        public static Tipo_de_Cambio instance
+        private void CboMoneda_Click(object sender, EventArgs e)
         {
-            get
+            if (tipoMoneda1.CboMoneda.SelectedIndex == 0)
             {
-                if (_instance == null)
+                tipoMoneda2.CboMoneda.SelectedIndex = 1;
+                //   MessageBox.Show("Mismo tipo de Conversion");
+            }
+            else if (tipoMoneda1.CboMoneda.SelectedIndex == 1)
+            {
+                tipoMoneda2.CboMoneda.SelectedIndex = 0;
+            }
+        }
+
+        private bool setItem()
+      {
+         try
+         {
+
+            m_tipocambio = new TipoCambioModel();
+
+            if (this.tipoMoneda1.CboMoneda.SelectedValue != null)
+            { m_tipocambio.Monedaorigen = (int)this.tipoMoneda1.CboMoneda.SelectedValue; }
+            else
+            { return false; }
+
+            if (this.tipoMoneda2.CboMoneda.SelectedValue != null)
+            { m_tipocambio.Monedaorigen = (int)this.tipoMoneda2.CboMoneda.SelectedValue; }
+            else
+            { return false; }
+
+            if (!string.IsNullOrEmpty(this.monto1.TBMonto.Text.Trim()))
+            { m_tipocambio.Montocompra = Convert.ToDecimal(this.monto1.TBMonto.Text.Trim()); }
+            else
+            { return false; }
+
+            if (!string.IsNullOrEmpty(this.txtConversion.Text.Trim()))
+            { m_tipocambio.Montoventa = Convert.ToDecimal(this.txtConversion.Text.Trim()); }
+            else
+            { return false; }
+
+            return true;
+
+         }
+         catch (Exception)
+         {
+            return false;
+         }
+      }
+
+      private static Tipo_de_Cambio _instance;
+      public static Tipo_de_Cambio instance
+      {
+         get
+         {
+            if (_instance == null)
+            {
+               _instance = new Tipo_de_Cambio();
+            }
+
+            return _instance;
+         }
+      }
+
+
+      private void BTProceder_Click(object sender, EventArgs e)
+      {           
+            if (setItem())
+         {
+               
+         }
+      }
+
+        private void TBMonto_TextChanged(object sender, EventArgs e)
+        {
+          //  Multiplicar(true);
+
+            if (tipoMoneda1.CboMoneda.Text.Equals("Soles") && tipoMoneda2.CboMoneda.Text.Equals("Dolares"))
+            {
+                Dividir(true);
+            }
+            else if (tipoMoneda1.CboMoneda.Text.Equals("Dolares") && tipoMoneda2.CboMoneda.Text.Equals("Soles"))
+            {
+                Multiplicar(true);
+            }
+            else if (tipoMoneda2.CboMoneda.Text.Equals("Euros"))
+            {
+                Multiplicar(true);
+            }
+
+        }
+
+        private void RbtnVenta_CheckedChanged(object sender, EventArgs e)
+        {
+            Multiplicar(false);
+        }
+
+        private void RbtnCompra_CheckedChanged(object sender, EventArgs e)
+        {
+            Multiplicar(true);
+        }
+        public void Dividir(bool flag)
+        {
+            if (monto1.TBMonto.Text != "")
+            {
+                Decimal A = Convert.ToDecimal(precios1.LbCompraDolares.Text.ToString());
+                Decimal B = Convert.ToDecimal(monto1.TBMonto.Text.ToString());
+                Decimal D = Convert.ToDecimal(precios1.LbVentaDolares.Text.ToString());
+                if (flag == true)
                 {
-                    _instance = new Tipo_de_Cambio();
+                    Decimal C = B / A;
+                    txtConversion.Text = Convert.ToString(C);
                 }
-
-                return _instance;
+                else if (flag == false)
+                {
+                    Decimal C = D / B;
+                    txtConversion.Text = Convert.ToString(C);
+                }
+            }
+            else
+            {
+                txtConversion.Text = "";
             }
         }
-
-
-        private void BTProceder_Click(object sender, EventArgs e)
+        public void Multiplicar(bool flag)
         {
-            MessageBox.Show("Opracion Realizada");
-
-
-          /*  int id_moneda_origen = (int)this.tipoMoneda1.CboMoneda.SelectedValue;
-            int id_moneda_destino = (int)this.tipoMoneda2.CboMoneda.SelectedValue;
-            DateTime fecha_cambio = fecha1.DtFecha.Value.Date;
-            decimal monto_compra = Convert.ToDecimal(this.monto1.TBMonto.Text);
-            decimal monto_venta = Convert.ToDecimal(this.conversion2.TBConversion.Text);
-
-            if (id_moneda_origen == id_moneda_destino)
+            if (monto1.TBMonto.Text != "")
             {
-                MessageBox.Show("no tiene sentido esa conversion");
-                return;
+                Decimal A = Convert.ToDecimal(precios1.LbCompraDolares.Text.ToString());
+                Decimal B = Convert.ToDecimal(monto1.TBMonto.Text.ToString());
+                Decimal D = Convert.ToDecimal(precios1.LbVentaDolares.Text.ToString());
+                if (flag == true)
+                {
+                    Decimal C = A * B;
+                    txtConversion.Text = Convert.ToString(C);
+                }
+                else if (flag == false)
+                {
+                    Decimal C = D * B;
+                    txtConversion.Text = Convert.ToString(C);
+                }
             }
-
-            this.gTipoCambioModel = new TipoCambioModel()
+            else
             {
-                Montocompra = monto_compra,
-                Montoventa = monto_venta,
-                Usuario_creador = this.gUsuario,
-                Fecha = fecha_cambio.Date,
-                Monedaorigen = id_moneda_origen,
-                Monedaobjetivo = id_moneda_destino,
-            };*/
+                txtConversion.Text = "";
+            }
         }
     }
 }

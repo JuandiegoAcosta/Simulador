@@ -32,15 +32,27 @@ namespace Sistema_Bancario.Controles
 
         private void PoblarCboMoneda()
         {
-            using (WsSistemaBancario.TipoMonedaServiceClient tipoMoneda = new WsSistemaBancario.TipoMonedaServiceClient())
+            try
             {
-                List<TipoMonedaModel> monedas = new List<TipoMonedaModel>();
-                monedas = tipoMoneda.Moneda_ObtenerTodos().ToList();
+                using (WsSistemaBancario.TipoMonedaServiceClient tipoMoneda = new WsSistemaBancario.TipoMonedaServiceClient())
+                {
+                    List<TipoMonedaModel> monedas = new List<TipoMonedaModel>();
+                    monedas = tipoMoneda.Moneda_ObtenerTodos().ToList();
 
-                this.CboMoneda.DataSource = monedas;
-                this.CboMoneda.DisplayMember = "Nombre";
-                this.CboMoneda.SelectedIndex = 0;
+                    this.CboMoneda.DataSource = monedas;
+                    this.CboMoneda.DisplayMember = "Nombre";
+                    this.CboMoneda.SelectedIndex = 0;
+                }
             }
+            catch (Exception)
+            {           
+               // MessageBox.Show("Error al llamar al servicio");
+                List<string> monedas = new List<string>();
+                monedas.Add("Soles");
+                monedas.Add("Dolares");
+                this.CboMoneda.DataSource = monedas;
+            }
+           
         }
 
     }

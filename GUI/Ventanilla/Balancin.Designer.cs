@@ -28,352 +28,230 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.nudNroBilletes = new System.Windows.Forms.NumericUpDown();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.btnQuitar = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.CmbDenominaciones = new System.Windows.Forms.ComboBox();
-            this.cmbMonedas = new System.Windows.Forms.ComboBox();
-            this.txtTotal = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.dgvDenominaciones = new System.Windows.Forms.DataGridView();
-            this.Denominacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nro_billetes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label6 = new System.Windows.Forms.Label();
-            this.lblTotal = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtCantidad = new System.Windows.Forms.TextBox();
             this.btnRegistrarMov = new System.Windows.Forms.Button();
-            this.btnImprimirMov = new System.Windows.Forms.Button();
-            this.cmbPersonaRol = new System.Windows.Forms.ComboBox();
-            this.cmbTiposRoles = new System.Windows.Forms.ComboBox();
-            this.cmbTipoMov = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.dgvSoles = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnImprimir = new System.Windows.Forms.Button();
+            this.cmbVentanillas = new System.Windows.Forms.ComboBox();
+            this.txtTotalDolares = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudNroBilletes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDenominaciones)).BeginInit();
-            this.groupBox2.SuspendLayout();
+            this.cmbTipoMov = new System.Windows.Forms.ComboBox();
+            this.txtTotalSoles = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dgvDolares = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label7 = new System.Windows.Forms.Label();
+            this.printTicket = new System.Drawing.Printing.PrintDocument();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSoles)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDolares)).BeginInit();
             this.SuspendLayout();
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.nudNroBilletes);
-            this.groupBox1.Controls.Add(this.btnAgregar);
-            this.groupBox1.Controls.Add(this.btnQuitar);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.CmbDenominaciones);
-            this.groupBox1.Controls.Add(this.cmbMonedas);
-            this.groupBox1.Controls.Add(this.txtTotal);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.dgvDenominaciones);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.lblTotal);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Location = new System.Drawing.Point(13, 17);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(845, 428);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Balancín caja";
-            // 
-            // nudNroBilletes
-            // 
-            this.nudNroBilletes.Location = new System.Drawing.Point(370, 94);
-            this.nudNroBilletes.Name = "nudNroBilletes";
-            this.nudNroBilletes.Size = new System.Drawing.Size(227, 22);
-            this.nudNroBilletes.TabIndex = 7;
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Location = new System.Drawing.Point(489, 123);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(107, 40);
-            this.btnAgregar.TabIndex = 6;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // btnQuitar
-            // 
-            this.btnQuitar.Location = new System.Drawing.Point(376, 123);
-            this.btnQuitar.Name = "btnQuitar";
-            this.btnQuitar.Size = new System.Drawing.Size(107, 40);
-            this.btnQuitar.TabIndex = 6;
-            this.btnQuitar.Text = "Quitar";
-            this.btnQuitar.UseVisualStyleBackColor = true;
-            this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(653, 24);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(155, 38);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Imprimir ticket";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(653, 78);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(155, 38);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Estado caja";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // CmbDenominaciones
-            // 
-            this.CmbDenominaciones.FormattingEnabled = true;
-            this.CmbDenominaciones.Location = new System.Drawing.Point(370, 59);
-            this.CmbDenominaciones.Name = "CmbDenominaciones";
-            this.CmbDenominaciones.Size = new System.Drawing.Size(227, 24);
-            this.CmbDenominaciones.TabIndex = 1;
-            // 
-            // cmbMonedas
-            // 
-            this.cmbMonedas.FormattingEnabled = true;
-            this.cmbMonedas.Location = new System.Drawing.Point(370, 21);
-            this.cmbMonedas.Name = "cmbMonedas";
-            this.cmbMonedas.Size = new System.Drawing.Size(227, 24);
-            this.cmbMonedas.TabIndex = 1;
-            this.cmbMonedas.SelectedValueChanged += new System.EventHandler(this.cmbMonedas_SelectedValueChanged);
-            // 
-            // txtTotal
-            // 
-            this.txtTotal.Location = new System.Drawing.Point(459, 388);
-            this.txtTotal.Name = "txtTotal";
-            this.txtTotal.ReadOnly = true;
-            this.txtTotal.Size = new System.Drawing.Size(138, 22);
-            this.txtTotal.TabIndex = 3;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(201, 99);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(79, 17);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Nro billetes";
-            // 
-            // dgvDenominaciones
-            // 
-            this.dgvDenominaciones.AllowUserToAddRows = false;
-            this.dgvDenominaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDenominaciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Denominacion,
-            this.Nro_billetes,
-            this.Importe});
-            this.dgvDenominaciones.Location = new System.Drawing.Point(74, 169);
-            this.dgvDenominaciones.Name = "dgvDenominaciones";
-            this.dgvDenominaciones.RowTemplate.Height = 24;
-            this.dgvDenominaciones.Size = new System.Drawing.Size(523, 213);
-            this.dgvDenominaciones.TabIndex = 2;
-            this.dgvDenominaciones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDenominaciones_CellClick);
-            // 
-            // Denominacion
-            // 
-            this.Denominacion.HeaderText = "Denominación";
-            this.Denominacion.Name = "Denominacion";
-            // 
-            // Nro_billetes
-            // 
-            this.Nro_billetes.HeaderText = "Nro billetes";
-            this.Nro_billetes.Name = "Nro_billetes";
-            this.Nro_billetes.Width = 150;
-            // 
-            // Importe
-            // 
-            this.Importe.HeaderText = "Importe";
-            this.Importe.Name = "Importe";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(201, 62);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(98, 17);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Denominación";
-            // 
-            // lblTotal
-            // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(373, 391);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(40, 17);
-            this.lblTotal.TabIndex = 0;
-            this.lblTotal.Text = "Total";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(201, 24);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(59, 17);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Moneda";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.txtCantidad);
-            this.groupBox2.Controls.Add(this.btnRegistrarMov);
-            this.groupBox2.Controls.Add(this.btnImprimirMov);
-            this.groupBox2.Controls.Add(this.cmbPersonaRol);
-            this.groupBox2.Controls.Add(this.cmbTiposRoles);
-            this.groupBox2.Controls.Add(this.cmbTipoMov);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(16, 451);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(842, 200);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Registrar movimientos";
-            // 
-            // txtCantidad
-            // 
-            this.txtCantidad.Location = new System.Drawing.Point(367, 156);
-            this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(227, 22);
-            this.txtCantidad.TabIndex = 5;
             // 
             // btnRegistrarMov
             // 
-            this.btnRegistrarMov.Location = new System.Drawing.Point(647, 21);
+            this.btnRegistrarMov.Location = new System.Drawing.Point(600, 520);
             this.btnRegistrarMov.Name = "btnRegistrarMov";
             this.btnRegistrarMov.Size = new System.Drawing.Size(158, 38);
-            this.btnRegistrarMov.TabIndex = 4;
+            this.btnRegistrarMov.TabIndex = 15;
             this.btnRegistrarMov.Text = "Registrar movimiento";
             this.btnRegistrarMov.UseVisualStyleBackColor = true;
-            this.btnRegistrarMov.Click += new System.EventHandler(this.btnRegistrarMov_Click);
+            this.btnRegistrarMov.Click += new System.EventHandler(this.btnRegistrarMov_Click_1);
             // 
-            // btnImprimirMov
+            // dgvSoles
             // 
-            this.btnImprimirMov.Location = new System.Drawing.Point(650, 75);
-            this.btnImprimirMov.Name = "btnImprimirMov";
-            this.btnImprimirMov.Size = new System.Drawing.Size(155, 38);
-            this.btnImprimirMov.TabIndex = 4;
-            this.btnImprimirMov.Text = "Imprimir ticket";
-            this.btnImprimirMov.UseVisualStyleBackColor = true;
+            this.dgvSoles.AllowUserToAddRows = false;
+            this.dgvSoles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSoles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6});
+            this.dgvSoles.Location = new System.Drawing.Point(29, 196);
+            this.dgvSoles.Name = "dgvSoles";
+            this.dgvSoles.RowTemplate.Height = 24;
+            this.dgvSoles.Size = new System.Drawing.Size(531, 247);
+            this.dgvSoles.TabIndex = 17;
+            this.dgvSoles.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dgvSoles_CellValidating);
             // 
-            // cmbPersonaRol
+            // dataGridViewTextBoxColumn4
             // 
-            this.cmbPersonaRol.FormattingEnabled = true;
-            this.cmbPersonaRol.Location = new System.Drawing.Point(367, 110);
-            this.cmbPersonaRol.Name = "cmbPersonaRol";
-            this.cmbPersonaRol.Size = new System.Drawing.Size(227, 24);
-            this.cmbPersonaRol.TabIndex = 1;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Soles";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 200;
             // 
-            // cmbTiposRoles
+            // dataGridViewTextBoxColumn5
             // 
-            this.cmbTiposRoles.FormattingEnabled = true;
-            this.cmbTiposRoles.Location = new System.Drawing.Point(367, 66);
-            this.cmbTiposRoles.Name = "cmbTiposRoles";
-            this.cmbTiposRoles.Size = new System.Drawing.Size(227, 24);
-            this.cmbTiposRoles.TabIndex = 1;
-            this.cmbTiposRoles.SelectedValueChanged += new System.EventHandler(this.cmbTiposRoles_SelectedValueChanged);
+            this.dataGridViewTextBoxColumn5.HeaderText = "Cant";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Width = 50;
             // 
-            // cmbTipoMov
+            // dataGridViewTextBoxColumn6
             // 
-            this.cmbTipoMov.FormattingEnabled = true;
-            this.cmbTipoMov.Location = new System.Drawing.Point(367, 21);
-            this.cmbTipoMov.Name = "cmbTipoMov";
-            this.cmbTipoMov.Size = new System.Drawing.Size(227, 24);
-            this.cmbTipoMov.TabIndex = 1;
+            this.dataGridViewTextBoxColumn6.HeaderText = "Importe";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
-            // label4
+            // btnImprimir
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(218, 110);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 17);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Sujeto";
+            this.btnImprimir.Location = new System.Drawing.Point(395, 520);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(155, 38);
+            this.btnImprimir.TabIndex = 16;
+            this.btnImprimir.Text = "Imprimir ticket";
+            this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
+            // cmbVentanillas
+            // 
+            this.cmbVentanillas.FormattingEnabled = true;
+            this.cmbVentanillas.Location = new System.Drawing.Point(531, 135);
+            this.cmbVentanillas.Name = "cmbVentanillas";
+            this.cmbVentanillas.Size = new System.Drawing.Size(227, 24);
+            this.cmbVentanillas.TabIndex = 10;
+            // 
+            // txtTotalDolares
+            // 
+            this.txtTotalDolares.Location = new System.Drawing.Point(976, 454);
+            this.txtTotalDolares.Name = "txtTotalDolares";
+            this.txtTotalDolares.ReadOnly = true;
+            this.txtTotalDolares.Size = new System.Drawing.Size(138, 22);
+            this.txtTotalDolares.TabIndex = 13;
+            this.txtTotalDolares.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(218, 66);
+            this.label3.Location = new System.Drawing.Point(382, 138);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 17);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Tipo sujeto";
+            this.label3.Size = new System.Drawing.Size(48, 17);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Sujeto";
             // 
-            // label2
+            // cmbTipoMov
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(218, 156);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 17);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Importe";
+            this.cmbTipoMov.FormattingEnabled = true;
+            this.cmbTipoMov.Location = new System.Drawing.Point(531, 85);
+            this.cmbTipoMov.Name = "cmbTipoMov";
+            this.cmbTipoMov.Size = new System.Drawing.Size(227, 24);
+            this.cmbTipoMov.TabIndex = 11;
             // 
-            // label1
+            // txtTotalSoles
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(218, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Tipo de movimiento";
+            this.txtTotalSoles.Location = new System.Drawing.Point(422, 454);
+            this.txtTotalSoles.Name = "txtTotalSoles";
+            this.txtTotalSoles.ReadOnly = true;
+            this.txtTotalSoles.Size = new System.Drawing.Size(138, 22);
+            this.txtTotalSoles.TabIndex = 14;
+            this.txtTotalSoles.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(382, 85);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(131, 17);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Tipo de movimiento";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(818, 457);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(91, 17);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Total dólares";
+            // 
+            // dgvDolares
+            // 
+            this.dgvDolares.AllowUserToAddRows = false;
+            this.dgvDolares.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDolares.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9});
+            this.dgvDolares.Location = new System.Drawing.Point(566, 196);
+            this.dgvDolares.Name = "dgvDolares";
+            this.dgvDolares.RowTemplate.Height = 24;
+            this.dgvDolares.Size = new System.Drawing.Size(548, 247);
+            this.dgvDolares.TabIndex = 12;
+            this.dgvDolares.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dgvDolares_CellValidating);
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.HeaderText = "Dolares";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.HeaderText = "Cant";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.Width = 50;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.HeaderText = "Importe";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(302, 457);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(77, 17);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "Total soles";
             // 
             // Balancin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.btnRegistrarMov);
+            this.Controls.Add(this.dgvSoles);
+            this.Controls.Add(this.dgvDolares);
+            this.Controls.Add(this.btnImprimir);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.cmbVentanillas);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txtTotalDolares);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtTotalSoles);
+            this.Controls.Add(this.cmbTipoMov);
             this.Name = "Balancin";
-            this.Size = new System.Drawing.Size(874, 618);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudNroBilletes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDenominaciones)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.Size = new System.Drawing.Size(1145, 657);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSoles)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDolares)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label lblTotal;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dgvDenominaciones;
-        private System.Windows.Forms.NumericUpDown nudNroBilletes;
-        private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.Button btnQuitar;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox CmbDenominaciones;
-        private System.Windows.Forms.ComboBox cmbMonedas;
-        private System.Windows.Forms.TextBox txtTotal;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Denominacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nro_billetes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Importe;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.Button btnRegistrarMov;
-        private System.Windows.Forms.Button btnImprimirMov;
-        private System.Windows.Forms.ComboBox cmbPersonaRol;
-        private System.Windows.Forms.ComboBox cmbTiposRoles;
-        private System.Windows.Forms.ComboBox cmbTipoMov;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridView dgvSoles;
+        private System.Windows.Forms.Button btnImprimir;
+        private System.Windows.Forms.ComboBox cmbVentanillas;
+        private System.Windows.Forms.TextBox txtTotalDolares;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmbTipoMov;
+        private System.Windows.Forms.TextBox txtTotalSoles;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridView dgvDolares;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Drawing.Printing.PrintDocument printTicket;
     }
 }

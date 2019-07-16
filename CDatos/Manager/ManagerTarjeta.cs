@@ -9,15 +9,15 @@ using Modelos.Modelos;
 
 namespace CDatos.Manager
 {
-    public class TarjetaManager
+    public class ManagerTarjeta
     {
         #region Methods
         /// <summary>
-        /// Saves a record to the TarjetasModel table.
+        /// Saves a record to the tarjeta table.
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>		
-        public bool Insert(TarjetaModel aTarjetasModel)
+        public bool Insert(TarjetaModel atarjeta)
         {
             try
             {
@@ -31,20 +31,20 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
-                    command.Parameters.AddWithValue("@Numero", aTarjetasModel.Numero);
-                    command.Parameters.AddWithValue("@Password", aTarjetasModel.Password == null ? (object)DBNull.Value : aTarjetasModel.Password);
-                    command.Parameters.AddWithValue("@CodControl", aTarjetasModel.Codcontrol);
-                    command.Parameters.AddWithValue("@FechaVencimiento", aTarjetasModel.Fechavencimiento == null ? (object)DBNull.Value : aTarjetasModel.Fechavencimiento);
-                    command.Parameters.AddWithValue("@FechaVinculacion", aTarjetasModel.Fechavinculacion);
-                    command.Parameters.AddWithValue("@Estado", aTarjetasModel.Estado);
-                    command.Parameters.AddWithValue("@FECHA_MODIFICACION", aTarjetasModel.Fecha_modificacion == null ? (object)DBNull.Value : aTarjetasModel.Fecha_modificacion);
-                    command.Parameters.AddWithValue("@USUARIO_CREADOR", aTarjetasModel.Usuario_creador);
-                    command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aTarjetasModel.Usuario_modificador == null ? (object)DBNull.Value : aTarjetasModel.Usuario_modificador);
-                    command.Parameters.AddWithValue("@FECHA_CREACION", aTarjetasModel.Fecha_creacion);
+                    command.Parameters.AddWithValue("@Numero", atarjeta.Numero);
+                    command.Parameters.AddWithValue("@Password", atarjeta.Password == null ? (object)DBNull.Value : atarjeta.Password);
+                    command.Parameters.AddWithValue("@CodControl", atarjeta.Codcontrol);
+                    command.Parameters.AddWithValue("@FechaVencimiento", atarjeta.Fechavencimiento == null ? (object)DBNull.Value : atarjeta.Fechavencimiento);
+                    command.Parameters.AddWithValue("@FechaVinculacion", atarjeta.Fechavinculacion == null ? (object)DBNull.Value : atarjeta.Fechavinculacion);
+                    command.Parameters.AddWithValue("@Estado", atarjeta.Estado);
+                    command.Parameters.AddWithValue("@FECHA_MODIFICACION", atarjeta.Fecha_modificacion == null ? (object)DBNull.Value : atarjeta.Fecha_modificacion);
+                    command.Parameters.AddWithValue("@USUARIO_CREADOR", atarjeta.Usuario_creador);
+                    command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", atarjeta.Usuario_modificador == null ? (object)DBNull.Value : atarjeta.Usuario_modificador);
+                    command.Parameters.AddWithValue("@FECHA_CREACION", atarjeta.Fecha_creacion);
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "TarjetasModelInsert";
+                    command.CommandText = "tarjetasInsert";
 
                     int afectados = command.ExecuteNonQuery();
 
@@ -62,17 +62,18 @@ namespace CDatos.Manager
             }
             catch (Exception)
             {
+                throw;
                 return false;
             }
         }
 
 
         /// <summary>
-        /// Updates a record to the TarjetasModel table.
+        /// Updates a record to the tarjeta table.
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>
-        public bool Update(TarjetaModel aTarjetasModel)
+        public bool Update(TarjetaModel atarjeta)
         {
             try
             {
@@ -86,20 +87,20 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
-                    command.Parameters.AddWithValue("@Numero", aTarjetasModel.Numero);
-                    command.Parameters.AddWithValue("@Password", aTarjetasModel.Password == null ? (object)DBNull.Value : aTarjetasModel.Password);
-                    command.Parameters.AddWithValue("@CodControl", aTarjetasModel.Codcontrol);
-                    command.Parameters.AddWithValue("@FechaVencimiento", aTarjetasModel.Fechavencimiento == null ? (object)DBNull.Value : aTarjetasModel.Fechavencimiento);
-                    command.Parameters.AddWithValue("@FechaVinculacion", aTarjetasModel.Fechavinculacion);
-                    command.Parameters.AddWithValue("@Estado", aTarjetasModel.Estado);
-                    command.Parameters.AddWithValue("@FECHA_MODIFICACION", aTarjetasModel.Fecha_modificacion == null ? (object)DBNull.Value : aTarjetasModel.Fecha_modificacion);
-                    command.Parameters.AddWithValue("@USUARIO_CREADOR", aTarjetasModel.Usuario_creador);
-                    command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aTarjetasModel.Usuario_modificador == null ? (object)DBNull.Value : aTarjetasModel.Usuario_modificador);
-                    command.Parameters.AddWithValue("@FECHA_CREACION", aTarjetasModel.Fecha_creacion);
+                    command.Parameters.AddWithValue("@Numero", atarjeta.Numero);
+                    command.Parameters.AddWithValue("@Password", atarjeta.Password == null ? (object)DBNull.Value : atarjeta.Password);
+                    command.Parameters.AddWithValue("@CodControl", atarjeta.Codcontrol);
+                    command.Parameters.AddWithValue("@FechaVencimiento", atarjeta.Fechavencimiento == null ? (object)DBNull.Value : atarjeta.Fechavencimiento);
+                    command.Parameters.AddWithValue("@FechaVinculacion", atarjeta.Fechavinculacion == null ? (object)DBNull.Value : atarjeta.Fechavinculacion);
+                    command.Parameters.AddWithValue("@Estado", atarjeta.Estado);
+                    command.Parameters.AddWithValue("@FECHA_MODIFICACION", atarjeta.Fecha_modificacion == null ? (object)DBNull.Value : atarjeta.Fecha_modificacion);
+                    command.Parameters.AddWithValue("@USUARIO_CREADOR", atarjeta.Usuario_creador);
+                    command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", atarjeta.Usuario_modificador == null ? (object)DBNull.Value : atarjeta.Usuario_modificador);
+                    command.Parameters.AddWithValue("@FECHA_CREACION", atarjeta.Fecha_creacion);
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "TarjetasModelUpdate";
+                    command.CommandText = "tarjetasUpdate";
 
                     int afectados = command.ExecuteNonQuery();
 
@@ -123,7 +124,7 @@ namespace CDatos.Manager
 
 
         /// <summary>
-        /// Deletes record to the TarjetasModel table.
+        /// Deletes record to the tarjeta table.
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>
@@ -145,7 +146,7 @@ namespace CDatos.Manager
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "TarjetasModelDelete";
+                    command.CommandText = "tarjetasDelete";
                     int afectados = command.ExecuteNonQuery();
 
                     // Commit the transaction.
@@ -168,11 +169,11 @@ namespace CDatos.Manager
 
 
         /// <summary>
-        /// Selects the Single object of TarjetasModel table.
+        /// Selects the Single object of tarjeta table.
         /// </summary>
-        public TarjetaModel GetTarjetasModel(int aNumero)
+        public TarjetaModel Gettarjeta(int aNumero)
         {
-            TarjetaModel TarjetasModel = null;
+            TarjetaModel tarjeta = null;
 
             try
             {
@@ -187,7 +188,7 @@ namespace CDatos.Manager
 
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.CommandText = "TarjetasModelSelect";
+                    command.CommandText = "tarjetasSelect";
 
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -197,17 +198,17 @@ namespace CDatos.Manager
                         {
 
                             int Numero = (int)(reader["Numero"]);
-                            short? Password = reader["Password"] as short?;
-                            byte CodControl = (byte)(reader["CodControl"]);
+                            int? Password = reader["Password"] as int?;
+                            int CodControl = (int)(reader["CodControl"]);
                             DateTime? FechaVencimiento = reader["FechaVencimiento"] as DateTime?;
-                            DateTime FechaVinculacion = (DateTime)(reader["FechaVinculacion"]);
+                            DateTime? FechaVinculacion = reader["FechaVinculacion"] as DateTime?;
                             bool Estado = (bool)(reader["Estado"]);
                             DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
-                            int USUARIO_CREADOR = (int)(reader["USUARIO_CREADOR"]);
-                            int? USUARIO_MODIFICADOR = reader["USUARIO_MODIFICADOR"] as int?;
+                            string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
+                            string USUARIO_MODIFICADOR = reader["USUARIO_MODIFICADOR"] as string;
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
 
-                            TarjetasModel = new TarjetaModel
+                            tarjeta = new TarjetaModel
                             {
                                 Numero = Numero,
                                 Password = Password,
@@ -225,7 +226,7 @@ namespace CDatos.Manager
                     }
                 }
 
-                return TarjetasModel;
+                return tarjeta;
             }
             catch (Exception)
             {
@@ -235,12 +236,12 @@ namespace CDatos.Manager
 
 
         /// <summary>
-        /// Selects all the objects of TarjetasModel table.
+        /// Selects all the objects of tarjeta table.
         /// </summary>
-        public List<TarjetaModel> TarjetasModelSelectAll()
+        public List<TarjetaModel> tarjetaSelectAll()
         {
 
-            List<TarjetaModel> TarjetasModellist = new List<TarjetaModel>();
+            List<TarjetaModel> tarjetalist = new List<TarjetaModel>();
 
             try
             {
@@ -252,7 +253,7 @@ namespace CDatos.Manager
 
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.CommandText = "TarjetasModelSelectAll";
+                    command.CommandText = "tarjetasSelectAll";
 
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -262,17 +263,17 @@ namespace CDatos.Manager
                         {
 
                             int Numero = (int)(reader["Numero"]);
-                            short? Password = reader["Password"] as short?;
-                            byte CodControl = (byte)(reader["CodControl"]);
+                            int? Password = reader["Password"] as int?;
+                            int CodControl = (int)(reader["CodControl"]);
                             DateTime? FechaVencimiento = reader["FechaVencimiento"] as DateTime?;
                             DateTime FechaVinculacion = (DateTime)(reader["FechaVinculacion"]);
                             bool Estado = (bool)(reader["Estado"]);
                             DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
-                            int USUARIO_CREADOR = (int)(reader["USUARIO_CREADOR"]);
-                            int? USUARIO_MODIFICADOR = reader["USUARIO_MODIFICADOR"] as int?;
+                            string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
+                            string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
 
-                            TarjetasModellist.Add(new TarjetaModel
+                            tarjetalist.Add(new TarjetaModel
                             {
                                 Numero = Numero,
                                 Password = Password,
@@ -290,22 +291,22 @@ namespace CDatos.Manager
                     }
                 }
 
-                return TarjetasModellist;
+                return tarjetalist;
             }
             catch (Exception)
             {
-                return TarjetasModellist;
+                return tarjetalist;
             }
         }
 
 
         /// <summary>
-        /// Selects the Multiple objects of TarjetasModel table by a given criteria.
+        /// Selects the Multiple objects of tarjeta table by a given criteria.
         /// </summary>
-        public List<TarjetaModel> TarjetasModelSelectbyUNKNOW(string aValue)
+        public List<TarjetaModel> tarjetaSelectbyId(string aValue)
         {
 
-            List<TarjetaModel> TarjetasModellist = new List<TarjetaModel>();
+            List<TarjetaModel> tarjetalist = new List<TarjetaModel>();
 
             try
             {
@@ -315,11 +316,11 @@ namespace CDatos.Manager
 
                     SqlCommand command = connection.CreateCommand();
 
-                    command.Parameters.AddWithValue("@UNKNOW", aValue);
+                    command.Parameters.AddWithValue("@numero", aValue);
 
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.CommandText = "TarjetasModelSelectbyUNKNOW";
+                    command.CommandText = "TarjetasSelectbyId";
 
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -329,17 +330,17 @@ namespace CDatos.Manager
                         {
 
                             int Numero = (int)(reader["Numero"]);
-                            short? Password = reader["Password"] as short?;
-                            byte CodControl = (byte)(reader["CodControl"]);
+                            int? Password = reader["Password"] as int?;
+                            int CodControl = (int)(reader["CodControl"]);
                             DateTime? FechaVencimiento = reader["FechaVencimiento"] as DateTime?;
-                            DateTime FechaVinculacion = (DateTime)(reader["FechaVinculacion"]);
+                            DateTime? FechaVinculacion = reader["FechaVinculacion"] as DateTime?;
                             bool Estado = (bool)(reader["Estado"]);
                             DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
-                            int USUARIO_CREADOR = (int)(reader["USUARIO_CREADOR"]);
-                            int? USUARIO_MODIFICADOR = reader["USUARIO_MODIFICADOR"] as int?;
+                            string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
+                            string USUARIO_MODIFICADOR = reader["USUARIO_MODIFICADOR"] as string;
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
 
-                            TarjetasModellist.Add(new TarjetaModel
+                            tarjetalist.Add(new TarjetaModel
                             {
                                 Numero = Numero,
                                 Password = Password,
@@ -357,11 +358,11 @@ namespace CDatos.Manager
                     }
                 }
 
-                return TarjetasModellist;
+                return tarjetalist;
             }
             catch (Exception)
             {
-                return TarjetasModellist;
+                return tarjetalist;
             }
         }
         #endregion

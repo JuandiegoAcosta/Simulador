@@ -14,7 +14,7 @@ namespace CDatos.Manager
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>		
-        public bool Insert(VentanillaModel aVentanillaModel)
+        public bool Insert(VentanillaModel aVentanillaModel, int ID_user)
         {
             try
             {
@@ -29,11 +29,9 @@ namespace CDatos.Manager
                     command.Transaction = sqlTran;
 
                     command.Parameters.AddWithValue("@pMode", 4);
+                    command.Parameters.AddWithValue("@ID_user", ID_user);
                     command.Parameters.AddWithValue("@Descripcion", aVentanillaModel.Descripcion);
                     command.Parameters.AddWithValue("@IdSucursal", aVentanillaModel.Idsucursal);
-                    command.Parameters.AddWithValue("@FECHA_CREACION", aVentanillaModel.Fecha_creacion);
-                    command.Parameters.AddWithValue("@USUARIO_CREADOR", aVentanillaModel.Usuario_creador);
-
 
                     command.CommandType = CommandType.StoredProcedure;
                     command.CommandText = "sp_tVentanilla";
@@ -64,7 +62,7 @@ namespace CDatos.Manager
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>
-        public bool Update(VentanillaModel aVentanillaModel)
+        public bool Update(VentanillaModel aVentanillaModel, int ID_user)
         {
             try
             {
@@ -79,17 +77,21 @@ namespace CDatos.Manager
                     command.Transaction = sqlTran;
 
                     command.Parameters.AddWithValue("@pMode", 5);
+                    command.Parameters.AddWithValue("@ID_user", ID_user);
                     command.Parameters.AddWithValue("@ID_Ventanilla", aVentanillaModel.Id_ventanilla);
                     command.Parameters.AddWithValue("@Descripcion", aVentanillaModel.Descripcion);
                     command.Parameters.AddWithValue("@IdSucursal", aVentanillaModel.Idsucursal);
-                    command.Parameters.AddWithValue("@FECHA_MODIFICACION", aVentanillaModel.Fecha_modificacion == null ? (object)DBNull.Value : aVentanillaModel.Fecha_modificacion);
-                    command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aVentanillaModel.Usuario_modificador == null ? (object)DBNull.Value : aVentanillaModel.Usuario_modificador);
+
+                    SqlParameter paramId = new SqlParameter("@IDENTITY", SqlDbType.Int);
+                    paramId.Direction = ParameterDirection.Output;
+                    command.Parameters.Add(paramId);
 
 
                     command.CommandType = CommandType.StoredProcedure;
                     command.CommandText = "sp_tVentanilla";
 
                     int afectados = command.ExecuteNonQuery();
+                    int identity = Convert.ToInt32(command.Parameters["@IDENTITY"].Value.ToString());
 
                     // Commit the transaction.
                     sqlTran.Commit();
@@ -189,20 +191,12 @@ namespace CDatos.Manager
                             int ID_VentanillaModel = (int)(reader["ID_Ventanilla"]);
                             string Descripcion = (string)(reader["Descripcion"]);
                             int IdSucursal = (int)(reader["IdSucursal"]);
-                            DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
-                            DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
-                            string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
-                            string USUARIO_MODIFICADOR = (reader["USUARIO_MODIFICADOR"]) == DBNull.Value ? null : (string)(reader["USUARIO_MODIFICADOR"]);
 
                             VentanillaModel = new VentanillaModel
                             {
                                 Id_ventanilla = ID_VentanillaModel,
                                 Descripcion = Descripcion,
                                 Idsucursal = IdSucursal,
-                                Fecha_creacion = FECHA_CREACION,
-                                Fecha_modificacion = FECHA_MODIFICACION,
-                                Usuario_creador = USUARIO_CREADOR,
-                                Usuario_modificador = USUARIO_MODIFICADOR,
 
                             };
                         }
@@ -217,7 +211,51 @@ namespace CDatos.Manager
             }
         }
 
+        public VentanillaModel GetVentanillaModelxUsuario(int ID_Usuario)
+        {
+            VentanillaModel VentanillaModel = null;
 
+            try
+            {
+                using (var connection = Util.ConnectionFactory.conexion())
+                {
+                    connection.Open();
+
+                    SqlCommand command = connection.CreateCommand();
+                    command.Parameters.AddWithValue("@PId_Usuario", ID_Usuario);
+
+
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.CommandText = "SelectVentanillaXUsuario";
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+
+                            int ID_VentanillaModel = (int)(reader["ID_Ventanilla"]);
+                            string Descripcion = (string)(reader["Descripcion"]);
+
+                            VentanillaModel = new VentanillaModel
+                            {
+                                Id_ventanilla = ID_VentanillaModel,
+                                Descripcion = Descripcion
+
+                            };
+                        }
+                    }
+                }
+
+                return VentanillaModel;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
         /// <summary>
         /// Selects all the objects of VentanillaModel table.
         /// </summary>
@@ -249,20 +287,12 @@ namespace CDatos.Manager
                             int ID_VentanillaModel = (int)(reader["ID_Ventanilla"]);
                             string Descripcion = (string)(reader["Descripcion"]);
                             int IdSucursal = (int)(reader["IdSucursal"]);
-                            DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
-                            DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
-                            string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
-                            string USUARIO_MODIFICADOR = (reader["USUARIO_MODIFICADOR"]) == DBNull.Value ? null : (string)(reader["USUARIO_MODIFICADOR"]);
 
                             VentanillaModellist.Add(new VentanillaModel
                             {
                                 Id_ventanilla = ID_VentanillaModel,
                                 Descripcion = Descripcion,
                                 Idsucursal = IdSucursal,
-                                Fecha_creacion = FECHA_CREACION,
-                                Fecha_modificacion = FECHA_MODIFICACION,
-                                Usuario_creador = USUARIO_CREADOR,
-                                Usuario_modificador = USUARIO_MODIFICADOR,
 
                             });
                         }
@@ -310,20 +340,12 @@ namespace CDatos.Manager
                             int ID_VentanillaModel = (int)(reader["ID_VentanillaModel"]);
                             string Descripcion = (string)(reader["Descripcion"]);
                             int IdSucursal = (int)(reader["IdSucursal"]);
-                            DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
-                            DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
-                            string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
-                            string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
 
                             VentanillaModellist.Add(new VentanillaModel
                             {
                                 Id_ventanilla = ID_VentanillaModel,
                                 Descripcion = Descripcion,
                                 Idsucursal = IdSucursal,
-                                Fecha_creacion = FECHA_CREACION,
-                                Fecha_modificacion = FECHA_MODIFICACION,
-                                Usuario_creador = USUARIO_CREADOR,
-                                Usuario_modificador = USUARIO_MODIFICADOR,
 
                             });
                         }
@@ -337,7 +359,7 @@ namespace CDatos.Manager
                 return VentanillaModellist;
             }
         }
-        public List<VentanillaModel> GetVentanillasXSucursal(int sucursal)
+        public List<VentanillaModel> GetVentanillasXSucursal(int sucursal,int turno)
         {
             List<VentanillaModel> VentanillaModellist = new List<VentanillaModel>();
 
@@ -350,6 +372,7 @@ namespace CDatos.Manager
                     SqlCommand command = connection.CreateCommand();
 
                     command.Parameters.AddWithValue("@sucursal", sucursal);
+                    command.Parameters.AddWithValue("@turno", turno);
 
 
                     command.CommandType = CommandType.StoredProcedure;
@@ -363,23 +386,13 @@ namespace CDatos.Manager
                         while (reader.Read())
                         {
 
-                            int ID_VentanillaModel = (int)(reader["ID_Ventanilla"]);
+                            int ID_VentanillaModel = (int)(reader["ID"]);
                             string Descripcion = (string)(reader["Descripcion"]);
-                            int IdSucursal = (int)(reader["IdSucursal"]);
-                            DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
-                            DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
-                            string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
-                            string USUARIO_MODIFICADOR = (reader["USUARIO_MODIFICADOR"]) == DBNull.Value ? null : (string)(reader["USUARIO_MODIFICADOR"]);
 
                             VentanillaModellist.Add(new VentanillaModel
                             {
                                 Id_ventanilla = ID_VentanillaModel,
-                                Descripcion = Descripcion,
-                                Idsucursal = IdSucursal,
-                                Fecha_creacion = FECHA_CREACION,
-                                Fecha_modificacion = FECHA_MODIFICACION,
-                                Usuario_creador = USUARIO_CREADOR,
-                                Usuario_modificador = USUARIO_MODIFICADOR,
+                                Descripcion = Descripcion
 
                             });
                         }

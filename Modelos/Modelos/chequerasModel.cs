@@ -29,27 +29,27 @@ namespace Modelos.Modelos
         { get; set; }
 
         /// <summary>
+        /// Gets or sets the Cantidad_cheques value.
+        /// </summary>
+        public int Cantidad_cheques
+        { get; set; }
+
+        /// <summary>
         /// Gets or sets the Inicio value.
         /// </summary>
-        public byte Inicio
+        public int Inicio
         { get; set; }
 
         /// <summary>
         /// Gets or sets the Fin value.
         /// </summary>
-        public byte Fin
+        public int Fin
         { get; set; }
 
         /// <summary>
         /// Gets or sets the Id_cuenta value.
         /// </summary>
         public string Id_cuenta
-        { get; set; }
-
-        /// <summary>
-        /// Gets or sets the Fecha_modificacion value.
-        /// </summary>
-        public int Cantidad_cheques
         { get; set; }
 
         /// <summary>

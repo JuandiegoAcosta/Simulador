@@ -12,12 +12,13 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using System.Data;
 
 namespace ServiciosBancarios
 {
     // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de clase "Service1" en el código, en svc y en el archivo de configuración.
     // NOTE: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione Service1.svc o Service1.svc.cs en el Explorador de soluciones e inicie la depuración.
-     public class SistemaBancario : ICobroChequeService, IEmpresaService, IPagoServicioService, IRecaudosService, ITipoMonedaService, ITipoMovimientoService, IVentanillaService, IBancoService, IComponenteService, IHorariosAtencionService, IPermisosUsuarioService, IPersonaService, IRolesService, IRolUsuarioService, ISucursalService, ITipoDocumentoService, ITurnosService, ITurnoUsuarioService, ICuentaService
+     public class SistemaBancario : ICobroChequeService, IEmpresaService, IPagoServicioService, IRecaudosService, ITipoMonedaService, ITipoMovimientoService, IVentanillaService, IBancoService, IComponenteService, IHorariosAtencionService, IPermisosUsuarioService, IPersonaService, IRolesService, IRolUsuarioService, ISucursalService, ITipoDocumentoService, ITurnosService, ITurnoUsuarioService, ICuentaService,ICajaChicaService,IDetalleCajaChicaService
     {
         #region [ Varibles Globales ]
         #region [ Ventanilla Front ]
@@ -32,6 +33,8 @@ namespace ServiciosBancarios
 
         #region [ Ventanilla Back ]
         private BancoMethods BLBanco;
+        private CajaChicaMethods BLCajaChica;
+        private DetalleCajaChicaMethods BLDetalleCajaChica;
         private ComponenteMethods BLComponente;
         private HorariosAtencionMethods BLHorariosAtencion;
         private PermisosUsuarioMethods BLPermisosUsuario;
@@ -66,6 +69,8 @@ namespace ServiciosBancarios
 
             #region [ Ventanilla Back ]
             BLBanco = new BancoMethods();
+            BLCajaChica = new CajaChicaMethods();
+            BLDetalleCajaChica = new DetalleCajaChicaMethods();
             BLComponente = new ComponenteMethods();
             BLHorariosAtencion = new HorariosAtencionMethods();
             BLPermisosUsuario = new PermisosUsuarioMethods();
@@ -256,14 +261,14 @@ namespace ServiciosBancarios
 
         #region [ Ventanilla ]
 
-        bool IVentanillaService.Ventanilla_Crear(VentanillaModel aVentanilla)
+        bool IVentanillaService.Ventanilla_Crear(VentanillaModel aVentanilla, int id_user)
         {
-            return BLVentanila.Crear(aVentanilla);
+            return BLVentanila.Crear(aVentanilla, id_user);
         }
 
-        bool IVentanillaService.Ventanilla_Editar(VentanillaModel aVentanilla)
+        bool IVentanillaService.Ventanilla_Editar(VentanillaModel aVentanilla, int id_user)
         {
-            return BLVentanila.Editar(aVentanilla);
+            return BLVentanila.Editar(aVentanilla, id_user);
         }
 
         bool IVentanillaService.Ventanilla_Eliminar(int aID_VentanillaModel)
@@ -280,9 +285,13 @@ namespace ServiciosBancarios
         {
             return BLVentanila.ObtenerUno(aID_VentanillaModel);
         }
-        List<VentanillaModel> IVentanillaService.GetVentanillasXSucursal(int sucursal)
+        VentanillaModel IVentanillaService.Ventanilla_ObtenerUnoXusuario(int Id_Usuario)
         {
-            return BLVentanila.ObtenerVentanillasXSucursal(sucursal);
+            return BLVentanila.ObtenerUnoXUsuario(Id_Usuario);
+        }
+        List<VentanillaModel> IVentanillaService.GetVentanillasXSucursal(int sucursal,int turno)
+        {
+            return BLVentanila.ObtenerVentanillasXSucursal(sucursal,turno);
         }
         #endregion
 
@@ -291,14 +300,14 @@ namespace ServiciosBancarios
         #region [ Ventanilla Back ]
 
         #region [ Banco ]
-        public bool Banco_Crear(BancoModel aBanco)
+        public bool Banco_Crear(BancoModel aBanco, int id_user)
         {
-            return BLBanco.Crear(aBanco);
+            return BLBanco.Crear(aBanco, id_user);
         }
 
-        public bool Banco_Editar(BancoModel aBanco)
+        public bool Banco_Editar(BancoModel aBanco, int id_user)
         {
-            return BLBanco.Editar(aBanco);
+            return BLBanco.Editar(aBanco, id_user);
         }
 
         public bool Banco_Eliminar(int aID_Banco)
@@ -317,16 +326,21 @@ namespace ServiciosBancarios
         }
         #endregion
 
+    
+
+        
+
+
         #region [ Componente ]
 
-        public bool Componente_Crear(ComponenteModel aComponente)
+        public bool Componente_Crear(ComponenteModel aComponente, int id_user)
         {
-            return BLComponente.Crear(aComponente);
+            return BLComponente.Crear(aComponente, id_user);
         }
 
-        public bool Componente_Editar(ComponenteModel aComponente)
+        public bool Componente_Editar(ComponenteModel aComponente, int id_user)
         {
-            return BLComponente.Editar(aComponente);
+            return BLComponente.Editar(aComponente, id_user);
         }
 
         public bool Componente_Eliminar(int aID_Componente)
@@ -344,6 +358,10 @@ namespace ServiciosBancarios
             return BLComponente.ObtenerTodos();
         }
 
+        public List<ComponenteModel> Componente_ObtenerComponentesRol(int aID_Rol)
+        {
+            return BLComponente.ObtenerComponentesRol(aID_Rol);
+        }
 
 
         #endregion
@@ -378,14 +396,14 @@ namespace ServiciosBancarios
         #endregion
 
         #region [ Permisos Usuario ]
-        public bool PermisosUsuario_Crear(PermisosUsuarioModel aPermisosUsuario)
+        public bool PermisosUsuario_Crear(PermisosUsuarioModel aPermisosUsuario, int id_user)
         {
-            return BLPermisosUsuario.Crear(aPermisosUsuario);
+            return BLPermisosUsuario.Crear(aPermisosUsuario, id_user);
         }
 
-        public bool PermisosUsuario_Editar(PermisosUsuarioModel aPermisosUsuario)
+        public bool PermisosUsuario_Editar(PermisosUsuarioModel aPermisosUsuario, int id_user)
         {
-            return BLPermisosUsuario.Editar(aPermisosUsuario);
+            return BLPermisosUsuario.Editar(aPermisosUsuario, id_user);
         }
 
         public bool PermisosUsuario_Eliminar(int aID_PermisosUsuario)
@@ -412,7 +430,7 @@ namespace ServiciosBancarios
             return BLPersona.Crear(aPersona);
         }
 
-        public bool Persona_Editar(PersonaModel aPersona)
+        public bool Persona_Editar(PersonaModel aPersona, int id_user)
         {
             return BLPersona.Editar(aPersona);
         }
@@ -452,16 +470,41 @@ namespace ServiciosBancarios
             return BLPersona.GetComponentes(idUsuario);
         }
 
+        public List<RolesModel> Persona_GetRolesUsuario(string aUsuario)
+        {
+            return BLPersona.GetRolesUsuario(aUsuario);
+        }
+
+        public List<PersonaModel> GetPersonasPorRol(int idRol)
+        {
+            return BLPersona.GetPersonasPorRol(idRol);
+        }
+
+        public List<PersonaModel> Persona_GetPersonaNombreApellidos(string nombre, string apellido)
+        {
+            return BLPersona.GetPersonaNombreApellidos(nombre,apellido);
+        }
+
+        public bool Persona_CrearNuevoUsuario(int idPersona, string Usuario, string Contraseña, bool Estado)
+        {
+            return BLPersona.CrearNuevoUsuario(idPersona,Usuario,Contraseña,Estado);
+        }
+
+        public List<PersonaModel> Persona_UsuarioSelectAll()
+        {
+            return BLPersona.UsuarioSelectAll();
+        }
+
         #endregion
 
         #region [ Roles ]
 
-        public bool Roles_Crear(RolesModel aRoles)
+        public bool Roles_Crear(RolesModel aRoles, int id_user)
         {
             return BLRoles.Crear(aRoles);
         }
 
-        public bool Roles_Editar(RolesModel aRoles)
+        public bool Roles_Editar(RolesModel aRoles, int id_user)
         {
             return BLRoles.Editar(aRoles);
         }
@@ -481,18 +524,21 @@ namespace ServiciosBancarios
             return BLRoles.ObtenerTodos();
         }
 
-
+        public DataTable Roles_RolesPorPersona(int aID_Usuario)
+        {
+            return BLRoles.RolesPorPersona(aID_Usuario);
+        }
 
         #endregion
 
         #region [ Rol Usuario ]
 
-        public bool RolUsuario_Crear(RolUsuarioModel aRolUsuario)
+        public bool RolUsuario_Crear(RolUsuarioModel aRolUsuario, int id_user)
         {
             return BLRolUsuario.Crear(aRolUsuario);
         }
 
-        public bool RolUsuario_Editar(RolUsuarioModel aRolUsuario)
+        public bool RolUsuario_Editar(RolUsuarioModel aRolUsuario, int id_user)
         {
             return BLRolUsuario.Editar(aRolUsuario);
         }
@@ -517,14 +563,14 @@ namespace ServiciosBancarios
 
         #region [ Sucursal ]
 
-        public bool Sucursal_Crear(SucursalModel aSucursal)
+        public bool Sucursal_Crear(SucursalModel aSucursal, int id_user)
         {
-            return BLSucursal.Crear(aSucursal);
+            return BLSucursal.Crear(aSucursal, id_user);
         }
 
-        public bool Sucursal_Editar(SucursalModel aSucursal)
+        public bool Sucursal_Editar(SucursalModel aSucursal, int id_user)
         {
-            return BLSucursal.Editar(aSucursal);
+            return BLSucursal.Editar(aSucursal, id_user);
         }
 
         public bool Sucursal_Eliminar(int aID_Sucursal)
@@ -576,14 +622,14 @@ namespace ServiciosBancarios
 
         #region [ Turnos ]
 
-        public bool Turnos_Crear(TurnosModel aTurnos)
+        public bool Turnos_Crear(TurnosModel aTurnos, int id_user)
         {
-            return BLTurnos.Crear(aTurnos);
+            return BLTurnos.Crear(aTurnos, id_user);
         }
 
-        public bool Turnos_Editar(TurnosModel aTurnos)
+        public bool Turnos_Editar(TurnosModel aTurnos, int id_user)
         {
-            return BLTurnos.Editar(aTurnos);
+            return BLTurnos.Editar(aTurnos, id_user);
         }
 
         public bool Turnos_Eliminar(int aID_Turnos)
@@ -594,6 +640,10 @@ namespace ServiciosBancarios
         public TurnosModel Turnos_ObtenerUno(int aID_Turnos)
         {
             return BLTurnos.ObtenerUno(aID_Turnos);
+        }
+        public TurnosModel Turnos_ObtenerUnoXUsuario(int Id_usuario)
+        {
+            return BLTurnos.ObtenerUnoXUsuario(Id_usuario);
         }
 
         public List<TurnosModel> Turnos_ObtenerTodos()
@@ -608,14 +658,14 @@ namespace ServiciosBancarios
 
         #region [ Turno Usuario ]
 
-        public bool TurnoUsuario_Crear(TurnoUsuarioModel aTurnoUsuario)
+        public bool TurnoUsuario_Crear(TurnoUsuarioModel aTurnoUsuario, int id_user)
         {
-            return BLTurnoUsuario.Crear(aTurnoUsuario);
+            return BLTurnoUsuario.Crear(aTurnoUsuario, id_user);
         }
 
-        public bool TurnoUsuario_Editar(TurnoUsuarioModel aTurnoUsuario)
+        public bool TurnoUsuario_Editar(TurnoUsuarioModel aTurnoUsuario, int id_user)
         {
-            return BLTurnoUsuario.Editar(aTurnoUsuario);
+            return BLTurnoUsuario.Editar(aTurnoUsuario, id_user);
         }
 
         public bool TurnoUsuario_Eliminar(int aID_TurnoUsuario)
@@ -643,31 +693,97 @@ namespace ServiciosBancarios
 
         public bool Cuenta_Crear(CuentasModel aCuenta)
         {
-            return BLCuenta.Crear(aCuenta);
+            return BLCuenta.Insert(aCuenta);
         }
 
         public bool Cuenta_Editar(CuentasModel aCuenta)
         {
-            return BLCuenta.Actualizar(aCuenta);
+            return BLCuenta.Update(aCuenta);
         }
 
         public CuentasModel Cuenta_ObtenerUno(string aNro_Cuenta)
         {
-            return BLCuenta.ObtenerCuenta(aNro_Cuenta);
+            return BLCuenta.Getcuenta(aNro_Cuenta);
         }
 
         public List<CuentasModel> Cuenta_ObtenerTodos(int aID_Persona)
         {
-            return BLCuenta.ObtenerTodosCuentasUsuario(aID_Persona);
+            return BLCuenta.cuentaSelectbyId_cliente(aID_Persona);
         }
-
+        #endregion
         public List<VentanillaModel> GetVentanillasXSucursal(int Idsucursal)
         {
             throw new NotImplementedException();
         }
+        #region [ Caja Chica]
+
+        
+        public int Crear(CajaChicaModel aCajaChica,int id_user)
+        {
+            return BLCajaChica.Crear(aCajaChica,id_user);
+        }
+
+        public bool Editar(CajaChicaModel aCajaChica, int id_user)
+        {
+            return BLCajaChica.Editar(aCajaChica, id_user);
+        }
+
+        public bool Eliminar(int aID_CajaChica)
+        {
+            return BLCajaChica.Eliminar(aID_CajaChica);
+        }
+
+        public CajaChicaModel ObtenerUno(int aID_CajaChica)
+        {
+            return BLCajaChica.ObtenerUno(aID_CajaChica);
+        }
+
+        public List<CajaChicaModel> ObtenerTodos()
+        {
+            return BLCajaChica.ObtenerTodos();
+        }
+
+        public bool Persona_Crear(PersonaModel aPersona, int id_user)
+        {
+            throw new NotImplementedException();
+        }
+
+        
+
+        
+
+        
+
+        
+        #endregion
+        #region [Detalle caja Chica]
+
+        public bool DetalleCajaChica_Crear(DetalleCajaChicaModel aDetalleCajaChica, int id_user)
+        {
+            return BLDetalleCajaChica.Crear(aDetalleCajaChica, id_user);
+        }
+        public bool DetalleCajaChica_Editar(DetalleCajaChicaModel aDetalleCajaChica, int id_user)
+        {
+            return BLDetalleCajaChica.Editar(aDetalleCajaChica, id_user);
+        }
+
+        public bool DetalleCajaChica_Eliminar(int aID_DetalleCajaChica)
+        {
+            return BLDetalleCajaChica.Eliminar(aID_DetalleCajaChica);
+        }
+
+        public DetalleCajaChicaModel DetalleCajaChica_ObtenerUno(int aID_DetalleCajaChica)
+        {
+            return BLDetalleCajaChica.ObtenerUno(aID_DetalleCajaChica);
+        }
+
+        public List<DetalleCajaChicaModel> DetalleCajaChica_ObtenerTodos()
+        {
+            return BLDetalleCajaChica.ObtenerTodos();
+        }
+
 
         #endregion
-
         #endregion
     }
 }

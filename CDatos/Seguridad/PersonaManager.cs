@@ -17,7 +17,7 @@ namespace CDatos.Manager
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>		
-        public bool Insert(PersonaModel aPersonaModel)
+        public bool Insert(PersonaModel apersona)
         {
             try
             {
@@ -30,28 +30,30 @@ namespace CDatos.Manager
                     SqlCommand command = connection.CreateCommand();
 
                     command.Transaction = sqlTran;
-
                     command.Parameters.AddWithValue("@pMode", 4);
+                    command.Parameters.AddWithValue("@NombreUsuario", apersona.Nombreusuario == null ? (object)DBNull.Value : apersona.Nombreusuario);
+                    command.Parameters.AddWithValue("@Pass", apersona.Pass == null ? (object)DBNull.Value : apersona.Pass);
+                    command.Parameters.AddWithValue("@Correo", apersona.Correo == null ? (object)DBNull.Value : apersona.Correo);
+                    command.Parameters.AddWithValue("@Estado", apersona.Estado);
+                    command.Parameters.AddWithValue("@Nombres", apersona.Nombres);
+                    command.Parameters.AddWithValue("@Apellidos", apersona.Apellidos);
+                    command.Parameters.AddWithValue("@FechaNacimiento", apersona.Fechanacimiento);
+                    command.Parameters.AddWithValue("@Telefono", apersona.Telefono == null ? (object)DBNull.Value : apersona.Telefono);
+                    command.Parameters.AddWithValue("@NroDocumento", apersona.Nrodocumento);
+                    command.Parameters.AddWithValue("@TipoDocumento", apersona.Tipodocumento);
+                    command.Parameters.AddWithValue("@Tipo_Persona", apersona.Tipo_persona == null ? (object)DBNull.Value : apersona.Tipo_persona);
+                    command.Parameters.AddWithValue("@Usuario_creador", apersona.Usuario_creador);
+                    command.Parameters.AddWithValue("@Usuario_modificador", apersona.Usuario_modificador == null ? (object)DBNull.Value : apersona.Usuario_modificador);
 
-                    command.Parameters.AddWithValue("@NombreUsuario", aPersonaModel.Nombreusuario);
-                    command.Parameters.AddWithValue("@Pass", aPersonaModel.Pass);
-                    command.Parameters.AddWithValue("@Correo", aPersonaModel.Correo == null ? (object)DBNull.Value : aPersonaModel.Correo);
-                    command.Parameters.AddWithValue("@Estado", aPersonaModel.Estado);
-                    command.Parameters.AddWithValue("@Nombres", aPersonaModel.Nombres);
-                    command.Parameters.AddWithValue("@Apellidos", aPersonaModel.Apellidos);
-                    command.Parameters.AddWithValue("@FechaNacimiento", aPersonaModel.Fechanacimiento == null ? (object)DBNull.Value : aPersonaModel.Fechanacimiento);
-                    command.Parameters.AddWithValue("@Telefono", aPersonaModel.Telefono == null ? (object)DBNull.Value : aPersonaModel.Telefono);
-                    command.Parameters.AddWithValue("@NroDocumento", aPersonaModel.Nrodocumento);
-                    command.Parameters.AddWithValue("@TipoDocumento", aPersonaModel.Tipodocumento);
-                    command.Parameters.AddWithValue("@Tipo_Persona", aPersonaModel.Tipo_Persona == null ? (object)DBNull.Value : aPersonaModel.Tipo_Persona);
-                    command.Parameters.AddWithValue("@FECHA_CREACION", aPersonaModel.Fecha_creacion);
-                    command.Parameters.AddWithValue("@USUARIO_CREADOR", aPersonaModel.Usuario_creador);
+                    SqlParameter paramId = new SqlParameter("@IDENTITY", SqlDbType.Int);
+                    paramId.Direction = ParameterDirection.Output;
+                    command.Parameters.Add(paramId);
 
                     command.CommandType = CommandType.StoredProcedure;
                     command.CommandText = "sp_tPersona";
 
+                    int identity = Convert.ToInt32(command.Parameters["@IDENTITY"].Value.ToString());
                     int afectados = command.ExecuteNonQuery();
-
 
                     // Commit the transaction.
                     sqlTran.Commit();
@@ -67,6 +69,7 @@ namespace CDatos.Manager
             }
             catch (Exception)
             {
+                //throw;
                 return false;
             }
         }
@@ -77,7 +80,7 @@ namespace CDatos.Manager
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>
-        public bool Update(PersonaModel aPersonaModel)
+        public bool Update(PersonaModel apersona)
         {
             try
             {
@@ -90,23 +93,21 @@ namespace CDatos.Manager
                     SqlCommand command = connection.CreateCommand();
 
                     command.Transaction = sqlTran;
-
                     command.Parameters.AddWithValue("@pMode", 5);
-
-                    command.Parameters.AddWithValue("@Id", aPersonaModel.Id);
-                    command.Parameters.AddWithValue("@NombreUsuario", aPersonaModel.Nombreusuario);
-                    command.Parameters.AddWithValue("@Pass", aPersonaModel.Pass);
-                    command.Parameters.AddWithValue("@Correo", aPersonaModel.Correo == null ? (object)DBNull.Value : aPersonaModel.Correo);
-                    command.Parameters.AddWithValue("@Estado", aPersonaModel.Estado);
-                    command.Parameters.AddWithValue("@Nombres", aPersonaModel.Nombres);
-                    command.Parameters.AddWithValue("@Apellidos", aPersonaModel.Apellidos);
-                    command.Parameters.AddWithValue("@FechaNacimiento", aPersonaModel.Fechanacimiento == null ? (object)DBNull.Value : aPersonaModel.Fechanacimiento);
-                    command.Parameters.AddWithValue("@Telefono", aPersonaModel.Telefono == null ? (object)DBNull.Value : aPersonaModel.Telefono);
-                    command.Parameters.AddWithValue("@NroDocumento", aPersonaModel.Nrodocumento);
-                    command.Parameters.AddWithValue("@TipoDocumento", aPersonaModel.Tipodocumento);
-                    command.Parameters.AddWithValue("@Tipo_Persona", aPersonaModel.Tipo_Persona == null ? (object)DBNull.Value : aPersonaModel.Tipo_Persona);
-                    command.Parameters.AddWithValue("@FECHA_MODIFICACION", aPersonaModel.Fecha_modificacion == null ? (object)DBNull.Value : aPersonaModel.Fecha_modificacion);
-                    command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aPersonaModel.Usuario_modificador == null ? (object)DBNull.Value : aPersonaModel.Usuario_modificador);
+                    command.Parameters.AddWithValue("@Id", apersona.Id);
+                    command.Parameters.AddWithValue("@NombreUsuario", apersona.Nombreusuario == null ? (object)DBNull.Value : apersona.Nombreusuario);
+                    command.Parameters.AddWithValue("@Pass", apersona.Pass == null ? (object)DBNull.Value : apersona.Pass);
+                    command.Parameters.AddWithValue("@Correo", apersona.Correo == null ? (object)DBNull.Value : apersona.Correo);
+                    command.Parameters.AddWithValue("@Estado", apersona.Estado);
+                    command.Parameters.AddWithValue("@Nombres", apersona.Nombres);
+                    command.Parameters.AddWithValue("@Apellidos", apersona.Apellidos);
+                    command.Parameters.AddWithValue("@FechaNacimiento", apersona.Fechanacimiento);
+                    command.Parameters.AddWithValue("@Telefono", apersona.Telefono == null ? (object)DBNull.Value : apersona.Telefono);
+                    command.Parameters.AddWithValue("@NroDocumento", apersona.Nrodocumento);
+                    command.Parameters.AddWithValue("@TipoDocumento", apersona.Tipodocumento);
+                    command.Parameters.AddWithValue("@Tipo_Persona", apersona.Tipo_persona == null ? (object)DBNull.Value : apersona.Tipo_persona);
+                    command.Parameters.AddWithValue("@Usuario_creador", apersona.Usuario_creador);
+                    command.Parameters.AddWithValue("@Usuario_modificador", apersona.Usuario_modificador == null ? (object)DBNull.Value : apersona.Usuario_modificador);
 
 
                     command.CommandType = CommandType.StoredProcedure;
@@ -153,7 +154,6 @@ namespace CDatos.Manager
                     command.Transaction = sqlTran;
 
                     command.Parameters.AddWithValue("@pMode", 6);
-
                     command.Parameters.AddWithValue("@Id", aId);
 
 
@@ -221,11 +221,7 @@ namespace CDatos.Manager
                         string NroDocumento = (string)(reader["NroDocumento"]);
                         int TipoDocumento = (int)(reader["TipoDocumento"]);
                         string Tipo_Persona = (reader["Tipo_Persona"]) == DBNull.Value ? null : (string)(reader["Tipo_Persona"]);
-                        DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
-                        DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
-                        string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
-                        string USUARIO_MODIFICADOR = (reader["USUARIO_MODIFICADOR"]) == DBNull.Value ? null : (string)(reader["USUARIO_MODIFICADOR"]);
-                        //8
+                        
                         PersonaModel = new PersonaModel
                         {
                             Id = Id,
@@ -239,11 +235,7 @@ namespace CDatos.Manager
                             Telefono = Telefono,
                             Nrodocumento = NroDocumento,
                             Tipodocumento = TipoDocumento,
-                            Tipo_Persona = Tipo_Persona,
-                            Fecha_creacion = FECHA_CREACION,
-                            Fecha_modificacion = FECHA_MODIFICACION,
-                            Usuario_creador = USUARIO_CREADOR,
-                            Usuario_modificador = USUARIO_MODIFICADOR,
+                            Tipo_persona = Tipo_Persona,
                         };
                     }
                 }
@@ -252,6 +244,7 @@ namespace CDatos.Manager
             }
             catch (Exception)
             {
+                //throw;
                 return null;
             }
         }
@@ -297,11 +290,7 @@ namespace CDatos.Manager
                             string Telefono = (reader["Telefono"]) == DBNull.Value ? null : (string)(reader["Telefono"]);
                             string NroDocumento = (string)(reader["NroDocumento"]);
                             int TipoDocumento = (int)(reader["TipoDocumento"]);
-                            string Tipo_Persona = (string)(reader["Tipo_Persona"]);
-                            DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
-                            DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
-                            string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
-                            string USUARIO_MODIFICADOR = (reader["USUARIO_MODIFICADOR"]) == DBNull.Value ? null : (string)(reader["USUARIO_MODIFICADOR"]);
+                            string Tipo_Persona = (reader["Tipo_Persona"]) == DBNull.Value ? null : (string)(reader["Tipo_Persona"]);
 
                             PersonaModellist.Add(new PersonaModel
                             {
@@ -316,11 +305,7 @@ namespace CDatos.Manager
                                 Telefono = Telefono,
                                 Nrodocumento = NroDocumento,
                                 Tipodocumento = TipoDocumento,
-                                Tipo_Persona = Tipo_Persona,
-                                Fecha_creacion = FECHA_CREACION,
-                                Fecha_modificacion = FECHA_MODIFICACION,
-                                Usuario_creador = USUARIO_CREADOR,
-                                Usuario_modificador = USUARIO_MODIFICADOR,
+                                Tipo_persona = Tipo_Persona,
 
                             });
                         }
@@ -335,14 +320,13 @@ namespace CDatos.Manager
             }
         }
 
-
         /// <summary>
-        /// Selects the Multiple objects of PersonaModel table by a given criteria.
+        /// Selects the Multiple objects of persona table by a given criteria.
         /// </summary>
-        public List<PersonaModel> PersonaModelSelectbyUNKNOW(string aValue)
+        public List<PersonaModel> personaSelectbyID(string aValue)
         {
 
-            List<PersonaModel> PersonaModellist = new List<PersonaModel>();
+            List<PersonaModel> personalist = new List<PersonaModel>();
 
             try
             {
@@ -352,11 +336,11 @@ namespace CDatos.Manager
 
                     SqlCommand command = connection.CreateCommand();
 
-                    command.Parameters.AddWithValue("@UNKNOW", aValue);
+                    command.Parameters.AddWithValue("@Id", aValue);
 
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.CommandText = "PersonaModelSelectbyUNKNOW";
+                    command.CommandText = "personaSelectbyId";
 
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -366,22 +350,19 @@ namespace CDatos.Manager
                         {
 
                             int Id = (int)(reader["Id"]);
-                            string NombreUsuario = (string)(reader["NombreUsuario"]);
-                            string Pass = (string)(reader["Pass"]);
-                            string Correo = (string)(reader["Correo"]);
+                            string NombreUsuario = reader["NombreUsuario"] as string;
+                            string Pass = reader["Pass"] as string;
+                            string Correo = (reader["Correo"]) == DBNull.Value ? null : (string)(reader["Correo"]);
                             bool Estado = (bool)(reader["Estado"]);
                             string Nombres = (string)(reader["Nombres"]);
                             string Apellidos = (string)(reader["Apellidos"]);
                             DateTime FechaNacimiento = (DateTime)(reader["FechaNacimiento"]);
-                            string Telefono = (string)(reader["Telefono"]);
+                            string Telefono = (reader["Telefono"]) == DBNull.Value ? null : (string)(reader["Telefono"]);
                             string NroDocumento = (string)(reader["NroDocumento"]);
                             int TipoDocumento = (int)(reader["TipoDocumento"]);
-                            DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
-                            DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
-                            string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
-                            string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
+                            string Tipo_Persona = (reader["Tipo_Persona"]) == DBNull.Value ? null : (string)(reader["Tipo_Persona"]);
 
-                            PersonaModellist.Add(new PersonaModel
+                            personalist.Add(new PersonaModel
                             {
                                 Id = Id,
                                 Nombreusuario = NombreUsuario,
@@ -394,21 +375,231 @@ namespace CDatos.Manager
                                 Telefono = Telefono,
                                 Nrodocumento = NroDocumento,
                                 Tipodocumento = TipoDocumento,
-                                Fecha_creacion = FECHA_CREACION,
-                                Fecha_modificacion = FECHA_MODIFICACION,
-                                Usuario_creador = USUARIO_CREADOR,
-                                Usuario_modificador = USUARIO_MODIFICADOR,
+                                Tipo_persona = Tipo_Persona,
 
                             });
                         }
                     }
                 }
 
-                return PersonaModellist;
+                return personalist;
             }
             catch (Exception)
             {
-                return PersonaModellist;
+                return personalist;
+            }
+        }
+
+        /// <summary>
+        /// Selects the Multiple objects of persona table by a given criteria.
+        /// </summary>
+        public List<PersonaModel> personaSelectbyNombres(string aValue)
+        {
+
+            List<PersonaModel> personalist = new List<PersonaModel>();
+
+            try
+            {
+                using (var connection = Util.ConnectionFactory.conexion())
+                {
+                    connection.Open();
+
+                    SqlCommand command = connection.CreateCommand();
+
+                    command.Parameters.AddWithValue("@Nombres", aValue);
+
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.CommandText = "PersonaSelectbyNombre";
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+
+
+                            int Id = (int)(reader["Id"]);
+                            string NombreUsuario = reader["NombreUsuario"] as string;
+                            string Pass = reader["Pass"] as string;
+                            string Correo = (reader["Correo"]) == DBNull.Value ? null : (string)(reader["Correo"]);
+                            bool Estado = (bool)(reader["Estado"]);
+                            string Nombres = (string)(reader["Nombres"]);
+                            string Apellidos = (string)(reader["Apellidos"]);
+                            DateTime FechaNacimiento = (DateTime)(reader["FechaNacimiento"]);
+                            string Telefono = (reader["Telefono"]) == DBNull.Value ? null : (string)(reader["Telefono"]);
+                            string NroDocumento = (string)(reader["NroDocumento"]);
+                            int TipoDocumento = (int)(reader["TipoDocumento"]);
+                            string Tipo_Persona = (reader["Tipo_Persona"]) == DBNull.Value ? null : (string)(reader["Tipo_Persona"]);
+
+                            personalist.Add(new PersonaModel
+                            {
+                                Id = Id,
+                                Nombreusuario = NombreUsuario,
+                                Pass = Pass,
+                                Correo = Correo,
+                                Estado = Estado,
+                                Nombres = Nombres,
+                                Apellidos = Apellidos,
+                                Fechanacimiento = FechaNacimiento,
+                                Telefono = Telefono,
+                                Nrodocumento = NroDocumento,
+                                Tipodocumento = TipoDocumento,
+                                Tipo_persona = Tipo_Persona,
+
+                            });
+                        }
+                    }
+                }
+
+                return personalist;
+            }
+            catch (Exception)
+            {
+                //throw;
+                return personalist;
+            }
+        }
+
+        /// <summary>
+        /// Selects the Multiple objects of persona table by a given criteria.
+        /// </summary>
+        public List<PersonaModel> personaSelectbyApellidos(string aValue)
+        {
+
+            List<PersonaModel> personalist = new List<PersonaModel>();
+
+            try
+            {
+                using (var connection = Util.ConnectionFactory.conexion())
+                {
+                    connection.Open();
+
+                    SqlCommand command = connection.CreateCommand();
+
+                    command.Parameters.AddWithValue("@Apellidos", aValue);
+
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.CommandText = "PersonaSelectbyApellidos";
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+
+                            int Id = (int)(reader["Id"]);
+                            string NombreUsuario = reader["NombreUsuario"] as string;
+                            string Pass = reader["Pass"] as string;
+                            string Correo = (string)(reader["Correo"]);
+                            bool Estado = (bool)(reader["Estado"]);
+                            string Nombres = (string)(reader["Nombres"]);
+                            string Apellidos = (string)(reader["Apellidos"]);
+                            DateTime FechaNacimiento = (DateTime)(reader["FechaNacimiento"]);
+                            string Telefono = (string)(reader["Telefono"]);
+                            string NroDocumento = (string)(reader["NroDocumento"]);
+                            int TipoDocumento = (int)(reader["TipoDocumento"]);
+                            string Tipo_Persona = (string)(reader["Tipo_Persona"]);
+
+                            personalist.Add(new PersonaModel
+                            {
+                                Id = Id,
+                                Nombreusuario = NombreUsuario,
+                                Pass = Pass,
+                                Correo = Correo,
+                                Estado = Estado,
+                                Nombres = Nombres,
+                                Apellidos = Apellidos,
+                                Fechanacimiento = FechaNacimiento,
+                                Telefono = Telefono,
+                                Nrodocumento = NroDocumento,
+                                Tipodocumento = TipoDocumento,
+                                Tipo_persona = Tipo_Persona,
+
+                            });
+                        }
+                    }
+                }
+
+                return personalist;
+            }
+            catch (Exception)
+            {
+                return personalist;
+            }
+        }
+
+        /// <summary>
+        /// Selects the Multiple objects of persona table by a given criteria.
+        /// </summary>
+        public List<PersonaModel> personaSelectbyNroDocumento(string aValue)
+        {
+
+            List<PersonaModel> personalist = new List<PersonaModel>();
+
+            try
+            {
+                using (var connection = Util.ConnectionFactory.conexion())
+                {
+                    connection.Open();
+
+                    SqlCommand command = connection.CreateCommand();
+
+                    command.Parameters.AddWithValue("@NroDocumento", aValue);
+
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.CommandText = "PersonaSelectbyNroDocumento";
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+
+                            int Id = (int)(reader["Id"]);
+                            string NombreUsuario = reader["NombreUsuario"] as string;
+                            string Pass = reader["Pass"] as string;
+                            string Correo = (reader["Correo"]) == DBNull.Value ? null : (string)(reader["Correo"]);
+                            bool Estado = (bool)(reader["Estado"]);
+                            string Nombres = (string)(reader["Nombres"]);
+                            string Apellidos = (string)(reader["Apellidos"]);
+                            DateTime FechaNacimiento = (DateTime)(reader["FechaNacimiento"]);
+                            string Telefono = (reader["Telefono"]) == DBNull.Value ? null : (string)(reader["Telefono"]);
+                            string NroDocumento = (string)(reader["NroDocumento"]);
+                            int TipoDocumento = (int)(reader["TipoDocumento"]);
+                            string Tipo_Persona = (reader["Tipo_Persona"]) == DBNull.Value ? null : (string)(reader["Tipo_Persona"]);
+
+                            personalist.Add(new PersonaModel
+                            {
+                                Id = Id,
+                                Nombreusuario = NombreUsuario,
+                                Pass = Pass,
+                                Correo = Correo,
+                                Estado = Estado,
+                                Nombres = Nombres,
+                                Apellidos = Apellidos,
+                                Fechanacimiento = FechaNacimiento,
+                                Telefono = Telefono,
+                                Nrodocumento = NroDocumento,
+                                Tipodocumento = TipoDocumento,
+                                Tipo_persona = Tipo_Persona,
+
+                            });
+                        }
+                    }
+                }
+
+                return personalist;
+            }
+            catch (Exception)
+            {
+                //throw;
+                return personalist;
             }
         }
 
@@ -449,12 +640,8 @@ namespace CDatos.Manager
                         DateTime FechaNacimiento = (DateTime)(reader["FechaNacimiento"]);
                         string Telefono = (reader["Telefono"]) == DBNull.Value ? null : (string)(reader["Telefono"]);
                         string NroDocumento = (string)(reader["NroDocumento"]);
-                        byte TipoDocumento = (byte)(reader["TipoDocumento"]);
+                        int TipoDocumento = (int)(reader["TipoDocumento"]);
                         string Tipo_Persona = (reader["Tipo_Persona"]) == DBNull.Value ? "" : (string)(reader["Tipo_Persona"]);
-                        DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
-                        DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
-                        string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
-                        string USUARIO_MODIFICADOR = (reader["USUARIO_MODIFICADOR"]) == DBNull.Value ? null : (string)(reader["USUARIO_MODIFICADOR"]);
 
                         PersonaModel = new PersonaModel
                         {
@@ -468,12 +655,8 @@ namespace CDatos.Manager
                             Fechanacimiento = FechaNacimiento,
                             Telefono = Telefono,
                             Nrodocumento = NroDocumento,
-                            Tipodocumento = (int)TipoDocumento,
-                            Tipo_Persona = Tipo_Persona,
-                            Fecha_creacion = FECHA_CREACION,
-                            Fecha_modificacion = FECHA_MODIFICACION,
-                            Usuario_creador = USUARIO_CREADOR,
-                            Usuario_modificador = USUARIO_MODIFICADOR,
+                            Tipodocumento =TipoDocumento,
+                            Tipo_persona = Tipo_Persona,
                         };
                     }
                     return PersonaModel;
@@ -562,10 +745,6 @@ namespace CDatos.Manager
                             string Nombre = (string)(reader["Nombre"]);
                             string Ubicacion = (string)(reader["Ubicacion"]);
                             int IdBanco = (int)(reader["IdBanco"]);
-                            DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
-                            DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
-                            string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
-                            string USUARIO_MODIFICADOR = (reader["USUARIO_MODIFICADOR"]) == DBNull.Value ? null : (string)(reader["USUARIO_MODIFICADOR"]);
 
                             SucursalModel = new SucursalModel
                             {
@@ -573,10 +752,6 @@ namespace CDatos.Manager
                                 Nombre = Nombre,
                                 Ubicacion = Ubicacion,
                                 Idbanco = IdBanco,
-                                Fecha_creacion = FECHA_CREACION,
-                                Fecha_modificacion = FECHA_MODIFICACION,
-                                Usuario_creador = USUARIO_CREADOR,
-                                Usuario_modificador = USUARIO_MODIFICADOR,
 
                             };
                         }
@@ -627,10 +802,6 @@ namespace CDatos.Manager
                             bool Estado = (bool)(reader["Estado"]);
                             string Codigo = (string)(reader["Codigo"]);
                             int? IdPadre = reader["IdPadre"] as int?;
-                            string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
-                            DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
-                            string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
-                            DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
 
                             ComponenteModellist.Add(new ComponenteModel
                             {
@@ -641,10 +812,6 @@ namespace CDatos.Manager
                                 Estado = Estado,
                                 Codigo = Codigo,
                                 IdPadre = IdPadre,
-                                Usuario_creador = USUARIO_CREADOR,
-                                Fecha_creacion = FECHA_CREACION,
-                                Usuario_modificador = USUARIO_MODIFICADOR,
-                                Fecha_modificacion = FECHA_MODIFICACION,
 
                             });
                         }
@@ -656,6 +823,278 @@ namespace CDatos.Manager
             catch (Exception)
             {
                 return null;
+            }
+        }
+
+
+        /// <summary>
+        /// Devuelve todos los roles del usuario de acuerdo a su nombre de usuario
+        /// </summary>
+        public List<RolesModel> GetRolesUsuario(string Usuario)
+        {
+
+            List<RolesModel> RolModellist = new List<RolesModel>();
+
+            try
+            {
+                using (var connection = Util.ConnectionFactory.conexion())
+                {
+                    connection.Open();
+
+                    SqlCommand command = connection.CreateCommand();
+
+                    command.Parameters.AddWithValue("@usuario", Usuario);
+
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.CommandText = "sp_ObtenerRolesUsuario";
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+
+                            int Id = (int)(reader["Id"]);
+                            string Descripcion = (string)(reader["Descripcion"]);
+
+
+                            RolModellist.Add(new RolesModel
+                            {
+                                Id = Id,
+                                Descripcion = Descripcion,
+
+                            });
+                        }
+                    }
+                }
+
+                return RolModellist;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+
+
+
+        public List<PersonaModel> GetPersonasPorRol(int idRol)
+        {
+
+            List<PersonaModel> PersonaPorRolModellist = new List<PersonaModel>();
+
+            try
+            {
+                using (var connection = Util.ConnectionFactory.conexion())
+                {
+                    connection.Open();
+
+                    SqlCommand command = connection.CreateCommand();
+
+                    command.Parameters.AddWithValue("@idrol", idRol);
+
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.CommandText = "sp_ObtenerPersonasPorRol";
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+
+                            string Nombres = (string)(reader["Nombres"]);
+                            string NombreUsuario = (string)(reader["NombreUsuario"]);
+                            string NroDocumento = (string)(reader["NroDocumento"]);
+                            string Correo = (reader["Correo"]) == DBNull.Value ? null : (string)(reader["Correo"]);
+                            bool Estado = (bool)(reader["Estado"]);
+
+
+                            PersonaPorRolModellist.Add(new PersonaModel
+                            {
+                                Nombres = Nombres,
+                                Nombreusuario = NombreUsuario,
+                                Nrodocumento = NroDocumento,
+                                Correo = Correo,
+                                Estado = Estado,
+
+
+                            });
+                        }
+                    }
+                }
+
+                return PersonaPorRolModellist;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+
+        public List<PersonaModel> GetPersonaNombreApellidos(string nombre, string apellido)
+        {
+            List<PersonaModel> PersonaModel = new List<PersonaModel>();
+
+            try
+            {
+                using (var connection = Util.ConnectionFactory.conexion())
+                {
+                    connection.Open();
+                    SqlCommand command = connection.CreateCommand();
+
+                    command.CommandText = "sp_ObtenerPersonasPorNombresApellidos";
+                    command.CommandType = CommandType.StoredProcedure;
+
+
+                    command.Parameters.AddWithValue("@nombres", nombre);
+                    command.Parameters.AddWithValue("@apellidos", apellido);
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+
+                            int Id = (int)(reader["Id"]);
+                            string Nombres = (string)(reader["Nombres"]);
+                        string NroDocumento = (string)(reader["NroDocumento"]);
+                        string TipoDocumento = (string)(reader["Descripcion"].ToString());
+
+
+
+                            PersonaModel.Add(new PersonaModel
+                            {
+                                Id = Id,
+                                Nombres = Nombres,
+                                Nrodocumento = NroDocumento,
+                                Apellidos = TipoDocumento,
+
+                            });
+                        }
+                    }
+                }
+
+                return PersonaModel;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+
+        }
+
+
+
+
+
+
+        public bool CrearNuevoUsuario(int idPersona, string Usuario, string Contraseña, bool Estado)
+        {
+            try
+            {
+                using (var connection = Util.ConnectionFactory.conexion())
+                {
+                    connection.Open();
+
+                    SqlTransaction sqlTran = connection.BeginTransaction();
+
+                    SqlCommand command = connection.CreateCommand();
+
+                    command.Transaction = sqlTran;
+
+                    command.Parameters.AddWithValue("@IDPersona", idPersona);
+                    command.Parameters.AddWithValue("@Usuario", Usuario);
+                    command.Parameters.AddWithValue("@Password", Contraseña); 
+                    command.Parameters.AddWithValue("@Estado", Estado);
+                    command.Parameters.AddWithValue("@FECHA_CREACION", DateTime.Now);
+                    command.Parameters.AddWithValue("@FECHA_MODIFICACION", DateTime.Now);
+                   
+
+
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.CommandText = "sp_CrearNuevoUsuario";
+
+                    int afectados = command.ExecuteNonQuery();
+
+                    // Commit the transaction.
+                    sqlTran.Commit();
+
+                    connection.Close();
+                    connection.Dispose();
+
+                    if (afectados > 0)
+                        return true;
+                    else
+                        return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+
+        public List<PersonaModel> UsuarioSelectAll()
+        {
+
+            List<PersonaModel> listaUsuarios = new List<PersonaModel>();
+
+            try
+            {
+                using (var connection = Util.ConnectionFactory.conexion())
+                {
+                    connection.Open();
+
+                    SqlCommand command = connection.CreateCommand();
+
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.CommandText = "sp_ObtenerUsuarios";
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+
+                            int Id = (int)(reader["Id"]);
+                            string NombreUsuario = (string)(reader["NombreUsuario"]);               
+                            string Correo = (reader["Correo"]) == DBNull.Value ? null : (string)(reader["Correo"]);
+                            string Nombres = (string)(reader["Nombres"]);
+                            string Apellidos = (string)(reader["Apellidos"]);
+                            bool Estado = (bool)(reader["Estado"]);
+
+
+                            listaUsuarios.Add(new PersonaModel
+                            {
+                                Id = Id,
+                                Nombreusuario = NombreUsuario,
+                                
+                                Correo = Correo,
+                                Estado = Estado,
+                                Nombres = Nombres,
+                                Apellidos = Apellidos
+                               
+
+                            });
+                        }
+                    }
+                }
+
+                return listaUsuarios;
+            }
+            catch (Exception)
+            {
+                return listaUsuarios;
             }
         }
 

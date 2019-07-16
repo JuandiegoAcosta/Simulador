@@ -405,7 +405,7 @@ namespace CDatos.Manager
             return Giros;
         }
 
-        public bool EnviarGiro(double monto,int clave,int origen,int destino)
+        public bool EnviarGiro(GiroModel giro)
         {
             try
             {
@@ -419,10 +419,12 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
         
-                    command.Parameters.AddWithValue("@monto", monto);              
-                    command.Parameters.AddWithValue("@clave", clave);
-                    command.Parameters.AddWithValue("@NroDocOrigen", origen);
-                    command.Parameters.AddWithValue("@NroDocDestino", destino);    
+                    command.Parameters.AddWithValue("@monto", giro.Monto);              
+                    command.Parameters.AddWithValue("@clave", giro.Clave);
+                    command.Parameters.AddWithValue("@NroDocOrigen", giro.Id_PersonaOrigen);
+                    command.Parameters.AddWithValue("@NroDocDestino", giro.Id_PersonaDestino);
+                    command.Parameters.AddWithValue("@Usuario", giro.USUARIO_CREADOR);
+                    command.Parameters.AddWithValue("@TipoMoneda", giro.Moneda);
                     command.CommandType = CommandType.StoredProcedure;
                     command.CommandText = "GiroInsert";
 
@@ -446,7 +448,7 @@ namespace CDatos.Manager
             }
         }
         //GiroUpdateById
-        public int CobrarGiro(int Codigo,string Usuario)
+        public int CobrarGiro(GiroModel giro)
         {
             try
             {
@@ -460,9 +462,9 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
-                    command.Parameters.AddWithValue("@Codigo", Codigo);
-                    command.Parameters.AddWithValue("@Usuario", Usuario);
-
+                    command.Parameters.AddWithValue("@Codigo", giro.Id);
+                    command.Parameters.AddWithValue("@Usuario", giro.USUARIO_CREADOR);
+                    command.Parameters.AddWithValue("@doi", giro.Id_PersonaOrigen);
                     command.CommandType = CommandType.StoredProcedure;
                     command.CommandText = "GiroUpdateById";
 

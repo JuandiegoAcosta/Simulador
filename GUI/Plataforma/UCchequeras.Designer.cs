@@ -40,16 +40,16 @@
          this.label4 = new System.Windows.Forms.Label();
          this.cmbEstado = new System.Windows.Forms.ComboBox();
          this.SuspendLayout();
-         // 
-         // proceder1
-         // 
-         this.proceder1.Location = new System.Drawing.Point(6, 572);
-         this.proceder1.Size = new System.Drawing.Size(862, 40);
-         this.proceder1.Click += new System.EventHandler(this.BTProceder_Click);
-         // 
-         // label1
-         // 
-         this.label1.AutoSize = true;
+            // 
+            // proceder1
+            // 
+            this.proceder1.Location = new System.Drawing.Point(6, 572);
+            this.proceder1.Size = new System.Drawing.Size(862, 40);
+            this.proceder1.Click += new System.EventHandler(this.BTProceder_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
          this.label1.Location = new System.Drawing.Point(22, 27);
          this.label1.Name = "label1";
          this.label1.Size = new System.Drawing.Size(81, 13);

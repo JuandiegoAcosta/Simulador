@@ -144,3 +144,129 @@ C:\Users\elife\Desktop\ISUR\Bancario\CDatos\obj\Debug\CDatos.csproj.CoreCompileI
 C:\Users\elife\Desktop\ISUR\Bancario\CDatos\obj\Debug\CDatos.csproj.CopyComplete
 C:\Users\elife\Desktop\ISUR\Bancario\CDatos\obj\Debug\CDatos.dll
 C:\Users\elife\Desktop\ISUR\Bancario\CDatos\obj\Debug\CDatos.pdb
+C:\Users\Usuario\Desktop\Simulador\CDatos\bin\Debug\CDatos.dll
+C:\Users\Usuario\Desktop\Simulador\CDatos\bin\Debug\CDatos.pdb
+C:\Users\Usuario\Desktop\Simulador\CDatos\bin\Debug\Modelos.dll
+C:\Users\Usuario\Desktop\Simulador\CDatos\bin\Debug\Modelos.pdb
+C:\Users\Usuario\Desktop\Simulador\CDatos\obj\Debug\CDatos.csprojAssemblyReference.cache
+C:\Users\Usuario\Desktop\Simulador\CDatos\obj\Debug\CDatos.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\Simulador\CDatos\obj\Debug\CDatos.csproj.CopyComplete
+C:\Users\Usuario\Desktop\Simulador\CDatos\obj\Debug\CDatos.dll
+C:\Users\Usuario\Desktop\Simulador\CDatos\obj\Debug\CDatos.pdb
+C:\Users\Usuario\Source\Repos\Simulador2\CDatos\bin\Debug\CDatos.dll
+C:\Users\Usuario\Source\Repos\Simulador2\CDatos\bin\Debug\CDatos.pdb
+C:\Users\Usuario\Source\Repos\Simulador2\CDatos\bin\Debug\Modelos.dll
+C:\Users\Usuario\Source\Repos\Simulador2\CDatos\bin\Debug\Modelos.pdb
+C:\Users\Usuario\Source\Repos\Simulador2\CDatos\obj\Debug\CDatos.csprojAssemblyReference.cache
+C:\Users\Usuario\Source\Repos\Simulador2\CDatos\obj\Debug\CDatos.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Source\Repos\Simulador2\CDatos\obj\Debug\CDatos.csproj.CopyComplete
+C:\Users\Usuario\Source\Repos\Simulador2\CDatos\obj\Debug\CDatos.dll
+C:\Users\Usuario\Source\Repos\Simulador2\CDatos\obj\Debug\CDatos.pdb
+C:\Users\Usuario\Desktop\Sim2\Simulador\CDatos\bin\Debug\CDatos.dll
+C:\Users\Usuario\Desktop\Sim2\Simulador\CDatos\bin\Debug\CDatos.pdb
+C:\Users\Usuario\Desktop\Sim2\Simulador\CDatos\bin\Debug\Modelos.dll
+C:\Users\Usuario\Desktop\Sim2\Simulador\CDatos\bin\Debug\Modelos.pdb
+C:\Users\Usuario\Desktop\Sim2\Simulador\CDatos\obj\Debug\CDatos.csprojAssemblyReference.cache
+C:\Users\Usuario\Desktop\Sim2\Simulador\CDatos\obj\Debug\CDatos.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\Sim2\Simulador\CDatos\obj\Debug\CDatos.csproj.CopyComplete
+C:\Users\Usuario\Desktop\Sim2\Simulador\CDatos\obj\Debug\CDatos.dll
+C:\Users\Usuario\Desktop\Sim2\Simulador\CDatos\obj\Debug\CDatos.pdb
+C:\Users\Pablo\Source\Repos\Simulador\CDatos\bin\Debug\CDatos.dll
+C:\Users\Pablo\Source\Repos\Simulador\CDatos\bin\Debug\CDatos.pdb
+C:\Users\Pablo\Source\Repos\Simulador\CDatos\bin\Debug\Modelos.dll
+C:\Users\Pablo\Source\Repos\Simulador\CDatos\bin\Debug\Modelos.pdb
+C:\Users\Pablo\Source\Repos\Simulador\CDatos\obj\Debug\CDatos.csprojAssemblyReference.cache
+C:\Users\Pablo\Source\Repos\Simulador\CDatos\obj\Debug\CDatos.csproj.CoreCompileInputs.cache
+C:\Users\Pablo\Source\Repos\Simulador\CDatos\obj\Debug\CDatos.csproj.CopyComplete
+C:\Users\Pablo\Source\Repos\Simulador\CDatos\obj\Debug\CDatos.dll
+C:\Users\Pablo\Source\Repos\Simulador\CDatos\obj\Debug\CDatos.pdb
+C:\Users\X\Desktop\Projects\Simulador\CDatos\bin\Debug\CDatos.dll
+C:\Users\X\Desktop\Projects\Simulador\CDatos\bin\Debug\CDatos.pdb
+C:\Users\X\Desktop\Projects\Simulador\CDatos\bin\Debug\Modelos.dll
+C:\Users\X\Desktop\Projects\Simulador\CDatos\bin\Debug\Modelos.pdb
+C:\Users\X\Desktop\Projects\Simulador\CDatos\obj\Debug\CDatos.csprojAssemblyReference.cache
+C:\Users\X\Desktop\Projects\Simulador\CDatos\obj\Debug\CDatos.csproj.CoreCompileInputs.cache
+C:\Users\X\Desktop\Projects\Simulador\CDatos\obj\Debug\CDatos.csproj.CopyComplete
+C:\Users\X\Desktop\Projects\Simulador\CDatos\obj\Debug\CDatos.dll
+C:\Users\X\Desktop\Projects\Simulador\CDatos\obj\Debug\CDatos.pdb
+C:\Users\Jean\Desktop\S4\Simulador\CDatos\bin\Debug\CDatos.dll
+C:\Users\Jean\Desktop\S4\Simulador\CDatos\bin\Debug\CDatos.pdb
+C:\Users\Jean\Desktop\S4\Simulador\CDatos\bin\Debug\Modelos.dll
+C:\Users\Jean\Desktop\S4\Simulador\CDatos\bin\Debug\Modelos.pdb
+C:\Users\Jean\Desktop\S4\Simulador\CDatos\obj\Debug\CDatos.csprojAssemblyReference.cache
+C:\Users\Jean\Desktop\S4\Simulador\CDatos\obj\Debug\CDatos.csproj.CoreCompileInputs.cache
+C:\Users\Jean\Desktop\S4\Simulador\CDatos\obj\Debug\CDatos.csproj.CopyComplete
+C:\Users\Jean\Desktop\S4\Simulador\CDatos\obj\Debug\CDatos.dll
+C:\Users\Jean\Desktop\S4\Simulador\CDatos\obj\Debug\CDatos.pdb
+C:\Users\Jean\Desktop\s5\Simulador\CDatos\bin\Debug\CDatos.dll
+C:\Users\Jean\Desktop\s5\Simulador\CDatos\bin\Debug\CDatos.pdb
+C:\Users\Jean\Desktop\s5\Simulador\CDatos\bin\Debug\Modelos.dll
+C:\Users\Jean\Desktop\s5\Simulador\CDatos\bin\Debug\Modelos.pdb
+C:\Users\Jean\Desktop\s5\Simulador\CDatos\obj\Debug\CDatos.csprojAssemblyReference.cache
+C:\Users\Jean\Desktop\s5\Simulador\CDatos\obj\Debug\CDatos.csproj.CoreCompileInputs.cache
+C:\Users\Jean\Desktop\s5\Simulador\CDatos\obj\Debug\CDatos.csproj.CopyComplete
+C:\Users\Jean\Desktop\s5\Simulador\CDatos\obj\Debug\CDatos.dll
+C:\Users\Jean\Desktop\s5\Simulador\CDatos\obj\Debug\CDatos.pdb
+C:\Users\Jean\Desktop\s7\JuandiegoAcosta\Simulador\CDatos\bin\Debug\CDatos.dll
+C:\Users\Jean\Desktop\s7\JuandiegoAcosta\Simulador\CDatos\bin\Debug\CDatos.pdb
+C:\Users\Jean\Desktop\s7\JuandiegoAcosta\Simulador\CDatos\bin\Debug\Modelos.dll
+C:\Users\Jean\Desktop\s7\JuandiegoAcosta\Simulador\CDatos\bin\Debug\Modelos.pdb
+C:\Users\Jean\Desktop\s7\JuandiegoAcosta\Simulador\CDatos\obj\Debug\CDatos.csprojAssemblyReference.cache
+C:\Users\Jean\Desktop\s7\JuandiegoAcosta\Simulador\CDatos\obj\Debug\CDatos.csproj.CoreCompileInputs.cache
+C:\Users\Jean\Desktop\s7\JuandiegoAcosta\Simulador\CDatos\obj\Debug\CDatos.csproj.CopyComplete
+C:\Users\Jean\Desktop\s7\JuandiegoAcosta\Simulador\CDatos\obj\Debug\CDatos.dll
+C:\Users\Jean\Desktop\s7\JuandiegoAcosta\Simulador\CDatos\obj\Debug\CDatos.pdb
+C:\Users\Jordan\Source\Repos\Simulador\CDatos\bin\Debug\CDatos.dll
+C:\Users\Jordan\Source\Repos\Simulador\CDatos\bin\Debug\CDatos.pdb
+C:\Users\Jordan\Source\Repos\Simulador\CDatos\bin\Debug\Modelos.dll
+C:\Users\Jordan\Source\Repos\Simulador\CDatos\bin\Debug\Modelos.pdb
+C:\Users\Jordan\Source\Repos\Simulador\CDatos\obj\Debug\CDatos.csprojAssemblyReference.cache
+C:\Users\Jordan\Source\Repos\Simulador\CDatos\obj\Debug\CDatos.csproj.CoreCompileInputs.cache
+C:\Users\Jordan\Source\Repos\Simulador\CDatos\obj\Debug\CDatos.csproj.CopyComplete
+C:\Users\Jordan\Source\Repos\Simulador\CDatos\obj\Debug\CDatos.dll
+C:\Users\Jordan\Source\Repos\Simulador\CDatos\obj\Debug\CDatos.pdb
+C:\Users\RithardLL\Source\Repos\Simulador14\CDatos\bin\Debug\CDatos.dll
+C:\Users\RithardLL\Source\Repos\Simulador14\CDatos\bin\Debug\CDatos.pdb
+C:\Users\RithardLL\Source\Repos\Simulador14\CDatos\bin\Debug\Modelos.dll
+C:\Users\RithardLL\Source\Repos\Simulador14\CDatos\bin\Debug\Modelos.pdb
+C:\Users\RithardLL\Source\Repos\Simulador14\CDatos\obj\Debug\CDatos.csprojAssemblyReference.cache
+C:\Users\RithardLL\Source\Repos\Simulador14\CDatos\obj\Debug\CDatos.csproj.CoreCompileInputs.cache
+C:\Users\RithardLL\Source\Repos\Simulador14\CDatos\obj\Debug\CDatos.csproj.CopyComplete
+C:\Users\RithardLL\Source\Repos\Simulador14\CDatos\obj\Debug\CDatos.dll
+C:\Users\RithardLL\Source\Repos\Simulador14\CDatos\obj\Debug\CDatos.pdb
+C:\Users\RithardLL\Source\Repos\Simulador17\CDatos\bin\Debug\CDatos.dll
+C:\Users\RithardLL\Source\Repos\Simulador17\CDatos\bin\Debug\CDatos.pdb
+C:\Users\RithardLL\Source\Repos\Simulador17\CDatos\bin\Debug\Modelos.dll
+C:\Users\RithardLL\Source\Repos\Simulador17\CDatos\bin\Debug\Modelos.pdb
+C:\Users\RithardLL\Source\Repos\Simulador17\CDatos\obj\Debug\CDatos.csprojAssemblyReference.cache
+C:\Users\RithardLL\Source\Repos\Simulador17\CDatos\obj\Debug\CDatos.csproj.CoreCompileInputs.cache
+C:\Users\RithardLL\Source\Repos\Simulador17\CDatos\obj\Debug\CDatos.csproj.CopyComplete
+C:\Users\RithardLL\Source\Repos\Simulador17\CDatos\obj\Debug\CDatos.dll
+C:\Users\RithardLL\Source\Repos\Simulador17\CDatos\obj\Debug\CDatos.pdb
+E:\Documents\cursos\VI semestre\distribuidas\simulador\CDatos\bin\Debug\CDatos.dll
+E:\Documents\cursos\VI semestre\distribuidas\simulador\CDatos\bin\Debug\CDatos.pdb
+E:\Documents\cursos\VI semestre\distribuidas\simulador\CDatos\bin\Debug\Modelos.dll
+E:\Documents\cursos\VI semestre\distribuidas\simulador\CDatos\bin\Debug\Modelos.pdb
+E:\Documents\cursos\VI semestre\distribuidas\simulador\CDatos\obj\Debug\CDatos.csprojAssemblyReference.cache
+E:\Documents\cursos\VI semestre\distribuidas\simulador\CDatos\obj\Debug\CDatos.csproj.CoreCompileInputs.cache
+E:\Documents\cursos\VI semestre\distribuidas\simulador\CDatos\obj\Debug\CDatos.csproj.CopyComplete
+E:\Documents\cursos\VI semestre\distribuidas\simulador\CDatos\obj\Debug\CDatos.dll
+E:\Documents\cursos\VI semestre\distribuidas\simulador\CDatos\obj\Debug\CDatos.pdb
+C:\Users\Jean\Desktop\s7\Simulador\CDatos\bin\Debug\CDatos.dll
+C:\Users\Jean\Desktop\s7\Simulador\CDatos\bin\Debug\CDatos.pdb
+C:\Users\Jean\Desktop\s7\Simulador\CDatos\bin\Debug\Modelos.dll
+C:\Users\Jean\Desktop\s7\Simulador\CDatos\bin\Debug\Modelos.pdb
+C:\Users\Jean\Desktop\s7\Simulador\CDatos\obj\Debug\CDatos.csprojAssemblyReference.cache
+C:\Users\Jean\Desktop\s7\Simulador\CDatos\obj\Debug\CDatos.csproj.CoreCompileInputs.cache
+C:\Users\Jean\Desktop\s7\Simulador\CDatos\obj\Debug\CDatos.csproj.CopyComplete
+C:\Users\Jean\Desktop\s7\Simulador\CDatos\obj\Debug\CDatos.dll
+C:\Users\Jean\Desktop\s7\Simulador\CDatos\obj\Debug\CDatos.pdb
+E:\Documents\cursos\VI semestre\distribuidas\simulador2\CDatos\bin\Debug\CDatos.dll
+E:\Documents\cursos\VI semestre\distribuidas\simulador2\CDatos\bin\Debug\CDatos.pdb
+E:\Documents\cursos\VI semestre\distribuidas\simulador2\CDatos\bin\Debug\Modelos.dll
+E:\Documents\cursos\VI semestre\distribuidas\simulador2\CDatos\bin\Debug\Modelos.pdb
+E:\Documents\cursos\VI semestre\distribuidas\simulador2\CDatos\obj\Debug\CDatos.csprojAssemblyReference.cache
+E:\Documents\cursos\VI semestre\distribuidas\simulador2\CDatos\obj\Debug\CDatos.csproj.CoreCompileInputs.cache
+E:\Documents\cursos\VI semestre\distribuidas\simulador2\CDatos\obj\Debug\CDatos.csproj.CopyComplete
+E:\Documents\cursos\VI semestre\distribuidas\simulador2\CDatos\obj\Debug\CDatos.dll
+E:\Documents\cursos\VI semestre\distribuidas\simulador2\CDatos\obj\Debug\CDatos.pdb

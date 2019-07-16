@@ -12,10 +12,10 @@ namespace ServiciosBancarios.Backend
     public interface IBancoService
     {
         [OperationContract]
-        bool Banco_Crear(BancoModel aBanco);
+        bool Banco_Crear(BancoModel aBanco, int id_user);
 
         [OperationContract]
-        bool Banco_Editar(BancoModel aBanco);
+        bool Banco_Editar(BancoModel aBanco, int id_user);
 
         [OperationContract]
         bool Banco_Eliminar(int aID_Banco);

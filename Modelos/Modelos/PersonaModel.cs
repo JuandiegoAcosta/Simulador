@@ -76,7 +76,10 @@ namespace Modelos.Modelos
         public int Tipodocumento
         { get; set; }
 
-        public string Tipo_Persona
+        /// <summary>
+        /// Gets or sets the Tipo_persona value.
+        /// </summary>
+        public string Tipo_persona
         { get; set; }
 
         /// <summary>
@@ -92,17 +95,16 @@ namespace Modelos.Modelos
         { get; set; }
 
         /// <summary>
-        /// Gets or sets the Usuario_creador value.
-        /// </summary>
-        public string Usuario_creador
-        { get; set; }
-
-        /// <summary>
         /// Gets or sets the Usuario_modificador value.
         /// </summary>
         public string Usuario_modificador
         { get; set; }
 
+        /// <summary>
+        /// Gets or sets the Usuario_modificador value.
+        /// </summary>
+        public string Usuario_creador
+        { get; set; } 
 
         #endregion
     }

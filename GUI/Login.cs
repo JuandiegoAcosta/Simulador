@@ -36,12 +36,17 @@ namespace Sistema_Bancario
       public Login()
       {
          InitializeComponent();
-         UIButton.SetRound(btnIniciarSesion, 15);
-         UIForm.SetRound(this, 7);
+       //  UIButton.SetRound(btnIniciarSesion, 15);
+            UIButton.SetRound(Estado, 15);
+      //   UIForm.SetRound(this, 7);
       }
       //Variables globales
       private Modelos.Modelos.PersonaModel usuarioLogin;
       private Modelos.Modelos.SucursalModel SucursalUsuario;
+        private Modelos.Modelos.VentanillaModel ventanilla;
+        private Modelos.Modelos.TurnosModel turno;
+      private List<Modelos.Modelos.ComponenteModel> listaComponentes;
+      private List<Modelos.Modelos.RolesModel> listaRoles;
 
       private ISession Session;
 
@@ -76,35 +81,53 @@ namespace Sistema_Bancario
 
       private bool StartLogin()
       {
+         bool back = false;
          try
          {
+                using (WsSistemaBancario.PersonaServiceClient user = new WsSistemaBancario.PersonaServiceClient())
+                {
+                    string passEncrypt = Encrypt.GetSHA256(this.m_password);
+                    usuarioLogin = user.Persona_ValidarUsuario(this.m_username, passEncrypt);
+                    SucursalUsuario = user.Persona_ObtenerSucursal(usuarioLogin.Id);
 
-            using (WsSistemaBancario.PersonaServiceClient user = new WsSistemaBancario.PersonaServiceClient())
-            {
-               string passEncrypt = Encrypt.GetSHA256(this.m_password);
-               usuarioLogin = user.Persona_ValidarUsuario(this.m_username, passEncrypt);
-               SucursalUsuario = user.Persona_ObtenerSucursal(usuarioLogin.Id);
-               if (usuarioLogin != null && SucursalUsuario != null)
-               {
-                  Session = new Session();
-                  Session.UserCodigo = usuarioLogin.Id.ToString();
-                  Session.UserName = usuarioLogin.Nombreusuario;
-                  Session.UserNombreCompleto = usuarioLogin.Nombres;
+                    listaComponentes = user.Persona_GetComponentes(usuarioLogin.Id).ToList();
 
-                  Session.SucursalCodigo = SucursalUsuario.Id.ToString();
-                  Session.SucursalNombre = SucursalUsuario.Nombre;
-                  Session.SucursalUbicacion = SucursalUsuario.Ubicacion;
-                  Session.SucursalCodigoBanco = SucursalUsuario.Idbanco.ToString();
+                    listaRoles = user.Persona_GetRolesUsuario(usuarioLogin.Nombreusuario).ToList();
+                }
+                using (WsSistemaBancario.VentanillaServiceClient venta = new WsSistemaBancario.VentanillaServiceClient())
+                {
+                    ventanilla = venta.Ventanilla_ObtenerUnoXusuario(usuarioLogin.Id);
+                }
+                using (WsSistemaBancario.TurnosServiceClient turn = new WsSistemaBancario.TurnosServiceClient())
+                {
+                    turno = turn.Turnos_ObtenerUnoXUsuario(usuarioLogin.Id);
+                }
+                if (usuarioLogin != null && SucursalUsuario != null)
+                {
+                    Session = new Session();
+                    Session.UserCodigo = usuarioLogin.Id.ToString();
+                    Session.UserName = usuarioLogin.Nombreusuario;
+                    Session.UserNombreCompleto = usuarioLogin.Nombres + " " + usuarioLogin.Apellidos;
 
-                  return true;
-               }
-                  
-            }
-            return false;
+                    //Session.SucursalCodigo = SucursalUsuario.Id.ToString();
+                    Session.SucursalCodigo = string.Format("{0:000}", SucursalUsuario.Id);
+                    Session.SucursalNombre = SucursalUsuario.Nombre;
+                    //agregar aqui ventanilla ID y descripcion, turno ID y descripcion
+                    Session.VentanillaCodigo = ventanilla.Id_ventanilla.ToString();
+                    Session.VentanillaDescripcion = ventanilla.Descripcion;
+                    Session.Turno = turno;
+                    Session.SucursalUbicacion = SucursalUsuario.Ubicacion;
+                    Session.SucursalCodigoBanco = SucursalUsuario.Idbanco.ToString();
+                    Session.Componentes = listaComponentes;
+                    Session.UserRol = listaRoles;
+                    back = true;
+                }
+                return back;
          }
          catch (Exception ex)
          {
-            return false;
+            back = false;
+            return back;
          }
       }
       private void button1_Click(object sender, EventArgs e)
@@ -119,9 +142,22 @@ namespace Sistema_Bancario
             else MessageBox.Show("Error en las credenciales");
       }
 
-      private void PbxClose_Click(object sender, EventArgs e)
-      {
-         this.Close();
-      }
-   }
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CambiarContraseña cambiarContraseña = new CambiarContraseña();
+            cambiarContraseña.Show();
+            this.Close();
+            
+        }
+
+        private void txtPass_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void BTClose2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+    }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CNegocio.Ventanilla;
+using Modelos.Modelos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,6 +12,8 @@ namespace Sistema_Bancario.Froms_opciones
 {
     public partial class Transferencias : Base
     {
+      private TransferenciasMethods transferenciasMethods;
+      private CuentasTarjetasModel CuentasTarjetasModel;
         public Transferencias()
         {
             InitializeComponent();
@@ -17,9 +21,48 @@ namespace Sistema_Bancario.Froms_opciones
             
         }
 
+      private bool SetItem()
+      {
+         CuentasTarjetasModel = new CuentasTarjetasModel();
+         if (!string.IsNullOrEmpty(this.txtMonto.Text.Trim()))
+            CuentasTarjetasModel.Monto = Convert.ToDecimal(this.txtMonto.Text.Trim());
+         else
+            return false;
+
+         if (!string.IsNullOrEmpty(this.nroCuenta1.TBNroCuenta.Text.Trim()))
+            CuentasTarjetasModel.NroCuenta = Convert.ToInt64(this.nroCuenta1.TBNroCuenta.Text.Trim());
+         else
+            return false;
+
+         if (!string.IsNullOrEmpty(this.nroCuenta2.TBNroCuenta.Text.Trim()))
+            CuentasTarjetasModel.NroCuentaDestino = Convert.ToInt64(this.nroCuenta2.TBNroCuenta.Text.Trim());
+         else
+            return false;
+
+         if (!string.IsNullOrEmpty(this.doi1.TBDoi.Text.Trim()))
+            CuentasTarjetasModel.doi = Convert.ToInt32(this.doi1.TBDoi.Text.Trim());
+         else
+            return false;
+
+         if (!string.IsNullOrEmpty(clave1.TBClave.Text.Trim()))
+            CuentasTarjetasModel.clave = Convert.ToInt32(clave1.TBClave.Text.Trim());
+         else
+            return false;
+
+         return true;
+      }
+
         private void BTProceder_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Operacion Realizada");
+
+         if (SetItem())
+         {
+            transferenciasMethods = new TransferenciasMethods();
+            if (transferenciasMethods.RealizarTransferencia(CuentasTarjetasModel) > 0)
+               MessageBox.Show("Operacion Realizada");
+            else
+               MessageBox.Show("No se pudo realizar la operación");
+         } 
         }
 
         private static Transferencias _instance;

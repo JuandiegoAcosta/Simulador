@@ -16,14 +16,25 @@ namespace CNegocio.Backend
         {
             ADTurnoUsuarioManager = new TurnoUsuarioManager();
         }
-        public bool Crear(TurnoUsuarioModel aTurnoUsuario)
+
+        /// <summary>
+        /// Saves a record to the turnos usuario table.
+        /// returns True if value saved successfully else false
+        /// Throw exception with message value EXISTS if the data is duplicate
+        /// </summary>	
+        public bool Crear(TurnoUsuarioModel aTurnoUsuario, int id_user)
         {
-            return ADTurnoUsuarioManager.Insert(aTurnoUsuario);
+            return ADTurnoUsuarioManager.Insert(aTurnoUsuario, id_user);
         }
 
-        public bool Editar(TurnoUsuarioModel aTurnoUsuario)
+        /// <summary>
+        /// Updates a record to the turno usuario table.
+        /// returns True if value saved successfully else false
+        /// Throw exception with message value EXISTS if the data is duplicate
+        /// </summary>
+        public bool Editar(TurnoUsuarioModel aTurnoUsuario, int id_user)
         {
-            return ADTurnoUsuarioManager.Update(aTurnoUsuario);
+            return ADTurnoUsuarioManager.Update(aTurnoUsuario, id_user);
         }
 
         public bool Eliminar(int aID_TurnoUsuario)

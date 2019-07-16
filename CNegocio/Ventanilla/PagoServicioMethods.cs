@@ -40,5 +40,6 @@ namespace CNegocio.Ventanilla
         {
             return ADPagoServicios.PagoServiciosModelSelectAll();
         }
+        public int InsertPagoServicio(int NroContrato) => ADPagoServicios.InsertPagoServicio(NroContrato);
     }
 }

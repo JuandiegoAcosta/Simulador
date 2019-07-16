@@ -23,7 +23,12 @@ namespace Sistema_Bancario.Froms_opciones
 
         private void BTProceder_Click(object sender, EventArgs e)
         {
-                             
+            PagoServicioMethods pagoServicioMethods = new PagoServicioMethods();
+            int i = GNroContrato.CurrentCell.RowIndex;
+
+
+            pagoServicioMethods.InsertPagoServicio(Convert.ToInt32(nroContrato1.TBNroContrato.Text));
+          
         }
 
         private static Servicios _instance;
@@ -43,31 +48,22 @@ namespace Sistema_Bancario.Froms_opciones
         private void BTBuscarEmpresa_Click(object sender, EventArgs e)
         {
             EmpresaMethods empresaMethods = new EmpresaMethods();
-          //  GEmpresas.Rows.Add(empresaMethods.BuscarEmpresa(empresa1.TBEmpresa.Text)[0].Id_empresa);
-          //  GEmpresas.Rows.Add(empresaMethods.BuscarEmpresa(empresa1.TBEmpresa.Text)[0].Nombre_empresa);
-
-
-          //  var bindingList = new BindingList<EmpresaModel>(empresaMethods.BuscarEmpresa(empresa1.TBEmpresa.Text));
-           // var source = new BindingSource(bindingList, null);
+          
             GEmpresas.DataSource = empresaMethods.BuscarEmpresa(empresa1.TBEmpresa.Text);
-            /*this.gEmpresaModel = new EmpresaModel()
-            {
-                Nombre_empresa = empresa1.TBEmpresa.Text,
-            };*/
+
         }
 
         private void BTNroContrato_Click(object sender, EventArgs e)
         {
             EmpresaMethods empresaMethods = new EmpresaMethods();
-            //empresaMethods.PagoServicioEmpresa(1);
-            GNroContrato.Rows.Add(empresaMethods.PagoServicioEmpresa(1)[0].Monto);
+                    
+            int i = GEmpresas.CurrentCell.RowIndex;
+
+            var source = new BindingSource(empresaMethods.PagoServicioEmpresa(Convert.ToInt32(GEmpresas[0, i].Value), Convert.ToInt32(nroContrato1.TBNroContrato.Text)), null);
+            GNroContrato.DataSource = source;
 
 
-            /*   int nrocontrato = Convert.ToInt32(this.nroContrato1.TBNroContrato.Text);
-               this.gPagomodels = new PagoServiciosModel()
-               {
-                   Nro_contrato = nrocontrato
-               };*/
+
         }
     }
 }

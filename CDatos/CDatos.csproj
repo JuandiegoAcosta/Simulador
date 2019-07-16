@@ -46,6 +46,10 @@
     <Compile Include="Manager\ChequeManager.cs" />
     <Compile Include="Manager\ChequerasManager.cs" />
     <Compile Include="Manager\CobroChequeManager.cs" />
+    <Compile Include="Manager\ConsultaCambioManager.cs" />
+    <Compile Include="Manager\DetalleCajaChicaManager.cs" />
+    <Compile Include="Manager\HoraFechaServidorManager.cs" />
+    <Compile Include="Manager\TransferenciasManager.cs" />
     <Compile Include="Seguridad\ComponenteManager.cs" />
     <Compile Include="Manager\ControlErroresManager.cs" />
     <Compile Include="Manager\CronogramaPagoManager.cs" />
@@ -65,7 +69,7 @@
     <Compile Include="Seguridad\RolesManager.cs" />
     <Compile Include="Seguridad\RolUsuarioManager.cs" />
     <Compile Include="Manager\SucursalManager.cs" />
-    <Compile Include="Manager\TarjetaManager.cs" />
+    <Compile Include="Manager\ManagerTarjeta.cs" />
     <Compile Include="Manager\TipoCambioManager.cs" />
     <Compile Include="Manager\TipoDocumentoManager.cs" />
     <Compile Include="Manager\TipoMonedaManager.cs" />

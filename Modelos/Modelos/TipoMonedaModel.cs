@@ -13,7 +13,7 @@ namespace Modelos.Modelos
         /// <summary>
         /// Gets or sets the Id value.
         /// </summary>
-        public short Id
+        public int Id
         { get; set; }
 
         /// <summary>

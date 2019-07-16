@@ -8,6 +8,7 @@ namespace Modelos.Modelos
 {
     public class TarjetaModel
     {
+
         #region Properties
 
         /// <summary>
@@ -19,13 +20,13 @@ namespace Modelos.Modelos
         /// <summary>
         /// Gets or sets the Password value.
         /// </summary>
-        public short? Password
+        public int? Password
         { get; set; }
 
         /// <summary>
         /// Gets or sets the Codcontrol value.
         /// </summary>
-        public byte Codcontrol
+        public int Codcontrol
         { get; set; }
 
         /// <summary>
@@ -37,7 +38,7 @@ namespace Modelos.Modelos
         /// <summary>
         /// Gets or sets the Fechavinculacion value.
         /// </summary>
-        public DateTime Fechavinculacion
+        public DateTime? Fechavinculacion
         { get; set; }
 
         /// <summary>
@@ -55,13 +56,13 @@ namespace Modelos.Modelos
         /// <summary>
         /// Gets or sets the Usuario_creador value.
         /// </summary>
-        public int Usuario_creador
+        public string Usuario_creador
         { get; set; }
 
         /// <summary>
         /// Gets or sets the Usuario_modificador value.
         /// </summary>
-        public int? Usuario_modificador
+        public string Usuario_modificador
         { get; set; }
 
         /// <summary>
@@ -73,5 +74,6 @@ namespace Modelos.Modelos
 
         #endregion
     }
+
 
 }

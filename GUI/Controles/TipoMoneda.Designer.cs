@@ -29,46 +29,32 @@
         private void InitializeComponent()
         {
             this.CboMoneda = new System.Windows.Forms.ComboBox();
-            this.LbMoneda = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // CboMoneda
             // 
             this.CboMoneda.FormattingEnabled = true;
-            this.CboMoneda.Location = new System.Drawing.Point(58, 2);
+            this.CboMoneda.Location = new System.Drawing.Point(2, 2);
             this.CboMoneda.Margin = new System.Windows.Forms.Padding(2);
             this.CboMoneda.Name = "CboMoneda";
-            this.CboMoneda.Size = new System.Drawing.Size(90, 21);
+            this.CboMoneda.Size = new System.Drawing.Size(131, 21);
             this.CboMoneda.TabIndex = 4;
-            // 
-            // LbMoneda
-            // 
-            this.LbMoneda.AutoSize = true;
-            this.LbMoneda.Location = new System.Drawing.Point(2, 5);
-            this.LbMoneda.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.LbMoneda.Name = "LbMoneda";
-            this.LbMoneda.Size = new System.Drawing.Size(46, 13);
-            this.LbMoneda.TabIndex = 5;
-            this.LbMoneda.Text = "Moneda";
             // 
             // TipoMoneda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.LbMoneda);
             this.Controls.Add(this.CboMoneda);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "TipoMoneda";
-            this.Size = new System.Drawing.Size(155, 24);
+            this.Size = new System.Drawing.Size(134, 25);
             this.Load += new System.EventHandler(this.TipoMoneda_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         public System.Windows.Forms.ComboBox CboMoneda;
-        private System.Windows.Forms.Label LbMoneda;
     }
 }

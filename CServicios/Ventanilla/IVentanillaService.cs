@@ -12,10 +12,10 @@ namespace ServiciosBancarios.Ventanilla
     public interface IVentanillaService
     {
         [OperationContract]
-        bool Ventanilla_Crear(VentanillaModel aVentanilla);
+        bool Ventanilla_Crear(VentanillaModel aVentanilla, int id_user);
 
         [OperationContract]
-        bool Ventanilla_Editar(VentanillaModel aVentanilla);
+        bool Ventanilla_Editar(VentanillaModel aVentanilla, int id_user);
 
         [OperationContract]
         bool Ventanilla_Eliminar(int aID_VentanillaModel);
@@ -24,9 +24,12 @@ namespace ServiciosBancarios.Ventanilla
         VentanillaModel Ventanilla_ObtenerUno(int aID_VentanillaModel);
 
         [OperationContract]
+        VentanillaModel Ventanilla_ObtenerUnoXusuario(int Id_Usuario);
+
+        [OperationContract]
         List<VentanillaModel> Ventanilla_ObtenerTodos();
 
         [OperationContract]
-        List<VentanillaModel> GetVentanillasXSucursal(int Idsucursal);
+        List<VentanillaModel> GetVentanillasXSucursal(int Idsucursal,int Idturno);
     }
 }

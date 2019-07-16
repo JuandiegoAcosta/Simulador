@@ -1,4 +1,5 @@
 ﻿using CNegocio.Ventanilla;
+using Modelos.Modelos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,9 +22,16 @@ namespace Sistema_Bancario.Froms_opciones
         {
            
             GirosMethods girosMethods = new GirosMethods();
-            int i = GVCobroGiros.CurrentCell.RowIndex;           
-            girosMethods.CobrarGiro(Convert.ToInt32(GVCobroGiros[0, i].Value),"Usuario");
-         //   MessageBox.Show("cobro Giros");
+            int i = GVCobroGiros.CurrentCell.RowIndex;
+            GiroModel giroModel = new GiroModel();
+            giroModel.Id = Convert.ToInt32(GVCobroGiros[0, i].Value);
+            giroModel.USUARIO_CREADOR = "Carlin Yahuira Achahui";
+            giroModel.Id_PersonaDestino = Convert.ToInt32(dni1.TBDoi.Text);
+            int executado =  girosMethods.CobrarGiro(giroModel);
+            if (executado == 1)
+            {
+                MessageBox.Show("Giro cobrado");
+            }        
         }
 
         private static CobroGiros _instance;

@@ -16,14 +16,26 @@ namespace CNegocio.Backend
         {
             ADTurnosManager = new TurnosManager();
         }
-        public bool Crear(TurnosModel aTurnos)
+
+
+        /// <summary>
+        /// Saves a record to the turnos table.
+        /// returns True if value saved successfully else false
+        /// Throw exception with message value EXISTS if the data is duplicate
+        /// </summary>	
+        public bool Crear(TurnosModel aTurnos, int id_user)
         {
-            return ADTurnosManager.Insert(aTurnos);
+            return ADTurnosManager.Insert(aTurnos, id_user);
         }
 
-        public bool Editar(TurnosModel aTurnos)
+        /// <summary>
+        /// Updates a record to the turnos table.
+        /// returns True if value saved successfully else false
+        /// Throw exception with message value EXISTS if the data is duplicate
+        /// </summary>
+        public bool Editar(TurnosModel aTurnos, int id_user)
         {
-            return ADTurnosManager.Update(aTurnos);
+            return ADTurnosManager.Update(aTurnos, id_user);
         }
 
         public bool Eliminar(int aID_Turnos)
@@ -34,6 +46,10 @@ namespace CNegocio.Backend
         public TurnosModel ObtenerUno(int aID_Turnos)
         {
             return ADTurnosManager.GetTurnosModel(aID_Turnos);
+        }
+        public TurnosModel ObtenerUnoXUsuario(int Id_usuario)
+        {
+            return ADTurnosManager.GetTurnosModelxUsuario(Id_usuario);
         }
 
         public List<TurnosModel> ObtenerTodos()

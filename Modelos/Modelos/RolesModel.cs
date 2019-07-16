@@ -23,6 +23,18 @@ namespace Modelos.Modelos
         { get; set; }
 
         /// <summary>
+        /// Gets or sets the Usuario_modificador value.
+        /// </summary>
+        public string Usuario_modificador
+        { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Usuario_modificador value.
+        /// </summary>
+        public string Usuario_creador
+        { get; set; }
+
+        /// <summary>
         /// Gets or sets the Fecha_creacion value.
         /// </summary>
         public DateTime Fecha_creacion
@@ -33,19 +45,6 @@ namespace Modelos.Modelos
         /// </summary>
         public DateTime? Fecha_modificacion
         { get; set; }
-
-        /// <summary>
-        /// Gets or sets the Usuario_creador value.
-        /// </summary>
-        public string Usuario_creador
-        { get; set; }
-
-        /// <summary>
-        /// Gets or sets the Usuario_modificador value.
-        /// </summary>
-        public string Usuario_modificador
-        { get; set; }
-
 
         #endregion
     }
