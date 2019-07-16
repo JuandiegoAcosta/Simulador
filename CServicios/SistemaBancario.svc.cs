@@ -450,6 +450,11 @@ namespace ServiciosBancarios
             return BLPersona.ObtenerTodos();
         }
 
+        public List<PersonaModel> PersonaSelectbyNroDocumento(string aValue)
+        {
+            return BLPersona.personaSelectbyNroDocumento(aValue);
+        }
+
         public PersonaModel Persona_ValidarUsuario(string aUsuario, string aContraseña)
         {
             return BLPersona.ValidarUsuario(aUsuario, aContraseña);
@@ -483,6 +488,11 @@ namespace ServiciosBancarios
         public List<PersonaModel> Persona_GetPersonaNombreApellidos(string nombre, string apellido)
         {
             return BLPersona.GetPersonaNombreApellidos(nombre,apellido);
+        }
+
+        public List<PersonaModel> PersonaSelectbyNombres(string nombres)
+        {
+            return BLPersona.personaSelectbyNombres(nombres);
         }
 
         public bool Persona_CrearNuevoUsuario(int idPersona, string Usuario, string Contraseña, bool Estado)
@@ -710,11 +720,24 @@ namespace ServiciosBancarios
         {
             return BLCuenta.cuentaSelectbyId_cliente(aID_Persona);
         }
+
+        public bool Cuenta_Borrar(string aID_Cuenta)
+        {
+            return BLCuenta.Delete(aID_Cuenta);
+        }
+
+        public List<CuentasModel> Cuenta_SeleccionarPorNumero(string aID_Cuenta)
+        {
+            return BLCuenta.cuentaSelectbyNroCuenta(aID_Cuenta);
+        }
+
         #endregion
+
         public List<VentanillaModel> GetVentanillasXSucursal(int Idsucursal)
         {
             throw new NotImplementedException();
         }
+
         #region [ Caja Chica]
 
         
@@ -756,6 +779,7 @@ namespace ServiciosBancarios
 
         
         #endregion
+
         #region [Detalle caja Chica]
 
         public bool DetalleCajaChica_Crear(DetalleCajaChicaModel aDetalleCajaChica, int id_user)
@@ -781,6 +805,7 @@ namespace ServiciosBancarios
         {
             return BLDetalleCajaChica.ObtenerTodos();
         }
+
 
 
         #endregion

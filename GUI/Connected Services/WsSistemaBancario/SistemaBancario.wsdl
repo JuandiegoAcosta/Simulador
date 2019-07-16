@@ -440,6 +440,18 @@
   <wsdl:message name="IPersonaService_Persona_UsuarioSelectAll_OutputMessage">
     <wsdl:part name="parameters" element="tns:Persona_UsuarioSelectAllResponse" />
   </wsdl:message>
+  <wsdl:message name="IPersonaService_PersonaSelectbyNroDocumento_InputMessage">
+    <wsdl:part name="parameters" element="tns:PersonaSelectbyNroDocumento" />
+  </wsdl:message>
+  <wsdl:message name="IPersonaService_PersonaSelectbyNroDocumento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PersonaSelectbyNroDocumentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPersonaService_PersonaSelectbyNombres_InputMessage">
+    <wsdl:part name="parameters" element="tns:PersonaSelectbyNombres" />
+  </wsdl:message>
+  <wsdl:message name="IPersonaService_PersonaSelectbyNombres_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PersonaSelectbyNombresResponse" />
+  </wsdl:message>
   <wsdl:message name="IRolesService_Roles_Crear_InputMessage">
     <wsdl:part name="parameters" element="tns:Roles_Crear" />
   </wsdl:message>
@@ -655,6 +667,18 @@
   </wsdl:message>
   <wsdl:message name="ICuentaService_Cuenta_ObtenerTodos_OutputMessage">
     <wsdl:part name="parameters" element="tns:Cuenta_ObtenerTodosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICuentaService_Cuenta_Borrar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Cuenta_Borrar" />
+  </wsdl:message>
+  <wsdl:message name="ICuentaService_Cuenta_Borrar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Cuenta_BorrarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICuentaService_Cuenta_SeleccionarPorNumero_InputMessage">
+    <wsdl:part name="parameters" element="tns:Cuenta_SeleccionarPorNumero" />
+  </wsdl:message>
+  <wsdl:message name="ICuentaService_Cuenta_SeleccionarPorNumero_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Cuenta_SeleccionarPorNumeroResponse" />
   </wsdl:message>
   <wsdl:message name="ICajaChicaService_Crear_InputMessage">
     <wsdl:part name="parameters" element="tns:Crear" />
@@ -1027,6 +1051,14 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IPersonaService/Persona_UsuarioSelectAll" message="tns:IPersonaService_Persona_UsuarioSelectAll_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IPersonaService/Persona_UsuarioSelectAllResponse" message="tns:IPersonaService_Persona_UsuarioSelectAll_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="PersonaSelectbyNroDocumento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPersonaService/PersonaSelectbyNroDocumento" message="tns:IPersonaService_PersonaSelectbyNroDocumento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPersonaService/PersonaSelectbyNroDocumentoResponse" message="tns:IPersonaService_PersonaSelectbyNroDocumento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PersonaSelectbyNombres">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPersonaService/PersonaSelectbyNombres" message="tns:IPersonaService_PersonaSelectbyNombres_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPersonaService/PersonaSelectbyNombresResponse" message="tns:IPersonaService_PersonaSelectbyNombres_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IRolesService">
     <wsdl:operation name="Roles_Crear">
@@ -1184,6 +1216,14 @@
     <wsdl:operation name="Cuenta_ObtenerTodos">
       <wsdl:input wsaw:Action="http://tempuri.org/ICuentaService/Cuenta_ObtenerTodos" message="tns:ICuentaService_Cuenta_ObtenerTodos_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICuentaService/Cuenta_ObtenerTodosResponse" message="tns:ICuentaService_Cuenta_ObtenerTodos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Cuenta_Borrar">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICuentaService/Cuenta_Borrar" message="tns:ICuentaService_Cuenta_Borrar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICuentaService/Cuenta_BorrarResponse" message="tns:ICuentaService_Cuenta_Borrar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Cuenta_SeleccionarPorNumero">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICuentaService/Cuenta_SeleccionarPorNumero" message="tns:ICuentaService_Cuenta_SeleccionarPorNumero_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICuentaService/Cuenta_SeleccionarPorNumeroResponse" message="tns:ICuentaService_Cuenta_SeleccionarPorNumero_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="ICajaChicaService">
@@ -1913,6 +1953,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="PersonaSelectbyNroDocumento">
+      <soap:operation soapAction="http://tempuri.org/IPersonaService/PersonaSelectbyNroDocumento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PersonaSelectbyNombres">
+      <soap:operation soapAction="http://tempuri.org/IPersonaService/PersonaSelectbyNombres" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="BasicHttpBinding_IRolesService" type="tns:IRolesService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -2251,6 +2309,24 @@
     </wsdl:operation>
     <wsdl:operation name="Cuenta_ObtenerTodos">
       <soap:operation soapAction="http://tempuri.org/ICuentaService/Cuenta_ObtenerTodos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Cuenta_Borrar">
+      <soap:operation soapAction="http://tempuri.org/ICuentaService/Cuenta_Borrar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Cuenta_SeleccionarPorNumero">
+      <soap:operation soapAction="http://tempuri.org/ICuentaService/Cuenta_SeleccionarPorNumero" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

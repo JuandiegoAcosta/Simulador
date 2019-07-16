@@ -283,7 +283,7 @@ namespace Sistema_Bancario.plataforma_controles
             orden[0] = new string[] { "ID", "Codigo", "80" };
             orden[1] = new string[] { "FechaPrestamo", "Fecha de Prestamo", "150" };
             orden[2] = new string[] { "Cuenta", "Cuenta", "200" };
-            orden[3] = new string[] { "MontoPrestamo", "Codigo", "100" };
+            orden[3] = new string[] { "MontoPrestamo", "Monto", "100" };
 
 
             if (objetos != null)
