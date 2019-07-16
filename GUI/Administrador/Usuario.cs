@@ -56,7 +56,7 @@ namespace Sistema_Bancario.Administrador
 
             try
             {
-
+                dgvUsuarios.Rows.Clear();
                 using (WsSistemaBancario.PersonaServiceClient UsuariosLista = new WsSistemaBancario.PersonaServiceClient())
                 {
 
@@ -260,44 +260,61 @@ namespace Sistema_Bancario.Administrador
                 }
                 if (this.dgvUsuarios.Columns[e.ColumnIndex].Name == "Eliminar")
                 {
+                    using (WsSistemaBancario.PersonaServiceClient per = new WsSistemaBancario.PersonaServiceClient())
+                    {
+                        bool back = per.Persona_Eliminar(Convert.ToInt32(dgvUsuarios.Rows[e.RowIndex].Cells[0].Value.ToString()));
+                        if (back)
+                        {
+                            MessageBox.Show("Usuario eliminado!", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.llenarDGVUsuarios();
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se pudo Eliminar!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
 
-                    MessageBox.Show("Eliminar");
                 }
                 if (this.dgvUsuarios.Columns[e.ColumnIndex].Name == "EstadoUsuario")
                 {
                     DataGridViewCheckBoxCell chk = this.dgvUsuarios.Rows[e.RowIndex].Cells["EstadoUsuario"] as DataGridViewCheckBoxCell;
                     if (chk.Value==chk.TrueValue)
                     {
-                        chk.Value = chk.FalseValue;
+                        //chk.Value = chk.FalseValue;
                         using (WsSistemaBancario.PersonaServiceClient per=new WsSistemaBancario.PersonaServiceClient())
                         {
                             bool back = per.ActualizarEstado(Convert.ToInt32(session.UserCodigo),Convert.ToInt32(dgvUsuarios.Rows[e.RowIndex].Cells[0].Value.ToString()),false);
                             if (back)
                             {
                                 MessageBox.Show("Estado actualizado!", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                //chk.Value = chk.FalseValue;
                             }
                             else
                             {
                                 MessageBox.Show("No se pudo actualizar!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                //chk.Value = chk.TrueValue;
                             }
                         }
                             
                     }
                     else
                     {
-                        chk.Value = chk.TrueValue;
+                        //chk.Value = chk.TrueValue;
                         using (WsSistemaBancario.PersonaServiceClient per = new WsSistemaBancario.PersonaServiceClient())
                         {
                             bool back = per.ActualizarEstado(Convert.ToInt32(session.UserCodigo), Convert.ToInt32(dgvUsuarios.Rows[e.RowIndex].Cells[0].Value.ToString()), true);
                             if (back)
                             {
                                 MessageBox.Show("Estado actualizado!", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                chk.Value = chk.TrueValue;
                             }
                             else
                             {
                                 MessageBox.Show("No se pudo actualizar!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                chk.Value = chk.FalseValue;
                             }
                         }
+                        //this.llenarDGVUsuarios();
                     }
                 }
             }
@@ -432,8 +449,9 @@ namespace Sistema_Bancario.Administrador
             {
                 frm.ShowDialog();
             }
-            this.dgvUsuarios.DataSource = null;
-            this.dgvUsuarios.Refresh();
+            this.Usuarios.Clear();
+            this.Usuarios = null;
+            //this.dgvUsuarios.Refresh();
             this.llenarDGVUsuarios();
         }
     }
