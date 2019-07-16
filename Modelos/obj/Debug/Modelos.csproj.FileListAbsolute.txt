@@ -168,4 +168,3 @@ C:\Users\Jean\Desktop\s8\Simulador\Modelos\bin\Debug\Modelos.pdb
 C:\Users\Jean\Desktop\s8\Simulador\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
 C:\Users\Jean\Desktop\s8\Simulador\Modelos\obj\Debug\Modelos.dll
 C:\Users\Jean\Desktop\s8\Simulador\Modelos\obj\Debug\Modelos.pdb
-E:\Documents\cursos\VI semestre\distribuidas\simulador2\Modelos\obj\Debug\Modelos.csprojAssemblyReference.cache
