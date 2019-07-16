@@ -101,6 +101,7 @@
             this.buttonDeshacer.Text = "DESHACER";
             this.buttonDeshacer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonDeshacer.UseVisualStyleBackColor = true;
+            this.buttonDeshacer.Click += new System.EventHandler(this.buttonDeshacer_Click);
             // 
             // buttonEliminar
             // 

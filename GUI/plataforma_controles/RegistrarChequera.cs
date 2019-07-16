@@ -157,6 +157,8 @@ namespace Sistema_Bancario.plataforma_controles
         private void modoInicial()
         {
             this.modo = "modoInicial";
+            this.btnCodigo.Enabled = true;
+            this.txtCodigo.Enabled = true;
 
             this.buttonActualizar.Enabled = false;
             this.buttonEliminar.Enabled = false;
@@ -168,8 +170,8 @@ namespace Sistema_Bancario.plataforma_controles
             this.btnCodigo.Enabled = false;
             this.btnCuenta.Enabled = false;
 
-            this.txtCodigo.Enabled = false;
-            this.txtCuenta.Enabled = false;
+            this.txtCodigo.Enabled = true;
+            this.txtCuenta.Enabled = true;
             this.dtpFechaRegistro.Enabled = false;
             this.cboEstado.Enabled = false;
             this.cboCantidadCheques.Enabled = false;
@@ -219,6 +221,12 @@ namespace Sistema_Bancario.plataforma_controles
                 this.modoInicial();
                 MessageBox.Show("El proceso ha sido correcto");
             }
+        }
+
+        private void buttonDeshacer_Click(object sender, EventArgs e)
+        {
+            this.clearForm();
+            this.modoInicial();
         }
     }
 }
