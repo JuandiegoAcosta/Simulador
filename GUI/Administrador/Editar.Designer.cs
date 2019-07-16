@@ -36,6 +36,7 @@
             this.idRolUsuario = new System.Windows.Forms.TextBox();
             this.txtIdUsuario = new System.Windows.Forms.TextBox();
             this.btnEditar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,6 +77,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnEliminar);
             this.panel1.Controls.Add(this.idRolUsuario);
             this.panel1.Controls.Add(this.txtIdUsuario);
             this.panel1.Controls.Add(this.btnEditar);
@@ -106,13 +108,24 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(89, 122);
+            this.btnEditar.Location = new System.Drawing.Point(98, 122);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(75, 23);
             this.btnEditar.TabIndex = 5;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Visible = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(98, 122);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.TabIndex = 8;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Visible = false;
             // 
             // Editar
             // 
@@ -133,9 +146,10 @@
         private System.Windows.Forms.ComboBox cmbRolesEditar;
         private System.Windows.Forms.CheckBox chbActivo;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnEditar;
         public System.Windows.Forms.TextBox txtUsuarioEditar;
         public System.Windows.Forms.TextBox txtIdUsuario;
         public System.Windows.Forms.TextBox idRolUsuario;
+        public System.Windows.Forms.Button btnEliminar;
+        public System.Windows.Forms.Button btnEditar;
     }
 }

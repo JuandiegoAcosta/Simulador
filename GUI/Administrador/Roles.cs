@@ -584,6 +584,7 @@ namespace Sistema_Bancario.Administrador
                         frmeditar.txtUsuarioEditar.Text = nombreusuario;
                         frmeditar.txtIdUsuario.Text = idUsuario.ToString();
                         frmeditar.idRolUsuario.Text = idRolUsuario.ToString();
+                        frmeditar.btnEditar.Visible = true;
                         frmeditar.Show();
 
                     }
@@ -595,6 +596,7 @@ namespace Sistema_Bancario.Administrador
                         frmeditar.txtUsuarioEditar.Text = nombreusuario;
                         frmeditar.txtIdUsuario.Text = idUsuario.ToString();
                         frmeditar.idRolUsuario.Text = idRolUsuario.ToString();
+                        frmeditar.btnEliminar.Visible = true;
                         frmeditar.Show();
 
                     }
