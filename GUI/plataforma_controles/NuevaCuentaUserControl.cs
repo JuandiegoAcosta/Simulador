@@ -23,7 +23,7 @@ namespace Sistema_Bancario.plataforma_controles
 
         private string gUsuario;
         private string gSucursal;
-        private PersonaModel gPerona;
+        private PersonaModel gPersona;
         private CuentasModel gCuenta;
         private string modo = "";
         public NuevaCuentaUserControl(ISession isesion)
@@ -119,14 +119,14 @@ namespace Sistema_Bancario.plataforma_controles
                         PersonaModel dato = formHelp1.getObject<PersonaModel>();
                         if (dato != null)
                         {
-                            this.gPerona = this.BLPersona.ObtenerUno(dato.Id);
+                            this.gPersona = this.BLPersona.ObtenerUno(dato.Id);
 
                             if (this.modo == "modoInicial")
                             {
-                                if (gPerona == null)
+                                if (gPersona == null)
                                     return;
 
-                                List<CuentasModel> Cuentas = this.BLCuenta.cuentaSelectbyId_cliente(this.gPerona.Id);
+                                List<CuentasModel> Cuentas = this.BLCuenta.cuentaSelectbyId_cliente(this.gPersona.Id);
                                 if (Cuentas == null || Cuentas.Count == 0)
                                 {
                                     MessageBox.Show("No tiene cuentas");
@@ -139,7 +139,7 @@ namespace Sistema_Bancario.plataforma_controles
                             else
                             {
                                 this.clearForm();
-                                this.persona2gui(this.gPerona);
+                                this.persona2gui(this.gPersona);
                             }
                         }
                     }
@@ -222,7 +222,7 @@ namespace Sistema_Bancario.plataforma_controles
                 string TipoCuenta = (string)this.cboTipoCuenta.SelectedValue;
                 int TipoMoneda = (int)this.cboMoneda.SelectedValue;
                 string USUARIO_CREADOR = this.gUsuario;
-                int Cliente = this.gPerona.Id;
+                int Cliente = this.gPersona.Id;
                 DateTime FECHA_CREACION = (DateTime)BLFechaHoraServidor.Obtener();
 
                 return new CuentasModel()
@@ -357,8 +357,8 @@ namespace Sistema_Bancario.plataforma_controles
             }
 
             objeto.Nrocuenta = this.gCuenta.Nrocuenta;
-            objeto.Usuario_creador = this.gPerona.Usuario_creador;
-            objeto.Fecha_creacion = this.gPerona.Fecha_creacion;
+            objeto.Usuario_creador = this.gPersona.Usuario_creador;
+            objeto.Fecha_creacion = this.gPersona.Fecha_creacion;
             objeto.Usuario_modificador = this.gUsuario;
             objeto.Fecha_modificacion = BLFechaHoraServidor.Obtener();
 
@@ -399,6 +399,24 @@ namespace Sistema_Bancario.plataforma_controles
 
             if (objeto == null && objeto.Count <= 0) { return; }
             this.buscarCuenta(objeto);
+        }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // NuevaCuentaUserControl
+            // 
+            this.Name = "NuevaCuentaUserControl";
+            this.Size = new System.Drawing.Size(645, 412);
+            this.Load += new System.EventHandler(this.NuevaCuentaUserControl_Load);
+            this.ResumeLayout(false);
+
+        }
+
+        private void NuevaCuentaUserControl_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
