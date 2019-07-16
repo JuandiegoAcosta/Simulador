@@ -271,7 +271,7 @@ namespace Sistema_Bancario
             }
             else if (btn.Text.Equals("Solicitar Chequera"))
             {
-                CrearControl<UserControl>(UCchequeras.instance, btn);
+                //CrearControl<UserControl>(UCchequeras.instance, btn);
             }
             else if (btn.Text.Equals("Balancin Caja"))
             {
