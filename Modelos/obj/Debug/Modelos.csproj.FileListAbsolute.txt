@@ -195,3 +195,8 @@ E:\Documents\cursos\VI semestre\distribuidas\simulador3\Modelos\bin\Debug\Modelo
 E:\Documents\cursos\VI semestre\distribuidas\simulador3\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
 E:\Documents\cursos\VI semestre\distribuidas\simulador3\Modelos\obj\Debug\Modelos.dll
 E:\Documents\cursos\VI semestre\distribuidas\simulador3\Modelos\obj\Debug\Modelos.pdb
+C:\Users\RithardLL\Source\Repos\Simulador22\Modelos\bin\Debug\Modelos.dll
+C:\Users\RithardLL\Source\Repos\Simulador22\Modelos\bin\Debug\Modelos.pdb
+C:\Users\RithardLL\Source\Repos\Simulador22\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
+C:\Users\RithardLL\Source\Repos\Simulador22\Modelos\obj\Debug\Modelos.dll
+C:\Users\RithardLL\Source\Repos\Simulador22\Modelos\obj\Debug\Modelos.pdb

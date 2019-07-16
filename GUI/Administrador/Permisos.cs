@@ -345,8 +345,12 @@ namespace Sistema_Bancario.Administrador
                         {
                             MessageBox.Show("Error al actualizar Dato");
                         }
-                        ;
+                        
                     }
+                    pnlPrincipal.BringToFront();
+                    pnlSecundario.SendToBack();
+                    pnlAgregar.SendToBack();
+                    pnlAgregarPermisos.SendToBack();
                 }
 
             }

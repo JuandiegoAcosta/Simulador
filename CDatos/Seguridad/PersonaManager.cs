@@ -323,8 +323,8 @@ namespace CDatos.Manager
                         {
 
                             int Id = (int)(reader["Id"]);
-                            string NombreUsuario = (string)(reader["NombreUsuario"]);
-                            string Pass = (string)(reader["Pass"]);
+                            string NombreUsuario = (reader["NombreUsuario"]) == DBNull.Value ? null : (string)(reader["NombreUsuario"]);
+                            string Pass = (reader["Pass"]) == DBNull.Value ? null : (string)(reader["Pass"]);
                             string Correo = (reader["Correo"]) == DBNull.Value ? null : (string)(reader["Correo"]);
                             bool Estado = (bool)(reader["Estado"]);
                             string Nombres = (string)(reader["Nombres"]);
@@ -334,11 +334,6 @@ namespace CDatos.Manager
                             string NroDocumento = (string)(reader["NroDocumento"]);
                             int TipoDocumento = (int)(reader["TipoDocumento"]);
                             string Tipo_Persona = (reader["Tipo_Persona"]) == DBNull.Value ? null : (string)(reader["Tipo_Persona"]);
-                            string Usuario_creador = (reader["USUARIO_CREADOR"]) == DBNull.Value ? null : (string)(reader["USUARIO_CREADOR"]);
-                            string Usuario_modificador = (reader["USUARIO_MODIFICADOR"]) == DBNull.Value ? null : (string)(reader["USUARIO_MODIFICADOR"]);
-                            DateTime Fecha_creacion = (DateTime)(reader["FECHA_CREACION"]);
-                            DateTime? Fecha_modificacion = (reader["FECHA_MODIFICACION"]) == DBNull.Value ? null : (DateTime?)(reader["FECHA_MODIFICACION"]);
-
 
                             PersonaModellist.Add(new PersonaModel
                             {
@@ -354,10 +349,7 @@ namespace CDatos.Manager
                                 Nrodocumento = NroDocumento,
                                 Tipodocumento = TipoDocumento,
                                 Tipo_persona = Tipo_Persona,
-                                Fecha_creacion = Fecha_creacion,
-                                Fecha_modificacion = Fecha_modificacion,
-                                Usuario_creador = Usuario_creador,
-                                Usuario_modificador = Usuario_modificador
+
                             });
                         }
                     }
@@ -370,6 +362,7 @@ namespace CDatos.Manager
                 return PersonaModellist;
             }
         }
+
         public List<PersonaModel> ObtenerUsuariosSinCredenciales()
         {
 
