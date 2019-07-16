@@ -1114,10 +1114,16 @@ namespace Sistema_Bancario.WsSistemaBancario {
         System.Threading.Tasks.Task<Modelos.Modelos.PermisosUsuarioModel> PermisosUsuario_ObtenerUnoAsync(int aID_PermisosUsuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPermisosUsuarioService/PermisosUsuario_ObtenerTodos", ReplyAction="http://tempuri.org/IPermisosUsuarioService/PermisosUsuario_ObtenerTodosResponse")]
-        Modelos.Modelos.PermisosUsuarioModel[] PermisosUsuario_ObtenerTodos();
+        Modelos.Modelos.PermisosUsuarioModel[] PermisosUsuario_ObtenerTodos(int IdUsuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPermisosUsuarioService/PermisosUsuario_ObtenerTodos", ReplyAction="http://tempuri.org/IPermisosUsuarioService/PermisosUsuario_ObtenerTodosResponse")]
-        System.Threading.Tasks.Task<Modelos.Modelos.PermisosUsuarioModel[]> PermisosUsuario_ObtenerTodosAsync();
+        System.Threading.Tasks.Task<Modelos.Modelos.PermisosUsuarioModel[]> PermisosUsuario_ObtenerTodosAsync(int IdUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPermisosUsuarioService/PermisosUsuarioXusuario", ReplyAction="http://tempuri.org/IPermisosUsuarioService/PermisosUsuarioXusuarioResponse")]
+        Modelos.Modelos.PermisosUsuarioModel[] PermisosUsuarioXusuario(int IdUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPermisosUsuarioService/PermisosUsuarioXusuario", ReplyAction="http://tempuri.org/IPermisosUsuarioService/PermisosUsuarioXusuarioResponse")]
+        System.Threading.Tasks.Task<Modelos.Modelos.PermisosUsuarioModel[]> PermisosUsuarioXusuarioAsync(int IdUsuario);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1179,12 +1185,20 @@ namespace Sistema_Bancario.WsSistemaBancario {
             return base.Channel.PermisosUsuario_ObtenerUnoAsync(aID_PermisosUsuario);
         }
         
-        public Modelos.Modelos.PermisosUsuarioModel[] PermisosUsuario_ObtenerTodos() {
-            return base.Channel.PermisosUsuario_ObtenerTodos();
+        public Modelos.Modelos.PermisosUsuarioModel[] PermisosUsuario_ObtenerTodos(int IdUsuario) {
+            return base.Channel.PermisosUsuario_ObtenerTodos(IdUsuario);
         }
         
-        public System.Threading.Tasks.Task<Modelos.Modelos.PermisosUsuarioModel[]> PermisosUsuario_ObtenerTodosAsync() {
-            return base.Channel.PermisosUsuario_ObtenerTodosAsync();
+        public System.Threading.Tasks.Task<Modelos.Modelos.PermisosUsuarioModel[]> PermisosUsuario_ObtenerTodosAsync(int IdUsuario) {
+            return base.Channel.PermisosUsuario_ObtenerTodosAsync(IdUsuario);
+        }
+        
+        public Modelos.Modelos.PermisosUsuarioModel[] PermisosUsuarioXusuario(int IdUsuario) {
+            return base.Channel.PermisosUsuarioXusuario(IdUsuario);
+        }
+        
+        public System.Threading.Tasks.Task<Modelos.Modelos.PermisosUsuarioModel[]> PermisosUsuarioXusuarioAsync(int IdUsuario) {
+            return base.Channel.PermisosUsuarioXusuarioAsync(IdUsuario);
         }
     }
     
@@ -1253,10 +1267,10 @@ namespace Sistema_Bancario.WsSistemaBancario {
         System.Threading.Tasks.Task<Modelos.Modelos.RolesModel[]> Persona_GetRolesUsuarioAsync(string aUsuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/GetPersonasPorRol", ReplyAction="http://tempuri.org/IPersonaService/GetPersonasPorRolResponse")]
-        Modelos.Modelos.PersonaModel[] GetPersonasPorRol(int idRol);
+        System.Data.DataTable GetPersonasPorRol(int idRol);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/GetPersonasPorRol", ReplyAction="http://tempuri.org/IPersonaService/GetPersonasPorRolResponse")]
-        System.Threading.Tasks.Task<Modelos.Modelos.PersonaModel[]> GetPersonasPorRolAsync(int idRol);
+        System.Threading.Tasks.Task<System.Data.DataTable> GetPersonasPorRolAsync(int idRol);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/Persona_GetPersonaNombreApellidos", ReplyAction="http://tempuri.org/IPersonaService/Persona_GetPersonaNombreApellidosResponse")]
         Modelos.Modelos.PersonaModel[] Persona_GetPersonaNombreApellidos(string nombre, string apellido);
@@ -1275,6 +1289,24 @@ namespace Sistema_Bancario.WsSistemaBancario {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/Persona_UsuarioSelectAll", ReplyAction="http://tempuri.org/IPersonaService/Persona_UsuarioSelectAllResponse")]
         System.Threading.Tasks.Task<Modelos.Modelos.PersonaModel[]> Persona_UsuarioSelectAllAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/PersonaSelectbyNroDocumento", ReplyAction="http://tempuri.org/IPersonaService/PersonaSelectbyNroDocumentoResponse")]
+        Modelos.Modelos.PersonaModel[] PersonaSelectbyNroDocumento(string aValue);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/PersonaSelectbyNroDocumento", ReplyAction="http://tempuri.org/IPersonaService/PersonaSelectbyNroDocumentoResponse")]
+        System.Threading.Tasks.Task<Modelos.Modelos.PersonaModel[]> PersonaSelectbyNroDocumentoAsync(string aValue);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/PersonaSelectbyNombres", ReplyAction="http://tempuri.org/IPersonaService/PersonaSelectbyNombresResponse")]
+        Modelos.Modelos.PersonaModel[] PersonaSelectbyNombres(string aValue);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/PersonaSelectbyNombres", ReplyAction="http://tempuri.org/IPersonaService/PersonaSelectbyNombresResponse")]
+        System.Threading.Tasks.Task<Modelos.Modelos.PersonaModel[]> PersonaSelectbyNombresAsync(string aValue);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/ObtenerUsuariosSinCredenciales", ReplyAction="http://tempuri.org/IPersonaService/ObtenerUsuariosSinCredencialesResponse")]
+        Modelos.Modelos.PersonaModel[] ObtenerUsuariosSinCredenciales();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/ObtenerUsuariosSinCredenciales", ReplyAction="http://tempuri.org/IPersonaService/ObtenerUsuariosSinCredencialesResponse")]
+        System.Threading.Tasks.Task<Modelos.Modelos.PersonaModel[]> ObtenerUsuariosSinCredencialesAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1384,11 +1416,11 @@ namespace Sistema_Bancario.WsSistemaBancario {
             return base.Channel.Persona_GetRolesUsuarioAsync(aUsuario);
         }
         
-        public Modelos.Modelos.PersonaModel[] GetPersonasPorRol(int idRol) {
+        public System.Data.DataTable GetPersonasPorRol(int idRol) {
             return base.Channel.GetPersonasPorRol(idRol);
         }
         
-        public System.Threading.Tasks.Task<Modelos.Modelos.PersonaModel[]> GetPersonasPorRolAsync(int idRol) {
+        public System.Threading.Tasks.Task<System.Data.DataTable> GetPersonasPorRolAsync(int idRol) {
             return base.Channel.GetPersonasPorRolAsync(idRol);
         }
         
@@ -1414,6 +1446,30 @@ namespace Sistema_Bancario.WsSistemaBancario {
         
         public System.Threading.Tasks.Task<Modelos.Modelos.PersonaModel[]> Persona_UsuarioSelectAllAsync() {
             return base.Channel.Persona_UsuarioSelectAllAsync();
+        }
+        
+        public Modelos.Modelos.PersonaModel[] PersonaSelectbyNroDocumento(string aValue) {
+            return base.Channel.PersonaSelectbyNroDocumento(aValue);
+        }
+        
+        public System.Threading.Tasks.Task<Modelos.Modelos.PersonaModel[]> PersonaSelectbyNroDocumentoAsync(string aValue) {
+            return base.Channel.PersonaSelectbyNroDocumentoAsync(aValue);
+        }
+        
+        public Modelos.Modelos.PersonaModel[] PersonaSelectbyNombres(string aValue) {
+            return base.Channel.PersonaSelectbyNombres(aValue);
+        }
+        
+        public System.Threading.Tasks.Task<Modelos.Modelos.PersonaModel[]> PersonaSelectbyNombresAsync(string aValue) {
+            return base.Channel.PersonaSelectbyNombresAsync(aValue);
+        }
+        
+        public Modelos.Modelos.PersonaModel[] ObtenerUsuariosSinCredenciales() {
+            return base.Channel.ObtenerUsuariosSinCredenciales();
+        }
+        
+        public System.Threading.Tasks.Task<Modelos.Modelos.PersonaModel[]> ObtenerUsuariosSinCredencialesAsync() {
+            return base.Channel.ObtenerUsuariosSinCredencialesAsync();
         }
     }
     
@@ -1452,10 +1508,10 @@ namespace Sistema_Bancario.WsSistemaBancario {
         System.Threading.Tasks.Task<Modelos.Modelos.RolesModel[]> Roles_ObtenerTodosAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRolesService/Roles_RolesPorPersona", ReplyAction="http://tempuri.org/IRolesService/Roles_RolesPorPersonaResponse")]
-        System.Data.DataTable Roles_RolesPorPersona(int aID_Usuario);
+        Modelos.Modelos.RolUsuarioModel[] Roles_RolesPorPersona(int aID_Usuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRolesService/Roles_RolesPorPersona", ReplyAction="http://tempuri.org/IRolesService/Roles_RolesPorPersonaResponse")]
-        System.Threading.Tasks.Task<System.Data.DataTable> Roles_RolesPorPersonaAsync(int aID_Usuario);
+        System.Threading.Tasks.Task<Modelos.Modelos.RolUsuarioModel[]> Roles_RolesPorPersonaAsync(int aID_Usuario);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1525,11 +1581,11 @@ namespace Sistema_Bancario.WsSistemaBancario {
             return base.Channel.Roles_ObtenerTodosAsync();
         }
         
-        public System.Data.DataTable Roles_RolesPorPersona(int aID_Usuario) {
+        public Modelos.Modelos.RolUsuarioModel[] Roles_RolesPorPersona(int aID_Usuario) {
             return base.Channel.Roles_RolesPorPersona(aID_Usuario);
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataTable> Roles_RolesPorPersonaAsync(int aID_Usuario) {
+        public System.Threading.Tasks.Task<Modelos.Modelos.RolUsuarioModel[]> Roles_RolesPorPersonaAsync(int aID_Usuario) {
             return base.Channel.Roles_RolesPorPersonaAsync(aID_Usuario);
         }
     }
@@ -2090,6 +2146,24 @@ namespace Sistema_Bancario.WsSistemaBancario {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICuentaService/Cuenta_ObtenerTodos", ReplyAction="http://tempuri.org/ICuentaService/Cuenta_ObtenerTodosResponse")]
         System.Threading.Tasks.Task<Modelos.Modelos.CuentasModel[]> Cuenta_ObtenerTodosAsync(int aID_Persona);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICuentaService/Cuenta_Borrar", ReplyAction="http://tempuri.org/ICuentaService/Cuenta_BorrarResponse")]
+        bool Cuenta_Borrar(string aID_Cuenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICuentaService/Cuenta_Borrar", ReplyAction="http://tempuri.org/ICuentaService/Cuenta_BorrarResponse")]
+        System.Threading.Tasks.Task<bool> Cuenta_BorrarAsync(string aID_Cuenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICuentaService/Cuenta_SeleccionarPorNumero", ReplyAction="http://tempuri.org/ICuentaService/Cuenta_SeleccionarPorNumeroResponse")]
+        Modelos.Modelos.CuentasModel[] Cuenta_SeleccionarPorNumero(string aID_Cuenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICuentaService/Cuenta_SeleccionarPorNumero", ReplyAction="http://tempuri.org/ICuentaService/Cuenta_SeleccionarPorNumeroResponse")]
+        System.Threading.Tasks.Task<Modelos.Modelos.CuentasModel[]> Cuenta_SeleccionarPorNumeroAsync(string aID_Cuenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICuentaService/Cuenta_SeleccionarPorNumeroPrestamo", ReplyAction="http://tempuri.org/ICuentaService/Cuenta_SeleccionarPorNumeroPrestamoResponse")]
+        Modelos.Modelos.CuentasModel[] Cuenta_SeleccionarPorNumeroPrestamo(string aID_Cuenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICuentaService/Cuenta_SeleccionarPorNumeroPrestamo", ReplyAction="http://tempuri.org/ICuentaService/Cuenta_SeleccionarPorNumeroPrestamoResponse")]
+        System.Threading.Tasks.Task<Modelos.Modelos.CuentasModel[]> Cuenta_SeleccionarPorNumeroPrestamoAsync(string aID_Cuenta);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -2149,6 +2223,30 @@ namespace Sistema_Bancario.WsSistemaBancario {
         
         public System.Threading.Tasks.Task<Modelos.Modelos.CuentasModel[]> Cuenta_ObtenerTodosAsync(int aID_Persona) {
             return base.Channel.Cuenta_ObtenerTodosAsync(aID_Persona);
+        }
+        
+        public bool Cuenta_Borrar(string aID_Cuenta) {
+            return base.Channel.Cuenta_Borrar(aID_Cuenta);
+        }
+        
+        public System.Threading.Tasks.Task<bool> Cuenta_BorrarAsync(string aID_Cuenta) {
+            return base.Channel.Cuenta_BorrarAsync(aID_Cuenta);
+        }
+        
+        public Modelos.Modelos.CuentasModel[] Cuenta_SeleccionarPorNumero(string aID_Cuenta) {
+            return base.Channel.Cuenta_SeleccionarPorNumero(aID_Cuenta);
+        }
+        
+        public System.Threading.Tasks.Task<Modelos.Modelos.CuentasModel[]> Cuenta_SeleccionarPorNumeroAsync(string aID_Cuenta) {
+            return base.Channel.Cuenta_SeleccionarPorNumeroAsync(aID_Cuenta);
+        }
+        
+        public Modelos.Modelos.CuentasModel[] Cuenta_SeleccionarPorNumeroPrestamo(string aID_Cuenta) {
+            return base.Channel.Cuenta_SeleccionarPorNumeroPrestamo(aID_Cuenta);
+        }
+        
+        public System.Threading.Tasks.Task<Modelos.Modelos.CuentasModel[]> Cuenta_SeleccionarPorNumeroPrestamoAsync(string aID_Cuenta) {
+            return base.Channel.Cuenta_SeleccionarPorNumeroPrestamoAsync(aID_Cuenta);
         }
     }
     
@@ -2252,6 +2350,111 @@ namespace Sistema_Bancario.WsSistemaBancario {
         
         public System.Threading.Tasks.Task<Modelos.Modelos.CajaChicaModel[]> ObtenerTodosAsync() {
             return base.Channel.ObtenerTodosAsync();
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WsSistemaBancario.IDetalleCajaChicaService")]
+    public interface IDetalleCajaChicaService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_Crear", ReplyAction="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_CrearResponse")]
+        bool DetalleCajaChica_Crear(Modelos.Modelos.DetalleCajaChicaModel aDetalleCajaChica, int id_user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_Crear", ReplyAction="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_CrearResponse")]
+        System.Threading.Tasks.Task<bool> DetalleCajaChica_CrearAsync(Modelos.Modelos.DetalleCajaChicaModel aDetalleCajaChica, int id_user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_Editar", ReplyAction="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_EditarResponse")]
+        bool DetalleCajaChica_Editar(Modelos.Modelos.DetalleCajaChicaModel aDetalleCajaChica, int id_user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_Editar", ReplyAction="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_EditarResponse")]
+        System.Threading.Tasks.Task<bool> DetalleCajaChica_EditarAsync(Modelos.Modelos.DetalleCajaChicaModel aDetalleCajaChica, int id_user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_Eliminar", ReplyAction="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_EliminarResponse")]
+        bool DetalleCajaChica_Eliminar(int aID_DetalleCajaChica);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_Eliminar", ReplyAction="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_EliminarResponse")]
+        System.Threading.Tasks.Task<bool> DetalleCajaChica_EliminarAsync(int aID_DetalleCajaChica);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_ObtenerUno", ReplyAction="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_ObtenerUnoResponse")]
+        Modelos.Modelos.DetalleCajaChicaModel DetalleCajaChica_ObtenerUno(int aID_DetalleCajaChica);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_ObtenerUno", ReplyAction="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_ObtenerUnoResponse")]
+        System.Threading.Tasks.Task<Modelos.Modelos.DetalleCajaChicaModel> DetalleCajaChica_ObtenerUnoAsync(int aID_DetalleCajaChica);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_ObtenerTodos", ReplyAction="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_ObtenerTodosResponse" +
+            "")]
+        Modelos.Modelos.DetalleCajaChicaModel[] DetalleCajaChica_ObtenerTodos();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_ObtenerTodos", ReplyAction="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_ObtenerTodosResponse" +
+            "")]
+        System.Threading.Tasks.Task<Modelos.Modelos.DetalleCajaChicaModel[]> DetalleCajaChica_ObtenerTodosAsync();
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IDetalleCajaChicaServiceChannel : Sistema_Bancario.WsSistemaBancario.IDetalleCajaChicaService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class DetalleCajaChicaServiceClient : System.ServiceModel.ClientBase<Sistema_Bancario.WsSistemaBancario.IDetalleCajaChicaService>, Sistema_Bancario.WsSistemaBancario.IDetalleCajaChicaService {
+        
+        public DetalleCajaChicaServiceClient() {
+        }
+        
+        public DetalleCajaChicaServiceClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public DetalleCajaChicaServiceClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public DetalleCajaChicaServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public DetalleCajaChicaServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public bool DetalleCajaChica_Crear(Modelos.Modelos.DetalleCajaChicaModel aDetalleCajaChica, int id_user) {
+            return base.Channel.DetalleCajaChica_Crear(aDetalleCajaChica, id_user);
+        }
+        
+        public System.Threading.Tasks.Task<bool> DetalleCajaChica_CrearAsync(Modelos.Modelos.DetalleCajaChicaModel aDetalleCajaChica, int id_user) {
+            return base.Channel.DetalleCajaChica_CrearAsync(aDetalleCajaChica, id_user);
+        }
+        
+        public bool DetalleCajaChica_Editar(Modelos.Modelos.DetalleCajaChicaModel aDetalleCajaChica, int id_user) {
+            return base.Channel.DetalleCajaChica_Editar(aDetalleCajaChica, id_user);
+        }
+        
+        public System.Threading.Tasks.Task<bool> DetalleCajaChica_EditarAsync(Modelos.Modelos.DetalleCajaChicaModel aDetalleCajaChica, int id_user) {
+            return base.Channel.DetalleCajaChica_EditarAsync(aDetalleCajaChica, id_user);
+        }
+        
+        public bool DetalleCajaChica_Eliminar(int aID_DetalleCajaChica) {
+            return base.Channel.DetalleCajaChica_Eliminar(aID_DetalleCajaChica);
+        }
+        
+        public System.Threading.Tasks.Task<bool> DetalleCajaChica_EliminarAsync(int aID_DetalleCajaChica) {
+            return base.Channel.DetalleCajaChica_EliminarAsync(aID_DetalleCajaChica);
+        }
+        
+        public Modelos.Modelos.DetalleCajaChicaModel DetalleCajaChica_ObtenerUno(int aID_DetalleCajaChica) {
+            return base.Channel.DetalleCajaChica_ObtenerUno(aID_DetalleCajaChica);
+        }
+        
+        public System.Threading.Tasks.Task<Modelos.Modelos.DetalleCajaChicaModel> DetalleCajaChica_ObtenerUnoAsync(int aID_DetalleCajaChica) {
+            return base.Channel.DetalleCajaChica_ObtenerUnoAsync(aID_DetalleCajaChica);
+        }
+        
+        public Modelos.Modelos.DetalleCajaChicaModel[] DetalleCajaChica_ObtenerTodos() {
+            return base.Channel.DetalleCajaChica_ObtenerTodos();
+        }
+        
+        public System.Threading.Tasks.Task<Modelos.Modelos.DetalleCajaChicaModel[]> DetalleCajaChica_ObtenerTodosAsync() {
+            return base.Channel.DetalleCajaChica_ObtenerTodosAsync();
         }
     }
 }

@@ -70,6 +70,7 @@ namespace ServiciosBancarios
             #region [ Ventanilla Back ]
             BLBanco = new BancoMethods();
             BLCajaChica = new CajaChicaMethods();
+            BLDetalleCajaChica = new DetalleCajaChicaMethods();
             BLComponente = new ComponenteMethods();
             BLHorariosAtencion = new HorariosAtencionMethods();
             BLPermisosUsuario = new PermisosUsuarioMethods();
@@ -327,36 +328,7 @@ namespace ServiciosBancarios
 
     
 
-        #region [Detalle caja Chica]
-
-
-        public bool DetalleCajaChica_Crear(DetalleCajaChicaModel aDetalleCajaChica, int id_user)
-        {
-            return BLDetalleCajaChica.Crear(aDetalleCajaChica, id_user);
-        }
-
-        public bool DetalleCajaChica_Editar(DetalleCajaChicaModel aDetalleCajaChica, int id_user)
-        {
-            return BLDetalleCajaChica.Editar(aDetalleCajaChica, id_user);
-        }
-
-        public bool DetalleCajaChica_Eliminar(int aID_DetalleCajaChica)
-        {
-            return BLDetalleCajaChica.Eliminar(aID_DetalleCajaChica);
-        }
-
-        public DetalleCajaChicaModel DetalleCajaChica_ObtenerUno(int aID_DetalleCajaChica)
-        {
-            return BLDetalleCajaChica.ObtenerUno(aID_DetalleCajaChica);
-        }
-
-        public List<DetalleCajaChicaModel> DetalleCajaChica_ObtenerTodos()
-        {
-            return BLDetalleCajaChica.ObtenerTodos();
-        }
-
-
-        #endregion
+        
 
 
         #region [ Componente ]
@@ -448,7 +420,10 @@ namespace ServiciosBancarios
         {
             return BLPermisosUsuario.ObtenerTodos();
         }
-
+        public List<PermisosUsuarioModel> PermisosUsuarioXusuario(int IdUsuario )
+        {
+            return BLPermisosUsuario.ObtenerPermisosXUsaurio(IdUsuario);
+        }
 
         #endregion
 
@@ -478,6 +453,11 @@ namespace ServiciosBancarios
             return BLPersona.ObtenerTodos();
         }
 
+        public List<PersonaModel> PersonaSelectbyNroDocumento(string aValue)
+        {
+            return BLPersona.personaSelectbyNroDocumento(aValue);
+        }
+
         public PersonaModel Persona_ValidarUsuario(string aUsuario, string aContraseña)
         {
             return BLPersona.ValidarUsuario(aUsuario, aContraseña);
@@ -503,7 +483,7 @@ namespace ServiciosBancarios
             return BLPersona.GetRolesUsuario(aUsuario);
         }
 
-        public List<PersonaModel> GetPersonasPorRol(int idRol)
+        public DataTable GetPersonasPorRol(int idRol)
         {
             return BLPersona.GetPersonasPorRol(idRol);
         }
@@ -511,6 +491,11 @@ namespace ServiciosBancarios
         public List<PersonaModel> Persona_GetPersonaNombreApellidos(string nombre, string apellido)
         {
             return BLPersona.GetPersonaNombreApellidos(nombre,apellido);
+        }
+
+        public List<PersonaModel> PersonaSelectbyNombres(string nombres)
+        {
+            return BLPersona.personaSelectbyNombres(nombres);
         }
 
         public bool Persona_CrearNuevoUsuario(int idPersona, string Usuario, string Contraseña, bool Estado)
@@ -521,6 +506,10 @@ namespace ServiciosBancarios
         public List<PersonaModel> Persona_UsuarioSelectAll()
         {
             return BLPersona.UsuarioSelectAll();
+        }
+        public List<PersonaModel> ObtenerUsuariosSinCredenciales()
+        {
+            return BLPersona.ObtenerUsuariosSinCredenciales();
         }
 
         #endregion
@@ -552,7 +541,7 @@ namespace ServiciosBancarios
             return BLRoles.ObtenerTodos();
         }
 
-        public DataTable Roles_RolesPorPersona(int aID_Usuario)
+        public List<RolUsuarioModel> Roles_RolesPorPersona(int aID_Usuario)
         {
             return BLRoles.RolesPorPersona(aID_Usuario);
         }
@@ -738,11 +727,29 @@ namespace ServiciosBancarios
         {
             return BLCuenta.cuentaSelectbyId_cliente(aID_Persona);
         }
+
+        public bool Cuenta_Borrar(string aID_Cuenta)
+        {
+            return BLCuenta.Delete(aID_Cuenta);
+        }
+
+        public List<CuentasModel> Cuenta_SeleccionarPorNumero(string aID_Cuenta)
+        {
+            return BLCuenta.cuentaSelectbyNroCuenta(aID_Cuenta);
+        }
+
+        public List<CuentasModel> Cuenta_SeleccionarPorNumeroPrestamo(string aID_Cuenta)
+        {
+            return BLCuenta.cuentaSelectbyNroCuentaPrestamo(aID_Cuenta);
+        }
+
         #endregion
+
         public List<VentanillaModel> GetVentanillasXSucursal(int Idsucursal)
         {
             throw new NotImplementedException();
         }
+
         #region [ Caja Chica]
 
         
@@ -775,8 +782,52 @@ namespace ServiciosBancarios
         {
             throw new NotImplementedException();
         }
+
+        
+
+        
+
+        
+
+        
         #endregion
 
+        #region [Detalle caja Chica]
+
+        public bool DetalleCajaChica_Crear(DetalleCajaChicaModel aDetalleCajaChica, int id_user)
+        {
+            return BLDetalleCajaChica.Crear(aDetalleCajaChica, id_user);
+        }
+        public bool DetalleCajaChica_Editar(DetalleCajaChicaModel aDetalleCajaChica, int id_user)
+        {
+            return BLDetalleCajaChica.Editar(aDetalleCajaChica, id_user);
+        }
+
+        public bool DetalleCajaChica_Eliminar(int aID_DetalleCajaChica)
+        {
+            return BLDetalleCajaChica.Eliminar(aID_DetalleCajaChica);
+        }
+
+        public DetalleCajaChicaModel DetalleCajaChica_ObtenerUno(int aID_DetalleCajaChica)
+        {
+            return BLDetalleCajaChica.ObtenerUno(aID_DetalleCajaChica);
+        }
+
+        public List<DetalleCajaChicaModel> DetalleCajaChica_ObtenerTodos()
+        {
+            return BLDetalleCajaChica.ObtenerTodos();
+        }
+
+        public List<PermisosUsuarioModel> PermisosUsuario_ObtenerTodos(int IdUsuario)
+        {
+            throw new NotImplementedException();
+        }
+
+   
+
+
+
+        #endregion
         #endregion
     }
 }

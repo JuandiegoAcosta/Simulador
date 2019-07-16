@@ -85,6 +85,12 @@
     <Compile Include="Administrador\BuscarPersona.Designer.cs">
       <DependentUpon>BuscarPersona.cs</DependentUpon>
     </Compile>
+    <Compile Include="Administrador\Editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrador\Editar.Designer.cs">
+      <DependentUpon>Editar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Administrador\Permisos.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -272,12 +278,6 @@
     <Compile Include="Plataforma\UCactualizarCuenta.Designer.cs">
       <DependentUpon>UCactualizarCuenta.cs</DependentUpon>
     </Compile>
-    <Compile Include="Plataforma\UCchequeras.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Plataforma\UCchequeras.Designer.cs">
-      <DependentUpon>UCchequeras.cs</DependentUpon>
-    </Compile>
     <Compile Include="Plataforma\UCcliente.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -306,6 +306,12 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="plataforma_controles\NuevaCuentaUserControl.Designer.cs" />
+    <Compile Include="plataforma_controles\NuevaTarjeta.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="plataforma_controles\NuevaTarjeta.Designer.cs">
+      <DependentUpon>NuevaTarjeta.cs</DependentUpon>
+    </Compile>
     <Compile Include="plataforma_controles\NuevoPrestamoUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -313,7 +319,9 @@
     <Compile Include="plataforma_controles\RegistrarChequera.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="plataforma_controles\RegistrarChequera.Designer.cs" />
+    <Compile Include="plataforma_controles\RegistrarChequera.Designer.cs">
+      <DependentUpon>RegistrarChequera.cs</DependentUpon>
+    </Compile>
     <Compile Include="plataforma_controles\RegistroPersonaUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -431,6 +439,9 @@
     <EmbeddedResource Include="Administrador\BuscarPersona.resx">
       <DependentUpon>BuscarPersona.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Administrador\Editar.resx">
+      <DependentUpon>Editar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Administrador\Permisos.resx">
       <DependentUpon>Permisos.cs</DependentUpon>
     </EmbeddedResource>
@@ -508,8 +519,13 @@
       <DependentUpon>UCcliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="plataforma_controles\NuevaCuentaUserControl.resx" />
+    <EmbeddedResource Include="plataforma_controles\NuevaTarjeta.resx">
+      <DependentUpon>NuevaTarjeta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="plataforma_controles\NuevoPrestamoUserControl.resx" />
-    <EmbeddedResource Include="plataforma_controles\RegistrarChequera.resx" />
+    <EmbeddedResource Include="plataforma_controles\RegistrarChequera.resx">
+      <DependentUpon>RegistrarChequera.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="plataforma_controles\RegistroPersonaUserControl.resx" />
     <EmbeddedResource Include="Pruebas.resx">
       <DependentUpon>Pruebas.cs</DependentUpon>
@@ -531,9 +547,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Plataforma\UCactualizarCuenta.resx">
       <DependentUpon>UCactualizarCuenta.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Plataforma\UCchequeras.resx">
-      <DependentUpon>UCchequeras.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Plataforma\UCcuenta.resx">
       <DependentUpon>UCcuenta.cs</DependentUpon>
@@ -600,14 +613,12 @@
     <None Include="Connected Services\WsSistemaBancario\SistemaBancario2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\WsSistemaBancario\SistemaBancario3.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Properties\DataSources\Modelos.Modelos.BancoModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.CajaChicaModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.CobroChequesModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.ComponenteModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.CuentasModel.datasource" />
+    <None Include="Properties\DataSources\Modelos.Modelos.DetalleCajaChicaModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.EmpresaModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.HorariosAtencionModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.MovimientosVentanillaModel.datasource" />
@@ -697,6 +708,12 @@
     <None Include="Resources\view.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\add_rol.png" />
+    <None Include="Resources\add_permiso.png" />
+    <None Include="Resources\icons8-agregar-administrador-26.png" />
+    <None Include="Resources\icons8-eliminar-26.png" />
+    <None Include="Resources\icons8-editar-26.png" />
+    <None Include="Resources\icons8-editar-32.png" />
     <None Include="Connected Services\WsSistemaBancario\SistemaBancario.disco" />
     <None Include="Connected Services\WsSistemaBancario\configuration91.svcinfo" />
     <None Include="Connected Services\WsSistemaBancario\configuration.svcinfo" />

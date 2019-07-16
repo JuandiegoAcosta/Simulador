@@ -46,6 +46,7 @@
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label7 = new System.Windows.Forms.Label();
+            this.printTicket = new System.Drawing.Printing.PrintDocument();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSoles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDolares)).BeginInit();
             this.SuspendLayout();
@@ -102,6 +103,7 @@
             this.btnImprimir.TabIndex = 16;
             this.btnImprimir.Text = "Imprimir ticket";
             this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // cmbVentanillas
             // 
@@ -250,5 +252,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Drawing.Printing.PrintDocument printTicket;
     }
 }

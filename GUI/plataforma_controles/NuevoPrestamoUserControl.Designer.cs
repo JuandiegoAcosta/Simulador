@@ -103,6 +103,8 @@
             this.nudPlazoMeses.Name = "nudPlazoMeses";
             this.nudPlazoMeses.Size = new System.Drawing.Size(92, 20);
             this.nudPlazoMeses.TabIndex = 486;
+            this.nudPlazoMeses.Minimum = 1;
+            this.nudPlazoMeses.Maximum = 360;
             // 
             // nudPorcentajeInteres
             // 
@@ -110,6 +112,8 @@
             this.nudPorcentajeInteres.Name = "nudPorcentajeInteres";
             this.nudPorcentajeInteres.Size = new System.Drawing.Size(92, 20);
             this.nudPorcentajeInteres.TabIndex = 487;
+            this.nudPorcentajeInteres.Minimum = 0;
+            this.nudPorcentajeInteres.Maximum = 300;
             // 
             // label1
             // 
@@ -195,6 +199,7 @@
             this.txtMontoPrestamo.Name = "txtMontoPrestamo";
             this.txtMontoPrestamo.Size = new System.Drawing.Size(100, 20);
             this.txtMontoPrestamo.TabIndex = 497;
+            this.txtMontoPrestamo.KeyPress += TxtMontoPrestamo_KeyPress;
             // 
             // txtMontoMora
             // 
@@ -202,6 +207,7 @@
             this.txtMontoMora.Name = "txtMontoMora";
             this.txtMontoMora.Size = new System.Drawing.Size(100, 20);
             this.txtMontoMora.TabIndex = 498;
+            this.txtMontoMora.KeyPress += TxtMontoMora_KeyPress;
             // 
             // label7
             // 
@@ -236,6 +242,8 @@
             this.nudDiaPago.Name = "nudDiaPago";
             this.nudDiaPago.Size = new System.Drawing.Size(92, 20);
             this.nudDiaPago.TabIndex = 501;
+            this.nudDiaPago.Minimum = 1;
+            this.nudDiaPago.Maximum = 28;
             // 
             // label10
             // 

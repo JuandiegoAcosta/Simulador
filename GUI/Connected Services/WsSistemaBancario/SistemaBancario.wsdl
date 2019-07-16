@@ -5,7 +5,6 @@
       <xsd:import schemaLocation="http://localhost:50786/SistemaBancario.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:50786/SistemaBancario.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:50786/SistemaBancario.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Modelos.Modelos" />
-      <xsd:import schemaLocation="http://localhost:50786/SistemaBancario.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="ICobroChequeService_CobroCheque_Crear_InputMessage">
@@ -356,6 +355,12 @@
   <wsdl:message name="IPermisosUsuarioService_PermisosUsuario_ObtenerTodos_OutputMessage">
     <wsdl:part name="parameters" element="tns:PermisosUsuario_ObtenerTodosResponse" />
   </wsdl:message>
+  <wsdl:message name="IPermisosUsuarioService_PermisosUsuarioXusuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:PermisosUsuarioXusuario" />
+  </wsdl:message>
+  <wsdl:message name="IPermisosUsuarioService_PermisosUsuarioXusuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PermisosUsuarioXusuarioResponse" />
+  </wsdl:message>
   <wsdl:message name="IPersonaService_Persona_Crear_InputMessage">
     <wsdl:part name="parameters" element="tns:Persona_Crear" />
   </wsdl:message>
@@ -439,6 +444,24 @@
   </wsdl:message>
   <wsdl:message name="IPersonaService_Persona_UsuarioSelectAll_OutputMessage">
     <wsdl:part name="parameters" element="tns:Persona_UsuarioSelectAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPersonaService_PersonaSelectbyNroDocumento_InputMessage">
+    <wsdl:part name="parameters" element="tns:PersonaSelectbyNroDocumento" />
+  </wsdl:message>
+  <wsdl:message name="IPersonaService_PersonaSelectbyNroDocumento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PersonaSelectbyNroDocumentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPersonaService_PersonaSelectbyNombres_InputMessage">
+    <wsdl:part name="parameters" element="tns:PersonaSelectbyNombres" />
+  </wsdl:message>
+  <wsdl:message name="IPersonaService_PersonaSelectbyNombres_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PersonaSelectbyNombresResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPersonaService_ObtenerUsuariosSinCredenciales_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerUsuariosSinCredenciales" />
+  </wsdl:message>
+  <wsdl:message name="IPersonaService_ObtenerUsuariosSinCredenciales_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerUsuariosSinCredencialesResponse" />
   </wsdl:message>
   <wsdl:message name="IRolesService_Roles_Crear_InputMessage">
     <wsdl:part name="parameters" element="tns:Roles_Crear" />
@@ -656,6 +679,24 @@
   <wsdl:message name="ICuentaService_Cuenta_ObtenerTodos_OutputMessage">
     <wsdl:part name="parameters" element="tns:Cuenta_ObtenerTodosResponse" />
   </wsdl:message>
+  <wsdl:message name="ICuentaService_Cuenta_Borrar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Cuenta_Borrar" />
+  </wsdl:message>
+  <wsdl:message name="ICuentaService_Cuenta_Borrar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Cuenta_BorrarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICuentaService_Cuenta_SeleccionarPorNumero_InputMessage">
+    <wsdl:part name="parameters" element="tns:Cuenta_SeleccionarPorNumero" />
+  </wsdl:message>
+  <wsdl:message name="ICuentaService_Cuenta_SeleccionarPorNumero_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Cuenta_SeleccionarPorNumeroResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICuentaService_Cuenta_SeleccionarPorNumeroPrestamo_InputMessage">
+    <wsdl:part name="parameters" element="tns:Cuenta_SeleccionarPorNumeroPrestamo" />
+  </wsdl:message>
+  <wsdl:message name="ICuentaService_Cuenta_SeleccionarPorNumeroPrestamo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Cuenta_SeleccionarPorNumeroPrestamoResponse" />
+  </wsdl:message>
   <wsdl:message name="ICajaChicaService_Crear_InputMessage">
     <wsdl:part name="parameters" element="tns:Crear" />
   </wsdl:message>
@@ -685,6 +726,36 @@
   </wsdl:message>
   <wsdl:message name="ICajaChicaService_ObtenerTodos_OutputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerTodosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDetalleCajaChicaService_DetalleCajaChica_Crear_InputMessage">
+    <wsdl:part name="parameters" element="tns:DetalleCajaChica_Crear" />
+  </wsdl:message>
+  <wsdl:message name="IDetalleCajaChicaService_DetalleCajaChica_Crear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DetalleCajaChica_CrearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDetalleCajaChicaService_DetalleCajaChica_Editar_InputMessage">
+    <wsdl:part name="parameters" element="tns:DetalleCajaChica_Editar" />
+  </wsdl:message>
+  <wsdl:message name="IDetalleCajaChicaService_DetalleCajaChica_Editar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DetalleCajaChica_EditarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDetalleCajaChicaService_DetalleCajaChica_Eliminar_InputMessage">
+    <wsdl:part name="parameters" element="tns:DetalleCajaChica_Eliminar" />
+  </wsdl:message>
+  <wsdl:message name="IDetalleCajaChicaService_DetalleCajaChica_Eliminar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DetalleCajaChica_EliminarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDetalleCajaChicaService_DetalleCajaChica_ObtenerUno_InputMessage">
+    <wsdl:part name="parameters" element="tns:DetalleCajaChica_ObtenerUno" />
+  </wsdl:message>
+  <wsdl:message name="IDetalleCajaChicaService_DetalleCajaChica_ObtenerUno_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DetalleCajaChica_ObtenerUnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDetalleCajaChicaService_DetalleCajaChica_ObtenerTodos_InputMessage">
+    <wsdl:part name="parameters" element="tns:DetalleCajaChica_ObtenerTodos" />
+  </wsdl:message>
+  <wsdl:message name="IDetalleCajaChicaService_DetalleCajaChica_ObtenerTodos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DetalleCajaChica_ObtenerTodosResponse" />
   </wsdl:message>
   <wsdl:portType name="ICobroChequeService">
     <wsdl:operation name="CobroCheque_Crear">
@@ -939,6 +1010,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IPermisosUsuarioService/PermisosUsuario_ObtenerTodos" message="tns:IPermisosUsuarioService_PermisosUsuario_ObtenerTodos_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IPermisosUsuarioService/PermisosUsuario_ObtenerTodosResponse" message="tns:IPermisosUsuarioService_PermisosUsuario_ObtenerTodos_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="PermisosUsuarioXusuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPermisosUsuarioService/PermisosUsuarioXusuario" message="tns:IPermisosUsuarioService_PermisosUsuarioXusuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPermisosUsuarioService/PermisosUsuarioXusuarioResponse" message="tns:IPermisosUsuarioService_PermisosUsuarioXusuario_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IPersonaService">
     <wsdl:operation name="Persona_Crear">
@@ -996,6 +1071,18 @@
     <wsdl:operation name="Persona_UsuarioSelectAll">
       <wsdl:input wsaw:Action="http://tempuri.org/IPersonaService/Persona_UsuarioSelectAll" message="tns:IPersonaService_Persona_UsuarioSelectAll_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IPersonaService/Persona_UsuarioSelectAllResponse" message="tns:IPersonaService_Persona_UsuarioSelectAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PersonaSelectbyNroDocumento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPersonaService/PersonaSelectbyNroDocumento" message="tns:IPersonaService_PersonaSelectbyNroDocumento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPersonaService/PersonaSelectbyNroDocumentoResponse" message="tns:IPersonaService_PersonaSelectbyNroDocumento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PersonaSelectbyNombres">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPersonaService/PersonaSelectbyNombres" message="tns:IPersonaService_PersonaSelectbyNombres_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPersonaService/PersonaSelectbyNombresResponse" message="tns:IPersonaService_PersonaSelectbyNombres_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUsuariosSinCredenciales">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPersonaService/ObtenerUsuariosSinCredenciales" message="tns:IPersonaService_ObtenerUsuariosSinCredenciales_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPersonaService/ObtenerUsuariosSinCredencialesResponse" message="tns:IPersonaService_ObtenerUsuariosSinCredenciales_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IRolesService">
@@ -1155,6 +1242,18 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ICuentaService/Cuenta_ObtenerTodos" message="tns:ICuentaService_Cuenta_ObtenerTodos_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICuentaService/Cuenta_ObtenerTodosResponse" message="tns:ICuentaService_Cuenta_ObtenerTodos_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="Cuenta_Borrar">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICuentaService/Cuenta_Borrar" message="tns:ICuentaService_Cuenta_Borrar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICuentaService/Cuenta_BorrarResponse" message="tns:ICuentaService_Cuenta_Borrar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Cuenta_SeleccionarPorNumero">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICuentaService/Cuenta_SeleccionarPorNumero" message="tns:ICuentaService_Cuenta_SeleccionarPorNumero_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICuentaService/Cuenta_SeleccionarPorNumeroResponse" message="tns:ICuentaService_Cuenta_SeleccionarPorNumero_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Cuenta_SeleccionarPorNumeroPrestamo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICuentaService/Cuenta_SeleccionarPorNumeroPrestamo" message="tns:ICuentaService_Cuenta_SeleccionarPorNumeroPrestamo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICuentaService/Cuenta_SeleccionarPorNumeroPrestamoResponse" message="tns:ICuentaService_Cuenta_SeleccionarPorNumeroPrestamo_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="ICajaChicaService">
     <wsdl:operation name="Crear">
@@ -1176,6 +1275,28 @@
     <wsdl:operation name="ObtenerTodos">
       <wsdl:input wsaw:Action="http://tempuri.org/ICajaChicaService/ObtenerTodos" message="tns:ICajaChicaService_ObtenerTodos_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICajaChicaService/ObtenerTodosResponse" message="tns:ICajaChicaService_ObtenerTodos_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IDetalleCajaChicaService">
+    <wsdl:operation name="DetalleCajaChica_Crear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_Crear" message="tns:IDetalleCajaChicaService_DetalleCajaChica_Crear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_CrearResponse" message="tns:IDetalleCajaChicaService_DetalleCajaChica_Crear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DetalleCajaChica_Editar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_Editar" message="tns:IDetalleCajaChicaService_DetalleCajaChica_Editar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_EditarResponse" message="tns:IDetalleCajaChicaService_DetalleCajaChica_Editar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DetalleCajaChica_Eliminar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_Eliminar" message="tns:IDetalleCajaChicaService_DetalleCajaChica_Eliminar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_EliminarResponse" message="tns:IDetalleCajaChicaService_DetalleCajaChica_Eliminar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DetalleCajaChica_ObtenerUno">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_ObtenerUno" message="tns:IDetalleCajaChicaService_DetalleCajaChica_ObtenerUno_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_ObtenerUnoResponse" message="tns:IDetalleCajaChicaService_DetalleCajaChica_ObtenerUno_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DetalleCajaChica_ObtenerTodos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_ObtenerTodos" message="tns:IDetalleCajaChicaService_DetalleCajaChica_ObtenerTodos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_ObtenerTodosResponse" message="tns:IDetalleCajaChicaService_DetalleCajaChica_ObtenerTodos_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ICobroChequeService" type="tns:ICobroChequeService">
@@ -1732,6 +1853,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="PermisosUsuarioXusuario">
+      <soap:operation soapAction="http://tempuri.org/IPermisosUsuarioService/PermisosUsuarioXusuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="BasicHttpBinding_IPersonaService" type="tns:IPersonaService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -1854,6 +1984,33 @@
     </wsdl:operation>
     <wsdl:operation name="Persona_UsuarioSelectAll">
       <soap:operation soapAction="http://tempuri.org/IPersonaService/Persona_UsuarioSelectAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PersonaSelectbyNroDocumento">
+      <soap:operation soapAction="http://tempuri.org/IPersonaService/PersonaSelectbyNroDocumento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PersonaSelectbyNombres">
+      <soap:operation soapAction="http://tempuri.org/IPersonaService/PersonaSelectbyNombres" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUsuariosSinCredenciales">
+      <soap:operation soapAction="http://tempuri.org/IPersonaService/ObtenerUsuariosSinCredenciales" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -2206,6 +2363,33 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Cuenta_Borrar">
+      <soap:operation soapAction="http://tempuri.org/ICuentaService/Cuenta_Borrar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Cuenta_SeleccionarPorNumero">
+      <soap:operation soapAction="http://tempuri.org/ICuentaService/Cuenta_SeleccionarPorNumero" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Cuenta_SeleccionarPorNumeroPrestamo">
+      <soap:operation soapAction="http://tempuri.org/ICuentaService/Cuenta_SeleccionarPorNumeroPrestamo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="BasicHttpBinding_ICajaChicaService" type="tns:ICajaChicaService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -2247,6 +2431,54 @@
     </wsdl:operation>
     <wsdl:operation name="ObtenerTodos">
       <soap:operation soapAction="http://tempuri.org/ICajaChicaService/ObtenerTodos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IDetalleCajaChicaService" type="tns:IDetalleCajaChicaService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DetalleCajaChica_Crear">
+      <soap:operation soapAction="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_Crear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DetalleCajaChica_Editar">
+      <soap:operation soapAction="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_Editar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DetalleCajaChica_Eliminar">
+      <soap:operation soapAction="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_Eliminar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DetalleCajaChica_ObtenerUno">
+      <soap:operation soapAction="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_ObtenerUno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DetalleCajaChica_ObtenerTodos">
+      <soap:operation soapAction="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_ObtenerTodos" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -2314,6 +2546,9 @@
       <soap:address location="http://localhost:50786/SistemaBancario.svc" />
     </wsdl:port>
     <wsdl:port name="BasicHttpBinding_ICajaChicaService" binding="tns:BasicHttpBinding_ICajaChicaService">
+      <soap:address location="http://localhost:50786/SistemaBancario.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IDetalleCajaChicaService" binding="tns:BasicHttpBinding_IDetalleCajaChicaService">
       <soap:address location="http://localhost:50786/SistemaBancario.svc" />
     </wsdl:port>
   </wsdl:service>

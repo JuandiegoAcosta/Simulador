@@ -59,6 +59,7 @@
     <Compile Include="Plataforma\BLCuenta.cs" />
     <Compile Include="Plataforma\BLFechaHoraServidor.cs" />
     <Compile Include="Plataforma\BLPrestamo.cs" />
+    <Compile Include="Plataforma\BLTarjeta.cs" />
     <Compile Include="Plataforma\BLTipoMoneda.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Ventanilla\CobroChequeMethods.cs" />

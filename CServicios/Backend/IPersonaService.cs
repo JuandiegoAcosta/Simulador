@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace ServiciosBancarios.Backend
 {
@@ -42,7 +43,7 @@ namespace ServiciosBancarios.Backend
         List<RolesModel> Persona_GetRolesUsuario(string aUsuario);
 
         [OperationContract]
-        List<PersonaModel> GetPersonasPorRol(int idRol);
+        DataTable GetPersonasPorRol(int idRol);
 
         [OperationContract]
         List<PersonaModel> Persona_GetPersonaNombreApellidos(string nombre, string apellido);
@@ -53,5 +54,12 @@ namespace ServiciosBancarios.Backend
         [OperationContract]
         List<PersonaModel> Persona_UsuarioSelectAll();
 
+        [OperationContract]
+        List<PersonaModel> PersonaSelectbyNroDocumento(string aValue);
+
+        [OperationContract]
+        List<PersonaModel> PersonaSelectbyNombres(string aValue);
+        [OperationContract]
+        List<PersonaModel> ObtenerUsuariosSinCredenciales();
     }
 }

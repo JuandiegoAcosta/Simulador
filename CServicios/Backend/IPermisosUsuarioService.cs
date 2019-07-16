@@ -24,6 +24,9 @@ namespace ServiciosBancarios.Backend
         PermisosUsuarioModel PermisosUsuario_ObtenerUno(int aID_PermisosUsuario);
 
         [OperationContract]
-        List<PermisosUsuarioModel> PermisosUsuario_ObtenerTodos();
+        List<PermisosUsuarioModel> PermisosUsuario_ObtenerTodos(int IdUsuario);
+
+        [OperationContract]
+        List<PermisosUsuarioModel> PermisosUsuarioXusuario(int IdUsuario);
     }
 }

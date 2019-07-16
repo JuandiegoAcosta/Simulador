@@ -20,7 +20,16 @@ namespace CNegocio.Plataforma
         /// </summary>		
         public bool Insert(PrestamosModel aprestamo)
         {
-            return this.managerPrestamo.Insert(aprestamo);
+            CuentaManager managerCuenta = new CuentaManager();
+            CuentasModel cuenta = new CuentasModel()
+            {
+                Nrocuenta = aprestamo.Cuenta,
+                Saldocontable = aprestamo.Montoprestamo,
+                Usuario_modificador = aprestamo.Usuario_creador,
+                Fecha_modificacion = aprestamo.Fechaprestamo
+            };
+
+            return (this.managerPrestamo.Insert(aprestamo) && managerCuenta.DepositarPrestamo(cuenta));
         }
 
 
