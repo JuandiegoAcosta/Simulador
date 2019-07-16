@@ -58,5 +58,7 @@ namespace ServiciosBancarios.Backend
 
         [OperationContract]
         List<PersonaModel> PersonaSelectbyNombres(string aValue);
+        [OperationContract]
+        List<PersonaModel> ObtenerUsuariosSinCredenciales();
     }
 }

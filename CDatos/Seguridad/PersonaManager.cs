@@ -319,7 +319,57 @@ namespace CDatos.Manager
                 return PersonaModellist;
             }
         }
+        public List<PersonaModel> ObtenerUsuariosSinCredenciales()
+        {
 
+            List<PersonaModel> PersonaModellist = new List<PersonaModel>();
+
+            try
+            {
+                using (var connection = Util.ConnectionFactory.conexion())
+                {
+                    connection.Open();
+
+                    SqlCommand command = connection.CreateCommand();
+
+
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.CommandText = "ObtenerUsuariosSinCredenciales";
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+
+                            int Id = (int)(reader["Id"]);
+                            string Nombres = (string)(reader["Nombres"]);
+                            string Apellidos = (string)(reader["Apellidos"]);
+                            string NroDocumento = (string)(reader["NroDocumento"]);
+                            int TipoDocumento = (int)(reader["TipoDocumento"]);
+
+                            PersonaModellist.Add(new PersonaModel
+                            {
+                                Id = Id,
+                                Nombres = Nombres,
+                                Apellidos = Apellidos,
+                                Nrodocumento = NroDocumento,
+                                Tipodocumento = TipoDocumento,
+
+                            });
+                        }
+                    }
+                }
+
+                return PersonaModellist;
+            }
+            catch (Exception)
+            {
+                return PersonaModellist;
+            }
+        }
         /// <summary>
         /// Selects the Multiple objects of persona table by a given criteria.
         /// </summary>

@@ -507,6 +507,10 @@ namespace ServiciosBancarios
         {
             return BLPersona.UsuarioSelectAll();
         }
+        public List<PersonaModel> ObtenerUsuariosSinCredenciales()
+        {
+            return BLPersona.ObtenerUsuariosSinCredenciales();
+        }
 
         #endregion
 

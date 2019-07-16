@@ -457,6 +457,12 @@
   <wsdl:message name="IPersonaService_PersonaSelectbyNombres_OutputMessage">
     <wsdl:part name="parameters" element="tns:PersonaSelectbyNombresResponse" />
   </wsdl:message>
+  <wsdl:message name="IPersonaService_ObtenerUsuariosSinCredenciales_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerUsuariosSinCredenciales" />
+  </wsdl:message>
+  <wsdl:message name="IPersonaService_ObtenerUsuariosSinCredenciales_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerUsuariosSinCredencialesResponse" />
+  </wsdl:message>
   <wsdl:message name="IRolesService_Roles_Crear_InputMessage">
     <wsdl:part name="parameters" element="tns:Roles_Crear" />
   </wsdl:message>
@@ -1073,6 +1079,10 @@
     <wsdl:operation name="PersonaSelectbyNombres">
       <wsdl:input wsaw:Action="http://tempuri.org/IPersonaService/PersonaSelectbyNombres" message="tns:IPersonaService_PersonaSelectbyNombres_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IPersonaService/PersonaSelectbyNombresResponse" message="tns:IPersonaService_PersonaSelectbyNombres_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUsuariosSinCredenciales">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPersonaService/ObtenerUsuariosSinCredenciales" message="tns:IPersonaService_ObtenerUsuariosSinCredenciales_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPersonaService/ObtenerUsuariosSinCredencialesResponse" message="tns:IPersonaService_ObtenerUsuariosSinCredenciales_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IRolesService">
@@ -1992,6 +2002,15 @@
     </wsdl:operation>
     <wsdl:operation name="PersonaSelectbyNombres">
       <soap:operation soapAction="http://tempuri.org/IPersonaService/PersonaSelectbyNombres" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUsuariosSinCredenciales">
+      <soap:operation soapAction="http://tempuri.org/IPersonaService/ObtenerUsuariosSinCredenciales" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -140,6 +140,10 @@ namespace CNegocio.Backend
         {
             return ADPersonaManager.UsuarioSelectAll();
         }
+        public List<PersonaModel> ObtenerUsuariosSinCredenciales()
+        {
+            return ADPersonaManager.ObtenerUsuariosSinCredenciales();
+        }
 
 
     }

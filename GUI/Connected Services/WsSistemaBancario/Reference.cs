@@ -1301,6 +1301,12 @@ namespace Sistema_Bancario.WsSistemaBancario {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/PersonaSelectbyNombres", ReplyAction="http://tempuri.org/IPersonaService/PersonaSelectbyNombresResponse")]
         System.Threading.Tasks.Task<Modelos.Modelos.PersonaModel[]> PersonaSelectbyNombresAsync(string aValue);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/ObtenerUsuariosSinCredenciales", ReplyAction="http://tempuri.org/IPersonaService/ObtenerUsuariosSinCredencialesResponse")]
+        Modelos.Modelos.PersonaModel[] ObtenerUsuariosSinCredenciales();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/ObtenerUsuariosSinCredenciales", ReplyAction="http://tempuri.org/IPersonaService/ObtenerUsuariosSinCredencialesResponse")]
+        System.Threading.Tasks.Task<Modelos.Modelos.PersonaModel[]> ObtenerUsuariosSinCredencialesAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1456,6 +1462,14 @@ namespace Sistema_Bancario.WsSistemaBancario {
         
         public System.Threading.Tasks.Task<Modelos.Modelos.PersonaModel[]> PersonaSelectbyNombresAsync(string aValue) {
             return base.Channel.PersonaSelectbyNombresAsync(aValue);
+        }
+        
+        public Modelos.Modelos.PersonaModel[] ObtenerUsuariosSinCredenciales() {
+            return base.Channel.ObtenerUsuariosSinCredenciales();
+        }
+        
+        public System.Threading.Tasks.Task<Modelos.Modelos.PersonaModel[]> ObtenerUsuariosSinCredencialesAsync() {
+            return base.Channel.ObtenerUsuariosSinCredencialesAsync();
         }
     }
     

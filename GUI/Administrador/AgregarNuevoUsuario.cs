@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Modelos.Modelos;
+using Modelos.Session;
 using Sistema_Bancario.Clases;
 
 namespace Sistema_Bancario.Administrador
@@ -17,36 +18,17 @@ namespace Sistema_Bancario.Administrador
         public static int idRol;
         public static int idPersona;
         public static string NombrePersona;
+        public ISession session;
 
-        public AgregarNuevoUsuario()
+        public AgregarNuevoUsuario(ISession sesion)
         {
             
             InitializeComponent();
+            this.session = sesion;
             
         }
 
-        BuscarPersona f1 = Application.OpenForms.OfType<BuscarPersona>().SingleOrDefault();
-
-
-        private static AgregarNuevoUsuario _instance;
-        public static AgregarNuevoUsuario instance
-        {
-            get
-            {
-
-                if (_instance == null)
-                {
-                    _instance = new AgregarNuevoUsuario();
-                }
-
-                return _instance;
-            }
-        }
-
-
         
-
-
         private void btnBuscarUsuario_Click(object sender, EventArgs e)
         {
             using (BuscarPersona frmBuscarPersona = new BuscarPersona())
@@ -59,9 +41,6 @@ namespace Sistema_Bancario.Administrador
                     txtUsuarioBuscado.Text = NombrePersona;
                 }
             }
-            
-
-
         }
 
         bool confirmarCreacion;
@@ -73,25 +52,12 @@ namespace Sistema_Bancario.Administrador
                 string passEncrypt = Encrypt.GetSHA256(txtContraseña.Text);
                 using (WsSistemaBancario.PersonaServiceClient CrearUsuario = new WsSistemaBancario.PersonaServiceClient())
                 {
-                    //if (chbEstado.Checked == true) {
-                    //    estadocheck = true;
-                    //}
-                    //else { estadocheck =false}
-
-
-
                     confirmarCreacion = CrearUsuario.Persona_CrearNuevoUsuario(idPersona, txtUsuario.Text, passEncrypt, chbEstado.Checked);
                     txtUsuarioBuscado.Text = "";
                     txtContraseña.Text = "";
                     txtUsuario.Text = "";
-
-
-
-
-
                     using (WsSistemaBancario.RolUsuarioServiceClient CrearRolUsuario = new WsSistemaBancario.RolUsuarioServiceClient())
                     {
-
                         RolUsuarioModel rum = new RolUsuarioModel();
                         rum.Id_persona = idPersona;
                         rum.Id_rol = idRol;
@@ -101,11 +67,6 @@ namespace Sistema_Bancario.Administrador
 
                         CrearRolUsuario.RolUsuario_Crear(rum,1);
                     }
-
-
-
-
-
                     //llenarDGVUsuarios();
                     pnlAgregarUsuario.SendToBack();
 
@@ -119,6 +80,11 @@ namespace Sistema_Bancario.Administrador
             {
 
             }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
