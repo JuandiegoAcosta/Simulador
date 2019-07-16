@@ -731,6 +731,11 @@ namespace ServiciosBancarios
             return BLCuenta.cuentaSelectbyNroCuenta(aID_Cuenta);
         }
 
+        public List<CuentasModel> Cuenta_SeleccionarPorNumeroPrestamo(string aID_Cuenta)
+        {
+            return BLCuenta.cuentaSelectbyNroCuentaPrestamo(aID_Cuenta);
+        }
+
         #endregion
 
         public List<VentanillaModel> GetVentanillasXSucursal(int Idsucursal)

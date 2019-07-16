@@ -22,9 +22,6 @@ namespace Sistema_Bancario.plataforma_controles
         WsSistemaBancario.TipoMonedaServiceClient BLTipoMoneda = new WsSistemaBancario.TipoMonedaServiceClient();
         WsSistemaBancario.PersonaServiceClient BLPersona = new WsSistemaBancario.PersonaServiceClient();
         WsSistemaBancario.TipoDocumentoServiceClient BLTipo_documento = new WsSistemaBancario.TipoDocumentoServiceClient();
-        //private BLTipoMoneda BLTipoMoneda = new BLTipoMoneda();
-        //private PersonaMethods BLPersona = new PersonaMethods();
-        //private TipoDocumentoMethods BLTipo_documento = new TipoDocumentoMethods();
 
         private string gUsuario;
         private string gSucursal;
@@ -382,14 +379,14 @@ namespace Sistema_Bancario.plataforma_controles
 
             if (objeto == null)
             {
-                MessageBox.Show("Problemas al instanciar el nuevo objeto, revise las propiedades");
+                MessageBox.Show("Se detectan incoherencias, por favor revisarlas");
                 return;
             }
             if (this.BLCuenta.Cuenta_Crear(objeto))
             {
                 this.clearForm();
                this.modoInicial();
-                MessageBox.Show("El proceso ha sido correcto");
+                MessageBox.Show("La cuenta fue creada exitosamente");
             }
         }
 

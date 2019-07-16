@@ -2130,6 +2130,12 @@ namespace Sistema_Bancario.WsSistemaBancario {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICuentaService/Cuenta_SeleccionarPorNumero", ReplyAction="http://tempuri.org/ICuentaService/Cuenta_SeleccionarPorNumeroResponse")]
         System.Threading.Tasks.Task<Modelos.Modelos.CuentasModel[]> Cuenta_SeleccionarPorNumeroAsync(string aID_Cuenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICuentaService/Cuenta_SeleccionarPorNumeroPrestamo", ReplyAction="http://tempuri.org/ICuentaService/Cuenta_SeleccionarPorNumeroPrestamoResponse")]
+        Modelos.Modelos.CuentasModel[] Cuenta_SeleccionarPorNumeroPrestamo(string aID_Cuenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICuentaService/Cuenta_SeleccionarPorNumeroPrestamo", ReplyAction="http://tempuri.org/ICuentaService/Cuenta_SeleccionarPorNumeroPrestamoResponse")]
+        System.Threading.Tasks.Task<Modelos.Modelos.CuentasModel[]> Cuenta_SeleccionarPorNumeroPrestamoAsync(string aID_Cuenta);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -2205,6 +2211,14 @@ namespace Sistema_Bancario.WsSistemaBancario {
         
         public System.Threading.Tasks.Task<Modelos.Modelos.CuentasModel[]> Cuenta_SeleccionarPorNumeroAsync(string aID_Cuenta) {
             return base.Channel.Cuenta_SeleccionarPorNumeroAsync(aID_Cuenta);
+        }
+        
+        public Modelos.Modelos.CuentasModel[] Cuenta_SeleccionarPorNumeroPrestamo(string aID_Cuenta) {
+            return base.Channel.Cuenta_SeleccionarPorNumeroPrestamo(aID_Cuenta);
+        }
+        
+        public System.Threading.Tasks.Task<Modelos.Modelos.CuentasModel[]> Cuenta_SeleccionarPorNumeroPrestamoAsync(string aID_Cuenta) {
+            return base.Channel.Cuenta_SeleccionarPorNumeroPrestamoAsync(aID_Cuenta);
         }
     }
     
