@@ -107,6 +107,8 @@ namespace Sistema_Bancario.plataforma_controles
         private void cuenta2gui(CuentasModel acuenta)
         {
             this.txtCuenta.Text = acuenta.Nrocuenta.ToUpper();
+            this.cboMoneda.SelectedIndex = acuenta.Tipomoneda;
+            this.cboMoneda.Enabled = false;
         }
 
         private void clearForm()
@@ -130,6 +132,8 @@ namespace Sistema_Bancario.plataforma_controles
 
         private void modoNuevo()
         {
+            this.modo = "modoNuevo";
+
             this.buttonActualizar.Enabled = false;
             this.buttonEliminar.Enabled = false;
 
@@ -181,6 +185,8 @@ namespace Sistema_Bancario.plataforma_controles
 
         private void modoEdicion()
         {
+            this.modo = "modoEdicion";
+
             this.buttonCrear.Enabled = false;
             this.buttonActualizar.Enabled = true;
             this.buttonEliminar.Enabled = true;
