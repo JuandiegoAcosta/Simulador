@@ -97,9 +97,6 @@ namespace Sistema_Bancario.Administrador
                      rolesUsuario = RolUsuario.Roles_RolesPorPersona(id);
 
                     dgvRolesUsuario.DataSource = rolesUsuario;
-
-
-
                 }
 
             }

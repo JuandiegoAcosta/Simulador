@@ -310,11 +310,11 @@ namespace CDatos.Manager
             }
         }
 
-        public DataTable RolesPorPersona(int aID_Usuario)
+        public List<RolUsuarioModel> RolesPorPersona(int aID_Usuario)
         {
 
-            DataTable rolespersona = new DataTable("Roles");
-            
+            List<RolUsuarioModel> RolesModellist = new List<RolUsuarioModel>();
+
 
             try
             {
@@ -330,18 +330,35 @@ namespace CDatos.Manager
                     command.CommandText = "sp_ObtenerRolesPorPersona";
 
 
-                    SqlDataAdapter daLugares = new SqlDataAdapter(command);
-                    daLugares.Fill(rolespersona);
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+
+                            int Id = (int)(reader["Id"]);
+                            string Descripcion = (string)(reader["Descripcion"]);
+                            bool estado= (bool)(reader["Activo"]);
+
+                            RolesModellist.Add(new RolUsuarioModel
+                            {
+                                Id = Id,
+                                Descripcion = Descripcion,
+                                Activo = estado
+                            });
+                        }
+                    }
 
 
                 }
                 
 
-                return rolespersona;
+                return RolesModellist;
             }
             catch (Exception)
             {
-                return rolespersona;
+                return null;
             }
         }
 

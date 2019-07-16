@@ -29,7 +29,14 @@
         private void InitializeComponent()
         {
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
+            this.IdUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ApellidosUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstadoUsuario = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.pnlPrincipal = new System.Windows.Forms.Panel();
+            this.btnAgregarUsuario = new System.Windows.Forms.Button();
             this.pnlSecundario = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tbpRoles = new System.Windows.Forms.TabPage();
@@ -41,13 +48,6 @@
             this.dgvRolesUsuario = new System.Windows.Forms.DataGridView();
             this.tbpPermisos = new System.Windows.Forms.TabPage();
             this.dgvPermisosRol = new System.Windows.Forms.DataGridView();
-            this.IdUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ApellidosUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EstadoUsuario = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btnAgregarUsuario = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.pnlPrincipal.SuspendLayout();
             this.pnlSecundario.SuspendLayout();
@@ -78,20 +78,68 @@
             this.dgvUsuarios.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellDoubleClick);
             this.dgvUsuarios.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvUsuarios_CellPainting);
             // 
+            // IdUsuario
+            // 
+            this.IdUsuario.HeaderText = "IdUsuario";
+            this.IdUsuario.Name = "IdUsuario";
+            this.IdUsuario.Visible = false;
+            // 
+            // NombreUsuario
+            // 
+            this.NombreUsuario.HeaderText = "Nombres";
+            this.NombreUsuario.Name = "NombreUsuario";
+            this.NombreUsuario.ReadOnly = true;
+            this.NombreUsuario.Width = 200;
+            // 
+            // ApellidosUsuario
+            // 
+            this.ApellidosUsuario.HeaderText = "Apellidos";
+            this.ApellidosUsuario.Name = "ApellidosUsuario";
+            this.ApellidosUsuario.ReadOnly = true;
+            this.ApellidosUsuario.Width = 200;
+            // 
+            // EstadoUsuario
+            // 
+            this.EstadoUsuario.HeaderText = "Estado";
+            this.EstadoUsuario.Name = "EstadoUsuario";
+            this.EstadoUsuario.Width = 60;
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Name = "Editar";
+            this.Editar.UseColumnTextForButtonValue = true;
+            this.Editar.Width = 60;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.Width = 60;
+            // 
             // pnlPrincipal
             // 
             this.pnlPrincipal.Controls.Add(this.btnAgregarUsuario);
             this.pnlPrincipal.Controls.Add(this.dgvUsuarios);
-            this.pnlPrincipal.Location = new System.Drawing.Point(180, 53);
+            this.pnlPrincipal.Location = new System.Drawing.Point(31, 395);
             this.pnlPrincipal.Margin = new System.Windows.Forms.Padding(4);
             this.pnlPrincipal.Name = "pnlPrincipal";
             this.pnlPrincipal.Size = new System.Drawing.Size(920, 566);
             this.pnlPrincipal.TabIndex = 1;
             // 
+            // btnAgregarUsuario
+            // 
+            this.btnAgregarUsuario.Image = global::Sistema_Bancario.Properties.Resources.icons8_agregar_administrador_26;
+            this.btnAgregarUsuario.Location = new System.Drawing.Point(773, 3);
+            this.btnAgregarUsuario.Name = "btnAgregarUsuario";
+            this.btnAgregarUsuario.Size = new System.Drawing.Size(47, 38);
+            this.btnAgregarUsuario.TabIndex = 1;
+            this.btnAgregarUsuario.UseVisualStyleBackColor = true;
+            // 
             // pnlSecundario
             // 
             this.pnlSecundario.Controls.Add(this.tabControl1);
-            this.pnlSecundario.Location = new System.Drawing.Point(184, 142);
+            this.pnlSecundario.Location = new System.Drawing.Point(158, 36);
             this.pnlSecundario.Margin = new System.Windows.Forms.Padding(4);
             this.pnlSecundario.Name = "pnlSecundario";
             this.pnlSecundario.Size = new System.Drawing.Size(920, 460);
@@ -110,7 +158,6 @@
             // 
             // tbpRoles
             // 
-            this.tbpRoles.Controls.Add(this.panel1);
             this.tbpRoles.Controls.Add(this.btnAtras);
             this.tbpRoles.Controls.Add(this.dgvRolesUsuario);
             this.tbpRoles.Location = new System.Drawing.Point(4, 25);
@@ -127,7 +174,7 @@
             this.panel1.Controls.Add(this.chbRolActivo);
             this.panel1.Controls.Add(this.cmbRoles);
             this.panel1.Controls.Add(this.btnAgregarRol);
-            this.panel1.Location = new System.Drawing.Point(432, 47);
+            this.panel1.Location = new System.Drawing.Point(1135, 189);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(347, 345);
@@ -179,10 +226,10 @@
             // dgvRolesUsuario
             // 
             this.dgvRolesUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRolesUsuario.Location = new System.Drawing.Point(12, 47);
+            this.dgvRolesUsuario.Location = new System.Drawing.Point(156, 28);
             this.dgvRolesUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.dgvRolesUsuario.Name = "dgvRolesUsuario";
-            this.dgvRolesUsuario.Size = new System.Drawing.Size(344, 345);
+            this.dgvRolesUsuario.Size = new System.Drawing.Size(518, 345);
             this.dgvRolesUsuario.TabIndex = 0;
             // 
             // tbpPermisos
@@ -206,58 +253,11 @@
             this.dgvPermisosRol.Size = new System.Drawing.Size(793, 402);
             this.dgvPermisosRol.TabIndex = 0;
             // 
-            // IdUsuario
-            // 
-            this.IdUsuario.HeaderText = "IdUsuario";
-            this.IdUsuario.Name = "IdUsuario";
-            this.IdUsuario.Visible = false;
-            // 
-            // NombreUsuario
-            // 
-            this.NombreUsuario.HeaderText = "Nombres";
-            this.NombreUsuario.Name = "NombreUsuario";
-            this.NombreUsuario.ReadOnly = true;
-            this.NombreUsuario.Width = 200;
-            // 
-            // ApellidosUsuario
-            // 
-            this.ApellidosUsuario.HeaderText = "Apellidos";
-            this.ApellidosUsuario.Name = "ApellidosUsuario";
-            this.ApellidosUsuario.ReadOnly = true;
-            this.ApellidosUsuario.Width = 200;
-            // 
-            // EstadoUsuario
-            // 
-            this.EstadoUsuario.HeaderText = "Estado";
-            this.EstadoUsuario.Name = "EstadoUsuario";
-            this.EstadoUsuario.Width = 60;
-            // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Name = "Editar";
-            this.Editar.UseColumnTextForButtonValue = true;
-            this.Editar.Width = 60;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.Width = 60;
-            // 
-            // btnAgregarUsuario
-            // 
-            this.btnAgregarUsuario.Image = global::Sistema_Bancario.Properties.Resources.icons8_agregar_administrador_26;
-            this.btnAgregarUsuario.Location = new System.Drawing.Point(773, 3);
-            this.btnAgregarUsuario.Name = "btnAgregarUsuario";
-            this.btnAgregarUsuario.Size = new System.Drawing.Size(47, 38);
-            this.btnAgregarUsuario.TabIndex = 1;
-            this.btnAgregarUsuario.UseVisualStyleBackColor = true;
-            // 
             // Usuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlPrincipal);
             this.Controls.Add(this.pnlSecundario);
             this.Margin = new System.Windows.Forms.Padding(4);
