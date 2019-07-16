@@ -53,8 +53,9 @@ namespace Sistema_Bancario.Froms_opciones
 
             return true;
          }
-         catch (Exception)
+         catch (Exception e)
          {
+              MessageBox.Show(e.Message.ToString());
             return false;
          }
       }
