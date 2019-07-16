@@ -49,16 +49,6 @@
             this.btnBuscarUsuario = new System.Windows.Forms.Button();
             this.lblBuscarUsuario = new System.Windows.Forms.Label();
             this.txtUsuarioBuscado = new System.Windows.Forms.TextBox();
-            this.pnlBusquedaPersona = new System.Windows.Forms.Panel();
-            this.lblBusquedaApellidos = new System.Windows.Forms.Label();
-            this.lblBusquedaUsuarioNombres = new System.Windows.Forms.Label();
-            this.btnBuscarEnBusqueda = new System.Windows.Forms.Button();
-            this.txtBusquedaApellidos = new System.Windows.Forms.TextBox();
-            this.txtBusquedaNombres = new System.Windows.Forms.TextBox();
-            this.btnCancelarBusqueda = new System.Windows.Forms.Button();
-            this.btnAceptarBusqueda = new System.Windows.Forms.Button();
-            this.lblBusquedaPersona = new System.Windows.Forms.Label();
-            this.dgvBusquedaUsuarios = new System.Windows.Forms.DataGridView();
             this.btnEditarRol = new System.Windows.Forms.Button();
             this.lblRol = new System.Windows.Forms.Label();
             this.txtRol = new System.Windows.Forms.TextBox();
@@ -66,12 +56,12 @@
             this.dgvRoles = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.pnlPrincipal = new System.Windows.Forms.Panel();
+            this.btnAgregarPermisosRol = new System.Windows.Forms.Button();
             this.pnlComponentesParaRol = new System.Windows.Forms.Panel();
             this.btnAgregarComponentesRol = new System.Windows.Forms.Button();
             this.btnCrearRolAtras = new System.Windows.Forms.Button();
             this.lvlComponentes = new System.Windows.Forms.Label();
             this.dgvCrearComponentesRol = new System.Windows.Forms.DataGridView();
-            this.btnAgregarPermisosRol = new System.Windows.Forms.Button();
             this.pnlSecundario.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tbpUsuarios.SuspendLayout();
@@ -79,8 +69,6 @@
             this.tbpPermisos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPermisosRol)).BeginInit();
             this.pnlAgregarUsuario.SuspendLayout();
-            this.pnlBusquedaPersona.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBusquedaUsuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoles)).BeginInit();
             this.pnlPrincipal.SuspendLayout();
             this.pnlComponentesParaRol.SuspendLayout();
@@ -90,7 +78,7 @@
             // pnlSecundario
             // 
             this.pnlSecundario.Controls.Add(this.tabControl1);
-            this.pnlSecundario.Location = new System.Drawing.Point(115, 35);
+            this.pnlSecundario.Location = new System.Drawing.Point(115, 15);
             this.pnlSecundario.Name = "pnlSecundario";
             this.pnlSecundario.Size = new System.Drawing.Size(640, 445);
             this.pnlSecundario.TabIndex = 7;
@@ -119,6 +107,7 @@
             this.tbpUsuarios.Size = new System.Drawing.Size(609, 383);
             this.tbpUsuarios.TabIndex = 0;
             this.tbpUsuarios.Text = "Usuarios";
+            this.tbpUsuarios.Click += new System.EventHandler(this.tbpUsuarios_Click);
             // 
             // btnAtras
             // 
@@ -204,9 +193,9 @@
             this.pnlAgregarUsuario.Controls.Add(this.btnBuscarUsuario);
             this.pnlAgregarUsuario.Controls.Add(this.lblBuscarUsuario);
             this.pnlAgregarUsuario.Controls.Add(this.txtUsuarioBuscado);
-            this.pnlAgregarUsuario.Location = new System.Drawing.Point(115, 35);
+            this.pnlAgregarUsuario.Location = new System.Drawing.Point(115, 15);
             this.pnlAgregarUsuario.Name = "pnlAgregarUsuario";
-            this.pnlAgregarUsuario.Size = new System.Drawing.Size(640, 340);
+            this.pnlAgregarUsuario.Size = new System.Drawing.Size(640, 445);
             this.pnlAgregarUsuario.TabIndex = 6;
             // 
             // btnCancelar
@@ -290,102 +279,6 @@
             this.txtUsuarioBuscado.Size = new System.Drawing.Size(100, 20);
             this.txtUsuarioBuscado.TabIndex = 0;
             // 
-            // pnlBusquedaPersona
-            // 
-            this.pnlBusquedaPersona.Controls.Add(this.lblBusquedaApellidos);
-            this.pnlBusquedaPersona.Controls.Add(this.lblBusquedaUsuarioNombres);
-            this.pnlBusquedaPersona.Controls.Add(this.btnBuscarEnBusqueda);
-            this.pnlBusquedaPersona.Controls.Add(this.txtBusquedaApellidos);
-            this.pnlBusquedaPersona.Controls.Add(this.txtBusquedaNombres);
-            this.pnlBusquedaPersona.Controls.Add(this.btnCancelarBusqueda);
-            this.pnlBusquedaPersona.Controls.Add(this.btnAceptarBusqueda);
-            this.pnlBusquedaPersona.Controls.Add(this.lblBusquedaPersona);
-            this.pnlBusquedaPersona.Controls.Add(this.dgvBusquedaUsuarios);
-            this.pnlBusquedaPersona.Location = new System.Drawing.Point(737, 567);
-            this.pnlBusquedaPersona.Name = "pnlBusquedaPersona";
-            this.pnlBusquedaPersona.Size = new System.Drawing.Size(640, 340);
-            this.pnlBusquedaPersona.TabIndex = 7;
-            // 
-            // lblBusquedaApellidos
-            // 
-            this.lblBusquedaApellidos.AutoSize = true;
-            this.lblBusquedaApellidos.Location = new System.Drawing.Point(327, 66);
-            this.lblBusquedaApellidos.Name = "lblBusquedaApellidos";
-            this.lblBusquedaApellidos.Size = new System.Drawing.Size(49, 13);
-            this.lblBusquedaApellidos.TabIndex = 8;
-            this.lblBusquedaApellidos.Text = "Apellidos";
-            // 
-            // lblBusquedaUsuarioNombres
-            // 
-            this.lblBusquedaUsuarioNombres.AutoSize = true;
-            this.lblBusquedaUsuarioNombres.Location = new System.Drawing.Point(82, 67);
-            this.lblBusquedaUsuarioNombres.Name = "lblBusquedaUsuarioNombres";
-            this.lblBusquedaUsuarioNombres.Size = new System.Drawing.Size(49, 13);
-            this.lblBusquedaUsuarioNombres.TabIndex = 7;
-            this.lblBusquedaUsuarioNombres.Text = "Nombres";
-            // 
-            // btnBuscarEnBusqueda
-            // 
-            this.btnBuscarEnBusqueda.Location = new System.Drawing.Point(526, 66);
-            this.btnBuscarEnBusqueda.Name = "btnBuscarEnBusqueda";
-            this.btnBuscarEnBusqueda.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscarEnBusqueda.TabIndex = 6;
-            this.btnBuscarEnBusqueda.Text = "Buscar";
-            this.btnBuscarEnBusqueda.UseVisualStyleBackColor = true;
-            this.btnBuscarEnBusqueda.Click += new System.EventHandler(this.btnBuscarEnBusqueda_Click);
-            // 
-            // txtBusquedaApellidos
-            // 
-            this.txtBusquedaApellidos.Location = new System.Drawing.Point(407, 67);
-            this.txtBusquedaApellidos.Name = "txtBusquedaApellidos";
-            this.txtBusquedaApellidos.Size = new System.Drawing.Size(100, 20);
-            this.txtBusquedaApellidos.TabIndex = 5;
-            // 
-            // txtBusquedaNombres
-            // 
-            this.txtBusquedaNombres.Location = new System.Drawing.Point(155, 66);
-            this.txtBusquedaNombres.Name = "txtBusquedaNombres";
-            this.txtBusquedaNombres.Size = new System.Drawing.Size(100, 20);
-            this.txtBusquedaNombres.TabIndex = 4;
-            // 
-            // btnCancelarBusqueda
-            // 
-            this.btnCancelarBusqueda.Location = new System.Drawing.Point(344, 269);
-            this.btnCancelarBusqueda.Name = "btnCancelarBusqueda";
-            this.btnCancelarBusqueda.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelarBusqueda.TabIndex = 3;
-            this.btnCancelarBusqueda.Text = "Cancelar";
-            this.btnCancelarBusqueda.UseVisualStyleBackColor = true;
-            this.btnCancelarBusqueda.Click += new System.EventHandler(this.btnCancelarBusqueda_Click);
-            // 
-            // btnAceptarBusqueda
-            // 
-            this.btnAceptarBusqueda.Location = new System.Drawing.Point(180, 269);
-            this.btnAceptarBusqueda.Name = "btnAceptarBusqueda";
-            this.btnAceptarBusqueda.Size = new System.Drawing.Size(75, 23);
-            this.btnAceptarBusqueda.TabIndex = 2;
-            this.btnAceptarBusqueda.Text = "Aceptar";
-            this.btnAceptarBusqueda.UseVisualStyleBackColor = true;
-            this.btnAceptarBusqueda.Click += new System.EventHandler(this.btnAceptarBusqueda_Click);
-            // 
-            // lblBusquedaPersona
-            // 
-            this.lblBusquedaPersona.AutoSize = true;
-            this.lblBusquedaPersona.Location = new System.Drawing.Point(274, 20);
-            this.lblBusquedaPersona.Name = "lblBusquedaPersona";
-            this.lblBusquedaPersona.Size = new System.Drawing.Size(97, 13);
-            this.lblBusquedaPersona.TabIndex = 1;
-            this.lblBusquedaPersona.Text = "Busqueda Persona";
-            // 
-            // dgvBusquedaUsuarios
-            // 
-            this.dgvBusquedaUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBusquedaUsuarios.Location = new System.Drawing.Point(63, 94);
-            this.dgvBusquedaUsuarios.Name = "dgvBusquedaUsuarios";
-            this.dgvBusquedaUsuarios.Size = new System.Drawing.Size(444, 141);
-            this.dgvBusquedaUsuarios.TabIndex = 0;
-            this.dgvBusquedaUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBusquedaUsuarios_CellClick);
-            // 
             // btnEditarRol
             // 
             this.btnEditarRol.BackColor = System.Drawing.SystemColors.HotTrack;
@@ -465,10 +358,20 @@
             this.pnlPrincipal.Controls.Add(this.txtRol);
             this.pnlPrincipal.Controls.Add(this.lblRol);
             this.pnlPrincipal.Controls.Add(this.btnEditarRol);
-            this.pnlPrincipal.Location = new System.Drawing.Point(115, 35);
+            this.pnlPrincipal.Location = new System.Drawing.Point(115, 15);
             this.pnlPrincipal.Name = "pnlPrincipal";
             this.pnlPrincipal.Size = new System.Drawing.Size(640, 445);
             this.pnlPrincipal.TabIndex = 6;
+            // 
+            // btnAgregarPermisosRol
+            // 
+            this.btnAgregarPermisosRol.Location = new System.Drawing.Point(423, 346);
+            this.btnAgregarPermisosRol.Name = "btnAgregarPermisosRol";
+            this.btnAgregarPermisosRol.Size = new System.Drawing.Size(137, 23);
+            this.btnAgregarPermisosRol.TabIndex = 6;
+            this.btnAgregarPermisosRol.Text = "Agregar permisos a rol";
+            this.btnAgregarPermisosRol.UseVisualStyleBackColor = true;
+            this.btnAgregarPermisosRol.Click += new System.EventHandler(this.btnAgregarPermisosRol_Click);
             // 
             // pnlComponentesParaRol
             // 
@@ -476,7 +379,7 @@
             this.pnlComponentesParaRol.Controls.Add(this.btnCrearRolAtras);
             this.pnlComponentesParaRol.Controls.Add(this.lvlComponentes);
             this.pnlComponentesParaRol.Controls.Add(this.dgvCrearComponentesRol);
-            this.pnlComponentesParaRol.Location = new System.Drawing.Point(115, 35);
+            this.pnlComponentesParaRol.Location = new System.Drawing.Point(115, 15);
             this.pnlComponentesParaRol.Name = "pnlComponentesParaRol";
             this.pnlComponentesParaRol.Size = new System.Drawing.Size(640, 445);
             this.pnlComponentesParaRol.TabIndex = 8;
@@ -519,16 +422,6 @@
             this.dgvCrearComponentesRol.TabIndex = 0;
             this.dgvCrearComponentesRol.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCrearComponentesRol_CellContentClick);
             // 
-            // btnAgregarPermisosRol
-            // 
-            this.btnAgregarPermisosRol.Location = new System.Drawing.Point(423, 346);
-            this.btnAgregarPermisosRol.Name = "btnAgregarPermisosRol";
-            this.btnAgregarPermisosRol.Size = new System.Drawing.Size(137, 23);
-            this.btnAgregarPermisosRol.TabIndex = 6;
-            this.btnAgregarPermisosRol.Text = "Agregar permisos a rol";
-            this.btnAgregarPermisosRol.UseVisualStyleBackColor = true;
-            this.btnAgregarPermisosRol.Click += new System.EventHandler(this.btnAgregarPermisosRol_Click);
-            // 
             // Roles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -536,7 +429,6 @@
             this.Controls.Add(this.pnlPrincipal);
             this.Controls.Add(this.pnlSecundario);
             this.Controls.Add(this.pnlAgregarUsuario);
-            this.Controls.Add(this.pnlBusquedaPersona);
             this.Controls.Add(this.pnlComponentesParaRol);
             this.Name = "Roles";
             this.Size = new System.Drawing.Size(2181, 926);
@@ -548,9 +440,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvPermisosRol)).EndInit();
             this.pnlAgregarUsuario.ResumeLayout(false);
             this.pnlAgregarUsuario.PerformLayout();
-            this.pnlBusquedaPersona.ResumeLayout(false);
-            this.pnlBusquedaPersona.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBusquedaUsuarios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoles)).EndInit();
             this.pnlPrincipal.ResumeLayout(false);
             this.pnlPrincipal.PerformLayout();
@@ -578,16 +467,6 @@
         private System.Windows.Forms.Button btnBuscarUsuario;
         private System.Windows.Forms.Label lblBuscarUsuario;
         private System.Windows.Forms.TextBox txtUsuarioBuscado;
-        private System.Windows.Forms.Panel pnlBusquedaPersona;
-        private System.Windows.Forms.Label lblBusquedaApellidos;
-        private System.Windows.Forms.Label lblBusquedaUsuarioNombres;
-        private System.Windows.Forms.Button btnBuscarEnBusqueda;
-        private System.Windows.Forms.TextBox txtBusquedaApellidos;
-        private System.Windows.Forms.TextBox txtBusquedaNombres;
-        private System.Windows.Forms.Button btnCancelarBusqueda;
-        private System.Windows.Forms.Button btnAceptarBusqueda;
-        private System.Windows.Forms.Label lblBusquedaPersona;
-        private System.Windows.Forms.DataGridView dgvBusquedaUsuarios;
         private System.Windows.Forms.DataGridView dgvPermisosRol;
         private System.Windows.Forms.Button btnEditarRol;
         private System.Windows.Forms.Label lblRol;

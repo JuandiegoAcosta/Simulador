@@ -30,7 +30,7 @@ namespace Sistema_Bancario.Administrador
             {
                 using (WsSistemaBancario.PersonaServiceClient busc = new WsSistemaBancario.PersonaServiceClient())
                 {
-                    usuariosFiltrados = busc.ObtenerUsuariosSinCredenciales().ToList();
+                    usuariosFiltrados = busc.Persona_ObtenerTodos().ToList();
                     foreach (var u in usuariosFiltrados)
                     {
                         dgvBusquedaUsuarios.Rows.Add(u.Id,u.Nombres,u.Apellidos,u.Tipodocumento,u.Nrodocumento);

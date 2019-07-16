@@ -110,6 +110,7 @@ namespace Sistema_Bancario.Administrador
 
                 }
 
+                this.Close();
             }
 
             catch (Exception ex)
@@ -118,11 +119,9 @@ namespace Sistema_Bancario.Administrador
             }
         }
 
-
-
-
-
-
-
+        private void txtCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

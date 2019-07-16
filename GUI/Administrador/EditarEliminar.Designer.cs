@@ -33,11 +33,11 @@
             this.cmbRolesEditar = new System.Windows.Forms.ComboBox();
             this.chbActivo = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtCancelar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.idRolUsuario = new System.Windows.Forms.TextBox();
             this.txtIdUsuario = new System.Windows.Forms.TextBox();
             this.btnEditar = new System.Windows.Forms.Button();
-            this.txtCancelar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -92,6 +92,16 @@
             this.panel1.Size = new System.Drawing.Size(259, 162);
             this.panel1.TabIndex = 4;
             // 
+            // txtCancelar
+            // 
+            this.txtCancelar.Location = new System.Drawing.Point(159, 122);
+            this.txtCancelar.Name = "txtCancelar";
+            this.txtCancelar.Size = new System.Drawing.Size(75, 23);
+            this.txtCancelar.TabIndex = 5;
+            this.txtCancelar.Text = "Cancelar";
+            this.txtCancelar.UseVisualStyleBackColor = true;
+            this.txtCancelar.Click += new System.EventHandler(this.txtCancelar_Click);
+            // 
             // btnEliminar
             // 
             this.btnEliminar.Location = new System.Drawing.Point(22, 122);
@@ -129,15 +139,6 @@
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Visible = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
-            // 
-            // txtCancelar
-            // 
-            this.txtCancelar.Location = new System.Drawing.Point(159, 122);
-            this.txtCancelar.Name = "txtCancelar";
-            this.txtCancelar.Size = new System.Drawing.Size(75, 23);
-            this.txtCancelar.TabIndex = 5;
-            this.txtCancelar.Text = "Cancelar";
-            this.txtCancelar.UseVisualStyleBackColor = true;
             // 
             // EditarEliminar
             // 

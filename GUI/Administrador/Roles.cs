@@ -278,6 +278,7 @@ namespace Sistema_Bancario.Administrador
 
                 }
 
+
             }
 
             catch (Exception ex)
@@ -773,6 +774,11 @@ namespace Sistema_Bancario.Administrador
                 pnlComponentesParaRol.BringToFront();
                 llenardgvComponentes();
             }
+        }
+
+        private void tbpUsuarios_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -48,18 +48,16 @@
             this.pnlBusquedaPersona.Controls.Add(this.btnAceptarBusqueda);
             this.pnlBusquedaPersona.Controls.Add(this.lblBusquedaPersona);
             this.pnlBusquedaPersona.Controls.Add(this.dgvBusquedaUsuarios);
-            this.pnlBusquedaPersona.Location = new System.Drawing.Point(28, 34);
-            this.pnlBusquedaPersona.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlBusquedaPersona.Location = new System.Drawing.Point(21, 28);
             this.pnlBusquedaPersona.Name = "pnlBusquedaPersona";
-            this.pnlBusquedaPersona.Size = new System.Drawing.Size(853, 418);
+            this.pnlBusquedaPersona.Size = new System.Drawing.Size(640, 340);
             this.pnlBusquedaPersona.TabIndex = 8;
             // 
             // btnCancelarBusqueda
             // 
-            this.btnCancelarBusqueda.Location = new System.Drawing.Point(459, 331);
-            this.btnCancelarBusqueda.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancelarBusqueda.Location = new System.Drawing.Point(344, 269);
             this.btnCancelarBusqueda.Name = "btnCancelarBusqueda";
-            this.btnCancelarBusqueda.Size = new System.Drawing.Size(100, 28);
+            this.btnCancelarBusqueda.Size = new System.Drawing.Size(75, 23);
             this.btnCancelarBusqueda.TabIndex = 3;
             this.btnCancelarBusqueda.Text = "Cancelar";
             this.btnCancelarBusqueda.UseVisualStyleBackColor = true;
@@ -67,10 +65,9 @@
             // 
             // btnAceptarBusqueda
             // 
-            this.btnAceptarBusqueda.Location = new System.Drawing.Point(240, 331);
-            this.btnAceptarBusqueda.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAceptarBusqueda.Location = new System.Drawing.Point(180, 269);
             this.btnAceptarBusqueda.Name = "btnAceptarBusqueda";
-            this.btnAceptarBusqueda.Size = new System.Drawing.Size(100, 28);
+            this.btnAceptarBusqueda.Size = new System.Drawing.Size(75, 23);
             this.btnAceptarBusqueda.TabIndex = 2;
             this.btnAceptarBusqueda.Text = "Aceptar";
             this.btnAceptarBusqueda.UseVisualStyleBackColor = true;
@@ -79,10 +76,9 @@
             // lblBusquedaPersona
             // 
             this.lblBusquedaPersona.AutoSize = true;
-            this.lblBusquedaPersona.Location = new System.Drawing.Point(365, 25);
-            this.lblBusquedaPersona.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblBusquedaPersona.Location = new System.Drawing.Point(274, 20);
             this.lblBusquedaPersona.Name = "lblBusquedaPersona";
-            this.lblBusquedaPersona.Size = new System.Drawing.Size(129, 17);
+            this.lblBusquedaPersona.Size = new System.Drawing.Size(97, 13);
             this.lblBusquedaPersona.TabIndex = 1;
             this.lblBusquedaPersona.Text = "Busqueda Persona";
             // 
@@ -96,10 +92,9 @@
             this.ApellidosPersona,
             this.TipoDocPersona,
             this.NroDocPersona});
-            this.dgvBusquedaUsuarios.Location = new System.Drawing.Point(4, 116);
-            this.dgvBusquedaUsuarios.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvBusquedaUsuarios.Location = new System.Drawing.Point(3, 94);
             this.dgvBusquedaUsuarios.Name = "dgvBusquedaUsuarios";
-            this.dgvBusquedaUsuarios.Size = new System.Drawing.Size(828, 174);
+            this.dgvBusquedaUsuarios.Size = new System.Drawing.Size(621, 141);
             this.dgvBusquedaUsuarios.TabIndex = 0;
             this.dgvBusquedaUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBusquedaUsuarios_CellClick);
             // 
@@ -137,12 +132,11 @@
             // 
             // BuscarPersona
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(917, 468);
+            this.ClientSize = new System.Drawing.Size(689, 413);
             this.Controls.Add(this.pnlBusquedaPersona);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "BuscarPersona";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BuscarPersona";
