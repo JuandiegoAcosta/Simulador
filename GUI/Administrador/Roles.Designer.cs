@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Roles));
             this.pnlSecundario = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tbpUsuarios = new System.Windows.Forms.TabPage();
             this.btnAgregarUsuario = new System.Windows.Forms.Button();
-            this.btnAtras = new System.Windows.Forms.Button();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
             this.tbpPermisos = new System.Windows.Forms.TabPage();
             this.dgvPermisosRol = new System.Windows.Forms.DataGridView();
@@ -63,6 +63,9 @@
             this.dgvRoles = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.pnlPrincipal = new System.Windows.Forms.Panel();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnAtras = new System.Windows.Forms.Button();
             this.pnlSecundario.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tbpUsuarios.SuspendLayout();
@@ -96,8 +99,11 @@
             // 
             // tbpUsuarios
             // 
-            this.tbpUsuarios.Controls.Add(this.btnAgregarUsuario);
+            this.tbpUsuarios.BackColor = System.Drawing.Color.Transparent;
             this.tbpUsuarios.Controls.Add(this.btnAtras);
+            this.tbpUsuarios.Controls.Add(this.btnEditar);
+            this.tbpUsuarios.Controls.Add(this.btnEliminar);
+            this.tbpUsuarios.Controls.Add(this.btnAgregarUsuario);
             this.tbpUsuarios.Controls.Add(this.dgvUsuarios);
             this.tbpUsuarios.Location = new System.Drawing.Point(4, 22);
             this.tbpUsuarios.Name = "tbpUsuarios";
@@ -105,34 +111,27 @@
             this.tbpUsuarios.Size = new System.Drawing.Size(609, 383);
             this.tbpUsuarios.TabIndex = 0;
             this.tbpUsuarios.Text = "Usuarios";
-            this.tbpUsuarios.UseVisualStyleBackColor = true;
             // 
             // btnAgregarUsuario
             // 
-            this.btnAgregarUsuario.Location = new System.Drawing.Point(500, 9);
+            this.btnAgregarUsuario.Image = global::Sistema_Bancario.Properties.Resources.icons8_agregar_administrador_26;
+            this.btnAgregarUsuario.Location = new System.Drawing.Point(481, 99);
             this.btnAgregarUsuario.Name = "btnAgregarUsuario";
-            this.btnAgregarUsuario.Size = new System.Drawing.Size(92, 23);
+            this.btnAgregarUsuario.Size = new System.Drawing.Size(50, 50);
             this.btnAgregarUsuario.TabIndex = 7;
-            this.btnAgregarUsuario.Text = "Agregar Usuario";
             this.btnAgregarUsuario.UseVisualStyleBackColor = true;
             this.btnAgregarUsuario.Click += new System.EventHandler(this.btnAgregarUsuario_Click);
             // 
-            // btnAtras
-            // 
-            this.btnAtras.Location = new System.Drawing.Point(9, 9);
-            this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(75, 23);
-            this.btnAtras.TabIndex = 1;
-            this.btnAtras.Text = "Atras";
-            this.btnAtras.UseVisualStyleBackColor = true;
-            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
-            // 
             // dgvUsuarios
             // 
+            this.dgvUsuarios.AllowUserToAddRows = false;
+            this.dgvUsuarios.AllowUserToDeleteRows = false;
             this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUsuarios.Location = new System.Drawing.Point(25, 38);
+            this.dgvUsuarios.Location = new System.Drawing.Point(113, 64);
             this.dgvUsuarios.Name = "dgvUsuarios";
-            this.dgvUsuarios.Size = new System.Drawing.Size(558, 315);
+            this.dgvUsuarios.ReadOnly = true;
+            this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvUsuarios.Size = new System.Drawing.Size(329, 295);
             this.dgvUsuarios.TabIndex = 0;
             this.dgvUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellContentClick);
             // 
@@ -150,9 +149,9 @@
             // dgvPermisosRol
             // 
             this.dgvPermisosRol.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPermisosRol.Location = new System.Drawing.Point(6, 6);
+            this.dgvPermisosRol.Location = new System.Drawing.Point(117, 18);
             this.dgvPermisosRol.Name = "dgvPermisosRol";
-            this.dgvPermisosRol.Size = new System.Drawing.Size(595, 327);
+            this.dgvPermisosRol.Size = new System.Drawing.Size(353, 327);
             this.dgvPermisosRol.TabIndex = 0;
             // 
             // pnlAgregarUsuario
@@ -354,7 +353,7 @@
             this.btnEditarRol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditarRol.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarRol.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnEditarRol.Location = new System.Drawing.Point(458, 183);
+            this.btnEditarRol.Location = new System.Drawing.Point(448, 172);
             this.btnEditarRol.Name = "btnEditarRol";
             this.btnEditarRol.Size = new System.Drawing.Size(100, 40);
             this.btnEditarRol.TabIndex = 4;
@@ -365,7 +364,7 @@
             // lblRol
             // 
             this.lblRol.AutoSize = true;
-            this.lblRol.Location = new System.Drawing.Point(455, 49);
+            this.lblRol.Location = new System.Drawing.Point(445, 57);
             this.lblRol.Name = "lblRol";
             this.lblRol.Size = new System.Drawing.Size(73, 13);
             this.lblRol.TabIndex = 0;
@@ -373,7 +372,7 @@
             // 
             // txtRol
             // 
-            this.txtRol.Location = new System.Drawing.Point(458, 65);
+            this.txtRol.Location = new System.Drawing.Point(448, 76);
             this.txtRol.Name = "txtRol";
             this.txtRol.Size = new System.Drawing.Size(100, 20);
             this.txtRol.TabIndex = 1;
@@ -384,7 +383,7 @@
             this.btnEliminarRol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminarRol.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarRol.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnEliminarRol.Location = new System.Drawing.Point(458, 260);
+            this.btnEliminarRol.Location = new System.Drawing.Point(448, 227);
             this.btnEliminarRol.Name = "btnEliminarRol";
             this.btnEliminarRol.Size = new System.Drawing.Size(100, 40);
             this.btnEliminarRol.TabIndex = 5;
@@ -395,9 +394,11 @@
             // dgvRoles
             // 
             this.dgvRoles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRoles.Location = new System.Drawing.Point(22, 33);
+            this.dgvRoles.Location = new System.Drawing.Point(108, 45);
             this.dgvRoles.Name = "dgvRoles";
-            this.dgvRoles.Size = new System.Drawing.Size(343, 283);
+            this.dgvRoles.ReadOnly = true;
+            this.dgvRoles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvRoles.Size = new System.Drawing.Size(256, 283);
             this.dgvRoles.TabIndex = 2;
             this.dgvRoles.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRoles_CellClick);
             this.dgvRoles.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRoles_CellDoubleClick);
@@ -408,7 +409,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.Window;
-            this.button1.Location = new System.Drawing.Point(458, 110);
+            this.button1.Location = new System.Drawing.Point(448, 118);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 40);
             this.button1.TabIndex = 3;
@@ -428,6 +429,37 @@
             this.pnlPrincipal.Name = "pnlPrincipal";
             this.pnlPrincipal.Size = new System.Drawing.Size(640, 445);
             this.pnlPrincipal.TabIndex = 6;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Image = global::Sistema_Bancario.Properties.Resources.icons8_eliminar_26;
+            this.btnEliminar.Location = new System.Drawing.Point(481, 269);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(50, 50);
+            this.btnEliminar.TabIndex = 8;
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Image = global::Sistema_Bancario.Properties.Resources.icons8_editar_32;
+            this.btnEditar.Location = new System.Drawing.Point(481, 180);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(50, 50);
+            this.btnEditar.TabIndex = 9;
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // btnAtras
+            // 
+            this.btnAtras.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAtras.BackgroundImage")));
+            this.btnAtras.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAtras.Location = new System.Drawing.Point(25, 20);
+            this.btnAtras.Name = "btnAtras";
+            this.btnAtras.Size = new System.Drawing.Size(42, 43);
+            this.btnAtras.TabIndex = 8;
+            this.btnAtras.UseVisualStyleBackColor = true;
+            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click_1);
             // 
             // Roles
             // 
@@ -463,7 +495,6 @@
         private System.Windows.Forms.TabPage tbpUsuarios;
         private System.Windows.Forms.DataGridView dgvUsuarios;
         private System.Windows.Forms.TabPage tbpPermisos;
-        private System.Windows.Forms.Button btnAtras;
         private System.Windows.Forms.Button btnAgregarUsuario;
         private System.Windows.Forms.Panel pnlAgregarUsuario;
         private System.Windows.Forms.Button btnCancelar;
@@ -493,5 +524,8 @@
         private System.Windows.Forms.DataGridView dgvRoles;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel pnlPrincipal;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnAtras;
     }
 }

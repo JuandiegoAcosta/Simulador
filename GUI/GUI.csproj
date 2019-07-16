@@ -85,11 +85,11 @@
     <Compile Include="Administrador\BuscarPersona.Designer.cs">
       <DependentUpon>BuscarPersona.cs</DependentUpon>
     </Compile>
-    <Compile Include="Administrador\Editar.cs">
+    <Compile Include="Administrador\EditarEliminar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Administrador\Editar.Designer.cs">
-      <DependentUpon>Editar.cs</DependentUpon>
+    <Compile Include="Administrador\EditarEliminar.Designer.cs">
+      <DependentUpon>EditarEliminar.cs</DependentUpon>
     </Compile>
     <Compile Include="Administrador\Permisos.cs">
       <SubType>UserControl</SubType>
@@ -439,8 +439,8 @@
     <EmbeddedResource Include="Administrador\BuscarPersona.resx">
       <DependentUpon>BuscarPersona.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Administrador\Editar.resx">
-      <DependentUpon>Editar.cs</DependentUpon>
+    <EmbeddedResource Include="Administrador\EditarEliminar.resx">
+      <DependentUpon>EditarEliminar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Administrador\Permisos.resx">
       <DependentUpon>Permisos.cs</DependentUpon>
@@ -712,6 +712,7 @@
     <None Include="Resources\view.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\roles_atras.png" />
     <None Include="Resources\add_rol.png" />
     <None Include="Resources\add_permiso.png" />
     <None Include="Resources\icons8-agregar-administrador-26.png" />
