@@ -33,23 +33,23 @@
             this.cmbRolesEditar = new System.Windows.Forms.ComboBox();
             this.chbActivo = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.idRolUsuario = new System.Windows.Forms.TextBox();
             this.txtIdUsuario = new System.Windows.Forms.TextBox();
             this.btnEditar = new System.Windows.Forms.Button();
-            this.idRolUsuario = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtUsuarioEditar
             // 
-            this.txtUsuarioEditar.Location = new System.Drawing.Point(77, 32);
+            this.txtUsuarioEditar.Location = new System.Drawing.Point(68, 46);
             this.txtUsuarioEditar.Name = "txtUsuarioEditar";
-            this.txtUsuarioEditar.Size = new System.Drawing.Size(156, 20);
+            this.txtUsuarioEditar.Size = new System.Drawing.Size(121, 20);
             this.txtUsuarioEditar.TabIndex = 0;
             // 
             // lblUsuarioEditar
             // 
             this.lblUsuarioEditar.AutoSize = true;
-            this.lblUsuarioEditar.Location = new System.Drawing.Point(18, 35);
+            this.lblUsuarioEditar.Location = new System.Drawing.Point(19, 46);
             this.lblUsuarioEditar.Name = "lblUsuarioEditar";
             this.lblUsuarioEditar.Size = new System.Drawing.Size(43, 13);
             this.lblUsuarioEditar.TabIndex = 1;
@@ -58,7 +58,7 @@
             // cmbRolesEditar
             // 
             this.cmbRolesEditar.FormattingEnabled = true;
-            this.cmbRolesEditar.Location = new System.Drawing.Point(67, 58);
+            this.cmbRolesEditar.Location = new System.Drawing.Point(68, 72);
             this.cmbRolesEditar.Name = "cmbRolesEditar";
             this.cmbRolesEditar.Size = new System.Drawing.Size(121, 21);
             this.cmbRolesEditar.TabIndex = 2;
@@ -85,15 +85,24 @@
             this.panel1.Controls.Add(this.cmbRolesEditar);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(270, 162);
+            this.panel1.Size = new System.Drawing.Size(259, 162);
             this.panel1.TabIndex = 4;
+            // 
+            // idRolUsuario
+            // 
+            this.idRolUsuario.Location = new System.Drawing.Point(195, 20);
+            this.idRolUsuario.Name = "idRolUsuario";
+            this.idRolUsuario.Size = new System.Drawing.Size(48, 20);
+            this.idRolUsuario.TabIndex = 7;
+            this.idRolUsuario.Visible = false;
             // 
             // txtIdUsuario
             // 
-            this.txtIdUsuario.Location = new System.Drawing.Point(107, 6);
+            this.txtIdUsuario.Location = new System.Drawing.Point(89, 20);
             this.txtIdUsuario.Name = "txtIdUsuario";
             this.txtIdUsuario.Size = new System.Drawing.Size(100, 20);
             this.txtIdUsuario.TabIndex = 6;
+            this.txtIdUsuario.Visible = false;
             // 
             // btnEditar
             // 
@@ -105,18 +114,11 @@
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // idRolUsuario
-            // 
-            this.idRolUsuario.Location = new System.Drawing.Point(203, 96);
-            this.idRolUsuario.Name = "idRolUsuario";
-            this.idRolUsuario.Size = new System.Drawing.Size(48, 20);
-            this.idRolUsuario.TabIndex = 7;
-            // 
             // Editar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(294, 186);
+            this.ClientSize = new System.Drawing.Size(282, 186);
             this.Controls.Add(this.panel1);
             this.Name = "Editar";
             this.Text = "Editar";
