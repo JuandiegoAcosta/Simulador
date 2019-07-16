@@ -51,5 +51,9 @@ namespace CNegocio.Backend
         {
             return ADPermisosUsuarioManager.PermisosUsuarioModelSelectAll();
         }
+        public List<PermisosUsuarioModel> ObtenerPermisosXUsaurio(int IdUsuario)
+        {
+            return ADPermisosUsuarioManager.PermisosUsuarioXUsuario(IdUsuario);
+        }
     }
 }

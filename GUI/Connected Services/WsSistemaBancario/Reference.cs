@@ -1114,10 +1114,16 @@ namespace Sistema_Bancario.WsSistemaBancario {
         System.Threading.Tasks.Task<Modelos.Modelos.PermisosUsuarioModel> PermisosUsuario_ObtenerUnoAsync(int aID_PermisosUsuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPermisosUsuarioService/PermisosUsuario_ObtenerTodos", ReplyAction="http://tempuri.org/IPermisosUsuarioService/PermisosUsuario_ObtenerTodosResponse")]
-        Modelos.Modelos.PermisosUsuarioModel[] PermisosUsuario_ObtenerTodos();
+        Modelos.Modelos.PermisosUsuarioModel[] PermisosUsuario_ObtenerTodos(int IdUsuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPermisosUsuarioService/PermisosUsuario_ObtenerTodos", ReplyAction="http://tempuri.org/IPermisosUsuarioService/PermisosUsuario_ObtenerTodosResponse")]
-        System.Threading.Tasks.Task<Modelos.Modelos.PermisosUsuarioModel[]> PermisosUsuario_ObtenerTodosAsync();
+        System.Threading.Tasks.Task<Modelos.Modelos.PermisosUsuarioModel[]> PermisosUsuario_ObtenerTodosAsync(int IdUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPermisosUsuarioService/PermisosUsuarioXusuario", ReplyAction="http://tempuri.org/IPermisosUsuarioService/PermisosUsuarioXusuarioResponse")]
+        Modelos.Modelos.PermisosUsuarioModel[] PermisosUsuarioXusuario(int IdUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPermisosUsuarioService/PermisosUsuarioXusuario", ReplyAction="http://tempuri.org/IPermisosUsuarioService/PermisosUsuarioXusuarioResponse")]
+        System.Threading.Tasks.Task<Modelos.Modelos.PermisosUsuarioModel[]> PermisosUsuarioXusuarioAsync(int IdUsuario);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1179,12 +1185,20 @@ namespace Sistema_Bancario.WsSistemaBancario {
             return base.Channel.PermisosUsuario_ObtenerUnoAsync(aID_PermisosUsuario);
         }
         
-        public Modelos.Modelos.PermisosUsuarioModel[] PermisosUsuario_ObtenerTodos() {
-            return base.Channel.PermisosUsuario_ObtenerTodos();
+        public Modelos.Modelos.PermisosUsuarioModel[] PermisosUsuario_ObtenerTodos(int IdUsuario) {
+            return base.Channel.PermisosUsuario_ObtenerTodos(IdUsuario);
         }
         
-        public System.Threading.Tasks.Task<Modelos.Modelos.PermisosUsuarioModel[]> PermisosUsuario_ObtenerTodosAsync() {
-            return base.Channel.PermisosUsuario_ObtenerTodosAsync();
+        public System.Threading.Tasks.Task<Modelos.Modelos.PermisosUsuarioModel[]> PermisosUsuario_ObtenerTodosAsync(int IdUsuario) {
+            return base.Channel.PermisosUsuario_ObtenerTodosAsync(IdUsuario);
+        }
+        
+        public Modelos.Modelos.PermisosUsuarioModel[] PermisosUsuarioXusuario(int IdUsuario) {
+            return base.Channel.PermisosUsuarioXusuario(IdUsuario);
+        }
+        
+        public System.Threading.Tasks.Task<Modelos.Modelos.PermisosUsuarioModel[]> PermisosUsuarioXusuarioAsync(int IdUsuario) {
+            return base.Channel.PermisosUsuarioXusuarioAsync(IdUsuario);
         }
     }
     

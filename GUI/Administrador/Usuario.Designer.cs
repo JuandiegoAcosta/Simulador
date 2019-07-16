@@ -42,17 +42,22 @@
             this.tbpRoles = new System.Windows.Forms.TabPage();
             this.btnAtras = new System.Windows.Forms.Button();
             this.dgvRolesUsuario = new System.Windows.Forms.DataGridView();
-            this.tbpPermisos = new System.Windows.Forms.TabPage();
-            this.dgvPermisosRol = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.chbRolActivo = new System.Windows.Forms.CheckBox();
-            this.cmbRoles = new System.Windows.Forms.ComboBox();
-            this.btnAgregarRol = new System.Windows.Forms.Button();
             this.IdRolUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EstadoRol = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.EditarRol = new System.Windows.Forms.DataGridViewButtonColumn();
             this.EliminarRol = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.tbpPermisos = new System.Windows.Forms.TabPage();
+            this.dgvPermisosUsuario = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.chbRolActivo = new System.Windows.Forms.CheckBox();
+            this.cmbRoles = new System.Windows.Forms.ComboBox();
+            this.btnAgregarRol = new System.Windows.Forms.Button();
+            this.IdPermisoUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Componente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstadoPermiso = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.EditarPermiso = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.EliminarPermiso = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.pnlPrincipal.SuspendLayout();
             this.pnlSecundario.SuspendLayout();
@@ -60,7 +65,7 @@
             this.tbpRoles.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRolesUsuario)).BeginInit();
             this.tbpPermisos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPermisosRol)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPermisosUsuario)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -202,9 +207,46 @@
             this.dgvRolesUsuario.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRolesUsuario_CellClick);
             this.dgvRolesUsuario.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvRolesUsuario_CellPainting);
             // 
+            // IdRolUsuario
+            // 
+            this.IdRolUsuario.HeaderText = "IdRolUsuario";
+            this.IdRolUsuario.Name = "IdRolUsuario";
+            this.IdRolUsuario.Visible = false;
+            // 
+            // Rol
+            // 
+            this.Rol.HeaderText = "Rol";
+            this.Rol.Name = "Rol";
+            this.Rol.ReadOnly = true;
+            this.Rol.Width = 200;
+            // 
+            // EstadoRol
+            // 
+            this.EstadoRol.HeaderText = "Estado";
+            this.EstadoRol.Name = "EstadoRol";
+            this.EstadoRol.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.EstadoRol.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.EstadoRol.Width = 60;
+            // 
+            // EditarRol
+            // 
+            this.EditarRol.HeaderText = "EditarRol";
+            this.EditarRol.Name = "EditarRol";
+            this.EditarRol.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.EditarRol.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.EditarRol.Width = 60;
+            // 
+            // EliminarRol
+            // 
+            this.EliminarRol.HeaderText = "Eliminar";
+            this.EliminarRol.Name = "EliminarRol";
+            this.EliminarRol.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.EliminarRol.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.EliminarRol.Width = 60;
+            // 
             // tbpPermisos
             // 
-            this.tbpPermisos.Controls.Add(this.dgvPermisosRol);
+            this.tbpPermisos.Controls.Add(this.dgvPermisosUsuario);
             this.tbpPermisos.Location = new System.Drawing.Point(4, 25);
             this.tbpPermisos.Margin = new System.Windows.Forms.Padding(4);
             this.tbpPermisos.Name = "tbpPermisos";
@@ -214,14 +256,22 @@
             this.tbpPermisos.Text = "Permisos";
             this.tbpPermisos.UseVisualStyleBackColor = true;
             // 
-            // dgvPermisosRol
+            // dgvPermisosUsuario
             // 
-            this.dgvPermisosRol.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPermisosRol.Location = new System.Drawing.Point(8, 7);
-            this.dgvPermisosRol.Margin = new System.Windows.Forms.Padding(4);
-            this.dgvPermisosRol.Name = "dgvPermisosRol";
-            this.dgvPermisosRol.Size = new System.Drawing.Size(793, 402);
-            this.dgvPermisosRol.TabIndex = 0;
+            this.dgvPermisosUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPermisosUsuario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdPermisoUsuario,
+            this.Componente,
+            this.EstadoPermiso,
+            this.EditarPermiso,
+            this.EliminarPermiso});
+            this.dgvPermisosUsuario.Location = new System.Drawing.Point(8, 7);
+            this.dgvPermisosUsuario.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvPermisosUsuario.Name = "dgvPermisosUsuario";
+            this.dgvPermisosUsuario.Size = new System.Drawing.Size(709, 402);
+            this.dgvPermisosUsuario.TabIndex = 0;
+            this.dgvPermisosUsuario.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPermisosUsuario_CellClick);
+            this.dgvPermisosUsuario.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvPermisosUsuario_CellPainting);
             // 
             // panel1
             // 
@@ -266,42 +316,36 @@
             this.btnAgregarRol.UseVisualStyleBackColor = true;
             this.btnAgregarRol.Click += new System.EventHandler(this.btnAgregarRol_Click);
             // 
-            // IdRolUsuario
+            // IdPermisoUsuario
             // 
-            this.IdRolUsuario.HeaderText = "IdRolUsuario";
-            this.IdRolUsuario.Name = "IdRolUsuario";
-            this.IdRolUsuario.Visible = false;
+            this.IdPermisoUsuario.HeaderText = "Id";
+            this.IdPermisoUsuario.Name = "IdPermisoUsuario";
+            this.IdPermisoUsuario.Visible = false;
             // 
-            // Rol
+            // Componente
             // 
-            this.Rol.HeaderText = "Rol";
-            this.Rol.Name = "Rol";
-            this.Rol.ReadOnly = true;
-            this.Rol.Width = 200;
+            this.Componente.HeaderText = "Componente";
+            this.Componente.Name = "Componente";
+            this.Componente.ReadOnly = true;
+            this.Componente.Width = 200;
             // 
-            // EstadoRol
+            // EstadoPermiso
             // 
-            this.EstadoRol.HeaderText = "Estado";
-            this.EstadoRol.Name = "EstadoRol";
-            this.EstadoRol.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.EstadoRol.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.EstadoRol.Width = 60;
+            this.EstadoPermiso.HeaderText = "Estado";
+            this.EstadoPermiso.Name = "EstadoPermiso";
+            this.EstadoPermiso.Width = 60;
             // 
-            // EditarRol
+            // EditarPermiso
             // 
-            this.EditarRol.HeaderText = "EditarRol";
-            this.EditarRol.Name = "EditarRol";
-            this.EditarRol.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.EditarRol.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.EditarRol.Width = 60;
+            this.EditarPermiso.HeaderText = "Editar";
+            this.EditarPermiso.Name = "EditarPermiso";
+            this.EditarPermiso.Width = 60;
             // 
-            // EliminarRol
+            // EliminarPermiso
             // 
-            this.EliminarRol.HeaderText = "Eliminar";
-            this.EliminarRol.Name = "EliminarRol";
-            this.EliminarRol.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.EliminarRol.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.EliminarRol.Width = 60;
+            this.EliminarPermiso.HeaderText = "Eliminar";
+            this.EliminarPermiso.Name = "EliminarPermiso";
+            this.EliminarPermiso.Width = 60;
             // 
             // Usuario
             // 
@@ -320,7 +364,7 @@
             this.tbpRoles.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRolesUsuario)).EndInit();
             this.tbpPermisos.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPermisosRol)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPermisosUsuario)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -338,7 +382,7 @@
         private System.Windows.Forms.Button btnAtras;
         private System.Windows.Forms.DataGridView dgvRolesUsuario;
         private System.Windows.Forms.TabPage tbpPermisos;
-        private System.Windows.Forms.DataGridView dgvPermisosRol;
+        private System.Windows.Forms.DataGridView dgvPermisosUsuario;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.CheckBox chbRolActivo;
         private System.Windows.Forms.ComboBox cmbRoles;
@@ -354,5 +398,10 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn EstadoRol;
         private System.Windows.Forms.DataGridViewButtonColumn EditarRol;
         private System.Windows.Forms.DataGridViewButtonColumn EliminarRol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdPermisoUsuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Componente;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn EstadoPermiso;
+        private System.Windows.Forms.DataGridViewButtonColumn EditarPermiso;
+        private System.Windows.Forms.DataGridViewButtonColumn EliminarPermiso;
     }
 }

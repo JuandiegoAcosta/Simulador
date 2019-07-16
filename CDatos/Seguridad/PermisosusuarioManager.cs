@@ -332,6 +332,52 @@ namespace CDatos.Manager
                 return PermisosUsuarioModellist;
             }
         }
+        public List<PermisosUsuarioModel> PermisosUsuarioXUsuario(int IdUsuario)
+        {
+
+            List<PermisosUsuarioModel> PermisosUsuarioModellist = new List<PermisosUsuarioModel>();
+
+            try
+            {
+                using (var connection = Util.ConnectionFactory.conexion())
+                {
+                    connection.Open();
+
+                    SqlCommand command = connection.CreateCommand();
+                    command.Parameters.AddWithValue("@id", IdUsuario);
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.CommandText = "ObtenerPermisosPorUsuario";
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+
+                            int Id = (int)(reader["Id"]);
+                            string Descrip = reader["Descripcion"] as string;
+                            bool Estado = (bool)(reader["Estado"]);
+
+                            PermisosUsuarioModellist.Add(new PermisosUsuarioModel
+                            {
+                                Id = Id,
+                                Descripcion = Descrip,
+                                Estado = Estado,
+
+                            });
+                        }
+                    }
+                }
+
+                return PermisosUsuarioModellist;
+            }
+            catch (Exception)
+            {
+                return PermisosUsuarioModellist;
+            }
+        }
         #endregion
 
     }

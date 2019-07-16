@@ -420,7 +420,10 @@ namespace ServiciosBancarios
         {
             return BLPermisosUsuario.ObtenerTodos();
         }
-
+        public List<PermisosUsuarioModel> PermisosUsuarioXusuario(int IdUsuario )
+        {
+            return BLPermisosUsuario.ObtenerPermisosXUsaurio(IdUsuario);
+        }
 
         #endregion
 
@@ -810,6 +813,13 @@ namespace ServiciosBancarios
         {
             return BLDetalleCajaChica.ObtenerTodos();
         }
+
+        public List<PermisosUsuarioModel> PermisosUsuario_ObtenerTodos(int IdUsuario)
+        {
+            throw new NotImplementedException();
+        }
+
+   
 
 
 

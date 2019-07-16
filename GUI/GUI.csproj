@@ -602,10 +602,10 @@
     <None Include="Connected Services\WsSistemaBancario\SistemaBancario.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\WsSistemaBancario\SistemaBancario2.xsd">
+    <None Include="Connected Services\WsSistemaBancario\SistemaBancario1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\WsSistemaBancario\SistemaBancario3.xsd">
+    <None Include="Connected Services\WsSistemaBancario\SistemaBancario2.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\DataSources\Modelos.Modelos.BancoModel.datasource" />
