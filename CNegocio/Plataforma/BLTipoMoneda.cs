@@ -37,5 +37,20 @@ namespace CNegocio.Plataforma
             return ADTipoMonedaManager.TipoMonedaModelSelectAll();
         }
 
+        /// <summary>
+        /// Selects the Multiple objects of TipoCambioModel table by a given criteria.
+        /// </summary>
+        public List<TipoMonedaModel> TipoMonedaModelSelectbyId(string aValue)
+        {
+            return ADTipoMonedaManager.TipoMonedaModelSelectbyId(aValue);
+        }
+
+        /// <summary>
+        /// Selects the Multiple objects of TipoCambioModel table by a given criteria.
+        /// </summary>
+        public List<TipoMonedaModel> TipoMonedaModelSelectbyDescripcion(string aValue)
+        {
+            return ADTipoMonedaManager.TipoMonedaModelSelectbyDescripcion(aValue);
+        }
     }
 }
