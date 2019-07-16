@@ -237,24 +237,24 @@ namespace Sistema_Bancario.plataforma_controles
 
                     if (formHelp1.EstaAceptado())
                     {
-                        var dato = formHelp1.getObject<CuentasModel>();
+                        CuentasModel dato = formHelp1.getObject<CuentasModel>();
                         if (dato != null)
                         {
                             this.clearForm();
                             this.gCuenta = this.BLCuenta.Getcuenta(dato.Nrocuenta);
-                            if (gCuenta != null)
-                            {
-                                this.cuenta2gui(this.gCuenta);
-                            }
 
                             if (this.modo == "modoInicial")
                             {
                                 if (this.gCuenta == null)
                                     return;
 
-                                var Prestamos = this.BLPrestamo.prestamoSelectbyNroCuenta(this.gCuenta.Nrocuenta);
+                                List<PrestamosModel> Prestamos = this.BLPrestamo.prestamoSelectbyNroCuenta(this.gCuenta.Nrocuenta);
                                 if (Prestamos == null || Prestamos.Count == 0)
+                                {
+                                    MessageBox.Show("No tiene prestamos asociados a esta cuenta");
                                     return;
+                                }
+                                    
 
                                 this.buscarPrestamo(Prestamos);
                             }

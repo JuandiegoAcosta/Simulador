@@ -16,6 +16,7 @@ namespace Sistema_Bancario
     {
         ISession sesion;
         NuevoPrestamoUserControl prestamo;
+        //NuevaCuentaUserControl cuenta;
 
         public Pruebas()
         {
@@ -33,6 +34,7 @@ namespace Sistema_Bancario
             };
 
             prestamo = new NuevoPrestamoUserControl(sesion);
+            //cuenta = new NuevaCuentaUserControl(sesion);
             this.Controls.Add(prestamo);
         }
 

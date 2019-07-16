@@ -221,7 +221,7 @@ namespace CDatos.Manager
                         string NroDocumento = (string)(reader["NroDocumento"]);
                         int TipoDocumento = (int)(reader["TipoDocumento"]);
                         string Tipo_Persona = (reader["Tipo_Persona"]) == DBNull.Value ? null : (string)(reader["Tipo_Persona"]);
-                        //8
+                        
                         PersonaModel = new PersonaModel
                         {
                             Id = Id,
@@ -244,6 +244,7 @@ namespace CDatos.Manager
             }
             catch (Exception)
             {
+                //throw;
                 return null;
             }
         }

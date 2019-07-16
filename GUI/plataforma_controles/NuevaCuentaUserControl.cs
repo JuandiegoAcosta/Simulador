@@ -179,7 +179,6 @@ namespace Sistema_Bancario.plataforma_controles
             }
         }
 
-
         private void persona2gui(PersonaModel apersona)
         {
             this.txtNombres.Text = apersona.Nombres;

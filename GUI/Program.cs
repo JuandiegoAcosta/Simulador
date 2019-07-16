@@ -9,19 +9,19 @@ namespace Sistema_Bancario
 {
    static class Program
    {
-      /// <summary>
-      /// The main entry point for the application.
-      /// </summary>
-      [STAThread]
-      static void Main()
-      {
-         Application.EnableVisualStyles();
-         Application.SetCompatibleTextRenderingDefault(false);
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
+        [STAThread]
+        static void Main()
+        {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
 
-            
+
             //CloseApplication.Run(new Login());
             //CloseApplication.Run(new VentanaPrincipal());
-            CloseApplication.Run(new Login());
+            CloseApplication.Run(new Pruebas());
 
         }
     }
