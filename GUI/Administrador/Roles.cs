@@ -154,8 +154,9 @@ namespace Sistema_Bancario.Administrador
 
 
                     dgvUsuarios.CurrentCell = null;
-                    dgvUsuarios.Rows[1].Visible = false;
-                    dgvUsuarios.Rows[2].Visible = false;
+
+
+                    //dgvUsuarios.Columns["CustomerID"].Visible = false;
 
 
                     dgvUsuarios.Columns["Id"].DataPropertyName = "Id";
@@ -192,6 +193,9 @@ namespace Sistema_Bancario.Administrador
                     dgvUsuarios.Columns.Add(btnEliminar);
 
 
+
+                    dgvUsuarios.Columns["Id"].Visible = false;
+                    dgvUsuarios.Columns["IDPersona"].Visible = false;
 
                     dgvUsuarios.Columns["Correo"].Visible = false;
                     dgvUsuarios.Columns["NroDocumento"].Visible = false;
@@ -574,13 +578,32 @@ namespace Sistema_Bancario.Administrador
                 {
                     ///////////using
 
+                    if (e.ColumnIndex==5) {
+                        Editar frmeditar = new Editar();
 
-                    Editar frmeditar = new Editar();
+                        frmeditar.txtUsuarioEditar.Text = nombreusuario;
+                        frmeditar.txtIdUsuario.Text = idUsuario.ToString();
+                        frmeditar.idRolUsuario.Text = idRolUsuario.ToString();
+                        frmeditar.btnEditar.Visible = true;
+                        frmeditar.Show();
 
-                    frmeditar.txtUsuarioEditar.Text = nombreusuario;
-                    frmeditar.txtIdUsuario.Text = idUsuario.ToString();
-                    frmeditar.idRolUsuario.Text = idRolUsuario.ToString();
-                    frmeditar.Show();
+                    }
+
+                    if (e.ColumnIndex == 6)
+                    {
+                        Editar frmeditar = new Editar();
+
+                        frmeditar.txtUsuarioEditar.Text = nombreusuario;
+                        frmeditar.txtIdUsuario.Text = idUsuario.ToString();
+                        frmeditar.idRolUsuario.Text = idRolUsuario.ToString();
+                        frmeditar.btnEliminar.Visible = true;
+                        frmeditar.Show();
+
+                    }
+
+
+
+
                 }
             }
         }

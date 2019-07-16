@@ -36,7 +36,6 @@
             this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.pnlPrincipal = new System.Windows.Forms.Panel();
-            this.btnAgregarUsuario = new System.Windows.Forms.Button();
             this.pnlSecundario = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tbpRoles = new System.Windows.Forms.TabPage();
@@ -49,15 +48,18 @@
             this.EliminarRol = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tbpPermisos = new System.Windows.Forms.TabPage();
             this.dgvPermisosUsuario = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.chbRolActivo = new System.Windows.Forms.CheckBox();
-            this.cmbRoles = new System.Windows.Forms.ComboBox();
-            this.btnAgregarRol = new System.Windows.Forms.Button();
             this.IdPermisoUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Componente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EstadoPermiso = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.EditarPermiso = new System.Windows.Forms.DataGridViewButtonColumn();
             this.EliminarPermiso = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.chbRolActivo = new System.Windows.Forms.CheckBox();
+            this.cmbRoles = new System.Windows.Forms.ComboBox();
+            this.btnAgregarRol = new System.Windows.Forms.Button();
+            this.btnAgregarUsuario = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.pnlPrincipal.SuspendLayout();
             this.pnlSecundario.SuspendLayout();
@@ -131,20 +133,11 @@
             // 
             this.pnlPrincipal.Controls.Add(this.btnAgregarUsuario);
             this.pnlPrincipal.Controls.Add(this.dgvUsuarios);
-            this.pnlPrincipal.Location = new System.Drawing.Point(31, 395);
+            this.pnlPrincipal.Location = new System.Drawing.Point(183, 583);
             this.pnlPrincipal.Margin = new System.Windows.Forms.Padding(4);
             this.pnlPrincipal.Name = "pnlPrincipal";
             this.pnlPrincipal.Size = new System.Drawing.Size(920, 566);
             this.pnlPrincipal.TabIndex = 1;
-            // 
-            // btnAgregarUsuario
-            // 
-            this.btnAgregarUsuario.Image = global::Sistema_Bancario.Properties.Resources.icons8_agregar_administrador_26;
-            this.btnAgregarUsuario.Location = new System.Drawing.Point(773, 3);
-            this.btnAgregarUsuario.Name = "btnAgregarUsuario";
-            this.btnAgregarUsuario.Size = new System.Drawing.Size(47, 38);
-            this.btnAgregarUsuario.TabIndex = 1;
-            this.btnAgregarUsuario.UseVisualStyleBackColor = true;
             // 
             // pnlSecundario
             // 
@@ -152,7 +145,7 @@
             this.pnlSecundario.Location = new System.Drawing.Point(158, 36);
             this.pnlSecundario.Margin = new System.Windows.Forms.Padding(4);
             this.pnlSecundario.Name = "pnlSecundario";
-            this.pnlSecundario.Size = new System.Drawing.Size(920, 460);
+            this.pnlSecundario.Size = new System.Drawing.Size(920, 550);
             this.pnlSecundario.TabIndex = 8;
             // 
             // tabControl1
@@ -163,18 +156,19 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(823, 437);
+            this.tabControl1.Size = new System.Drawing.Size(864, 527);
             this.tabControl1.TabIndex = 7;
             // 
             // tbpRoles
             // 
+            this.tbpRoles.Controls.Add(this.button2);
             this.tbpRoles.Controls.Add(this.btnAtras);
             this.tbpRoles.Controls.Add(this.dgvRolesUsuario);
             this.tbpRoles.Location = new System.Drawing.Point(4, 25);
             this.tbpRoles.Margin = new System.Windows.Forms.Padding(4);
             this.tbpRoles.Name = "tbpRoles";
             this.tbpRoles.Padding = new System.Windows.Forms.Padding(4);
-            this.tbpRoles.Size = new System.Drawing.Size(815, 408);
+            this.tbpRoles.Size = new System.Drawing.Size(856, 498);
             this.tbpRoles.TabIndex = 0;
             this.tbpRoles.Text = "Roles";
             this.tbpRoles.UseVisualStyleBackColor = true;
@@ -199,7 +193,7 @@
             this.EstadoRol,
             this.EditarRol,
             this.EliminarRol});
-            this.dgvRolesUsuario.Location = new System.Drawing.Point(156, 28);
+            this.dgvRolesUsuario.Location = new System.Drawing.Point(152, 106);
             this.dgvRolesUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.dgvRolesUsuario.Name = "dgvRolesUsuario";
             this.dgvRolesUsuario.Size = new System.Drawing.Size(549, 345);
@@ -246,12 +240,13 @@
             // 
             // tbpPermisos
             // 
+            this.tbpPermisos.Controls.Add(this.button1);
             this.tbpPermisos.Controls.Add(this.dgvPermisosUsuario);
             this.tbpPermisos.Location = new System.Drawing.Point(4, 25);
             this.tbpPermisos.Margin = new System.Windows.Forms.Padding(4);
             this.tbpPermisos.Name = "tbpPermisos";
             this.tbpPermisos.Padding = new System.Windows.Forms.Padding(4);
-            this.tbpPermisos.Size = new System.Drawing.Size(815, 408);
+            this.tbpPermisos.Size = new System.Drawing.Size(856, 498);
             this.tbpPermisos.TabIndex = 1;
             this.tbpPermisos.Text = "Permisos";
             this.tbpPermisos.UseVisualStyleBackColor = true;
@@ -265,13 +260,44 @@
             this.EstadoPermiso,
             this.EditarPermiso,
             this.EliminarPermiso});
-            this.dgvPermisosUsuario.Location = new System.Drawing.Point(8, 7);
+            this.dgvPermisosUsuario.Location = new System.Drawing.Point(78, 50);
             this.dgvPermisosUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.dgvPermisosUsuario.Name = "dgvPermisosUsuario";
             this.dgvPermisosUsuario.Size = new System.Drawing.Size(709, 402);
             this.dgvPermisosUsuario.TabIndex = 0;
             this.dgvPermisosUsuario.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPermisosUsuario_CellClick);
             this.dgvPermisosUsuario.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvPermisosUsuario_CellPainting);
+            // 
+            // IdPermisoUsuario
+            // 
+            this.IdPermisoUsuario.HeaderText = "Id";
+            this.IdPermisoUsuario.Name = "IdPermisoUsuario";
+            this.IdPermisoUsuario.Visible = false;
+            // 
+            // Componente
+            // 
+            this.Componente.HeaderText = "Componente";
+            this.Componente.Name = "Componente";
+            this.Componente.ReadOnly = true;
+            this.Componente.Width = 200;
+            // 
+            // EstadoPermiso
+            // 
+            this.EstadoPermiso.HeaderText = "Estado";
+            this.EstadoPermiso.Name = "EstadoPermiso";
+            this.EstadoPermiso.Width = 60;
+            // 
+            // EditarPermiso
+            // 
+            this.EditarPermiso.HeaderText = "Editar";
+            this.EditarPermiso.Name = "EditarPermiso";
+            this.EditarPermiso.Width = 60;
+            // 
+            // EliminarPermiso
+            // 
+            this.EliminarPermiso.HeaderText = "Eliminar";
+            this.EliminarPermiso.Name = "EliminarPermiso";
+            this.EliminarPermiso.Width = 60;
             // 
             // panel1
             // 
@@ -316,36 +342,32 @@
             this.btnAgregarRol.UseVisualStyleBackColor = true;
             this.btnAgregarRol.Click += new System.EventHandler(this.btnAgregarRol_Click);
             // 
-            // IdPermisoUsuario
+            // btnAgregarUsuario
             // 
-            this.IdPermisoUsuario.HeaderText = "Id";
-            this.IdPermisoUsuario.Name = "IdPermisoUsuario";
-            this.IdPermisoUsuario.Visible = false;
+            this.btnAgregarUsuario.Image = global::Sistema_Bancario.Properties.Resources.icons8_agregar_administrador_26;
+            this.btnAgregarUsuario.Location = new System.Drawing.Point(773, 3);
+            this.btnAgregarUsuario.Name = "btnAgregarUsuario";
+            this.btnAgregarUsuario.Size = new System.Drawing.Size(47, 38);
+            this.btnAgregarUsuario.TabIndex = 1;
+            this.btnAgregarUsuario.UseVisualStyleBackColor = true;
             // 
-            // Componente
+            // button2
             // 
-            this.Componente.HeaderText = "Componente";
-            this.Componente.Name = "Componente";
-            this.Componente.ReadOnly = true;
-            this.Componente.Width = 200;
+            this.button2.Image = global::Sistema_Bancario.Properties.Resources.add_rol;
+            this.button2.Location = new System.Drawing.Point(654, 61);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(47, 38);
+            this.button2.TabIndex = 1;
+            this.button2.UseVisualStyleBackColor = true;
             // 
-            // EstadoPermiso
+            // button1
             // 
-            this.EstadoPermiso.HeaderText = "Estado";
-            this.EstadoPermiso.Name = "EstadoPermiso";
-            this.EstadoPermiso.Width = 60;
-            // 
-            // EditarPermiso
-            // 
-            this.EditarPermiso.HeaderText = "Editar";
-            this.EditarPermiso.Name = "EditarPermiso";
-            this.EditarPermiso.Width = 60;
-            // 
-            // EliminarPermiso
-            // 
-            this.EliminarPermiso.HeaderText = "Eliminar";
-            this.EliminarPermiso.Name = "EliminarPermiso";
-            this.EliminarPermiso.Width = 60;
+            this.button1.Image = global::Sistema_Bancario.Properties.Resources.add_permiso;
+            this.button1.Location = new System.Drawing.Point(740, 7);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(47, 38);
+            this.button1.TabIndex = 1;
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // Usuario
             // 
@@ -403,5 +425,7 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn EstadoPermiso;
         private System.Windows.Forms.DataGridViewButtonColumn EditarPermiso;
         private System.Windows.Forms.DataGridViewButtonColumn EliminarPermiso;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }

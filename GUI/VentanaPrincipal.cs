@@ -269,9 +269,33 @@ namespace Sistema_Bancario
             {
                 CrearControl<UserControl>(UCrefinanciar.instance, btn);
             }
-            else if (btn.Text.Equals("Solicitar Chequera"))
+            else if (btn.Text.Equals("Gestionar Tarjetas"))
             {
                 //CrearControl<UserControl>(UCchequeras.instance, btn);
+                NuevaTarjeta tarjeta;
+                if (this.Session != null)
+                {
+                    tarjeta = new NuevaTarjeta(this.Session);
+                    CrearControl<UserControl>(tarjeta, btn);
+                }
+                else
+                {
+                    MessageBox.Show("La sesión ha caducado");
+                }
+            }
+            else if (btn.Text.Equals("Gestionar Chequera"))
+            {
+                //CrearControl<UserControl>(UCchequeras.instance, btn);
+                RegistrarChequera chequera;
+                if (this.Session != null)
+                {
+                    chequera = new RegistrarChequera(this.Session);
+                    CrearControl<UserControl>(chequera, btn);
+                }
+                else
+                {
+                    MessageBox.Show("La sesión ha caducado");
+                }
             }
             else if (btn.Text.Equals("Balancin Caja"))
             {
@@ -387,21 +411,21 @@ namespace Sistema_Bancario
                         this.CrearBoton(Refinanciar, "Refinanciar", 150);
                     }
 
-                    if (Session.Componentes.Any(c => c.Nombre == "Solicitar Chequera"))
+                    if (Session.Componentes.Any(c => c.Nombre == "Gestionar Tarjetas"))
                     {
-                        Button SolicitarChequera = new Button();
-                       
-                        this.CrearBoton(SolicitarChequera, "Solicitar Chequera", 200);
+                        Button GestionarTarjetas = new Button();
+
+                        this.CrearBoton(GestionarTarjetas, "Gestionar Tarjetas", 200);
                     }
 
                     if (Session.Componentes.Any(c => c.Nombre == "Gestionar Chequera"))
                     {
                         Button GestionarChequera = new Button();
-                        
+
                         this.CrearBoton(GestionarChequera, "Gestionar Chequera", 250);
                     }
                     break;
-            case 2:
+                case 2:
                Button Cliente = new Button();
                Button TipoCliente = new Button();
                Button Moneda = new Button();
