@@ -269,12 +269,35 @@ namespace Sistema_Bancario.Administrador
                     if (chk.Value==chk.TrueValue)
                     {
                         chk.Value = chk.FalseValue;
-                        MessageBox.Show("Check");
+                        using (WsSistemaBancario.PersonaServiceClient per=new WsSistemaBancario.PersonaServiceClient())
+                        {
+                            bool back = per.ActualizarEstado(Convert.ToInt32(session.UserCodigo),Convert.ToInt32(dgvUsuarios.Rows[e.RowIndex].Cells[0].Value.ToString()),false);
+                            if (back)
+                            {
+                                MessageBox.Show("Estado actualizado!", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                MessageBox.Show("No se pudo actualizar!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                            
                     }
                     else
                     {
                         chk.Value = chk.TrueValue;
-                        MessageBox.Show("No check");
+                        using (WsSistemaBancario.PersonaServiceClient per = new WsSistemaBancario.PersonaServiceClient())
+                        {
+                            bool back = per.ActualizarEstado(Convert.ToInt32(session.UserCodigo), Convert.ToInt32(dgvUsuarios.Rows[e.RowIndex].Cells[0].Value.ToString()), true);
+                            if (back)
+                            {
+                                MessageBox.Show("Estado actualizado!", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                MessageBox.Show("No se pudo actualizar!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
                     }
                 }
             }
@@ -409,6 +432,9 @@ namespace Sistema_Bancario.Administrador
             {
                 frm.ShowDialog();
             }
+            this.dgvUsuarios.DataSource = null;
+            this.dgvUsuarios.Refresh();
+            this.llenarDGVUsuarios();
         }
     }
 }

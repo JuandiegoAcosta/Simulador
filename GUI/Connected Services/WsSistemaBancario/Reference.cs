@@ -1218,6 +1218,12 @@ namespace Sistema_Bancario.WsSistemaBancario {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/Persona_Editar", ReplyAction="http://tempuri.org/IPersonaService/Persona_EditarResponse")]
         System.Threading.Tasks.Task<bool> Persona_EditarAsync(Modelos.Modelos.PersonaModel aPersona, int id_user);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/ActualizarEstado", ReplyAction="http://tempuri.org/IPersonaService/ActualizarEstadoResponse")]
+        bool ActualizarEstado(int admin, int idusuario, bool estado);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/ActualizarEstado", ReplyAction="http://tempuri.org/IPersonaService/ActualizarEstadoResponse")]
+        System.Threading.Tasks.Task<bool> ActualizarEstadoAsync(int admin, int idusuario, bool estado);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/Persona_Eliminar", ReplyAction="http://tempuri.org/IPersonaService/Persona_EliminarResponse")]
         bool Persona_Eliminar(int aID_Persona);
         
@@ -1350,6 +1356,14 @@ namespace Sistema_Bancario.WsSistemaBancario {
         
         public System.Threading.Tasks.Task<bool> Persona_EditarAsync(Modelos.Modelos.PersonaModel aPersona, int id_user) {
             return base.Channel.Persona_EditarAsync(aPersona, id_user);
+        }
+        
+        public bool ActualizarEstado(int admin, int idusuario, bool estado) {
+            return base.Channel.ActualizarEstado(admin, idusuario, estado);
+        }
+        
+        public System.Threading.Tasks.Task<bool> ActualizarEstadoAsync(int admin, int idusuario, bool estado) {
+            return base.Channel.ActualizarEstadoAsync(admin, idusuario, estado);
         }
         
         public bool Persona_Eliminar(int aID_Persona) {

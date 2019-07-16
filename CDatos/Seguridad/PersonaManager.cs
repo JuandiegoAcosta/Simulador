@@ -133,7 +133,46 @@ namespace CDatos.Manager
             }
         }
 
+        public bool ActualizarEstado(int admin,int idusuario,bool estado)
+        {
+            try
+            {
+                using (var connection = Util.ConnectionFactory.conexion())
+                {
+                    connection.Open();
 
+                    SqlTransaction sqlTran = connection.BeginTransaction();
+
+                    SqlCommand command = connection.CreateCommand();
+
+                    command.Transaction = sqlTran;
+                    command.Parameters.AddWithValue("@admin", admin);
+                    command.Parameters.AddWithValue("@estado", estado);
+                    command.Parameters.AddWithValue("@idUsuario", idusuario);
+
+
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.CommandText = "ActualizarEstadoUsuario";
+
+                    int afectados = command.ExecuteNonQuery();
+
+                    // Commit the transaction.
+                    sqlTran.Commit();
+
+                    connection.Close();
+                    connection.Dispose();
+
+                    if (afectados > 0)
+                        return true;
+                    else
+                        return false;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
         /// <summary>
         /// Deletes record to the PersonaModel table.
         /// returns True if value saved successfully else false
@@ -660,7 +699,6 @@ namespace CDatos.Manager
         public PersonaModel ValidarUsuario(string usuario, string password)
         {
             PersonaModel PersonaModel = null;
-
             try
             {
                 using (var connection = Util.ConnectionFactory.conexion())

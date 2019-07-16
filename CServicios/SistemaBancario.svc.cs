@@ -438,6 +438,11 @@ namespace ServiciosBancarios
             return BLPersona.Editar(aPersona);
         }
 
+        public bool ActualizarEstado(int admin, int idusuario, bool estado)
+        {
+            return BLPersona.ActualizarEstado(admin, idusuario, estado);
+        }
+
         public bool Persona_Eliminar(int aID_Persona)
         {
             return BLPersona.Eliminar(aID_Persona);

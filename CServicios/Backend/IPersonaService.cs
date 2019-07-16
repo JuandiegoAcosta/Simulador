@@ -19,6 +19,9 @@ namespace ServiciosBancarios.Backend
         bool Persona_Editar(PersonaModel aPersona, int id_user);
 
         [OperationContract]
+        bool ActualizarEstado(int admin, int idusuario, bool estado);
+
+        [OperationContract]
         bool Persona_Eliminar(int aID_Persona);
 
         [OperationContract]

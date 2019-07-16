@@ -71,17 +71,15 @@ namespace Sistema_Bancario.Administrador
                     pnlAgregarUsuario.SendToBack();
 
                    // pnlSecundario.BringToFront();
-
                 }
-
+                MessageBox.Show("Usuario agregado correctamente!","Correcto",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
 
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
