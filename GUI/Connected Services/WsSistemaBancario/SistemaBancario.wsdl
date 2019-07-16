@@ -764,6 +764,42 @@
   <wsdl:message name="IDetalleCajaChicaService_DetalleCajaChica_ObtenerTodos_OutputMessage">
     <wsdl:part name="parameters" element="tns:DetalleCajaChica_ObtenerTodosResponse" />
   </wsdl:message>
+  <wsdl:message name="IPrestamoService_Prestamo_Crear_InputMessage">
+    <wsdl:part name="parameters" element="tns:Prestamo_Crear" />
+  </wsdl:message>
+  <wsdl:message name="IPrestamoService_Prestamo_Crear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Prestamo_CrearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPrestamoService_Prestamo_Editar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Prestamo_Editar" />
+  </wsdl:message>
+  <wsdl:message name="IPrestamoService_Prestamo_Editar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Prestamo_EditarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPrestamoService_Prestamo_Borrar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Prestamo_Borrar" />
+  </wsdl:message>
+  <wsdl:message name="IPrestamoService_Prestamo_Borrar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Prestamo_BorrarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPrestamoService_Prestamo_ObtenerUno_InputMessage">
+    <wsdl:part name="parameters" element="tns:Prestamo_ObtenerUno" />
+  </wsdl:message>
+  <wsdl:message name="IPrestamoService_Prestamo_ObtenerUno_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Prestamo_ObtenerUnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPrestamoService_Prestamo_SelecionarPorCuenta_InputMessage">
+    <wsdl:part name="parameters" element="tns:Prestamo_SelecionarPorCuenta" />
+  </wsdl:message>
+  <wsdl:message name="IPrestamoService_Prestamo_SelecionarPorCuenta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Prestamo_SelecionarPorCuentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPrestamoService_Prestamo_SeleccionarPorId_InputMessage">
+    <wsdl:part name="parameters" element="tns:Prestamo_SeleccionarPorId" />
+  </wsdl:message>
+  <wsdl:message name="IPrestamoService_Prestamo_SeleccionarPorId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Prestamo_SeleccionarPorIdResponse" />
+  </wsdl:message>
   <wsdl:portType name="ICobroChequeService">
     <wsdl:operation name="CobroCheque_Crear">
       <wsdl:input wsaw:Action="http://tempuri.org/ICobroChequeService/CobroCheque_Crear" message="tns:ICobroChequeService_CobroCheque_Crear_InputMessage" />
@@ -1308,6 +1344,32 @@
     <wsdl:operation name="DetalleCajaChica_ObtenerTodos">
       <wsdl:input wsaw:Action="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_ObtenerTodos" message="tns:IDetalleCajaChicaService_DetalleCajaChica_ObtenerTodos_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IDetalleCajaChicaService/DetalleCajaChica_ObtenerTodosResponse" message="tns:IDetalleCajaChicaService_DetalleCajaChica_ObtenerTodos_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IPrestamoService">
+    <wsdl:operation name="Prestamo_Crear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPrestamoService/Prestamo_Crear" message="tns:IPrestamoService_Prestamo_Crear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPrestamoService/Prestamo_CrearResponse" message="tns:IPrestamoService_Prestamo_Crear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Prestamo_Editar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPrestamoService/Prestamo_Editar" message="tns:IPrestamoService_Prestamo_Editar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPrestamoService/Prestamo_EditarResponse" message="tns:IPrestamoService_Prestamo_Editar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Prestamo_Borrar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPrestamoService/Prestamo_Borrar" message="tns:IPrestamoService_Prestamo_Borrar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPrestamoService/Prestamo_BorrarResponse" message="tns:IPrestamoService_Prestamo_Borrar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Prestamo_ObtenerUno">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPrestamoService/Prestamo_ObtenerUno" message="tns:IPrestamoService_Prestamo_ObtenerUno_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPrestamoService/Prestamo_ObtenerUnoResponse" message="tns:IPrestamoService_Prestamo_ObtenerUno_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Prestamo_SelecionarPorCuenta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPrestamoService/Prestamo_SelecionarPorCuenta" message="tns:IPrestamoService_Prestamo_SelecionarPorCuenta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPrestamoService/Prestamo_SelecionarPorCuentaResponse" message="tns:IPrestamoService_Prestamo_SelecionarPorCuenta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Prestamo_SeleccionarPorId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPrestamoService/Prestamo_SeleccionarPorId" message="tns:IPrestamoService_Prestamo_SeleccionarPorId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPrestamoService/Prestamo_SeleccionarPorIdResponse" message="tns:IPrestamoService_Prestamo_SeleccionarPorId_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ICobroChequeService" type="tns:ICobroChequeService">
@@ -2507,6 +2569,63 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IPrestamoService" type="tns:IPrestamoService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Prestamo_Crear">
+      <soap:operation soapAction="http://tempuri.org/IPrestamoService/Prestamo_Crear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Prestamo_Editar">
+      <soap:operation soapAction="http://tempuri.org/IPrestamoService/Prestamo_Editar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Prestamo_Borrar">
+      <soap:operation soapAction="http://tempuri.org/IPrestamoService/Prestamo_Borrar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Prestamo_ObtenerUno">
+      <soap:operation soapAction="http://tempuri.org/IPrestamoService/Prestamo_ObtenerUno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Prestamo_SelecionarPorCuenta">
+      <soap:operation soapAction="http://tempuri.org/IPrestamoService/Prestamo_SelecionarPorCuenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Prestamo_SeleccionarPorId">
+      <soap:operation soapAction="http://tempuri.org/IPrestamoService/Prestamo_SeleccionarPorId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
   <wsdl:service name="SistemaBancario">
     <wsdl:port name="BasicHttpBinding_ICobroChequeService" binding="tns:BasicHttpBinding_ICobroChequeService">
       <soap:address location="http://localhost:50786/SistemaBancario.svc" />
@@ -2569,6 +2688,9 @@
       <soap:address location="http://localhost:50786/SistemaBancario.svc" />
     </wsdl:port>
     <wsdl:port name="BasicHttpBinding_IDetalleCajaChicaService" binding="tns:BasicHttpBinding_IDetalleCajaChicaService">
+      <soap:address location="http://localhost:50786/SistemaBancario.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IPrestamoService" binding="tns:BasicHttpBinding_IPrestamoService">
       <soap:address location="http://localhost:50786/SistemaBancario.svc" />
     </wsdl:port>
   </wsdl:service>
