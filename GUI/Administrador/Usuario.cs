@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Modelos.Modelos;
 using Sistema_Bancario.Clases;
+using Sistema_Bancario.Properties;
 
 namespace Sistema_Bancario.Administrador
 {
@@ -52,21 +53,24 @@ namespace Sistema_Bancario.Administrador
 
                     Usuarios = UsuariosLista.Persona_UsuarioSelectAll().ToList();
 
+                    foreach (var p in Usuarios)
+                    {
+                        dgvUsuarios.Rows.Add(p.Id,p.Nombres,p.Apellidos,p.Estado);
+                    }
+
+                    //dgvUsuarios.DataSource = Usuarios;
 
 
-                    dgvUsuarios.DataSource = Usuarios;
-
-
-                    dgvUsuarios.Columns["Pass"].Visible = false;
-                    dgvUsuarios.Columns["Fechanacimiento"].Visible = false;
-                    dgvUsuarios.Columns["Telefono"].Visible = false;
-                    dgvUsuarios.Columns["Nrodocumento"].Visible = false;
-                    dgvUsuarios.Columns["Tipodocumento"].Visible = false;
-                    dgvUsuarios.Columns["Tipo_persona"].Visible = false;
-                    dgvUsuarios.Columns["Usuario_creador"].Visible = false;
-                    dgvUsuarios.Columns["Fecha_creacion"].Visible = false;
-                    dgvUsuarios.Columns["Fecha_modificacion"].Visible = false;
-                    dgvUsuarios.Columns["Usuario_modificador"].Visible = false;
+                    //dgvUsuarios.Columns["Pass"].Visible = false;
+                    //dgvUsuarios.Columns["Fechanacimiento"].Visible = false;
+                    //dgvUsuarios.Columns["Telefono"].Visible = false;
+                    //dgvUsuarios.Columns["Nrodocumento"].Visible = false;
+                    //dgvUsuarios.Columns["Tipodocumento"].Visible = false;
+                    //dgvUsuarios.Columns["Tipo_persona"].Visible = false;
+                    //dgvUsuarios.Columns["Usuario_creador"].Visible = false;
+                    //dgvUsuarios.Columns["Fecha_creacion"].Visible = false;
+                    //dgvUsuarios.Columns["Fecha_modificacion"].Visible = false;
+                    //dgvUsuarios.Columns["Usuario_modificador"].Visible = false;
 
 
 
@@ -238,6 +242,50 @@ namespace Sistema_Bancario.Administrador
             RolesModel rm = cmbRoles.SelectedValue as RolesModel;
 
             idRol = rm.Id;
+        }
+
+        private void dgvUsuarios_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.ColumnIndex >= 0 && this.dgvUsuarios.Columns[e.ColumnIndex].Name == "Editar" && e.RowIndex >= 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                DataGridViewButtonCell celBoton = this.dgvUsuarios.Rows[e.RowIndex].Cells["Editar"] as DataGridViewButtonCell;
+                Bitmap bm= Resources.icons8_editar_26;
+                Image img = bm;
+                e.Graphics.DrawImage(img, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
+
+                this.dgvUsuarios.Rows[e.RowIndex].Height = img.Height + 10;
+                this.dgvUsuarios.Columns[e.ColumnIndex].Width = img.Width + 10;
+
+                e.Handled = true;
+            }
+            if (e.ColumnIndex >= 0 && this.dgvUsuarios.Columns[e.ColumnIndex].Name == "Eliminar" && e.RowIndex >= 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                DataGridViewButtonCell celBoton = this.dgvUsuarios.Rows[e.RowIndex].Cells["Eliminar"] as DataGridViewButtonCell;
+                Bitmap bm = Resources.icons8_eliminar_26;
+                Image img = bm;
+                e.Graphics.DrawImage(img, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
+
+                this.dgvUsuarios.Rows[e.RowIndex].Height = img.Height + 10;
+                this.dgvUsuarios.Columns[e.ColumnIndex].Width = img.Width + 10;
+
+                e.Handled = true;
+            }
+        }
+
+        private void dgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (this.dgvUsuarios.Columns[e.ColumnIndex].Name == "Editar")
+            {
+                MessageBox.Show("Editar");
+            }
+            if (this.dgvUsuarios.Columns[e.ColumnIndex].Name == "Eliminar")
+            {
+                MessageBox.Show("Eliminar");
+            }
         }
     }
 }

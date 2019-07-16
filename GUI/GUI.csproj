@@ -706,6 +706,10 @@
     <None Include="Resources\view.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\icons8-agregar-administrador-26.png" />
+    <None Include="Resources\icons8-eliminar-26.png" />
+    <None Include="Resources\icons8-editar-26.png" />
+    <None Include="Resources\icons8-editar-32.png" />
     <None Include="Connected Services\WsSistemaBancario\SistemaBancario.disco" />
     <None Include="Connected Services\WsSistemaBancario\configuration91.svcinfo" />
     <None Include="Connected Services\WsSistemaBancario\configuration.svcinfo" />
