@@ -305,6 +305,12 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="plataforma_controles\NuevaCuentaUserControl.Designer.cs" />
+    <Compile Include="plataforma_controles\NuevaTarjeta.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="plataforma_controles\NuevaTarjeta.Designer.cs">
+      <DependentUpon>NuevaTarjeta.cs</DependentUpon>
+    </Compile>
     <Compile Include="plataforma_controles\NuevoPrestamoUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -507,6 +513,9 @@
       <DependentUpon>UCcliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="plataforma_controles\NuevaCuentaUserControl.resx" />
+    <EmbeddedResource Include="plataforma_controles\NuevaTarjeta.resx">
+      <DependentUpon>NuevaTarjeta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="plataforma_controles\NuevoPrestamoUserControl.resx" />
     <EmbeddedResource Include="plataforma_controles\RegistrarChequera.resx" />
     <EmbeddedResource Include="plataforma_controles\RegistroPersonaUserControl.resx" />
