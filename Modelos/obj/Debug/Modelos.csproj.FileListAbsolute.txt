@@ -138,7 +138,6 @@ C:\Users\Jean\Desktop\s7\JuandiegoAcosta\Simulador\Modelos\obj\Debug\Modelos.csp
 C:\Users\Jean\Desktop\s7\JuandiegoAcosta\Simulador\Modelos\obj\Debug\Modelos.dll
 C:\Users\Jean\Desktop\s7\JuandiegoAcosta\Simulador\Modelos\obj\Debug\Modelos.pdb
 C:\Users\ASUS\source\repos\Simulador\Modelos\obj\Debug\Modelos.csprojAssemblyReference.cache
-C:\Users\Saurom Lamderth\Source\Repos\JuandiegoAcosta\Simulador\Modelos\obj\Debug\Modelos.csprojAssemblyReference.cache
 C:\Users\RithardLL\Source\Repos\Simulador17\Modelos\bin\Debug\Modelos.dll
 C:\Users\RithardLL\Source\Repos\Simulador17\Modelos\bin\Debug\Modelos.pdb
 C:\Users\RithardLL\Source\Repos\Simulador17\Modelos\obj\Debug\Modelos.csprojAssemblyReference.cache
