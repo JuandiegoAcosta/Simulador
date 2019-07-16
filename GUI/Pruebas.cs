@@ -19,6 +19,7 @@ namespace Sistema_Bancario
         //NuevaTarjeta tarjeta;
         //NuevaCuentaUserControl cuenta;
         RegistroPersonaUserControl persona;
+        RegistrarChequera check;
 
         public Pruebas()
         {
@@ -38,9 +39,9 @@ namespace Sistema_Bancario
             //prestamo = new NuevoPrestamoUserControl(sesion);
             //tarjeta = new NuevaTarjeta(sesion);
             //cuenta = new NuevaCuentaUserControl(sesion);
-            persona = new RegistroPersonaUserControl(sesion);
+            check = new RegistrarChequera(sesion);
 
-            this.Controls.Add(persona);
+            this.Controls.Add(check);
         }
 
     }

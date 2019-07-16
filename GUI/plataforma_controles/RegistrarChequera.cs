@@ -66,13 +66,14 @@ namespace Sistema_Bancario.plataforma_controles
             SortedDictionary<int, string> userCache = new SortedDictionary<int, string>
                 {
                   {50, "050 CHEQUES"},
-                  {100, "100 CHUEQUES"},
+                  {100, "100 CHEQUES"},
                   {150, "150 CHEQUES"}
                 };
 
             this.cboCantidadCheques.DataSource = new BindingSource(userCache, null);
             this.cboCantidadCheques.ValueMember = "Key";
             this.cboCantidadCheques.DisplayMember = "Value";
+            this.cboCantidadCheques.Text = "Elegir una opcion";
         }
 
         private void poblarCboEstado()
@@ -121,24 +122,11 @@ namespace Sistema_Bancario.plataforma_controles
                         var dato = formHelp1.getObject<CuentasModel>();
                         if (dato != null)
                         {
-
-                            if (this.modo == "modoInicial")
-                            {
-                                if (this.gChequera == null)
-                                    return;
-
-                                var chequeras = this.BLChequeras.chequeraSelectbyCuenta(this.gCuenta.Nrocuenta);
-                                if (chequeras == null || chequeras.Count == 0)
-                                    return;
-
-                                //this.buscarPrestamo(Prestamos);
-                            }
-                            else
-                            {
-                                this.clearForm();
-                                this.cuenta2gui(this.gCuenta);
-                            }
-
+                            this.clearForm();
+                            this.gCuenta = this.BLCuenta.Getcuenta(dato.Nrocuenta);
+                            this.cuenta2gui(this.gCuenta);
+                            //this.modoNuevo();
+                            //this.modoEdicion();
                         }
                     }
                 }
