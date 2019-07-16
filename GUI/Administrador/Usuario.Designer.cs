@@ -72,7 +72,7 @@
             this.dgvUsuarios.Location = new System.Drawing.Point(25, 48);
             this.dgvUsuarios.Margin = new System.Windows.Forms.Padding(4);
             this.dgvUsuarios.Name = "dgvUsuarios";
-            this.dgvUsuarios.Size = new System.Drawing.Size(876, 499);
+            this.dgvUsuarios.Size = new System.Drawing.Size(795, 499);
             this.dgvUsuarios.TabIndex = 0;
             this.dgvUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellClick);
             this.dgvUsuarios.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellDoubleClick);
@@ -82,7 +82,7 @@
             // 
             this.pnlPrincipal.Controls.Add(this.btnAgregarUsuario);
             this.pnlPrincipal.Controls.Add(this.dgvUsuarios);
-            this.pnlPrincipal.Location = new System.Drawing.Point(32, 15);
+            this.pnlPrincipal.Location = new System.Drawing.Point(180, 53);
             this.pnlPrincipal.Margin = new System.Windows.Forms.Padding(4);
             this.pnlPrincipal.Name = "pnlPrincipal";
             this.pnlPrincipal.Size = new System.Drawing.Size(920, 566);
@@ -91,7 +91,7 @@
             // pnlSecundario
             // 
             this.pnlSecundario.Controls.Add(this.tabControl1);
-            this.pnlSecundario.Location = new System.Drawing.Point(32, 15);
+            this.pnlSecundario.Location = new System.Drawing.Point(184, 142);
             this.pnlSecundario.Margin = new System.Windows.Forms.Padding(4);
             this.pnlSecundario.Name = "pnlSecundario";
             this.pnlSecundario.Size = new System.Drawing.Size(920, 460);
@@ -248,7 +248,7 @@
             // btnAgregarUsuario
             // 
             this.btnAgregarUsuario.Image = global::Sistema_Bancario.Properties.Resources.icons8_agregar_administrador_26;
-            this.btnAgregarUsuario.Location = new System.Drawing.Point(851, 3);
+            this.btnAgregarUsuario.Location = new System.Drawing.Point(773, 3);
             this.btnAgregarUsuario.Name = "btnAgregarUsuario";
             this.btnAgregarUsuario.Size = new System.Drawing.Size(47, 38);
             this.btnAgregarUsuario.TabIndex = 1;
