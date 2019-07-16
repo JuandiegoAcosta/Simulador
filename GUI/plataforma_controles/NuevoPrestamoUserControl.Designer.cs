@@ -199,6 +199,7 @@
             this.txtMontoPrestamo.Name = "txtMontoPrestamo";
             this.txtMontoPrestamo.Size = new System.Drawing.Size(100, 20);
             this.txtMontoPrestamo.TabIndex = 497;
+            this.txtMontoPrestamo.KeyPress += TxtMontoPrestamo_KeyPress;
             // 
             // txtMontoMora
             // 
@@ -206,6 +207,7 @@
             this.txtMontoMora.Name = "txtMontoMora";
             this.txtMontoMora.Size = new System.Drawing.Size(100, 20);
             this.txtMontoMora.TabIndex = 498;
+            this.txtMontoMora.KeyPress += TxtMontoMora_KeyPress;
             // 
             // label7
             // 

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Modelos.Modelos;
 using CNegocio.Plataforma;
 using Modelos.Session;
+using System.Globalization;
 
 namespace Sistema_Bancario.plataforma_controles
 {
@@ -35,6 +36,7 @@ namespace Sistema_Bancario.plataforma_controles
         public NuevoPrestamoUserControl(ISession session)
         {
             InitializeComponent();
+            
             this.gUsuario = session.UserName;
 
             this.poblarCboMonedas();
@@ -80,6 +82,11 @@ namespace Sistema_Bancario.plataforma_controles
                 string USUARIO_CREADOR = this.gUsuario;
                 DateTime FECHA_CREACION = (DateTime)BLFechaHoraServidor.Obtener();
 
+                if (montoPrestamo < 100 || montoPrestamo > 400000)
+                {
+                    MessageBox.Show("Montos incorrectos, ingrese un monto entre 100 y 400 000");
+                    return null;
+                }
 
                 return new PrestamosModel()
                 {
@@ -411,6 +418,18 @@ namespace Sistema_Bancario.plataforma_controles
                 return;
             }
             this.buscarPrestamo(objeto);
+        }
+
+        private void TxtMontoMora_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.') e.Handled = true;
+            if (e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1) e.Handled = true;
+        }
+
+        private void TxtMontoPrestamo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.') e.Handled = true;
+            if (e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1) e.Handled = true;
         }
 
         #endregion
