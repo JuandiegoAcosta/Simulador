@@ -153,6 +153,11 @@ namespace Sistema_Bancario.Administrador
                     //dgvUsuarios.AutoGenerateColumns = false;
 
 
+                    dgvUsuarios.CurrentCell = null;
+                    dgvUsuarios.Rows[1].Visible = false;
+                    dgvUsuarios.Rows[2].Visible = false;
+
+
                     dgvUsuarios.Columns["Id"].DataPropertyName = "Id";
 
                     //dgvUsuarios.Columns["Id"].DataPropertyName = "Id";
@@ -554,25 +559,29 @@ namespace Sistema_Bancario.Administrador
 
         private void dgvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            var senderGrid = (DataGridView)sender;
 
-
-            idRolUsuario = Convert.ToInt16(dgvUsuarios.Rows[e.RowIndex].Cells["Id"].Value);
-            idUsuario = Convert.ToInt16(dgvUsuarios.Rows[e.RowIndex].Cells["IdPersona"].Value);
-            nombreusuario = dgvUsuarios.Rows[e.RowIndex].Cells["NombreUsuario"].Value.ToString();
-            
-
-            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
+            if (e.RowIndex != -1)
             {
-                ///////////using
+                var senderGrid = (DataGridView)sender;
 
 
-                Editar frmeditar = new Editar();
+                idRolUsuario = (int)(dgvUsuarios.Rows[e.RowIndex].Cells["Id"].Value);
+                idUsuario = Convert.ToInt16(dgvUsuarios.Rows[e.RowIndex].Cells["IdPersona"].Value);
+                nombreusuario = dgvUsuarios.Rows[e.RowIndex].Cells["NombreUsuario"].Value.ToString();
 
-                frmeditar.txtUsuarioEditar.Text = nombreusuario;
-                frmeditar.txtIdUsuario.Text = idUsuario.ToString() ;
-                frmeditar.idRolUsuario.Text = idRolUsuario.ToString();
-                frmeditar.Show();
+
+                if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
+                {
+                    ///////////using
+
+
+                    Editar frmeditar = new Editar();
+
+                    frmeditar.txtUsuarioEditar.Text = nombreusuario;
+                    frmeditar.txtIdUsuario.Text = idUsuario.ToString();
+                    frmeditar.idRolUsuario.Text = idRolUsuario.ToString();
+                    frmeditar.Show();
+                }
             }
         }
     }
