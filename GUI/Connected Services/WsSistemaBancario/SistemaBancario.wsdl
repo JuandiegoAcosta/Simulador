@@ -296,6 +296,12 @@
   <wsdl:message name="IComponenteService_Componente_ObtenerComponentesRol_OutputMessage">
     <wsdl:part name="parameters" element="tns:Componente_ObtenerComponentesRolResponse" />
   </wsdl:message>
+  <wsdl:message name="IComponenteService_ObtenerTodosComponentes_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTodosComponentes" />
+  </wsdl:message>
+  <wsdl:message name="IComponenteService_ObtenerTodosComponentes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTodosComponentesResponse" />
+  </wsdl:message>
   <wsdl:message name="IHorariosAtencionService_HorariosAtencion_Crear_InputMessage">
     <wsdl:part name="parameters" element="tns:HorariosAtencion_Crear" />
   </wsdl:message>
@@ -469,6 +475,12 @@
   </wsdl:message>
   <wsdl:message name="IPersonaService_ObtenerUsuariosSinCredenciales_OutputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerUsuariosSinCredencialesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPersonaService_ActualizarEstadoRolUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarEstadoRolUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IPersonaService_ActualizarEstadoRolUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarEstadoRolUsuarioResponse" />
   </wsdl:message>
   <wsdl:message name="IRolesService_Roles_Crear_InputMessage">
     <wsdl:part name="parameters" element="tns:Roles_Crear" />
@@ -1009,6 +1021,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IComponenteService/Componente_ObtenerComponentesRol" message="tns:IComponenteService_Componente_ObtenerComponentesRol_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IComponenteService/Componente_ObtenerComponentesRolResponse" message="tns:IComponenteService_Componente_ObtenerComponentesRol_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="ObtenerTodosComponentes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComponenteService/ObtenerTodosComponentes" message="tns:IComponenteService_ObtenerTodosComponentes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComponenteService/ObtenerTodosComponentesResponse" message="tns:IComponenteService_ObtenerTodosComponentes_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IHorariosAtencionService">
     <wsdl:operation name="HorariosAtencion_Crear">
@@ -1130,6 +1146,10 @@
     <wsdl:operation name="ObtenerUsuariosSinCredenciales">
       <wsdl:input wsaw:Action="http://tempuri.org/IPersonaService/ObtenerUsuariosSinCredenciales" message="tns:IPersonaService_ObtenerUsuariosSinCredenciales_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IPersonaService/ObtenerUsuariosSinCredencialesResponse" message="tns:IPersonaService_ObtenerUsuariosSinCredenciales_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarEstadoRolUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPersonaService/ActualizarEstadoRolUsuario" message="tns:IPersonaService_ActualizarEstadoRolUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPersonaService/ActualizarEstadoRolUsuarioResponse" message="tns:IPersonaService_ActualizarEstadoRolUsuario_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IRolesService">
@@ -1830,6 +1850,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ObtenerTodosComponentes">
+      <soap:operation soapAction="http://tempuri.org/IComponenteService/ObtenerTodosComponentes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="BasicHttpBinding_IHorariosAtencionService" type="tns:IHorariosAtencionService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -2093,6 +2122,15 @@
     </wsdl:operation>
     <wsdl:operation name="ObtenerUsuariosSinCredenciales">
       <soap:operation soapAction="http://tempuri.org/IPersonaService/ObtenerUsuariosSinCredenciales" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarEstadoRolUsuario">
+      <soap:operation soapAction="http://tempuri.org/IPersonaService/ActualizarEstadoRolUsuario" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

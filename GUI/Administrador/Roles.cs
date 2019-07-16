@@ -56,7 +56,7 @@ namespace Sistema_Bancario.Administrador
                     roles = rol.Roles_ObtenerTodos().ToList();
 
 
-                    
+
 
                     dgvRoles.DataSource = roles;
 
@@ -79,30 +79,33 @@ namespace Sistema_Bancario.Administrador
             try
             {
 
-                using (WsSistemaBancario.RolesServiceClient rol = new WsSistemaBancario.RolesServiceClient())
-                {
-                    RolesModel objectmodelo = new RolesModel();
+                
 
-                    objectmodelo.Descripcion = txtRol.Text;
-                    objectmodelo.Fecha_creacion = DateTime.Now;
-                    objectmodelo.Usuario_creador = "Miau";
-                    objectmodelo.Fecha_modificacion = DateTime.Now;
+                if (!string.IsNullOrEmpty(txtRol.Text)) {
+                    using (WsSistemaBancario.RolesServiceClient rol = new WsSistemaBancario.RolesServiceClient())
+                    {
+                        RolesModel objectmodelo = new RolesModel();
 
-                    objectmodelo.Usuario_modificador = "";
+                        objectmodelo.Descripcion = txtRol.Text;
+                        objectmodelo.Fecha_creacion = DateTime.Now;
+                        objectmodelo.Usuario_creador = "Miau";
+                        objectmodelo.Fecha_modificacion = DateTime.Now;
 
-
-                    rol.Roles_Crear(objectmodelo,1);
-
-
-                    cargarDGV();
+                        objectmodelo.Usuario_modificador = "";
 
 
+                        rol.Roles_Crear(objectmodelo, 1);
+
+
+                        cargarDGV();
 
 
 
 
+
+
+                    }
                 }
-
             }
 
             catch (Exception ex)
@@ -123,7 +126,7 @@ namespace Sistema_Bancario.Administrador
                 nombreRol = dgvRoles.Rows[e.RowIndex].Cells["Descripcion"].Value.ToString();
                 idRol = Convert.ToInt16(dgvRoles.Rows[e.RowIndex].Cells["Id"].Value);
 
-                
+
 
             }
             llenarDGVPermisosRol();
@@ -131,7 +134,8 @@ namespace Sistema_Bancario.Administrador
 
 
         public DataTable usuarios;
-        public  bool generarbotones;
+        public List<RolUsuarioModel> listausuarios;
+        public bool generarbotones;
 
         private void llenarDGVUsuarios()
 
@@ -142,7 +146,7 @@ namespace Sistema_Bancario.Administrador
 
                 using (WsSistemaBancario.PersonaServiceClient UsuariosRol = new WsSistemaBancario.PersonaServiceClient())
                 {
-                  
+
                     //dgvUsuarios.AutoGenerateColumns = false;
 
                     usuarios = UsuariosRol.GetPersonasPorRol(idRol);
@@ -186,8 +190,8 @@ namespace Sistema_Bancario.Administrador
                     //    DataGridViewButtonColumn btnEditar = new DataGridViewButtonColumn();
                     //    btnEditar.Name = "Editar";
                     //    btnEditar.HeaderText = "Editar";
-                        
-                        
+
+
                     //    dgvUsuarios.Columns.Add(btnEditar);
 
                     //    //dgvUsuarios.Columns["Editar"].DisplayIndex = 5;
@@ -196,7 +200,7 @@ namespace Sistema_Bancario.Administrador
                     //    btnEliminar.Name = "Eliminar";
                     //    btnEliminar.HeaderText = "Eliminar";
                     //    dgvUsuarios.Columns.Add(btnEliminar);
-                        
+
                     //}
 
                     //dgvUsuarios.Columns["Editar"].DataPropertyName = "Editar";
@@ -207,7 +211,7 @@ namespace Sistema_Bancario.Administrador
 
                     dgvUsuarios.Columns["Correo"].Visible = false;
                     dgvUsuarios.Columns["NroDocumento"].Visible = false;
-                
+
                     dgvUsuarios.Columns["Pass"].Visible = false;
                     dgvUsuarios.Columns["Apellidos"].Visible = false;
                     dgvUsuarios.Columns["Fechanacimiento"].Visible = false;
@@ -247,7 +251,7 @@ namespace Sistema_Bancario.Administrador
                     objectmodelo.Descripcion = txtRol.Text;
                     objectmodelo.Fecha_modificacion = DateTime.Now;
                     objectmodelo.Usuario_modificador = "";
-                    rol.Roles_Editar(objectmodelo,1);
+                    rol.Roles_Editar(objectmodelo, 1);
 
                     cargarDGV();
                 }
@@ -287,7 +291,7 @@ namespace Sistema_Bancario.Administrador
 
         }
 
- 
+
         private void dgvRoles_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             pnlPrincipal.SendToBack();
@@ -330,7 +334,7 @@ namespace Sistema_Bancario.Administrador
                     idPersona = frmBuscarPersona.id;
                     //usuarioPersona = frmBuscarPersona.usuario;
                     txtNombrePersona.Text = usuarioPersona;
-                    
+
                     NombrePersona = frmBuscarPersona.nombre;
                     txtUsuarioBuscado.Text = NombrePersona;
                 }
@@ -419,7 +423,7 @@ namespace Sistema_Bancario.Administrador
             pnlSecundario.SendToBack();
         }
 
-        
+
         private static int idPersona;
         private static string usuarioPersona;
 
@@ -477,35 +481,35 @@ namespace Sistema_Bancario.Administrador
             try
             {
                 //string passEncrypt = Encrypt.GetSHA256(txtContraseña.Text);
-                
 
 
 
 
 
-                    using (WsSistemaBancario.RolUsuarioServiceClient CrearRolUsuario = new WsSistemaBancario.RolUsuarioServiceClient())
-                    {
 
-                        RolUsuarioModel rum = new RolUsuarioModel();
-                        rum.Id_persona = idPersona;
-                        rum.Id_rol = idRol;
-                        rum.Activo = chbEstado.Checked;
-;
-                        rum.Usuario_creador = "Administrador";
+                using (WsSistemaBancario.RolUsuarioServiceClient CrearRolUsuario = new WsSistemaBancario.RolUsuarioServiceClient())
+                {
 
-                        CrearRolUsuario.RolUsuario_Crear(rum,1);
-                    }
+                    RolUsuarioModel rum = new RolUsuarioModel();
+                    rum.Id_persona = idPersona;
+                    rum.Id_rol = idRol;
+                    rum.Activo = chbEstado.Checked;
+                    ;
+                    rum.Usuario_creador = "Administrador";
 
-
-
+                    CrearRolUsuario.RolUsuario_Crear(rum, 1);
+                }
 
 
-                        llenarDGVUsuarios();
-                    pnlAgregarUsuario.SendToBack();
-                    
-                    pnlSecundario.BringToFront();
 
-                
+
+
+                llenarDGVUsuarios();
+                pnlAgregarUsuario.SendToBack();
+
+                pnlSecundario.BringToFront();
+
+
 
             }
 
@@ -525,7 +529,7 @@ namespace Sistema_Bancario.Administrador
             try
             {
 
-                using (WsSistemaBancario.ComponenteServiceClient  PermisosPorRol= new WsSistemaBancario.ComponenteServiceClient())
+                using (WsSistemaBancario.ComponenteServiceClient PermisosPorRol = new WsSistemaBancario.ComponenteServiceClient())
                 {
 
                     componentesRol = PermisosPorRol.Componente_ObtenerComponentesRol(idRol).ToList();
@@ -538,10 +542,10 @@ namespace Sistema_Bancario.Administrador
                     dgvPermisosRol.Columns["Descripcion"].Visible = false;
                     dgvPermisosRol.Columns["Codigo"].Visible = false;
                     dgvPermisosRol.Columns["Id_aplicacion"].Visible = false;
-                    
+
                     dgvPermisosRol.Columns["IdPadre"].Visible = false;
 
-                    
+
 
 
                 }
@@ -567,9 +571,9 @@ namespace Sistema_Bancario.Administrador
             if (e.RowIndex != -1)
             {
                 //var senderGrid = (DataGridView)sender;
-                
 
-               
+
+
 
 
                 idRolUsuario = (int)(dgvUsuarios.Rows[e.RowIndex].Cells["Id"].Value);
@@ -580,8 +584,8 @@ namespace Sistema_Bancario.Administrador
                 //if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
                 //{
 
-                    
-                    
+
+
 
                 //        ///////////using
 
@@ -630,9 +634,9 @@ namespace Sistema_Bancario.Administrador
                 frmeditar.btnEliminar.Visible = true;
                 frmeditar.Show();
             }
-            
 
-            
+
+
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -649,12 +653,126 @@ namespace Sistema_Bancario.Administrador
             }
         }
 
-       
+
 
         private void btnAtras_Click_1(object sender, EventArgs e)
         {
             pnlSecundario.SendToBack();
             pnlPrincipal.BringToFront();
+        }
+
+        private void dgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        public List<ComponenteModel> componentes;
+
+
+        private void llenardgvComponentes()
+        {
+            try
+            {
+
+                using (WsSistemaBancario.ComponenteServiceClient ComponentesParaRol = new WsSistemaBancario.ComponenteServiceClient())
+                {
+
+                    componentes = ComponentesParaRol.ObtenerTodosComponentes().ToList();
+
+                    dgvCrearComponentesRol.DataSource = componentes;
+
+                    dgvCrearComponentesRol.Columns["IdPadre"].Visible = false;
+                    dgvCrearComponentesRol.Columns["Id_aplicacion"].Visible = false;
+
+
+                }
+
+            }
+
+            catch (Exception ex)
+            {
+
+            }
+
+        }
+
+
+
+
+        public int idComponente;
+        public bool estado;
+        List<PermisosUsuarioModel> Componentesrol = new List<PermisosUsuarioModel>();
+
+        private void dgvCrearComponentesRol_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            idRolUsuario = idRol;
+            //idRol = (int)(dgvCrearComponentesRol.Rows[e.RowIndex].Cells["Id_rol"].Value);
+            idComponente = (int)(dgvCrearComponentesRol.Rows[e.RowIndex].Cells["Id"].Value);
+            estado = (bool)(dgvCrearComponentesRol.Rows[e.RowIndex].Cells["Estado"].Value);
+
+            PermisosUsuarioModel permisos = new PermisosUsuarioModel();
+            permisos.Id_rol = idRol;
+            permisos.Id_componente = idComponente;
+            permisos.Estado = estado;
+
+
+            Componentesrol.Add(permisos);
+            //ComponentesParaElRol.Add(Convert.ToInt16(idRolUsuario));
+
+
+           
+        }
+
+        private void btnCrearRolAtras_Click(object sender, EventArgs e)
+        {
+            pnlComponentesParaRol.SendToBack();
+            pnlPrincipal.BringToFront();
+        }
+
+        private void btnAgregarComponentesRol_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                using (WsSistemaBancario.PermisosUsuarioServiceClient ComponentesParaRol = new WsSistemaBancario.PermisosUsuarioServiceClient())
+                {
+
+                    
+
+                    //ComponentesParaRol.PermisosUsuario_Crear(pu,1);
+                    foreach (PermisosUsuarioModel c in Componentesrol)
+                    {
+                        PermisosUsuarioModel pu = new PermisosUsuarioModel();
+                        
+                        pu.Id_rol = idRol;
+                        pu.Id_componente = c.Id_componente;
+                        pu.Estado = c.Estado;
+                        
+                        ComponentesParaRol.PermisosUsuario_Crear(pu,6);
+
+                    }
+
+                }
+                componentesRol = null;
+
+            }
+
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void btnAgregarPermisosRol_Click(object sender, EventArgs e)
+        {
+            if (idRol != 0) {
+
+
+                pnlPrincipal.SendToBack();
+                pnlComponentesParaRol.BringToFront();
+                llenardgvComponentes();
+            }
         }
     }
 }

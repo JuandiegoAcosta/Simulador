@@ -409,7 +409,58 @@ namespace CDatos.Manager
 
 
 
+        public List<ComponenteModel> ObtenerTodosComponentes()
+        {
 
+            List<ComponenteModel> ComponenteModellist = new List<ComponenteModel>();
+
+            try
+            {
+                using (var connection = Util.ConnectionFactory.conexion())
+                {
+                    connection.Open();
+
+                    SqlCommand command = connection.CreateCommand();
+
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.CommandText = "sp_ObtenerTodosComponentes";
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+
+                            int Id = (int)(reader["Id"]);
+                            string Nombre = (string)(reader["Nombre"]);
+                            string Descripcion = (string)(reader["Descripcion"]);
+                            bool Estado = (bool)(reader["Estado"]);
+                            string Codigo = (string)(reader["Codigo"]);
+
+
+                            ComponenteModellist.Add(new ComponenteModel
+                            {
+                                Id = Id,
+                                Nombre = Nombre,
+                                Descripcion = Descripcion,
+
+                                Estado = Estado,
+                                Codigo = Codigo,
+
+                            });
+                        }
+                    }
+                }
+
+                return ComponenteModellist;
+            }
+            catch (Exception ex)
+            {
+                return ComponenteModellist;
+            }
+        }
 
 
 

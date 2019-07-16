@@ -57,5 +57,12 @@ namespace CNegocio.Backend
             return ADComponenteManager.GetComponentesRol(aRol);
         }
 
+        public List<ComponenteModel> ObtenerTodosComponentes()
+        {
+            return ADComponenteManager.ObtenerTodosComponentes();
+        }
+
+
+
     }
 }
