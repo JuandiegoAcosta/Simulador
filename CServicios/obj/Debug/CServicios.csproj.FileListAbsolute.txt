@@ -397,17 +397,101 @@ E:\Documents\cursos\VI semestre\distribuidas\simulador2\CServicios\obj\Debug\CSe
 E:\Documents\cursos\VI semestre\distribuidas\simulador2\CServicios\obj\Debug\CServicios.csproj.CopyComplete
 E:\Documents\cursos\VI semestre\distribuidas\simulador2\CServicios\obj\Debug\ServiciosBancarios.dll
 E:\Documents\cursos\VI semestre\distribuidas\simulador2\CServicios\obj\Debug\ServiciosBancarios.pdb
-C:\Users\elife\Desktop\Others\ISUR\Bancario\CServicios\bin\ServiciosBancarios.dll.config
-C:\Users\elife\Desktop\Others\ISUR\Bancario\CServicios\bin\ServiciosBancarios.dll
-C:\Users\elife\Desktop\Others\ISUR\Bancario\CServicios\bin\ServiciosBancarios.pdb
-C:\Users\elife\Desktop\Others\ISUR\Bancario\CServicios\bin\CNegocio.dll
-C:\Users\elife\Desktop\Others\ISUR\Bancario\CServicios\bin\Modelos.dll
-C:\Users\elife\Desktop\Others\ISUR\Bancario\CServicios\bin\CDatos.dll
-C:\Users\elife\Desktop\Others\ISUR\Bancario\CServicios\bin\CNegocio.pdb
-C:\Users\elife\Desktop\Others\ISUR\Bancario\CServicios\bin\Modelos.pdb
-C:\Users\elife\Desktop\Others\ISUR\Bancario\CServicios\bin\CDatos.pdb
-C:\Users\elife\Desktop\Others\ISUR\Bancario\CServicios\obj\Debug\CServicios.csprojAssemblyReference.cache
-C:\Users\elife\Desktop\Others\ISUR\Bancario\CServicios\obj\Debug\CServicios.csproj.CoreCompileInputs.cache
-C:\Users\elife\Desktop\Others\ISUR\Bancario\CServicios\obj\Debug\CServicios.csproj.CopyComplete
-C:\Users\elife\Desktop\Others\ISUR\Bancario\CServicios\obj\Debug\ServiciosBancarios.dll
-C:\Users\elife\Desktop\Others\ISUR\Bancario\CServicios\obj\Debug\ServiciosBancarios.pdb
+C:\Users\Jean\Desktop\s8\Simulador\CServicios\bin\ServiciosBancarios.dll.config
+C:\Users\Jean\Desktop\s8\Simulador\CServicios\bin\ServiciosBancarios.dll
+C:\Users\Jean\Desktop\s8\Simulador\CServicios\bin\ServiciosBancarios.pdb
+C:\Users\Jean\Desktop\s8\Simulador\CServicios\bin\CNegocio.dll
+C:\Users\Jean\Desktop\s8\Simulador\CServicios\bin\Modelos.dll
+C:\Users\Jean\Desktop\s8\Simulador\CServicios\bin\CDatos.dll
+C:\Users\Jean\Desktop\s8\Simulador\CServicios\bin\CNegocio.pdb
+C:\Users\Jean\Desktop\s8\Simulador\CServicios\bin\Modelos.pdb
+C:\Users\Jean\Desktop\s8\Simulador\CServicios\bin\CDatos.pdb
+C:\Users\Jean\Desktop\s8\Simulador\CServicios\obj\Debug\CServicios.csprojAssemblyReference.cache
+C:\Users\Jean\Desktop\s8\Simulador\CServicios\obj\Debug\CServicios.csproj.CoreCompileInputs.cache
+C:\Users\Jean\Desktop\s8\Simulador\CServicios\obj\Debug\CServicios.csproj.CopyComplete
+C:\Users\Jean\Desktop\s8\Simulador\CServicios\obj\Debug\ServiciosBancarios.dll
+C:\Users\Jean\Desktop\s8\Simulador\CServicios\obj\Debug\ServiciosBancarios.pdb
+C:\Users\Jean\Desktop\z1\Simulador\CServicios\bin\ServiciosBancarios.dll.config
+C:\Users\Jean\Desktop\z1\Simulador\CServicios\bin\ServiciosBancarios.dll
+C:\Users\Jean\Desktop\z1\Simulador\CServicios\bin\ServiciosBancarios.pdb
+C:\Users\Jean\Desktop\z1\Simulador\CServicios\bin\CNegocio.dll
+C:\Users\Jean\Desktop\z1\Simulador\CServicios\bin\Modelos.dll
+C:\Users\Jean\Desktop\z1\Simulador\CServicios\bin\CDatos.dll
+C:\Users\Jean\Desktop\z1\Simulador\CServicios\bin\CNegocio.pdb
+C:\Users\Jean\Desktop\z1\Simulador\CServicios\bin\Modelos.pdb
+C:\Users\Jean\Desktop\z1\Simulador\CServicios\bin\CDatos.pdb
+C:\Users\Jean\Desktop\z1\Simulador\CServicios\obj\Debug\CServicios.csprojAssemblyReference.cache
+C:\Users\Jean\Desktop\z1\Simulador\CServicios\obj\Debug\CServicios.csproj.CoreCompileInputs.cache
+C:\Users\Jean\Desktop\z1\Simulador\CServicios\obj\Debug\CServicios.csproj.CopyComplete
+C:\Users\Jean\Desktop\z1\Simulador\CServicios\obj\Debug\ServiciosBancarios.dll
+C:\Users\Jean\Desktop\z1\Simulador\CServicios\obj\Debug\ServiciosBancarios.pdb
+C:\Users\Jean\Desktop\z2\Simulador\CServicios\bin\ServiciosBancarios.dll.config
+C:\Users\Jean\Desktop\z2\Simulador\CServicios\bin\ServiciosBancarios.dll
+C:\Users\Jean\Desktop\z2\Simulador\CServicios\bin\ServiciosBancarios.pdb
+C:\Users\Jean\Desktop\z2\Simulador\CServicios\bin\CNegocio.dll
+C:\Users\Jean\Desktop\z2\Simulador\CServicios\bin\Modelos.dll
+C:\Users\Jean\Desktop\z2\Simulador\CServicios\bin\CDatos.dll
+C:\Users\Jean\Desktop\z2\Simulador\CServicios\bin\CNegocio.pdb
+C:\Users\Jean\Desktop\z2\Simulador\CServicios\bin\Modelos.pdb
+C:\Users\Jean\Desktop\z2\Simulador\CServicios\bin\CDatos.pdb
+C:\Users\Jean\Desktop\z2\Simulador\CServicios\obj\Debug\CServicios.csprojAssemblyReference.cache
+C:\Users\Jean\Desktop\z2\Simulador\CServicios\obj\Debug\CServicios.csproj.CoreCompileInputs.cache
+C:\Users\Jean\Desktop\z2\Simulador\CServicios\obj\Debug\CServicios.csproj.CopyComplete
+C:\Users\Jean\Desktop\z2\Simulador\CServicios\obj\Debug\ServiciosBancarios.dll
+C:\Users\Jean\Desktop\z2\Simulador\CServicios\obj\Debug\ServiciosBancarios.pdb
+C:\Users\Jean\Desktop\z3\Simulador\CServicios\bin\ServiciosBancarios.dll.config
+C:\Users\Jean\Desktop\z3\Simulador\CServicios\bin\ServiciosBancarios.dll
+C:\Users\Jean\Desktop\z3\Simulador\CServicios\bin\ServiciosBancarios.pdb
+C:\Users\Jean\Desktop\z3\Simulador\CServicios\bin\CNegocio.dll
+C:\Users\Jean\Desktop\z3\Simulador\CServicios\bin\Modelos.dll
+C:\Users\Jean\Desktop\z3\Simulador\CServicios\bin\CDatos.dll
+C:\Users\Jean\Desktop\z3\Simulador\CServicios\bin\CNegocio.pdb
+C:\Users\Jean\Desktop\z3\Simulador\CServicios\bin\Modelos.pdb
+C:\Users\Jean\Desktop\z3\Simulador\CServicios\bin\CDatos.pdb
+C:\Users\Jean\Desktop\z3\Simulador\CServicios\obj\Debug\CServicios.csprojAssemblyReference.cache
+C:\Users\Jean\Desktop\z3\Simulador\CServicios\obj\Debug\CServicios.csproj.CoreCompileInputs.cache
+C:\Users\Jean\Desktop\z3\Simulador\CServicios\obj\Debug\CServicios.csproj.CopyComplete
+C:\Users\Jean\Desktop\z3\Simulador\CServicios\obj\Debug\ServiciosBancarios.dll
+C:\Users\Jean\Desktop\z3\Simulador\CServicios\obj\Debug\ServiciosBancarios.pdb
+C:\Users\Jean\Desktop\z4\Simulador\CServicios\bin\ServiciosBancarios.dll.config
+C:\Users\Jean\Desktop\z4\Simulador\CServicios\bin\ServiciosBancarios.dll
+C:\Users\Jean\Desktop\z4\Simulador\CServicios\bin\ServiciosBancarios.pdb
+C:\Users\Jean\Desktop\z4\Simulador\CServicios\bin\CNegocio.dll
+C:\Users\Jean\Desktop\z4\Simulador\CServicios\bin\Modelos.dll
+C:\Users\Jean\Desktop\z4\Simulador\CServicios\bin\CDatos.dll
+C:\Users\Jean\Desktop\z4\Simulador\CServicios\bin\CNegocio.pdb
+C:\Users\Jean\Desktop\z4\Simulador\CServicios\bin\Modelos.pdb
+C:\Users\Jean\Desktop\z4\Simulador\CServicios\bin\CDatos.pdb
+C:\Users\Jean\Desktop\z4\Simulador\CServicios\obj\Debug\CServicios.csprojAssemblyReference.cache
+C:\Users\Jean\Desktop\z4\Simulador\CServicios\obj\Debug\CServicios.csproj.CoreCompileInputs.cache
+C:\Users\Jean\Desktop\z4\Simulador\CServicios\obj\Debug\CServicios.csproj.CopyComplete
+C:\Users\Jean\Desktop\z4\Simulador\CServicios\obj\Debug\ServiciosBancarios.dll
+C:\Users\Jean\Desktop\z4\Simulador\CServicios\obj\Debug\ServiciosBancarios.pdb
+C:\Users\Jean\Desktop\z6\Simulador\CServicios\bin\ServiciosBancarios.dll.config
+C:\Users\Jean\Desktop\z6\Simulador\CServicios\bin\ServiciosBancarios.dll
+C:\Users\Jean\Desktop\z6\Simulador\CServicios\bin\ServiciosBancarios.pdb
+C:\Users\Jean\Desktop\z6\Simulador\CServicios\bin\CNegocio.dll
+C:\Users\Jean\Desktop\z6\Simulador\CServicios\bin\Modelos.dll
+C:\Users\Jean\Desktop\z6\Simulador\CServicios\bin\CDatos.dll
+C:\Users\Jean\Desktop\z6\Simulador\CServicios\bin\CNegocio.pdb
+C:\Users\Jean\Desktop\z6\Simulador\CServicios\bin\Modelos.pdb
+C:\Users\Jean\Desktop\z6\Simulador\CServicios\bin\CDatos.pdb
+C:\Users\Jean\Desktop\z6\Simulador\CServicios\obj\Debug\CServicios.csprojAssemblyReference.cache
+C:\Users\Jean\Desktop\z6\Simulador\CServicios\obj\Debug\CServicios.csproj.CoreCompileInputs.cache
+C:\Users\Jean\Desktop\z6\Simulador\CServicios\obj\Debug\CServicios.csproj.CopyComplete
+C:\Users\Jean\Desktop\z6\Simulador\CServicios\obj\Debug\ServiciosBancarios.dll
+C:\Users\Jean\Desktop\z6\Simulador\CServicios\obj\Debug\ServiciosBancarios.pdb
+E:\Documents\cursos\VI semestre\distribuidas\simulador3\CServicios\bin\ServiciosBancarios.dll.config
+E:\Documents\cursos\VI semestre\distribuidas\simulador3\CServicios\bin\ServiciosBancarios.dll
+E:\Documents\cursos\VI semestre\distribuidas\simulador3\CServicios\bin\ServiciosBancarios.pdb
+E:\Documents\cursos\VI semestre\distribuidas\simulador3\CServicios\bin\CNegocio.dll
+E:\Documents\cursos\VI semestre\distribuidas\simulador3\CServicios\bin\Modelos.dll
+E:\Documents\cursos\VI semestre\distribuidas\simulador3\CServicios\bin\CDatos.dll
+E:\Documents\cursos\VI semestre\distribuidas\simulador3\CServicios\bin\CNegocio.pdb
+E:\Documents\cursos\VI semestre\distribuidas\simulador3\CServicios\bin\Modelos.pdb
+E:\Documents\cursos\VI semestre\distribuidas\simulador3\CServicios\bin\CDatos.pdb
+E:\Documents\cursos\VI semestre\distribuidas\simulador3\CServicios\obj\Debug\CServicios.csprojAssemblyReference.cache
+E:\Documents\cursos\VI semestre\distribuidas\simulador3\CServicios\obj\Debug\CServicios.csproj.CoreCompileInputs.cache
+E:\Documents\cursos\VI semestre\distribuidas\simulador3\CServicios\obj\Debug\CServicios.csproj.CopyComplete
+E:\Documents\cursos\VI semestre\distribuidas\simulador3\CServicios\obj\Debug\ServiciosBancarios.dll
+E:\Documents\cursos\VI semestre\distribuidas\simulador3\CServicios\obj\Debug\ServiciosBancarios.pdb

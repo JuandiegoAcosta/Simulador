@@ -1,11 +1,11 @@
-﻿using System;
+﻿using Modelos.Modelos;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Modelos.Modelos;
 
 namespace CDatos.Manager
 {
@@ -13,11 +13,11 @@ namespace CDatos.Manager
     {
         #region Methods
         /// <summary>
-        /// Saves a record to the ChequerasModel table.
+        /// Saves a record to the chequera table.
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>		
-        public bool Insert(ChequerasModel aChequerasModel)
+        public bool Insert(ChequerasModel achequera)
         {
             try
             {
@@ -31,16 +31,17 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
-                    command.Parameters.AddWithValue("@Numero", aChequerasModel.Numero);
-                    command.Parameters.AddWithValue("@Estado", aChequerasModel.Estado);
-                    command.Parameters.AddWithValue("@FechaRegistro", aChequerasModel.Fecharegistro == null ? (object)DBNull.Value : aChequerasModel.Fecharegistro);
-                    command.Parameters.AddWithValue("@Inicio", aChequerasModel.Inicio);
-                    command.Parameters.AddWithValue("@Fin", aChequerasModel.Fin);
-                    command.Parameters.AddWithValue("@Id_Cuenta", aChequerasModel.Id_cuenta == null ? (object)DBNull.Value : aChequerasModel.Id_cuenta);
-                    command.Parameters.AddWithValue("@FECHA_MODIFICACION", aChequerasModel.Fecha_modificacion == null ? (object)DBNull.Value : aChequerasModel.Fecha_modificacion);
-                    command.Parameters.AddWithValue("@USUARIO_CREADOR", aChequerasModel.Usuario_creador);
-                    command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aChequerasModel.Usuario_modificador == null ? (object)DBNull.Value : aChequerasModel.Usuario_modificador);
-                    command.Parameters.AddWithValue("@FECHA_CREACION", aChequerasModel.Fecha_creacion);
+                    //command.Parameters.AddWithValue("@Numero", achequera.Numero);
+                    command.Parameters.AddWithValue("@Estado", achequera.Estado);
+                    command.Parameters.AddWithValue("@FechaRegistro", achequera.Fecharegistro == null ? (object)DBNull.Value : achequera.Fecharegistro);
+                    command.Parameters.AddWithValue("@Cantidad_cheques", achequera.Cantidad_cheques);
+                    command.Parameters.AddWithValue("@Inicio", achequera.Inicio);
+                    command.Parameters.AddWithValue("@Fin", achequera.Fin);
+                    command.Parameters.AddWithValue("@Id_Cuenta", achequera.Id_cuenta == null ? (object)DBNull.Value : achequera.Id_cuenta);
+                    command.Parameters.AddWithValue("@FECHA_MODIFICACION", achequera.Fecha_modificacion == null ? (object)DBNull.Value : achequera.Fecha_modificacion);
+                    command.Parameters.AddWithValue("@USUARIO_CREADOR", achequera.Usuario_creador);
+                    command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", achequera.Usuario_modificador == null ? (object)DBNull.Value : achequera.Usuario_modificador);
+                    command.Parameters.AddWithValue("@FECHA_CREACION", achequera.Fecha_creacion);
 
 
                     command.CommandType = CommandType.StoredProcedure;
@@ -60,19 +61,20 @@ namespace CDatos.Manager
                         return false;
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                return false;
+                throw;
+                //return false;
             }
         }
 
 
         /// <summary>
-        /// Updates a record to the ChequerasModel table.
+        /// Updates a record to the chequera table.
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>
-        public bool Update(ChequerasModel aChequerasModel)
+        public bool Update(ChequerasModel achequera)
         {
             try
             {
@@ -86,20 +88,21 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
-                    command.Parameters.AddWithValue("@Numero", aChequerasModel.Numero);
-                    command.Parameters.AddWithValue("@Estado", aChequerasModel.Estado);
-                    command.Parameters.AddWithValue("@FechaRegistro", aChequerasModel.Fecharegistro == null ? (object)DBNull.Value : aChequerasModel.Fecharegistro);
-                    command.Parameters.AddWithValue("@Inicio", aChequerasModel.Inicio);
-                    command.Parameters.AddWithValue("@Fin", aChequerasModel.Fin);
-                    command.Parameters.AddWithValue("@Id_Cuenta", aChequerasModel.Id_cuenta == null ? (object)DBNull.Value : aChequerasModel.Id_cuenta);
-                    command.Parameters.AddWithValue("@FECHA_MODIFICACION", aChequerasModel.Fecha_modificacion == null ? (object)DBNull.Value : aChequerasModel.Fecha_modificacion);
-                    command.Parameters.AddWithValue("@USUARIO_CREADOR", aChequerasModel.Usuario_creador);
-                    command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aChequerasModel.Usuario_modificador == null ? (object)DBNull.Value : aChequerasModel.Usuario_modificador);
-                    command.Parameters.AddWithValue("@FECHA_CREACION", aChequerasModel.Fecha_creacion);
+                    command.Parameters.AddWithValue("@Numero", achequera.Numero);
+                    command.Parameters.AddWithValue("@Estado", achequera.Estado);
+                    command.Parameters.AddWithValue("@FechaRegistro", achequera.Fecharegistro == null ? (object)DBNull.Value : achequera.Fecharegistro);
+                    command.Parameters.AddWithValue("@Cantidad_cheques", achequera.Cantidad_cheques);
+                    command.Parameters.AddWithValue("@Inicio", achequera.Inicio);
+                    command.Parameters.AddWithValue("@Fin", achequera.Fin);
+                    command.Parameters.AddWithValue("@Id_Cuenta", achequera.Id_cuenta == null ? (object)DBNull.Value : achequera.Id_cuenta);
+                    command.Parameters.AddWithValue("@FECHA_MODIFICACION", achequera.Fecha_modificacion == null ? (object)DBNull.Value : achequera.Fecha_modificacion);
+                    command.Parameters.AddWithValue("@USUARIO_CREADOR", achequera.Usuario_creador);
+                    command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", achequera.Usuario_modificador == null ? (object)DBNull.Value : achequera.Usuario_modificador);
+                    command.Parameters.AddWithValue("@FECHA_CREACION", achequera.Fecha_creacion);
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "ChequerasUpdate";
+                    command.CommandText = "chequeraUpdate";
 
                     int afectados = command.ExecuteNonQuery();
 
@@ -123,7 +126,7 @@ namespace CDatos.Manager
 
 
         /// <summary>
-        /// Deletes record to the ChequerasModel table.
+        /// Deletes record to the chequera table.
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>
@@ -145,7 +148,7 @@ namespace CDatos.Manager
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "ChequerasDelete";
+                    command.CommandText = "chequeraDelete";
                     int afectados = command.ExecuteNonQuery();
 
                     // Commit the transaction.
@@ -168,11 +171,11 @@ namespace CDatos.Manager
 
 
         /// <summary>
-        /// Selects the Single object of ChequerasModel table.
+        /// Selects the Single object of chequera table.
         /// </summary>
-        public ChequerasModel GetChequerasModel(int aNumero)
+        public ChequerasModel Getchequera(int aNumero)
         {
-            ChequerasModel ChequerasModel = null;
+            ChequerasModel chequera = null;
 
             try
             {
@@ -187,7 +190,7 @@ namespace CDatos.Manager
 
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.CommandText = "ChequerasSelect";
+                    command.CommandText = "chequeraSelect";
 
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -199,19 +202,21 @@ namespace CDatos.Manager
                             int Numero = (int)(reader["Numero"]);
                             string Estado = (string)(reader["Estado"]);
                             DateTime? FechaRegistro = reader["FechaRegistro"] as DateTime?;
-                            byte Inicio = (byte)(reader["Inicio"]);
-                            byte Fin = (byte)(reader["Fin"]);
+                            int Cantidad_cheques = (int)(reader["Cantidad_cheques"]);
+                            int Inicio = (int)(reader["Inicio"]);
+                            int Fin = (int)(reader["Fin"]);
                             string Id_Cuenta = (string)(reader["Id_Cuenta"]);
                             DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
                             string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
                             string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
 
-                            ChequerasModel = new ChequerasModel
+                            chequera = new ChequerasModel
                             {
                                 Numero = Numero,
                                 Estado = Estado,
                                 Fecharegistro = FechaRegistro,
+                                Cantidad_cheques = Cantidad_cheques,
                                 Inicio = Inicio,
                                 Fin = Fin,
                                 Id_cuenta = Id_Cuenta,
@@ -225,7 +230,7 @@ namespace CDatos.Manager
                     }
                 }
 
-                return ChequerasModel;
+                return chequera;
             }
             catch (Exception)
             {
@@ -235,12 +240,12 @@ namespace CDatos.Manager
 
 
         /// <summary>
-        /// Selects all the objects of ChequerasModel table.
+        /// Selects all the objects of chequera table.
         /// </summary>
-        public List<ChequerasModel> ChequerasModelSelectAll()
+        public List<ChequerasModel> chequeraSelectAll()
         {
 
-            List<ChequerasModel> ChequerasModellist = new List<ChequerasModel>();
+            List<ChequerasModel> chequeralist = new List<ChequerasModel>();
 
             try
             {
@@ -252,7 +257,7 @@ namespace CDatos.Manager
 
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.CommandText = "ChequerasModelSelectAll";
+                    command.CommandText = "chequeraSelectAll";
 
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -264,19 +269,21 @@ namespace CDatos.Manager
                             int Numero = (int)(reader["Numero"]);
                             string Estado = (string)(reader["Estado"]);
                             DateTime? FechaRegistro = reader["FechaRegistro"] as DateTime?;
-                            byte Inicio = (byte)(reader["Inicio"]);
-                            byte Fin = (byte)(reader["Fin"]);
+                            int Cantidad_cheques = (int)(reader["Cantidad_cheques"]);
+                            int Inicio = (int)(reader["Inicio"]);
+                            int Fin = (int)(reader["Fin"]);
                             string Id_Cuenta = (string)(reader["Id_Cuenta"]);
                             DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
                             string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
                             string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
 
-                            ChequerasModellist.Add(new ChequerasModel
+                            chequeralist.Add(new ChequerasModel
                             {
                                 Numero = Numero,
                                 Estado = Estado,
                                 Fecharegistro = FechaRegistro,
+                                Cantidad_cheques = Cantidad_cheques,
                                 Inicio = Inicio,
                                 Fin = Fin,
                                 Id_cuenta = Id_Cuenta,
@@ -290,22 +297,22 @@ namespace CDatos.Manager
                     }
                 }
 
-                return ChequerasModellist;
+                return chequeralist;
             }
             catch (Exception)
             {
-                return ChequerasModellist;
+                return chequeralist;
             }
         }
 
 
         /// <summary>
-        /// Selects the Multiple objects of ChequerasModel table by a given criteria.
+        /// Selects the Multiple objects of chequera table by a given criteria.
         /// </summary>
-        public List<ChequerasModel> ChequerasModelSelectbyUNKNOW(string aValue)
+        public List<ChequerasModel> chequeraSelectbyCuenta(string aCuenta)
         {
 
-            List<ChequerasModel> ChequerasModellist = new List<ChequerasModel>();
+            List<ChequerasModel> chequeralist = new List<ChequerasModel>();
 
             try
             {
@@ -315,11 +322,11 @@ namespace CDatos.Manager
 
                     SqlCommand command = connection.CreateCommand();
 
-                    command.Parameters.AddWithValue("@UNKNOW", aValue);
+                    command.Parameters.AddWithValue("@Id_Cuenta", aCuenta);
 
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.CommandText = "ChequerasModelSelectbyUNKNOW";
+                    command.CommandText = "ChequerasSelectAllById_Cuenta";
 
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -331,19 +338,21 @@ namespace CDatos.Manager
                             int Numero = (int)(reader["Numero"]);
                             string Estado = (string)(reader["Estado"]);
                             DateTime? FechaRegistro = reader["FechaRegistro"] as DateTime?;
-                            byte Inicio = (byte)(reader["Inicio"]);
-                            byte Fin = (byte)(reader["Fin"]);
+                            int Cantidad_cheques = (int)(reader["Cantidad_cheques"]);
+                            int Inicio = (int)(reader["Inicio"]);
+                            int Fin = (int)(reader["Fin"]);
                             string Id_Cuenta = (string)(reader["Id_Cuenta"]);
                             DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
                             string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
                             string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
 
-                            ChequerasModellist.Add(new ChequerasModel
+                            chequeralist.Add(new ChequerasModel
                             {
                                 Numero = Numero,
                                 Estado = Estado,
                                 Fecharegistro = FechaRegistro,
+                                Cantidad_cheques = Cantidad_cheques,
                                 Inicio = Inicio,
                                 Fin = Fin,
                                 Id_cuenta = Id_Cuenta,
@@ -357,11 +366,12 @@ namespace CDatos.Manager
                     }
                 }
 
-                return ChequerasModellist;
+                return chequeralist;
             }
-            catch (Exception)
+            catch (Exception E)
             {
-                return ChequerasModellist;
+                throw;
+                return chequeralist;
             }
         }
         #endregion

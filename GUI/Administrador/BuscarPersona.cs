@@ -19,55 +19,23 @@ namespace Sistema_Bancario.Administrador
             InitializeComponent();
             llenarBusquedaUsuariosDGV();
         }
-
         public List<PersonaModel> usuariosFiltrados;
 
         public int id;
         public string nombre;
 
-
-       // AgregarNuevoUsuario f1 = Application.OpenForms.OfType<AgregarNuevoUsuario>().SingleOrDefault();
-
-
-
         private void llenarBusquedaUsuariosDGV()
         {
-
             try
             {
-
-                using (WsSistemaBancario.PersonaServiceClient buscarPersonaNombresApellidos = new WsSistemaBancario.PersonaServiceClient())
+                using (WsSistemaBancario.PersonaServiceClient busc = new WsSistemaBancario.PersonaServiceClient())
                 {
-                    usuariosFiltrados = buscarPersonaNombresApellidos.Persona_GetPersonaNombreApellidos(txtBusquedaNombres.Text, txtBusquedaApellidos.Text).ToList();
-
-                    dgvBusquedaUsuarios.DataSource = usuariosFiltrados;
-                    //usuariosFiltrados = null;
-
-                    dgvBusquedaUsuarios.Columns["Nombres"].DisplayIndex = 1;
-                    dgvBusquedaUsuarios.Columns["Apellidos"].DisplayIndex = 2;
-                    dgvBusquedaUsuarios.Columns["NroDocumento"].DisplayIndex = 3;
-
-                    dgvBusquedaUsuarios.Columns[6].HeaderText = "Tipo Documento";
-
-
-                    //dgvBusquedaUsuarios.Columns["Id"].Visible = false;
-                    dgvBusquedaUsuarios.Columns["NombreUsuario"].Visible = false;
-                    dgvBusquedaUsuarios.Columns["Pass"].Visible = false;
-                    dgvBusquedaUsuarios.Columns["Fechanacimiento"].Visible = false;
-                    dgvBusquedaUsuarios.Columns["Telefono"].Visible = false;
-                    dgvBusquedaUsuarios.Columns["Tipodocumento"].Visible = false;
-                    dgvBusquedaUsuarios.Columns["Correo"].Visible = false;
-                    dgvBusquedaUsuarios.Columns["Fecha_creacion"].Visible = false;
-                    dgvBusquedaUsuarios.Columns["Fecha_modificacion"].Visible = false;
-                    dgvBusquedaUsuarios.Columns["Usuario_creador"].Visible = false;
-                    dgvBusquedaUsuarios.Columns["Usuario_modificador"].Visible = false;
-                    dgvBusquedaUsuarios.Columns["Tipo_persona"].Visible = false;
-                    dgvBusquedaUsuarios.Columns["Estado"].Visible = false;
-
-
-
+                    usuariosFiltrados = busc.ObtenerUsuariosSinCredenciales().ToList();
+                    foreach (var u in usuariosFiltrados)
+                    {
+                        dgvBusquedaUsuarios.Rows.Add(u.Id,u.Nombres,u.Apellidos,u.Tipodocumento,u.Nrodocumento);
+                    }
                 }
-
             }
 
             catch (Exception ex)
@@ -77,25 +45,24 @@ namespace Sistema_Bancario.Administrador
 
         }
 
-        private void btnBuscarEnBusqueda_Click(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(txtBusquedaNombres.Text) && !string.IsNullOrEmpty(txtBusquedaApellidos.Text))
-            {
-                llenarBusquedaUsuariosDGV();
-            }
-            else
-            {
-                llenarBusquedaUsuariosDGV();
-            }
-        }
+        //private void btnBuscarEnBusqueda_Click(object sender, EventArgs e)
+        //{
+        //    if (!string.IsNullOrEmpty(txtBusquedaNombres.Text) && !string.IsNullOrEmpty(txtBusquedaApellidos.Text))
+        //    {
+        //        llenarBusquedaUsuariosDGV();
+        //    }
+        //    else
+        //    {
+        //        llenarBusquedaUsuariosDGV();
+        //    }
+        //}
 
         private void dgvBusquedaUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)
             {
-                id = Convert.ToInt16(dgvBusquedaUsuarios.Rows[e.RowIndex].Cells["Id"].Value);
-                nombre= dgvBusquedaUsuarios.Rows[e.RowIndex].Cells["Nombres"].Value.ToString();
-
+                id = Convert.ToInt16(dgvBusquedaUsuarios.Rows[e.RowIndex].Cells["IdPersona"].Value);
+                nombre= dgvBusquedaUsuarios.Rows[e.RowIndex].Cells["NombresPersona"].Value.ToString();
             }
         }
 
@@ -105,6 +72,7 @@ namespace Sistema_Bancario.Administrador
         {
             resultado = DialogResult.OK;
             this.Close();
+            
         }
 
         private void btnCancelarBusqueda_Click(object sender, EventArgs e)

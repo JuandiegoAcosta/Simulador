@@ -10,32 +10,47 @@ using System.Windows.Forms;
 using Modelos.Modelos;
 using Modelos.Session;
 using CNegocio.Plataforma;
+using System.Text.RegularExpressions;
 
 namespace Sistema_Bancario.plataforma_controles
 {
     public partial class RegistroPersonaUserControl : UserControl
     {
+
+        #region Variables
+
         public string gusuario { get; set; }
 
-        private PersonaMethods BLPersona = new PersonaMethods();
-        private TipoDocumentoMethods BLTipo_documento = new TipoDocumentoMethods();
+        WsSistemaBancario.PersonaServiceClient BLPersona = new WsSistemaBancario.PersonaServiceClient();
+        WsSistemaBancario.TipoDocumentoServiceClient BLTipo_documento = new WsSistemaBancario.TipoDocumentoServiceClient();
         private PersonaModel gPerona;
+
+        #endregion
+
+        #region Constructor
 
         public RegistroPersonaUserControl(ISession sesion)
         {
             InitializeComponent();
+
+            this.gusuario = sesion.UserName;
+
             this.poblarCboTiposDocumento();
             this.poblarCboTipoPersona();
             this.modoInicial();
         }
 
+        #endregion
+
+        #region Metodos
+
         private void poblarCboTiposDocumento()
         {
-            var datos = this.BLTipo_documento.ObtenerTodos();
+            var datos = this.BLTipo_documento.TipoDocumento_ObtenerTodos();
             if (datos == null)
                 return;
 
-            this.cboTipo_documento.DataSource = this.BLTipo_documento.ObtenerTodos();
+            this.cboTipo_documento.DataSource = this.BLTipo_documento.TipoDocumento_ObtenerTodos();
             this.cboTipo_documento.ValueMember = "Id_documento";
             this.cboTipo_documento.DisplayMember = "Descripcion";
         }
@@ -53,10 +68,22 @@ namespace Sistema_Bancario.plataforma_controles
             this.cboTipoPersona.DisplayMember = "Value";
         }
 
+        private Boolean Email_correcto(String email)
+        {
+            String expresion = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+            return Regex.IsMatch(email, expresion)? (Regex.Replace(email, expresion, String.Empty).Length == 0 ? true : false) : false;
+        }
+
         private PersonaModel gui2persona()
         {
             try
             {
+                if (!Email_correcto(txtCorreo.Text))
+                {
+                    MessageBox.Show("El email no es correcto");
+                    return null;
+                }
+
                 string nombres = this.txtNombres.Text;
                 string apellidos = this.txtApellidos.Text;
                 DateTime fecha_nacimiento = this.dtpFecha_nacimiento.Value;
@@ -110,6 +137,8 @@ namespace Sistema_Bancario.plataforma_controles
 
         private void clearForm()
         {
+            gPerona = null;
+
             this.txtCodigo.Text = default(string);
             this.txtNombres.Text = default(string);
             this.txtApellidos.Text = default(string);
@@ -118,8 +147,8 @@ namespace Sistema_Bancario.plataforma_controles
             this.txtTelefono.Text = default(string);
             this.cboTipo_documento.SelectedValue = -1;
             this.cboTipoPersona.SelectedValue = -1;
-            this.dtpFecha_nacimiento.Value = DateTime.Now;
-            this.chkEstado.Checked =false;
+            this.dtpFecha_nacimiento.Value = new DateTime(2000, 01, 01);
+            this.chkEstado.Checked = false;
 
             this.SlblUsuario_creador.Text = "*";
             this.SlblFecha_creacion.Text = "*";
@@ -158,6 +187,7 @@ namespace Sistema_Bancario.plataforma_controles
         {
             this.buttonActualizar.Enabled = false;
             this.buttonEliminar.Enabled = false;
+            this.buttonEliminar.Visible = false;
 
             this.buttonNuevo.Enabled = true;
             this.buttonCrear.Enabled = false;
@@ -188,6 +218,39 @@ namespace Sistema_Bancario.plataforma_controles
             this.buttonEliminar.Enabled = true;
         }
 
+        private void buscarObjeto(List<PersonaModel> objetos)
+        {
+            string[][] orden = new string[2][];
+
+            orden[0] = new string[] { "Id", "Codigo", "100" };
+            orden[1] = new string[] { "Nombres", "Nombres", "400" };
+
+            if (objetos != null)
+            {
+                using (Ayuda.FormHelp2 formHelp1 = new Ayuda.FormHelp2())
+                {
+                    formHelp1.setList(objetos, orden);
+                    formHelp1.ShowDialog();
+
+                    if (formHelp1.EstaAceptado())
+                    {
+                        var dato = formHelp1.getObject<PersonaModel>();
+                        if (dato != null)
+                        {
+                            this.clearForm();
+                            this.gPerona = this.BLPersona.Persona_ObtenerUno(dato.Id);
+                            this.persona2gui(this.gPerona);
+                            this.modoNuevo();
+                            this.modoEdicion();
+                        }
+                    }
+                }
+            }
+        }
+
+        #endregion
+
+        #region Eventos
 
         private void buttonNuevo_Click(object sender, EventArgs e)
         {
@@ -201,10 +264,10 @@ namespace Sistema_Bancario.plataforma_controles
 
             if (objeto == null)
             {
-                MessageBox.Show("Problemas al instanciar el nuevo objeto, revise las propiedas");
+                MessageBox.Show("Algunos datos no coinciden, por favor revísalos");
                 return;
             }
-            if (this.BLPersona.Crear(objeto))
+            if (BLPersona.Persona_Crear(objeto))
             {
                 this.clearForm();
                 this.modoInicial();
@@ -228,7 +291,7 @@ namespace Sistema_Bancario.plataforma_controles
             objeto.Usuario_modificador = this.gusuario;
             objeto.Fecha_modificacion = BLFechaHoraServidor.Obtener();
 
-            if (this.BLPersona.Editar(objeto))
+            if (this.BLPersona.Persona_Editar(objeto))
             {
                 MessageBox.Show("El proceso ha sido correcto");
                 this.clearForm();
@@ -243,7 +306,7 @@ namespace Sistema_Bancario.plataforma_controles
                 MessageBox.Show("Problemas al obtener el objeto de base de datos");
                 return;
             }
-            if (this.BLPersona.Eliminar(this.gPerona.Id))
+            if (this.BLPersona.Persona_Eliminar(this.gPerona.Id))
             {
                 this.clearForm();
                 this.modoInicial();
@@ -262,49 +325,27 @@ namespace Sistema_Bancario.plataforma_controles
         {
             string codigo = this.txtCodigo.Text;
 
-            var objeto = this.BLPersona.personaSelectbyID(codigo);
+            var objeto = this.BLPersona.PersonaSelectbyId(codigo).ToList();
 
-            if (objeto == null && objeto.Count <= 0) { return; }
-            this.buscarObjeto(objeto);
-        }
-
-        private void buscarObjeto(List<PersonaModel> objetos)
-        {
-            string[][] orden = new string[2][];
-
-            orden[0] = new string[] { "Id", "Codigo", "100" };
-            orden[1] = new string[] { "Nombres", "Nombres", "400" };
-
-            if (objetos != null)
+            if (objeto == null || objeto.Count <= 0)
             {
-                using (Ayuda.FormHelp2 formHelp1 = new Ayuda.FormHelp2())
-                {
-                    formHelp1.setList(objetos, orden);
-                    formHelp1.ShowDialog();
-
-                    if (formHelp1.EstaAceptado())
-                    {
-                        var dato = formHelp1.getObject<PersonaModel>();
-                        if (dato != null)
-                        {
-                            this.clearForm();
-                            this.gPerona = this.BLPersona.ObtenerUno(dato.Id);
-                            this.persona2gui(this.gPerona);
-                            this.modoNuevo();
-                            this.modoEdicion();
-                        }
-                    }
-                }
+                MessageBox.Show("No se han encontrado resultados");
+                return;
             }
+            this.buscarObjeto(objeto);
         }
 
         private void btnNombres_Click(object sender, EventArgs e)
         {
             string nombres = this.txtNombres.Text;
 
-            var objeto = this.BLPersona.personaSelectbyNombres(nombres);
+            var objeto = this.BLPersona.PersonaSelectbyNombres(nombres).ToList();
 
-            if (objeto == null && objeto.Count <= 0) { return; }
+            if (objeto == null || objeto.Count <= 0)
+            {
+                MessageBox.Show("No se han encontrado resultados");
+                return;
+            }
             this.buscarObjeto(objeto);
         }
 
@@ -312,9 +353,13 @@ namespace Sistema_Bancario.plataforma_controles
         {
             string apellidos = this.txtApellidos.Text;
 
-            var objeto = this.BLPersona.personaSelectbyApellidos(apellidos);
+            var objeto = this.BLPersona.PersonaSelectbyApellidos(apellidos).ToList();
 
-            if (objeto == null && objeto.Count <= 0) { return; }
+            if (objeto == null || objeto.Count <= 0)
+            {
+                MessageBox.Show("No se han encontrado resultados");
+                return;
+            }
             this.buscarObjeto(objeto);
 
         }
@@ -323,10 +368,28 @@ namespace Sistema_Bancario.plataforma_controles
         {
             string numero_documento = this.txtNumero_documento.Text;
 
-            var objeto = this.BLPersona.personaSelectbyNroDocumento(numero_documento);
+            var objeto = this.BLPersona.PersonaSelectbyNroDocumento(numero_documento).ToList();
 
-            if (objeto == null && objeto.Count <= 0) { return; }
+            if (objeto == null || objeto.Count <= 0)
+            {
+                MessageBox.Show("No se han encontrado resultados");
+                return;
+            }
             this.buscarObjeto(objeto);
         }
+
+        private void TxtMontoPrestamo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+
+        private void TxtNumero_documento_KeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)) e.Handled = true;
+        }
+
+        #endregion
+
     }
 }

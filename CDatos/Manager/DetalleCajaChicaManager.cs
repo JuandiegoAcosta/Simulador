@@ -27,11 +27,7 @@ namespace CDatos.Manager
                 {
                     connection.Open();
 
-                    SqlTransaction sqlTran = connection.BeginTransaction();
-
                     SqlCommand command = connection.CreateCommand();
-
-                    command.Transaction = sqlTran;
 
                     command.Parameters.AddWithValue("@pMode", 4);
                     command.Parameters.AddWithValue("@ID_user", ID_user);
@@ -41,18 +37,10 @@ namespace CDatos.Manager
                     command.Parameters.AddWithValue("@Cantidad", aDetalleCajaChicaModel.Cantidad);
                     command.Parameters.AddWithValue("@Moneda", aDetalleCajaChicaModel.Moneda);
 
-                    SqlParameter paramId = new SqlParameter("@IDENTITY", SqlDbType.Int);
-                    paramId.Direction = ParameterDirection.Output;
-                    command.Parameters.Add(paramId);
-
                     command.CommandType = CommandType.StoredProcedure;
                     command.CommandText = "sp_tDetalleCajaChica";
 
                     int afectados = command.ExecuteNonQuery();
-                    int identity = Convert.ToInt32(command.Parameters["@IDENTITY"].Value.ToString());
-
-                    // Commit the transaction.
-                    sqlTran.Commit();
 
                     connection.Close();
                     connection.Dispose();
@@ -63,7 +51,7 @@ namespace CDatos.Manager
                         return false;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return false;
             }

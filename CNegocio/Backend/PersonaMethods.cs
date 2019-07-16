@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace CNegocio.Backend
 {
@@ -30,6 +31,11 @@ namespace CNegocio.Backend
         public bool Editar(PersonaModel aPersona)
         {
             return ADPersonaManager.Update(aPersona);
+        }
+
+        public bool ActualizarEstado(int admin, int idusuario, bool estado)
+        {
+            return ADPersonaManager.ActualizarEstado(admin, idusuario, estado);
         }
 
         /// <summary>
@@ -118,9 +124,9 @@ namespace CNegocio.Backend
         {
             return ADPersonaManager.GetRolesUsuario(aUsuario);
         }
+    
 
-
-        public List<PersonaModel> GetPersonasPorRol(int idRol)
+        public DataTable GetPersonasPorRol(int idRol)
         {
             return ADPersonaManager.GetPersonasPorRol(idRol);
         }
@@ -139,6 +145,10 @@ namespace CNegocio.Backend
         public List<PersonaModel> UsuarioSelectAll()
         {
             return ADPersonaManager.UsuarioSelectAll();
+        }
+        public List<PersonaModel> ObtenerUsuariosSinCredenciales()
+        {
+            return ADPersonaManager.ObtenerUsuariosSinCredenciales();
         }
 
 

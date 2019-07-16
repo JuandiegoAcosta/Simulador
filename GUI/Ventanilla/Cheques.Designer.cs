@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             this.TBNroCheque = new System.Windows.Forms.TextBox();
-            this.doi1 = new Sistema_Bancario.Doi();
             this.CKDeposito = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.monto1 = new Sistema_Bancario.Monto();
             this.nroCuenta1 = new Sistema_Bancario.Controles.NroCuenta();
             this.label2 = new System.Windows.Forms.Label();
+            this.dni1 = new Sistema_Bancario.Controles.DNI();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // TBNroCheque
@@ -43,14 +44,6 @@
             this.TBNroCheque.Name = "TBNroCheque";
             this.TBNroCheque.Size = new System.Drawing.Size(199, 20);
             this.TBNroCheque.TabIndex = 1;
-            // 
-            // doi1
-            // 
-            this.doi1.Location = new System.Drawing.Point(323, 22);
-            this.doi1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.doi1.Name = "doi1";
-            this.doi1.Size = new System.Drawing.Size(213, 27);
-            this.doi1.TabIndex = 3;
             // 
             // CKDeposito
             // 
@@ -97,26 +90,45 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "Monto";
             // 
+            // dni1
+            // 
+            this.dni1.Location = new System.Drawing.Point(394, 26);
+            this.dni1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dni1.Name = "dni1";
+            this.dni1.Size = new System.Drawing.Size(145, 23);
+            this.dni1.TabIndex = 9;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(338, 32);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(32, 13);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "DNI: ";
+            // 
             // Cheques
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.dni1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.nroCuenta1);
             this.Controls.Add(this.monto1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CKDeposito);
-            this.Controls.Add(this.doi1);
             this.Controls.Add(this.TBNroCheque);
             this.Name = "Cheques";
             this.Controls.SetChildIndex(this.TBNroCheque, 0);
-            this.Controls.SetChildIndex(this.doi1, 0);
             this.Controls.SetChildIndex(this.CKDeposito, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.monto1, 0);
             this.Controls.SetChildIndex(this.nroCuenta1, 0);
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.proceder1, 0);
+            this.Controls.SetChildIndex(this.dni1, 0);
+            this.Controls.SetChildIndex(this.label3, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -125,11 +137,12 @@
         #endregion
 
         private System.Windows.Forms.TextBox TBNroCheque;
-        private Doi doi1;
         private System.Windows.Forms.CheckBox CKDeposito;
         private System.Windows.Forms.Label label1;
         private Monto monto1;
         private Controles.NroCuenta nroCuenta1;
         private System.Windows.Forms.Label label2;
+        private Controles.DNI dni1;
+        private System.Windows.Forms.Label label3;
     }
 }

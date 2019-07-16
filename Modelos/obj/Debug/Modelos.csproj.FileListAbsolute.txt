@@ -13,7 +13,6 @@ C:\Users\Pablo\Desktop\SistemaBancario\Simulador 2\Simulador\Modelos\obj\Debug\M
 C:\Users\Pablo\Desktop\SistemaBancario\Simulador 2\Simulador\Modelos\obj\Debug\Modelos.pdb
 C:\Users\kat\Source\Repos\JuandiegoAcosta\Simulador\Modelos\bin\Debug\Modelos.dll
 C:\Users\kat\Source\Repos\JuandiegoAcosta\Simulador\Modelos\bin\Debug\Modelos.pdb
-C:\Users\kat\Source\Repos\JuandiegoAcosta\Simulador\Modelos\obj\Debug\Modelos.csprojAssemblyReference.cache
 C:\Users\kat\Source\Repos\JuandiegoAcosta\Simulador\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
 C:\Users\kat\Source\Repos\JuandiegoAcosta\Simulador\Modelos\obj\Debug\Modelos.dll
 C:\Users\kat\Source\Repos\JuandiegoAcosta\Simulador\Modelos\obj\Debug\Modelos.pdb
@@ -161,13 +160,38 @@ C:\Users\Jean\Desktop\s7\Simulador\Modelos\obj\Debug\Modelos.dll
 C:\Users\Jean\Desktop\s7\Simulador\Modelos\obj\Debug\Modelos.pdb
 E:\Documents\cursos\VI semestre\distribuidas\simulador2\Modelos\bin\Debug\Modelos.dll
 E:\Documents\cursos\VI semestre\distribuidas\simulador2\Modelos\bin\Debug\Modelos.pdb
-E:\Documents\cursos\VI semestre\distribuidas\simulador2\Modelos\obj\Debug\Modelos.csprojAssemblyReference.cache
 E:\Documents\cursos\VI semestre\distribuidas\simulador2\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
 E:\Documents\cursos\VI semestre\distribuidas\simulador2\Modelos\obj\Debug\Modelos.dll
 E:\Documents\cursos\VI semestre\distribuidas\simulador2\Modelos\obj\Debug\Modelos.pdb
-C:\Users\elife\Desktop\Others\ISUR\Bancario\Modelos\bin\Debug\Modelos.dll
-C:\Users\elife\Desktop\Others\ISUR\Bancario\Modelos\bin\Debug\Modelos.pdb
-C:\Users\elife\Desktop\Others\ISUR\Bancario\Modelos\obj\Debug\Modelos.csprojAssemblyReference.cache
-C:\Users\elife\Desktop\Others\ISUR\Bancario\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
-C:\Users\elife\Desktop\Others\ISUR\Bancario\Modelos\obj\Debug\Modelos.dll
-C:\Users\elife\Desktop\Others\ISUR\Bancario\Modelos\obj\Debug\Modelos.pdb
+C:\Users\Jean\Desktop\s8\Simulador\Modelos\bin\Debug\Modelos.dll
+C:\Users\Jean\Desktop\s8\Simulador\Modelos\bin\Debug\Modelos.pdb
+C:\Users\Jean\Desktop\s8\Simulador\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
+C:\Users\Jean\Desktop\s8\Simulador\Modelos\obj\Debug\Modelos.dll
+C:\Users\Jean\Desktop\s8\Simulador\Modelos\obj\Debug\Modelos.pdb
+C:\Users\Jean\Desktop\z2\Simulador\Modelos\bin\Debug\Modelos.dll
+C:\Users\Jean\Desktop\z2\Simulador\Modelos\bin\Debug\Modelos.pdb
+C:\Users\Jean\Desktop\z2\Simulador\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
+C:\Users\Jean\Desktop\z2\Simulador\Modelos\obj\Debug\Modelos.dll
+C:\Users\Jean\Desktop\z2\Simulador\Modelos\obj\Debug\Modelos.pdb
+C:\Users\Jean\Desktop\z3\Simulador\Modelos\bin\Debug\Modelos.dll
+C:\Users\Jean\Desktop\z3\Simulador\Modelos\bin\Debug\Modelos.pdb
+C:\Users\Jean\Desktop\z3\Simulador\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
+C:\Users\Jean\Desktop\z3\Simulador\Modelos\obj\Debug\Modelos.dll
+C:\Users\Jean\Desktop\z3\Simulador\Modelos\obj\Debug\Modelos.pdb
+E:\Documents\cursos\VI semestre\distribuidas\simulador2\Modelos\obj\Debug\Modelos.csprojAssemblyReference.cache
+C:\Users\Jean\Desktop\z4\Simulador\Modelos\bin\Debug\Modelos.dll
+C:\Users\Jean\Desktop\z4\Simulador\Modelos\bin\Debug\Modelos.pdb
+C:\Users\Jean\Desktop\z4\Simulador\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
+C:\Users\Jean\Desktop\z4\Simulador\Modelos\obj\Debug\Modelos.dll
+C:\Users\Jean\Desktop\z4\Simulador\Modelos\obj\Debug\Modelos.pdb
+C:\Users\Jean\Desktop\z6\Simulador\Modelos\bin\Debug\Modelos.dll
+C:\Users\Jean\Desktop\z6\Simulador\Modelos\bin\Debug\Modelos.pdb
+C:\Users\Jean\Desktop\z6\Simulador\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
+C:\Users\Jean\Desktop\z6\Simulador\Modelos\obj\Debug\Modelos.dll
+C:\Users\Jean\Desktop\z6\Simulador\Modelos\obj\Debug\Modelos.pdb
+C:\Users\kat\Source\Repos\JuandiegoAcosta\Simulador\Modelos\obj\Debug\Modelos.csprojAssemblyReference.cache
+E:\Documents\cursos\VI semestre\distribuidas\simulador3\Modelos\bin\Debug\Modelos.dll
+E:\Documents\cursos\VI semestre\distribuidas\simulador3\Modelos\bin\Debug\Modelos.pdb
+E:\Documents\cursos\VI semestre\distribuidas\simulador3\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
+E:\Documents\cursos\VI semestre\distribuidas\simulador3\Modelos\obj\Debug\Modelos.dll
+E:\Documents\cursos\VI semestre\distribuidas\simulador3\Modelos\obj\Debug\Modelos.pdb

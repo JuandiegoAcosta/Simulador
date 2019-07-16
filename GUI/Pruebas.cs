@@ -15,8 +15,12 @@ namespace Sistema_Bancario
     public partial class Pruebas : Form
     {
         ISession sesion;
-        NuevoPrestamoUserControl prestamo;
+        //NuevoPrestamoUserControl prestamo;
+        //NuevaTarjeta tarjeta;
         //NuevaCuentaUserControl cuenta;
+        //RegistroPersonaUserControl persona;
+        //RegistrarChequera check;
+        NuevaMoneda moneda;
 
         public Pruebas()
         {
@@ -33,9 +37,13 @@ namespace Sistema_Bancario
                 UserNombreCompleto = "AAAAAAAA"
             };
 
-            prestamo = new NuevoPrestamoUserControl(sesion);
+            //prestamo = new NuevoPrestamoUserControl(sesion);
+            //tarjeta = new NuevaTarjeta(sesion);
             //cuenta = new NuevaCuentaUserControl(sesion);
-            this.Controls.Add(prestamo);
+            //check = new RegistrarChequera(sesion);
+            moneda = new NuevaMoneda(sesion);
+
+            this.Controls.Add(moneda);
         }
 
     }

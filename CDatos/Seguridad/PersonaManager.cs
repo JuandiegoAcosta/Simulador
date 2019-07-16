@@ -45,14 +45,9 @@ namespace CDatos.Manager
                     command.Parameters.AddWithValue("@Usuario_creador", apersona.Usuario_creador);
                     command.Parameters.AddWithValue("@Usuario_modificador", apersona.Usuario_modificador == null ? (object)DBNull.Value : apersona.Usuario_modificador);
 
-                    SqlParameter paramId = new SqlParameter("@IDENTITY", SqlDbType.Int);
-                    paramId.Direction = ParameterDirection.Output;
-                    command.Parameters.Add(paramId);
-
                     command.CommandType = CommandType.StoredProcedure;
                     command.CommandText = "sp_tPersona";
 
-                    int identity = Convert.ToInt32(command.Parameters["@IDENTITY"].Value.ToString());
                     int afectados = command.ExecuteNonQuery();
 
                     // Commit the transaction.
@@ -65,11 +60,17 @@ namespace CDatos.Manager
                         return true;
                     else
                         return false;
+
+
+
+                    
+
+
                 }
             }
             catch (Exception)
             {
-                //throw;
+                throw;
                 return false;
             }
         }
@@ -133,7 +134,46 @@ namespace CDatos.Manager
             }
         }
 
+        public bool ActualizarEstado(int admin,int idusuario,bool estado)
+        {
+            try
+            {
+                using (var connection = Util.ConnectionFactory.conexion())
+                {
+                    connection.Open();
 
+                    SqlTransaction sqlTran = connection.BeginTransaction();
+
+                    SqlCommand command = connection.CreateCommand();
+
+                    command.Transaction = sqlTran;
+                    command.Parameters.AddWithValue("@admin", admin);
+                    command.Parameters.AddWithValue("@estado", estado);
+                    command.Parameters.AddWithValue("@idUsuario", idusuario);
+
+
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.CommandText = "ActualizarEstadoUsuario";
+
+                    int afectados = command.ExecuteNonQuery();
+
+                    // Commit the transaction.
+                    sqlTran.Commit();
+
+                    connection.Close();
+                    connection.Dispose();
+
+                    if (afectados > 0)
+                        return true;
+                    else
+                        return false;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
         /// <summary>
         /// Deletes record to the PersonaModel table.
         /// returns True if value saved successfully else false
@@ -210,8 +250,8 @@ namespace CDatos.Manager
                     {
                         reader.Read();
                         int Id = (int)(reader["Id"]);
-                        string NombreUsuario = (string)(reader["NombreUsuario"]);
-                        string Pass = (string)(reader["Pass"]);
+                        string NombreUsuario = (reader["NombreUsuario"]) == DBNull.Value ? null : (string)(reader["NombreUsuario"]); 
+                        string Pass = (reader["Pass"]) == DBNull.Value ? null : (string)(reader["Pass"]);
                         string Correo = (reader["Correo"]) == DBNull.Value ? null : (string)(reader["Correo"]);
                         bool Estado = (bool)(reader["Estado"]);
                         string Nombres = (string)(reader["Nombres"]);
@@ -221,7 +261,10 @@ namespace CDatos.Manager
                         string NroDocumento = (string)(reader["NroDocumento"]);
                         int TipoDocumento = (int)(reader["TipoDocumento"]);
                         string Tipo_Persona = (reader["Tipo_Persona"]) == DBNull.Value ? null : (string)(reader["Tipo_Persona"]);
+
                         
+
+
                         PersonaModel = new PersonaModel
                         {
                             Id = Id,
@@ -291,6 +334,11 @@ namespace CDatos.Manager
                             string NroDocumento = (string)(reader["NroDocumento"]);
                             int TipoDocumento = (int)(reader["TipoDocumento"]);
                             string Tipo_Persona = (reader["Tipo_Persona"]) == DBNull.Value ? null : (string)(reader["Tipo_Persona"]);
+                            string Usuario_creador = (reader["USUARIO_CREADOR"]) == DBNull.Value ? null : (string)(reader["USUARIO_CREADOR"]);
+                            string Usuario_modificador = (reader["USUARIO_MODIFICADOR"]) == DBNull.Value ? null : (string)(reader["USUARIO_MODIFICADOR"]);
+                            DateTime Fecha_creacion = (DateTime)(reader["FECHA_CREACION"]);
+                            DateTime? Fecha_modificacion = (reader["FECHA_MODIFICACION"]) == DBNull.Value ? null : (DateTime?)(reader["FECHA_MODIFICACION"]);
+
 
                             PersonaModellist.Add(new PersonaModel
                             {
@@ -306,6 +354,60 @@ namespace CDatos.Manager
                                 Nrodocumento = NroDocumento,
                                 Tipodocumento = TipoDocumento,
                                 Tipo_persona = Tipo_Persona,
+                                Fecha_creacion = Fecha_creacion,
+                                Fecha_modificacion = Fecha_modificacion,
+                                Usuario_creador = Usuario_creador,
+                                Usuario_modificador = Usuario_modificador
+                            });
+                        }
+                    }
+                }
+
+                return PersonaModellist;
+            }
+            catch (Exception)
+            {
+                return PersonaModellist;
+            }
+        }
+        public List<PersonaModel> ObtenerUsuariosSinCredenciales()
+        {
+
+            List<PersonaModel> PersonaModellist = new List<PersonaModel>();
+
+            try
+            {
+                using (var connection = Util.ConnectionFactory.conexion())
+                {
+                    connection.Open();
+
+                    SqlCommand command = connection.CreateCommand();
+
+
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.CommandText = "ObtenerUsuariosSinCredenciales";
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+
+                            int Id = (int)(reader["Id"]);
+                            string Nombres = (string)(reader["Nombres"]);
+                            string Apellidos = (string)(reader["Apellidos"]);
+                            string NroDocumento = (string)(reader["NroDocumento"]);
+                            int TipoDocumento = (int)(reader["TipoDocumento"]);
+
+                            PersonaModellist.Add(new PersonaModel
+                            {
+                                Id = Id,
+                                Nombres = Nombres,
+                                Apellidos = Apellidos,
+                                Nrodocumento = NroDocumento,
+                                Tipodocumento = TipoDocumento,
 
                             });
                         }
@@ -319,7 +421,6 @@ namespace CDatos.Manager
                 return PersonaModellist;
             }
         }
-
         /// <summary>
         /// Selects the Multiple objects of persona table by a given criteria.
         /// </summary>
@@ -610,7 +711,6 @@ namespace CDatos.Manager
         public PersonaModel ValidarUsuario(string usuario, string password)
         {
             PersonaModel PersonaModel = null;
-
             try
             {
                 using (var connection = Util.ConnectionFactory.conexion())
@@ -881,10 +981,14 @@ namespace CDatos.Manager
 
 
 
-        public List<PersonaModel> GetPersonasPorRol(int idRol)
+
+
+
+        public DataTable GetPersonasPorRol(int idRol)
         {
 
-            List<PersonaModel> PersonaPorRolModellist = new List<PersonaModel>();
+            DataTable rolespersona = new DataTable("PersonaRoles");
+
 
             try
             {
@@ -895,46 +999,97 @@ namespace CDatos.Manager
                     SqlCommand command = connection.CreateCommand();
 
                     command.Parameters.AddWithValue("@idrol", idRol);
-
                     command.CommandType = CommandType.StoredProcedure;
 
                     command.CommandText = "sp_ObtenerPersonasPorRol";
 
-                    SqlDataReader reader = command.ExecuteReader();
 
-                    if (reader.HasRows)
-                    {
-                        while (reader.Read())
-                        {
-
-                            string Nombres = (string)(reader["Nombres"]);
-                            string NombreUsuario = (string)(reader["NombreUsuario"]);
-                            string NroDocumento = (string)(reader["NroDocumento"]);
-                            string Correo = (reader["Correo"]) == DBNull.Value ? null : (string)(reader["Correo"]);
-                            bool Estado = (bool)(reader["Estado"]);
+                    SqlDataAdapter daLugares = new SqlDataAdapter(command);
+                    daLugares.Fill(rolespersona);
 
 
-                            PersonaPorRolModellist.Add(new PersonaModel
-                            {
-                                Nombres = Nombres,
-                                Nombreusuario = NombreUsuario,
-                                Nrodocumento = NroDocumento,
-                                Correo = Correo,
-                                Estado = Estado,
-
-
-                            });
-                        }
-                    }
                 }
 
-                return PersonaPorRolModellist;
+
+                return rolespersona;
             }
             catch (Exception ex)
             {
-                return null;
+                return rolespersona;
             }
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //public List<PersonaModel> asdad(int idRol)
+        //{
+
+        //    List<PersonaModel> PersonaPorRolModellist = new List<PersonaModel>();
+
+        //    try
+        //    {
+        //        using (var connection = Util.ConnectionFactory.conexion())
+        //        {
+        //            connection.Open();
+
+        //            SqlCommand command = connection.CreateCommand();
+
+        //            command.Parameters.AddWithValue("@idrol", idRol);
+
+        //            command.CommandType = CommandType.StoredProcedure;
+
+        //            command.CommandText = "sp_ObtenerPersonasPorRol";
+
+        //            SqlDataReader reader = command.ExecuteReader();
+
+        //            if (reader.HasRows)
+        //            {
+        //                while (reader.Read())
+        //                {
+        //                    int Id = (int)(reader["Id"]);
+                            
+        //                    string Nombres = (string)(reader["Nombres"]);
+        //                    string NombreUsuario = (string)(reader["NombreUsuario"]);
+                            
+                     
+        //                    bool Estado = (bool)(reader["Estado"]);
+
+
+        //                    PersonaPorRolModellist.Add(new PersonaModel
+        //                    {
+        //                        Id = Id,
+        //                        Nombres = Nombres,
+                               
+        //                        Nombreusuario = NombreUsuario,
+                                
+        //                        Estado = Estado,
+
+
+        //                    });
+        //                }
+        //            }
+        //        }
+
+        //        return PersonaPorRolModellist;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return null;
+        //    }
+        //}
 
 
         public List<PersonaModel> GetPersonaNombreApellidos(string nombre, string apellido)
@@ -964,7 +1119,8 @@ namespace CDatos.Manager
 
                             int Id = (int)(reader["Id"]);
                             string Nombres = (string)(reader["Nombres"]);
-                        string NroDocumento = (string)(reader["NroDocumento"]);
+                            string NombreUsuario = (string)(reader["NombreUsuario"]);
+                            string NroDocumento = (string)(reader["NroDocumento"]);
                         string TipoDocumento = (string)(reader["Descripcion"].ToString());
 
 
@@ -972,6 +1128,7 @@ namespace CDatos.Manager
                             PersonaModel.Add(new PersonaModel
                             {
                                 Id = Id,
+                                Nombreusuario = NombreUsuario,
                                 Nombres = Nombres,
                                 Nrodocumento = NroDocumento,
                                 Apellidos = TipoDocumento,

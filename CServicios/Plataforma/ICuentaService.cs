@@ -23,5 +23,13 @@ namespace ServiciosBancarios.Plataforma
         [OperationContract]
         List<CuentasModel> Cuenta_ObtenerTodos(int aID_Persona);
 
+        [OperationContract]
+        bool Cuenta_Borrar(string aID_Cuenta);
+
+        [OperationContract]
+        List<CuentasModel> Cuenta_SeleccionarPorNumero(string aID_Cuenta);
+
+        [OperationContract]
+        List<CuentasModel> Cuenta_SeleccionarPorNumeroPrestamo(string aID_Cuenta);
     }
 }

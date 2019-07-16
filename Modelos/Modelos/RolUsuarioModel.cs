@@ -21,6 +21,7 @@ namespace Modelos.Modelos
         /// </summary>
         public int? Id_persona
         { get; set; }
+        public string Descripcion { get; set; }
 
         /// <summary>
         /// Gets or sets the Id_roles value.

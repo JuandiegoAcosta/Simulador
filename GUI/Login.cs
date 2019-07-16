@@ -13,7 +13,6 @@ using System.Windows.Forms;
 
 namespace Sistema_Bancario
 {
-
    public partial class Login : Form
    {
       #region [ View Config ]
@@ -89,18 +88,37 @@ namespace Sistema_Bancario
                     string passEncrypt = Encrypt.GetSHA256(this.m_password);
                     usuarioLogin = user.Persona_ValidarUsuario(this.m_username, passEncrypt);
                     SucursalUsuario = user.Persona_ObtenerSucursal(usuarioLogin.Id);
-
+                    if (SucursalUsuario is null)
+                    {
+                        SucursalUsuario = new Modelos.Modelos.SucursalModel();
+                        SucursalUsuario.Id = 0;
+                        SucursalUsuario.Nombre = "Sin sucursal";
+                    }
                     listaComponentes = user.Persona_GetComponentes(usuarioLogin.Id).ToList();
 
                     listaRoles = user.Persona_GetRolesUsuario(usuarioLogin.Nombreusuario).ToList();
+                    back = true;
                 }
                 using (WsSistemaBancario.VentanillaServiceClient venta = new WsSistemaBancario.VentanillaServiceClient())
                 {
+                    
                     ventanilla = venta.Ventanilla_ObtenerUnoXusuario(usuarioLogin.Id);
+                    if (ventanilla is null)
+                    {
+                        ventanilla = new Modelos.Modelos.VentanillaModel();
+                        ventanilla.Id_ventanilla = 0;
+                        ventanilla.Descripcion = "Sin ventanilla";
+                    }
                 }
                 using (WsSistemaBancario.TurnosServiceClient turn = new WsSistemaBancario.TurnosServiceClient())
                 {
                     turno = turn.Turnos_ObtenerUnoXUsuario(usuarioLogin.Id);
+                    if (turno is null)
+                    {
+                        turno = new Modelos.Modelos.TurnosModel();
+                        turno.Id = 0;
+                        turno.Descripcion = "Sin turno";
+                    }
                 }
                 if (usuarioLogin != null && SucursalUsuario != null)
                 {
@@ -126,7 +144,6 @@ namespace Sistema_Bancario
          }
          catch (Exception ex)
          {
-            back = false;
             return back;
          }
       }
