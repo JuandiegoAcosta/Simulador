@@ -51,7 +51,9 @@ namespace Sistema_Bancario.plataforma_controles
                     Fecharegistro = this.dtpFechaRegistro.Value,
                     Cantidad_cheques = (int)this.cboCantidadCheques.SelectedValue,
                     Estado = (string)this.cboEstado.SelectedValue,
-                    Inicio = (int)this.nudChequeInicial.Value
+                    Inicio = (int)this.nudChequeInicial.Value,
+                    Usuario_creador = this.gUsuario,
+                    Fecha_creacion = (DateTime)BLFechaHoraServidor.Obtener()
 
                 };
             }
@@ -125,6 +127,9 @@ namespace Sistema_Bancario.plataforma_controles
                             this.clearForm();
                             this.gCuenta = this.BLCuenta.Getcuenta(dato.Nrocuenta);
                             this.cuenta2gui(this.gCuenta);
+                            this.cboCantidadCheques.SelectedIndex = 0;
+                            this.cboEstado.SelectedIndex = 1;
+                            this.nudChequeInicial.Value = 1;
                             //this.modoNuevo();
                             //this.modoEdicion();
                         }
@@ -160,11 +165,11 @@ namespace Sistema_Bancario.plataforma_controles
             this.buttonCrear.Enabled = false;
             this.buttonDeshacer.Enabled = false;
 
-            this.btnCodigo.Enabled = true;
-            this.btnCuenta.Enabled = true;
+            this.btnCodigo.Enabled = false;
+            this.btnCuenta.Enabled = false;
 
-            this.txtCodigo.Enabled = true;
-            this.txtCuenta.Enabled = true;
+            this.txtCodigo.Enabled = false;
+            this.txtCuenta.Enabled = false;
             this.dtpFechaRegistro.Enabled = false;
             this.cboEstado.Enabled = false;
             this.cboCantidadCheques.Enabled = false;
