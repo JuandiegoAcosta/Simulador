@@ -325,7 +325,7 @@ namespace Sistema_Bancario.Administrador
                 if (frmBuscarPersona.resultado == DialogResult.OK)
                 {
                     idPersona = frmBuscarPersona.id;
-                    usuarioPersona = frmBuscarPersona.usuario;
+                    //usuarioPersona = frmBuscarPersona.usuario;
                     txtNombrePersona.Text = usuarioPersona;
                     
                     NombrePersona = frmBuscarPersona.nombre;
