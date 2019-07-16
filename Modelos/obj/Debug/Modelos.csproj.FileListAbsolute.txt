@@ -190,3 +190,8 @@ C:\Users\Jean\Desktop\z6\Simulador\Modelos\obj\Debug\Modelos.csproj.CoreCompileI
 C:\Users\Jean\Desktop\z6\Simulador\Modelos\obj\Debug\Modelos.dll
 C:\Users\Jean\Desktop\z6\Simulador\Modelos\obj\Debug\Modelos.pdb
 C:\Users\kat\Source\Repos\JuandiegoAcosta\Simulador\Modelos\obj\Debug\Modelos.csprojAssemblyReference.cache
+E:\Documents\cursos\VI semestre\distribuidas\simulador3\Modelos\bin\Debug\Modelos.dll
+E:\Documents\cursos\VI semestre\distribuidas\simulador3\Modelos\bin\Debug\Modelos.pdb
+E:\Documents\cursos\VI semestre\distribuidas\simulador3\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
+E:\Documents\cursos\VI semestre\distribuidas\simulador3\Modelos\obj\Debug\Modelos.dll
+E:\Documents\cursos\VI semestre\distribuidas\simulador3\Modelos\obj\Debug\Modelos.pdb
