@@ -495,3 +495,17 @@ E:\Documents\cursos\VI semestre\distribuidas\simulador3\CServicios\obj\Debug\CSe
 E:\Documents\cursos\VI semestre\distribuidas\simulador3\CServicios\obj\Debug\CServicios.csproj.CopyComplete
 E:\Documents\cursos\VI semestre\distribuidas\simulador3\CServicios\obj\Debug\ServiciosBancarios.dll
 E:\Documents\cursos\VI semestre\distribuidas\simulador3\CServicios\obj\Debug\ServiciosBancarios.pdb
+C:\Users\RithardLL\Source\Repos\Simulador22\CServicios\bin\ServiciosBancarios.dll.config
+C:\Users\RithardLL\Source\Repos\Simulador22\CServicios\bin\ServiciosBancarios.dll
+C:\Users\RithardLL\Source\Repos\Simulador22\CServicios\bin\ServiciosBancarios.pdb
+C:\Users\RithardLL\Source\Repos\Simulador22\CServicios\bin\CNegocio.dll
+C:\Users\RithardLL\Source\Repos\Simulador22\CServicios\bin\Modelos.dll
+C:\Users\RithardLL\Source\Repos\Simulador22\CServicios\bin\CDatos.dll
+C:\Users\RithardLL\Source\Repos\Simulador22\CServicios\bin\CNegocio.pdb
+C:\Users\RithardLL\Source\Repos\Simulador22\CServicios\bin\Modelos.pdb
+C:\Users\RithardLL\Source\Repos\Simulador22\CServicios\bin\CDatos.pdb
+C:\Users\RithardLL\Source\Repos\Simulador22\CServicios\obj\Debug\CServicios.csprojAssemblyReference.cache
+C:\Users\RithardLL\Source\Repos\Simulador22\CServicios\obj\Debug\CServicios.csproj.CoreCompileInputs.cache
+C:\Users\RithardLL\Source\Repos\Simulador22\CServicios\obj\Debug\CServicios.csproj.CopyComplete
+C:\Users\RithardLL\Source\Repos\Simulador22\CServicios\obj\Debug\ServiciosBancarios.dll
+C:\Users\RithardLL\Source\Repos\Simulador22\CServicios\obj\Debug\ServiciosBancarios.pdb

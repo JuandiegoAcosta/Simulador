@@ -241,12 +241,15 @@ namespace CDatos.Manager
 
                             int Id = (int)(reader["Id"]);
                             string Descripcion = (string)(reader["Descripcion"]);
-                            
+
                             RolesModellist.Add(new RolesModel
                             {
                                 Id = Id,
                                 Descripcion = Descripcion,
-                               
+                                Fecha_creacion = DateTime.Now,
+                                Fecha_modificacion = DateTime.Now,
+                                Usuario_creador = "",
+                                Usuario_modificador = "",
                             });
                         }
                     }

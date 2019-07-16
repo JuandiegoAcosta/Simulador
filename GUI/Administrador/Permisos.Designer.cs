@@ -100,7 +100,7 @@
             // pnlAgregarPermisos
             // 
             this.pnlAgregarPermisos.Controls.Add(this.panel3);
-            this.pnlAgregarPermisos.Location = new System.Drawing.Point(529, 3);
+            this.pnlAgregarPermisos.Location = new System.Drawing.Point(85, 38);
             this.pnlAgregarPermisos.Name = "pnlAgregarPermisos";
             this.pnlAgregarPermisos.Size = new System.Drawing.Size(660, 400);
             this.pnlAgregarPermisos.TabIndex = 18;
@@ -256,7 +256,7 @@
             // 
             this.pnlAgregar.Controls.Add(this.pnlAgregarRoles);
             this.pnlAgregar.Controls.Add(this.pnlAgregarUsuarios);
-            this.pnlAgregar.Location = new System.Drawing.Point(246, 31);
+            this.pnlAgregar.Location = new System.Drawing.Point(41, 444);
             this.pnlAgregar.Name = "pnlAgregar";
             this.pnlAgregar.Size = new System.Drawing.Size(660, 400);
             this.pnlAgregar.TabIndex = 17;
@@ -399,7 +399,7 @@
             // 
             this.pnlSecundario.Controls.Add(this.btnAtras);
             this.pnlSecundario.Controls.Add(this.tabControl1);
-            this.pnlSecundario.Location = new System.Drawing.Point(35, 208);
+            this.pnlSecundario.Location = new System.Drawing.Point(17, 205);
             this.pnlSecundario.Name = "pnlSecundario";
             this.pnlSecundario.Size = new System.Drawing.Size(660, 400);
             this.pnlSecundario.TabIndex = 16;
@@ -499,6 +499,7 @@
             this.btnAgregarUsuarios.TabIndex = 16;
             this.btnAgregarUsuarios.Text = "Agregar";
             this.btnAgregarUsuarios.UseVisualStyleBackColor = false;
+            this.btnAgregarUsuarios.Click += new System.EventHandler(this.btnAgregarUsuarios_Click);
             // 
             // tabRoles
             // 
@@ -558,6 +559,7 @@
             this.btnAgregarRoles.TabIndex = 11;
             this.btnAgregarRoles.Text = "Agregar";
             this.btnAgregarRoles.UseVisualStyleBackColor = false;
+            this.btnAgregarRoles.Click += new System.EventHandler(this.btnAgregarRoles_Click);
             // 
             // pnlPrincipal
             // 
