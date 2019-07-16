@@ -31,7 +31,7 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
-                    command.Parameters.AddWithValue("@Numero", atarjeta.Numero);
+                    //command.Parameters.AddWithValue("@Numero", atarjeta.Numero);
                     command.Parameters.AddWithValue("@Password", atarjeta.Password == null ? (object)DBNull.Value : atarjeta.Password);
                     command.Parameters.AddWithValue("@CodControl", atarjeta.Codcontrol);
                     command.Parameters.AddWithValue("@FechaVencimiento", atarjeta.Fechavencimiento == null ? (object)DBNull.Value : atarjeta.Fechavencimiento);
