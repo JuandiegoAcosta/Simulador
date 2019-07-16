@@ -707,6 +707,8 @@
     <None Include="Resources\view.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\add_rol.png" />
+    <None Include="Resources\add_permiso.png" />
     <None Include="Resources\icons8-agregar-administrador-26.png" />
     <None Include="Resources\icons8-eliminar-26.png" />
     <None Include="Resources\icons8-editar-26.png" />
