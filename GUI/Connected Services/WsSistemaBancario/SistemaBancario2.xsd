@@ -251,9 +251,16 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="RolesModel" nillable="true" type="tns:RolesModel" />
+  <xs:complexType name="ArrayOfRolUsuarioModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RolUsuarioModel" nillable="true" type="tns:RolUsuarioModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRolUsuarioModel" nillable="true" type="tns:ArrayOfRolUsuarioModel" />
   <xs:complexType name="RolUsuarioModel">
     <xs:sequence>
       <xs:element minOccurs="0" name="Activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Fecha_creacion" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Fecha_modificacion" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
@@ -264,12 +271,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="RolUsuarioModel" nillable="true" type="tns:RolUsuarioModel" />
-  <xs:complexType name="ArrayOfRolUsuarioModel">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="RolUsuarioModel" nillable="true" type="tns:RolUsuarioModel" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfRolUsuarioModel" nillable="true" type="tns:ArrayOfRolUsuarioModel" />
   <xs:complexType name="ArrayOfSucursalModel">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="SucursalModel" nillable="true" type="tns:SucursalModel" />

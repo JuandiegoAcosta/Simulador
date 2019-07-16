@@ -277,12 +277,6 @@
     <Compile Include="Plataforma\UCactualizarCuenta.Designer.cs">
       <DependentUpon>UCactualizarCuenta.cs</DependentUpon>
     </Compile>
-    <Compile Include="Plataforma\UCchequeras.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Plataforma\UCchequeras.Designer.cs">
-      <DependentUpon>UCchequeras.cs</DependentUpon>
-    </Compile>
     <Compile Include="Plataforma\UCcliente.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -324,7 +318,9 @@
     <Compile Include="plataforma_controles\RegistrarChequera.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="plataforma_controles\RegistrarChequera.Designer.cs" />
+    <Compile Include="plataforma_controles\RegistrarChequera.Designer.cs">
+      <DependentUpon>RegistrarChequera.cs</DependentUpon>
+    </Compile>
     <Compile Include="plataforma_controles\RegistroPersonaUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -526,7 +522,9 @@
       <DependentUpon>NuevaTarjeta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="plataforma_controles\NuevoPrestamoUserControl.resx" />
-    <EmbeddedResource Include="plataforma_controles\RegistrarChequera.resx" />
+    <EmbeddedResource Include="plataforma_controles\RegistrarChequera.resx">
+      <DependentUpon>RegistrarChequera.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="plataforma_controles\RegistroPersonaUserControl.resx" />
     <EmbeddedResource Include="Pruebas.resx">
       <DependentUpon>Pruebas.cs</DependentUpon>
@@ -548,9 +546,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Plataforma\UCactualizarCuenta.resx">
       <DependentUpon>UCactualizarCuenta.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Plataforma\UCchequeras.resx">
-      <DependentUpon>UCchequeras.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Plataforma\UCcuenta.resx">
       <DependentUpon>UCcuenta.cs</DependentUpon>
@@ -609,9 +604,6 @@
     </Compile>
     <None Include="Connected Services\WsSistemaBancario\SistemaBancario.wsdl" />
     <None Include="Connected Services\WsSistemaBancario\SistemaBancario.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\WsSistemaBancario\SistemaBancario1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\WsSistemaBancario\SistemaBancario2.xsd">
