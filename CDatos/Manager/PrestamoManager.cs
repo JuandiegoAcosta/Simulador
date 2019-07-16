@@ -467,6 +467,74 @@ namespace CDatos.Manager
                 return prestamolist;
             }
         }
+
+        /// <summary>
+        /// Selects the Multiple objects of CronogramaPagosModel table by a given criteria.
+        /// </summary>
+        public List<CronogramaPagosModel> CronogramaPagosModelSelectbyIdPrestamo(int id_prestamo)
+        {
+
+            List<CronogramaPagosModel> CronogramaPagosModellist = new List<CronogramaPagosModel>();
+
+            try
+            {
+                using (var connection = Util.ConnectionFactory.conexion())
+                {
+                    connection.Open();
+
+                    SqlCommand command = connection.CreateCommand();
+
+                    command.Parameters.AddWithValue("@id_prestamo", id_prestamo);
+
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.CommandText = "CronogramaSelectbyId";
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+
+                            int ID = (int)(reader["ID"]);
+                            int Prestamo = (int)(reader["Prestamo"]);
+                            DateTime FechaPago = (DateTime)(reader["FechaPago"]);
+                            decimal Monto = (decimal)(reader["Monto"]);
+                            bool estado = (bool)(reader["Estado"]);
+                            DateTime DiaPago = (DateTime)(reader["DiaPago"]);
+                            DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
+                            DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
+                            string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
+                            string USUARIO_MODIFICADOR = reader["USUARIO_MODIFICADOR"] as string;
+
+                            CronogramaPagosModellist.Add(new CronogramaPagosModel
+                            {
+                                Id = ID,
+                                Prestamo = Prestamo,
+                                Fechapago = FechaPago,
+                                Monto = Monto,
+                                Diapago = DiaPago,
+                                Fecha_creacion = FECHA_CREACION,
+                                Fecha_modificacion = FECHA_MODIFICACION,
+                                Usuario_creador = USUARIO_CREADOR,
+                                Usuario_modificador = USUARIO_MODIFICADOR,
+                                Estado = estado,
+
+                            });
+                        }
+                    }
+                }
+
+                return CronogramaPagosModellist;
+            }
+            catch (Exception)
+            {
+                throw;
+                return CronogramaPagosModellist;
+            }
+        }
+
         #endregion
 
     }

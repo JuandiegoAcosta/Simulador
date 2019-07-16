@@ -342,3 +342,7 @@ C:\Users\RithardLL\Source\Repos\Simulador22\CDatos\obj\Debug\CDatos.csproj.CoreC
 C:\Users\RithardLL\Source\Repos\Simulador22\CDatos\obj\Debug\CDatos.csproj.CopyComplete
 C:\Users\RithardLL\Source\Repos\Simulador22\CDatos\obj\Debug\CDatos.dll
 C:\Users\RithardLL\Source\Repos\Simulador22\CDatos\obj\Debug\CDatos.pdb
+C:\Users\Jean\Desktop\z9\JuandiegoAcosta\Simulador\CDatos\obj\Debug\CDatos.csprojAssemblyReference.cache
+C:\Users\Jean\Desktop\z9\JuandiegoAcosta\Simulador\CDatos\obj\Debug\CDatos.csproj.CoreCompileInputs.cache
+C:\Users\Jean\Desktop\z9\JuandiegoAcosta\Simulador\CDatos\obj\Debug\CDatos.dll
+C:\Users\Jean\Desktop\z9\JuandiegoAcosta\Simulador\CDatos\obj\Debug\CDatos.pdb

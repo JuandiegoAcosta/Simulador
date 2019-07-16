@@ -126,6 +126,11 @@ namespace CNegocio.Plataforma
             return this.managerPrestamo.prestamoSelectbyNroCuenta(aNumero_cuenta);
         }
 
+        public List<CronogramaPagosModel> CronogramaPagosModelSelectbyIdPrestamo(int id_prestamo)
+        {
+            return this.managerPrestamo.CronogramaPagosModelSelectbyIdPrestamo(id_prestamo);
+        }
+
         #endregion
 
     }
