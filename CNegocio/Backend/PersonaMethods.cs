@@ -32,6 +32,10 @@ namespace CNegocio.Backend
         {
             return ADPersonaManager.Update(aPersona);
         }
+        public bool ActualizarEstado(int admin, int idusuario, bool estado)
+        {
+            return ADPersonaManager.ActualizarEstado(admin, idusuario, estado);
+        }
 
         /// <summary>
         /// Deletes record to the persona table.
@@ -140,6 +144,10 @@ namespace CNegocio.Backend
         public List<PersonaModel> UsuarioSelectAll()
         {
             return ADPersonaManager.UsuarioSelectAll();
+        }
+        public List<PersonaModel> ObtenerUsuariosSinCredenciales()
+        {
+            return ADPersonaManager.ObtenerUsuariosSinCredenciales();
         }
 
 

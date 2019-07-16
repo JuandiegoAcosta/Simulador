@@ -15,11 +15,18 @@ namespace Sistema_Bancario.plataforma_controles
 {
     public partial class RegistroPersonaUserControl : UserControl
     {
+
+        #region Variables
+
         public string gusuario { get; set; }
 
         private PersonaMethods BLPersona = new PersonaMethods();
         private TipoDocumentoMethods BLTipo_documento = new TipoDocumentoMethods();
         private PersonaModel gPerona;
+
+        #endregion
+
+        #region Constructor
 
         public RegistroPersonaUserControl(ISession sesion)
         {
@@ -28,6 +35,10 @@ namespace Sistema_Bancario.plataforma_controles
             this.poblarCboTipoPersona();
             this.modoInicial();
         }
+
+        #endregion
+
+        #region Metodos
 
         private void poblarCboTiposDocumento()
         {
@@ -119,7 +130,7 @@ namespace Sistema_Bancario.plataforma_controles
             this.cboTipo_documento.SelectedValue = -1;
             this.cboTipoPersona.SelectedValue = -1;
             this.dtpFecha_nacimiento.Value = DateTime.Now;
-            this.chkEstado.Checked =false;
+            this.chkEstado.Checked = false;
 
             this.SlblUsuario_creador.Text = "*";
             this.SlblFecha_creacion.Text = "*";
@@ -188,6 +199,39 @@ namespace Sistema_Bancario.plataforma_controles
             this.buttonEliminar.Enabled = true;
         }
 
+        private void buscarObjeto(List<PersonaModel> objetos)
+        {
+            string[][] orden = new string[2][];
+
+            orden[0] = new string[] { "Id", "Codigo", "100" };
+            orden[1] = new string[] { "Nombres", "Nombres", "400" };
+
+            if (objetos != null)
+            {
+                using (Ayuda.FormHelp2 formHelp1 = new Ayuda.FormHelp2())
+                {
+                    formHelp1.setList(objetos, orden);
+                    formHelp1.ShowDialog();
+
+                    if (formHelp1.EstaAceptado())
+                    {
+                        var dato = formHelp1.getObject<PersonaModel>();
+                        if (dato != null)
+                        {
+                            this.clearForm();
+                            this.gPerona = this.BLPersona.ObtenerUno(dato.Id);
+                            this.persona2gui(this.gPerona);
+                            this.modoNuevo();
+                            this.modoEdicion();
+                        }
+                    }
+                }
+            }
+        }
+
+        #endregion
+
+        #region Eventos
 
         private void buttonNuevo_Click(object sender, EventArgs e)
         {
@@ -268,36 +312,6 @@ namespace Sistema_Bancario.plataforma_controles
             this.buscarObjeto(objeto);
         }
 
-        private void buscarObjeto(List<PersonaModel> objetos)
-        {
-            string[][] orden = new string[2][];
-
-            orden[0] = new string[] { "Id", "Codigo", "100" };
-            orden[1] = new string[] { "Nombres", "Nombres", "400" };
-
-            if (objetos != null)
-            {
-                using (Ayuda.FormHelp2 formHelp1 = new Ayuda.FormHelp2())
-                {
-                    formHelp1.setList(objetos, orden);
-                    formHelp1.ShowDialog();
-
-                    if (formHelp1.EstaAceptado())
-                    {
-                        var dato = formHelp1.getObject<PersonaModel>();
-                        if (dato != null)
-                        {
-                            this.clearForm();
-                            this.gPerona = this.BLPersona.ObtenerUno(dato.Id);
-                            this.persona2gui(this.gPerona);
-                            this.modoNuevo();
-                            this.modoEdicion();
-                        }
-                    }
-                }
-            }
-        }
-
         private void btnNombres_Click(object sender, EventArgs e)
         {
             string nombres = this.txtNombres.Text;
@@ -328,5 +342,8 @@ namespace Sistema_Bancario.plataforma_controles
             if (objeto == null && objeto.Count <= 0) { return; }
             this.buscarObjeto(objeto);
         }
+
+        #endregion
+
     }
 }

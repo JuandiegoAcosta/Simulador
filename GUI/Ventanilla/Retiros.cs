@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
@@ -105,7 +106,8 @@ namespace Sistema_Bancario.Froms_opciones
             if (SetItem())
             {
                 retirosMethods = new RetirosMethods();
-                if (retirosMethods.InsertaRetiro(this.m_monto, this.m_nroTarjeta, this.m_clave, this.m_doi) > 0)
+                StatusStrip o = this.TopLevelControl.Controls.Find("stStatus", true).FirstOrDefault() as StatusStrip;//o.Items[1].Text;
+                if (retirosMethods.InsertaRetiro(this.m_monto, this.m_nroTarjeta, this.m_clave, this.m_doi, o.Items[1].Text) > 0)
                     MessageBox.Show("Retiro con exito");
                 else
                     MessageBox.Show("No se pudo generar el retiro");

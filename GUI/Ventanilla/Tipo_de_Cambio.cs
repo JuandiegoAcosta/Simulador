@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using CNegocio.Ventanilla;
+using Modelos;
 using Modelos.Modelos;
 
 namespace Sistema_Bancario.Froms_opciones
@@ -103,8 +106,21 @@ namespace Sistema_Bancario.Froms_opciones
       {           
             if (setItem())
          {
-               
-         }
+                TipoMovimientoMethods movimiento = new TipoMovimientoMethods();
+                TipodeCambioModel tipo = new TipodeCambioModel();
+                // VentanaPrincipal ventana =new VentanaPrincipal;
+                tipo.MonedaE = tipoMoneda1.CboMoneda.Text;
+                tipo.MontoE = Convert.ToDecimal(monto1.TBMonto.Text);
+                tipo.MontoS = Convert.ToDecimal(txtConversion.Text);
+                tipo.MonedaS = tipoMoneda2.CboMoneda.Text;
+                StatusStrip o = this.TopLevelControl.Controls.Find("stStatus", true).FirstOrDefault() as StatusStrip;//o.Items[1].Text;
+                                                                                                                     //Solucionar
+                tipo.Usuario = o.Items[1].Text;
+                if (movimiento.MovimientoTipoCambioInsert(tipo) > 0)
+                {
+                    MessageBox.Show("Se realizo el Cambio");
+                };
+            }
       }
 
         private void TBMonto_TextChanged(object sender, EventArgs e)

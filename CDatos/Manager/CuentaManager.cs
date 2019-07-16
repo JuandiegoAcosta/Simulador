@@ -601,6 +601,49 @@ namespace CDatos.Manager
             }
         }
 
+        public bool DepositarPrestamo(CuentasModel acuenta)
+        {
+            try
+            {
+                using (var connection = Util.ConnectionFactory.conexion())
+                {
+                    connection.Open();
+
+                    SqlTransaction sqlTran = connection.BeginTransaction();
+
+                    SqlCommand command = connection.CreateCommand();
+
+                    command.Transaction = sqlTran;
+
+                    command.Parameters.AddWithValue("@NroCuenta", acuenta.Nrocuenta);
+                    command.Parameters.AddWithValue("@SaldoContable", acuenta.Saldocontable);
+                    command.Parameters.AddWithValue("@FECHA_MODIFICACION", acuenta.Fecha_modificacion == null ? (object)DBNull.Value : acuenta.Fecha_modificacion);
+                    command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", acuenta.Usuario_modificador == null ? (object)DBNull.Value : acuenta.Usuario_modificador);
+
+
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.CommandText = "CuentasDepositoCredito";
+
+                    int afectados = command.ExecuteNonQuery();
+
+                    // Commit the transaction.
+                    sqlTran.Commit();
+
+                    connection.Close();
+                    connection.Dispose();
+
+                    if (afectados > 0)
+                        return true;
+                    else
+                        return false;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
 
         #endregion
 

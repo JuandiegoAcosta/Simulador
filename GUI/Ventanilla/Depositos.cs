@@ -83,6 +83,8 @@ namespace Sistema_Bancario.Ventanilla
          if (SetItem())
          {
             m_depositoMethods = new DepositoMethods();
+                StatusStrip o = this.TopLevelControl.Controls.Find("stStatus", true).FirstOrDefault() as StatusStrip;// 
+                m_deposito.Usuario = o.Items[1].Text;
             if (m_depositoMethods.insert(m_deposito))
                MessageBox.Show("Operacion Realizada");
             else

@@ -133,7 +133,46 @@ namespace CDatos.Manager
             }
         }
 
+        public bool ActualizarEstado(int admin,int idusuario,bool estado)
+        {
+            try
+            {
+                using (var connection = Util.ConnectionFactory.conexion())
+                {
+                    connection.Open();
 
+                    SqlTransaction sqlTran = connection.BeginTransaction();
+
+                    SqlCommand command = connection.CreateCommand();
+
+                    command.Transaction = sqlTran;
+                    command.Parameters.AddWithValue("@admin", admin);
+                    command.Parameters.AddWithValue("@estado", estado);
+                    command.Parameters.AddWithValue("@idUsuario", idusuario);
+
+
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.CommandText = "ActualizarEstadoUsuario";
+
+                    int afectados = command.ExecuteNonQuery();
+
+                    // Commit the transaction.
+                    sqlTran.Commit();
+
+                    connection.Close();
+                    connection.Dispose();
+
+                    if (afectados > 0)
+                        return true;
+                    else
+                        return false;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
         /// <summary>
         /// Deletes record to the PersonaModel table.
         /// returns True if value saved successfully else false
@@ -319,7 +358,57 @@ namespace CDatos.Manager
                 return PersonaModellist;
             }
         }
+        public List<PersonaModel> ObtenerUsuariosSinCredenciales()
+        {
 
+            List<PersonaModel> PersonaModellist = new List<PersonaModel>();
+
+            try
+            {
+                using (var connection = Util.ConnectionFactory.conexion())
+                {
+                    connection.Open();
+
+                    SqlCommand command = connection.CreateCommand();
+
+
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.CommandText = "ObtenerUsuariosSinCredenciales";
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+
+                            int Id = (int)(reader["Id"]);
+                            string Nombres = (string)(reader["Nombres"]);
+                            string Apellidos = (string)(reader["Apellidos"]);
+                            string NroDocumento = (string)(reader["NroDocumento"]);
+                            int TipoDocumento = (int)(reader["TipoDocumento"]);
+
+                            PersonaModellist.Add(new PersonaModel
+                            {
+                                Id = Id,
+                                Nombres = Nombres,
+                                Apellidos = Apellidos,
+                                Nrodocumento = NroDocumento,
+                                Tipodocumento = TipoDocumento,
+
+                            });
+                        }
+                    }
+                }
+
+                return PersonaModellist;
+            }
+            catch (Exception)
+            {
+                return PersonaModellist;
+            }
+        }
         /// <summary>
         /// Selects the Multiple objects of persona table by a given criteria.
         /// </summary>
@@ -610,7 +699,6 @@ namespace CDatos.Manager
         public PersonaModel ValidarUsuario(string usuario, string password)
         {
             PersonaModel PersonaModel = null;
-
             try
             {
                 using (var connection = Util.ConnectionFactory.conexion())

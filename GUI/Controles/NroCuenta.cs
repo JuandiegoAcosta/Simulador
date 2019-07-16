@@ -28,30 +28,39 @@ namespace Sistema_Bancario.Controles
 
         private void BtValidar_Click(object sender, EventArgs e)
         {
-           
-            CuentasMethods validar = new CuentasMethods();
-            var Cuenta=  validar.ValidarCuenta(Convert.ToInt64(TBNroCuenta.Text));
-            LbPersona.Text = "Cliente: "+Cuenta.Cliente;
-            
-            Lbestado.Text ="Estado: "+ Cuenta.Estado;
-            Lbmoneda.Text = Cuenta.Moneda;
-            groupBox1.Enabled = true;
-            if (Cuenta.TipoCuenta == "CORRIENTE")
+            try
             {
-                rbtnCorriente.Checked = true;
-            }
-            else
-            {
-               
-                rbtnAhorros.Checked = true;
-            }
-               
-            
+                CuentasMethods validar = new CuentasMethods();
+                var Cuenta = validar.ValidarCuenta(Convert.ToInt64(TBNroCuenta.Text));
 
-            LbPersona.Visible = true;
-            groupBox1.Enabled = false;
-            Lbestado.Visible = true;
-            Lbmoneda.Visible = true;
+                LbPersona.Text = "Cliente: " + Cuenta.Cliente;
+
+                Lbestado.Text = "Estado: " + Cuenta.Estado;
+                Lbmoneda.Text = Cuenta.Moneda;
+                groupBox1.Enabled = true;
+                if (Cuenta.TipoCuenta == "CORRIENTE")
+                {
+                    rbtnCorriente.Checked = true;
+                }
+                else
+                {
+
+                    rbtnAhorros.Checked = true;
+                }
+
+
+
+                LbPersona.Visible = true;
+                groupBox1.Enabled = false;
+                Lbestado.Visible = true;
+                Lbmoneda.Visible = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+
+            }
+            
 
         }
     }

@@ -383,4 +383,29 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfDetalleCajaChicaModel" nillable="true" type="tns:ArrayOfDetalleCajaChicaModel" />
+  <xs:complexType name="PrestamosModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cuenta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Diapago" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Fecha_creacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Fecha_modificacion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Fechaprestamo" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Interes_moratorio" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Moneda" type="xs:int" />
+      <xs:element minOccurs="0" name="Montoprestamo" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Plazomeses" type="xs:int" />
+      <xs:element minOccurs="0" name="Porcentaje_interes" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Seguro" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Usuario_creador" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Usuario_modificador" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PrestamosModel" nillable="true" type="tns:PrestamosModel" />
+  <xs:complexType name="ArrayOfPrestamosModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PrestamosModel" nillable="true" type="tns:PrestamosModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPrestamosModel" nillable="true" type="tns:ArrayOfPrestamosModel" />
 </xs:schema>

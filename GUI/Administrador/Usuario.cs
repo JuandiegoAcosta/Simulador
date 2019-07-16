@@ -10,11 +10,21 @@ using System.Windows.Forms;
 using Modelos.Modelos;
 using Sistema_Bancario.Clases;
 using Sistema_Bancario.Properties;
+using Modelos.Session;
 
 namespace Sistema_Bancario.Administrador
 {
     public partial class Usuario : UserControl
     {
+        ISession session = new Session();
+        public Usuario(ISession sesion)
+        {
+            InitializeComponent();
+            this.BackColor = Color.White;
+            llenarDGVUsuarios();
+            llenarComboBoxRoles();
+            session = sesion;
+        }
         public Usuario()
         {
             InitializeComponent();
@@ -22,7 +32,6 @@ namespace Sistema_Bancario.Administrador
             llenarDGVUsuarios();
             llenarComboBoxRoles();
         }
-
         private static Usuario _instance;
         public static Usuario instance
         {
@@ -246,10 +255,12 @@ namespace Sistema_Bancario.Administrador
             if (e.ColumnIndex>=0) {
                 if (this.dgvUsuarios.Columns[e.ColumnIndex].Name == "Editar")
                 {
+
                     MessageBox.Show("Editar");
                 }
                 if (this.dgvUsuarios.Columns[e.ColumnIndex].Name == "Eliminar")
                 {
+
                     MessageBox.Show("Eliminar");
                 }
                 if (this.dgvUsuarios.Columns[e.ColumnIndex].Name == "EstadoUsuario")
@@ -258,12 +269,35 @@ namespace Sistema_Bancario.Administrador
                     if (chk.Value==chk.TrueValue)
                     {
                         chk.Value = chk.FalseValue;
-                        MessageBox.Show("Check");
+                        using (WsSistemaBancario.PersonaServiceClient per=new WsSistemaBancario.PersonaServiceClient())
+                        {
+                            bool back = per.ActualizarEstado(Convert.ToInt32(session.UserCodigo),Convert.ToInt32(dgvUsuarios.Rows[e.RowIndex].Cells[0].Value.ToString()),false);
+                            if (back)
+                            {
+                                MessageBox.Show("Estado actualizado!", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                MessageBox.Show("No se pudo actualizar!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                            
                     }
                     else
                     {
                         chk.Value = chk.TrueValue;
-                        MessageBox.Show("No check");
+                        using (WsSistemaBancario.PersonaServiceClient per = new WsSistemaBancario.PersonaServiceClient())
+                        {
+                            bool back = per.ActualizarEstado(Convert.ToInt32(session.UserCodigo), Convert.ToInt32(dgvUsuarios.Rows[e.RowIndex].Cells[0].Value.ToString()), true);
+                            if (back)
+                            {
+                                MessageBox.Show("Estado actualizado!", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                MessageBox.Show("No se pudo actualizar!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
                     }
                 }
             }
@@ -390,6 +424,17 @@ namespace Sistema_Bancario.Administrador
                 e.Handled = true;
             }
 
+        }
+
+        private void btnAgregarUsuario_Click(object sender, EventArgs e)
+        {
+            using (AgregarNuevoUsuario frm=new AgregarNuevoUsuario(session))
+            {
+                frm.ShowDialog();
+            }
+            this.dgvUsuarios.DataSource = null;
+            this.dgvUsuarios.Refresh();
+            this.llenarDGVUsuarios();
         }
     }
 }

@@ -13,6 +13,7 @@ namespace Modelos.Modelos
         public long NroCuenta { get; set; }
         public long NroCuentaDestino { get; set; }
         public int doi { get; set; }
+        public string Usuario { get; set; }
 
         public CuentasTarjetasModel() { }
     }

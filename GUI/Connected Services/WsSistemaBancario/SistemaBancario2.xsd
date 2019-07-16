@@ -850,6 +850,22 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ActualizarEstado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="admin" type="xs:int" />
+        <xs:element minOccurs="0" name="idusuario" type="xs:int" />
+        <xs:element minOccurs="0" name="estado" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarEstadoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ActualizarEstadoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="Persona_Eliminar">
     <xs:complexType>
       <xs:sequence>
@@ -973,7 +989,19 @@
   <xs:element name="GetPersonasPorRolResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="GetPersonasPorRolResult" nillable="true" type="q57:ArrayOfPersonaModel" />
+        <xs:element minOccurs="0" name="GetPersonasPorRolResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataTable" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+              <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -988,7 +1016,7 @@
   <xs:element name="Persona_GetPersonaNombreApellidosResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="Persona_GetPersonaNombreApellidosResult" nillable="true" type="q58:ArrayOfPersonaModel" />
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="Persona_GetPersonaNombreApellidosResult" nillable="true" type="q57:ArrayOfPersonaModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1017,7 +1045,7 @@
   <xs:element name="Persona_UsuarioSelectAllResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="Persona_UsuarioSelectAllResult" nillable="true" type="q59:ArrayOfPersonaModel" />
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="Persona_UsuarioSelectAllResult" nillable="true" type="q58:ArrayOfPersonaModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1031,7 +1059,7 @@
   <xs:element name="PersonaSelectbyNroDocumentoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="PersonaSelectbyNroDocumentoResult" nillable="true" type="q60:ArrayOfPersonaModel" />
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="PersonaSelectbyNroDocumentoResult" nillable="true" type="q59:ArrayOfPersonaModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1045,7 +1073,19 @@
   <xs:element name="PersonaSelectbyNombresResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="PersonaSelectbyNombresResult" nillable="true" type="q61:ArrayOfPersonaModel" />
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="PersonaSelectbyNombresResult" nillable="true" type="q60:ArrayOfPersonaModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerUsuariosSinCredenciales">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerUsuariosSinCredencialesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="ObtenerUsuariosSinCredencialesResult" nillable="true" type="q61:ArrayOfPersonaModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1730,6 +1770,90 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q101="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="DetalleCajaChica_ObtenerTodosResult" nillable="true" type="q101:ArrayOfDetalleCajaChicaModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Prestamo_Crear">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q102="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="aPrestamo" nillable="true" type="q102:PrestamosModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Prestamo_CrearResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Prestamo_CrearResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Prestamo_Editar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q103="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="aPrestamo" nillable="true" type="q103:PrestamosModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Prestamo_EditarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Prestamo_EditarResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Prestamo_Borrar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="aID_Prestamo" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Prestamo_BorrarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Prestamo_BorrarResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Prestamo_ObtenerUno">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="aNro_Prestamo" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Prestamo_ObtenerUnoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q104="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="Prestamo_ObtenerUnoResult" nillable="true" type="q104:PrestamosModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Prestamo_SelecionarPorCuenta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="aID_Cuenta" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Prestamo_SelecionarPorCuentaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q105="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="Prestamo_SelecionarPorCuentaResult" nillable="true" type="q105:ArrayOfPrestamosModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Prestamo_SeleccionarPorId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="aID_Prestamo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Prestamo_SeleccionarPorIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q106="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="Prestamo_SeleccionarPorIdResult" nillable="true" type="q106:ArrayOfPrestamosModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

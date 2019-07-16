@@ -25,10 +25,25 @@ namespace Sistema_Bancario.Ventanilla
         {
             CobroChequeMethods cobroCheque = new CobroChequeMethods();
             ChequeModel cheque = new ChequeModel();
+            StatusStrip o = this.TopLevelControl.Controls.Find("stStatus", true).FirstOrDefault() as StatusStrip;
             cheque.Numero = Convert.ToInt32(TBNroCheque.Text);
             cheque.Monto = Convert.ToInt32(monto1.TBMonto.Text);
-
-            cobroCheque.CobroInsert(cheque, nroCuenta1.TBNroCuenta.Text);
+            cheque.Usuario_creacion = o.Items[1].Text;
+            cheque.DOI = dni1.TBDni.Text;
+                        
+            string result = cobroCheque.CobroInsert(cheque, nroCuenta1.TBNroCuenta.Text);
+            MessageBox.Show(result);
+            //if( result.Equals("-1"))
+            //{
+            //    MessageBox.Show("Se encontro el cheque y se hizo el retiro");
+            //}
+            //else if (result == "0")
+            //{
+            //    MessageBox.Show("Cheque retirado o no Encontrado");
+            //}else
+            //{
+            //    MessageBox.Show("Error");
+            //};
         }
 
         private static Cheques _instance;
