@@ -23,12 +23,15 @@ namespace Sistema_Bancario.Froms_opciones
 
         private void BTProceder_Click(object sender, EventArgs e)
         {
+         if (GNroContrato.Rows.Count > 0)
+         {
             PagoServicioMethods pagoServicioMethods = new PagoServicioMethods();
             int i = GNroContrato.CurrentCell.RowIndex;
 
 
             pagoServicioMethods.InsertPagoServicio(Convert.ToInt32(nroContrato1.TBNroContrato.Text));
-          
+
+         }
         }
 
         private static Servicios _instance;
@@ -55,15 +58,18 @@ namespace Sistema_Bancario.Froms_opciones
 
         private void BTNroContrato_Click(object sender, EventArgs e)
         {
+         if (GEmpresas.Rows.Count > 0)
+         {
+            if (string.IsNullOrEmpty(nroContrato1.TBNroContrato.Text)) { return; }
+
+
             EmpresaMethods empresaMethods = new EmpresaMethods();
-                    
+
             int i = GEmpresas.CurrentCell.RowIndex;
 
             var source = new BindingSource(empresaMethods.PagoServicioEmpresa(Convert.ToInt32(GEmpresas[0, i].Value), Convert.ToInt32(nroContrato1.TBNroContrato.Text)), null);
             GNroContrato.DataSource = source;
-
-
-
+         }
         }
     }
 }

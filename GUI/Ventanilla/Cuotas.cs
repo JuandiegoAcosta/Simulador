@@ -24,12 +24,17 @@ namespace Sistema_Bancario
 
         private void BTProceder_Click(object sender, EventArgs e)
         {
+         if (GridCuotas.Rows.Count > 0)
+         {
+
+
             GetCuotasMethods = new CuotasMethods();
             int i = GridCuotas.CurrentCell.RowIndex;
             //   int i = GridCuotas.CurrentRow.Cells[0].Value;
             //  Convert.ToInt32(GridCuotas[i, 0].Value);
             StatusStrip o = this.TopLevelControl.Controls.Find("stStatus", true).FirstOrDefault() as StatusStrip;// o.Items[1].Text
-            GetCuotasMethods.CuotasInsert(Convert.ToInt32(GridCuotas[i,0].Value), o.Items[1].Text);
+            GetCuotasMethods.CuotasInsert(Convert.ToInt32(GridCuotas[i, 0].Value), o.Items[1].Text);
+         }
         }
 
         private static Cuotas _instance;

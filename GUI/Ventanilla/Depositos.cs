@@ -111,7 +111,7 @@ namespace Sistema_Bancario.Ventanilla
       public void CambiarMoneda()
         {
             panel1.Height = 150;        
-            cambioMoneda = new CambioMoneda(Session);
+            cambioMoneda = new CambioMoneda();
             cambioMoneda.txtConversion.TextChanged += TxtConversion_TextChanged;
             int index = cambioMoneda.tipoMoneda1.CboMoneda.FindString(nroCuenta1.Lbmoneda.Text);
             cambioMoneda.tipoMoneda1.CboMoneda.SelectedIndex = index;

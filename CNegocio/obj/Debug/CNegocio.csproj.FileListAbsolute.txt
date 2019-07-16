@@ -422,3 +422,14 @@ C:\Users\RithardLL\Source\Repos\Simulador22\CNegocio\obj\Debug\CNegocio.csproj.C
 C:\Users\RithardLL\Source\Repos\Simulador22\CNegocio\obj\Debug\CNegocio.csproj.CopyComplete
 C:\Users\RithardLL\Source\Repos\Simulador22\CNegocio\obj\Debug\CNegocio.dll
 C:\Users\RithardLL\Source\Repos\Simulador22\CNegocio\obj\Debug\CNegocio.pdb
+C:\Users\elife\Desktop\Others\ISUR\Bancario\CNegocio\bin\Debug\CNegocio.dll
+C:\Users\elife\Desktop\Others\ISUR\Bancario\CNegocio\bin\Debug\CNegocio.pdb
+C:\Users\elife\Desktop\Others\ISUR\Bancario\CNegocio\bin\Debug\CDatos.dll
+C:\Users\elife\Desktop\Others\ISUR\Bancario\CNegocio\bin\Debug\Modelos.dll
+C:\Users\elife\Desktop\Others\ISUR\Bancario\CNegocio\bin\Debug\CDatos.pdb
+C:\Users\elife\Desktop\Others\ISUR\Bancario\CNegocio\bin\Debug\Modelos.pdb
+C:\Users\elife\Desktop\Others\ISUR\Bancario\CNegocio\obj\Debug\CNegocio.csprojAssemblyReference.cache
+C:\Users\elife\Desktop\Others\ISUR\Bancario\CNegocio\obj\Debug\CNegocio.csproj.CoreCompileInputs.cache
+C:\Users\elife\Desktop\Others\ISUR\Bancario\CNegocio\obj\Debug\CNegocio.csproj.CopyComplete
+C:\Users\elife\Desktop\Others\ISUR\Bancario\CNegocio\obj\Debug\CNegocio.dll
+C:\Users\elife\Desktop\Others\ISUR\Bancario\CNegocio\obj\Debug\CNegocio.pdb
