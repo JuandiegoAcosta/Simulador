@@ -32,6 +32,9 @@
             this.pnlSecundario = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tbpUsuarios = new System.Windows.Forms.TabPage();
+            this.btnAtras = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.btnAgregarUsuario = new System.Windows.Forms.Button();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
             this.tbpPermisos = new System.Windows.Forms.TabPage();
@@ -46,16 +49,6 @@
             this.btnBuscarUsuario = new System.Windows.Forms.Button();
             this.lblBuscarUsuario = new System.Windows.Forms.Label();
             this.txtUsuarioBuscado = new System.Windows.Forms.TextBox();
-            this.pnlBusquedaPersona = new System.Windows.Forms.Panel();
-            this.lblBusquedaApellidos = new System.Windows.Forms.Label();
-            this.lblBusquedaUsuarioNombres = new System.Windows.Forms.Label();
-            this.btnBuscarEnBusqueda = new System.Windows.Forms.Button();
-            this.txtBusquedaApellidos = new System.Windows.Forms.TextBox();
-            this.txtBusquedaNombres = new System.Windows.Forms.TextBox();
-            this.btnCancelarBusqueda = new System.Windows.Forms.Button();
-            this.btnAceptarBusqueda = new System.Windows.Forms.Button();
-            this.lblBusquedaPersona = new System.Windows.Forms.Label();
-            this.dgvBusquedaUsuarios = new System.Windows.Forms.DataGridView();
             this.btnEditarRol = new System.Windows.Forms.Button();
             this.lblRol = new System.Windows.Forms.Label();
             this.txtRol = new System.Windows.Forms.TextBox();
@@ -63,9 +56,12 @@
             this.dgvRoles = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.pnlPrincipal = new System.Windows.Forms.Panel();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.btnAtras = new System.Windows.Forms.Button();
+            this.btnAgregarPermisosRol = new System.Windows.Forms.Button();
+            this.pnlComponentesParaRol = new System.Windows.Forms.Panel();
+            this.btnAgregarComponentesRol = new System.Windows.Forms.Button();
+            this.btnCrearRolAtras = new System.Windows.Forms.Button();
+            this.lvlComponentes = new System.Windows.Forms.Label();
+            this.dgvCrearComponentesRol = new System.Windows.Forms.DataGridView();
             this.pnlSecundario.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tbpUsuarios.SuspendLayout();
@@ -73,16 +69,16 @@
             this.tbpPermisos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPermisosRol)).BeginInit();
             this.pnlAgregarUsuario.SuspendLayout();
-            this.pnlBusquedaPersona.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBusquedaUsuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoles)).BeginInit();
             this.pnlPrincipal.SuspendLayout();
+            this.pnlComponentesParaRol.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCrearComponentesRol)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlSecundario
             // 
             this.pnlSecundario.Controls.Add(this.tabControl1);
-            this.pnlSecundario.Location = new System.Drawing.Point(115, 35);
+            this.pnlSecundario.Location = new System.Drawing.Point(115, 15);
             this.pnlSecundario.Name = "pnlSecundario";
             this.pnlSecundario.Size = new System.Drawing.Size(640, 445);
             this.pnlSecundario.TabIndex = 7;
@@ -111,6 +107,38 @@
             this.tbpUsuarios.Size = new System.Drawing.Size(609, 383);
             this.tbpUsuarios.TabIndex = 0;
             this.tbpUsuarios.Text = "Usuarios";
+            this.tbpUsuarios.Click += new System.EventHandler(this.tbpUsuarios_Click);
+            // 
+            // btnAtras
+            // 
+            this.btnAtras.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAtras.BackgroundImage")));
+            this.btnAtras.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAtras.Location = new System.Drawing.Point(25, 20);
+            this.btnAtras.Name = "btnAtras";
+            this.btnAtras.Size = new System.Drawing.Size(42, 43);
+            this.btnAtras.TabIndex = 8;
+            this.btnAtras.UseVisualStyleBackColor = true;
+            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click_1);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Image = global::Sistema_Bancario.Properties.Resources.icons8_editar_32;
+            this.btnEditar.Location = new System.Drawing.Point(481, 180);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(50, 50);
+            this.btnEditar.TabIndex = 9;
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Image = global::Sistema_Bancario.Properties.Resources.icons8_eliminar_26;
+            this.btnEliminar.Location = new System.Drawing.Point(481, 269);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(50, 50);
+            this.btnEliminar.TabIndex = 8;
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnAgregarUsuario
             // 
@@ -165,9 +193,9 @@
             this.pnlAgregarUsuario.Controls.Add(this.btnBuscarUsuario);
             this.pnlAgregarUsuario.Controls.Add(this.lblBuscarUsuario);
             this.pnlAgregarUsuario.Controls.Add(this.txtUsuarioBuscado);
-            this.pnlAgregarUsuario.Location = new System.Drawing.Point(115, 35);
+            this.pnlAgregarUsuario.Location = new System.Drawing.Point(115, 15);
             this.pnlAgregarUsuario.Name = "pnlAgregarUsuario";
-            this.pnlAgregarUsuario.Size = new System.Drawing.Size(640, 340);
+            this.pnlAgregarUsuario.Size = new System.Drawing.Size(640, 445);
             this.pnlAgregarUsuario.TabIndex = 6;
             // 
             // btnCancelar
@@ -251,109 +279,13 @@
             this.txtUsuarioBuscado.Size = new System.Drawing.Size(100, 20);
             this.txtUsuarioBuscado.TabIndex = 0;
             // 
-            // pnlBusquedaPersona
-            // 
-            this.pnlBusquedaPersona.Controls.Add(this.lblBusquedaApellidos);
-            this.pnlBusquedaPersona.Controls.Add(this.lblBusquedaUsuarioNombres);
-            this.pnlBusquedaPersona.Controls.Add(this.btnBuscarEnBusqueda);
-            this.pnlBusquedaPersona.Controls.Add(this.txtBusquedaApellidos);
-            this.pnlBusquedaPersona.Controls.Add(this.txtBusquedaNombres);
-            this.pnlBusquedaPersona.Controls.Add(this.btnCancelarBusqueda);
-            this.pnlBusquedaPersona.Controls.Add(this.btnAceptarBusqueda);
-            this.pnlBusquedaPersona.Controls.Add(this.lblBusquedaPersona);
-            this.pnlBusquedaPersona.Controls.Add(this.dgvBusquedaUsuarios);
-            this.pnlBusquedaPersona.Location = new System.Drawing.Point(737, 567);
-            this.pnlBusquedaPersona.Name = "pnlBusquedaPersona";
-            this.pnlBusquedaPersona.Size = new System.Drawing.Size(640, 340);
-            this.pnlBusquedaPersona.TabIndex = 7;
-            // 
-            // lblBusquedaApellidos
-            // 
-            this.lblBusquedaApellidos.AutoSize = true;
-            this.lblBusquedaApellidos.Location = new System.Drawing.Point(327, 66);
-            this.lblBusquedaApellidos.Name = "lblBusquedaApellidos";
-            this.lblBusquedaApellidos.Size = new System.Drawing.Size(49, 13);
-            this.lblBusquedaApellidos.TabIndex = 8;
-            this.lblBusquedaApellidos.Text = "Apellidos";
-            // 
-            // lblBusquedaUsuarioNombres
-            // 
-            this.lblBusquedaUsuarioNombres.AutoSize = true;
-            this.lblBusquedaUsuarioNombres.Location = new System.Drawing.Point(82, 67);
-            this.lblBusquedaUsuarioNombres.Name = "lblBusquedaUsuarioNombres";
-            this.lblBusquedaUsuarioNombres.Size = new System.Drawing.Size(49, 13);
-            this.lblBusquedaUsuarioNombres.TabIndex = 7;
-            this.lblBusquedaUsuarioNombres.Text = "Nombres";
-            // 
-            // btnBuscarEnBusqueda
-            // 
-            this.btnBuscarEnBusqueda.Location = new System.Drawing.Point(526, 66);
-            this.btnBuscarEnBusqueda.Name = "btnBuscarEnBusqueda";
-            this.btnBuscarEnBusqueda.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscarEnBusqueda.TabIndex = 6;
-            this.btnBuscarEnBusqueda.Text = "Buscar";
-            this.btnBuscarEnBusqueda.UseVisualStyleBackColor = true;
-            this.btnBuscarEnBusqueda.Click += new System.EventHandler(this.btnBuscarEnBusqueda_Click);
-            // 
-            // txtBusquedaApellidos
-            // 
-            this.txtBusquedaApellidos.Location = new System.Drawing.Point(407, 67);
-            this.txtBusquedaApellidos.Name = "txtBusquedaApellidos";
-            this.txtBusquedaApellidos.Size = new System.Drawing.Size(100, 20);
-            this.txtBusquedaApellidos.TabIndex = 5;
-            // 
-            // txtBusquedaNombres
-            // 
-            this.txtBusquedaNombres.Location = new System.Drawing.Point(155, 66);
-            this.txtBusquedaNombres.Name = "txtBusquedaNombres";
-            this.txtBusquedaNombres.Size = new System.Drawing.Size(100, 20);
-            this.txtBusquedaNombres.TabIndex = 4;
-            // 
-            // btnCancelarBusqueda
-            // 
-            this.btnCancelarBusqueda.Location = new System.Drawing.Point(344, 269);
-            this.btnCancelarBusqueda.Name = "btnCancelarBusqueda";
-            this.btnCancelarBusqueda.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelarBusqueda.TabIndex = 3;
-            this.btnCancelarBusqueda.Text = "Cancelar";
-            this.btnCancelarBusqueda.UseVisualStyleBackColor = true;
-            this.btnCancelarBusqueda.Click += new System.EventHandler(this.btnCancelarBusqueda_Click);
-            // 
-            // btnAceptarBusqueda
-            // 
-            this.btnAceptarBusqueda.Location = new System.Drawing.Point(180, 269);
-            this.btnAceptarBusqueda.Name = "btnAceptarBusqueda";
-            this.btnAceptarBusqueda.Size = new System.Drawing.Size(75, 23);
-            this.btnAceptarBusqueda.TabIndex = 2;
-            this.btnAceptarBusqueda.Text = "Aceptar";
-            this.btnAceptarBusqueda.UseVisualStyleBackColor = true;
-            this.btnAceptarBusqueda.Click += new System.EventHandler(this.btnAceptarBusqueda_Click);
-            // 
-            // lblBusquedaPersona
-            // 
-            this.lblBusquedaPersona.AutoSize = true;
-            this.lblBusquedaPersona.Location = new System.Drawing.Point(274, 20);
-            this.lblBusquedaPersona.Name = "lblBusquedaPersona";
-            this.lblBusquedaPersona.Size = new System.Drawing.Size(97, 13);
-            this.lblBusquedaPersona.TabIndex = 1;
-            this.lblBusquedaPersona.Text = "Busqueda Persona";
-            // 
-            // dgvBusquedaUsuarios
-            // 
-            this.dgvBusquedaUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBusquedaUsuarios.Location = new System.Drawing.Point(63, 94);
-            this.dgvBusquedaUsuarios.Name = "dgvBusquedaUsuarios";
-            this.dgvBusquedaUsuarios.Size = new System.Drawing.Size(444, 141);
-            this.dgvBusquedaUsuarios.TabIndex = 0;
-            this.dgvBusquedaUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBusquedaUsuarios_CellClick);
-            // 
             // btnEditarRol
             // 
             this.btnEditarRol.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnEditarRol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditarRol.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarRol.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnEditarRol.Location = new System.Drawing.Point(448, 172);
+            this.btnEditarRol.Location = new System.Drawing.Point(445, 218);
             this.btnEditarRol.Name = "btnEditarRol";
             this.btnEditarRol.Size = new System.Drawing.Size(100, 40);
             this.btnEditarRol.TabIndex = 4;
@@ -364,7 +296,7 @@
             // lblRol
             // 
             this.lblRol.AutoSize = true;
-            this.lblRol.Location = new System.Drawing.Point(445, 57);
+            this.lblRol.Location = new System.Drawing.Point(442, 103);
             this.lblRol.Name = "lblRol";
             this.lblRol.Size = new System.Drawing.Size(73, 13);
             this.lblRol.TabIndex = 0;
@@ -372,7 +304,7 @@
             // 
             // txtRol
             // 
-            this.txtRol.Location = new System.Drawing.Point(448, 76);
+            this.txtRol.Location = new System.Drawing.Point(445, 122);
             this.txtRol.Name = "txtRol";
             this.txtRol.Size = new System.Drawing.Size(100, 20);
             this.txtRol.TabIndex = 1;
@@ -383,7 +315,7 @@
             this.btnEliminarRol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminarRol.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarRol.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnEliminarRol.Location = new System.Drawing.Point(448, 227);
+            this.btnEliminarRol.Location = new System.Drawing.Point(445, 273);
             this.btnEliminarRol.Name = "btnEliminarRol";
             this.btnEliminarRol.Size = new System.Drawing.Size(100, 40);
             this.btnEliminarRol.TabIndex = 5;
@@ -394,11 +326,11 @@
             // dgvRoles
             // 
             this.dgvRoles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRoles.Location = new System.Drawing.Point(108, 45);
+            this.dgvRoles.Location = new System.Drawing.Point(127, 73);
             this.dgvRoles.Name = "dgvRoles";
             this.dgvRoles.ReadOnly = true;
             this.dgvRoles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRoles.Size = new System.Drawing.Size(256, 283);
+            this.dgvRoles.Size = new System.Drawing.Size(247, 283);
             this.dgvRoles.TabIndex = 2;
             this.dgvRoles.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRoles_CellClick);
             this.dgvRoles.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRoles_CellDoubleClick);
@@ -409,7 +341,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.Window;
-            this.button1.Location = new System.Drawing.Point(448, 118);
+            this.button1.Location = new System.Drawing.Point(445, 164);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 40);
             this.button1.TabIndex = 3;
@@ -419,47 +351,77 @@
             // 
             // pnlPrincipal
             // 
+            this.pnlPrincipal.Controls.Add(this.btnAgregarPermisosRol);
             this.pnlPrincipal.Controls.Add(this.button1);
             this.pnlPrincipal.Controls.Add(this.dgvRoles);
             this.pnlPrincipal.Controls.Add(this.btnEliminarRol);
             this.pnlPrincipal.Controls.Add(this.txtRol);
             this.pnlPrincipal.Controls.Add(this.lblRol);
             this.pnlPrincipal.Controls.Add(this.btnEditarRol);
-            this.pnlPrincipal.Location = new System.Drawing.Point(115, 35);
+            this.pnlPrincipal.Location = new System.Drawing.Point(115, 15);
             this.pnlPrincipal.Name = "pnlPrincipal";
             this.pnlPrincipal.Size = new System.Drawing.Size(640, 445);
             this.pnlPrincipal.TabIndex = 6;
+            this.pnlPrincipal.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlPrincipal_Paint);
             // 
-            // btnEliminar
+            // btnAgregarPermisosRol
             // 
-            this.btnEliminar.Image = global::Sistema_Bancario.Properties.Resources.icons8_eliminar_26;
-            this.btnEliminar.Location = new System.Drawing.Point(481, 269);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(50, 50);
-            this.btnEliminar.TabIndex = 8;
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            this.btnAgregarPermisosRol.Location = new System.Drawing.Point(423, 346);
+            this.btnAgregarPermisosRol.Name = "btnAgregarPermisosRol";
+            this.btnAgregarPermisosRol.Size = new System.Drawing.Size(137, 23);
+            this.btnAgregarPermisosRol.TabIndex = 6;
+            this.btnAgregarPermisosRol.Text = "Agregar permisos a rol";
+            this.btnAgregarPermisosRol.UseVisualStyleBackColor = true;
+            this.btnAgregarPermisosRol.Click += new System.EventHandler(this.btnAgregarPermisosRol_Click);
             // 
-            // btnEditar
+            // pnlComponentesParaRol
             // 
-            this.btnEditar.Image = global::Sistema_Bancario.Properties.Resources.icons8_editar_32;
-            this.btnEditar.Location = new System.Drawing.Point(481, 180);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(50, 50);
-            this.btnEditar.TabIndex = 9;
-            this.btnEditar.UseVisualStyleBackColor = true;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            this.pnlComponentesParaRol.Controls.Add(this.btnAgregarComponentesRol);
+            this.pnlComponentesParaRol.Controls.Add(this.btnCrearRolAtras);
+            this.pnlComponentesParaRol.Controls.Add(this.lvlComponentes);
+            this.pnlComponentesParaRol.Controls.Add(this.dgvCrearComponentesRol);
+            this.pnlComponentesParaRol.Location = new System.Drawing.Point(115, 15);
+            this.pnlComponentesParaRol.Name = "pnlComponentesParaRol";
+            this.pnlComponentesParaRol.Size = new System.Drawing.Size(640, 445);
+            this.pnlComponentesParaRol.TabIndex = 8;
             // 
-            // btnAtras
+            // btnAgregarComponentesRol
             // 
-            this.btnAtras.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAtras.BackgroundImage")));
-            this.btnAtras.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAtras.Location = new System.Drawing.Point(25, 20);
-            this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(42, 43);
-            this.btnAtras.TabIndex = 8;
-            this.btnAtras.UseVisualStyleBackColor = true;
-            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click_1);
+            this.btnAgregarComponentesRol.Location = new System.Drawing.Point(488, 398);
+            this.btnAgregarComponentesRol.Name = "btnAgregarComponentesRol";
+            this.btnAgregarComponentesRol.Size = new System.Drawing.Size(112, 23);
+            this.btnAgregarComponentesRol.TabIndex = 3;
+            this.btnAgregarComponentesRol.Text = "Agregar componentes";
+            this.btnAgregarComponentesRol.UseVisualStyleBackColor = true;
+            this.btnAgregarComponentesRol.Click += new System.EventHandler(this.btnAgregarComponentesRol_Click);
+            // 
+            // btnCrearRolAtras
+            // 
+            this.btnCrearRolAtras.Location = new System.Drawing.Point(525, 21);
+            this.btnCrearRolAtras.Name = "btnCrearRolAtras";
+            this.btnCrearRolAtras.Size = new System.Drawing.Size(75, 23);
+            this.btnCrearRolAtras.TabIndex = 2;
+            this.btnCrearRolAtras.Text = "Atras";
+            this.btnCrearRolAtras.UseVisualStyleBackColor = true;
+            this.btnCrearRolAtras.Click += new System.EventHandler(this.btnCrearRolAtras_Click);
+            // 
+            // lvlComponentes
+            // 
+            this.lvlComponentes.AutoSize = true;
+            this.lvlComponentes.Location = new System.Drawing.Point(22, 26);
+            this.lvlComponentes.Name = "lvlComponentes";
+            this.lvlComponentes.Size = new System.Drawing.Size(204, 13);
+            this.lvlComponentes.TabIndex = 1;
+            this.lvlComponentes.Text = "Seleccionar componentes para nuevo rol:";
+            // 
+            // dgvCrearComponentesRol
+            // 
+            this.dgvCrearComponentesRol.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCrearComponentesRol.Location = new System.Drawing.Point(25, 46);
+            this.dgvCrearComponentesRol.Name = "dgvCrearComponentesRol";
+            this.dgvCrearComponentesRol.Size = new System.Drawing.Size(575, 321);
+            this.dgvCrearComponentesRol.TabIndex = 0;
+            this.dgvCrearComponentesRol.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCrearComponentesRol_CellContentClick);
             // 
             // Roles
             // 
@@ -468,7 +430,7 @@
             this.Controls.Add(this.pnlPrincipal);
             this.Controls.Add(this.pnlSecundario);
             this.Controls.Add(this.pnlAgregarUsuario);
-            this.Controls.Add(this.pnlBusquedaPersona);
+            this.Controls.Add(this.pnlComponentesParaRol);
             this.Name = "Roles";
             this.Size = new System.Drawing.Size(2181, 926);
             this.pnlSecundario.ResumeLayout(false);
@@ -479,12 +441,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvPermisosRol)).EndInit();
             this.pnlAgregarUsuario.ResumeLayout(false);
             this.pnlAgregarUsuario.PerformLayout();
-            this.pnlBusquedaPersona.ResumeLayout(false);
-            this.pnlBusquedaPersona.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBusquedaUsuarios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoles)).EndInit();
             this.pnlPrincipal.ResumeLayout(false);
             this.pnlPrincipal.PerformLayout();
+            this.pnlComponentesParaRol.ResumeLayout(false);
+            this.pnlComponentesParaRol.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCrearComponentesRol)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -506,16 +468,6 @@
         private System.Windows.Forms.Button btnBuscarUsuario;
         private System.Windows.Forms.Label lblBuscarUsuario;
         private System.Windows.Forms.TextBox txtUsuarioBuscado;
-        private System.Windows.Forms.Panel pnlBusquedaPersona;
-        private System.Windows.Forms.Label lblBusquedaApellidos;
-        private System.Windows.Forms.Label lblBusquedaUsuarioNombres;
-        private System.Windows.Forms.Button btnBuscarEnBusqueda;
-        private System.Windows.Forms.TextBox txtBusquedaApellidos;
-        private System.Windows.Forms.TextBox txtBusquedaNombres;
-        private System.Windows.Forms.Button btnCancelarBusqueda;
-        private System.Windows.Forms.Button btnAceptarBusqueda;
-        private System.Windows.Forms.Label lblBusquedaPersona;
-        private System.Windows.Forms.DataGridView dgvBusquedaUsuarios;
         private System.Windows.Forms.DataGridView dgvPermisosRol;
         private System.Windows.Forms.Button btnEditarRol;
         private System.Windows.Forms.Label lblRol;
@@ -527,5 +479,11 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnAtras;
+        private System.Windows.Forms.Panel pnlComponentesParaRol;
+        private System.Windows.Forms.DataGridView dgvCrearComponentesRol;
+        private System.Windows.Forms.Label lvlComponentes;
+        private System.Windows.Forms.Button btnCrearRolAtras;
+        private System.Windows.Forms.Button btnAgregarComponentesRol;
+        private System.Windows.Forms.Button btnAgregarPermisosRol;
     }
 }

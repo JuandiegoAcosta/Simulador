@@ -200,9 +200,9 @@ C:\Users\RithardLL\Source\Repos\Simulador22\Modelos\bin\Debug\Modelos.pdb
 C:\Users\RithardLL\Source\Repos\Simulador22\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
 C:\Users\RithardLL\Source\Repos\Simulador22\Modelos\obj\Debug\Modelos.dll
 C:\Users\RithardLL\Source\Repos\Simulador22\Modelos\obj\Debug\Modelos.pdb
-C:\Users\elife\Desktop\Others\ISUR\Bancario\Modelos\bin\Debug\Modelos.dll
-C:\Users\elife\Desktop\Others\ISUR\Bancario\Modelos\bin\Debug\Modelos.pdb
-C:\Users\elife\Desktop\Others\ISUR\Bancario\Modelos\obj\Debug\Modelos.csprojAssemblyReference.cache
-C:\Users\elife\Desktop\Others\ISUR\Bancario\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
-C:\Users\elife\Desktop\Others\ISUR\Bancario\Modelos\obj\Debug\Modelos.dll
-C:\Users\elife\Desktop\Others\ISUR\Bancario\Modelos\obj\Debug\Modelos.pdb
+C:\Users\RithardLL\Source\Repos\Simulador24\Modelos\bin\Debug\Modelos.dll
+C:\Users\RithardLL\Source\Repos\Simulador24\Modelos\bin\Debug\Modelos.pdb
+C:\Users\RithardLL\Source\Repos\Simulador24\Modelos\obj\Debug\Modelos.csprojAssemblyReference.cache
+C:\Users\RithardLL\Source\Repos\Simulador24\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
+C:\Users\RithardLL\Source\Repos\Simulador24\Modelos\obj\Debug\Modelos.dll
+C:\Users\RithardLL\Source\Repos\Simulador24\Modelos\obj\Debug\Modelos.pdb

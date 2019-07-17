@@ -1250,6 +1250,51 @@ namespace CDatos.Manager
 
 
 
+        public bool ActualizarEstadoRolUsuario(int admin, int idusuario, bool estado)
+        {
+            try
+            {
+                using (var connection = Util.ConnectionFactory.conexion())
+                {
+                    connection.Open();
+
+                    SqlTransaction sqlTran = connection.BeginTransaction();
+
+                    SqlCommand command = connection.CreateCommand();
+
+                    command.Transaction = sqlTran;
+                    command.Parameters.AddWithValue("@admin", admin);
+                    command.Parameters.AddWithValue("@estado", estado);
+                    command.Parameters.AddWithValue("@idUsuario", idusuario);
+
+
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.CommandText = "sp_ActualizarEstadoRol";
+
+                    int afectados = command.ExecuteNonQuery();
+
+                    // Commit the transaction.
+                    sqlTran.Commit();
+
+                    connection.Close();
+                    connection.Dispose();
+
+                    if (afectados > 0)
+                        return true;
+                    else
+                        return false;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+
+
+
+
         #endregion
 
     }
