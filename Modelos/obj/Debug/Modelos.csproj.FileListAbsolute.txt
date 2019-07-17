@@ -206,3 +206,9 @@ C:\Users\RithardLL\Source\Repos\Simulador24\Modelos\obj\Debug\Modelos.csprojAsse
 C:\Users\RithardLL\Source\Repos\Simulador24\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
 C:\Users\RithardLL\Source\Repos\Simulador24\Modelos\obj\Debug\Modelos.dll
 C:\Users\RithardLL\Source\Repos\Simulador24\Modelos\obj\Debug\Modelos.pdb
+C:\Users\RithardLL\Source\Repos\Simulador25\Modelos\bin\Debug\Modelos.dll
+C:\Users\RithardLL\Source\Repos\Simulador25\Modelos\bin\Debug\Modelos.pdb
+C:\Users\RithardLL\Source\Repos\Simulador25\Modelos\obj\Debug\Modelos.csprojAssemblyReference.cache
+C:\Users\RithardLL\Source\Repos\Simulador25\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
+C:\Users\RithardLL\Source\Repos\Simulador25\Modelos\obj\Debug\Modelos.dll
+C:\Users\RithardLL\Source\Repos\Simulador25\Modelos\obj\Debug\Modelos.pdb

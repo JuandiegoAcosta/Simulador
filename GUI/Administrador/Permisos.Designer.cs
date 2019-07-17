@@ -28,21 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlAgregarPermisos = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtCodigoAgregar = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtDescripcionAgregar = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtNombeAgregar = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cmbComponentesPadreAgregar = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.checkEstadoAgregar = new System.Windows.Forms.CheckBox();
-            this.BtnCancelarAgregarComponente = new System.Windows.Forms.Button();
-            this.btnAgregarNuevoComponente = new System.Windows.Forms.Button();
             this.pnlAgregar = new System.Windows.Forms.Panel();
             this.pnlAgregarRoles = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -82,8 +67,6 @@
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnAgregarPermiso = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.pnlAgregarPermisos.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.pnlAgregar.SuspendLayout();
             this.pnlAgregarRoles.SuspendLayout();
             this.pnlAgregarUsuarios.SuspendLayout();
@@ -96,161 +79,6 @@
             this.pnlPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPermisos)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pnlAgregarPermisos
-            // 
-            this.pnlAgregarPermisos.Controls.Add(this.panel3);
-            this.pnlAgregarPermisos.Location = new System.Drawing.Point(85, 38);
-            this.pnlAgregarPermisos.Name = "pnlAgregarPermisos";
-            this.pnlAgregarPermisos.Size = new System.Drawing.Size(660, 400);
-            this.pnlAgregarPermisos.TabIndex = 18;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.label9);
-            this.panel3.Controls.Add(this.txtCodigoAgregar);
-            this.panel3.Controls.Add(this.label8);
-            this.panel3.Controls.Add(this.txtDescripcionAgregar);
-            this.panel3.Controls.Add(this.label7);
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Controls.Add(this.txtNombeAgregar);
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.cmbComponentesPadreAgregar);
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.checkEstadoAgregar);
-            this.panel3.Controls.Add(this.BtnCancelarAgregarComponente);
-            this.panel3.Controls.Add(this.btnAgregarNuevoComponente);
-            this.panel3.Location = new System.Drawing.Point(126, 41);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(366, 315);
-            this.panel3.TabIndex = 11;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(46, 180);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(45, 16);
-            this.label9.TabIndex = 26;
-            this.label9.Text = "Padre";
-            // 
-            // txtCodigoAgregar
-            // 
-            this.txtCodigoAgregar.Location = new System.Drawing.Point(109, 138);
-            this.txtCodigoAgregar.Name = "txtCodigoAgregar";
-            this.txtCodigoAgregar.Size = new System.Drawing.Size(228, 20);
-            this.txtCodigoAgregar.TabIndex = 25;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(46, 144);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(52, 16);
-            this.label8.TabIndex = 24;
-            this.label8.Text = "Código";
-            // 
-            // txtDescripcionAgregar
-            // 
-            this.txtDescripcionAgregar.Location = new System.Drawing.Point(109, 84);
-            this.txtDescripcionAgregar.Name = "txtDescripcionAgregar";
-            this.txtDescripcionAgregar.Size = new System.Drawing.Size(228, 20);
-            this.txtDescripcionAgregar.TabIndex = 23;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(52, 114);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(51, 16);
-            this.label7.TabIndex = 22;
-            this.label7.Text = "Estado";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(23, 88);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(80, 16);
-            this.label6.TabIndex = 21;
-            this.label6.Text = "Descripcion";
-            // 
-            // txtNombeAgregar
-            // 
-            this.txtNombeAgregar.Location = new System.Drawing.Point(109, 53);
-            this.txtNombeAgregar.Name = "txtNombeAgregar";
-            this.txtNombeAgregar.Size = new System.Drawing.Size(228, 20);
-            this.txtNombeAgregar.TabIndex = 20;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(46, 59);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 16);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "Nombre";
-            // 
-            // cmbComponentesPadreAgregar
-            // 
-            this.cmbComponentesPadreAgregar.FormattingEnabled = true;
-            this.cmbComponentesPadreAgregar.Location = new System.Drawing.Point(109, 175);
-            this.cmbComponentesPadreAgregar.Name = "cmbComponentesPadreAgregar";
-            this.cmbComponentesPadreAgregar.Size = new System.Drawing.Size(169, 21);
-            this.cmbComponentesPadreAgregar.TabIndex = 18;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(27, 20);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(109, 16);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "Agregar permiso";
-            // 
-            // checkEstadoAgregar
-            // 
-            this.checkEstadoAgregar.AutoSize = true;
-            this.checkEstadoAgregar.Location = new System.Drawing.Point(109, 115);
-            this.checkEstadoAgregar.Name = "checkEstadoAgregar";
-            this.checkEstadoAgregar.Size = new System.Drawing.Size(64, 17);
-            this.checkEstadoAgregar.TabIndex = 15;
-            this.checkEstadoAgregar.Text = "Habilitar";
-            this.checkEstadoAgregar.UseVisualStyleBackColor = true;
-            // 
-            // BtnCancelarAgregarComponente
-            // 
-            this.BtnCancelarAgregarComponente.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.BtnCancelarAgregarComponente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCancelarAgregarComponente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCancelarAgregarComponente.ForeColor = System.Drawing.SystemColors.Window;
-            this.BtnCancelarAgregarComponente.Location = new System.Drawing.Point(203, 248);
-            this.BtnCancelarAgregarComponente.Name = "BtnCancelarAgregarComponente";
-            this.BtnCancelarAgregarComponente.Size = new System.Drawing.Size(75, 25);
-            this.BtnCancelarAgregarComponente.TabIndex = 13;
-            this.BtnCancelarAgregarComponente.Text = "Cancelar";
-            this.BtnCancelarAgregarComponente.UseVisualStyleBackColor = false;
-            this.BtnCancelarAgregarComponente.Click += new System.EventHandler(this.BtnCancelarAgregarComponente_Click);
-            // 
-            // btnAgregarNuevoComponente
-            // 
-            this.btnAgregarNuevoComponente.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnAgregarNuevoComponente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarNuevoComponente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarNuevoComponente.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnAgregarNuevoComponente.Location = new System.Drawing.Point(89, 248);
-            this.btnAgregarNuevoComponente.Name = "btnAgregarNuevoComponente";
-            this.btnAgregarNuevoComponente.Size = new System.Drawing.Size(75, 25);
-            this.btnAgregarNuevoComponente.TabIndex = 12;
-            this.btnAgregarNuevoComponente.Text = "Agregar";
-            this.btnAgregarNuevoComponente.UseVisualStyleBackColor = false;
-            this.btnAgregarNuevoComponente.Click += new System.EventHandler(this.btnAgregarNuevoComponente_Click);
             // 
             // pnlAgregar
             // 
@@ -399,7 +227,7 @@
             // 
             this.pnlSecundario.Controls.Add(this.btnAtras);
             this.pnlSecundario.Controls.Add(this.tabControl1);
-            this.pnlSecundario.Location = new System.Drawing.Point(17, 205);
+            this.pnlSecundario.Location = new System.Drawing.Point(689, 28);
             this.pnlSecundario.Name = "pnlSecundario";
             this.pnlSecundario.Size = new System.Drawing.Size(660, 400);
             this.pnlSecundario.TabIndex = 16;
@@ -566,7 +394,7 @@
             this.pnlPrincipal.Controls.Add(this.dgvPermisos);
             this.pnlPrincipal.Controls.Add(this.btnAgregarPermiso);
             this.pnlPrincipal.Controls.Add(this.label2);
-            this.pnlPrincipal.Location = new System.Drawing.Point(88, 375);
+            this.pnlPrincipal.Location = new System.Drawing.Point(60, 181);
             this.pnlPrincipal.Name = "pnlPrincipal";
             this.pnlPrincipal.Size = new System.Drawing.Size(660, 400);
             this.pnlPrincipal.TabIndex = 15;
@@ -650,15 +478,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.pnlAgregarPermisos);
             this.Controls.Add(this.pnlAgregar);
             this.Controls.Add(this.pnlSecundario);
             this.Controls.Add(this.pnlPrincipal);
             this.Name = "Permisos";
             this.Size = new System.Drawing.Size(931, 576);
-            this.pnlAgregarPermisos.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.pnlAgregar.ResumeLayout(false);
             this.pnlAgregarRoles.ResumeLayout(false);
             this.pnlAgregarRoles.PerformLayout();
@@ -678,22 +502,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel pnlAgregarPermisos;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtCodigoAgregar;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtDescripcionAgregar;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtNombeAgregar;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cmbComponentesPadreAgregar;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.CheckBox checkEstadoAgregar;
-        private System.Windows.Forms.Button BtnCancelarAgregarComponente;
-        private System.Windows.Forms.Button btnAgregarNuevoComponente;
         private System.Windows.Forms.Panel pnlAgregar;
         private System.Windows.Forms.Panel pnlAgregarRoles;
         private System.Windows.Forms.Label label3;

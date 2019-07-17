@@ -110,6 +110,12 @@
     <Compile Include="Administrador\EditarEliminar.Designer.cs">
       <DependentUpon>EditarEliminar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Administrador\frmAgregarPermiso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrador\frmAgregarPermiso.Designer.cs">
+      <DependentUpon>frmAgregarPermiso.cs</DependentUpon>
+    </Compile>
     <Compile Include="Administrador\Permisos.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -468,6 +474,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Administrador\EditarEliminar.resx">
       <DependentUpon>EditarEliminar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrador\frmAgregarPermiso.resx">
+      <DependentUpon>frmAgregarPermiso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Administrador\Permisos.resx">
       <DependentUpon>Permisos.cs</DependentUpon>
