@@ -902,6 +902,12 @@ namespace Sistema_Bancario.WsSistemaBancario {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IComponenteService/Componente_ObtenerComponentesRol", ReplyAction="http://tempuri.org/IComponenteService/Componente_ObtenerComponentesRolResponse")]
         System.Threading.Tasks.Task<Modelos.Modelos.ComponenteModel[]> Componente_ObtenerComponentesRolAsync(int aID_Rol);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IComponenteService/ObtenerTodosComponentes", ReplyAction="http://tempuri.org/IComponenteService/ObtenerTodosComponentesResponse")]
+        Modelos.Modelos.ComponenteModel[] ObtenerTodosComponentes();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IComponenteService/ObtenerTodosComponentes", ReplyAction="http://tempuri.org/IComponenteService/ObtenerTodosComponentesResponse")]
+        System.Threading.Tasks.Task<Modelos.Modelos.ComponenteModel[]> ObtenerTodosComponentesAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -977,6 +983,14 @@ namespace Sistema_Bancario.WsSistemaBancario {
         
         public System.Threading.Tasks.Task<Modelos.Modelos.ComponenteModel[]> Componente_ObtenerComponentesRolAsync(int aID_Rol) {
             return base.Channel.Componente_ObtenerComponentesRolAsync(aID_Rol);
+        }
+        
+        public Modelos.Modelos.ComponenteModel[] ObtenerTodosComponentes() {
+            return base.Channel.ObtenerTodosComponentes();
+        }
+        
+        public System.Threading.Tasks.Task<Modelos.Modelos.ComponenteModel[]> ObtenerTodosComponentesAsync() {
+            return base.Channel.ObtenerTodosComponentesAsync();
         }
     }
     
@@ -1207,16 +1221,22 @@ namespace Sistema_Bancario.WsSistemaBancario {
     public interface IPersonaService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/Persona_Crear", ReplyAction="http://tempuri.org/IPersonaService/Persona_CrearResponse")]
-        bool Persona_Crear(Modelos.Modelos.PersonaModel aPersona, int id_user);
+        bool Persona_Crear(Modelos.Modelos.PersonaModel aPersona);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/Persona_Crear", ReplyAction="http://tempuri.org/IPersonaService/Persona_CrearResponse")]
-        System.Threading.Tasks.Task<bool> Persona_CrearAsync(Modelos.Modelos.PersonaModel aPersona, int id_user);
+        System.Threading.Tasks.Task<bool> Persona_CrearAsync(Modelos.Modelos.PersonaModel aPersona);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/Persona_Editar", ReplyAction="http://tempuri.org/IPersonaService/Persona_EditarResponse")]
-        bool Persona_Editar(Modelos.Modelos.PersonaModel aPersona, int id_user);
+        bool Persona_Editar(Modelos.Modelos.PersonaModel aPersona);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/Persona_Editar", ReplyAction="http://tempuri.org/IPersonaService/Persona_EditarResponse")]
-        System.Threading.Tasks.Task<bool> Persona_EditarAsync(Modelos.Modelos.PersonaModel aPersona, int id_user);
+        System.Threading.Tasks.Task<bool> Persona_EditarAsync(Modelos.Modelos.PersonaModel aPersona);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/ActualizarEstado", ReplyAction="http://tempuri.org/IPersonaService/ActualizarEstadoResponse")]
+        bool ActualizarEstado(int admin, int idusuario, bool estado);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/ActualizarEstado", ReplyAction="http://tempuri.org/IPersonaService/ActualizarEstadoResponse")]
+        System.Threading.Tasks.Task<bool> ActualizarEstadoAsync(int admin, int idusuario, bool estado);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/Persona_Eliminar", ReplyAction="http://tempuri.org/IPersonaService/Persona_EliminarResponse")]
         bool Persona_Eliminar(int aID_Persona);
@@ -1302,11 +1322,29 @@ namespace Sistema_Bancario.WsSistemaBancario {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/PersonaSelectbyNombres", ReplyAction="http://tempuri.org/IPersonaService/PersonaSelectbyNombresResponse")]
         System.Threading.Tasks.Task<Modelos.Modelos.PersonaModel[]> PersonaSelectbyNombresAsync(string aValue);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/PersonaSelectbyApellidos", ReplyAction="http://tempuri.org/IPersonaService/PersonaSelectbyApellidosResponse")]
+        Modelos.Modelos.PersonaModel[] PersonaSelectbyApellidos(string aValue);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/PersonaSelectbyApellidos", ReplyAction="http://tempuri.org/IPersonaService/PersonaSelectbyApellidosResponse")]
+        System.Threading.Tasks.Task<Modelos.Modelos.PersonaModel[]> PersonaSelectbyApellidosAsync(string aValue);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/PersonaSelectbyId", ReplyAction="http://tempuri.org/IPersonaService/PersonaSelectbyIdResponse")]
+        Modelos.Modelos.PersonaModel[] PersonaSelectbyId(string aValue);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/PersonaSelectbyId", ReplyAction="http://tempuri.org/IPersonaService/PersonaSelectbyIdResponse")]
+        System.Threading.Tasks.Task<Modelos.Modelos.PersonaModel[]> PersonaSelectbyIdAsync(string aValue);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/ObtenerUsuariosSinCredenciales", ReplyAction="http://tempuri.org/IPersonaService/ObtenerUsuariosSinCredencialesResponse")]
         Modelos.Modelos.PersonaModel[] ObtenerUsuariosSinCredenciales();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/ObtenerUsuariosSinCredenciales", ReplyAction="http://tempuri.org/IPersonaService/ObtenerUsuariosSinCredencialesResponse")]
         System.Threading.Tasks.Task<Modelos.Modelos.PersonaModel[]> ObtenerUsuariosSinCredencialesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/ActualizarEstadoRolUsuario", ReplyAction="http://tempuri.org/IPersonaService/ActualizarEstadoRolUsuarioResponse")]
+        bool ActualizarEstadoRolUsuario(int admin, int idusuario, bool estado);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonaService/ActualizarEstadoRolUsuario", ReplyAction="http://tempuri.org/IPersonaService/ActualizarEstadoRolUsuarioResponse")]
+        System.Threading.Tasks.Task<bool> ActualizarEstadoRolUsuarioAsync(int admin, int idusuario, bool estado);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1336,20 +1374,28 @@ namespace Sistema_Bancario.WsSistemaBancario {
                 base(binding, remoteAddress) {
         }
         
-        public bool Persona_Crear(Modelos.Modelos.PersonaModel aPersona, int id_user) {
-            return base.Channel.Persona_Crear(aPersona, id_user);
+        public bool Persona_Crear(Modelos.Modelos.PersonaModel aPersona) {
+            return base.Channel.Persona_Crear(aPersona);
         }
         
-        public System.Threading.Tasks.Task<bool> Persona_CrearAsync(Modelos.Modelos.PersonaModel aPersona, int id_user) {
-            return base.Channel.Persona_CrearAsync(aPersona, id_user);
+        public System.Threading.Tasks.Task<bool> Persona_CrearAsync(Modelos.Modelos.PersonaModel aPersona) {
+            return base.Channel.Persona_CrearAsync(aPersona);
         }
         
-        public bool Persona_Editar(Modelos.Modelos.PersonaModel aPersona, int id_user) {
-            return base.Channel.Persona_Editar(aPersona, id_user);
+        public bool Persona_Editar(Modelos.Modelos.PersonaModel aPersona) {
+            return base.Channel.Persona_Editar(aPersona);
         }
         
-        public System.Threading.Tasks.Task<bool> Persona_EditarAsync(Modelos.Modelos.PersonaModel aPersona, int id_user) {
-            return base.Channel.Persona_EditarAsync(aPersona, id_user);
+        public System.Threading.Tasks.Task<bool> Persona_EditarAsync(Modelos.Modelos.PersonaModel aPersona) {
+            return base.Channel.Persona_EditarAsync(aPersona);
+        }
+        
+        public bool ActualizarEstado(int admin, int idusuario, bool estado) {
+            return base.Channel.ActualizarEstado(admin, idusuario, estado);
+        }
+        
+        public System.Threading.Tasks.Task<bool> ActualizarEstadoAsync(int admin, int idusuario, bool estado) {
+            return base.Channel.ActualizarEstadoAsync(admin, idusuario, estado);
         }
         
         public bool Persona_Eliminar(int aID_Persona) {
@@ -1464,12 +1510,36 @@ namespace Sistema_Bancario.WsSistemaBancario {
             return base.Channel.PersonaSelectbyNombresAsync(aValue);
         }
         
+        public Modelos.Modelos.PersonaModel[] PersonaSelectbyApellidos(string aValue) {
+            return base.Channel.PersonaSelectbyApellidos(aValue);
+        }
+        
+        public System.Threading.Tasks.Task<Modelos.Modelos.PersonaModel[]> PersonaSelectbyApellidosAsync(string aValue) {
+            return base.Channel.PersonaSelectbyApellidosAsync(aValue);
+        }
+        
+        public Modelos.Modelos.PersonaModel[] PersonaSelectbyId(string aValue) {
+            return base.Channel.PersonaSelectbyId(aValue);
+        }
+        
+        public System.Threading.Tasks.Task<Modelos.Modelos.PersonaModel[]> PersonaSelectbyIdAsync(string aValue) {
+            return base.Channel.PersonaSelectbyIdAsync(aValue);
+        }
+        
         public Modelos.Modelos.PersonaModel[] ObtenerUsuariosSinCredenciales() {
             return base.Channel.ObtenerUsuariosSinCredenciales();
         }
         
         public System.Threading.Tasks.Task<Modelos.Modelos.PersonaModel[]> ObtenerUsuariosSinCredencialesAsync() {
             return base.Channel.ObtenerUsuariosSinCredencialesAsync();
+        }
+        
+        public bool ActualizarEstadoRolUsuario(int admin, int idusuario, bool estado) {
+            return base.Channel.ActualizarEstadoRolUsuario(admin, idusuario, estado);
+        }
+        
+        public System.Threading.Tasks.Task<bool> ActualizarEstadoRolUsuarioAsync(int admin, int idusuario, bool estado) {
+            return base.Channel.ActualizarEstadoRolUsuarioAsync(admin, idusuario, estado);
         }
     }
     
@@ -2455,6 +2525,123 @@ namespace Sistema_Bancario.WsSistemaBancario {
         
         public System.Threading.Tasks.Task<Modelos.Modelos.DetalleCajaChicaModel[]> DetalleCajaChica_ObtenerTodosAsync() {
             return base.Channel.DetalleCajaChica_ObtenerTodosAsync();
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WsSistemaBancario.IPrestamoService")]
+    public interface IPrestamoService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrestamoService/Prestamo_Crear", ReplyAction="http://tempuri.org/IPrestamoService/Prestamo_CrearResponse")]
+        bool Prestamo_Crear(Modelos.Modelos.PrestamosModel aPrestamo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrestamoService/Prestamo_Crear", ReplyAction="http://tempuri.org/IPrestamoService/Prestamo_CrearResponse")]
+        System.Threading.Tasks.Task<bool> Prestamo_CrearAsync(Modelos.Modelos.PrestamosModel aPrestamo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrestamoService/Prestamo_Editar", ReplyAction="http://tempuri.org/IPrestamoService/Prestamo_EditarResponse")]
+        bool Prestamo_Editar(Modelos.Modelos.PrestamosModel aPrestamo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrestamoService/Prestamo_Editar", ReplyAction="http://tempuri.org/IPrestamoService/Prestamo_EditarResponse")]
+        System.Threading.Tasks.Task<bool> Prestamo_EditarAsync(Modelos.Modelos.PrestamosModel aPrestamo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrestamoService/Prestamo_Borrar", ReplyAction="http://tempuri.org/IPrestamoService/Prestamo_BorrarResponse")]
+        bool Prestamo_Borrar(int aID_Prestamo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrestamoService/Prestamo_Borrar", ReplyAction="http://tempuri.org/IPrestamoService/Prestamo_BorrarResponse")]
+        System.Threading.Tasks.Task<bool> Prestamo_BorrarAsync(int aID_Prestamo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrestamoService/Prestamo_ObtenerUno", ReplyAction="http://tempuri.org/IPrestamoService/Prestamo_ObtenerUnoResponse")]
+        Modelos.Modelos.PrestamosModel Prestamo_ObtenerUno(int aNro_Prestamo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrestamoService/Prestamo_ObtenerUno", ReplyAction="http://tempuri.org/IPrestamoService/Prestamo_ObtenerUnoResponse")]
+        System.Threading.Tasks.Task<Modelos.Modelos.PrestamosModel> Prestamo_ObtenerUnoAsync(int aNro_Prestamo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrestamoService/Prestamo_SelecionarPorCuenta", ReplyAction="http://tempuri.org/IPrestamoService/Prestamo_SelecionarPorCuentaResponse")]
+        Modelos.Modelos.PrestamosModel[] Prestamo_SelecionarPorCuenta(string aID_Cuenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrestamoService/Prestamo_SelecionarPorCuenta", ReplyAction="http://tempuri.org/IPrestamoService/Prestamo_SelecionarPorCuentaResponse")]
+        System.Threading.Tasks.Task<Modelos.Modelos.PrestamosModel[]> Prestamo_SelecionarPorCuentaAsync(string aID_Cuenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrestamoService/Prestamo_SeleccionarPorId", ReplyAction="http://tempuri.org/IPrestamoService/Prestamo_SeleccionarPorIdResponse")]
+        Modelos.Modelos.PrestamosModel[] Prestamo_SeleccionarPorId(string aID_Prestamo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrestamoService/Prestamo_SeleccionarPorId", ReplyAction="http://tempuri.org/IPrestamoService/Prestamo_SeleccionarPorIdResponse")]
+        System.Threading.Tasks.Task<Modelos.Modelos.PrestamosModel[]> Prestamo_SeleccionarPorIdAsync(string aID_Prestamo);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IPrestamoServiceChannel : Sistema_Bancario.WsSistemaBancario.IPrestamoService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class PrestamoServiceClient : System.ServiceModel.ClientBase<Sistema_Bancario.WsSistemaBancario.IPrestamoService>, Sistema_Bancario.WsSistemaBancario.IPrestamoService {
+        
+        public PrestamoServiceClient() {
+        }
+        
+        public PrestamoServiceClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public PrestamoServiceClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public PrestamoServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public PrestamoServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public bool Prestamo_Crear(Modelos.Modelos.PrestamosModel aPrestamo) {
+            return base.Channel.Prestamo_Crear(aPrestamo);
+        }
+        
+        public System.Threading.Tasks.Task<bool> Prestamo_CrearAsync(Modelos.Modelos.PrestamosModel aPrestamo) {
+            return base.Channel.Prestamo_CrearAsync(aPrestamo);
+        }
+        
+        public bool Prestamo_Editar(Modelos.Modelos.PrestamosModel aPrestamo) {
+            return base.Channel.Prestamo_Editar(aPrestamo);
+        }
+        
+        public System.Threading.Tasks.Task<bool> Prestamo_EditarAsync(Modelos.Modelos.PrestamosModel aPrestamo) {
+            return base.Channel.Prestamo_EditarAsync(aPrestamo);
+        }
+        
+        public bool Prestamo_Borrar(int aID_Prestamo) {
+            return base.Channel.Prestamo_Borrar(aID_Prestamo);
+        }
+        
+        public System.Threading.Tasks.Task<bool> Prestamo_BorrarAsync(int aID_Prestamo) {
+            return base.Channel.Prestamo_BorrarAsync(aID_Prestamo);
+        }
+        
+        public Modelos.Modelos.PrestamosModel Prestamo_ObtenerUno(int aNro_Prestamo) {
+            return base.Channel.Prestamo_ObtenerUno(aNro_Prestamo);
+        }
+        
+        public System.Threading.Tasks.Task<Modelos.Modelos.PrestamosModel> Prestamo_ObtenerUnoAsync(int aNro_Prestamo) {
+            return base.Channel.Prestamo_ObtenerUnoAsync(aNro_Prestamo);
+        }
+        
+        public Modelos.Modelos.PrestamosModel[] Prestamo_SelecionarPorCuenta(string aID_Cuenta) {
+            return base.Channel.Prestamo_SelecionarPorCuenta(aID_Cuenta);
+        }
+        
+        public System.Threading.Tasks.Task<Modelos.Modelos.PrestamosModel[]> Prestamo_SelecionarPorCuentaAsync(string aID_Cuenta) {
+            return base.Channel.Prestamo_SelecionarPorCuentaAsync(aID_Cuenta);
+        }
+        
+        public Modelos.Modelos.PrestamosModel[] Prestamo_SeleccionarPorId(string aID_Prestamo) {
+            return base.Channel.Prestamo_SeleccionarPorId(aID_Prestamo);
+        }
+        
+        public System.Threading.Tasks.Task<Modelos.Modelos.PrestamosModel[]> Prestamo_SeleccionarPorIdAsync(string aID_Prestamo) {
+            return base.Channel.Prestamo_SeleccionarPorIdAsync(aID_Prestamo);
         }
     }
 }

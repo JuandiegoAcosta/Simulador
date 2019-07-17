@@ -69,6 +69,7 @@ namespace CDatos.Manager
         }
 
 
+
         /// <summary>
         /// Updates a record to the ComponenteModel table.
         /// returns True if value saved successfully else false
@@ -120,6 +121,7 @@ namespace CDatos.Manager
                 return false;
             }
         }
+
 
 
         /// <summary>
@@ -246,6 +248,7 @@ namespace CDatos.Manager
 
                     SqlCommand command = connection.CreateCommand();
 
+                    command.Parameters.AddWithValue("@pMode", 1);
                     command.CommandType = CommandType.StoredProcedure;
 
                     command.CommandText = "sp_tComponente";
@@ -409,7 +412,58 @@ namespace CDatos.Manager
 
 
 
+        public List<ComponenteModel> ObtenerTodosComponentes()
+        {
 
+            List<ComponenteModel> ComponenteModellist = new List<ComponenteModel>();
+
+            try
+            {
+                using (var connection = Util.ConnectionFactory.conexion())
+                {
+                    connection.Open();
+
+                    SqlCommand command = connection.CreateCommand();
+
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.CommandText = "sp_ObtenerTodosComponentes";
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+
+                            int Id = (int)(reader["Id"]);
+                            string Nombre = (string)(reader["Nombre"]);
+                            string Descripcion = (string)(reader["Descripcion"]);
+                            bool Estado = (bool)(reader["Estado"]);
+                            string Codigo = (string)(reader["Codigo"]);
+
+
+                            ComponenteModellist.Add(new ComponenteModel
+                            {
+                                Id = Id,
+                                Nombre = Nombre,
+                                Descripcion = Descripcion,
+
+                                Estado = Estado,
+                                Codigo = Codigo,
+
+                            });
+                        }
+                    }
+                }
+
+                return ComponenteModellist;
+            }
+            catch (Exception ex)
+            {
+                return ComponenteModellist;
+            }
+        }
 
 
 

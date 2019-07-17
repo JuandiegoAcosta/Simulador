@@ -18,7 +18,7 @@ namespace ServiciosBancarios
 {
     // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de clase "Service1" en el código, en svc y en el archivo de configuración.
     // NOTE: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione Service1.svc o Service1.svc.cs en el Explorador de soluciones e inicie la depuración.
-     public class SistemaBancario : ICobroChequeService, IEmpresaService, IPagoServicioService, IRecaudosService, ITipoMonedaService, ITipoMovimientoService, IVentanillaService, IBancoService, IComponenteService, IHorariosAtencionService, IPermisosUsuarioService, IPersonaService, IRolesService, IRolUsuarioService, ISucursalService, ITipoDocumentoService, ITurnosService, ITurnoUsuarioService, ICuentaService,ICajaChicaService,IDetalleCajaChicaService
+     public class SistemaBancario : ICobroChequeService, IEmpresaService, IPagoServicioService, IRecaudosService, ITipoMonedaService, ITipoMovimientoService, IVentanillaService, IBancoService, IComponenteService, IHorariosAtencionService, IPermisosUsuarioService, IPersonaService, IRolesService, IRolUsuarioService, ISucursalService, ITipoDocumentoService, ITurnosService, ITurnoUsuarioService, ICuentaService,ICajaChicaService,IDetalleCajaChicaService, IPrestamoService
     {
         #region [ Varibles Globales ]
         #region [ Ventanilla Front ]
@@ -50,6 +50,7 @@ namespace ServiciosBancarios
         #region [ Plataforma ]
 
         private BLCuenta BLCuenta;
+        private BLPrestamo BLPrestamo;
 
         #endregion
 
@@ -86,6 +87,7 @@ namespace ServiciosBancarios
             #region [ Plataforma ]
 
             BLCuenta = new BLCuenta();
+            BLPrestamo = new BLPrestamo();
 
             #endregion
         }
@@ -363,6 +365,11 @@ namespace ServiciosBancarios
             return BLComponente.ObtenerComponentesRol(aID_Rol);
         }
 
+        public List<ComponenteModel> ObtenerTodosComponentes()
+        {
+            return BLComponente.ObtenerTodosComponentes();
+        }
+
 
         #endregion
 
@@ -433,9 +440,14 @@ namespace ServiciosBancarios
             return BLPersona.Crear(aPersona);
         }
 
-        public bool Persona_Editar(PersonaModel aPersona, int id_user)
+        public bool Persona_Editar(PersonaModel aPersona)
         {
             return BLPersona.Editar(aPersona);
+        }
+
+        public bool ActualizarEstado(int admin, int idusuario, bool estado)
+        {
+            return BLPersona.ActualizarEstado(admin, idusuario, estado);
         }
 
         public bool Persona_Eliminar(int aID_Persona)
@@ -498,6 +510,11 @@ namespace ServiciosBancarios
             return BLPersona.personaSelectbyNombres(nombres);
         }
 
+        public List<PersonaModel> PersonaSelectbyApellidos(string apellidos)
+        {
+            return BLPersona.personaSelectbyApellidos(apellidos);
+        }
+
         public bool Persona_CrearNuevoUsuario(int idPersona, string Usuario, string Contraseña, bool Estado)
         {
             return BLPersona.CrearNuevoUsuario(idPersona,Usuario,Contraseña,Estado);
@@ -507,10 +524,22 @@ namespace ServiciosBancarios
         {
             return BLPersona.UsuarioSelectAll();
         }
+
+        public List<PersonaModel> PersonaSelectbyId(string aValue)
+        {
+            return BLPersona.personaSelectbyID(aValue);
+        }
+
         public List<PersonaModel> ObtenerUsuariosSinCredenciales()
         {
             return BLPersona.ObtenerUsuariosSinCredenciales();
         }
+
+        public bool ActualizarEstadoRolUsuario(int admin, int idusuario, bool estado)
+        {
+            return BLPersona.ActualizarEstadoRolUsuario(admin,idusuario,estado);
+        }
+
 
         #endregion
 
@@ -745,6 +774,40 @@ namespace ServiciosBancarios
 
         #endregion
 
+        #region Prestamos
+
+        public bool Prestamo_Crear(PrestamosModel aPrestamo)
+        {
+            return BLPrestamo.Insert(aPrestamo);
+        }
+
+        public bool Prestamo_Editar(PrestamosModel aPrestamo)
+        {
+            return BLPrestamo.Update(aPrestamo);
+        }
+
+        public bool Prestamo_Borrar(int aID_Prestamo)
+        {
+            return BLPrestamo.Delete(aID_Prestamo);
+        }
+
+        public PrestamosModel Prestamo_ObtenerUno(int aNro_Prestamo)
+        {
+            return BLPrestamo.Getprestamo(aNro_Prestamo);
+        }
+
+        public List<PrestamosModel> Prestamo_SelecionarPorCuenta(string aID_Cuenta)
+        {
+            return BLPrestamo.prestamoSelectbyNroCuenta(aID_Cuenta);
+        }
+
+        public List<PrestamosModel> Prestamo_SeleccionarPorId(string aID_Prestamo)
+        {
+            return BLPrestamo.prestamoSelectbyID(aID_Prestamo);
+        }
+
+        #endregion
+
         public List<VentanillaModel> GetVentanillasXSucursal(int Idsucursal)
         {
             throw new NotImplementedException();
@@ -823,11 +886,8 @@ namespace ServiciosBancarios
             throw new NotImplementedException();
         }
 
-   
-
-
-
         #endregion
+
         #endregion
     }
 }

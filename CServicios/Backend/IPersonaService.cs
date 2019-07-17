@@ -13,10 +13,13 @@ namespace ServiciosBancarios.Backend
     interface IPersonaService
     {
         [OperationContract]
-        bool Persona_Crear(PersonaModel aPersona, int id_user);
+        bool Persona_Crear(PersonaModel aPersona);
 
         [OperationContract]
-        bool Persona_Editar(PersonaModel aPersona, int id_user);
+        bool Persona_Editar(PersonaModel aPersona);
+
+        [OperationContract]
+        bool ActualizarEstado(int admin, int idusuario, bool estado);
 
         [OperationContract]
         bool Persona_Eliminar(int aID_Persona);
@@ -59,6 +62,13 @@ namespace ServiciosBancarios.Backend
 
         [OperationContract]
         List<PersonaModel> PersonaSelectbyNombres(string aValue);
+
+        [OperationContract]
+        List<PersonaModel> PersonaSelectbyApellidos(string aValue);
+
+        [OperationContract]
+        List<PersonaModel> PersonaSelectbyId(string aValue);
+
         [OperationContract]
         List<PersonaModel> ObtenerUsuariosSinCredenciales();
     }

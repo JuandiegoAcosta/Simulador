@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using CNegocio.Ventanilla;
 using Modelos.Modelos;
 using Sistema_Bancario.Controles;
+using Modelos.Session;
 
 namespace Sistema_Bancario.Ventanilla
 {
@@ -18,12 +19,13 @@ namespace Sistema_Bancario.Ventanilla
       private DepositoMethods m_depositoMethods;
       private Deposito m_deposito;
         CambioMoneda cambioMoneda;
-      public Depositos()
-      {
+
+      public ISession Session = null;
+      public Depositos() {
          InitializeComponent();
          proceder1.BTProceder.Click += BTProceder_Click;
-            tipoMoneda2.CboMoneda.SelectedValueChanged += CboMoneda_SelectedValueChanged;
-            nroCuenta1.BtValidar.Click += BtValidar_Click;
+         tipoMoneda2.CboMoneda.SelectedValueChanged += CboMoneda_SelectedValueChanged;
+         nroCuenta1.BtValidar.Click += BtValidar_Click;
       }
 
         private void BtValidar_Click(object sender, EventArgs e)
@@ -106,7 +108,7 @@ namespace Sistema_Bancario.Ventanilla
             return _instance;
          }
       }
-        public void CambiarMoneda()
+      public void CambiarMoneda()
         {
             panel1.Height = 150;        
             cambioMoneda = new CambioMoneda();
@@ -114,7 +116,6 @@ namespace Sistema_Bancario.Ventanilla
             int index = cambioMoneda.tipoMoneda1.CboMoneda.FindString(nroCuenta1.Lbmoneda.Text);
             cambioMoneda.tipoMoneda1.CboMoneda.SelectedIndex = index;
             panel1.Controls.Add(cambioMoneda);
-            txtMonto.ReadOnly = true;
         }
 
 

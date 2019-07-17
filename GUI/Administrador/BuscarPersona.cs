@@ -30,7 +30,7 @@ namespace Sistema_Bancario.Administrador
             {
                 using (WsSistemaBancario.PersonaServiceClient busc = new WsSistemaBancario.PersonaServiceClient())
                 {
-                    usuariosFiltrados = busc.ObtenerUsuariosSinCredenciales().ToList();
+                    usuariosFiltrados = busc.Persona_ObtenerTodos().ToList();
                     foreach (var u in usuariosFiltrados)
                     {
                         dgvBusquedaUsuarios.Rows.Add(u.Id,u.Nombres,u.Apellidos,u.Tipodocumento,u.Nrodocumento);
@@ -45,17 +45,17 @@ namespace Sistema_Bancario.Administrador
 
         }
 
-        private void btnBuscarEnBusqueda_Click(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(txtBusquedaNombres.Text) && !string.IsNullOrEmpty(txtBusquedaApellidos.Text))
-            {
-                llenarBusquedaUsuariosDGV();
-            }
-            else
-            {
-                llenarBusquedaUsuariosDGV();
-            }
-        }
+        //private void btnBuscarEnBusqueda_Click(object sender, EventArgs e)
+        //{
+        //    if (!string.IsNullOrEmpty(txtBusquedaNombres.Text) && !string.IsNullOrEmpty(txtBusquedaApellidos.Text))
+        //    {
+        //        llenarBusquedaUsuariosDGV();
+        //    }
+        //    else
+        //    {
+        //        llenarBusquedaUsuariosDGV();
+        //    }
+        //}
 
         private void dgvBusquedaUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -63,7 +63,6 @@ namespace Sistema_Bancario.Administrador
             {
                 id = Convert.ToInt16(dgvBusquedaUsuarios.Rows[e.RowIndex].Cells["IdPersona"].Value);
                 nombre= dgvBusquedaUsuarios.Rows[e.RowIndex].Cells["NombresPersona"].Value.ToString();
-
             }
         }
 
@@ -73,6 +72,7 @@ namespace Sistema_Bancario.Administrador
         {
             resultado = DialogResult.OK;
             this.Close();
+            
         }
 
         private void btnCancelarBusqueda_Click(object sender, EventArgs e)

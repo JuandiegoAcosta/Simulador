@@ -25,7 +25,7 @@ namespace Modelos.Modelos
         /// <summary>
         /// Gets or sets the Fechapago value.
         /// </summary>
-        public DateTime Fechapago
+        public DateTime? Fechapago
         { get; set; }
 
         /// <summary>
@@ -38,6 +38,12 @@ namespace Modelos.Modelos
         /// Gets or sets the Diapago value.
         /// </summary>
         public DateTime Diapago
+        { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Estado value.
+        /// </summary>
+        public int Estado
         { get; set; }
 
         /// <summary>

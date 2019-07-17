@@ -1,6 +1,6 @@
 ﻿namespace Sistema_Bancario.Administrador
 {
-    partial class Editar
+    partial class EditarEliminar
     {
         /// <summary>
         /// Required designer variable.
@@ -33,10 +33,11 @@
             this.cmbRolesEditar = new System.Windows.Forms.ComboBox();
             this.chbActivo = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtCancelar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.idRolUsuario = new System.Windows.Forms.TextBox();
             this.txtIdUsuario = new System.Windows.Forms.TextBox();
             this.btnEditar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,6 +78,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.txtCancelar);
             this.panel1.Controls.Add(this.btnEliminar);
             this.panel1.Controls.Add(this.idRolUsuario);
             this.panel1.Controls.Add(this.txtIdUsuario);
@@ -90,9 +92,30 @@
             this.panel1.Size = new System.Drawing.Size(259, 162);
             this.panel1.TabIndex = 4;
             // 
+            // txtCancelar
+            // 
+            this.txtCancelar.Location = new System.Drawing.Point(159, 122);
+            this.txtCancelar.Name = "txtCancelar";
+            this.txtCancelar.Size = new System.Drawing.Size(75, 23);
+            this.txtCancelar.TabIndex = 5;
+            this.txtCancelar.Text = "Cancelar";
+            this.txtCancelar.UseVisualStyleBackColor = true;
+            this.txtCancelar.Click += new System.EventHandler(this.txtCancelar_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(22, 122);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.TabIndex = 8;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Visible = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
             // idRolUsuario
             // 
-            this.idRolUsuario.Location = new System.Drawing.Point(195, 20);
+            this.idRolUsuario.Location = new System.Drawing.Point(14, 73);
             this.idRolUsuario.Name = "idRolUsuario";
             this.idRolUsuario.Size = new System.Drawing.Size(48, 20);
             this.idRolUsuario.TabIndex = 7;
@@ -100,15 +123,15 @@
             // 
             // txtIdUsuario
             // 
-            this.txtIdUsuario.Location = new System.Drawing.Point(89, 20);
+            this.txtIdUsuario.Location = new System.Drawing.Point(68, 20);
             this.txtIdUsuario.Name = "txtIdUsuario";
-            this.txtIdUsuario.Size = new System.Drawing.Size(100, 20);
+            this.txtIdUsuario.Size = new System.Drawing.Size(121, 20);
             this.txtIdUsuario.TabIndex = 6;
             this.txtIdUsuario.Visible = false;
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(98, 122);
+            this.btnEditar.Location = new System.Drawing.Point(22, 122);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(75, 23);
             this.btnEditar.TabIndex = 5;
@@ -117,23 +140,14 @@
             this.btnEditar.Visible = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Location = new System.Drawing.Point(98, 122);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminar.TabIndex = 8;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Visible = false;
-            // 
-            // Editar
+            // EditarEliminar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(282, 186);
             this.Controls.Add(this.panel1);
-            this.Name = "Editar";
+            this.Name = "EditarEliminar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Editar";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -143,7 +157,6 @@
 
         #endregion
         private System.Windows.Forms.Label lblUsuarioEditar;
-        private System.Windows.Forms.ComboBox cmbRolesEditar;
         private System.Windows.Forms.CheckBox chbActivo;
         private System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.TextBox txtUsuarioEditar;
@@ -151,5 +164,7 @@
         public System.Windows.Forms.TextBox idRolUsuario;
         public System.Windows.Forms.Button btnEliminar;
         public System.Windows.Forms.Button btnEditar;
+        public System.Windows.Forms.ComboBox cmbRolesEditar;
+        private System.Windows.Forms.Button txtCancelar;
     }
 }

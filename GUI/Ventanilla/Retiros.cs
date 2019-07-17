@@ -1,4 +1,5 @@
 ﻿using CNegocio.Ventanilla;
+using Modelos.Session;
 using Sistema_Bancario.Controles;
 using System;
 using System.Collections.Generic;
@@ -17,11 +18,13 @@ namespace Sistema_Bancario.Froms_opciones
        
         CambioMoneda cambioMoneda;
 
+      public  ISession Session = null;
+
         #region [Variables Globales]
-        private decimal m_monto = default(decimal);
-      private Int64 m_nroTarjeta = default(Int64);
-      private int m_clave = default(int);
-      private string m_doi = default(string);
+         private decimal m_monto = default(decimal);
+         private Int64 m_nroTarjeta = default(Int64);
+         private int m_clave = default(int);
+         private string m_doi = default(string);
       #endregion
       public Retiros()
         {
@@ -32,13 +35,21 @@ namespace Sistema_Bancario.Froms_opciones
         }
         private void BtValidar_Click(object sender, EventArgs e)
         {
-            int index = tipoMoneda1.CboMoneda.FindString(nroCuenta1.Lbmoneda.Text);
+         string _moneda = nroCuenta1.Lbmoneda.Text.Trim();
+         if (string.IsNullOrEmpty(_moneda))
+            return;
+
+            int index = tipoMoneda1.CboMoneda.FindString(_moneda);
             tipoMoneda1.CboMoneda.SelectedIndex = index;
         }
 
         private void CboMoneda_SelectedValueChanged(object sender, EventArgs e)
         {
-            if (!nroCuenta1.Lbmoneda.Text.Equals(tipoMoneda1.CboMoneda.Text))
+         string _cbomoneda = tipoMoneda1.CboMoneda.Text.Trim();
+         if (string.IsNullOrEmpty(_cbomoneda))
+            return;
+
+         if (!nroCuenta1.Lbmoneda.Text.Equals(_cbomoneda))
             {
                 MessageBox.Show("Se ha cambiado el tipo de moneda." +
                     "Se hara la conversion del monto ingresado");
@@ -54,17 +65,25 @@ namespace Sistema_Bancario.Froms_opciones
         }
         public void CambiarMoneda()
         {
+
+         string _moneda = nroCuenta1.Lbmoneda.Text.Trim();
+         if (string.IsNullOrEmpty(_moneda))
+            return;
+
             panel1.Height = 150;
             cambioMoneda = new CambioMoneda();
             cambioMoneda.txtConversion.TextChanged += TxtConversion_TextChanged;
             int index = cambioMoneda.tipoMoneda1.CboMoneda.FindString(nroCuenta1.Lbmoneda.Text);
             cambioMoneda.tipoMoneda1.CboMoneda.SelectedIndex = index;
             panel1.Controls.Add(cambioMoneda);
-            monto1.TBMonto.ReadOnly = true;
         }
 
         private void TxtConversion_TextChanged(object sender, EventArgs e)
         {
+         string _conversion = cambioMoneda.txtConversion.Text.Trim();
+         if (string.IsNullOrEmpty(_conversion))
+            return;
+
             monto1.TBMonto.Text = Decimal.Round(Convert.ToDecimal(cambioMoneda.txtConversion.Text), 3).ToString();
         }
 
@@ -118,20 +137,21 @@ namespace Sistema_Bancario.Froms_opciones
             }
         }
 
-    
 
-        private static Retiros _instance;
-        public static Retiros instance
-        {
-            get
+
+      private static Retiros _instance;
+      public static Retiros instance
+      {
+         get
+         {
+            if (_instance == null)
             {
-                if (_instance == null)
-                {
-                    _instance = new Retiros();
-                }
-
-                return _instance;
+               _instance = new Retiros();
             }
-        }
-    }
+
+            return _instance;
+         }
+      }
+
+   }
 }

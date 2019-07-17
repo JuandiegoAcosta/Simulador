@@ -11,9 +11,9 @@ using Modelos.Modelos;
 
 namespace Sistema_Bancario.Administrador
 {
-    public partial class Editar : Form
+    public partial class EditarEliminar : Form
     {
-        public Editar()
+        public EditarEliminar()
         {
             InitializeComponent();
             cargarDGV();
@@ -90,6 +90,38 @@ namespace Sistema_Bancario.Administrador
             RolesModel rm = cmbRolesEditar.SelectedValue as RolesModel;
 
             idRol = rm.Id;
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                using (WsSistemaBancario.RolUsuarioServiceClient rol = new WsSistemaBancario.RolUsuarioServiceClient())
+                {
+
+                    
+                    
+
+
+                    rol.RolUsuario_Eliminar(Convert.ToInt16(idRolUsuario.Text));
+
+
+
+                }
+
+                this.Close();
+            }
+
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void txtCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

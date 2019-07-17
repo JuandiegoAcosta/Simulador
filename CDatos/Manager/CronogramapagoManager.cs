@@ -17,7 +17,7 @@ namespace CDatos.Manager
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
         /// </summary>		
-        public bool Insert(CronogramaPagosModel aCronogramaPagosModel)
+        public bool Insert(CronogramaPagosModel aCronogramaPagosModel, string cuenta)
         {
             try
             {
@@ -31,11 +31,11 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
-                    command.Parameters.AddWithValue("@ID", aCronogramaPagosModel.Id);
-                    command.Parameters.AddWithValue("@Prestamo", aCronogramaPagosModel.Prestamo);
-                    command.Parameters.AddWithValue("@FechaPago", aCronogramaPagosModel.Fechapago);
+                    command.Parameters.AddWithValue("@CuentaPrestamo", cuenta);
+                    command.Parameters.AddWithValue("@FechaPago", aCronogramaPagosModel.Fechapago == null ? (object)DBNull.Value : aCronogramaPagosModel.Fechapago);
                     command.Parameters.AddWithValue("@Monto", aCronogramaPagosModel.Monto);
                     command.Parameters.AddWithValue("@DiaPago", aCronogramaPagosModel.Diapago);
+                    command.Parameters.AddWithValue("@Estado", aCronogramaPagosModel.Estado);
                     command.Parameters.AddWithValue("@FECHA_CREACION", aCronogramaPagosModel.Fecha_creacion);
                     command.Parameters.AddWithValue("@FECHA_MODIFICACION", aCronogramaPagosModel.Fecha_modificacion == null ? (object)DBNull.Value : aCronogramaPagosModel.Fecha_modificacion);
                     command.Parameters.AddWithValue("@USUARIO_CREADOR", aCronogramaPagosModel.Usuario_creador);
@@ -43,7 +43,7 @@ namespace CDatos.Manager
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "CronogramaPagosModelInsert";
+                    command.CommandText = "CronogramaPagosInsert";
 
                     int afectados = command.ExecuteNonQuery();
 
@@ -59,8 +59,9 @@ namespace CDatos.Manager
                         return false;
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                throw;
                 return false;
             }
         }

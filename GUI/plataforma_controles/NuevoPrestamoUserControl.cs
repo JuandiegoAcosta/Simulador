@@ -24,10 +24,9 @@ namespace Sistema_Bancario.plataforma_controles
         private PrestamosModel gPrestamo;
         private string modo;
 
-        //WsSistemaBancario.CuentaServiceClient BLPrestamo = new WsSistemaBancario.CuentaServiceClient();
+        WsSistemaBancario.PrestamoServiceClient BLPrestamo = new WsSistemaBancario.PrestamoServiceClient();
         WsSistemaBancario.CuentaServiceClient BLCuenta = new WsSistemaBancario.CuentaServiceClient();
         WsSistemaBancario.TipoMonedaServiceClient BLTipoMoneda = new WsSistemaBancario.TipoMonedaServiceClient();
-        private BLPrestamo BLPrestamo = new BLPrestamo();
 
         #endregion
 
@@ -119,7 +118,7 @@ namespace Sistema_Bancario.plataforma_controles
             this.cboMoneda.SelectedValue = aprestamo.Moneda;
             this.nudPlazoMeses.Value = aprestamo.Plazomeses;
             this.nudPorcentajeInteres.Value = aprestamo.Porcentaje_interes;
-            this.nudDiaPago.Value = (decimal)aprestamo.Diapago;
+            //this.nudDiaPago.Value = (decimal)aprestamo.Diapago;
             this.chkEstado.Checked = aprestamo.Seguro;
         }
 
@@ -261,7 +260,7 @@ namespace Sistema_Bancario.plataforma_controles
                                 if (this.gCuenta == null)
                                     return;
 
-                                List<PrestamosModel> Prestamos = this.BLPrestamo.prestamoSelectbyNroCuenta(this.gCuenta.Nrocuenta);
+                                List<PrestamosModel> Prestamos = this.BLPrestamo.Prestamo_SelecionarPorCuenta(this.gCuenta.Nrocuenta).ToList();
                                 if (Prestamos == null || Prestamos.Count == 0)
                                 {
                                     MessageBox.Show("No tiene prestamos asociados a esta cuenta");
@@ -306,7 +305,7 @@ namespace Sistema_Bancario.plataforma_controles
                         if (dato != null)
                         {
                             this.clearForm();
-                            this.gPrestamo = this.BLPrestamo.Getprestamo(dato.Id);
+                            this.gPrestamo = this.BLPrestamo.Prestamo_ObtenerUno(dato.Id);
                             this.prestamo2gui(this.gPrestamo);
                             this.modoNuevo();
                             this.modoEdicion();
@@ -338,7 +337,7 @@ namespace Sistema_Bancario.plataforma_controles
 
             if (MessageBox.Show("¿Está seguro que desea realizar un préstamo? Esta operacion no se puede deshacer facilmente", "Advertencia", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                if (this.BLPrestamo.Insert(objeto))
+                if (this.BLPrestamo.Prestamo_Crear(objeto))
                 {
                     this.clearForm();
                     this.modoInicial();
@@ -377,7 +376,7 @@ namespace Sistema_Bancario.plataforma_controles
             objeto.Usuario_modificador = this.gUsuario;
             objeto.Fecha_modificacion = BLFechaHoraServidor.Obtener();
 
-            if (this.BLPrestamo.Update(objeto))
+            if (this.BLPrestamo.Prestamo_Editar(objeto))
             {
                 MessageBox.Show("El proceso ha sido correcto");
                 this.clearForm();
@@ -392,7 +391,7 @@ namespace Sistema_Bancario.plataforma_controles
                 MessageBox.Show("Problemas al obtener el objeto de base de datos");
                 return;
             }
-            if (this.BLPrestamo.Delete(this.gPrestamo.Id))
+            if (this.BLPrestamo.Prestamo_Borrar(this.gPrestamo.Id))
             {
                 this.clearForm();
                 this.modoInicial();
@@ -410,7 +409,7 @@ namespace Sistema_Bancario.plataforma_controles
         {
             string codigo = this.txtCodigo.Text;
 
-            var objeto = this.BLPrestamo.prestamoSelectbyID(codigo);
+            var objeto = this.BLPrestamo.Prestamo_SeleccionarPorId(codigo).ToList();
 
             if (objeto == null || objeto.Count <= 0)
             {

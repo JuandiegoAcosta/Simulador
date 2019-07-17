@@ -31,16 +31,14 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
-                    command.Parameters.AddWithValue("@ID", aTipoMonedaModel.Id);
                     command.Parameters.AddWithValue("@Nombre", aTipoMonedaModel.Nombre);
                     command.Parameters.AddWithValue("@FECHA_CREACION", aTipoMonedaModel.Fecha_creacion);
                     command.Parameters.AddWithValue("@FECHA_MODIFICACION", aTipoMonedaModel.Fecha_modificacion == null ? (object)DBNull.Value : aTipoMonedaModel.Fecha_modificacion);
                     command.Parameters.AddWithValue("@USUARIO_CREADOR", aTipoMonedaModel.Usuario_creador);
                     command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aTipoMonedaModel.Usuario_modificador == null ? (object)DBNull.Value : aTipoMonedaModel.Usuario_modificador);
 
-
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "TipoMonedaModelInsert";
+                    command.CommandText = "TipoMonedaInsert";
 
                     int afectados = command.ExecuteNonQuery();
 
@@ -91,7 +89,7 @@ namespace CDatos.Manager
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "TipoMonedaModelUpdate";
+                    command.CommandText = "TipoMonedaUpdate";
 
                     int afectados = command.ExecuteNonQuery();
 
@@ -137,7 +135,7 @@ namespace CDatos.Manager
 
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "TipoMonedaModelDelete";
+                    command.CommandText = "TipoMonedaDelete";
                     int afectados = command.ExecuteNonQuery();
 
                     // Commit the transaction.
@@ -179,7 +177,7 @@ namespace CDatos.Manager
 
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.CommandText = "TipoMonedaModelSelect";
+                    command.CommandText = "TipoMonedaSelect";
 
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -188,12 +186,12 @@ namespace CDatos.Manager
                         while (reader.Read())
                         {
 
-                            short ID = (short)(reader["ID"]);
+                            int ID = (int)(reader["ID"]);
                             string Nombre = (string)(reader["Nombre"]);
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
-                            DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
+                            DateTime? FECHA_MODIFICACION = (reader["FECHA_MODIFICACION"] == (object)DBNull.Value ? null : (DateTime?)(reader["FECHA_MODIFICACION"]));
                             string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
-                            string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
+                            string USUARIO_MODIFICADOR = (reader["USUARIO_MODIFICADOR"]) == (object)DBNull.Value ? null : (string)(reader["USUARIO_MODIFICADOR"]);
 
                             TipoMonedaModel = new TipoMonedaModel
                             {
@@ -211,8 +209,9 @@ namespace CDatos.Manager
 
                 return TipoMonedaModel;
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                throw;
                 return null;
             }
         }
@@ -270,7 +269,6 @@ namespace CDatos.Manager
             }
             catch (Exception)
             {
-                //throw;
                 return TipoMonedaModellist;
             }
         }
@@ -279,7 +277,7 @@ namespace CDatos.Manager
         /// <summary>
         /// Selects the Multiple objects of TipoCambioModel table by a given criteria.
         /// </summary>
-        public List<TipoMonedaModel> TipoMonedaModelSelectbyUNKNOW(string aValue)
+        public List<TipoMonedaModel> TipoMonedaModelSelectbyId(string aValue)
         {
 
             List<TipoMonedaModel> TipoMonedaModellist = new List<TipoMonedaModel>();
@@ -292,11 +290,11 @@ namespace CDatos.Manager
 
                     SqlCommand command = connection.CreateCommand();
 
-                    command.Parameters.AddWithValue("@UNKNOW", aValue);
+                    command.Parameters.AddWithValue("@ID", aValue);
 
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.CommandText = "TipoMonedaModelSelectbyUNKNOW";
+                    command.CommandText = "TipoMonedaSelectbyId";
 
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -305,12 +303,70 @@ namespace CDatos.Manager
                         while (reader.Read())
                         {
 
-                            short ID = (short)(reader["ID"]);
+                            int ID = (int)(reader["ID"]);
                             string Nombre = (string)(reader["Nombre"]);
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
                             DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
                             string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
-                            string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
+                            string USUARIO_MODIFICADOR = (reader["USUARIO_MODIFICADOR"]) == DBNull.Value ? null : (string)(reader["USUARIO_MODIFICADOR"]);
+
+                            TipoMonedaModellist.Add(new TipoMonedaModel
+                            {
+                                Id = ID,
+                                Nombre = Nombre,
+                                Fecha_creacion = FECHA_CREACION,
+                                Fecha_modificacion = FECHA_MODIFICACION,
+                                Usuario_creador = USUARIO_CREADOR,
+                                Usuario_modificador = USUARIO_MODIFICADOR,
+
+                            });
+                        }
+                    }
+                }
+
+                return TipoMonedaModellist;
+            }
+            catch (Exception)
+            {
+                return TipoMonedaModellist;
+            }
+        }
+
+        /// <summary>
+        /// Selects the Multiple objects of TipoCambioModel table by a given criteria.
+        /// </summary>
+        public List<TipoMonedaModel> TipoMonedaModelSelectbyDescripcion(string aValue)
+        {
+
+            List<TipoMonedaModel> TipoMonedaModellist = new List<TipoMonedaModel>();
+
+            try
+            {
+                using (var connection = Util.ConnectionFactory.conexion())
+                {
+                    connection.Open();
+
+                    SqlCommand command = connection.CreateCommand();
+
+                    command.Parameters.AddWithValue("@Nombre", aValue);
+
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.CommandText = "TipoMonedaSelectbyNombre";
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+
+                            int ID = (int)(reader["ID"]);
+                            string Nombre = (string)(reader["Nombre"]);
+                            DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
+                            DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
+                            string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
+                            string USUARIO_MODIFICADOR = (reader["USUARIO_MODIFICADOR"]) == DBNull.Value ? null : (string)(reader["USUARIO_MODIFICADOR"]);
 
                             TipoMonedaModellist.Add(new TipoMonedaModel
                             {

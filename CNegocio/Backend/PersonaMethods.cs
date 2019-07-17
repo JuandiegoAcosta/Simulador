@@ -33,6 +33,11 @@ namespace CNegocio.Backend
             return ADPersonaManager.Update(aPersona);
         }
 
+        public bool ActualizarEstado(int admin, int idusuario, bool estado)
+        {
+            return ADPersonaManager.ActualizarEstado(admin, idusuario, estado);
+        }
+
         /// <summary>
         /// Deletes record to the persona table.
         /// returns True if value saved successfully else false
@@ -146,6 +151,11 @@ namespace CNegocio.Backend
             return ADPersonaManager.ObtenerUsuariosSinCredenciales();
         }
 
+
+        public bool ActualizarEstadoRolUsuario(int admin, int idusuario, bool estado)
+        {
+            return ADPersonaManager.ActualizarEstadoRolUsuario(admin,idusuario,estado);
+        }
 
     }
 }

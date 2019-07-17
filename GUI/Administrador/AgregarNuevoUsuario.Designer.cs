@@ -54,7 +54,7 @@
             this.pnlAgregarUsuario.Controls.Add(this.btnBuscarUsuario);
             this.pnlAgregarUsuario.Controls.Add(this.lblBuscarUsuario);
             this.pnlAgregarUsuario.Controls.Add(this.txtUsuarioBuscado);
-            this.pnlAgregarUsuario.Location = new System.Drawing.Point(83, 18);
+            this.pnlAgregarUsuario.Location = new System.Drawing.Point(96, 24);
             this.pnlAgregarUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.pnlAgregarUsuario.Name = "pnlAgregarUsuario";
             this.pnlAgregarUsuario.Size = new System.Drawing.Size(357, 418);

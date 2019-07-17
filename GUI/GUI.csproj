@@ -56,9 +56,27 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Extensiones\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
+    <Reference Include="ClosedXML, Version=0.94.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.0.94.2\lib\net46\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.7.2.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.7.2\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelNumberFormat, Version=1.0.3.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelNumberFormat.1.0.3\lib\net20\ExcelNumberFormat.dll</HintPath>
+    </Reference>
+    <Reference Include="FastMember, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FastMember.1.3.0\lib\net45\FastMember.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.0.1\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Packaging, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Packaging.4.0.0\lib\net46\System.IO.Packaging.dll</HintPath>
+    </Reference>
     <Reference Include="System.Management" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
@@ -71,6 +89,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Administrador\AgregarNuevoUsuario.cs">
@@ -85,11 +104,17 @@
     <Compile Include="Administrador\BuscarPersona.Designer.cs">
       <DependentUpon>BuscarPersona.cs</DependentUpon>
     </Compile>
-    <Compile Include="Administrador\Editar.cs">
+    <Compile Include="Administrador\EditarEliminar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Administrador\Editar.Designer.cs">
-      <DependentUpon>Editar.cs</DependentUpon>
+    <Compile Include="Administrador\EditarEliminar.Designer.cs">
+      <DependentUpon>EditarEliminar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\frmAgregarPermiso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrador\frmAgregarPermiso.Designer.cs">
+      <DependentUpon>frmAgregarPermiso.cs</DependentUpon>
     </Compile>
     <Compile Include="Administrador\Permisos.cs">
       <SubType>UserControl</SubType>
@@ -306,6 +331,10 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="plataforma_controles\NuevaCuentaUserControl.Designer.cs" />
+    <Compile Include="plataforma_controles\NuevaMoneda.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="plataforma_controles\NuevaMoneda.Designer.cs" />
     <Compile Include="plataforma_controles\NuevaTarjeta.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -326,6 +355,10 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="plataforma_controles\RegistroPersonaUserControl.Designer.cs" />
+    <Compile Include="plataforma_controles\ReporteCronograma.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="plataforma_controles\ReporteCronograma.Designer.cs" />
     <Compile Include="Pruebas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -439,8 +472,11 @@
     <EmbeddedResource Include="Administrador\BuscarPersona.resx">
       <DependentUpon>BuscarPersona.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Administrador\Editar.resx">
-      <DependentUpon>Editar.cs</DependentUpon>
+    <EmbeddedResource Include="Administrador\EditarEliminar.resx">
+      <DependentUpon>EditarEliminar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrador\frmAgregarPermiso.resx">
+      <DependentUpon>frmAgregarPermiso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Administrador\Permisos.resx">
       <DependentUpon>Permisos.cs</DependentUpon>
@@ -519,6 +555,7 @@
       <DependentUpon>UCcliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="plataforma_controles\NuevaCuentaUserControl.resx" />
+    <EmbeddedResource Include="plataforma_controles\NuevaMoneda.resx" />
     <EmbeddedResource Include="plataforma_controles\NuevaTarjeta.resx">
       <DependentUpon>NuevaTarjeta.cs</DependentUpon>
     </EmbeddedResource>
@@ -527,6 +564,7 @@
       <DependentUpon>RegistrarChequera.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="plataforma_controles\RegistroPersonaUserControl.resx" />
+    <EmbeddedResource Include="plataforma_controles\ReporteCronograma.resx" />
     <EmbeddedResource Include="Pruebas.resx">
       <DependentUpon>Pruebas.cs</DependentUpon>
     </EmbeddedResource>
@@ -613,6 +651,10 @@
     <None Include="Connected Services\WsSistemaBancario\SistemaBancario2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\WsSistemaBancario\SistemaBancario3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\DataSources\Modelos.Modelos.BancoModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.CajaChicaModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.CobroChequesModel.datasource" />
@@ -625,6 +667,7 @@
     <None Include="Properties\DataSources\Modelos.Modelos.PagoServiciosModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.PermisosUsuarioModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.PersonaModel.datasource" />
+    <None Include="Properties\DataSources\Modelos.Modelos.PrestamosModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.RecaudosModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.RolesModel.datasource" />
     <None Include="Properties\DataSources\Modelos.Modelos.RolUsuarioModel.datasource" />
@@ -708,12 +751,6 @@
     <None Include="Resources\view.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\add_rol.png" />
-    <None Include="Resources\add_permiso.png" />
-    <None Include="Resources\icons8-agregar-administrador-26.png" />
-    <None Include="Resources\icons8-eliminar-26.png" />
-    <None Include="Resources\icons8-editar-26.png" />
-    <None Include="Resources\icons8-editar-32.png" />
     <None Include="Connected Services\WsSistemaBancario\SistemaBancario.disco" />
     <None Include="Connected Services\WsSistemaBancario\configuration91.svcinfo" />
     <None Include="Connected Services\WsSistemaBancario\configuration.svcinfo" />
@@ -721,6 +758,13 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="Resources\roles_atras.png" />
+    <None Include="Resources\add_rol.png" />
+    <None Include="Resources\add_permiso.png" />
+    <None Include="Resources\icons8-agregar-administrador-26.png" />
+    <None Include="Resources\icons8-eliminar-26.png" />
+    <None Include="Resources\icons8-editar-26.png" />
+    <None Include="Resources\icons8-editar-32.png" />
     <Content Include="Graphicloads-100-Flat-2-Bank.ico" />
   </ItemGroup>
   <ItemGroup>

@@ -23,6 +23,16 @@ namespace Sistema_Bancario.Ventanilla
 
         private void BTProceder_Click(object sender, EventArgs e)
         {
+
+         if (string.IsNullOrEmpty(TBNroCheque.Text.Trim()))
+            return;
+         if (string.IsNullOrEmpty(monto1.TBMonto.Text))
+            return;
+         if (string.IsNullOrEmpty(dni1.TBDni.Text))
+            return;
+         if (string.IsNullOrEmpty(nroCuenta1.TBNroCuenta.Text))
+            return;
+
             CobroChequeMethods cobroCheque = new CobroChequeMethods();
             ChequeModel cheque = new ChequeModel();
             StatusStrip o = this.TopLevelControl.Controls.Find("stStatus", true).FirstOrDefault() as StatusStrip;
