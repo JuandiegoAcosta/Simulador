@@ -78,7 +78,7 @@
             this.nroCuenta1.Location = new System.Drawing.Point(10, 106);
             this.nroCuenta1.Margin = new System.Windows.Forms.Padding(2);
             this.nroCuenta1.Name = "nroCuenta1";
-            this.nroCuenta1.Size = new System.Drawing.Size(270, 30);
+            this.nroCuenta1.Size = new System.Drawing.Size(562, 76);
             this.nroCuenta1.TabIndex = 7;
             // 
             // label2

@@ -535,14 +535,14 @@ namespace Sistema_Bancario
 
                     if (Session.Componentes.Any(c => c.Nombre == "Balancin Caja"))
                     {
-                        Button Balancin = new Button();
-                        this.CrearBoton(Balancin, "Balancin Caja", 450);
+                   //     Button Balancin = new Button();
+                   //     this.CrearBoton(Balancin, "Balancin Caja", 450);
                     }
 
                     if (Session.Componentes.Any(c => c.Nombre == "Resumen Total"))
                     {
-                        Button Resumen_total = new Button();
-                        this.CrearBoton(Resumen_total, "Resumen total", 500);
+                 //       Button Resumen_total = new Button();
+                  //      this.CrearBoton(Resumen_total, "Resumen total", 500);
                     }
                break;
 
