@@ -473,11 +473,11 @@ namespace Sistema_Bancario
             case 3:
               
 
-                    if (Session.Componentes.Any(c => c.Nombre == "Retiros"))
-                    {
+                //    if (Session.Componentes.Any(c => c.Nombre == "Retiros"))
+                //    {
                         Button Retiros = new Button();
                         this.CrearBoton(Retiros, "Retiros", 0);
-                    }
+                //    }
 
                  //   if (Session.Componentes.Any(c => c.Nombre == "Depósitos"))
                  //   {
@@ -485,65 +485,65 @@ namespace Sistema_Bancario
                         this.CrearBoton(Depositos, "Depósitos", 50);
                  //   }
 
-                    if (Session.Componentes.Any(c => c.Nombre == "Transferencias"))
-                    {
+                 //   if (Session.Componentes.Any(c => c.Nombre == "Transferencias"))
+                 //   {
                         Button Transferencias = new Button();
                         this.CrearBoton(Transferencias, "Transferencias", 100);
-                    }
+                 //   }
 
-                    if (Session.Componentes.Any(c => c.Nombre == "Envío Giros"))
-                    {
+                 //   if (Session.Componentes.Any(c => c.Nombre == "Envío Giros"))
+                 //   {
                         Button Envio_Giros = new Button();
                         this.CrearBoton(Envio_Giros, "Envío Giros", 150);
-                    }
+                //    }
 
-                    if (Session.Componentes.Any(c => c.Nombre == "Cobro Giros"))
-                    {
+                //    if (Session.Componentes.Any(c => c.Nombre == "Cobro Giros"))
+                //    {
                         Button Cobro_Giros = new Button();
                         this.CrearBoton(Cobro_Giros, "Cobro Giros", 200);
-                    }
+                //    }
 
-                    if (Session.Componentes.Any(c => c.Nombre == "Cobro Giros"))
-                    {
+               //     if (Session.Componentes.Any(c => c.Nombre == "Cobro Giros"))
+               //     {
                       //  Button Pago_tarjetas = new Button();
                      //   this.CrearBoton(Pago_tarjetas, "Pago tarjetas", 250);
-                    }
+                 //   }
 
-                    if (Session.Componentes.Any(c => c.Nombre == "Pago Cuotas"))
-                    {
+                //    if (Session.Componentes.Any(c => c.Nombre == "Pago Cuotas"))
+               //     {
                         Button Pago_Cuotas = new Button();
                         this.CrearBoton(Pago_Cuotas, "Pago Cuotas", 250);
-                    }
+                //    }
 
-                    if (Session.Componentes.Any(c => c.Nombre == "Tipo Cambio"))
-                    {
+                //    if (Session.Componentes.Any(c => c.Nombre == "Tipo Cambio"))
+                //    {
                         Button Tipo_Cambio = new Button();
                         this.CrearBoton(Tipo_Cambio, "Tipo Cambio", 300);
-                    }
+                //    }
 
-                    if (Session.Componentes.Any(c => c.Nombre == "Pago Servicios"))
-                    {
+                //    if (Session.Componentes.Any(c => c.Nombre == "Pago Servicios"))
+                //    {
                         Button Pago_Servicios = new Button();
                         this.CrearBoton(Pago_Servicios, "Pago Servicios", 350);
-                    }
+                //    }
 
-                    if (Session.Componentes.Any(c => c.Nombre == "Cobro Cheques"))
-                    {
+               //     if (Session.Componentes.Any(c => c.Nombre == "Cobro Cheques"))
+               //     {
                         Button Cobro_Cheques = new Button();
                         this.CrearBoton(Cobro_Cheques, "Cobro Cheques", 400);
-                    }
+               //     }
 
-                    if (Session.Componentes.Any(c => c.Nombre == "Balancin Caja"))
-                    {
+                //    if (Session.Componentes.Any(c => c.Nombre == "Balancin Caja"))
+                //    {
                    //     Button Balancin = new Button();
                    //     this.CrearBoton(Balancin, "Balancin Caja", 450);
-                    }
+                //    }
 
-                    if (Session.Componentes.Any(c => c.Nombre == "Resumen Total"))
-                    {
+                  //  if (Session.Componentes.Any(c => c.Nombre == "Resumen Total"))
+                   // {
                  //       Button Resumen_total = new Button();
                   //      this.CrearBoton(Resumen_total, "Resumen total", 500);
-                    }
+               //     }
                break;
 
 

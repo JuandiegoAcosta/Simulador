@@ -28,7 +28,7 @@ namespace Sistema_Bancario.Ventanilla
             return;
          if (string.IsNullOrEmpty(monto1.TBMonto.Text))
             return;
-         if (string.IsNullOrEmpty(dni1.TBDni.Text))
+         if (string.IsNullOrEmpty(dni2.TBDni.Text))
             return;
          if (string.IsNullOrEmpty(nroCuenta1.TBNroCuenta.Text))
             return;
@@ -39,7 +39,7 @@ namespace Sistema_Bancario.Ventanilla
             cheque.Numero = Convert.ToInt32(TBNroCheque.Text);
             cheque.Monto = Convert.ToInt32(monto1.TBMonto.Text);
             cheque.Usuario_creacion = o.Items[1].Text;
-            cheque.DOI = dni1.TBDni.Text;
+            cheque.DOI = dni2.TBDni.Text;
                         
             string result = cobroCheque.CobroInsert(cheque, nroCuenta1.TBNroCuenta.Text);
             MessageBox.Show(result);

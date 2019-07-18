@@ -21,7 +21,7 @@ namespace Sistema_Bancario
 
             //CloseApplication.Run(new Login());
             //CloseApplication.Run(new VentanaPrincipal());
-            CloseApplication.Run(new Login());
+            CloseApplication.Run(new VentanaPrincipal());
 
         }
     }

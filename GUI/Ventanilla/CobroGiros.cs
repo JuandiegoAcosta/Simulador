@@ -32,10 +32,11 @@ namespace Sistema_Bancario.Froms_opciones
             GiroModel giroModel = new GiroModel();
             giroModel.Id = Convert.ToInt32(GVCobroGiros[0, i].Value);
             StatusStrip o = this.TopLevelControl.Controls.Find("stStatus", true).FirstOrDefault() as StatusStrip;
-            giroModel.USUARIO_CREADOR = o.Items[1].Text;
-            giroModel.Id_PersonaDestino = Convert.ToInt32(dni1.TBDoi.Text);
+            giroModel.USUARIO_CREADOR = "Carlin Yahuira Achahui";
+               // giroModel.
+            giroModel.Id_PersonaOrigen = Convert.ToInt32(dni2.TBDni.Text);
             int executado = girosMethods.CobrarGiro(giroModel);
-            if (executado == 1)
+            if (executado > 0)
             {
                MessageBox.Show("Giro cobrado");
             }
@@ -59,10 +60,10 @@ namespace Sistema_Bancario.Froms_opciones
         private void button1_Click(object sender, EventArgs e)
         {
 
-         if (string.IsNullOrEmpty(dni1.TBDoi.Text)) return; 
+         if (string.IsNullOrEmpty(dni2.TBDni.Text)) return; 
          if (string.IsNullOrEmpty(clave1.TBClave.Text)) return;
             GirosMethods girosMethods = new GirosMethods();          
-            var bindingList = new BindingList<object>(girosMethods.SelectGirosbyDocClave(dni1.TBDoi.Text, Convert.ToInt16(clave1.TBClave.Text)));
+            var bindingList = new BindingList<object>(girosMethods.SelectGirosbyDocClave(dni2.TBDni.Text, Convert.ToInt16(clave1.TBClave.Text)));
             var source = new BindingSource(bindingList, null);
             GVCobroGiros.DataSource = source;
 

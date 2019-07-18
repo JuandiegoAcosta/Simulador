@@ -41,13 +41,13 @@ namespace Sistema_Bancario.Froms_opciones
             else
             { return false; }
 
-            if (!string.IsNullOrEmpty(this.txtDNIOrigen.Text.Trim()))
-            { DNIorigen= Convert.ToInt32(this.txtDNIOrigen.Text.Trim()); }
+            if (!string.IsNullOrEmpty(this.dni1.TBDni.Text.Trim()))
+            { DNIorigen= Convert.ToInt32(this.dni1.TBDni.Text.Trim()); }
             else
             { return false; }
 
-            if (!string.IsNullOrEmpty(this.txtDNIDestino.Text.Trim()))
-            { DNIdestino = Convert.ToInt32(this.txtDNIDestino.Text.Trim()); }
+            if (!string.IsNullOrEmpty(this.dni2.TBDni.Text.Trim()))
+            { DNIdestino = Convert.ToInt32(this.dni2.TBDni.Text.Trim()); }
             else
             { return false; }
 
@@ -69,8 +69,8 @@ namespace Sistema_Bancario.Froms_opciones
                 StatusStrip o = this.TopLevelControl.Controls.Find("stStatus", true).FirstOrDefault() as StatusStrip;//o.Items[1].Text;               
                 giro.Monto = monto;
                 giro.Clave = clave;
-                giro.Id_PersonaOrigen = DNIorigen;
-                giro.Id_PersonaDestino = DNIdestino;
+                giro.Id_PersonaOrigen =Convert.ToInt32(dni1.TBDni.Text);
+                giro.Id_PersonaDestino = Convert.ToInt32(dni2.TBDni.Text);
                 giro.USUARIO_CREADOR = o.Items[1].Text;
                 giro.Moneda = tipoMoneda1.CboMoneda.Text;
 
