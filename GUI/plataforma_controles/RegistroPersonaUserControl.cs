@@ -19,11 +19,11 @@ namespace Sistema_Bancario.plataforma_controles
 
         #region Variables
 
-        public string gusuario { get; set; }
-
         WsSistemaBancario.PersonaServiceClient BLPersona = new WsSistemaBancario.PersonaServiceClient();
         WsSistemaBancario.TipoDocumentoServiceClient BLTipo_documento = new WsSistemaBancario.TipoDocumentoServiceClient();
+        WsSistemaBancario.FechaHoraServerServiceClient BLFechaHoraServer = new WsSistemaBancario.FechaHoraServerServiceClient();
         private PersonaModel gPerona;
+        public string gusuario { get; set; }
 
         #endregion
 
@@ -32,7 +32,7 @@ namespace Sistema_Bancario.plataforma_controles
         public RegistroPersonaUserControl(ISession sesion)
         {
             InitializeComponent();
-
+            this.ConfigurarFechaNacimiento();
             this.gusuario = sesion.UserName;
 
             this.poblarCboTiposDocumento();
@@ -250,6 +250,15 @@ namespace Sistema_Bancario.plataforma_controles
             }
         }
 
+        private void ConfigurarFechaNacimiento()
+        {
+            DateTime? fechaActual = BLFechaHoraServer.ObtenerFechaHoraActual();
+            DateTime fechaMinima = new DateTime(fechaActual.Value.Year - 100, fechaActual.Value.Month, fechaActual.Value.Day);
+            DateTime fechaMaxima = new DateTime(fechaActual.Value.Year - 18, fechaActual.Value.Month, fechaActual.Value.Day);
+            this.dtpFecha_nacimiento.MinDate = fechaMinima;
+            this.dtpFecha_nacimiento.MaxDate = fechaMaxima;
+        }
+
         #endregion
 
         #region Eventos
@@ -273,7 +282,7 @@ namespace Sistema_Bancario.plataforma_controles
             {
                 this.clearForm();
                 this.modoInicial();
-                MessageBox.Show("El proceso ha sido correcto");
+                MessageBox.Show("La persona fue creada con éxito");
             }
         }
 
@@ -305,14 +314,23 @@ namespace Sistema_Bancario.plataforma_controles
         {
             if (this.gPerona == null)
             {
-                MessageBox.Show("Problemas al obtener el objeto de base de datos");
+                MessageBox.Show("Problemas al obtener el la persona desde la base de datos");
                 return;
             }
-            if (this.BLPersona.Persona_Eliminar(this.gPerona.Id))
+
+            DialogResult result = MessageBox.Show("¿Está seguro que quiere eliminar la persona seleccionada? Este proceso no se puede deshacer", "Advertencia", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
             {
-                this.clearForm();
-                this.modoInicial();
-                MessageBox.Show("El proceso ha sido correcto");
+                if (this.BLPersona.Persona_Eliminar(this.gPerona.Id))
+                {
+                    this.clearForm();
+                    this.modoInicial();
+                    MessageBox.Show("El proceso ha sido correcto");
+                }
+                else
+                {
+                    MessageBox.Show("La persona no puede ser eliminada debido a que tiene cuentas asociadas");
+                }
             }
         }
 

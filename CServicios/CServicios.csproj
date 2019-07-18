@@ -78,6 +78,7 @@
     <Compile Include="Backend\ITipoDocumentoService.cs" />
     <Compile Include="Backend\ITurnosService.cs" />
     <Compile Include="Backend\ITurnoUsuarioService.cs" />
+    <Compile Include="Plataforma\IFechaHoraServerService.cs" />
     <Compile Include="Plataforma\IPrestamoService.cs" />
     <Compile Include="Plataforma\ICuentaService.cs" />
     <Compile Include="SistemaBancario.svc.cs">

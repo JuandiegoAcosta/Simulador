@@ -214,7 +214,6 @@ C:\Users\RithardLL\Source\Repos\Simulador25\Modelos\obj\Debug\Modelos.dll
 C:\Users\RithardLL\Source\Repos\Simulador25\Modelos\obj\Debug\Modelos.pdb
 C:\Users\Jean\Desktop\z1\Simulador\Modelos\bin\Debug\Modelos.dll
 C:\Users\Jean\Desktop\z1\Simulador\Modelos\bin\Debug\Modelos.pdb
-C:\Users\Jean\Desktop\z1\Simulador\Modelos\obj\Debug\Modelos.csprojAssemblyReference.cache
 C:\Users\Jean\Desktop\z1\Simulador\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
 C:\Users\Jean\Desktop\z1\Simulador\Modelos\obj\Debug\Modelos.dll
 C:\Users\Jean\Desktop\z1\Simulador\Modelos\obj\Debug\Modelos.pdb
