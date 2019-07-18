@@ -220,10 +220,12 @@ namespace Sistema_Bancario.plataforma_controles
 
         private void buscarObjeto(List<PersonaModel> objetos)
         {
-            string[][] orden = new string[2][];
+            string[][] orden = new string[4][];
 
-            orden[0] = new string[] { "Id", "Codigo", "100" };
-            orden[1] = new string[] { "Nombres", "Nombres", "400" };
+            orden[0] = new string[] { "Id", "Codigo", "70" };
+            orden[1] = new string[] { "NroDocumento", "Documento", "150" };
+            orden[2] = new string[] { "Nombres", "Nombres", "200" };
+            orden[3] = new string[] { "Apellidos", "Apellidos", "250" };
 
             if (objetos != null)
             {
@@ -382,7 +384,6 @@ namespace Sistema_Bancario.plataforma_controles
         {
             
         }
-
 
         private void TxtNumero_documento_KeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
         {
