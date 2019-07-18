@@ -181,13 +181,13 @@ namespace Sistema_Bancario.plataforma_controles
             this.cboTipo_documento.Enabled = true;
             this.cboTipoPersona.Enabled = true;
             this.dtpFecha_nacimiento.Enabled = true;
+
         }
 
         private void modoInicial()
         {
             this.buttonActualizar.Enabled = false;
             this.buttonEliminar.Enabled = false;
-            this.buttonEliminar.Visible = false;
 
             this.buttonNuevo.Enabled = true;
             this.buttonCrear.Enabled = false;

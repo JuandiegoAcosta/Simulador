@@ -125,12 +125,10 @@ namespace CNegocio.Backend
             return ADPersonaManager.GetRolesUsuario(aUsuario);
         }
     
-
         public DataTable GetPersonasPorRol(int idRol)
         {
             return ADPersonaManager.GetPersonasPorRol(idRol);
         }
-
 
         public List<PersonaModel> GetPersonaNombreApellidos(string nombre, string apellido)
         {
@@ -146,6 +144,7 @@ namespace CNegocio.Backend
         {
             return ADPersonaManager.UsuarioSelectAll();
         }
+
         public List<PersonaModel> ObtenerUsuariosSinCredenciales()
         {
             return ADPersonaManager.ObtenerUsuariosSinCredenciales();
