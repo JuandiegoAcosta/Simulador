@@ -479,11 +479,11 @@ namespace Sistema_Bancario
                         this.CrearBoton(Retiros, "Retiros", 0);
                     }
 
-                    if (Session.Componentes.Any(c => c.Nombre == "Depósitos"))
-                    {
+                 //   if (Session.Componentes.Any(c => c.Nombre == "Depósitos"))
+                 //   {
                         Button Depositos = new Button();
                         this.CrearBoton(Depositos, "Depósitos", 50);
-                    }
+                 //   }
 
                     if (Session.Componentes.Any(c => c.Nombre == "Transferencias"))
                     {

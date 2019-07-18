@@ -12,11 +12,11 @@ namespace CDatos.Manager
    public class TransferenciasManager
     {
 
-        public int TransferenciaBancaria(CuentasTarjetasModel cuentasTarjetasModel)
+        public string TransferenciaBancaria(CuentasTarjetasModel cuentasTarjetasModel)
         {
 
             //   List<RecaudosModel> EmpresaModellist = new List<RecaudosModel>();
-             int result=-1;
+             string result="";
             try
             {          
                 /*@Monto Decimal(12,4),
@@ -37,19 +37,27 @@ namespace CDatos.Manager
                     command.Parameters.AddWithValue("@NroCuentaDestino", cuentasTarjetasModel.NroCuentaDestino);
                     command.Parameters.AddWithValue("@doi", cuentasTarjetasModel.doi);
                     command.Parameters.AddWithValue("@Usuario", cuentasTarjetasModel.Usuario);
-                    
+                    command.Parameters.AddWithValue("@NroTarjeta", cuentasTarjetasModel.NroTarjeta);
+                    command.Parameters.AddWithValue("@ClaveTarjeta", cuentasTarjetasModel.ClaveTarjeta);
+                    command.Parameters.AddWithValue("@RowVersion", cuentasTarjetasModel.RowVersion);
+                    command.Parameters.AddWithValue("@RowVersionD", cuentasTarjetasModel.RowVersionD);
                     command.CommandType = CommandType.StoredProcedure;
 
                     command.CommandText = "TransferenciaInsert";
 
-                    result = command.ExecuteNonQuery();
-                
+                  //  result = command.ExecuteScalar().ToString();
+                    object a = command.ExecuteScalar();
+                    if (a != null)
+                        result = (string)a;
+                    else
+                        result = "Transferido";
                 }
 
                 return result;
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                result = e.ToString();
                 return result;
             }
         }

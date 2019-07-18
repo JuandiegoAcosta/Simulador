@@ -587,7 +587,8 @@ namespace CDatos.Manager
                                 Cliente = (string)reader[0],
                                 TipoCuenta = (string)reader[1],
                                 Estado = (string)reader[2],
-                                Moneda = (string)reader[3]
+                                Moneda = (string)reader[3],
+                                Version = (byte[])reader[4]
                             };
                         }
                     }
