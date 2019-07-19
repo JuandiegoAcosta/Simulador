@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.572
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28922.388
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CDatos", "CDatos\CDatos.csproj", "{F7E7BF20-35A7-446D-B271-460F418B65D9}"
 EndProject
@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "GUI\GUI.csproj", "{D
 	ProjectSection(ProjectDependencies) = postProject
 		{4D344881-6E47-4F46-AA36-93B84E62C338} = {4D344881-6E47-4F46-AA36-93B84E62C338}
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "X", "X", "{F2AFEB3F-4D8A-4ABD-99B4-7A11586A526E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XWFControlLibrary", "XWFControlLibrary\XWFControlLibrary.csproj", "{BF0CA83E-B3FC-466F-A0DC-7E79967CA642}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,9 +46,16 @@ Global
 		{D362364A-03B1-482F-B992-474C30F1E7EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D362364A-03B1-482F-B992-474C30F1E7EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D362364A-03B1-482F-B992-474C30F1E7EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF0CA83E-B3FC-466F-A0DC-7E79967CA642}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF0CA83E-B3FC-466F-A0DC-7E79967CA642}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF0CA83E-B3FC-466F-A0DC-7E79967CA642}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF0CA83E-B3FC-466F-A0DC-7E79967CA642}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BF0CA83E-B3FC-466F-A0DC-7E79967CA642} = {F2AFEB3F-4D8A-4ABD-99B4-7A11586A526E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A222D656-A0F4-45F3-9CF1-7EA18B86069A}

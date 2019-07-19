@@ -50,6 +50,8 @@
     <Compile Include="Manager\DetalleCajaChicaManager.cs" />
     <Compile Include="Manager\HoraFechaServidorManager.cs" />
     <Compile Include="Manager\TransferenciasManager.cs" />
+    <Compile Include="Manager\_PersonaManager.cs" />
+    <Compile Include="Manager\_RetiroManager.cs" />
     <Compile Include="Seguridad\ComponenteManager.cs" />
     <Compile Include="Manager\ControlErroresManager.cs" />
     <Compile Include="Manager\CronogramaPagoManager.cs" />

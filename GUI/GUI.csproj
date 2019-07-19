@@ -725,6 +725,10 @@
       <Project>{B2806070-24E8-4315-9491-608D2479ADEA}</Project>
       <Name>CNegocio</Name>
     </ProjectReference>
+    <ProjectReference Include="..\XWFControlLibrary\XWFControlLibrary.csproj">
+      <Project>{bf0ca83e-b3fc-466f-a0dc-7e79967ca642}</Project>
+      <Name>XWFControlLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\buscar.jpg" />
