@@ -18,9 +18,10 @@ namespace ServiciosBancarios
 {
     // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de clase "Service1" en el código, en svc y en el archivo de configuración.
     // NOTE: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione Service1.svc o Service1.svc.cs en el Explorador de soluciones e inicie la depuración.
-     public class SistemaBancario : ICobroChequeService, IEmpresaService, IPagoServicioService, IRecaudosService, ITipoMonedaService, ITipoMovimientoService, IVentanillaService, IBancoService, IComponenteService, IHorariosAtencionService, IPermisosUsuarioService, IPersonaService, IRolesService, IRolUsuarioService, ISucursalService, ITipoDocumentoService, ITurnosService, ITurnoUsuarioService, ICuentaService,ICajaChicaService,IDetalleCajaChicaService, IPrestamoService
+     public class SistemaBancario : ICobroChequeService, IEmpresaService, IPagoServicioService, IRecaudosService, ITipoMonedaService, ITipoMovimientoService, IVentanillaService, IBancoService, IComponenteService, IHorariosAtencionService, IPermisosUsuarioService, IPersonaService, IRolesService, IRolUsuarioService, ISucursalService, ITipoDocumentoService, ITurnosService, ITurnoUsuarioService, ICuentaService,ICajaChicaService,IDetalleCajaChicaService, IPrestamoService, IFechaHoraServerService
     {
         #region [ Varibles Globales ]
+
         #region [ Ventanilla Front ]
         private CobroChequeMethods BLCobroCheque;
         private EmpresaMethods BLEmpresa;
@@ -95,6 +96,7 @@ namespace ServiciosBancarios
         #region [ Ventanilla Front ]
 
         #region [ Cobro cheque ]
+
         bool ICobroChequeService.CobroCheque_Crear(CobroChequesModel aCobroCheque)
         {        
             return BLCobroCheque.Crear(aCobroCheque);
@@ -774,7 +776,7 @@ namespace ServiciosBancarios
 
         #endregion
 
-        #region Prestamos
+        #region [ Prestamos ]
 
         public bool Prestamo_Crear(PrestamosModel aPrestamo)
         {
@@ -808,14 +810,17 @@ namespace ServiciosBancarios
 
         #endregion
 
-        public List<VentanillaModel> GetVentanillasXSucursal(int Idsucursal)
+        #region [ Fecha Server ]
+
+        public DateTime? ObtenerFechaHoraActual()
         {
-            throw new NotImplementedException();
+            return BLFechaHoraServidor.Obtener();
         }
 
-        #region [ Caja Chica]
+        #endregion
 
-        
+        #region [ Caja Chica ]
+
         public int Crear(CajaChicaModel aCajaChica,int id_user)
         {
             return BLCajaChica.Crear(aCajaChica,id_user);
@@ -841,21 +846,14 @@ namespace ServiciosBancarios
             return BLCajaChica.ObtenerTodos();
         }
 
-        public bool Persona_Crear(PersonaModel aPersona, int id_user)
+        public List<VentanillaModel> GetVentanillasXSucursal(int Idsucursal)
         {
             throw new NotImplementedException();
         }
 
-        
-
-        
-
-        
-
-        
         #endregion
 
-        #region [Detalle caja Chica]
+        #region [ Detalle caja Chica ]
 
         public bool DetalleCajaChica_Crear(DetalleCajaChicaModel aDetalleCajaChica, int id_user)
         {
