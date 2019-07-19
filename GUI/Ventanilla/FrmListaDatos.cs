@@ -21,6 +21,8 @@ namespace Sistema_Bancario.Ventanilla
         }
         public void CrearLista<T>(List<T> ListaDatos)
         {
+            
+
             var bindingList = new BindingList<T>(ListaDatos);
             var source = new BindingSource(bindingList, null);
             DGVlistaDatos.DataSource = source;
