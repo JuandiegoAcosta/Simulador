@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using CNegocio.Ventanilla;
@@ -27,9 +28,8 @@ namespace Sistema_Bancario.Froms_opciones
          {
             PagoServicioMethods pagoServicioMethods = new PagoServicioMethods();
             int i = GNroContrato.CurrentCell.RowIndex;
-
-
-            pagoServicioMethods.InsertPagoServicio(Convert.ToInt32(nroContrato1.TBNroContrato.Text));
+            StatusStrip o = this.TopLevelControl.Controls.Find("stStatus", true).FirstOrDefault() as StatusStrip;//o.Items[1].Text;
+            pagoServicioMethods.InsertPagoServicio(Convert.ToInt32(nroContrato1.TBNroContrato.Text), o.Items[1].Text);
 
          }
         }

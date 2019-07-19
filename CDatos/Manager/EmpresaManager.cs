@@ -437,7 +437,7 @@ namespace CDatos.Manager
                     {
                         while (reader.Read())
                         {
-
+                            int Nro_Contato = (int)(reader["Nro_Contrato"]);
                             int ID_EmpresaModel = (int)(reader["ID_Empresa"]);
                             decimal MontoModel = (decimal)(reader["Monto"]);
                             DateTime FechaVencimiento = (DateTime)(reader["Fecha_Vencimiento"]);
@@ -445,11 +445,12 @@ namespace CDatos.Manager
 
                             EmpresaModellist.Add(new RecaudosModel
                             {
+                                Nro_contrato = Nro_Contato,
                                 Id_empresa = ID_EmpresaModel,
                                 Monto = MontoModel,
                                 Fecha_vencimiento = FechaVencimiento,
                                 Estado_recaudo = EstadoRecaudo
-                            });
+                            }); ;
                         }
                     }
                 }

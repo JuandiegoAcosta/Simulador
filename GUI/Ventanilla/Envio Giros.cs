@@ -73,7 +73,7 @@ namespace Sistema_Bancario.Froms_opciones
                 giro.Id_PersonaDestino = Convert.ToInt32(dni2.TBDni.Text);
                 giro.USUARIO_CREADOR = o.Items[1].Text;
                 giro.Moneda = tipoMoneda1.CboMoneda.Text;
-
+                
             if (girosMethods.EnviarGiro(giro))
                MessageBox.Show("Giro Enviado");
             else

@@ -46,8 +46,7 @@
             this.DGVlistaDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVlistaDatos.EnableHeadersVisualStyles = false;
             this.DGVlistaDatos.GridColor = System.Drawing.Color.Gray;
-            this.DGVlistaDatos.Location = new System.Drawing.Point(4, 40);
-            this.DGVlistaDatos.Margin = new System.Windows.Forms.Padding(4);
+            this.DGVlistaDatos.Location = new System.Drawing.Point(3, 32);
             this.DGVlistaDatos.Name = "DGVlistaDatos";
             this.DGVlistaDatos.ReadOnly = true;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -58,7 +57,7 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DGVlistaDatos.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.DGVlistaDatos.Size = new System.Drawing.Size(811, 444);
+            this.DGVlistaDatos.Size = new System.Drawing.Size(608, 361);
             this.DGVlistaDatos.TabIndex = 0;
             this.DGVlistaDatos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVlistaDatos_CellContentClick);
             this.DGVlistaDatos.SelectionChanged += new System.EventHandler(this.DGVlistaDatos_SelectionChanged);
@@ -69,10 +68,9 @@
             this.BTAceptar.FlatAppearance.BorderSize = 0;
             this.BTAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTAceptar.ForeColor = System.Drawing.SystemColors.Window;
-            this.BTAceptar.Location = new System.Drawing.Point(245, 492);
-            this.BTAceptar.Margin = new System.Windows.Forms.Padding(4);
+            this.BTAceptar.Location = new System.Drawing.Point(203, 399);
             this.BTAceptar.Name = "BTAceptar";
-            this.BTAceptar.Size = new System.Drawing.Size(100, 28);
+            this.BTAceptar.Size = new System.Drawing.Size(75, 23);
             this.BTAceptar.TabIndex = 1;
             this.BTAceptar.Text = "Aceptar";
             this.BTAceptar.UseVisualStyleBackColor = false;
@@ -82,10 +80,9 @@
             // 
             this.BTCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTCancelar.ForeColor = System.Drawing.SystemColors.Window;
-            this.BTCancelar.Location = new System.Drawing.Point(409, 492);
-            this.BTCancelar.Margin = new System.Windows.Forms.Padding(4);
+            this.BTCancelar.Location = new System.Drawing.Point(331, 399);
             this.BTCancelar.Name = "BTCancelar";
-            this.BTCancelar.Size = new System.Drawing.Size(100, 28);
+            this.BTCancelar.Size = new System.Drawing.Size(75, 23);
             this.BTCancelar.TabIndex = 2;
             this.BTCancelar.Text = "Cancelar";
             this.BTCancelar.UseVisualStyleBackColor = true;
@@ -96,24 +93,24 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(9, 7);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(218, 20);
+            this.label1.Size = new System.Drawing.Size(189, 17);
             this.label1.TabIndex = 3;
             this.label1.Text = "Resultados de Busqueda";
             // 
             // FrmListaDatos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
-            this.ClientSize = new System.Drawing.Size(820, 527);
+            this.ClientSize = new System.Drawing.Size(615, 428);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BTCancelar);
             this.Controls.Add(this.BTAceptar);
             this.Controls.Add(this.DGVlistaDatos);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmListaDatos";
             this.Text = "FrmListaDatos";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmListaDatos_FormClosed);

@@ -40,8 +40,8 @@
             // 
             // proceder1
             // 
-            this.proceder1.Location = new System.Drawing.Point(11, 553);
-            this.proceder1.Size = new System.Drawing.Size(771, 40);
+            this.proceder1.Location = new System.Drawing.Point(11, 357);
+            this.proceder1.Size = new System.Drawing.Size(581, 40);
             // 
             // tipoMoneda2
             // 
@@ -127,7 +127,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Depositos";
             this.Padding = new System.Windows.Forms.Padding(11, 10, 11, 10);
-            this.Size = new System.Drawing.Size(793, 603);
+            this.Size = new System.Drawing.Size(603, 407);
             this.Controls.SetChildIndex(this.label3, 0);
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.txtMonto, 0);
