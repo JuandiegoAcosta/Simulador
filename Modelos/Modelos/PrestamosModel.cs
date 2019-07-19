@@ -65,6 +65,12 @@ namespace Modelos.Modelos
         { get; set; }
 
         /// <summary>
+        /// Gets or sets the MontoMensual value.
+        /// </summary>
+        public decimal? Monto_mensual
+        { get; set; }
+
+        /// <summary>
         /// Gets or sets the Fecha_modificacion value.
         /// </summary>
         public DateTime? Fecha_modificacion
