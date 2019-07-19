@@ -161,19 +161,22 @@ namespace Sistema_Bancario.plataforma_controles
 
         private void buttonCrear_Click(object sender, EventArgs e)
         {
-
             var objeto = this.gui2moneda();
 
             if (objeto == null)
             {
-                MessageBox.Show("Problemas al instanciar el nuevo objeto, revise las propiedas");
+                MessageBox.Show("Hay algunas incoherencias, por favor ingrese los datos correctos");
                 return;
             }
-            if (this.BLMoneda.Insert(objeto))
+            DialogResult result = MessageBox.Show("¿Está seguro que desea crear la moneda? No se podrá eliminar tan facilmemte", "Advertencia", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
             {
-                this.clearForm();
-                this.modoInicial();
-                MessageBox.Show("El proceso ha sido correcto");
+                if (this.BLMoneda.Insert(objeto))
+                {
+                    this.clearForm();
+                    this.modoInicial();
+                    MessageBox.Show("El proceso ha sido correcto");
+                }
             }
         }
 
@@ -183,7 +186,7 @@ namespace Sistema_Bancario.plataforma_controles
 
             if (objeto == null)
             {
-                MessageBox.Show("Problemas al instanciar el nuevo objeto, revise las propiedas");
+                MessageBox.Show("Se detectan algunas incoherencias, por favor ingresa valores correctos");
                 return;
             }
 
@@ -193,11 +196,15 @@ namespace Sistema_Bancario.plataforma_controles
             objeto.Usuario_modificador = this.gUsuario;
             objeto.Fecha_modificacion = BLFechaHoraServidor.Obtener();
 
-            if (this.BLMoneda.Update(objeto))
+            DialogResult result = MessageBox.Show("¿Está seguro que quiere cambiar los valores? Puede afectar las futuras transacciones", "Advertencia", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
             {
-                MessageBox.Show("El proceso ha sido correcto");
-                this.clearForm();
-                this.modoInicial();
+                if (this.BLMoneda.Update(objeto))
+                {
+                    MessageBox.Show("El proceso ha sido correcto");
+                    this.clearForm();
+                    this.modoInicial();
+                }
             }
         }
 
@@ -205,15 +212,22 @@ namespace Sistema_Bancario.plataforma_controles
         {
             if (this.gMoneda == null)
             {
-                MessageBox.Show("Problemas al obtener el objeto de base de datos");
+                MessageBox.Show("No se pudo obtener la moneda desde base de datos");
                 return;
             }
-
-            if (this.BLMoneda.Delete(this.gMoneda.Id))
+            DialogResult result = MessageBox.Show("¿Está seguro que quiere eliminar esta moneda? Puede afectar las transacciones", "Advertencia", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
             {
-                this.clearForm();
-                this.modoInicial();
-                MessageBox.Show("El proceso ha sido correcto");
+                if (this.BLMoneda.Delete(this.gMoneda.Id))
+                {
+                    this.clearForm();
+                    this.modoInicial();
+                    MessageBox.Show("El proceso ha sido correcto");
+                }
+                else
+                {
+                    MessageBox.Show("La moneda esta siendo usada en transacciones, no puede ser eliminada");
+                }
             }
         }
 
