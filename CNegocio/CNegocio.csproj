@@ -76,6 +76,9 @@
     <Compile Include="Ventanilla\TipoMovimientoMethods.cs" />
     <Compile Include="Ventanilla\TransferenciasMethods.cs" />
     <Compile Include="Ventanilla\VentanillaMethods.cs" />
+    <Compile Include="Ventanilla\_EnvioGirosMethods.cs" />
+    <Compile Include="Ventanilla\_PersonaMethods.cs" />
+    <Compile Include="Ventanilla\_RetiroMethods.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CDatos\CDatos.csproj">
