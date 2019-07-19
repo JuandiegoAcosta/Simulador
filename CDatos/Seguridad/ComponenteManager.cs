@@ -401,7 +401,7 @@ namespace CDatos.Manager
 
                 return ComponenteModellist;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return null;
             }
@@ -459,7 +459,7 @@ namespace CDatos.Manager
 
                 return ComponenteModellist;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return ComponenteModellist;
             }

@@ -37,25 +37,11 @@ namespace Sistema_Bancario.Administrador
                     }
                 }
             }
-
-            catch (Exception ex)
+            catch (Exception)
             {
-
             }
 
         }
-
-        //private void btnBuscarEnBusqueda_Click(object sender, EventArgs e)
-        //{
-        //    if (!string.IsNullOrEmpty(txtBusquedaNombres.Text) && !string.IsNullOrEmpty(txtBusquedaApellidos.Text))
-        //    {
-        //        llenarBusquedaUsuariosDGV();
-        //    }
-        //    else
-        //    {
-        //        llenarBusquedaUsuariosDGV();
-        //    }
-        //}
 
         private void dgvBusquedaUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -72,7 +58,6 @@ namespace Sistema_Bancario.Administrador
         {
             resultado = DialogResult.OK;
             this.Close();
-            
         }
 
         private void btnCancelarBusqueda_Click(object sender, EventArgs e)

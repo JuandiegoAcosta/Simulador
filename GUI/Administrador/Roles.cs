@@ -21,9 +21,6 @@ namespace Sistema_Bancario.Administrador
         {
             InitializeComponent();
             this.BackColor = Color.White;
-            //pnlPrincipal.BringToFront();
-            //pnlAgregarUsuario.SendToBack();
-            //pnlSecundario.SendToBack();
             cargarDGV();
         }
 
@@ -32,32 +29,24 @@ namespace Sistema_Bancario.Administrador
         {
             get
             {
-
                 if (_instance == null)
                 {
                     _instance = new Roles();
                 }
-
                 return _instance;
             }
         }
-
 
         public List<RolesModel> roles;
 
         private void cargarDGV()
         {
-
             try
             {
-
                 using (WsSistemaBancario.RolesServiceClient rol = new WsSistemaBancario.RolesServiceClient())
                 {
                     roles = rol.Roles_ObtenerTodos().ToList();
-
-
-
-
+                    
                     dgvRoles.DataSource = roles;
 
                     dgvRoles.Columns["Fecha_creacion"].Visible = false;
@@ -65,12 +54,9 @@ namespace Sistema_Bancario.Administrador
                     dgvRoles.Columns["Usuario_creador"].Visible = false;
                     dgvRoles.Columns["Usuario_modificador"].Visible = false;
                 }
-
             }
-
-            catch (Exception ex)
+            catch (Exception)
             {
-
             }
         }
 
@@ -78,9 +64,6 @@ namespace Sistema_Bancario.Administrador
         {
             try
             {
-
-                
-
                 if (!string.IsNullOrEmpty(txtRol.Text)) {
                     using (WsSistemaBancario.RolesServiceClient rol = new WsSistemaBancario.RolesServiceClient())
                     {
@@ -93,24 +76,15 @@ namespace Sistema_Bancario.Administrador
 
                         objectmodelo.Usuario_modificador = "";
 
-
                         rol.Roles_Crear(objectmodelo, 1);
-
-
+                        
                         cargarDGV();
-
-
-
-
-
-
+                        
                     }
                 }
             }
-
-            catch (Exception ex)
+            catch (Exception)
             {
-
             }
         }
 
@@ -125,93 +99,32 @@ namespace Sistema_Bancario.Administrador
 
                 nombreRol = dgvRoles.Rows[e.RowIndex].Cells["Descripcion"].Value.ToString();
                 idRol = Convert.ToInt16(dgvRoles.Rows[e.RowIndex].Cells["Id"].Value);
-
-
-
             }
             llenarDGVPermisosRol();
         }
-
-
+        
         public DataTable usuarios;
         public List<RolUsuarioModel> listausuarios;
         public bool generarbotones;
 
         private void llenarDGVUsuarios()
-
         {
-
             try
             {
-
                 using (WsSistemaBancario.PersonaServiceClient UsuariosRol = new WsSistemaBancario.PersonaServiceClient())
                 {
-
-                    //dgvUsuarios.AutoGenerateColumns = false;
-
                     usuarios = UsuariosRol.GetPersonasPorRol(idRol);
-
-                    
-
                     dgvUsuarios.DataSource = usuarios;
-
-                    //dgvUsuarios.AutoGenerateColumns = false;
-
-
                     dgvUsuarios.CurrentCell = null;
-
-
-                    //dgvUsuarios.Columns["CustomerID"].Visible = false;
-
-
                     dgvUsuarios.Columns["Id"].DataPropertyName = "Id";
-
-                    //dgvUsuarios.Columns["Id"].DataPropertyName = "Id";
-
                     dgvUsuarios.Columns["IDPersona"].DataPropertyName = "IDPersona";
-
                     dgvUsuarios.Columns["Nombres"].DataPropertyName = "Nombres";
-                    //dgvUsuarios.Columns["Nombres"].DisplayIndex = 2;
-
                     dgvUsuarios.Columns["Nombreusuario"].DataPropertyName = "Nombreusuario";
-                    //dgvUsuarios.Columns["Nombreusuario"].DisplayIndex = 3;
-
-
-                    //dgvUsuarios.Columns["Correo"].DisplayIndex = 4;
-                    //dgvUsuarios.Columns["Nrodocumento"].DataPropertyName = "Nrodocumento";
-                    //dgvUsuarios.Columns["Nrodocumento"].DisplayIndex = 5;
-
-
                     dgvUsuarios.Columns["Estado"].DataPropertyName = "Estado";
-                    //dgvUsuarios.Columns["Estado"].DisplayIndex = 8;
-
-                    //if (generarbotones == false) {
-                    //    generarbotones = true;
-                    //    DataGridViewButtonColumn btnEditar = new DataGridViewButtonColumn();
-                    //    btnEditar.Name = "Editar";
-                    //    btnEditar.HeaderText = "Editar";
-
-
-                    //    dgvUsuarios.Columns.Add(btnEditar);
-
-                    //    //dgvUsuarios.Columns["Editar"].DisplayIndex = 5;
-
-                    //    DataGridViewButtonColumn btnEliminar = new DataGridViewButtonColumn();
-                    //    btnEliminar.Name = "Eliminar";
-                    //    btnEliminar.HeaderText = "Eliminar";
-                    //    dgvUsuarios.Columns.Add(btnEliminar);
-
-                    //}
-
-                    //dgvUsuarios.Columns["Editar"].DataPropertyName = "Editar";
-                    //dgvUsuarios.Columns["Eliminar"].DataPropertyName = "Eliminar";
-
                     dgvUsuarios.Columns["Id"].Visible = false;
                     dgvUsuarios.Columns["IDPersona"].Visible = false;
-
                     dgvUsuarios.Columns["Correo"].Visible = false;
                     dgvUsuarios.Columns["NroDocumento"].Visible = false;
-
                     dgvUsuarios.Columns["Pass"].Visible = false;
                     dgvUsuarios.Columns["Apellidos"].Visible = false;
                     dgvUsuarios.Columns["Fechanacimiento"].Visible = false;
@@ -222,28 +135,17 @@ namespace Sistema_Bancario.Administrador
                     dgvUsuarios.Columns["Usuario_creador"].Visible = false;
                     dgvUsuarios.Columns["Usuario_modificador"].Visible = false;
                     dgvUsuarios.Columns["Tipo_persona"].Visible = false;
-
                 }
-
             }
-
-            catch (Exception ex)
+            catch (Exception)
             {
-
             }
-
-
-
         }
-
-
-
 
         private void btnEditarRol_Click(object sender, EventArgs e)
         {
             try
             {
-
                 using (WsSistemaBancario.RolesServiceClient rol = new WsSistemaBancario.RolesServiceClient())
                 {
                     RolesModel objectmodelo = new RolesModel();
@@ -255,41 +157,29 @@ namespace Sistema_Bancario.Administrador
 
                     cargarDGV();
                 }
-
             }
-
-            catch (Exception ex)
+            catch (Exception)
             {
-
             }
-
         }
 
         private void btnEliminarRol_Click(object sender, EventArgs e)
         {
             try
             {
-
                 using (WsSistemaBancario.RolesServiceClient rol = new WsSistemaBancario.RolesServiceClient())
                 {
-
                     rol.Roles_Eliminar(idRol);
                     cargarDGV();
-
                 }
-
-
             }
-
-            catch (Exception ex)
+            catch (Exception)
             {
-
             }
         }
 
         private void btnRefrescar_Click(object sender, EventArgs e)
         {
-
         }
 
 
@@ -297,7 +187,6 @@ namespace Sistema_Bancario.Administrador
         {
             pnlPrincipal.SendToBack();
             pnlAgregarUsuario.SendToBack();
-            //pnlBusquedaPersona.SendToBack();
             pnlSecundario.BringToFront();
 
             llenarDGVUsuarios();
@@ -305,14 +194,9 @@ namespace Sistema_Bancario.Administrador
 
         private void btnAgregarUsuario_Click(object sender, EventArgs e)
         {
-            //AgregarNuevoUsuario frmAgregarNuevoUsuario = new AgregarNuevoUsuario();
-            //frmAgregarNuevoUsuario.Show();
-
-
             pnlPrincipal.SendToBack();
             pnlSecundario.SendToBack();
             pnlAgregarUsuario.BringToFront();
-
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -326,240 +210,91 @@ namespace Sistema_Bancario.Administrador
 
         private void btnBuscarUsuario_Click(object sender, EventArgs e)
         {
-
             using (BuscarPersona frmBuscarPersona = new BuscarPersona())
             {
                 frmBuscarPersona.ShowDialog();
                 if (frmBuscarPersona.resultado == DialogResult.OK)
                 {
                     idPersona = frmBuscarPersona.id;
-                    //usuarioPersona = frmBuscarPersona.usuario;
                     txtNombrePersona.Text = usuarioPersona;
-
                     NombrePersona = frmBuscarPersona.nombre;
                     txtUsuarioBuscado.Text = NombrePersona;
                 }
             }
-
-
-
-
-            //BuscarPersona bp = new BuscarPersona();
-            //bp.Show();
-
-            ////pnlAgregarUsuario.SendToBack();
-            //pnlBusquedaPersona.BringToFront();
         }
-
-
 
         public List<PersonaModel> usuariosFiltrados;
 
-        //private void btnBuscarEnBusqueda_Click(object sender, EventArgs e)
-        //{
-        //    if (!string.IsNullOrEmpty(txtBusquedaNombres.Text) && !string.IsNullOrEmpty(txtBusquedaApellidos.Text))
-        //    {
-        //        llenarBusquedaUsuariosDGV();
-        //    }
-        //    else
-        //    {
-        //        llenarBusquedaUsuariosDGV();
-        //    }
-        //}
-
-        //private void llenarBusquedaUsuariosDGV()
-        //{
-
-        //    try
-        //    {
-
-        //        using (WsSistemaBancario.PersonaServiceClient buscarPersonaNombresApellidos = new WsSistemaBancario.PersonaServiceClient())
-        //        {
-        //            usuariosFiltrados = buscarPersonaNombresApellidos.Persona_GetPersonaNombreApellidos(txtBusquedaNombres.Text, txtBusquedaApellidos.Text).ToList();
-
-        //            dgvBusquedaUsuarios.DataSource = usuariosFiltrados;
-        //            //usuariosFiltrados = null;
-
-        //            dgvBusquedaUsuarios.Columns["Nombres"].DisplayIndex = 1;
-        //            dgvBusquedaUsuarios.Columns["Apellidos"].DisplayIndex = 2;
-        //            dgvBusquedaUsuarios.Columns["NroDocumento"].DisplayIndex = 3;
-
-        //            dgvBusquedaUsuarios.Columns[6].HeaderText = "Tipo Documento";
-
-
-        //            //dgvBusquedaUsuarios.Columns["Id"].Visible = false;
-        //            dgvBusquedaUsuarios.Columns["NombreUsuario"].Visible = false;
-        //            dgvBusquedaUsuarios.Columns["Pass"].Visible = false;
-        //            dgvBusquedaUsuarios.Columns["Fechanacimiento"].Visible = false;
-        //            dgvBusquedaUsuarios.Columns["Telefono"].Visible = false;
-        //            dgvBusquedaUsuarios.Columns["Tipodocumento"].Visible = false;
-        //            dgvBusquedaUsuarios.Columns["Correo"].Visible = false;
-        //            dgvBusquedaUsuarios.Columns["Fecha_creacion"].Visible = false;
-        //            dgvBusquedaUsuarios.Columns["Fecha_modificacion"].Visible = false;
-        //            dgvBusquedaUsuarios.Columns["Usuario_creador"].Visible = false;
-        //            dgvBusquedaUsuarios.Columns["Usuario_modificador"].Visible = false;
-        //            dgvBusquedaUsuarios.Columns["Tipo_persona"].Visible = false;
-        //            dgvBusquedaUsuarios.Columns["Estado"].Visible = false;
-
-
-
-        //        }
-
-        //    }
-
-        //    catch (Exception ex)
-        //    {
-
-        //    }
-
-        //}
-
-
-
         private void btnCancelarBusqueda_Click(object sender, EventArgs e)
         {
-            //pnlBusquedaPersona.SendToBack();
             pnlAgregarUsuario.BringToFront();
             pnlPrincipal.SendToBack();
             pnlSecundario.SendToBack();
         }
 
-
         private static int idPersona;
         private static string usuarioPersona;
-
-        //private void dgvBusquedaUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
-        //{
-        //    if (e.RowIndex != -1)
-        //    {
-        //        idPersona = Convert.ToInt16(dgvBusquedaUsuarios.Rows[e.RowIndex].Cells["Id"].Value);
-        //        usuarioPersona = (dgvBusquedaUsuarios.Rows[e.RowIndex].Cells["NombreUsuario"].Value).ToString();
-
-        //    }
-        //}
-
-
+        
         PersonaModel persona = new PersonaModel();
 
         private void btnAceptarBusqueda_Click(object sender, EventArgs e)
         {
             pnlAgregarUsuario.BringToFront();
-            //pnlBusquedaPersona.SendToBack();
-            //txtBusquedaNombres.Text = "";
-            //txtBusquedaApellidos.Text = "";
-
-
-
-
             try
             {
-
                 using (WsSistemaBancario.PersonaServiceClient ObtenerPersona = new WsSistemaBancario.PersonaServiceClient())
                 {
-
-
                     persona = ObtenerPersona.Persona_ObtenerUno(idPersona);
                     txtUsuarioBuscado.Text = persona.Nombres;
-
                 }
-
             }
-
-            catch (Exception ex)
+            catch (Exception)
             {
-
             }
-
-
-
         }
-
-        bool confirmarCreacion;
-        bool estadocheck;
 
         private void btnInsertarUsuario_Click(object sender, EventArgs e)
         {
             try
             {
-                //string passEncrypt = Encrypt.GetSHA256(txtContraseña.Text);
-
-
-
-
-
-
                 using (WsSistemaBancario.RolUsuarioServiceClient CrearRolUsuario = new WsSistemaBancario.RolUsuarioServiceClient())
                 {
-
                     RolUsuarioModel rum = new RolUsuarioModel();
                     rum.Id_persona = idPersona;
                     rum.Id_rol = idRol;
                     rum.Activo = chbEstado.Checked;
-                    ;
                     rum.Usuario_creador = "Administrador";
 
                     CrearRolUsuario.RolUsuario_Crear(rum, 1);
                 }
-
-
-
-
-
                 llenarDGVUsuarios();
                 pnlAgregarUsuario.SendToBack();
-
                 pnlSecundario.BringToFront();
-
-
-
             }
-
-            catch (Exception ex)
+            catch (Exception)
             {
-
             }
         }
-
 
         public List<ComponenteModel> componentesRol;
 
         private void llenarDGVPermisosRol()
-
         {
-
             try
             {
-
                 using (WsSistemaBancario.ComponenteServiceClient PermisosPorRol = new WsSistemaBancario.ComponenteServiceClient())
                 {
-
                     componentesRol = PermisosPorRol.Componente_ObtenerComponentesRol(idRol).ToList();
-
-
-
                     dgvPermisosRol.DataSource = componentesRol;
-
-
                     dgvPermisosRol.Columns["Descripcion"].Visible = false;
                     dgvPermisosRol.Columns["Codigo"].Visible = false;
                     dgvPermisosRol.Columns["Id_aplicacion"].Visible = false;
-
                     dgvPermisosRol.Columns["IdPadre"].Visible = false;
-
-
-
-
                 }
-
             }
-
-            catch (Exception ex)
+            catch (Exception)
             {
-
             }
-
-
-
         }
 
         public int idUsuario;
@@ -568,64 +303,18 @@ namespace Sistema_Bancario.Administrador
 
         private void dgvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
             if (e.RowIndex != -1)
             {
-                //var senderGrid = (DataGridView)sender;
-
-
-
-
-
                 idRolUsuario = (int)(dgvUsuarios.Rows[e.RowIndex].Cells["Id"].Value);
                 idUsuario = Convert.ToInt16(dgvUsuarios.Rows[e.RowIndex].Cells["IdPersona"].Value);
                 nombreusuario = dgvUsuarios.Rows[e.RowIndex].Cells["NombreUsuario"].Value.ToString();
-
-
-                //if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
-                //{
-
-
-
-
-                //        ///////////using
-
-                //        //if (e.ColumnIndex==5) {
-                //        //    Editar frmeditar = new Editar();
-
-                //        //    frmeditar.txtUsuarioEditar.Text = nombreusuario;
-                //        //    frmeditar.txtIdUsuario.Text = idUsuario.ToString();
-                //        //    frmeditar.idRolUsuario.Text = idRolUsuario.ToString();
-                //        //    frmeditar.btnEditar.Visible = true;
-                //        //    frmeditar.Show();
-
-                //        //}
-
-                //        //if (e.ColumnIndex == 6)
-                //        //{
-                //        EditarEliminar frmeditar = new EditarEliminar();
-
-                //        frmeditar.txtUsuarioEditar.Text = nombreusuario;
-                //        frmeditar.txtIdUsuario.Text = idUsuario.ToString();
-                //        frmeditar.idRolUsuario.Text = idRolUsuario.ToString();
-                //        frmeditar.btnEliminar.Visible = true;
-                //        frmeditar.Show();
-
-                //    //}
-
-
-
-
-                //}
             }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-
             if (dgvUsuarios.CurrentRow != null)
             {
-
                 EditarEliminar frmeditar = new EditarEliminar();
                 frmeditar.Text = "Eliminar";
                 frmeditar.cmbRolesEditar.Visible = false;
@@ -635,9 +324,6 @@ namespace Sistema_Bancario.Administrador
                 frmeditar.btnEliminar.Visible = true;
                 frmeditar.Show();
             }
-
-
-
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -664,41 +350,26 @@ namespace Sistema_Bancario.Administrador
 
         private void dgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
         }
 
         public List<ComponenteModel> componentes;
-
 
         private void llenardgvComponentes()
         {
             try
             {
-
                 using (WsSistemaBancario.ComponenteServiceClient ComponentesParaRol = new WsSistemaBancario.ComponenteServiceClient())
                 {
-
                     componentes = ComponentesParaRol.ObtenerTodosComponentes().ToList();
-
                     dgvCrearComponentesRol.DataSource = componentes;
-
                     dgvCrearComponentesRol.Columns["IdPadre"].Visible = false;
                     dgvCrearComponentesRol.Columns["Id_aplicacion"].Visible = false;
-
-
                 }
-
             }
-
-            catch (Exception ex)
+            catch (Exception)
             {
-
             }
-
         }
-
-
-
 
         public int idComponente;
         public bool estado;
@@ -706,9 +377,7 @@ namespace Sistema_Bancario.Administrador
 
         private void dgvCrearComponentesRol_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
             idRolUsuario = idRol;
-            //idRol = (int)(dgvCrearComponentesRol.Rows[e.RowIndex].Cells["Id_rol"].Value);
             idComponente = (int)(dgvCrearComponentesRol.Rows[e.RowIndex].Cells["Id"].Value);
             estado = (bool)(dgvCrearComponentesRol.Rows[e.RowIndex].Cells["Estado"].Value);
 
@@ -716,13 +385,8 @@ namespace Sistema_Bancario.Administrador
             permisos.Id_rol = idRol;
             permisos.Id_componente = idComponente;
             permisos.Estado = estado;
-
-
+            
             Componentesrol.Add(permisos);
-            //ComponentesParaElRol.Add(Convert.ToInt16(idRolUsuario));
-
-
-           
         }
 
         private void btnCrearRolAtras_Click(object sender, EventArgs e)
@@ -735,41 +399,28 @@ namespace Sistema_Bancario.Administrador
         {
             try
             {
-
                 using (WsSistemaBancario.PermisosUsuarioServiceClient ComponentesParaRol = new WsSistemaBancario.PermisosUsuarioServiceClient())
                 {
-
-                    
-
-                    //ComponentesParaRol.PermisosUsuario_Crear(pu,1);
                     foreach (PermisosUsuarioModel c in Componentesrol)
                     {
                         PermisosUsuarioModel pu = new PermisosUsuarioModel();
-                        
                         pu.Id_rol = idRol;
                         pu.Id_componente = c.Id_componente;
                         pu.Estado = c.Estado;
-                        
                         ComponentesParaRol.PermisosUsuario_Crear(pu,6);
-
                     }
-
                 }
                 componentesRol = null;
-
             }
-
-            catch (Exception ex)
+            catch (Exception)
             {
-
             }
         }
 
         private void btnAgregarPermisosRol_Click(object sender, EventArgs e)
         {
-            if (idRol != 0) {
-
-
+            if (idRol != 0)
+            {
                 pnlPrincipal.SendToBack();
                 pnlComponentesParaRol.BringToFront();
                 llenardgvComponentes();
@@ -778,7 +429,6 @@ namespace Sistema_Bancario.Administrador
 
         private void tbpUsuarios_Click(object sender, EventArgs e)
         {
-
         }
     }
 }

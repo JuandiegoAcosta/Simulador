@@ -13,8 +13,8 @@ namespace Sistema_Bancario.Froms_opciones
 {
     public partial class Servicios : Sistema_Bancario.Base
     {
-        private PagoServiciosModel gPagomodels;
-        private EmpresaModel gEmpresaModel;
+        //private PagoServiciosModel gPagomodels;
+        //private EmpresaModel gEmpresaModel;
 
         public Servicios()
         {

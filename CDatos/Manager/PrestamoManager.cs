@@ -65,7 +65,7 @@ namespace CDatos.Manager
             }
             catch (Exception)
             {
-                throw;
+                //throw;
                 return false;
             }
         }
@@ -390,7 +390,7 @@ namespace CDatos.Manager
             }
             catch (Exception)
             {
-                throw;
+                //throw;
                 return prestamolist;
             }
         }
@@ -530,7 +530,7 @@ namespace CDatos.Manager
             }
             catch (Exception)
             {
-                throw;
+                //throw;
                 return CronogramaPagosModellist;
             }
         }

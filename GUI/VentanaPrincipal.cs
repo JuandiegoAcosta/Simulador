@@ -244,7 +244,7 @@ namespace Sistema_Bancario
             {
                 CrearControl<UserControl>(Servicios.instance, btn);
             }
-            else if (btn.Text.Equals("Abrir Cuenta"))
+            else if (btn.Text.Equals("Cuentas"))
             {
                 NuevaCuentaUserControl cuenta;
                 if (this.Session != null)
@@ -261,7 +261,7 @@ namespace Sistema_Bancario
             {
                 CrearControl<UserControl>(UCactualizarCuenta.instance, btn);
             }
-            else if (btn.Text.Equals("Realizar Préstamo"))
+            else if (btn.Text.Equals("Préstamos"))
             {
                 NuevoPrestamoUserControl prestamo;
                 if (this.Session != null)
@@ -315,7 +315,7 @@ namespace Sistema_Bancario
             {
                 CrearControl<UserControl>(ResumenTotal.instance, btn);
             }
-            else if (btn.Text.Equals("Cliente"))
+            else if (btn.Text.Equals("Clientes"))
             {
                 RegistroPersonaUserControl personas;
                 if (this.Session != null)
@@ -328,7 +328,7 @@ namespace Sistema_Bancario
                     MessageBox.Show("La sesión ha caducado");
                 }
             }
-            else if (btn.Text.Equals("Tipo Moneda"))
+            else if (btn.Text.Equals("Monedas"))
             {
                 NuevaMoneda monedas;
                 if (this.Session != null)
@@ -418,7 +418,7 @@ namespace Sistema_Bancario
                     {
                         Button AbrirCuenta = new Button();
                        
-                        this.CrearBoton(AbrirCuenta, "Abrir Cuenta", 0);
+                        this.CrearBoton(AbrirCuenta, "Cuentas", 0);
                     }
 
                     //if (Session.Componentes.Any(c => c.Nombre == "Gestionar Cuenta"))
@@ -432,7 +432,7 @@ namespace Sistema_Bancario
                     {
                         Button RealizarPrestamo = new Button();
                        
-                        this.CrearBoton(RealizarPrestamo, "Realizar Préstamo", 50);
+                        this.CrearBoton(RealizarPrestamo, "Préstamos", 50);
                     }
 
                     //if (Session.Componentes.Any(c => c.Nombre == "Refinanciar"))
@@ -465,8 +465,8 @@ namespace Sistema_Bancario
                Button Aseguradora = new Button();
                Button Empleado = new Button();
 
-               this.CrearBoton(Cliente, "Cliente", 0);
-               this.CrearBoton(TipoCliente, "Tipo Moneda", 50);
+               this.CrearBoton(Cliente, "Clientes", 0);
+               this.CrearBoton(TipoCliente, "Monedas", 50);
                this.CrearBoton(TipoCuenta, "Gestionar Tarjetas", 100);
                this.CrearBoton(InteresesMoratorios, "Gestionar Chequera", 150);
                break;

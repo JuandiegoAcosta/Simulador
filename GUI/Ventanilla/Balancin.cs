@@ -87,7 +87,7 @@ namespace Sistema_Bancario.Ventanilla
                     
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Ocurrio un error al cargar ventanillas en el combo");
                

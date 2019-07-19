@@ -68,9 +68,9 @@ namespace CNegocio.Plataforma
 
                 return true;
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                throw;
+                //throw;
                 return false;
             }
         }

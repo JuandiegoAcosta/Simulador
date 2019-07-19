@@ -142,7 +142,7 @@ namespace Sistema_Bancario
                 }
                 return back;
          }
-         catch (Exception ex)
+         catch (Exception)
          {
             return back;
          }

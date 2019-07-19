@@ -10,7 +10,7 @@ namespace Sistema_Bancario.Ventanilla
     public class Utilitarios : TipoMoneda
     {
         public event EventHandler OnTextChanged;
-        //
+
         private void RaisecheckTextChanged()
         {
             var handler = OnTextChanged;
@@ -23,7 +23,6 @@ namespace Sistema_Bancario.Ventanilla
         public void TxtConversion_TextChanged(object sender, EventArgs e)
         {
             RaisecheckTextChanged();
-          //  txtSearch.Text = "aaa";
         }
     }
 }

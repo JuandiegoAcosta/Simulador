@@ -120,7 +120,7 @@ namespace Sistema_Bancario
                 }
                 return false;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }

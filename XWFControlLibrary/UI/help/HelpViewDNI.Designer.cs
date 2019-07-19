@@ -35,7 +35,7 @@
          this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
          this.gradentPanel1 = new XWFControlLibrary.Controles.GradentPanel();
          this.btnExit = new System.Windows.Forms.Button();
-         this.MoveFrom = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+         //this.MoveFrom = new Bunifu.Framework.UI.BunifuDragControl(this.components);
          ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).BeginInit();
          this.gradentPanel1.SuspendLayout();
          this.SuspendLayout();
@@ -107,10 +107,10 @@
          // 
          // MoveFrom
          // 
-         this.MoveFrom.Fixed = true;
-         this.MoveFrom.Horizontal = true;
-         this.MoveFrom.TargetControl = this.gradentPanel1;
-         this.MoveFrom.Vertical = true;
+         //this.MoveFrom.Fixed = true;
+         //this.MoveFrom.Horizontal = true;
+         //this.MoveFrom.TargetControl = this.gradentPanel1;
+         //this.MoveFrom.Vertical = true;
          // 
          // HelpViewDNI
          // 
@@ -137,6 +137,6 @@
       private System.Windows.Forms.DataGridViewTextBoxColumn NroDocumento;
       private System.Windows.Forms.DataGridViewTextBoxColumn Apellidos;
       private System.Windows.Forms.DataGridViewTextBoxColumn Nombres;
-      private Bunifu.Framework.UI.BunifuDragControl MoveFrom;
+      //private Bunifu.Framework.UI.BunifuDragControl MoveFrom;
    }
 }
