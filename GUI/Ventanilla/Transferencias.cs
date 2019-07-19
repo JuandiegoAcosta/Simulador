@@ -19,10 +19,18 @@ namespace Sistema_Bancario.Froms_opciones
         {
             InitializeComponent();
             proceder1.BTProceder.Click += BTProceder_Click;
-            
+            nroCuenta1.LbTarjeta.Text = "Nro Cuenta / Tarjeta";
+            nroCuenta1.BtValidar.Click += BtValidar_Click;
         }
 
-      private bool SetItem()
+        private void BtValidar_Click(object sender, EventArgs e)
+        {
+            int index = tipoMoneda1.CboMoneda.FindString(nroCuenta1.Lbmoneda.Text);
+            tipoMoneda1.CboMoneda.SelectedIndex = index;
+            tipoMoneda1.Enabled = false;
+        }
+
+        private bool SetItem()
       {
          CuentasTarjetasModel = new CuentasTarjetasModel();
          if (!string.IsNullOrEmpty(this.txtMonto.Text.Trim()))
@@ -61,11 +69,23 @@ namespace Sistema_Bancario.Froms_opciones
             transferenciasMethods = new TransferenciasMethods();
                 StatusStrip o = this.TopLevelControl.Controls.Find("stStatus", true).FirstOrDefault() as StatusStrip;//o.Items[1].Text;
                 CuentasTarjetasModel.Usuario = o.Items[1].Text;
-                   
-                if (transferenciasMethods.RealizarTransferencia(CuentasTarjetasModel) > 0)
-               MessageBox.Show("Operacion Realizada");
+               // CuentasTarjetasModel.NroTarjeta = 
+
+                CuentasTarjetasModel.RowVersion = nroCuenta1.VersionCuenta;
+                CuentasTarjetasModel.RowVersionD = nroCuenta2.VersionCuenta;
+                string a = transferenciasMethods.RealizarTransferencia(CuentasTarjetasModel);
+                if (!a.Equals("Error"))
+                {
+                    MessageBox.Show("Operacion Realizada");
+                    nroCuenta1.LimpiarControles();
+                    nroCuenta2.LimpiarControles();
+                    txtMonto.Clear();
+                    doi1.TBDoi.Clear();
+                    clave1.TBClave.Clear();
+                }
+              
             else
-               MessageBox.Show("No se pudo realizar la operación");
+               MessageBox.Show("No se pudo realizar la operación:"+a);
          } 
         }
 

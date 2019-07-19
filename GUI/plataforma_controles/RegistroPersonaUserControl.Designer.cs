@@ -176,9 +176,6 @@
             this.dtpFecha_nacimiento.Name = "dtpFecha_nacimiento";
             this.dtpFecha_nacimiento.Size = new System.Drawing.Size(268, 20);
             this.dtpFecha_nacimiento.TabIndex = 12;
-            this.dtpFecha_nacimiento.MinDate = new System.DateTime(1900, 01, 01);
-            this.dtpFecha_nacimiento.MaxDate = new System.DateTime(System.DateTime.Now.Year - 18, 01, 01);
-
             // 
             // label7
             // 

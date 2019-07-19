@@ -20,7 +20,7 @@ namespace Sistema_Bancario.Administrador
             this.pnlPrincipal.Location = new Point(70, 30);
             this.pnlSecundario.Location = new Point(70, 30);
             this.pnlAgregar.Location = new Point(70, 30);
-            this.pnlAgregarPermisos.Location = new Point(70, 30);
+           // this.pnlAgregarPermisos.Location = new Point(70, 30);
             this.pnlAgregarRoles.Location = new Point(200, 80);
             this.pnlAgregarUsuarios.Location = new Point(200, 80);
             this.BackColor = Color.White;
@@ -28,7 +28,7 @@ namespace Sistema_Bancario.Administrador
             pnlPrincipal.BringToFront();
             pnlSecundario.SendToBack();
             pnlAgregar.SendToBack();
-            pnlAgregarPermisos.SendToBack();
+           // pnlAgregarPermisos.SendToBack();
             //pnlAgregarUsuario.SendToBack();                                          
             //cmbRoles.SelectedItem = null;                                            
             //llenarComboBox();                                                        
@@ -241,19 +241,14 @@ namespace Sistema_Bancario.Administrador
             {
                 if (this.dgvPermisos.Columns[e.ColumnIndex].Name == "Editar")
                 {
-                    MostrarActualizarPermiso();
-
                     string nombreComponente = dgvPermisos.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
 
                     componenteActualizar = (from a in componentes_list
                                             where a.Nombre == nombreComponente
                                             select a).FirstOrDefault();
-
-                    txtNombeAgregar.Text = componenteActualizar.Nombre;
-                    txtDescripcionAgregar.Text = componenteActualizar.Descripcion;
-                    txtCodigoAgregar.Text = componenteActualizar.Codigo;
-                    cmbComponentesPadreAgregar.SelectedIndex = (componenteActualizar.IdPadre != null ? (int)componenteActualizar.IdPadre : 1);
-
+                    frmAgregarPermiso p = new frmAgregarPermiso(true,componenteActualizar);
+                    p.ShowDialog();
+                    Listar_Componentes();
                 }
                 if (this.dgvPermisos.Columns[e.ColumnIndex].Name == "Eliminar")
                 {
@@ -310,91 +305,91 @@ namespace Sistema_Bancario.Administrador
 
         private void btnAgregarNuevoComponente_Click(object sender, EventArgs e)
         {
-            try
-            {
-                using (WsSistemaBancario.ComponenteServiceClient componente = new WsSistemaBancario.ComponenteServiceClient())
-                {
-                    if (cNuevo)
-                    {//agregar
-
-                        ComponenteModel nuevoComponente = new ComponenteModel
-                        {
-                            Nombre = txtNombeAgregar.Text,
-                            Codigo = txtCodigoAgregar.Text,
-                            Descripcion = txtDescripcionAgregar.Text,
-                            Id_aplicacion = 1,
-                            Estado = (checkEstadoAgregar.Checked) ? true : false,
-                            IdPadre = (int)cmbComponentesPadreAgregar.SelectedValue
-                        };
-
-                        if (!(componente.Componente_Crear(nuevoComponente, 8)))
-                        {
-                            MessageBox.Show("Error al registrar Dato");
-                        }
-                    }
-                    else
-                    {
-                        //actualizar
-                        componenteActualizar.Nombre = txtNombeAgregar.Text;
-                        componenteActualizar.Descripcion = txtDescripcionAgregar.Text;
-                        componenteActualizar.Id_aplicacion = 1;
-                        componenteActualizar.Estado = (checkEstadoAgregar.Checked) ? true : false;
-                        componenteActualizar.IdPadre = (int)cmbComponentesPadreAgregar.SelectedIndex;
-
-                        if (!(componente.Componente_Editar(componenteActualizar, 8)))
-                        {
-                            MessageBox.Show("Error al actualizar Dato");
-                        }
-                        
-                    }
-                    pnlPrincipal.BringToFront();
-                    pnlSecundario.SendToBack();
-                    pnlAgregar.SendToBack();
-                    pnlAgregarPermisos.SendToBack();
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error en cargar componentes", "Componentes");
-            }
-            Listar_Componentes();
-
+           // try
+           // {
+           //     using (WsSistemaBancario.ComponenteServiceClient componente = new WsSistemaBancario.ComponenteServiceClient())
+           //     {
+           //         if (cNuevo)
+           //         {//agregar
+           //
+           //             ComponenteModel nuevoComponente = new ComponenteModel
+           //             {
+           //                 Nombre = txtNombeAgregar.Text,
+           //                 Codigo = txtCodigoAgregar.Text,
+           //                 Descripcion = txtDescripcionAgregar.Text,
+           //                 Id_aplicacion = 1,
+           //                 Estado = (checkEstadoAgregar.Checked) ? true : false,
+           //                 IdPadre = (int)cmbComponentesPadreAgregar.SelectedValue
+           //             };
+           //
+           //             if (!(componente.Componente_Crear(nuevoComponente, 8)))
+           //             {
+           //                 MessageBox.Show("Error al registrar Dato");
+           //             }
+           //         }
+           //         else
+           //         {
+           //             //actualizar
+           //             componenteActualizar.Nombre = txtNombeAgregar.Text;
+           //             componenteActualizar.Descripcion = txtDescripcionAgregar.Text;
+           //             componenteActualizar.Id_aplicacion = 1;
+           //             componenteActualizar.Estado = (checkEstadoAgregar.Checked) ? true : false;
+           //             componenteActualizar.IdPadre = (int)cmbComponentesPadreAgregar.SelectedIndex;
+           //
+           //             if (!(componente.Componente_Editar(componenteActualizar, 8)))
+           //             {
+           //                 MessageBox.Show("Error al actualizar Dato");
+           //             }
+           //             
+           //         }
+           //         pnlPrincipal.BringToFront();
+           //         pnlSecundario.SendToBack();
+           //         pnlAgregar.SendToBack();
+           //         pnlAgregarPermisos.SendToBack();
+           //     }
+           //
+           // }
+           // catch (Exception ex)
+           // {
+           //     MessageBox.Show("Error en cargar componentes", "Componentes");
+           // }
+           // Listar_Componentes();
+           //
         }
         private void btnAgregarPermiso_Click(object sender, EventArgs e)
         {
-            agregarPermisosNuevos();
-            btnAgregarNuevoComponente.Text = "Agregar";
-            cNuevo = true;
+            frmAgregarPermiso p = new frmAgregarPermiso(false);
+            p.ShowDialog();
+            Listar_Componentes();
         }
         private void MostrarActualizarPermiso()
         {
-            agregarPermisosNuevos();
-            btnAgregarNuevoComponente.Text = "Actualizar";
-            cNuevo = false;
+           // agregarPermisosNuevos();
+           // btnAgregarNuevoComponente.Text = "Actualizar";
+           // cNuevo = false;
         }
 
         private void agregarPermisosNuevos()
         {
-            txtCodigoAgregar.Text = "";
-            txtNombeAgregar.Text = "";
-            txtDescripcionAgregar.Text = "";
-            txtCodigoAgregar.Text = "";
-            pnlPrincipal.SendToBack();
-            pnlSecundario.SendToBack();
-            pnlAgregar.SendToBack();
-            pnlAgregarPermisos.BringToFront();
-            cmbComponentesPadreAgregar.DataSource = componentes_list;
-            cmbComponentesPadreAgregar.ValueMember = "Id";
-            cmbComponentesPadreAgregar.DisplayMember = "Nombre";
+          // txtCodigoAgregar.Text = "";
+          // txtNombeAgregar.Text = "";
+          // txtDescripcionAgregar.Text = "";
+          // txtCodigoAgregar.Text = "";
+          // pnlPrincipal.SendToBack();
+          // pnlSecundario.SendToBack();
+          // pnlAgregar.SendToBack();
+          // pnlAgregarPermisos.BringToFront();
+          // cmbComponentesPadreAgregar.DataSource = componentes_list;
+          // cmbComponentesPadreAgregar.ValueMember = "Id";
+          // cmbComponentesPadreAgregar.DisplayMember = "Nombre";
         }
 
         private void BtnCancelarAgregarComponente_Click(object sender, EventArgs e)
         {
-            pnlPrincipal.BringToFront();
-            pnlSecundario.SendToBack();
-            pnlAgregar.SendToBack();
-            pnlAgregarPermisos.SendToBack();
+           // pnlPrincipal.BringToFront();
+           // pnlSecundario.SendToBack();
+           // pnlAgregar.SendToBack();
+           // pnlAgregarPermisos.SendToBack();
 
         }
 
@@ -403,7 +398,7 @@ namespace Sistema_Bancario.Administrador
             pnlPrincipal.BringToFront();
             pnlSecundario.SendToBack();
             pnlAgregar.SendToBack();
-            pnlAgregarPermisos.SendToBack();
+           // pnlAgregarPermisos.SendToBack();
         }
 
         private void btnAgregarRoles_Click(object sender, EventArgs e)
@@ -413,7 +408,7 @@ namespace Sistema_Bancario.Administrador
             pnlAgregar.BringToFront();
             pnlAgregarRoles.BringToFront();
             pnlAgregarUsuarios.SendToBack();
-            pnlAgregarPermisos.SendToBack();
+           // pnlAgregarPermisos.SendToBack();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -423,7 +418,7 @@ namespace Sistema_Bancario.Administrador
             pnlAgregar.SendToBack();
             pnlAgregarRoles.BringToFront();
             pnlAgregarUsuarios.SendToBack();
-            pnlAgregarPermisos.SendToBack();
+           // pnlAgregarPermisos.SendToBack();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -433,7 +428,7 @@ namespace Sistema_Bancario.Administrador
             pnlAgregar.SendToBack();
             pnlAgregarRoles.BringToFront();
             pnlAgregarUsuarios.SendToBack();
-            pnlAgregarPermisos.SendToBack();
+           // pnlAgregarPermisos.SendToBack();
         }
 
         private void btnAgregarUsuarios_Click(object sender, EventArgs e)
@@ -443,7 +438,7 @@ namespace Sistema_Bancario.Administrador
             pnlAgregar.BringToFront();
             pnlAgregarRoles.SendToBack();
             pnlAgregarUsuarios.BringToFront();
-            pnlAgregarPermisos.SendToBack();
+           // pnlAgregarPermisos.SendToBack();
         }
 
 

@@ -12,5 +12,6 @@ namespace Modelos.Modelos
         public string TipoCuenta { get; set; }
         public string Estado { get; set; }
         public string Moneda { get; set; }
+        public byte[] Version { get; set; }
     }
 }

@@ -43,7 +43,7 @@
             // 
             // TBClave
             // 
-            this.TBClave.Location = new System.Drawing.Point(76, 6);
+            this.TBClave.Location = new System.Drawing.Point(60, 6);
             this.TBClave.Name = "TBClave";
             this.TBClave.PasswordChar = '*';
             this.TBClave.Size = new System.Drawing.Size(159, 22);
@@ -54,7 +54,7 @@
             this.Controls.Add(this.TBClave);
             this.Controls.Add(this.LbClave);
             this.Name = "Clave";
-            this.Size = new System.Drawing.Size(316, 31);
+            this.Size = new System.Drawing.Size(222, 31);
             this.ResumeLayout(false);
             this.PerformLayout();
 

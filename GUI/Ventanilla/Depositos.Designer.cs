@@ -45,7 +45,7 @@
             // 
             // tipoMoneda2
             // 
-            this.tipoMoneda2.Location = new System.Drawing.Point(379, 76);
+            this.tipoMoneda2.Location = new System.Drawing.Point(381, 91);
             this.tipoMoneda2.Margin = new System.Windows.Forms.Padding(2);
             this.tipoMoneda2.Name = "tipoMoneda2";
             this.tipoMoneda2.Size = new System.Drawing.Size(136, 25);
@@ -53,14 +53,14 @@
             // 
             // txtDoi
             // 
-            this.txtDoi.Location = new System.Drawing.Point(107, 105);
+            this.txtDoi.Location = new System.Drawing.Point(109, 120);
             this.txtDoi.Name = "txtDoi";
             this.txtDoi.Size = new System.Drawing.Size(201, 20);
             this.txtDoi.TabIndex = 22;
             // 
             // txtMonto
             // 
-            this.txtMonto.Location = new System.Drawing.Point(107, 79);
+            this.txtMonto.Location = new System.Drawing.Point(109, 94);
             this.txtMonto.Name = "txtMonto";
             this.txtMonto.Size = new System.Drawing.Size(201, 20);
             this.txtMonto.TabIndex = 21;
@@ -69,7 +69,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(15, 108);
+            this.label2.Location = new System.Drawing.Point(17, 123);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 13);
             this.label2.TabIndex = 20;
@@ -79,7 +79,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(15, 82);
+            this.label3.Location = new System.Drawing.Point(17, 97);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 13);
             this.label3.TabIndex = 19;
@@ -90,13 +90,13 @@
             this.nroCuenta1.Location = new System.Drawing.Point(13, 12);
             this.nroCuenta1.Margin = new System.Windows.Forms.Padding(2);
             this.nroCuenta1.Name = "nroCuenta1";
-            this.nroCuenta1.Size = new System.Drawing.Size(767, 52);
+            this.nroCuenta1.Size = new System.Drawing.Size(767, 77);
             this.nroCuenta1.TabIndex = 27;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel1.Location = new System.Drawing.Point(18, 138);
+            this.panel1.Location = new System.Drawing.Point(20, 153);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 35, 3, 3);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(0, 35, 0, 0);
@@ -106,7 +106,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(314, 82);
+            this.label1.Location = new System.Drawing.Point(316, 97);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 13);
             this.label1.TabIndex = 29;

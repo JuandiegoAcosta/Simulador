@@ -22,6 +22,7 @@ namespace Sistema_Bancario.plataforma_controles
         WsSistemaBancario.TipoMonedaServiceClient BLTipoMoneda = new WsSistemaBancario.TipoMonedaServiceClient();
         WsSistemaBancario.PersonaServiceClient BLPersona = new WsSistemaBancario.PersonaServiceClient();
         WsSistemaBancario.TipoDocumentoServiceClient BLTipo_documento = new WsSistemaBancario.TipoDocumentoServiceClient();
+        WsSistemaBancario.FechaHoraServerServiceClient BLFechaHoraServer = new WsSistemaBancario.FechaHoraServerServiceClient();
 
         private string gUsuario;
         private string gSucursal;
@@ -93,10 +94,12 @@ namespace Sistema_Bancario.plataforma_controles
 
         private void buscarPersona(List<PersonaModel> objetos)
         {
-            string[][] orden = new string[2][];
+            string[][] orden = new string[4][];
 
-            orden[0] = new string[] { "Id", "Codigo", "100" };
-            orden[1] = new string[] { "Nombres", "Nombres", "400" };
+            orden[0] = new string[] { "Id", "Codigo", "70" };
+            orden[1] = new string[] { "NroDocumento", "Documento", "150" };
+            orden[2] = new string[] { "Nombres", "Nombres", "200" };
+            orden[3] = new string[] { "Apellidos", "Apellidos", "250" };
 
             if (objetos != null)
             {
@@ -120,11 +123,9 @@ namespace Sistema_Bancario.plataforma_controles
                                 List<CuentasModel> Cuentas = this.BLCuenta.Cuenta_ObtenerTodos(this.gPersona.Id).ToList();
                                 if (Cuentas == null || Cuentas.Count == 0)
                                 {
-                                    MessageBox.Show("No tiene cuentas");
+                                    MessageBox.Show("La persona no tiene cuentas");
                                     return;
                                 }
-
-
                                 this.buscarCuenta(Cuentas);
                             }
                             else
@@ -140,12 +141,15 @@ namespace Sistema_Bancario.plataforma_controles
 
         private void buscarCuenta(List<CuentasModel> objetos)
         {
-            string[][] orden = new string[4][];
+            string[][] orden = new string[7][];
 
-            orden[0] = new string[] { "NroCuenta", "Numero Cuenta", "150" };
+            orden[0] = new string[] { "NroCuenta", "Numero Cuenta", "130" };
             orden[1] = new string[] { "TipoCuenta", "Tipo Cuenta", "100" };
-            orden[2] = new string[] { "SaldoContable", "Saldo Contable", "90" };
-            orden[3] = new string[] { "SaldoDisponible", "Saldo Disponible", "90" };
+            orden[2] = new string[] { "SaldoContable", "Saldo Contable", "100" };
+            orden[3] = new string[] { "SaldoDisponible", "Saldo Disponible", "80" };
+            orden[4] = new string[] { "FECHA_CREACION", "Creado", "120" };
+            orden[5] = new string[] { "FECHA_MODIFICACION", "Modificado", "120" };
+            orden[6] = new string[] { "Estado", "Activo", "60" };
 
             if (objetos != null)
             {
@@ -215,7 +219,7 @@ namespace Sistema_Bancario.plataforma_controles
                 int TipoMoneda = (int)this.cboMoneda.SelectedValue;
                 string USUARIO_CREADOR = this.gUsuario;
                 int Cliente = this.gPersona.Id;
-                DateTime FECHA_CREACION = (DateTime)BLFechaHoraServidor.Obtener();
+                DateTime FECHA_CREACION = (DateTime)BLFechaHoraServer.ObtenerFechaHoraActual();
 
                 return new CuentasModel()
                 {
@@ -247,6 +251,7 @@ namespace Sistema_Bancario.plataforma_controles
             this.cboTipo_documento.SelectedValue = -1;
             this.cboMoneda.SelectedValue = -1;
             this.cboTipoCuenta.SelectedValue = -1;
+            this.chkEstado.Checked = false;
 
             this.SlblUsuario_creador.Text = "*";
             this.SlblFecha_creacion.Text = "*";
@@ -260,8 +265,6 @@ namespace Sistema_Bancario.plataforma_controles
 
             this.buttonActualizar.Enabled = false;
             this.buttonEliminar.Enabled = false;
-            this.buttonActualizar.Visible = false;
-            this.buttonEliminar.Visible = false;
 
             this.buttonNuevo.Enabled = false;
             this.buttonCrear.Enabled = true;
@@ -278,9 +281,6 @@ namespace Sistema_Bancario.plataforma_controles
             this.cboTipo_documento.Enabled = true;
             this.cboMoneda.Enabled = true;
             this.cboTipoCuenta.Enabled = true;
-            this.chkEstado.Checked = true;
-
-            this.chkEstado.Enabled = false;
         }
 
         private void modoInicial()
@@ -289,8 +289,6 @@ namespace Sistema_Bancario.plataforma_controles
 
             this.buttonActualizar.Enabled = false;
             this.buttonEliminar.Enabled = false;
-            this.buttonActualizar.Visible = false;
-            this.buttonEliminar.Visible = false;
 
             this.buttonNuevo.Enabled = true;
             this.buttonCrear.Enabled = false;
@@ -303,8 +301,6 @@ namespace Sistema_Bancario.plataforma_controles
             this.txtCodigo.Enabled = true;
             this.txtNombres.Enabled = true;
             this.txtNumero_documento.Enabled = true;
-            this.txtNombres.ReadOnly = false;
-            this.txtNumero_documento.ReadOnly = false;
 
             this.chkEstado.Enabled = false;
             this.chkEstado.Checked = false;
@@ -318,21 +314,14 @@ namespace Sistema_Bancario.plataforma_controles
         private void modoEdicion()
         {
             this.buttonCrear.Enabled = false;
-            this.buttonActualizar.Enabled = false;
-            this.buttonEliminar.Enabled = false;
-
-            this.buttonActualizar.Visible = false;
-            this.buttonEliminar.Visible = false;
+            this.buttonActualizar.Enabled = true;
+            this.buttonEliminar.Enabled = true;
 
             this.cboTipo_documento.Enabled = false;
             this.btnNombres.Enabled = false;
-            this.txtNombres.ReadOnly = true;
-            this.txtNumero_documento.ReadOnly = true;
             this.btnDocumento.Enabled = false;
             this.cboMoneda.Enabled = false;
             this.cboTipoCuenta.Enabled = false;
-            this.chkEstado.Enabled = false;
-
         }
 
         #endregion
@@ -382,6 +371,11 @@ namespace Sistema_Bancario.plataforma_controles
                 MessageBox.Show("Se detectan incoherencias, por favor revisarlas");
                 return;
             }
+            if (objeto.Estado == false)
+            {
+                DialogResult result = MessageBox.Show("Está a punto de crear una cuenta inactiva, ¿Desea continuar?", "Advertencia", MessageBoxButtons.YesNo);
+                if (result == DialogResult.No) return;
+            }
             if (this.BLCuenta.Cuenta_Crear(objeto))
             {
                 this.clearForm();
@@ -404,8 +398,13 @@ namespace Sistema_Bancario.plataforma_controles
             objeto.Usuario_creador = this.gPersona.Usuario_creador;
             objeto.Fecha_creacion = this.gPersona.Fecha_creacion;
             objeto.Usuario_modificador = this.gUsuario;
-            objeto.Fecha_modificacion = BLFechaHoraServidor.Obtener();
+            objeto.Fecha_modificacion = BLFechaHoraServer.ObtenerFechaHoraActual();
 
+            if (objeto.Estado == false)
+            {
+                DialogResult result = MessageBox.Show("La cuenta está en estado inactivo, ¿Desea continuar?", "Advertencia", MessageBoxButtons.YesNo);
+                if (result == DialogResult.No) return;
+            }
             if (this.BLCuenta.Cuenta_Editar(objeto))
             {
                 MessageBox.Show("El proceso ha sido correcto");
@@ -421,11 +420,19 @@ namespace Sistema_Bancario.plataforma_controles
                 MessageBox.Show("Problemas al obtener el objeto de base de datos");
                 return;
             }
+
+            DialogResult result = MessageBox.Show("¿Estás seguro que quieres eliminar esta cuenta? Este proceso no se puede revertir", "Advertencia", MessageBoxButtons.YesNo);
+            if (result == DialogResult.No) return;
+
             if (this.BLCuenta.Cuenta_Borrar(this.gCuenta.Nrocuenta))
             {
                 this.clearForm();
                 this.modoInicial();
                 MessageBox.Show("El proceso ha sido correcto");
+            }
+            else
+            {
+                MessageBox.Show("La cuenta está siendo usada, elimine las referencias y vuelva a intentarlo");
             }
         }
 

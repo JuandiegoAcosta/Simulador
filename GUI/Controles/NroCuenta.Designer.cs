@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.LbTarjeta = new System.Windows.Forms.Label();
             this.TBNroCuenta = new System.Windows.Forms.TextBox();
             this.BtValidar = new System.Windows.Forms.Button();
             this.Lbestado = new System.Windows.Forms.Label();
@@ -40,21 +40,21 @@
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // LbTarjeta
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(2, 7);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nro Cuenta";
+            this.LbTarjeta.AutoSize = true;
+            this.LbTarjeta.Location = new System.Drawing.Point(2, 7);
+            this.LbTarjeta.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LbTarjeta.Name = "LbTarjeta";
+            this.LbTarjeta.Size = new System.Drawing.Size(61, 13);
+            this.LbTarjeta.TabIndex = 0;
+            this.LbTarjeta.Text = "Nro Cuenta";
             // 
             // TBNroCuenta
             // 
-            this.TBNroCuenta.Location = new System.Drawing.Point(67, 4);
+            this.TBNroCuenta.Location = new System.Drawing.Point(111, 4);
             this.TBNroCuenta.Margin = new System.Windows.Forms.Padding(2);
-            this.TBNroCuenta.MaxLength = 20;
+            this.TBNroCuenta.MaxLength = 14;
             this.TBNroCuenta.Name = "TBNroCuenta";
             this.TBNroCuenta.Size = new System.Drawing.Size(198, 20);
             this.TBNroCuenta.TabIndex = 1;
@@ -65,7 +65,7 @@
             this.BtValidar.BackColor = System.Drawing.Color.ForestGreen;
             this.BtValidar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtValidar.ForeColor = System.Drawing.SystemColors.Window;
-            this.BtValidar.Location = new System.Drawing.Point(270, 3);
+            this.BtValidar.Location = new System.Drawing.Point(314, 3);
             this.BtValidar.Name = "BtValidar";
             this.BtValidar.Size = new System.Drawing.Size(75, 23);
             this.BtValidar.TabIndex = 28;
@@ -88,7 +88,7 @@
             // 
             this.LbPersona.AutoSize = true;
             this.LbPersona.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.LbPersona.Location = new System.Drawing.Point(3, 34);
+            this.LbPersona.Location = new System.Drawing.Point(395, 7);
             this.LbPersona.Name = "LbPersona";
             this.LbPersona.Size = new System.Drawing.Size(64, 13);
             this.LbPersona.TabIndex = 30;
@@ -112,7 +112,7 @@
             this.groupBox1.Controls.Add(this.rbtnCorriente);
             this.groupBox1.Controls.Add(this.Lbestado);
             this.groupBox1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(351, 7);
+            this.groupBox1.Location = new System.Drawing.Point(5, 32);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(387, 40);
             this.groupBox1.TabIndex = 32;
@@ -149,10 +149,10 @@
             this.Controls.Add(this.LbPersona);
             this.Controls.Add(this.BtValidar);
             this.Controls.Add(this.TBNroCuenta);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.LbTarjeta);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "NroCuenta";
-            this.Size = new System.Drawing.Size(741, 53);
+            this.Size = new System.Drawing.Size(741, 80);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -161,8 +161,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         public System.Windows.Forms.TextBox TBNroCuenta;
         private System.Windows.Forms.Label Lbestado;
         private System.Windows.Forms.Label LbPersona;
@@ -171,5 +169,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rbtnAhorros;
         private System.Windows.Forms.RadioButton rbtnCorriente;
+        public System.Windows.Forms.Label LbTarjeta;
     }
 }

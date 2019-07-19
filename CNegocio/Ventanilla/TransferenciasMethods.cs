@@ -17,7 +17,7 @@ namespace CNegocio.Ventanilla
             ADTransferenciasManager = new TransferenciasManager();
         }
 
-        public int RealizarTransferencia(CuentasTarjetasModel cuentasTarjetasModel)
+        public string RealizarTransferencia(CuentasTarjetasModel cuentasTarjetasModel)
         {
            return ADTransferenciasManager.TransferenciaBancaria(cuentasTarjetasModel);
         }
