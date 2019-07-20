@@ -65,7 +65,7 @@ namespace CDatos.Manager
             }
             catch (Exception)
             {
-                throw;
+                //throw;
                 return false;
             }
         }
@@ -361,6 +361,7 @@ namespace CDatos.Manager
                             string Cuenta = (string)(reader["Cuenta"]);
                             decimal? Interes_Moratorio = reader["Interes_Moratorio"] as decimal?;
                             DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
+                            DateTime FECHA_CREACION = (DateTime)reader["FECHA_CREACION"];
                             string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
                             string USUARIO_MODIFICADOR = reader["USUARIO_MODIFICADOR"] as string;
                             int? DiaPago = reader["DiaPago"] as int?;
@@ -380,6 +381,7 @@ namespace CDatos.Manager
                                 Usuario_creador = USUARIO_CREADOR,
                                 Usuario_modificador = USUARIO_MODIFICADOR,
                                 Diapago = DiaPago,
+                                Fecha_creacion = FECHA_CREACION
 
                             });
                         }
@@ -390,7 +392,7 @@ namespace CDatos.Manager
             }
             catch (Exception)
             {
-                throw;
+                //throw;
                 return prestamolist;
             }
         }
@@ -437,6 +439,7 @@ namespace CDatos.Manager
                             string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
                             string USUARIO_MODIFICADOR = reader["USUARIO_MODIFICADOR"] as string;
                             int? DiaPago = reader["DiaPago"] as int?;
+                            DateTime FECHA_CREACION = (DateTime)reader["FECHA_CREACION"];
 
                             prestamolist.Add(new PrestamosModel
                             {
@@ -453,7 +456,7 @@ namespace CDatos.Manager
                                 Usuario_creador = USUARIO_CREADOR,
                                 Usuario_modificador = USUARIO_MODIFICADOR,
                                 Diapago = DiaPago,
-
+                                Fecha_creacion = FECHA_CREACION
                             });
                         }
                     }
@@ -530,7 +533,7 @@ namespace CDatos.Manager
             }
             catch (Exception)
             {
-                throw;
+                //throw;
                 return CronogramaPagosModellist;
             }
         }

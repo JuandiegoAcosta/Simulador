@@ -61,7 +61,7 @@ namespace CDatos.Manager
                         return false;
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw;
                 //return false;
@@ -368,9 +368,9 @@ namespace CDatos.Manager
 
                 return chequeralist;
             }
-            catch (Exception E)
+            catch (Exception)
             {
-                throw;
+                //throw;
                 return chequeralist;
             }
         }

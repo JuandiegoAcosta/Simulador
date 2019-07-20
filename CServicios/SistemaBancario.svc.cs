@@ -67,10 +67,11 @@ namespace ServiciosBancarios
             BLTipoMoneda = new TipoMonedaMethods();
             BLTipoMovimiento = new TipoMovimientoMethods();
             BLVentanila = new VentanillaMethods();
-            #endregion
+            BLCobroCheque = new CobroChequeMethods();
+        #endregion
 
             #region [ Ventanilla Back ]
-            BLBanco = new BancoMethods();
+        BLBanco = new BancoMethods();
             BLCajaChica = new CajaChicaMethods();
             BLDetalleCajaChica = new DetalleCajaChicaMethods();
             BLComponente = new ComponenteMethods();
