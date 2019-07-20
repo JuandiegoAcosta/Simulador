@@ -15,5 +15,10 @@ namespace CNegocio.Ventanilla
             CuentaManager cuentaPersonaMonedaModel = new CuentaManager();
            return cuentaPersonaMonedaModel.ValidarCuenta(nrocuenta);
         }
+        public List<CuentasPersona> ListaCuentas(string DNI)
+        {
+            CuentaManager cuentaPersonaMonedaModel = new CuentaManager();
+            return cuentaPersonaMonedaModel.ListaCuentas(DNI);
+        }
     }
 }

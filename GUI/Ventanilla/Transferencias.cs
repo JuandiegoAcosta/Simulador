@@ -19,7 +19,7 @@ namespace Sistema_Bancario.Froms_opciones
         {
             InitializeComponent();
             proceder1.BTProceder.Click += BTProceder_Click;
-            nroCuenta1.LbTarjeta.Text = "Nro Cuenta / Tarjeta";
+           // nroCuenta1.LbTarjeta.Text = "Nro Cuenta / Tarjeta";
             nroCuenta1.BtValidar.Click += BtValidar_Click;
         }
 
@@ -48,8 +48,8 @@ namespace Sistema_Bancario.Froms_opciones
          else
             return false;
 
-         if (!string.IsNullOrEmpty(this.doi1.TBDoi.Text.Trim()))
-            CuentasTarjetasModel.doi = Convert.ToInt32(this.doi1.TBDoi.Text.Trim());
+         if (!string.IsNullOrEmpty(this.nroCuenta1.dni1.TBDni.Text.Trim()))
+            CuentasTarjetasModel.doi = Convert.ToInt32(this.nroCuenta1.dni1.TBDni.Text.Trim());
          else
             return false;
 
@@ -74,18 +74,17 @@ namespace Sistema_Bancario.Froms_opciones
                 CuentasTarjetasModel.RowVersion = nroCuenta1.VersionCuenta;
                 CuentasTarjetasModel.RowVersionD = nroCuenta2.VersionCuenta;
                 string a = transferenciasMethods.RealizarTransferencia(CuentasTarjetasModel);
-                if (!a.Equals("Error"))
+                if (a.Equals("Transferido"))
                 {
                     MessageBox.Show("Operacion Realizada");
                     nroCuenta1.LimpiarControles();
                     nroCuenta2.LimpiarControles();
                     txtMonto.Clear();
-                    doi1.TBDoi.Clear();
+                    nroCuenta1.dni1.TBDni.Clear();
                     clave1.TBClave.Clear();
-                }
-              
+                }             
             else
-               MessageBox.Show("No se pudo realizar la operación:"+a);
+               MessageBox.Show("No se pudo realizar la operación: "+a);
          } 
         }
 

@@ -34,15 +34,12 @@ namespace Sistema_Bancario.Controles
             PersonaMethods persona = new PersonaMethods();
             frmLista = new FrmListaDatos();
            // persona.personaSelectbyNombres(TbNombre.Text);
-            frmLista.CrearLista<PersonaModel>(persona.personaSelectbyNombres(TbNombre.Text));            
-            frmLista.Show();
-            frmLista.FormClosed += FrmLista_FormClosed;
-        }
-
-        private void FrmLista_FormClosed(object sender, FormClosedEventArgs e)
-        {
-          TBDni.Text  = frmLista.Doc;
-            TbNombre.Text = frmLista.Nombre;
-        }
+            frmLista.CrearLista<PersonaU>(persona.personaSelectbyNombresApellidos(TbNombre.Text));
+            if (frmLista.ShowDialog() == DialogResult.OK)
+            {
+                TBDni.Text = frmLista.val2;
+                TbNombre.Text = frmLista.val1;
+            };         
+        }       
     }
 }

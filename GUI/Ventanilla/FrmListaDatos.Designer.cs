@@ -33,6 +33,7 @@
             this.DGVlistaDatos = new System.Windows.Forms.DataGridView();
             this.BTAceptar = new System.Windows.Forms.Button();
             this.BTCancelar = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DGVlistaDatos)).BeginInit();
             this.SuspendLayout();
@@ -41,7 +42,8 @@
             // 
             this.DGVlistaDatos.AllowUserToAddRows = false;
             this.DGVlistaDatos.AllowUserToDeleteRows = false;
-            this.DGVlistaDatos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.DGVlistaDatos.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.DGVlistaDatos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGVlistaDatos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.DGVlistaDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVlistaDatos.EnableHeadersVisualStyles = false;
@@ -65,6 +67,7 @@
             // BTAceptar
             // 
             this.BTAceptar.BackColor = System.Drawing.Color.ForestGreen;
+            this.BTAceptar.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.BTAceptar.FlatAppearance.BorderSize = 0;
             this.BTAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTAceptar.ForeColor = System.Drawing.SystemColors.Window;
@@ -79,7 +82,7 @@
             // BTCancelar
             // 
             this.BTCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BTCancelar.ForeColor = System.Drawing.SystemColors.Window;
+            this.BTCancelar.ForeColor = System.Drawing.Color.Black;
             this.BTCancelar.Location = new System.Drawing.Point(331, 399);
             this.BTCancelar.Name = "BTCancelar";
             this.BTCancelar.Size = new System.Drawing.Size(75, 23);
@@ -88,32 +91,41 @@
             this.BTCancelar.UseVisualStyleBackColor = true;
             this.BTCancelar.Click += new System.EventHandler(this.BTCancelar_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(47, 6);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(172, 20);
+            this.textBox1.TabIndex = 4;
+            this.textBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(9, 7);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(189, 17);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Resultados de Busqueda";
+            this.label1.Size = new System.Drawing.Size(29, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Filtro";
             // 
             // FrmListaDatos
             // 
+            this.AcceptButton = this.BTAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(615, 428);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.BTCancelar);
             this.Controls.Add(this.BTAceptar);
             this.Controls.Add(this.DGVlistaDatos);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmListaDatos";
+            this.Tag = "";
             this.Text = "FrmListaDatos";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmListaDatos_FormClosed);
+            this.Load += new System.EventHandler(this.FrmListaDatos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGVlistaDatos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -121,10 +133,10 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView DGVlistaDatos;
         private System.Windows.Forms.Button BTCancelar;
         private System.Windows.Forms.Button BTAceptar;
         private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.DataGridView DGVlistaDatos;
     }
 }

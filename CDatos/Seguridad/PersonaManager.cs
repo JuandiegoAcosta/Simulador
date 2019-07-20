@@ -17,7 +17,10 @@ namespace CDatos.Manager
         /// Saves a record to the PersonaModel table.
         /// returns True if value saved successfully else false
         /// Throw exception with message value EXISTS if the data is duplicate
-        /// </summary>		
+        /// </summary>	
+        /// 
+
+
         public bool Insert(PersonaModel apersona)
         {
             try
@@ -642,7 +645,51 @@ namespace CDatos.Manager
                 return personalist;
             }
         }
+        public List<PersonaU> personaSelectbyNombresApellidos(string aValue)
+        {
+            List<PersonaU> personalist = new List<PersonaU>();
 
+            try
+            {
+                using (var connection = Util.ConnectionFactory.conexion())
+                {
+                    connection.Open();
+
+                    SqlCommand command = connection.CreateCommand();
+
+                    command.Parameters.AddWithValue("@Nombres", aValue);
+
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.CommandText = "PersonaSelectbyNombreApellido";
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+
+                            string Cliente = (string)(reader["Cliente"]);
+                            string NroDocumento = (string)(reader["NroDocumento"]);
+
+                            personalist.Add(new PersonaU
+                            {
+                                Cliente = Cliente,
+                                NroDocumento = NroDocumento
+                            });
+                        }
+                    }
+                }
+
+                return personalist;
+            }
+            catch (Exception)
+            {
+                //throw;
+                return personalist;
+            }
+        }
         /// <summary>
         /// Selects the Multiple objects of persona table by a given criteria.
         /// </summary>
