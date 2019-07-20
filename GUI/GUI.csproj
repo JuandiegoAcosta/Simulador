@@ -327,10 +327,6 @@
     <Compile Include="Plataforma\UCrefinanciar.Designer.cs">
       <DependentUpon>UCrefinanciar.cs</DependentUpon>
     </Compile>
-    <Compile Include="plataforma_controles\NuevaCuentaUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="plataforma_controles\NuevaCuentaUserControl.Designer.cs" />
     <Compile Include="plataforma_controles\NuevaMoneda.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -359,6 +355,12 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="plataforma_controles\ReporteCronograma.Designer.cs" />
+    <Compile Include="plataforma_controles\NuevaCuentaUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="plataforma_controles\NuevaCuentaUserControl.Designer.cs">
+      <DependentUpon>NuevaCuentaUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pruebas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -560,7 +562,6 @@
     <EmbeddedResource Include="Plataforma\UCcliente.resx">
       <DependentUpon>UCcliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="plataforma_controles\NuevaCuentaUserControl.resx" />
     <EmbeddedResource Include="plataforma_controles\NuevaMoneda.resx" />
     <EmbeddedResource Include="plataforma_controles\NuevaTarjeta.resx">
       <DependentUpon>NuevaTarjeta.cs</DependentUpon>
@@ -571,6 +572,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="plataforma_controles\RegistroPersonaUserControl.resx" />
     <EmbeddedResource Include="plataforma_controles\ReporteCronograma.resx" />
+    <EmbeddedResource Include="plataforma_controles\NuevaCuentaUserControl.resx">
+      <DependentUpon>NuevaCuentaUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pruebas.resx">
       <DependentUpon>Pruebas.cs</DependentUpon>
     </EmbeddedResource>
