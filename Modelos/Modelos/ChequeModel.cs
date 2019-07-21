@@ -77,7 +77,10 @@ namespace Modelos.Modelos
         { get; set; }
 
         public string DOI { get; set; }
-
+        public byte[] RowVerCOrigen { get; set; }
+        public byte[]  RowVerChequera { get; set; }
+        public byte[] RowverCDestino { get; set; }
+        public byte[] RowVerCheque { get; set; }
 
         #endregion
     }

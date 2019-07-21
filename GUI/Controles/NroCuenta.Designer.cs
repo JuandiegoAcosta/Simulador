@@ -103,7 +103,7 @@
             this.groupBox1.Controls.Add(this.BtValidar);
             this.groupBox1.Enabled = false;
             this.groupBox1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(6, 89);
+            this.groupBox1.Location = new System.Drawing.Point(6, 129);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(290, 40);
             this.groupBox1.TabIndex = 32;
@@ -172,7 +172,7 @@
             this.Controls.Add(this.LbTarjeta);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "NroCuenta";
-            this.Size = new System.Drawing.Size(741, 132);
+            this.Size = new System.Drawing.Size(301, 172);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

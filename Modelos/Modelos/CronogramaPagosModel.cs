@@ -46,6 +46,9 @@ namespace Modelos.Modelos
         public int Estado
         { get; set; }
 
+        public string EstadoString
+        { get; set; }
+
         /// <summary>
         /// Gets or sets the Fecha_creacion value.
         /// </summary>
@@ -69,6 +72,7 @@ namespace Modelos.Modelos
         /// </summary>
         public string Usuario_modificador
         { get; set; }
+        public byte[] RowVer { get; set; }
 
 
         #endregion

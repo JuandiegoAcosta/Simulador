@@ -10,7 +10,7 @@ namespace CNegocio.Ventanilla
 {
    public class CuentasMethods
     {
-        public CuentaPersonaMonedaModel ValidarCuenta(Int64 nrocuenta)
+        public CuentaPersonaMonedaModel ValidarCuenta(string nrocuenta)
         {
             CuentaManager cuentaPersonaMonedaModel = new CuentaManager();
            return cuentaPersonaMonedaModel.ValidarCuenta(nrocuenta);

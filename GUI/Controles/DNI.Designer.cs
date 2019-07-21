@@ -35,10 +35,11 @@
             // 
             // TBDni
             // 
-            this.TBDni.Location = new System.Drawing.Point(3, 33);
+            this.TBDni.Location = new System.Drawing.Point(2, 27);
+            this.TBDni.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TBDni.MaxLength = 8;
             this.TBDni.Name = "TBDni";
-            this.TBDni.Size = new System.Drawing.Size(187, 22);
+            this.TBDni.Size = new System.Drawing.Size(141, 20);
             this.TBDni.TabIndex = 0;
             this.TBDni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBDni_KeyPress);
             // 
@@ -48,9 +49,10 @@
             this.BtBuscar.FlatAppearance.BorderSize = 0;
             this.BtBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtBuscar.ForeColor = System.Drawing.SystemColors.Window;
-            this.BtBuscar.Location = new System.Drawing.Point(199, 5);
+            this.BtBuscar.Location = new System.Drawing.Point(149, 4);
+            this.BtBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BtBuscar.Name = "BtBuscar";
-            this.BtBuscar.Size = new System.Drawing.Size(52, 28);
+            this.BtBuscar.Size = new System.Drawing.Size(39, 23);
             this.BtBuscar.TabIndex = 1;
             this.BtBuscar.Text = "...";
             this.BtBuscar.UseVisualStyleBackColor = false;
@@ -58,20 +60,22 @@
             // 
             // TbNombre
             // 
-            this.TbNombre.Location = new System.Drawing.Point(3, 5);
+            this.TbNombre.Location = new System.Drawing.Point(2, 4);
+            this.TbNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TbNombre.Name = "TbNombre";
-            this.TbNombre.Size = new System.Drawing.Size(187, 22);
+            this.TbNombre.Size = new System.Drawing.Size(141, 20);
             this.TbNombre.TabIndex = 2;
             // 
             // DNI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.TbNombre);
             this.Controls.Add(this.BtBuscar);
             this.Controls.Add(this.TBDni);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "DNI";
-            this.Size = new System.Drawing.Size(251, 58);
+            this.Size = new System.Drawing.Size(188, 47);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -80,7 +84,7 @@
         #endregion
 
         public System.Windows.Forms.TextBox TBDni;
-        private System.Windows.Forms.Button BtBuscar;
         public System.Windows.Forms.TextBox TbNombre;
+        public System.Windows.Forms.Button BtBuscar;
     }
 }

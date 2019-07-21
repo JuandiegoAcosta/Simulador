@@ -243,14 +243,16 @@ namespace CDatos.Manager
                     command.Transaction = sqlTran;
 
                     command.Parameters.AddWithValue("@Numero", aChequesModel.Numero);
-                    // command.Parameters.AddWithValue("@Destinatario", aChequesModel.Destinatario);
                     command.Parameters.AddWithValue("@Monto", aChequesModel.Monto);
                     command.Parameters.AddWithValue("@cuentaReceptora", NroCuenta);
                     command.Parameters.AddWithValue("@Usuario", aChequesModel.Usuario_creacion);
                     command.Parameters.AddWithValue("@DNI", aChequesModel.DOI);
-                    // command.Parameters.AddWithValue("@IDChequesModelra", aChequesModel.IdChequesModelra);
-                    // command.Parameters.AddWithValue("@Estado", aChequesModel.Estado);                               
-                    //->  command.Parameters.AddWithValue("@USUARIO_CREACION", aChequesModel.Usuario_creacion);
+
+                    command.Parameters.AddWithValue("@RowVerCOrigen", aChequesModel.RowVerCOrigen);
+                    command.Parameters.AddWithValue("@RowVerChequera", aChequesModel.RowVerChequera);
+                    command.Parameters.AddWithValue("@RowVerCheque", aChequesModel.RowVerCheque);
+                    command.Parameters.AddWithValue("@RowverCDestino", aChequesModel.RowverCDestino);
+
 
                     command.CommandType = CommandType.StoredProcedure;
                     command.CommandText = "cobroChequesInsert";

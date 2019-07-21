@@ -32,7 +32,7 @@ namespace Sistema_Bancario.Froms_opciones
             GiroModel giroModel = new GiroModel();
             giroModel.Id = Convert.ToInt32(GVCobroGiros[0, i].Value);
             StatusStrip o = this.TopLevelControl.Controls.Find("stStatus", true).FirstOrDefault() as StatusStrip;
-            giroModel.USUARIO_CREADOR = "Carlin Yahuira Achahui";
+            giroModel.USUARIO_CREADOR = o.Items[1].Text;
             giroModel.RowVer =(byte[])GVCobroGiros[7,i].Value;               // giroModel.
             giroModel.Id_PersonaOrigen = Convert.ToInt32(dni2.TBDni.Text);
             int executado = girosMethods.CobrarGiro(giroModel);

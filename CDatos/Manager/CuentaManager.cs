@@ -557,7 +557,7 @@ namespace CDatos.Manager
             }
         }
 
-        public CuentaPersonaMonedaModel ValidarCuenta(Int64 aNroCuenta)
+        public CuentaPersonaMonedaModel ValidarCuenta(string aNroCuenta)
         {
             CuentaPersonaMonedaModel cuenta = null;
 

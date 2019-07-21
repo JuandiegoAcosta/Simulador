@@ -34,6 +34,7 @@
             this.dni2 = new Sistema_Bancario.Controles.DNI();
             this.Nombre = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.GVCobroGiros)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,10 +46,10 @@
             // 
             // clave1
             // 
-            this.clave1.Location = new System.Drawing.Point(8, 59);
-            this.clave1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.clave1.Location = new System.Drawing.Point(75, 60);
+            this.clave1.Margin = new System.Windows.Forms.Padding(2);
             this.clave1.Name = "clave1";
-            this.clave1.Size = new System.Drawing.Size(221, 26);
+            this.clave1.Size = new System.Drawing.Size(162, 22);
             this.clave1.TabIndex = 3;
             // 
             // GVCobroGiros
@@ -58,7 +59,7 @@
             this.GVCobroGiros.BackgroundColor = System.Drawing.SystemColors.Control;
             this.GVCobroGiros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GVCobroGiros.Location = new System.Drawing.Point(8, 99);
-            this.GVCobroGiros.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GVCobroGiros.Margin = new System.Windows.Forms.Padding(2);
             this.GVCobroGiros.Name = "GVCobroGiros";
             this.GVCobroGiros.ReadOnly = true;
             this.GVCobroGiros.RowTemplate.Height = 24;
@@ -71,8 +72,8 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.SystemColors.Window;
-            this.button1.Location = new System.Drawing.Point(234, 59);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Location = new System.Drawing.Point(241, 56);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(58, 26);
             this.button1.TabIndex = 5;
@@ -108,25 +109,36 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "DNI :";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 63);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(37, 13);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Clave:";
+            // 
             // CobroGiros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Nombre);
             this.Controls.Add(this.dni2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.GVCobroGiros);
             this.Controls.Add(this.clave1);
-            this.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.Margin = new System.Windows.Forms.Padding(3);
             this.Name = "CobroGiros";
-            this.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Padding = new System.Windows.Forms.Padding(6);
             this.Controls.SetChildIndex(this.proceder1, 0);
             this.Controls.SetChildIndex(this.clave1, 0);
             this.Controls.SetChildIndex(this.GVCobroGiros, 0);
-            this.Controls.SetChildIndex(this.button1, 0);
             this.Controls.SetChildIndex(this.dni2, 0);
             this.Controls.SetChildIndex(this.Nombre, 0);
             this.Controls.SetChildIndex(this.label2, 0);
+            this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.button1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.GVCobroGiros)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -140,5 +152,6 @@
         private Controles.DNI dni2;
         private System.Windows.Forms.Label Nombre;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

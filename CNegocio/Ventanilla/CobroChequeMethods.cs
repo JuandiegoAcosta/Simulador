@@ -11,10 +11,9 @@ namespace CNegocio.Ventanilla
     public class CobroChequeMethods
     {
         private CobroChequeManager ADCobroChqueManager;
-
         public CobroChequeMethods()
         {
-            ADCobroChqueManager = new CobroChequeManager();
+            ADCobroChqueManager = new CobroChequeManager();          
         }
         public bool Crear(CobroChequesModel aCobroCheque)
         {
@@ -43,6 +42,11 @@ namespace CNegocio.Ventanilla
         public string CobroInsert(ChequeModel aCobroCheque,string NroCuenta)
         {
             return ADCobroChqueManager.CobroInsert(aCobroCheque,NroCuenta);
+        }
+        public VersionesModel Versionchequera(int numero)
+        {
+            ChequerasManager ADChequeManager = new ChequerasManager();
+            return ADChequeManager.Versionchequera(numero);
         }
     }
 }

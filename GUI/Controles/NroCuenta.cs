@@ -16,7 +16,8 @@ namespace Sistema_Bancario.Controles
     public partial class NroCuenta : UserControl
     {
         public CuentasMethods validar;
-        public byte[] VersionCuenta;
+        public byte[] VersionCuenta { get; set; }
+        public string EstadoCuenta { get; set; }
         FrmListaDatos frm;
         CuentasMethods cuentas;
         public NroCuenta()
@@ -55,13 +56,14 @@ namespace Sistema_Bancario.Controles
                 try
                 {
                     validar = new CuentasMethods();
-                    var Cuenta = validar.ValidarCuenta(Convert.ToInt64(TBNroCuenta.Text));
+                    var Cuenta = validar.ValidarCuenta(TBNroCuenta.Text);
 
-                    //     LbPersona.Text = "Cliente: " + Cuenta.Cliente;
-
-                    Lbestado.Text = "Estado: " + Cuenta.Estado;
+                    //     LbPersona.Text = "Cliente: " + Cuenta.Cliente;                   
+                    Lbestado.Text = Cuenta.Estado;
                     Lbmoneda.Text = Cuenta.Moneda;
                     VersionCuenta = Cuenta.Version;
+                    EstadoCuenta = Cuenta.Estado;                   
+
                     groupBox1.Enabled = true;
                     if (Cuenta.TipoCuenta == "CORRIENTE")
                     {
@@ -80,6 +82,19 @@ namespace Sistema_Bancario.Controles
                 {
                     MessageBox.Show(ex.Message.ToString());
                 }
+            }
+        }
+
+        public bool ValidarEstadoCuenta()
+        {
+            if (EstadoCuenta.Equals("No Habilitada"))
+            {
+                MessageBox.Show("Cuenta:" + EstadoCuenta);
+                return false;
+            }
+            else
+            {
+                return true;
             }
         }
 

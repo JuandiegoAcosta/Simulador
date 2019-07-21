@@ -306,6 +306,47 @@ namespace CDatos.Manager
         }
 
 
+        public VersionesModel Versionchequera(int numero)
+        {
+
+            VersionesModel versiones = new VersionesModel();
+
+            try
+            {
+                using (var connection = Util.ConnectionFactory.conexion())
+                {
+                    connection.Open();
+
+                    SqlCommand command = connection.CreateCommand();
+
+                    command.Parameters.AddWithValue("@Numero", numero);
+
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.CommandText = "ChequesVersion";
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+
+                            versiones.Version1 = (byte[])(reader["ChequeVersion"]);
+                            versiones.Version2 = (byte[])(reader["ChequeraVersion"]);
+
+                        }
+                    }
+                }
+                return versiones;
+            }
+            catch (Exception)
+            {
+                return versiones;
+            }
+        }
+
+
         /// <summary>
         /// Selects the Multiple objects of chequera table by a given criteria.
         /// </summary>

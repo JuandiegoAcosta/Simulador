@@ -1,4 +1,5 @@
 ﻿using CDatos.Manager;
+using Modelos.Modelos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,9 +16,9 @@ namespace CNegocio.Ventanilla
 
         public List<object> ObtenerPrestamos(string avalue) => cuotasPrestamosManager.CuotasPrestamosSelect(avalue);
         
-        public List<object> CuotasSelect(int avalue) => cuotasPrestamosManager.CuotasSelect(avalue);
+        public List<CronogramaPagosModel> CuotasSelect(int avalue) => cuotasPrestamosManager.CuotasSelect(avalue);
 
-        public int CuotasInsert(int CuotaID, string Usuario) => cuotasPrestamosManager.CuotasInsert(CuotaID, Usuario);
+        public string CuotasInsert(CuotasModel cuotas) => cuotasPrestamosManager.CuotasInsert(cuotas);
 
     }
 }

@@ -28,33 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.LbClave = new System.Windows.Forms.Label();
             this.TBClave = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // LbClave
-            // 
-            this.LbClave.AutoSize = true;
-            this.LbClave.Location = new System.Drawing.Point(3, 9);
-            this.LbClave.Name = "LbClave";
-            this.LbClave.Size = new System.Drawing.Size(51, 17);
-            this.LbClave.TabIndex = 0;
-            this.LbClave.Text = "Clave :";
-            // 
             // TBClave
             // 
-            this.TBClave.Location = new System.Drawing.Point(60, 6);
+            this.TBClave.Location = new System.Drawing.Point(0, 0);
             this.TBClave.Name = "TBClave";
             this.TBClave.PasswordChar = '*';
-            this.TBClave.Size = new System.Drawing.Size(159, 22);
+            this.TBClave.Size = new System.Drawing.Size(159, 20);
             this.TBClave.TabIndex = 1;
             // 
             // Clave
             // 
             this.Controls.Add(this.TBClave);
-            this.Controls.Add(this.LbClave);
             this.Name = "Clave";
-            this.Size = new System.Drawing.Size(222, 31);
+            this.Size = new System.Drawing.Size(159, 20);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -62,8 +51,6 @@
 
 
         #endregion
-
-        private System.Windows.Forms.Label LbClave;
         public System.Windows.Forms.TextBox TBClave;
     }
 }

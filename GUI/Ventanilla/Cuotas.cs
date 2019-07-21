@@ -1,4 +1,5 @@
 ﻿using CNegocio.Ventanilla;
+using Modelos.Modelos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,7 @@ namespace Sistema_Bancario
     public partial class Cuotas : Base
     {
         private CuotasMethods GetCuotasMethods;
+        private List<CronogramaPagosModel> CuotasModel;
         public Cuotas()
         {
             InitializeComponent();
@@ -24,16 +26,27 @@ namespace Sistema_Bancario
 
         private void BTProceder_Click(object sender, EventArgs e)
         {
-         if (GridCuotas.Rows.Count > 0)
-         {
-
-
+           if (GridCuotas.Rows.Count > 0 && nroCuenta1.ValidarEstadoCuenta() == true)
+        {
             GetCuotasMethods = new CuotasMethods();
             int i = GridCuotas.CurrentCell.RowIndex;
             //   int i = GridCuotas.CurrentRow.Cells[0].Value;
             //  Convert.ToInt32(GridCuotas[i, 0].Value);
-            StatusStrip o = this.TopLevelControl.Controls.Find("stStatus", true).FirstOrDefault() as StatusStrip;// o.Items[1].Text
-            GetCuotasMethods.CuotasInsert(Convert.ToInt32(GridCuotas[0, i].Value), o.Items[1].Text);
+            StatusStrip o = this.TopLevelControl.Controls.Find("stStatus", true).FirstOrDefault() as StatusStrip;
+                CuotasModel cuotas = new CuotasModel();
+                cuotas.CuotaID = Convert.ToInt32(GridCuotas[0, i].Value);
+                cuotas.Usuario = o.Items[1].Text;               
+                cuotas.RowVer = CuotasModel[i].RowVer;
+              //nroCuenta1.VersionCuenta
+                var a=  GetCuotasMethods.CuotasInsert(cuotas);
+                if (a.Equals("Transferido"))
+                {
+                    MessageBox.Show("Pago Realizado");
+                }
+                else
+                {
+                    MessageBox.Show("No se realizo el pago: " + a);
+                }
          }
         }
 
@@ -73,11 +86,23 @@ namespace Sistema_Bancario
             int i = e.RowIndex;
             DataGridViewRow selectedRow = GridPrestamos.Rows[i];
             int ID = (int)selectedRow.Cells[0].Value;
-            //CuotasSelect           
-            var bindingList = new BindingList<object>(GetCuotasMethods.CuotasSelect(ID));
+            //CuotasSelect          
+            List<object> QuitarColumnas = new List<object>();
+            CuotasModel = GetCuotasMethods.CuotasSelect(ID);
+            for (i = 0; i < CuotasModel.Count(); i++)
+            {
+                var AnonymousType = new
+                {
+                    CuotasModel[i].Id,
+                    CuotasModel[i].Diapago,
+                    CuotasModel[i].Monto,
+                    CuotasModel[i].EstadoString
+                };
+                QuitarColumnas.Add(AnonymousType);
+            }
+            var bindingList = new BindingList<object>(QuitarColumnas);
             var source = new BindingSource(bindingList, null);
             GridCuotas.DataSource = source;
-
         }
     }
 }

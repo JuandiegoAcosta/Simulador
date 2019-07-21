@@ -86,14 +86,14 @@ namespace Sistema_Bancario.Froms_opciones
         }
         private void BTNroContrato_Click(object sender, EventArgs e)
         {
-         if (GEmpresas.Rows.Count > 0)
-         {
-            if (string.IsNullOrEmpty(nroContrato1.TBNroContrato.Text)) { return; }
+            if (GEmpresas.Rows.Count > 0)
+            {
+                if (string.IsNullOrEmpty(nroContrato1.TBNroContrato.Text)) { return; }
 
 
-            EmpresaMethods empresaMethods = new EmpresaMethods();
+                EmpresaMethods empresaMethods = new EmpresaMethods();
 
-            int i = GEmpresas.CurrentCell.RowIndex;
+                int i = GEmpresas.CurrentCell.RowIndex;
                 List<object> QuitarColumnas = new List<object>();
                 recaudosModels = empresaMethods.PagoServicioEmpresa(Convert.ToInt32(GEmpresas[0, i].Value), Convert.ToInt32(nroContrato1.TBNroContrato.Text));
                 for (i = 0; i < recaudosModels.Count(); i++)
@@ -107,10 +107,14 @@ namespace Sistema_Bancario.Froms_opciones
                     };
                     QuitarColumnas.Add(AnonymousType);
                 }
-              
-            var source = new BindingSource(QuitarColumnas, null);
-            GNroContrato.DataSource = source;
-         }
+
+                var source = new BindingSource(QuitarColumnas, null);
+                GNroContrato.DataSource = source;
+            }
+            else
+            {
+                MessageBox.Show("Haga busqueda de una empresa");
+            }
         }
         private void GNroContrato_CellClick(object sender, DataGridViewCellEventArgs e)
         {

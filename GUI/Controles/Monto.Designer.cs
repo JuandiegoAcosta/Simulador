@@ -28,30 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-         this.TBMonto = new System.Windows.Forms.TextBox();
-         this.SuspendLayout();
-         // 
-         // TBMonto
-         // 
-         this.TBMonto.Location = new System.Drawing.Point(0, 0);
-         this.TBMonto.Margin = new System.Windows.Forms.Padding(2);
-         this.TBMonto.MaxLength = 10;
-         this.TBMonto.Name = "TBMonto";
-         this.TBMonto.ShortcutsEnabled = false;
-         this.TBMonto.Size = new System.Drawing.Size(201, 20);
-         this.TBMonto.TabIndex = 0;
-         this.TBMonto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBMonto_KeyPress);
-         // 
-         // Monto
-         // 
-         this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-         this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-         this.Controls.Add(this.TBMonto);
-         this.Margin = new System.Windows.Forms.Padding(2);
-         this.Name = "Monto";
-         this.Size = new System.Drawing.Size(203, 22);
-         this.ResumeLayout(false);
-         this.PerformLayout();
+            this.TBMonto = new System.Windows.Forms.TextBox();
+            this.SuspendLayout();
+            // 
+            // TBMonto
+            // 
+            this.TBMonto.Location = new System.Drawing.Point(0, 0);
+            this.TBMonto.Margin = new System.Windows.Forms.Padding(2);
+            this.TBMonto.MaxLength = 10;
+            this.TBMonto.Name = "TBMonto";
+            this.TBMonto.ShortcutsEnabled = false;
+            this.TBMonto.Size = new System.Drawing.Size(193, 20);
+            this.TBMonto.TabIndex = 0;
+            this.TBMonto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBMonto_KeyPress);
+            // 
+            // Monto
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.TBMonto);
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "Monto";
+            this.Size = new System.Drawing.Size(193, 20);
+            this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
