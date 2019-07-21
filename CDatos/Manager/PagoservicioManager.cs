@@ -343,7 +343,7 @@ namespace CDatos.Manager
             }
         }
 
-        public int InsertPagoServicio(int nroContrato,string User)
+        public int InsertPagoServicio(RecaudosModel recaudos,string User)
         {
 
             int result=-1;
@@ -354,8 +354,9 @@ namespace CDatos.Manager
                 {
                     connection.Open();
                     SqlCommand command = connection.CreateCommand();
-                    command.Parameters.AddWithValue("@nroContrato", nroContrato);
+                    command.Parameters.AddWithValue("@nroContrato", recaudos.Nro_contrato);
                     command.Parameters.AddWithValue("@Usuario", User);
+                    command.Parameters.AddWithValue("@RowVer", recaudos.RowVersion);
                     command.CommandType = CommandType.StoredProcedure;
                     command.CommandText = "InsertPagoServicio";                 
                     result = command.ExecuteNonQuery();

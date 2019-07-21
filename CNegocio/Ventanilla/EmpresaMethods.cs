@@ -49,5 +49,9 @@ namespace CNegocio.Ventanilla
         {
             return ADEmpresaManager.PagoServicioEmpresa(id,nroContrato);
         }
+        public List<RecaudosModel> RecaudosbyNroDocumento(string NroDocumento)
+        {
+            return ADEmpresaManager.RecaudosbyNroDocumento(NroDocumento);
+        }
     }
 }

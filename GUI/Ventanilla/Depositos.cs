@@ -67,8 +67,8 @@ namespace Sistema_Bancario.Ventanilla
             else
             { return false; }
 
-            if (!string.IsNullOrEmpty(this.txtDoi.Text.Trim()))
-            { m_deposito.Doi = this.txtDoi.Text.Trim(); }
+            if (!string.IsNullOrEmpty(this.nroCuenta1.dni1.TBDni.Text.Trim()))
+            { m_deposito.Doi = this.nroCuenta1.dni1.TBDni.Text.Trim(); }
             else
             { return false; }
 

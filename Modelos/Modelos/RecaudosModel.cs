@@ -40,50 +40,9 @@ namespace Modelos.Modelos
         /// </summary>
         /// 
         [XmlElement(ElementName = "Estado_recaudo")]
-        public bool Estado_recaudo
+        public string Estado_recaudo
         { get; set; }
-
-        /// <summary>
-        /// Gets or sets the Id_empresa value.
-        /// </summary>
-        /// 
-        [XmlElement(ElementName = "Id_empresa")]
-        public int Id_empresa
-        { get; set; }
-
-        /// <summary>
-        /// Gets or sets the Fecha_creacion value.
-        /// </summary>
-        /// 
-        [XmlElement(ElementName = "Fecha_creacion")]
-        public DateTime Fecha_creacion
-        { get; set; }
-
-        /// <summary>
-        /// Gets or sets the Fecha_modificacion value.
-        /// </summary>
-        /// 
-        [XmlElement(ElementName = "Fecha_modificacion")]
-        public DateTime? Fecha_modificacion
-        { get; set; }
-
-        /// <summary>
-        /// Gets or sets the Usuario_modificador value.
-        /// </summary>
-        /// 
-        [XmlElement(ElementName = "Usuario_modificador")]
-        public string Usuario_modificador
-        { get; set; }
-
-        /// <summary>
-        /// Gets or sets the Usuario_creador value.
-        /// </summary>
-        /// 
-        [XmlElement(ElementName = "Usuario_creador")]
-        public string Usuario_creador
-        { get; set; }
-
-
+        public byte[] RowVersion { get; set; }
         #endregion
     }
 

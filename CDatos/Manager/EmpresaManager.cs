@@ -437,20 +437,68 @@ namespace CDatos.Manager
                     {
                         while (reader.Read())
                         {
-                            int Nro_Contato = (int)(reader["Nro_Contrato"]);
-                            int ID_EmpresaModel = (int)(reader["ID_Empresa"]);
+                            int Nro_Contato = (int)(reader["Nro_Contrato"]);                          
                             decimal MontoModel = (decimal)(reader["Monto"]);
                             DateTime FechaVencimiento = (DateTime)(reader["Fecha_Vencimiento"]);
-                            bool EstadoRecaudo = (bool)(reader["Estado_Recaudo"]);
+                            string EstadoRecaudo = (string)(reader["Estado"]);
+                            byte[] RowVersion = (byte[])(reader["RowVer"]);
+                            EmpresaModellist.Add(new RecaudosModel
+                            {
+                                Nro_contrato = Nro_Contato,                               
+                                Monto = MontoModel,
+                                Fecha_vencimiento = FechaVencimiento,
+                                Estado_recaudo = EstadoRecaudo,
+                                RowVersion = RowVersion
+                            }); ;
+                        }
+                    }
+                }
 
+                return EmpresaModellist;
+            }
+            catch (Exception)
+            {
+                return EmpresaModellist;
+            }
+        }
+
+        public List<RecaudosModel> RecaudosbyNroDocumento(string NroDocumento)
+        {
+
+            List<RecaudosModel> EmpresaModellist = new List<RecaudosModel>();
+
+            try
+            {
+                using (var connection = Util.ConnectionFactory.conexion())
+                {
+                    connection.Open();
+
+                    SqlCommand command = connection.CreateCommand();
+
+                    command.Parameters.AddWithValue("@NroDocumento", NroDocumento);
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.CommandText = "SelectRecaudosbyNroDocumento";
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            int Nro_Contato = (int)(reader["Nro_Contrato"]);
+                            decimal MontoModel = (decimal)(reader["Monto"]);
+                            DateTime FechaVencimiento = (DateTime)(reader["Fecha_Vencimiento"]);
+                            string EstadoRecaudo = (string)(reader["Estado"]);
+                            byte[] RowVersion = (byte[])(reader["RowVer"]);
                             EmpresaModellist.Add(new RecaudosModel
                             {
                                 Nro_contrato = Nro_Contato,
-                                Id_empresa = ID_EmpresaModel,
                                 Monto = MontoModel,
                                 Fecha_vencimiento = FechaVencimiento,
-                                Estado_recaudo = EstadoRecaudo
-                            }); ;
+                                Estado_recaudo = EstadoRecaudo,
+                                RowVersion = RowVersion
+                            });
                         }
                     }
                 }

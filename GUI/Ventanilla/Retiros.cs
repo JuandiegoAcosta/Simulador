@@ -107,8 +107,8 @@ namespace Sistema_Bancario.Froms_opciones
             else
             { return false; }
 
-            if (!string.IsNullOrEmpty(this.doi1.TBDoi.Text.Trim()))
-            { m_doi = this.doi1.TBDoi.Text.Trim(); }
+            if (!string.IsNullOrEmpty(this.nroCuenta1.dni1.TBDni.Text.Trim()))
+            { m_doi = this.nroCuenta1.dni1.TBDni.Text.Trim(); }
             else
             { return false; }
 

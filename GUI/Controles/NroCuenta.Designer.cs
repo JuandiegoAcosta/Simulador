@@ -58,7 +58,7 @@
             this.TBNroCuenta.Margin = new System.Windows.Forms.Padding(2);
             this.TBNroCuenta.MaxLength = 14;
             this.TBNroCuenta.Name = "TBNroCuenta";
-            this.TBNroCuenta.Size = new System.Drawing.Size(142, 20);
+            this.TBNroCuenta.Size = new System.Drawing.Size(140, 20);
             this.TBNroCuenta.TabIndex = 1;
             this.TBNroCuenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBNroCuenta_KeyPress);
             // 
@@ -67,7 +67,7 @@
             this.BtValidar.BackColor = System.Drawing.Color.ForestGreen;
             this.BtValidar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtValidar.ForeColor = System.Drawing.SystemColors.Window;
-            this.BtValidar.Location = new System.Drawing.Point(215, 51);
+            this.BtValidar.Location = new System.Drawing.Point(209, 11);
             this.BtValidar.Name = "BtValidar";
             this.BtValidar.Size = new System.Drawing.Size(75, 23);
             this.BtValidar.TabIndex = 28;
@@ -79,7 +79,7 @@
             // 
             this.Lbestado.AutoSize = true;
             this.Lbestado.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbestado.Location = new System.Drawing.Point(183, 20);
+            this.Lbestado.Location = new System.Drawing.Point(148, 75);
             this.Lbestado.Name = "Lbestado";
             this.Lbestado.Size = new System.Drawing.Size(70, 13);
             this.Lbestado.TabIndex = 26;
@@ -89,9 +89,9 @@
             // Lbmoneda
             // 
             this.Lbmoneda.AutoSize = true;
-            this.Lbmoneda.Location = new System.Drawing.Point(309, 20);
+            this.Lbmoneda.Location = new System.Drawing.Point(65, 75);
             this.Lbmoneda.Name = "Lbmoneda";
-            this.Lbmoneda.Size = new System.Drawing.Size(72, 13);
+            this.Lbmoneda.Size = new System.Drawing.Size(64, 13);
             this.Lbmoneda.TabIndex = 31;
             this.Lbmoneda.Text = "Moneda :??";
             this.Lbmoneda.Visible = false;
@@ -99,14 +99,13 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.rbtnAhorros);
-            this.groupBox1.Controls.Add(this.Lbmoneda);
             this.groupBox1.Controls.Add(this.rbtnCorriente);
-            this.groupBox1.Controls.Add(this.Lbestado);
+            this.groupBox1.Controls.Add(this.BtValidar);
             this.groupBox1.Enabled = false;
             this.groupBox1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(0, 81);
+            this.groupBox1.Location = new System.Drawing.Point(6, 89);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(395, 40);
+            this.groupBox1.Size = new System.Drawing.Size(290, 40);
             this.groupBox1.TabIndex = 32;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "CUENTA";
@@ -164,15 +163,16 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.Lbmoneda);
+            this.Controls.Add(this.Lbestado);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dni1);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.BtValidar);
             this.Controls.Add(this.TBNroCuenta);
             this.Controls.Add(this.LbTarjeta);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "NroCuenta";
-            this.Size = new System.Drawing.Size(741, 125);
+            this.Size = new System.Drawing.Size(741, 132);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

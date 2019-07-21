@@ -18,8 +18,8 @@ namespace Sistema_Bancario
             InitializeComponent();
            
             proceder1.BTProceder.Click += BTProceder_Click;
-            nro_Documento1.LblNombreControl.Text = "Nro Documento "+"\n"+"/ Nro Cuenta";
-
+            //nro_Documento1.LblNombreControl.Text = "Nro Documento "+"\n"+"/ Nro Cuenta";
+            
         }
 
         private void BTProceder_Click(object sender, EventArgs e)
@@ -33,7 +33,7 @@ namespace Sistema_Bancario
             //   int i = GridCuotas.CurrentRow.Cells[0].Value;
             //  Convert.ToInt32(GridCuotas[i, 0].Value);
             StatusStrip o = this.TopLevelControl.Controls.Find("stStatus", true).FirstOrDefault() as StatusStrip;// o.Items[1].Text
-            GetCuotasMethods.CuotasInsert(Convert.ToInt32(GridCuotas[i, 0].Value), o.Items[1].Text);
+            GetCuotasMethods.CuotasInsert(Convert.ToInt32(GridCuotas[0, i].Value), o.Items[1].Text);
          }
         }
 
@@ -51,10 +51,11 @@ namespace Sistema_Bancario
 
         private void BTBuscarCuota_Click(object sender, EventArgs e)
         {
+
             GetCuotasMethods = new CuotasMethods();
             
        //     MessageBox.Show(GetCuotasMethods.ObtenerPrestamos(nroCuenta1.TBNroCuenta.Text).ToString());
-            var bindingList = new BindingList<object>(GetCuotasMethods.ObtenerPrestamos(nro_Documento1.TBNroDocumento.Text));
+            var bindingList = new BindingList<object>(GetCuotasMethods.ObtenerPrestamos(nroCuenta1.TBNroCuenta.Text));
             var source = new BindingSource(bindingList, null);
             GridPrestamos.DataSource = source;
            // this.GridPrestamos.DataSource = GetCuotasMethods.ObtenerPrestamos(nroCuenta1.TBNroCuenta.Text);

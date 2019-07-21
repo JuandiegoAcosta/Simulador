@@ -35,11 +35,11 @@ namespace CDatos.Manager
                     command.Parameters.AddWithValue("@Monto", aRecaudosModel.Monto);
                     command.Parameters.AddWithValue("@Fecha_Vencimiento", aRecaudosModel.Fecha_vencimiento);
                     //command.Parameters.AddWithValue("@Estado_RecaudosModel", aRecaudosModel.Estado_RecaudosModel);
-                    command.Parameters.AddWithValue("@ID_Empresa", aRecaudosModel.Id_empresa);
-                    command.Parameters.AddWithValue("@FECHA_CREACION", aRecaudosModel.Fecha_creacion);
-                    command.Parameters.AddWithValue("@FECHA_MODIFICACION", aRecaudosModel.Fecha_modificacion == null ? (object)DBNull.Value : aRecaudosModel.Fecha_modificacion);
-                    command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aRecaudosModel.Usuario_modificador == null ? (object)DBNull.Value : aRecaudosModel.Usuario_modificador);
-                    command.Parameters.AddWithValue("@USUARIO_CREADOR", aRecaudosModel.Usuario_creador);
+                    //command.Parameters.AddWithValue("@ID_Empresa", aRecaudosModel.Id_empresa);
+                    //command.Parameters.AddWithValue("@FECHA_CREACION", aRecaudosModel.Fecha_creacion);
+                    //command.Parameters.AddWithValue("@FECHA_MODIFICACION", aRecaudosModel.Fecha_modificacion == null ? (object)DBNull.Value : aRecaudosModel.Fecha_modificacion);
+                    //command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aRecaudosModel.Usuario_modificador == null ? (object)DBNull.Value : aRecaudosModel.Usuario_modificador);
+                    //command.Parameters.AddWithValue("@USUARIO_CREADOR", aRecaudosModel.Usuario_creador);
 
 
                     command.CommandType = CommandType.StoredProcedure;
@@ -89,11 +89,11 @@ namespace CDatos.Manager
                     command.Parameters.AddWithValue("@Monto", aRecaudosModel.Monto);
                     command.Parameters.AddWithValue("@Fecha_Vencimiento", aRecaudosModel.Fecha_vencimiento);
                     //command.Parameters.AddWithValue("@Estado_RecaudosModel", aRecaudosModel.Estado_RecaudosModel);
-                    command.Parameters.AddWithValue("@ID_Empresa", aRecaudosModel.Id_empresa);
-                    command.Parameters.AddWithValue("@FECHA_CREACION", aRecaudosModel.Fecha_creacion);
-                    command.Parameters.AddWithValue("@FECHA_MODIFICACION", aRecaudosModel.Fecha_modificacion == null ? (object)DBNull.Value : aRecaudosModel.Fecha_modificacion);
-                    command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aRecaudosModel.Usuario_modificador == null ? (object)DBNull.Value : aRecaudosModel.Usuario_modificador);
-                    command.Parameters.AddWithValue("@USUARIO_CREADOR", aRecaudosModel.Usuario_creador);
+                    //command.Parameters.AddWithValue("@ID_Empresa", aRecaudosModel.Id_empresa);
+                    //command.Parameters.AddWithValue("@FECHA_CREACION", aRecaudosModel.Fecha_creacion);
+                    //command.Parameters.AddWithValue("@FECHA_MODIFICACION", aRecaudosModel.Fecha_modificacion == null ? (object)DBNull.Value : aRecaudosModel.Fecha_modificacion);
+                    //command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aRecaudosModel.Usuario_modificador == null ? (object)DBNull.Value : aRecaudosModel.Usuario_modificador);
+                    //command.Parameters.AddWithValue("@USUARIO_CREADOR", aRecaudosModel.Usuario_creador);
 
 
                     command.CommandType = CommandType.StoredProcedure;
@@ -210,11 +210,11 @@ namespace CDatos.Manager
                                 Monto = Monto,
                                 Fecha_vencimiento = Fecha_Vencimiento,
                                 //Estado_RecaudosModel = Estado_RecaudosModel,
-                                Id_empresa = ID_Empresa,
-                                Fecha_creacion = FECHA_CREACION,
-                                Fecha_modificacion = FECHA_MODIFICACION,
-                                Usuario_modificador = USUARIO_MODIFICADOR,
-                                Usuario_creador = USUARIO_CREADOR,
+                                //Id_empresa = ID_Empresa,
+                                //Fecha_creacion = FECHA_CREACION,
+                                //Fecha_modificacion = FECHA_MODIFICACION,
+                                //Usuario_modificador = USUARIO_MODIFICADOR,
+                                //Usuario_creador = USUARIO_CREADOR,
 
                             };
                         }
@@ -273,11 +273,11 @@ namespace CDatos.Manager
                                 Monto = Monto,
                                 Fecha_vencimiento = Fecha_Vencimiento,
                                 //Estado_RecaudosModel = Estado_RecaudosModel,
-                                Id_empresa = ID_Empresa,
-                                Fecha_creacion = FECHA_CREACION,
-                                Fecha_modificacion = FECHA_MODIFICACION,
-                                Usuario_modificador = USUARIO_MODIFICADOR,
-                                Usuario_creador = USUARIO_CREADOR,
+                                //Id_empresa = ID_Empresa,
+                                //Fecha_creacion = FECHA_CREACION,
+                                //Fecha_modificacion = FECHA_MODIFICACION,
+                                //Usuario_modificador = USUARIO_MODIFICADOR,
+                                //Usuario_creador = USUARIO_CREADOR,
 
                             });
                         }
@@ -338,11 +338,11 @@ namespace CDatos.Manager
                                 Monto = Monto,
                                 Fecha_vencimiento = Fecha_Vencimiento,
                                 //Estado_RecaudosModel = Estado_RecaudosModel,
-                                Id_empresa = ID_Empresa,
-                                Fecha_creacion = FECHA_CREACION,
-                                Fecha_modificacion = FECHA_MODIFICACION,
-                                Usuario_modificador = USUARIO_MODIFICADOR,
-                                Usuario_creador = USUARIO_CREADOR,
+                                //Id_empresa = ID_Empresa,
+                                //Fecha_creacion = FECHA_CREACION,
+                                //Fecha_modificacion = FECHA_MODIFICACION,
+                                //Usuario_modificador = USUARIO_MODIFICADOR,
+                                //Usuario_creador = USUARIO_CREADOR,
 
                             });
                         }

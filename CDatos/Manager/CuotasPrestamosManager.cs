@@ -101,7 +101,7 @@ namespace CDatos.Manager
                             Codigo = reader[0],
                             Cuota = reader[1],
                             Monto = reader[2],
-                            Estado = ((int)reader[3] == 1) ? "Pagado":"Debe"
+                            Estado = reader[3]
                         });
                     }
                 }

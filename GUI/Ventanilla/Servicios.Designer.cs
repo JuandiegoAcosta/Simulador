@@ -89,6 +89,7 @@
             this.GNroContrato.RowTemplate.Height = 24;
             this.GNroContrato.Size = new System.Drawing.Size(585, 143);
             this.GNroContrato.TabIndex = 6;
+            this.GNroContrato.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GNroContrato_CellClick);
             // 
             // BTBuscarEmpresa
             // 

@@ -43,7 +43,6 @@
             this.DGVlistaDatos.AllowUserToAddRows = false;
             this.DGVlistaDatos.AllowUserToDeleteRows = false;
             this.DGVlistaDatos.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.DGVlistaDatos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGVlistaDatos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.DGVlistaDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVlistaDatos.EnableHeadersVisualStyles = false;
@@ -52,9 +51,9 @@
             this.DGVlistaDatos.Name = "DGVlistaDatos";
             this.DGVlistaDatos.ReadOnly = true;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.MenuText;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
