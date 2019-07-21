@@ -57,7 +57,7 @@ namespace CDatos.Manager
             }
             catch (SqlException e)
             {
-                result = e.Errors[0].ToString();
+                result = e.Errors[0].Message.ToString();
                 return result;
             }
         }

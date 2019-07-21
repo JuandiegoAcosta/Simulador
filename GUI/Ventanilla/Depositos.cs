@@ -87,10 +87,12 @@ namespace Sistema_Bancario.Ventanilla
             m_depositoMethods = new DepositoMethods();
                 StatusStrip o = this.TopLevelControl.Controls.Find("stStatus", true).FirstOrDefault() as StatusStrip;// 
                 m_deposito.Usuario = o.Items[1].Text;
-            if (m_depositoMethods.insert(m_deposito))
+                m_deposito.RowVer = nroCuenta1.VersionCuenta;
+                var a = m_depositoMethods.insert(m_deposito);
+            if (a.Equals("Transferido"))
                MessageBox.Show("Operacion Realizada");
             else
-               MessageBox.Show("No se pudo realizar la operación");
+               MessageBox.Show("No se pudo realizar la operación :" + a);
          }
       }
 

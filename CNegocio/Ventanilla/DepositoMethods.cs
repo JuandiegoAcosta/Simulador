@@ -19,7 +19,7 @@ namespace CNegocio.Ventanilla
          //   
 
         }
-        public bool insert(Deposito dep)
+        public string insert(Deposito dep)
         {
           return depositoManager.Insert(dep);
         }

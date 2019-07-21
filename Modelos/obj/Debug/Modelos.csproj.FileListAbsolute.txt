@@ -227,3 +227,4 @@ C:\Users\katva\Source\Repos\JuandiegoAcosta\Simulador\Modelos\obj\Debug\Modelos.
 C:\Users\katva\Source\Repos\JuandiegoAcosta\Simulador\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
 C:\Users\katva\Source\Repos\JuandiegoAcosta\Simulador\Modelos\obj\Debug\Modelos.dll
 C:\Users\katva\Source\Repos\JuandiegoAcosta\Simulador\Modelos\obj\Debug\Modelos.pdb
+C:\Users\Jordan\Source\Repos\Simulador\Modelos\obj\Debug\Modelos.csprojAssemblyReference.cache
