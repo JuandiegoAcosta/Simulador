@@ -31,12 +31,13 @@ namespace CDatos.Manager
 
                     command.Transaction = sqlTran;
 
-                    //command.Parameters.AddWithValue("@Numero", atarjeta.Numero);
+                    // command.Parameters.AddWithValue("@Numero", atarjeta.Numero);
                     command.Parameters.AddWithValue("@Password", atarjeta.Password == null ? (object)DBNull.Value : atarjeta.Password);
                     command.Parameters.AddWithValue("@CodControl", atarjeta.Codcontrol);
                     command.Parameters.AddWithValue("@FechaVencimiento", atarjeta.Fechavencimiento == null ? (object)DBNull.Value : atarjeta.Fechavencimiento);
-                    command.Parameters.AddWithValue("@FechaVinculacion", atarjeta.Fechavinculacion == null ? System.DateTime.Now : atarjeta.Fechavinculacion);
+                    command.Parameters.AddWithValue("@FechaVinculacion", atarjeta.Fechavinculacion == null ? (object)DBNull.Value : atarjeta.Fechavinculacion);
                     command.Parameters.AddWithValue("@Estado", atarjeta.Estado);
+                    command.Parameters.AddWithValue("@id_cuenta", atarjeta.Id_cuenta);
                     command.Parameters.AddWithValue("@FECHA_MODIFICACION", atarjeta.Fecha_modificacion == null ? (object)DBNull.Value : atarjeta.Fecha_modificacion);
                     command.Parameters.AddWithValue("@USUARIO_CREADOR", atarjeta.Usuario_creador);
                     command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", atarjeta.Usuario_modificador == null ? (object)DBNull.Value : atarjeta.Usuario_modificador);
@@ -93,6 +94,7 @@ namespace CDatos.Manager
                     command.Parameters.AddWithValue("@FechaVencimiento", atarjeta.Fechavencimiento == null ? (object)DBNull.Value : atarjeta.Fechavencimiento);
                     command.Parameters.AddWithValue("@FechaVinculacion", atarjeta.Fechavinculacion == null ? (object)DBNull.Value : atarjeta.Fechavinculacion);
                     command.Parameters.AddWithValue("@Estado", atarjeta.Estado);
+                    command.Parameters.AddWithValue("@id_cuenta", atarjeta.Id_cuenta);
                     command.Parameters.AddWithValue("@FECHA_MODIFICACION", atarjeta.Fecha_modificacion == null ? (object)DBNull.Value : atarjeta.Fecha_modificacion);
                     command.Parameters.AddWithValue("@USUARIO_CREADOR", atarjeta.Usuario_creador);
                     command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", atarjeta.Usuario_modificador == null ? (object)DBNull.Value : atarjeta.Usuario_modificador);
@@ -203,6 +205,7 @@ namespace CDatos.Manager
                             DateTime? FechaVencimiento = reader["FechaVencimiento"] as DateTime?;
                             DateTime? FechaVinculacion = reader["FechaVinculacion"] as DateTime?;
                             bool Estado = (bool)(reader["Estado"]);
+                            string id_cuenta = (string)(reader["id_cuenta"]);
                             DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
                             string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
                             string USUARIO_MODIFICADOR = reader["USUARIO_MODIFICADOR"] as string;
@@ -216,6 +219,7 @@ namespace CDatos.Manager
                                 Fechavencimiento = FechaVencimiento,
                                 Fechavinculacion = FechaVinculacion,
                                 Estado = Estado,
+                                Id_cuenta = id_cuenta,
                                 Fecha_modificacion = FECHA_MODIFICACION,
                                 Usuario_creador = USUARIO_CREADOR,
                                 Usuario_modificador = USUARIO_MODIFICADOR,
@@ -268,6 +272,7 @@ namespace CDatos.Manager
                             DateTime? FechaVencimiento = reader["FechaVencimiento"] as DateTime?;
                             DateTime FechaVinculacion = (DateTime)(reader["FechaVinculacion"]);
                             bool Estado = (bool)(reader["Estado"]);
+                            string id_cuenta = (string)(reader["id_cuenta"]);
                             DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
                             string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
                             string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
@@ -281,6 +286,7 @@ namespace CDatos.Manager
                                 Fechavencimiento = FechaVencimiento,
                                 Fechavinculacion = FechaVinculacion,
                                 Estado = Estado,
+                                Id_cuenta = id_cuenta,
                                 Fecha_modificacion = FECHA_MODIFICACION,
                                 Usuario_creador = USUARIO_CREADOR,
                                 Usuario_modificador = USUARIO_MODIFICADOR,
@@ -335,6 +341,7 @@ namespace CDatos.Manager
                             DateTime? FechaVencimiento = reader["FechaVencimiento"] as DateTime?;
                             DateTime? FechaVinculacion = reader["FechaVinculacion"] as DateTime?;
                             bool Estado = (bool)(reader["Estado"]);
+                            string id_cuenta = (string)(reader["id_cuenta"]);
                             DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
                             string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
                             string USUARIO_MODIFICADOR = reader["USUARIO_MODIFICADOR"] as string;
@@ -348,6 +355,7 @@ namespace CDatos.Manager
                                 Fechavencimiento = FechaVencimiento,
                                 Fechavinculacion = FechaVinculacion,
                                 Estado = Estado,
+                                Id_cuenta = id_cuenta,
                                 Fecha_modificacion = FECHA_MODIFICACION,
                                 Usuario_creador = USUARIO_CREADOR,
                                 Usuario_modificador = USUARIO_MODIFICADOR,
@@ -362,6 +370,7 @@ namespace CDatos.Manager
             }
             catch (Exception)
             {
+                //throw;
                 return tarjetalist;
             }
         }
