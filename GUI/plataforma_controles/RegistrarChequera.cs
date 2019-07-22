@@ -22,15 +22,18 @@ namespace Sistema_Bancario.plataforma_controles
 
         private string modo;
         private CuentasModel gCuenta;
-        //private ChequerasModel gChequera;
+        private ChequerasModel gChequera;
         private string gUsuario;
 
-        public RegistrarChequera(ISession isesion)
+
+        public RegistrarChequera(ISession sesion)
         {
             InitializeComponent();
+
+            this.gUsuario = sesion.UserName;
             this.poblarCboTipoCuenta();
             this.poblarCboEstado();
-            this.gUsuario = isesion.UserName;
+
 
             this.clearForm();
             this.modoInicial();
@@ -53,7 +56,7 @@ namespace Sistema_Bancario.plataforma_controles
                     Estado = (string)this.cboEstado.SelectedValue,
                     Inicio = (int)this.nudChequeInicial.Value,
                     Usuario_creador = this.gUsuario,
-                    Fecha_creacion = (DateTime)BLFechaHoraServidor.Obtener()
+                    Fecha_creacion = (DateTime)BLFechaHoraServidor.Obtener(),
 
                 };
             }
@@ -63,19 +66,37 @@ namespace Sistema_Bancario.plataforma_controles
             }
         }
 
+        private void chequera2gui(ChequerasModel achequera)
+        {
+            this.gCuenta = this.BLCuenta.Getcuenta(achequera.Id_cuenta);
+            if (gCuenta == null)
+                return;
+
+            this.txtCodigo.Text = achequera.Numero.ToString();
+            this.txtCuenta.Text = this.gCuenta.Nrocuenta.ToString();
+            this.dtpFechaRegistro.Value = (DateTime)achequera.Fecharegistro;
+            this.cboCantidadCheques.SelectedValue = achequera.Cantidad_cheques;
+            this.nudChequeInicial.Value = achequera.Inicio;
+            this.cboEstado.SelectedValue = achequera.Estado;
+
+            this.SlblUsuario_creador.Text = achequera.Usuario_creador;
+            this.SlblFecha_creacion.Text = achequera.Fecha_creacion.ToLongDateString();
+            this.SlblUsuario_modificador.Text = achequera.Usuario_modificador;
+            this.SlblFecha_modificacion.Text = achequera.Fecha_modificacion.ToString();
+        }
+
         private void poblarCboTipoCuenta()
         {
             SortedDictionary<int, string> userCache = new SortedDictionary<int, string>
                 {
                   {50, "050 CHEQUES"},
-                  {100, "100 CHEQUES"},
+                  {100, "100 CHUEQUES"},
                   {150, "150 CHEQUES"}
                 };
 
             this.cboCantidadCheques.DataSource = new BindingSource(userCache, null);
             this.cboCantidadCheques.ValueMember = "Key";
             this.cboCantidadCheques.DisplayMember = "Value";
-            this.cboCantidadCheques.Text = "Elegir una opcion";
         }
 
         private void poblarCboEstado()
@@ -124,14 +145,14 @@ namespace Sistema_Bancario.plataforma_controles
                         var dato = formHelp1.getObject<CuentasModel>();
                         if (dato != null)
                         {
-                            this.clearForm();
-                            this.gCuenta = this.BLCuenta.Getcuenta(dato.Nrocuenta);
-                            this.cuenta2gui(this.gCuenta);
-                            this.cboCantidadCheques.SelectedIndex = 0;
-                            this.cboEstado.SelectedIndex = 1;
-                            this.nudChequeInicial.Value = 1;
-                            //this.modoNuevo();
-                            //this.modoEdicion();
+
+                            this.gCuenta = BLCuenta.Getcuenta(dato.Nrocuenta);
+
+                            if (gCuenta == null)
+                                return;
+                            this.cuenta2gui(gCuenta);
+
+
                         }
                     }
                 }
@@ -157,8 +178,6 @@ namespace Sistema_Bancario.plataforma_controles
         private void modoInicial()
         {
             this.modo = "modoInicial";
-            this.btnCodigo.Enabled = true;
-            this.txtCodigo.Enabled = true;
 
             this.buttonActualizar.Enabled = false;
             this.buttonEliminar.Enabled = false;
@@ -167,11 +186,11 @@ namespace Sistema_Bancario.plataforma_controles
             this.buttonCrear.Enabled = false;
             this.buttonDeshacer.Enabled = false;
 
-            this.btnCodigo.Enabled = false;
+            this.btnCodigo.Enabled = true;
             this.btnCuenta.Enabled = false;
 
             this.txtCodigo.Enabled = true;
-            this.txtCuenta.Enabled = true;
+            this.txtCuenta.Enabled = false;
             this.dtpFechaRegistro.Enabled = false;
             this.cboEstado.Enabled = false;
             this.cboCantidadCheques.Enabled = false;
@@ -200,6 +219,14 @@ namespace Sistema_Bancario.plataforma_controles
             this.nudChequeInicial.Enabled = true;
         }
 
+
+        private void modoEdicion()
+        {
+            this.buttonCrear.Enabled = false;
+            this.buttonActualizar.Enabled = true;
+            this.buttonEliminar.Enabled = true;
+        }
+
         private void buttonNuevo_Click(object sender, EventArgs e)
         {
             this.clearForm();
@@ -212,7 +239,7 @@ namespace Sistema_Bancario.plataforma_controles
 
             if (objeto == null)
             {
-                MessageBox.Show("Problemas al instanciar el nuevo objeto, revise las propiedades");
+                MessageBox.Show("Problemas al instanciar el nuevo objeto, revise las propiedas");
                 return;
             }
             if (this.BLChequeras.Insert(objeto))
@@ -223,10 +250,93 @@ namespace Sistema_Bancario.plataforma_controles
             }
         }
 
+        private void buttonActualizar_Click(object sender, EventArgs e)
+        {
+            var objeto = this.gui2chequera();
+
+            if (objeto == null)
+            {
+                MessageBox.Show("Problemas al instanciar el nuevo objeto, revise las propiedas");
+                return;
+            }
+
+            objeto.Numero = this.gChequera.Numero;
+            objeto.Cantidad_cheques = this.gChequera.Cantidad_cheques;
+            objeto.Inicio = this.gChequera.Inicio;
+            objeto.Usuario_creador = this.gChequera.Usuario_creador;
+            objeto.Fecha_creacion = this.gChequera.Fecha_creacion;
+            objeto.Usuario_modificador = this.gChequera.Usuario_modificador;
+            objeto.Fecha_modificacion = BLFechaHoraServidor.Obtener();
+
+            if (this.BLChequeras.Update(objeto))
+            {
+                MessageBox.Show("El proceso ha sido correcto");
+                this.clearForm();
+                this.modoInicial();
+            }
+        }
+
+        private void buttonEliminar_Click(object sender, EventArgs e)
+        {
+            if (this.gChequera == null)
+            {
+                MessageBox.Show("Problemas al obtener el objeto de base de datos");
+                return;
+            }
+            if (this.BLChequeras.Delete(this.gChequera.Numero))
+            {
+                this.clearForm();
+                this.modoInicial();
+
+            }
+        }
+
         private void buttonDeshacer_Click(object sender, EventArgs e)
         {
             this.clearForm();
             this.modoInicial();
+        }
+
+        private void btnCodigo_Click(object sender, EventArgs e)
+        {
+            string codigo = this.txtCodigo.Text;
+
+            var objeto = this.BLChequeras.ChequerasSelectbyId(codigo);
+
+            if (objeto == null && objeto.Count <= 0) { return; }
+            this.buscarChequeres(objeto);
+        }
+
+        private void buscarChequeres(List<ChequerasModel> objetos)
+        {
+            string[][] orden = new string[4][];
+
+            orden[0] = new string[] { "Numero", "Numero de chequera", "100" };
+            orden[1] = new string[] { "FechaRegistro", "Fecha Registro", "150" };
+            orden[2] = new string[] { "Cantidad_cheques", "Cantidad de cheques", "150" };
+            orden[3] = new string[] { "Estado", "Estado Chequera", "150" };
+
+            if (objetos != null)
+            {
+                using (Ayuda.FormHelp2 formHelp1 = new Ayuda.FormHelp2())
+                {
+                    formHelp1.setList(objetos, orden);
+                    formHelp1.ShowDialog();
+
+                    if (formHelp1.EstaAceptado())
+                    {
+                        var dato = formHelp1.getObject<ChequerasModel>();
+                        if (dato != null)
+                        {
+                            this.clearForm();
+                            this.gChequera = this.BLChequeras.GetChequerasModel(dato.Numero);
+                            this.chequera2gui(this.gChequera);
+                            this.modoNuevo();
+                            this.modoEdicion();
+                        }
+                    }
+                }
+            }
         }
     }
 }
