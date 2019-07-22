@@ -25,7 +25,7 @@ namespace Modelos.Modelos
         /// <summary>
         /// Gets or sets the Fechapago value.
         /// </summary>
-        public DateTime? Fechapago
+        public DateTime? DiaPago
         { get; set; }
 
         /// <summary>
@@ -35,9 +35,33 @@ namespace Modelos.Modelos
         { get; set; }
 
         /// <summary>
+        /// Gets or sets the Amortizacion value.
+        /// </summary>
+        public decimal Amortizacion
+        { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Interes value.
+        /// </summary>
+        public decimal Interes
+        { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Seguro value.
+        /// </summary>
+        public decimal Seguro
+        { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Saldo value.
+        /// </summary>
+        public decimal Saldo
+        { get; set; }
+
+        /// <summary>
         /// Gets or sets the Diapago value.
         /// </summary>
-        public DateTime Diapago
+        public DateTime? FechaCancelado
         { get; set; }
 
         /// <summary>
@@ -73,7 +97,6 @@ namespace Modelos.Modelos
         public string Usuario_modificador
         { get; set; }
         public byte[] RowVer { get; set; }
-
 
         #endregion
     }

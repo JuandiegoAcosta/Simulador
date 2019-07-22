@@ -223,3 +223,8 @@ C:\Users\elife\Desktop\Others\ISUR\Bancario\Modelos\obj\Debug\Modelos.csprojAsse
 C:\Users\elife\Desktop\Others\ISUR\Bancario\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
 C:\Users\elife\Desktop\Others\ISUR\Bancario\Modelos\obj\Debug\Modelos.dll
 C:\Users\elife\Desktop\Others\ISUR\Bancario\Modelos\obj\Debug\Modelos.pdb
+C:\Users\Jean\Desktop\z3\JuandiegoAcosta\Simulador\Modelos\bin\Debug\Modelos.dll
+C:\Users\Jean\Desktop\z3\JuandiegoAcosta\Simulador\Modelos\bin\Debug\Modelos.pdb
+C:\Users\Jean\Desktop\z3\JuandiegoAcosta\Simulador\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
+C:\Users\Jean\Desktop\z3\JuandiegoAcosta\Simulador\Modelos\obj\Debug\Modelos.dll
+C:\Users\Jean\Desktop\z3\JuandiegoAcosta\Simulador\Modelos\obj\Debug\Modelos.pdb

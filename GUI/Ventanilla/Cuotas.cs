@@ -97,7 +97,7 @@ namespace Sistema_Bancario
                 var AnonymousType = new
                 {
                     CuotasModel[i].Id,
-                    CuotasModel[i].Diapago,
+                    CuotasModel[i].FechaCancelado,
                     CuotasModel[i].Monto,
                     CuotasModel[i].EstadoString
                 };

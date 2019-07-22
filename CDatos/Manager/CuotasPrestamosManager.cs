@@ -100,7 +100,7 @@ namespace CDatos.Manager
                         {
                             //someBool ? "true" : "false";
                             Id = (int)reader[0],
-                            Diapago = (DateTime)reader[1],
+                            FechaCancelado = (DateTime)reader[1],
                             Monto = (decimal)reader[2],
                             EstadoString = (string)reader[3],
                             RowVer = (byte[])reader[4]
