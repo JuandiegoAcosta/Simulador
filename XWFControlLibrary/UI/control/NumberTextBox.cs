@@ -12,6 +12,7 @@ namespace XWFControlLibrary.UI.control
       public NumberTextBox()
       {
          this.KeyPress += NumberTextBox_KeyPress;
+         this.MaxLength = 25;
          this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       }
 

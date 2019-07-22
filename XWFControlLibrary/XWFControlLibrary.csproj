@@ -49,25 +49,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Config\JsonObjectMoney.cs" />
+    <Compile Include="Config\JsonServices.cs" />
+    <Compile Include="Consumible\EntidadCons.cs" />
+    <Compile Include="JsonEntities\Entidad.cs" />
+    <Compile Include="JsonEntities\Money.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Services\Money.cs" />
+    <Compile Include="Consumible\MoneyCons.cs" />
     <Compile Include="UI\beauty\GradentPanel.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="UI\control\DecimalTextBox.cs">
       <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="UI\control\ExChange.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UI\control\ExChange.Designer.cs">
-      <DependentUpon>ExChange.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\control\MoneyTextBox.cs">
       <SubType>Component</SubType>
@@ -87,29 +84,35 @@
     <Compile Include="UI\help\HelpViewDNI.Designer.cs">
       <DependentUpon>HelpViewDNI.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ventanilla\ViewDeposito.cs">
+    <Compile Include="UI\ucontrol\ConversionMoneyFull.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Ventanilla\ViewDeposito.Designer.cs">
-      <DependentUpon>ViewDeposito.cs</DependentUpon>
+    <Compile Include="UI\ucontrol\ConversionMoneyFull.Designer.cs">
+      <DependentUpon>ConversionMoneyFull.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ventanilla\ViewEnvioGiros.cs">
+    <Compile Include="UI\ucontrol\ConversionMoney.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Ventanilla\ViewEnvioGiros.Designer.cs">
-      <DependentUpon>ViewEnvioGiros.cs</DependentUpon>
+    <Compile Include="UI\ucontrol\ConversionMoney.Designer.cs">
+      <DependentUpon>ConversionMoney.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ventanilla\ViewRetiros.cs">
+    <Compile Include="UI\ucontrol\ExChange.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Ventanilla\ViewRetiros.Designer.cs">
-      <DependentUpon>ViewRetiros.cs</DependentUpon>
+    <Compile Include="UI\ucontrol\ExChange.Designer.cs">
+      <DependentUpon>ExChange.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ventanilla\ViewTransferencia.cs">
+    <Compile Include="Ventanilla\Base.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Ventanilla\ViewTransferencia.Designer.cs">
-      <DependentUpon>ViewTransferencia.cs</DependentUpon>
+    <Compile Include="Ventanilla\Base.Designer.cs">
+      <DependentUpon>Base.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanilla\ViewTipoCambio.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ventanilla\ViewTipoCambio.Designer.cs">
+      <DependentUpon>ViewTipoCambio.cs</DependentUpon>
     </Compile>
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
@@ -118,23 +121,23 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\control\ExChange.resx">
-      <DependentUpon>ExChange.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UI\help\HelpViewDNI.resx">
       <DependentUpon>HelpViewDNI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventanilla\ViewDeposito.resx">
-      <DependentUpon>ViewDeposito.cs</DependentUpon>
+    <EmbeddedResource Include="UI\ucontrol\ConversionMoneyFull.resx">
+      <DependentUpon>ConversionMoneyFull.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventanilla\ViewEnvioGiros.resx">
-      <DependentUpon>ViewEnvioGiros.cs</DependentUpon>
+    <EmbeddedResource Include="UI\ucontrol\ConversionMoney.resx">
+      <DependentUpon>ConversionMoney.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventanilla\ViewRetiros.resx">
-      <DependentUpon>ViewRetiros.cs</DependentUpon>
+    <EmbeddedResource Include="UI\ucontrol\ExChange.resx">
+      <DependentUpon>ExChange.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventanilla\ViewTransferencia.resx">
-      <DependentUpon>ViewTransferencia.cs</DependentUpon>
+    <EmbeddedResource Include="Ventanilla\Base.resx">
+      <DependentUpon>Base.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventanilla\ViewTipoCambio.resx">
+      <DependentUpon>ViewTipoCambio.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

@@ -16,6 +16,7 @@ using Sistema_Bancario.Config;
 using Sistema_Bancario.Administrador;
 using Modelos.Session;
 using Sistema_Bancario.Controles;
+using XWFControlLibrary.Ventanilla;
 //using Sistema_Bancario.Ventanilla;
 
 namespace Sistema_Bancario
@@ -238,7 +239,7 @@ namespace Sistema_Bancario
             }
             else if (btn.Text.Equals("Tipo Cambio"))
             {
-                CrearControl<UserControl>(Tipo_de_Cambio.instance, btn);
+                CrearControl<UserControl>(ViewTipoCambio.instance, btn);
             }
             else if (btn.Text.Equals("Pago Servicios"))
             {
