@@ -350,7 +350,9 @@
     <Compile Include="plataforma_controles\RegistroPersonaUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="plataforma_controles\RegistroPersonaUserControl.Designer.cs" />
+    <Compile Include="plataforma_controles\RegistroPersonaUserControl.Designer.cs">
+      <DependentUpon>RegistroPersonaUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="plataforma_controles\ReporteCronograma.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -576,7 +578,9 @@
     <EmbeddedResource Include="plataforma_controles\RegistrarChequera.resx">
       <DependentUpon>RegistrarChequera.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="plataforma_controles\RegistroPersonaUserControl.resx" />
+    <EmbeddedResource Include="plataforma_controles\RegistroPersonaUserControl.resx">
+      <DependentUpon>RegistroPersonaUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="plataforma_controles\ReporteCronograma.resx" />
     <EmbeddedResource Include="plataforma_controles\NuevaCuentaUserControl.resx">
       <DependentUpon>NuevaCuentaUserControl.cs</DependentUpon>

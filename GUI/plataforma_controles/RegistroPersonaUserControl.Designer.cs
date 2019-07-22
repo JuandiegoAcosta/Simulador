@@ -3,14 +3,14 @@
     partial class RegistroPersonaUserControl
     {
         /// <summary> 
-        /// Variable del diseñador necesaria.
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary> 
-        /// Limpiar los recursos que se estén usando.
+        /// Clean up any resources being used.
         /// </summary>
-        /// <param name="disposing">true si los recursos administrados se deben desechar; false en caso contrario.</param>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,31 +20,28 @@
             base.Dispose(disposing);
         }
 
-        #region Código generado por el Diseñador de componentes
+        #region Component Designer generated code
 
         /// <summary> 
-        /// Método necesario para admitir el Diseñador. No se puede modificar
-        /// el contenido de este método con el editor de código.
+        /// Required method for Designer support - do not modify 
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroPersonaUserControl));
-            this.txtCodigo = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtNombres = new System.Windows.Forms.TextBox();
-            this.txtApellidos = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtCorreo = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cboTipo_documento = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtNumero_documento = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.dtpFecha_nacimiento = new System.Windows.Forms.DateTimePicker();
-            this.label7 = new System.Windows.Forms.Label();
-            this.btnCodigo = new System.Windows.Forms.Button();
-            this.btnNombres = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.cboTipoPersona = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.chkEstado = new System.Windows.Forms.CheckBox();
+            this.btnApellidos = new System.Windows.Forms.Button();
+            this.btnDocumento = new System.Windows.Forms.Button();
+            this.buttonDeshacer = new System.Windows.Forms.Button();
+            this.buttonEliminar = new System.Windows.Forms.Button();
+            this.buttonActualizar = new System.Windows.Forms.Button();
+            this.buttonCrear = new System.Windows.Forms.Button();
+            this.buttonNuevo = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.SlblUsuario_creador = new System.Windows.Forms.ToolStripStatusLabel();
@@ -54,157 +51,176 @@
             this.SlblUsuario_modificador = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel7 = new System.Windows.Forms.ToolStripStatusLabel();
             this.SlblFecha_modificacion = new System.Windows.Forms.ToolStripStatusLabel();
-            this.buttonDeshacer = new System.Windows.Forms.Button();
-            this.buttonEliminar = new System.Windows.Forms.Button();
-            this.buttonActualizar = new System.Windows.Forms.Button();
-            this.buttonCrear = new System.Windows.Forms.Button();
-            this.buttonNuevo = new System.Windows.Forms.Button();
-            this.btnDocumento = new System.Windows.Forms.Button();
-            this.btnApellidos = new System.Windows.Forms.Button();
-            this.chkEstado = new System.Windows.Forms.CheckBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.cboTipoPersona = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtTelefono = new System.Windows.Forms.MaskedTextBox();
+            this.btnNombres = new System.Windows.Forms.Button();
+            this.btnCodigo = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dtpFecha_nacimiento = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtNumero_documento = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cboTipo_documento = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtCorreo = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtApellidos = new System.Windows.Forms.TextBox();
+            this.txtNombres = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // txtCodigo
+            // label10
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(119, 39);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(100, 20);
-            this.txtCodigo.TabIndex = 0;
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(61, 208);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(52, 13);
+            this.label10.TabIndex = 501;
+            this.label10.Text = "Telefono:";
             // 
-            // label1
+            // txtTelefono
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(70, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Codigo:";
+            this.txtTelefono.Location = new System.Drawing.Point(119, 205);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(268, 20);
+            this.txtTelefono.TabIndex = 500;
             // 
-            // txtNombres
+            // cboTipoPersona
             // 
-            this.txtNombres.Location = new System.Drawing.Point(119, 65);
-            this.txtNombres.Name = "txtNombres";
-            this.txtNombres.Size = new System.Drawing.Size(268, 20);
-            this.txtNombres.TabIndex = 2;
+            this.cboTipoPersona.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTipoPersona.FormattingEnabled = true;
+            this.cboTipoPersona.Location = new System.Drawing.Point(119, 226);
+            this.cboTipoPersona.Name = "cboTipoPersona";
+            this.cboTipoPersona.Size = new System.Drawing.Size(187, 21);
+            this.cboTipoPersona.TabIndex = 499;
             // 
-            // txtApellidos
+            // label9
             // 
-            this.txtApellidos.Location = new System.Drawing.Point(119, 91);
-            this.txtApellidos.Name = "txtApellidos";
-            this.txtApellidos.Size = new System.Drawing.Size(268, 20);
-            this.txtApellidos.TabIndex = 3;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(76, 229);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(31, 13);
+            this.label9.TabIndex = 498;
+            this.label9.Text = "Tipo:";
             // 
-            // label2
+            // label8
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(61, 68);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Nombres:";
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(70, 253);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(43, 13);
+            this.label8.TabIndex = 497;
+            this.label8.Text = "Estado:";
             // 
-            // label3
+            // chkEstado
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(61, 94);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Apellidos:";
+            this.chkEstado.AutoSize = true;
+            this.chkEstado.Location = new System.Drawing.Point(119, 253);
+            this.chkEstado.Name = "chkEstado";
+            this.chkEstado.Size = new System.Drawing.Size(15, 14);
+            this.chkEstado.TabIndex = 496;
+            this.chkEstado.UseVisualStyleBackColor = true;
             // 
-            // txtCorreo
+            // btnApellidos
             // 
-            this.txtCorreo.Location = new System.Drawing.Point(119, 197);
-            this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(268, 20);
-            this.txtCorreo.TabIndex = 6;
+            this.btnApellidos.Location = new System.Drawing.Point(393, 71);
+            this.btnApellidos.Name = "btnApellidos";
+            this.btnApellidos.Size = new System.Drawing.Size(33, 23);
+            this.btnApellidos.TabIndex = 495;
+            this.btnApellidos.Text = "...";
+            this.btnApellidos.UseVisualStyleBackColor = true;
+            this.btnApellidos.Click += new System.EventHandler(this.btnApellidos_Click);
             // 
-            // label4
+            // btnDocumento
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(72, 200);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Correo:";
+            this.btnDocumento.Location = new System.Drawing.Point(312, 124);
+            this.btnDocumento.Name = "btnDocumento";
+            this.btnDocumento.Size = new System.Drawing.Size(33, 23);
+            this.btnDocumento.TabIndex = 494;
+            this.btnDocumento.Text = "...";
+            this.btnDocumento.UseVisualStyleBackColor = true;
+            this.btnDocumento.Click += new System.EventHandler(this.btnDocumento_Click);
             // 
-            // cboTipo_documento
+            // buttonDeshacer
             // 
-            this.cboTipo_documento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTipo_documento.FormattingEnabled = true;
-            this.cboTipo_documento.Location = new System.Drawing.Point(119, 117);
-            this.cboTipo_documento.Name = "cboTipo_documento";
-            this.cboTipo_documento.Size = new System.Drawing.Size(187, 21);
-            this.cboTipo_documento.TabIndex = 8;
+            this.buttonDeshacer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonDeshacer.FlatAppearance.BorderSize = 0;
+            this.buttonDeshacer.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDeshacer.Image = ((System.Drawing.Image)(resources.GetObject("buttonDeshacer.Image")));
+            this.buttonDeshacer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonDeshacer.Location = new System.Drawing.Point(440, 283);
+            this.buttonDeshacer.Name = "buttonDeshacer";
+            this.buttonDeshacer.Size = new System.Drawing.Size(95, 23);
+            this.buttonDeshacer.TabIndex = 493;
+            this.buttonDeshacer.Text = "DESHACER";
+            this.buttonDeshacer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonDeshacer.UseVisualStyleBackColor = true;
+            this.buttonDeshacer.Click += new System.EventHandler(this.buttonDeshacer_Click);
             // 
-            // label5
+            // buttonEliminar
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(24, 120);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(89, 13);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Tipo Documento:";
+            this.buttonEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonEliminar.FlatAppearance.BorderSize = 0;
+            this.buttonEliminar.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonEliminar.Image = ((System.Drawing.Image)(resources.GetObject("buttonEliminar.Image")));
+            this.buttonEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonEliminar.Location = new System.Drawing.Point(333, 283);
+            this.buttonEliminar.Name = "buttonEliminar";
+            this.buttonEliminar.Size = new System.Drawing.Size(95, 23);
+            this.buttonEliminar.TabIndex = 492;
+            this.buttonEliminar.Text = "ELIMINAR";
+            this.buttonEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonEliminar.UseVisualStyleBackColor = true;
+            this.buttonEliminar.Click += new System.EventHandler(this.buttonEliminar_Click);
             // 
-            // txtNumero_documento
+            // buttonActualizar
             // 
-            this.txtNumero_documento.Location = new System.Drawing.Point(119, 144);
-            this.txtNumero_documento.Name = "txtNumero_documento";
-            this.txtNumero_documento.Size = new System.Drawing.Size(187, 20);
-            this.txtNumero_documento.TabIndex = 10;
-            this.txtNumero_documento.KeyPress += TxtNumero_documento_KeyPress;
-            this.txtNumero_documento.MaxLength = 13;
+            this.buttonActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonActualizar.FlatAppearance.BorderSize = 0;
+            this.buttonActualizar.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonActualizar.Image = ((System.Drawing.Image)(resources.GetObject("buttonActualizar.Image")));
+            this.buttonActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonActualizar.Location = new System.Drawing.Point(226, 283);
+            this.buttonActualizar.Name = "buttonActualizar";
+            this.buttonActualizar.Size = new System.Drawing.Size(95, 23);
+            this.buttonActualizar.TabIndex = 491;
+            this.buttonActualizar.Text = "ACTUALIZAR";
+            this.buttonActualizar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonActualizar.UseVisualStyleBackColor = true;
+            this.buttonActualizar.Click += new System.EventHandler(this.buttonActualizar_Click);
             // 
-            // label6
+            // buttonCrear
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(8, 147);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(105, 13);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Numero Documento:";
+            this.buttonCrear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCrear.FlatAppearance.BorderSize = 0;
+            this.buttonCrear.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCrear.Image = ((System.Drawing.Image)(resources.GetObject("buttonCrear.Image")));
+            this.buttonCrear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonCrear.Location = new System.Drawing.Point(119, 283);
+            this.buttonCrear.Name = "buttonCrear";
+            this.buttonCrear.Size = new System.Drawing.Size(95, 23);
+            this.buttonCrear.TabIndex = 489;
+            this.buttonCrear.Text = "CREAR";
+            this.buttonCrear.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonCrear.UseVisualStyleBackColor = true;
+            this.buttonCrear.Click += new System.EventHandler(this.buttonCrear_Click);
             // 
-            // dtpFecha_nacimiento
+            // buttonNuevo
             // 
-            this.dtpFecha_nacimiento.Location = new System.Drawing.Point(119, 171);
-            this.dtpFecha_nacimiento.Name = "dtpFecha_nacimiento";
-            this.dtpFecha_nacimiento.Size = new System.Drawing.Size(268, 20);
-            this.dtpFecha_nacimiento.TabIndex = 12;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(17, 173);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(96, 13);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Fecha Nacimiento:";
-            // 
-            // btnCodigo
-            // 
-            this.btnCodigo.Location = new System.Drawing.Point(225, 36);
-            this.btnCodigo.Name = "btnCodigo";
-            this.btnCodigo.Size = new System.Drawing.Size(33, 23);
-            this.btnCodigo.TabIndex = 14;
-            this.btnCodigo.Text = "...";
-            this.btnCodigo.UseVisualStyleBackColor = true;
-            this.btnCodigo.Click += new System.EventHandler(this.btnCodigo_Click);
-            // 
-            // btnNombres
-            // 
-            this.btnNombres.Location = new System.Drawing.Point(393, 63);
-            this.btnNombres.Name = "btnNombres";
-            this.btnNombres.Size = new System.Drawing.Size(33, 23);
-            this.btnNombres.TabIndex = 15;
-            this.btnNombres.Text = "...";
-            this.btnNombres.UseVisualStyleBackColor = true;
-            this.btnNombres.Click += new System.EventHandler(this.btnNombres_Click);
+            this.buttonNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonNuevo.FlatAppearance.BorderSize = 0;
+            this.buttonNuevo.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonNuevo.Image = ((System.Drawing.Image)(resources.GetObject("buttonNuevo.Image")));
+            this.buttonNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonNuevo.Location = new System.Drawing.Point(12, 283);
+            this.buttonNuevo.Name = "buttonNuevo";
+            this.buttonNuevo.Size = new System.Drawing.Size(95, 23);
+            this.buttonNuevo.TabIndex = 490;
+            this.buttonNuevo.Text = "NUEVO";
+            this.buttonNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonNuevo.UseVisualStyleBackColor = true;
+            this.buttonNuevo.Click += new System.EventHandler(this.buttonNuevo_Click);
             // 
             // statusStrip1
             // 
@@ -217,10 +233,10 @@
             this.SlblUsuario_modificador,
             this.toolStripStatusLabel7,
             this.SlblFecha_modificacion});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 351);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 328);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(626, 22);
-            this.statusStrip1.TabIndex = 458;
+            this.statusStrip1.Size = new System.Drawing.Size(587, 22);
+            this.statusStrip1.TabIndex = 488;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // toolStripStatusLabel1
@@ -279,160 +295,141 @@
             this.SlblFecha_modificacion.Size = new System.Drawing.Size(96, 17);
             this.SlblFecha_modificacion.Text = "[fecha_modificacion]";
             // 
-            // buttonDeshacer
+            // btnNombres
             // 
-            this.buttonDeshacer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonDeshacer.FlatAppearance.BorderSize = 0;
-            this.buttonDeshacer.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDeshacer.Image = ((System.Drawing.Image)(resources.GetObject("buttonDeshacer.Image")));
-            this.buttonDeshacer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonDeshacer.Location = new System.Drawing.Point(440, 301);
-            this.buttonDeshacer.Name = "buttonDeshacer";
-            this.buttonDeshacer.Size = new System.Drawing.Size(95, 23);
-            this.buttonDeshacer.TabIndex = 463;
-            this.buttonDeshacer.Text = "DESHACER";
-            this.buttonDeshacer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonDeshacer.UseVisualStyleBackColor = true;
-            this.buttonDeshacer.Click += new System.EventHandler(this.buttonDeshacer_Click);
+            this.btnNombres.Location = new System.Drawing.Point(393, 45);
+            this.btnNombres.Name = "btnNombres";
+            this.btnNombres.Size = new System.Drawing.Size(33, 23);
+            this.btnNombres.TabIndex = 487;
+            this.btnNombres.Text = "...";
+            this.btnNombres.UseVisualStyleBackColor = true;
+            this.btnNombres.Click += new System.EventHandler(this.btnNombres_Click);
             // 
-            // buttonEliminar
+            // btnCodigo
             // 
-            this.buttonEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonEliminar.FlatAppearance.BorderSize = 0;
-            this.buttonEliminar.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEliminar.Image = ((System.Drawing.Image)(resources.GetObject("buttonEliminar.Image")));
-            this.buttonEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonEliminar.Location = new System.Drawing.Point(333, 301);
-            this.buttonEliminar.Name = "buttonEliminar";
-            this.buttonEliminar.Size = new System.Drawing.Size(95, 23);
-            this.buttonEliminar.TabIndex = 462;
-            this.buttonEliminar.Text = "ELIMINAR";
-            this.buttonEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonEliminar.UseVisualStyleBackColor = true;
-            this.buttonEliminar.Click += new System.EventHandler(this.buttonEliminar_Click);
+            this.btnCodigo.Location = new System.Drawing.Point(225, 18);
+            this.btnCodigo.Name = "btnCodigo";
+            this.btnCodigo.Size = new System.Drawing.Size(33, 23);
+            this.btnCodigo.TabIndex = 486;
+            this.btnCodigo.Text = "...";
+            this.btnCodigo.UseVisualStyleBackColor = true;
+            this.btnCodigo.Click += new System.EventHandler(this.btnCodigo_Click);
             // 
-            // buttonActualizar
+            // label7
             // 
-            this.buttonActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonActualizar.FlatAppearance.BorderSize = 0;
-            this.buttonActualizar.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonActualizar.Image = ((System.Drawing.Image)(resources.GetObject("buttonActualizar.Image")));
-            this.buttonActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonActualizar.Location = new System.Drawing.Point(226, 301);
-            this.buttonActualizar.Name = "buttonActualizar";
-            this.buttonActualizar.Size = new System.Drawing.Size(95, 23);
-            this.buttonActualizar.TabIndex = 461;
-            this.buttonActualizar.Text = "ACTUALIZAR";
-            this.buttonActualizar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonActualizar.UseVisualStyleBackColor = true;
-            this.buttonActualizar.Click += new System.EventHandler(this.buttonActualizar_Click);
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(17, 155);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(96, 13);
+            this.label7.TabIndex = 485;
+            this.label7.Text = "Fecha Nacimiento:";
             // 
-            // buttonCrear
+            // dtpFecha_nacimiento
             // 
-            this.buttonCrear.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonCrear.FlatAppearance.BorderSize = 0;
-            this.buttonCrear.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCrear.Image = ((System.Drawing.Image)(resources.GetObject("buttonCrear.Image")));
-            this.buttonCrear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonCrear.Location = new System.Drawing.Point(119, 301);
-            this.buttonCrear.Name = "buttonCrear";
-            this.buttonCrear.Size = new System.Drawing.Size(95, 23);
-            this.buttonCrear.TabIndex = 459;
-            this.buttonCrear.Text = "CREAR";
-            this.buttonCrear.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonCrear.UseVisualStyleBackColor = true;
-            this.buttonCrear.Click += new System.EventHandler(this.buttonCrear_Click);
+            this.dtpFecha_nacimiento.Location = new System.Drawing.Point(119, 153);
+            this.dtpFecha_nacimiento.Name = "dtpFecha_nacimiento";
+            this.dtpFecha_nacimiento.Size = new System.Drawing.Size(161, 20);
+            this.dtpFecha_nacimiento.TabIndex = 484;
             // 
-            // buttonNuevo
+            // label6
             // 
-            this.buttonNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonNuevo.FlatAppearance.BorderSize = 0;
-            this.buttonNuevo.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonNuevo.Image = ((System.Drawing.Image)(resources.GetObject("buttonNuevo.Image")));
-            this.buttonNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonNuevo.Location = new System.Drawing.Point(12, 301);
-            this.buttonNuevo.Name = "buttonNuevo";
-            this.buttonNuevo.Size = new System.Drawing.Size(95, 23);
-            this.buttonNuevo.TabIndex = 460;
-            this.buttonNuevo.Text = "NUEVO";
-            this.buttonNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonNuevo.UseVisualStyleBackColor = true;
-            this.buttonNuevo.Click += new System.EventHandler(this.buttonNuevo_Click);
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(8, 129);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(105, 13);
+            this.label6.TabIndex = 483;
+            this.label6.Text = "Numero Documento:";
             // 
-            // btnDocumento
+            // txtNumero_documento
             // 
-            this.btnDocumento.Location = new System.Drawing.Point(312, 142);
-            this.btnDocumento.Name = "btnDocumento";
-            this.btnDocumento.Size = new System.Drawing.Size(33, 23);
-            this.btnDocumento.TabIndex = 464;
-            this.btnDocumento.Text = "...";
-            this.btnDocumento.UseVisualStyleBackColor = true;
-            this.btnDocumento.Click += new System.EventHandler(this.btnDocumento_Click);
+            this.txtNumero_documento.Location = new System.Drawing.Point(119, 126);
+            this.txtNumero_documento.Name = "txtNumero_documento";
+            this.txtNumero_documento.Size = new System.Drawing.Size(187, 20);
+            this.txtNumero_documento.TabIndex = 482;
             // 
-            // btnApellidos
+            // label5
             // 
-            this.btnApellidos.Location = new System.Drawing.Point(393, 89);
-            this.btnApellidos.Name = "btnApellidos";
-            this.btnApellidos.Size = new System.Drawing.Size(33, 23);
-            this.btnApellidos.TabIndex = 465;
-            this.btnApellidos.Text = "...";
-            this.btnApellidos.UseVisualStyleBackColor = true;
-            this.btnApellidos.Click += new System.EventHandler(this.btnApellidos_Click);
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(24, 102);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(89, 13);
+            this.label5.TabIndex = 481;
+            this.label5.Text = "Tipo Documento:";
             // 
-            // chkEstado
+            // cboTipo_documento
             // 
-            this.chkEstado.AutoSize = true;
-            this.chkEstado.Location = new System.Drawing.Point(119, 271);
-            this.chkEstado.Name = "chkEstado";
-            this.chkEstado.Size = new System.Drawing.Size(15, 14);
-            this.chkEstado.TabIndex = 466;
-            this.chkEstado.UseVisualStyleBackColor = true;
+            this.cboTipo_documento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTipo_documento.FormattingEnabled = true;
+            this.cboTipo_documento.Location = new System.Drawing.Point(119, 99);
+            this.cboTipo_documento.Name = "cboTipo_documento";
+            this.cboTipo_documento.Size = new System.Drawing.Size(187, 21);
+            this.cboTipo_documento.TabIndex = 480;
             // 
-            // label8
+            // label4
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(70, 271);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(43, 13);
-            this.label8.TabIndex = 467;
-            this.label8.Text = "Estado:";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(72, 182);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(41, 13);
+            this.label4.TabIndex = 479;
+            this.label4.Text = "Correo:";
             // 
-            // label9
+            // txtCorreo
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(76, 247);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(31, 13);
-            this.label9.TabIndex = 468;
-            this.label9.Text = "Tipo:";
+            this.txtCorreo.Location = new System.Drawing.Point(119, 179);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(268, 20);
+            this.txtCorreo.TabIndex = 478;
             // 
-            // cboTipoPersona
+            // label3
             // 
-            this.cboTipoPersona.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTipoPersona.FormattingEnabled = true;
-            this.cboTipoPersona.Location = new System.Drawing.Point(119, 244);
-            this.cboTipoPersona.Name = "cboTipoPersona";
-            this.cboTipoPersona.Size = new System.Drawing.Size(187, 21);
-            this.cboTipoPersona.TabIndex = 469;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(61, 76);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(52, 13);
+            this.label3.TabIndex = 477;
+            this.label3.Text = "Apellidos:";
             // 
-            // label10
+            // label2
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(61, 226);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(52, 13);
-            this.label10.TabIndex = 471;
-            this.label10.Text = "Telefono:";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(61, 50);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(52, 13);
+            this.label2.TabIndex = 476;
+            this.label2.Text = "Nombres:";
             // 
-            // txtTelefono
+            // txtApellidos
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(119, 223);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(268, 20);
-            this.txtTelefono.TabIndex = 470;
-            txtTelefono.Mask = "(999)-000-000";
+            this.txtApellidos.Location = new System.Drawing.Point(119, 73);
+            this.txtApellidos.Name = "txtApellidos";
+            this.txtApellidos.Size = new System.Drawing.Size(268, 20);
+            this.txtApellidos.TabIndex = 475;
             // 
-            // ResgistroPersonaUserControl
+            // txtNombres
+            // 
+            this.txtNombres.Location = new System.Drawing.Point(119, 47);
+            this.txtNombres.Name = "txtNombres";
+            this.txtNombres.Size = new System.Drawing.Size(268, 20);
+            this.txtNombres.TabIndex = 474;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(70, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(43, 13);
+            this.label1.TabIndex = 473;
+            this.label1.Text = "Codigo:";
+            // 
+            // txtCodigo
+            // 
+            this.txtCodigo.Location = new System.Drawing.Point(119, 21);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(100, 20);
+            this.txtCodigo.TabIndex = 472;
+            // 
+            // RegistroPersonaUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -466,8 +463,8 @@
             this.Controls.Add(this.txtNombres);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtCodigo);
-            this.Name = "ResgistroPersonaUserControl";
-            this.Size = new System.Drawing.Size(626, 373);
+            this.Name = "RegistroPersonaUserControl";
+            this.Size = new System.Drawing.Size(587, 350);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -477,22 +474,14 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtCodigo;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtNombres;
-        private System.Windows.Forms.TextBox txtApellidos;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtCorreo;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cboTipo_documento;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtNumero_documento;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dtpFecha_nacimiento;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button btnCodigo;
-        private System.Windows.Forms.Button btnNombres;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtTelefono;
+        private System.Windows.Forms.ComboBox cboTipoPersona;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.CheckBox chkEstado;
+        private System.Windows.Forms.Button btnApellidos;
+        private System.Windows.Forms.Button btnDocumento;
         public System.Windows.Forms.Button buttonDeshacer;
         public System.Windows.Forms.Button buttonEliminar;
         public System.Windows.Forms.Button buttonActualizar;
@@ -507,13 +496,21 @@
         private System.Windows.Forms.ToolStripStatusLabel SlblUsuario_modificador;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel7;
         private System.Windows.Forms.ToolStripStatusLabel SlblFecha_modificacion;
-        private System.Windows.Forms.Button btnDocumento;
-        private System.Windows.Forms.Button btnApellidos;
-        private System.Windows.Forms.CheckBox chkEstado;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox cboTipoPersona;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.MaskedTextBox txtTelefono;
+        private System.Windows.Forms.Button btnNombres;
+        private System.Windows.Forms.Button btnCodigo;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DateTimePicker dtpFecha_nacimiento;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtNumero_documento;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cboTipo_documento;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtCorreo;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtApellidos;
+        private System.Windows.Forms.TextBox txtNombres;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtCodigo;
     }
 }

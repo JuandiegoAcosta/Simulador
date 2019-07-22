@@ -280,6 +280,8 @@ namespace Sistema_Bancario.plataforma_controles
             this.txtNumero_documento.Enabled = true;
             this.chkEstado.Enabled = true;
             this.cboTipo_documento.Enabled = true;
+            this.cboTipoCuenta.SelectedIndex = 0;
+            this.cboMoneda.SelectedIndex = 0;
             this.cboMoneda.Enabled = true;
             this.cboTipoCuenta.Enabled = true;
         }

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.BackColor = System.Drawing.SystemColors.Window;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NuevaCuentaUserControl));
             this.cboMoneda = new System.Windows.Forms.ComboBox();
             this.cboTipoCuenta = new System.Windows.Forms.ComboBox();
@@ -64,18 +63,11 @@
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // NuevaCuentaUserControl
-            // 
-            this.Name = "NuevaCuentaUserControl";
-            this.Size = new System.Drawing.Size(645, 412);
-            this.Load += new System.EventHandler(this.NuevaCuentaUserControl_Load);
-            this.ResumeLayout(false);
-            // 
             // cboMoneda
             // 
             this.cboMoneda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMoneda.FormattingEnabled = true;
-            this.cboMoneda.Location = new System.Drawing.Point(129, 140);
+            this.cboMoneda.Location = new System.Drawing.Point(129, 113);
             this.cboMoneda.Name = "cboMoneda";
             this.cboMoneda.Size = new System.Drawing.Size(187, 21);
             this.cboMoneda.TabIndex = 0;
@@ -84,7 +76,7 @@
             // 
             this.cboTipoCuenta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTipoCuenta.FormattingEnabled = true;
-            this.cboTipoCuenta.Location = new System.Drawing.Point(129, 167);
+            this.cboTipoCuenta.Location = new System.Drawing.Point(129, 140);
             this.cboTipoCuenta.Name = "cboTipoCuenta";
             this.cboTipoCuenta.Size = new System.Drawing.Size(187, 21);
             this.cboTipoCuenta.TabIndex = 1;
@@ -117,7 +109,7 @@
             // 
             // btnDocumento
             // 
-            this.btnDocumento.Location = new System.Drawing.Point(322, 112);
+            this.btnDocumento.Location = new System.Drawing.Point(322, 85);
             this.btnDocumento.Name = "btnDocumento";
             this.btnDocumento.Size = new System.Drawing.Size(33, 23);
             this.btnDocumento.TabIndex = 469;
@@ -128,7 +120,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(18, 117);
+            this.label6.Location = new System.Drawing.Point(18, 90);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(105, 13);
             this.label6.TabIndex = 468;
@@ -136,7 +128,7 @@
             // 
             // txtNumero_documento
             // 
-            this.txtNumero_documento.Location = new System.Drawing.Point(129, 114);
+            this.txtNumero_documento.Location = new System.Drawing.Point(129, 87);
             this.txtNumero_documento.Name = "txtNumero_documento";
             this.txtNumero_documento.Size = new System.Drawing.Size(187, 20);
             this.txtNumero_documento.TabIndex = 467;
@@ -149,6 +141,7 @@
             this.label5.Size = new System.Drawing.Size(89, 13);
             this.label5.TabIndex = 466;
             this.label5.Text = "Tipo Documento:";
+            this.label5.Visible = false;
             // 
             // cboTipo_documento
             // 
@@ -158,6 +151,7 @@
             this.cboTipo_documento.Name = "cboTipo_documento";
             this.cboTipo_documento.Size = new System.Drawing.Size(187, 21);
             this.cboTipo_documento.TabIndex = 465;
+            this.cboTipo_documento.Visible = false;
             // 
             // txtCodigo
             // 
@@ -169,7 +163,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(74, 143);
+            this.label1.Location = new System.Drawing.Point(74, 116);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 13);
             this.label1.TabIndex = 471;
@@ -178,7 +172,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(55, 170);
+            this.label3.Location = new System.Drawing.Point(55, 143);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 13);
             this.label3.TabIndex = 472;
@@ -191,7 +185,7 @@
             this.buttonDeshacer.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDeshacer.Image = ((System.Drawing.Image)(resources.GetObject("buttonDeshacer.Image")));
             this.buttonDeshacer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonDeshacer.Location = new System.Drawing.Point(449, 227);
+            this.buttonDeshacer.Location = new System.Drawing.Point(449, 200);
             this.buttonDeshacer.Name = "buttonDeshacer";
             this.buttonDeshacer.Size = new System.Drawing.Size(95, 23);
             this.buttonDeshacer.TabIndex = 478;
@@ -207,7 +201,7 @@
             this.buttonEliminar.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEliminar.Image = ((System.Drawing.Image)(resources.GetObject("buttonEliminar.Image")));
             this.buttonEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonEliminar.Location = new System.Drawing.Point(342, 227);
+            this.buttonEliminar.Location = new System.Drawing.Point(342, 200);
             this.buttonEliminar.Name = "buttonEliminar";
             this.buttonEliminar.Size = new System.Drawing.Size(95, 23);
             this.buttonEliminar.TabIndex = 477;
@@ -223,7 +217,7 @@
             this.buttonCrear.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCrear.Image = ((System.Drawing.Image)(resources.GetObject("buttonCrear.Image")));
             this.buttonCrear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonCrear.Location = new System.Drawing.Point(128, 227);
+            this.buttonCrear.Location = new System.Drawing.Point(128, 200);
             this.buttonCrear.Name = "buttonCrear";
             this.buttonCrear.Size = new System.Drawing.Size(95, 23);
             this.buttonCrear.TabIndex = 474;
@@ -239,7 +233,7 @@
             this.buttonNuevo.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonNuevo.Image = ((System.Drawing.Image)(resources.GetObject("buttonNuevo.Image")));
             this.buttonNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonNuevo.Location = new System.Drawing.Point(21, 227);
+            this.buttonNuevo.Location = new System.Drawing.Point(21, 200);
             this.buttonNuevo.Name = "buttonNuevo";
             this.buttonNuevo.Size = new System.Drawing.Size(95, 23);
             this.buttonNuevo.TabIndex = 475;
@@ -338,7 +332,7 @@
             this.buttonActualizar.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonActualizar.Image = ((System.Drawing.Image)(resources.GetObject("buttonActualizar.Image")));
             this.buttonActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonActualizar.Location = new System.Drawing.Point(235, 227);
+            this.buttonActualizar.Location = new System.Drawing.Point(235, 200);
             this.buttonActualizar.Name = "buttonActualizar";
             this.buttonActualizar.Size = new System.Drawing.Size(95, 23);
             this.buttonActualizar.TabIndex = 476;
@@ -350,7 +344,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(80, 194);
+            this.label8.Location = new System.Drawing.Point(80, 167);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(43, 13);
             this.label8.TabIndex = 481;
@@ -359,7 +353,7 @@
             // chkEstado
             // 
             this.chkEstado.AutoSize = true;
-            this.chkEstado.Location = new System.Drawing.Point(129, 194);
+            this.chkEstado.Location = new System.Drawing.Point(129, 167);
             this.chkEstado.Name = "chkEstado";
             this.chkEstado.Size = new System.Drawing.Size(15, 14);
             this.chkEstado.TabIndex = 480;
@@ -378,6 +372,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.chkEstado);
@@ -403,6 +398,7 @@
             this.Controls.Add(this.cboMoneda);
             this.Name = "NuevaCuentaUserControl";
             this.Size = new System.Drawing.Size(602, 319);
+            this.Load += new System.EventHandler(this.NuevaCuentaUserControl_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
