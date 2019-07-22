@@ -106,7 +106,7 @@ namespace Sistema_Bancario.plataforma_controles
 
                 SaveFileDialog x = new SaveFileDialog();
                 x.Filter = "xlsx files (*.xlsx)|*.xlsx";
-                x.FileName = $"Exportacion{DateTime.Now.ToLongDateString()}.xlsx";
+                x.FileName = $"Cronograma{DateTime.Now.ToLongDateString()}.xlsx";
 
                 if (x.ShowDialog() == DialogResult.OK)
                 {

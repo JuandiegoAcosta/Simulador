@@ -120,7 +120,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(96, 13);
             this.label1.TabIndex = 488;
-            this.label1.Text = "Porcentaje Interes:";
+            this.label1.Text = "TEA:";
             // 
             // label2
             // 
