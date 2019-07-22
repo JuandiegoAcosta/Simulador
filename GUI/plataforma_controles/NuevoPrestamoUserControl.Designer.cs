@@ -54,6 +54,7 @@
             this.buttonDeshacer = new System.Windows.Forms.Button();
             this.buttonEliminar = new System.Windows.Forms.Button();
             this.buttonActualizar = new System.Windows.Forms.Button();
+            this.buttonEditar = new System.Windows.Forms.Button();
             this.buttonCrear = new System.Windows.Forms.Button();
             this.buttonNuevo = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -303,10 +304,25 @@
             this.buttonActualizar.Name = "buttonActualizar";
             this.buttonActualizar.Size = new System.Drawing.Size(95, 23);
             this.buttonActualizar.TabIndex = 508;
-            this.buttonActualizar.Text = "ACTUALIZAR";
+            this.buttonActualizar.Text = "REFINANCIAR";
             this.buttonActualizar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonActualizar.UseVisualStyleBackColor = true;
             this.buttonActualizar.Click += new System.EventHandler(this.buttonActualizar_Click);
+            // 
+            // buttonEditar
+            // 
+            this.buttonEditar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonEditar.FlatAppearance.BorderSize = 0;
+            this.buttonEditar.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonEditar.Location = new System.Drawing.Point(280, 61);
+            this.buttonEditar.Name = "buttonEditar";
+            this.buttonEditar.Size = new System.Drawing.Size(95, 23);
+            this.buttonEditar.TabIndex = 508;
+            this.buttonEditar.Text = "EDITAR";
+            this.buttonEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonEditar.UseVisualStyleBackColor = true;
+            this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
             // 
             // buttonCrear
             // 
@@ -420,6 +436,7 @@
             this.Controls.Add(this.buttonDeshacer);
             this.Controls.Add(this.buttonEliminar);
             this.Controls.Add(this.buttonActualizar);
+            this.Controls.Add(this.buttonEditar);
             this.Controls.Add(this.buttonCrear);
             this.Controls.Add(this.buttonNuevo);
             this.Controls.Add(this.statusStrip1);
@@ -484,6 +501,7 @@
         public System.Windows.Forms.Button buttonDeshacer;
         public System.Windows.Forms.Button buttonEliminar;
         public System.Windows.Forms.Button buttonActualizar;
+        public System.Windows.Forms.Button buttonEditar;
         public System.Windows.Forms.Button buttonCrear;
         public System.Windows.Forms.Button buttonNuevo;
         private System.Windows.Forms.StatusStrip statusStrip1;

@@ -167,6 +167,7 @@ namespace Sistema_Bancario.plataforma_controles
 
             this.buttonActualizar.Enabled = false;
             this.buttonEliminar.Enabled = false;
+            this.buttonEditar.Visible = false;
 
             this.buttonNuevo.Enabled = false;
             this.buttonCrear.Enabled = true;
@@ -193,6 +194,7 @@ namespace Sistema_Bancario.plataforma_controles
 
             this.buttonActualizar.Enabled = false;
             this.buttonEliminar.Enabled = false;
+            this.buttonEditar.Visible = false;
 
             this.buttonNuevo.Enabled = true;
             this.buttonCrear.Enabled = false;
@@ -218,8 +220,9 @@ namespace Sistema_Bancario.plataforma_controles
             this.modo = "modoEdicion";
 
             this.buttonCrear.Enabled = false;
-            this.buttonActualizar.Enabled = true;
+            this.buttonActualizar.Enabled = false;
             this.buttonEliminar.Enabled = true;
+            this.buttonEditar.Visible = true;
 
             this.cboMoneda.Enabled = false;
             this.txtCuenta.Enabled = false;
@@ -227,7 +230,7 @@ namespace Sistema_Bancario.plataforma_controles
 
             this.dtpFechaPrestamo.Enabled = false;
             this.txtMontoPrestamo.Enabled = false;
-            this.txtMontoMora.Enabled = true;
+            this.txtMontoMora.Enabled = false;
             this.nudPlazoMeses.Enabled = false;
             this.nudPorcentajeInteres.Enabled = false;
             this.nudDiaPago.Enabled = false;
@@ -318,6 +321,7 @@ namespace Sistema_Bancario.plataforma_controles
                         {
                             this.clearForm();
                             this.gPrestamo = this.BLPrestamo.Prestamo_ObtenerUno(dato.Id);
+                            this.gCuenta = this.BLCuenta.Cuenta_ObtenerUno(dato.Cuenta);
                             this.prestamo2gui(this.gPrestamo);
                             this.modoNuevo();
                             this.modoEdicion();
@@ -388,14 +392,42 @@ namespace Sistema_Bancario.plataforma_controles
             objeto.Usuario_modificador = this.gUsuario;
             objeto.Fecha_modificacion = BLFechaHoraServidor.Obtener();
 
-            if (MessageBox.Show("¿Está seguro que desea modificar el préstamo? Esta operacion puede afectar los pagos futuros", "Advertencia", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Se va a proceder a refinanciar la deuda, Esto no se puede revertir, ¿Desea continuar?", "Advertencia", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 if (this.BLPrestamo.Prestamo_Editar(objeto))
                 {
-                    MessageBox.Show("El prestamo se ha actualizado correctamente");
+                    MessageBox.Show("La deuda ha sido refinanciada correctamente");
                     this.clearForm();
                     this.modoInicial();
                 }
+            }
+        }
+
+        private void buttonEditar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Esta a punto de refinanciar una deuda, ¿Desea continuar?", "Advertencia", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                this.buttonEditar.Visible = false;
+                this.buttonActualizar.Enabled = true;
+                this.buttonEliminar.Enabled = false;
+
+                this.buttonNuevo.Enabled = false;
+                this.buttonCrear.Enabled = false;
+                this.buttonDeshacer.Enabled = true;
+
+                this.btnCodigo.Enabled = false;
+                this.btnCuenta.Enabled = false;
+
+                this.txtCodigo.Enabled = false;
+                this.txtCuenta.Enabled = false;
+                this.cboMoneda.Enabled = false;
+                this.dtpFechaPrestamo.Enabled = true;
+                this.txtMontoPrestamo.Enabled = true;
+                this.txtMontoMora.Enabled = true;
+                this.nudPlazoMeses.Enabled = true;
+                this.nudPorcentajeInteres.Enabled = true;
+                this.nudDiaPago.Enabled = true;
+                this.chkEstado.Enabled = true;
             }
         }
 

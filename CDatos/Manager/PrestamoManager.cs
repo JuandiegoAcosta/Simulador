@@ -102,7 +102,6 @@ namespace CDatos.Manager
                     command.Parameters.AddWithValue("@Interes_Moratorio", aprestamo.Interes_moratorio == null ? (object)DBNull.Value : aprestamo.Interes_moratorio);
                     command.Parameters.AddWithValue("@FECHA_MODIFICACION", aprestamo.Fecha_modificacion == null ? (object)DBNull.Value : aprestamo.Fecha_modificacion);
                     command.Parameters.AddWithValue("@USUARIO_CREADOR", aprestamo.Usuario_creador == null ? (object)DBNull.Value : aprestamo.Usuario_creador);
-                    command.Parameters.AddWithValue("@FECHA_CREACION", aprestamo.Fecha_creacion == null ? (object)DBNull.Value : aprestamo.Fecha_creacion);
                     command.Parameters.AddWithValue("@USUARIO_MODIFICADOR", aprestamo.Usuario_modificador == null ? (object)DBNull.Value : aprestamo.Usuario_modificador);
                     command.Parameters.AddWithValue("@DiaPago", aprestamo.Diapago == null ? (object)DBNull.Value : aprestamo.Diapago);
 
@@ -124,7 +123,7 @@ namespace CDatos.Manager
                         return false;
                 }
             }
-            catch (Exception)
+            catch (Exception w)
             {
                 return false;
             }
