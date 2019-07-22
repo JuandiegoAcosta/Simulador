@@ -27,6 +27,7 @@ namespace Sistema_Bancario.plataforma_controles
         WsSistemaBancario.PrestamoServiceClient BLPrestamo = new WsSistemaBancario.PrestamoServiceClient();
         WsSistemaBancario.CuentaServiceClient BLCuenta = new WsSistemaBancario.CuentaServiceClient();
         WsSistemaBancario.TipoMonedaServiceClient BLTipoMoneda = new WsSistemaBancario.TipoMonedaServiceClient();
+        WsSistemaBancario.PersonaServiceClient BLPersona = new WsSistemaBancario.PersonaServiceClient();
 
         #endregion
 
@@ -48,7 +49,6 @@ namespace Sistema_Bancario.plataforma_controles
 
         #region Metodos
 
-        //Actualmente Desactivado
         private void ConfigurarParametros()
         {
             //Por razones del simulador, la fecha del prestamo es variable, en un entorno real no deberia ser así
@@ -154,6 +154,7 @@ namespace Sistema_Bancario.plataforma_controles
             this.nudPorcentajeInteres.Value = 0m;
             this.nudDiaPago.Value = 1m;
             this.chkEstado.Checked = false;
+            this.clearPersona();
 
             this.SlblUsuario_creador.Text = "*";
             this.SlblFecha_creacion.Text = "*";
@@ -161,10 +162,18 @@ namespace Sistema_Bancario.plataforma_controles
             this.SlblFecha_modificacion.Text = "*";
         }
 
+        private void clearPersona()
+        {
+            this.txtNombres.Text = default(string);
+            this.txtApellidos.Text = default(string);
+            this.txtNumero_documento.Text = default(string);
+            this.cboTipo_documento.SelectedValue = -1;
+        }
+
         private void modoNuevo()
         {
             this.modo = "modoNuevo";
-
+            this.groupBox1.Enabled = false;
             this.buttonActualizar.Enabled = false;
             this.buttonEliminar.Enabled = false;
             this.buttonEditar.Visible = false;
@@ -203,6 +212,7 @@ namespace Sistema_Bancario.plataforma_controles
             this.btnCodigo.Enabled = true;
             this.btnCuenta.Enabled = true;
 
+            this.groupBox1.Enabled = true;
             this.txtCodigo.Enabled = true;
             this.txtCuenta.Enabled = true;
             this.cboMoneda.Enabled = false;
@@ -329,6 +339,44 @@ namespace Sistema_Bancario.plataforma_controles
                     }
                 }
             }
+        }
+
+        private void buscarObjeto(List<PersonaModel> objetos)
+        {
+            string[][] orden = new string[3][];
+
+            orden[0] = new string[] { "Id", "Codigo", "100" };
+            orden[1] = new string[] { "Nombres", "Nombres", "200" };
+            orden[2] = new string[] { "Apellidos", "Apellidos", "200" };
+
+            if (objetos != null)
+            {
+                using (Ayuda.FormHelp2 formHelp1 = new Ayuda.FormHelp2())
+                {
+                    formHelp1.setList(objetos, orden);
+                    formHelp1.ShowDialog();
+
+                    if (formHelp1.EstaAceptado())
+                    {
+                        var dato = formHelp1.getObject<PersonaModel>();
+                        if (dato != null)
+                        {
+                            this.persona2gui(dato);
+
+                            var cuentas_anexadas = this.BLCuenta.cuentaSelectbyId_cliente(dato.Id).ToList();
+                            this.buscarCuenta(cuentas_anexadas);
+                        }
+                    }
+                }
+            }
+        }
+
+        private void persona2gui(PersonaModel apersona)
+        {
+            this.txtNombres.Text = apersona.Nombres;
+            this.txtApellidos.Text = apersona.Apellidos;
+            this.txtNumero_documento.Text = apersona.Nrodocumento;
+            this.cboTipo_documento.SelectedValue = apersona.Tipodocumento;
         }
 
         #endregion
@@ -522,6 +570,36 @@ namespace Sistema_Bancario.plataforma_controles
             {
                 nudPlazoMeses.Value = 60;
             }
+        }
+
+        private void btnNombres_Click(object sender, EventArgs e)
+        {
+            string nombres = this.txtNombres.Text;
+
+            var objeto = this.BLPersona.PersonaSelectbyNombres(nombres).ToList();
+
+            if (objeto == null && objeto.Count <= 0) { return; }
+            this.buscarObjeto(objeto);
+        }
+
+        private void btnApellidos_Click(object sender, EventArgs e)
+        {
+            string apellidos = this.txtApellidos.Text;
+
+            var objeto = this.BLPersona.PersonaSelectbyApellidos(apellidos).ToList();
+
+            if (objeto == null && objeto.Count <= 0) { return; }
+            this.buscarObjeto(objeto);
+        }
+
+        private void btnDocumento_Click(object sender, EventArgs e)
+        {
+            string numero_documento = this.txtNumero_documento.Text;
+
+            var objeto = this.BLPersona.PersonaSelectbyNroDocumento(numero_documento).ToList();
+
+            if (objeto == null && objeto.Count <= 0) { return; }
+            this.buscarObjeto(objeto);
         }
 
         #endregion

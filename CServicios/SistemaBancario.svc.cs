@@ -775,6 +775,11 @@ namespace ServiciosBancarios
             return BLCuenta.cuentaSelectbyNroCuentaPrestamo(aID_Cuenta);
         }
 
+        public List<CuentasModel> cuentaSelectbyId_cliente(int id_cliente)
+        {
+            return BLCuenta.cuentaSelectbyId_cliente(id_cliente);
+        }
+
         #endregion
 
         #region [ Prestamos ]
@@ -884,6 +889,7 @@ namespace ServiciosBancarios
         {
             throw new NotImplementedException();
         }
+
 
         #endregion
 
