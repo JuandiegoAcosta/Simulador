@@ -118,7 +118,7 @@ namespace Sistema_Bancario.plataforma_controles
         {
             string cuenta = this.txtCuenta.Text;
 
-            var objeto = this.BLCuenta.cuentaSelectbyNroCuenta(cuenta);
+            var objeto = this.BLCuenta.cuentaSelectbyNroCuenta(cuenta).Where(x => x.Tipocuenta == "CORRIENTE").ToList();
 
             if (objeto == null && objeto.Count <= 0) { return; }
             this.buscarCuenta(objeto);
