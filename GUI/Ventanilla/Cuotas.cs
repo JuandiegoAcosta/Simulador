@@ -1,5 +1,6 @@
 ﻿using CNegocio.Ventanilla;
 using Modelos.Modelos;
+using Sistema_Bancario.Ventanilla;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -42,6 +43,8 @@ namespace Sistema_Bancario
                 if (a.Equals("Transferido"))
                 {
                     MessageBox.Show("Pago Realizado");
+                    Recibo recibo = new Recibo();
+                    recibo.Show();
                 }
                 else
                 {

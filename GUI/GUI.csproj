@@ -430,6 +430,12 @@
     <Compile Include="Ventanilla\FrmListaDatos.Designer.cs">
       <DependentUpon>FrmListaDatos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ventanilla\Recibo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanilla\Recibo.Designer.cs">
+      <DependentUpon>Recibo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ventanilla\ResumenTotal.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -625,6 +631,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanilla\FrmListaDatos.resx">
       <DependentUpon>FrmListaDatos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventanilla\Recibo.resx">
+      <DependentUpon>Recibo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanilla\ResumenTotal.resx">
       <DependentUpon>ResumenTotal.cs</DependentUpon>

@@ -45,6 +45,11 @@ namespace CNegocio.Ventanilla
         {
             return ADVentanillaManager.GetVentanillasXSucursal(sucursal,turno);
         }
+        public List<string> GenerarDocumento()
+        {
+            GenerarDocumentoManager generarDocumentoManager = new GenerarDocumentoManager();
+            return  generarDocumentoManager.GenerarDocumento();
+        }
     }
 
 }

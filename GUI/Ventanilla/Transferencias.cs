@@ -1,5 +1,6 @@
 ﻿using CNegocio.Ventanilla;
 using Modelos.Modelos;
+using Sistema_Bancario.Ventanilla;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,9 +34,9 @@ namespace Sistema_Bancario.Froms_opciones
         private bool SetItem()
         {
             CuentasTarjetasModel = new CuentasTarjetasModel();
-            bool flag = false;
-            if (!string.IsNullOrEmpty(this.txtMonto.Text.Trim()))
-                CuentasTarjetasModel.Monto = Convert.ToDecimal(this.txtMonto.Text.Trim());
+            bool flag = true;
+            if (!string.IsNullOrEmpty(this.monto1.TBMonto.Text.Trim()))
+                CuentasTarjetasModel.Monto = Convert.ToDecimal(this.monto1.TBMonto.Text.Trim());
             else
                 flag = false;
             if (!string.IsNullOrEmpty(this.nroCuenta1.TBNroCuenta.Text.Trim()))
@@ -85,9 +86,11 @@ namespace Sistema_Bancario.Froms_opciones
                 if (a.Equals("Transferido"))
                 {
                     MessageBox.Show("Operacion Realizada");
+                    Recibo recibo = new Recibo();
+                    recibo.Show();
                     nroCuenta1.LimpiarControles();
                     nroCuenta2.LimpiarControles();
-                    txtMonto.Clear();
+                    monto1.TBMonto.Clear();
                     nroCuenta1.dni1.TBDni.Clear();
                     clave1.TBClave.Clear();
                 }             

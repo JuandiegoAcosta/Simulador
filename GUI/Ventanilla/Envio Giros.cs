@@ -1,5 +1,6 @@
 ﻿using CNegocio.Ventanilla;
 using Modelos.Modelos;
+using Sistema_Bancario.Ventanilla;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,8 +32,8 @@ namespace Sistema_Bancario.Froms_opciones
       {
          try
          {
-            if (!string.IsNullOrEmpty(this.txtMonto.Text.Trim()))
-            { monto = Convert.ToDecimal(this.txtMonto.Text.Trim()); }
+            if (!string.IsNullOrEmpty(this.monto1.TBMonto.Text.Trim()))
+            { monto = Convert.ToDecimal(this.monto1.TBMonto.Text.Trim()); }
             else
             { return false; }
 
@@ -73,9 +74,12 @@ namespace Sistema_Bancario.Froms_opciones
                 giro.Id_PersonaDestino = Convert.ToInt32(dni2.TBDni.Text);
                 giro.USUARIO_CREADOR = o.Items[1].Text;
                 giro.Moneda = tipoMoneda1.CboMoneda.Text;
-                
-            if (girosMethods.EnviarGiro(giro))
-               MessageBox.Show("Giro Enviado");
+
+                if (girosMethods.EnviarGiro(giro)) {
+                    MessageBox.Show("Giro Enviado");
+                    Recibo recibo = new Recibo();
+                    recibo.Show();
+                }             
             else
                MessageBox.Show("No se pudo realizar giros");
          }

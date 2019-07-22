@@ -37,6 +37,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dni2 = new Sistema_Bancario.Controles.DNI();
             this.label4 = new System.Windows.Forms.Label();
+            this.BtActualizar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // proceder1
@@ -126,10 +127,24 @@
             this.label4.TabIndex = 12;
             this.label4.Text = "Nombre:";
             // 
+            // BtActualizar
+            // 
+            this.BtActualizar.BackColor = System.Drawing.Color.ForestGreen;
+            this.BtActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtActualizar.ForeColor = System.Drawing.Color.White;
+            this.BtActualizar.Location = new System.Drawing.Point(310, 65);
+            this.BtActualizar.Name = "BtActualizar";
+            this.BtActualizar.Size = new System.Drawing.Size(75, 23);
+            this.BtActualizar.TabIndex = 13;
+            this.BtActualizar.Text = "Actualizar";
+            this.BtActualizar.UseVisualStyleBackColor = false;
+            this.BtActualizar.Click += new System.EventHandler(this.BtActualizar_Click);
+            // 
             // Cheques
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.BtActualizar);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dni2);
             this.Controls.Add(this.label3);
@@ -153,6 +168,7 @@
             this.Controls.SetChildIndex(this.label3, 0);
             this.Controls.SetChildIndex(this.dni2, 0);
             this.Controls.SetChildIndex(this.label4, 0);
+            this.Controls.SetChildIndex(this.BtActualizar, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -169,5 +185,6 @@
         private System.Windows.Forms.Label label3;
         private Controles.DNI dni2;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button BtActualizar;
     }
 }

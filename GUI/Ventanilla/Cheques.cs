@@ -43,22 +43,16 @@ namespace Sistema_Bancario.Ventanilla
             cheque.Usuario_creacion = o.Items[1].Text;
             cheque.DOI = dni2.TBDni.Text;
             cheque.RowverCDestino = nroCuenta1.VersionCuenta;
+            cheque.RowVerCOrigen = Versiones.Version3;
             cheque.RowVerCheque = Versiones.Version1;
-            cheque.RowVerChequera = Versiones.Version2;
-            
+            cheque.RowVerChequera = Versiones.Version2;          
             string result = cobroCheque.CobroInsert(cheque, nroCuenta1.TBNroCuenta.Text);
             MessageBox.Show(result);
-            //if( result.Equals("-1"))
-            //{
-            //    MessageBox.Show("Se encontro el cheque y se hizo el retiro");
-            //}
-            //else if (result == "0")
-            //{
-            //    MessageBox.Show("Cheque retirado o no Encontrado");
-            //}else
-            //{
-            //    MessageBox.Show("Error");
-            //};
+            if( result.Equals("Cobrado"))
+            {
+                Recibo recibo = new Recibo();
+                recibo.Show();
+            }        
         }
 
         private static Cheques _instance;
@@ -88,15 +82,20 @@ namespace Sistema_Bancario.Ventanilla
             }
             
         }
+        public void VersionesCheques()
+        {
+            CobroChequeMethods cobroChequeMethods = new CobroChequeMethods();
+            Versiones = cobroChequeMethods.Versionchequera(Convert.ToInt32(TBNroCheque.Text));
+        }
 
         private void TBNroCheque_TextChanged(object sender, EventArgs e)
         {
-            CobroChequeMethods cobroChequeMethods = new CobroChequeMethods();
-            Versiones =  cobroChequeMethods.Versionchequera(Convert.ToInt32(TBNroCheque.Text));
+            VersionesCheques();
+        }
 
-
-
-           
+        private void BtActualizar_Click(object sender, EventArgs e)
+        {
+            VersionesCheques();
         }
     }
 }

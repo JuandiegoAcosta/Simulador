@@ -63,7 +63,7 @@ namespace CDatos.Manager
                         return false;
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 //throw;
                 return false;
