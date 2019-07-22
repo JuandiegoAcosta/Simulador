@@ -131,7 +131,7 @@ namespace Sistema_Bancario.plataforma_controles
             this.cboMoneda.SelectedValue = aprestamo.Moneda;
             this.nudPlazoMeses.Value = aprestamo.Plazomeses;
             this.nudPorcentajeInteres.Value = aprestamo.Porcentaje_interes;
-            //this.nudDiaPago.Value = (decimal)aprestamo.Diapago;
+            this.nudDiaPago.Value = (decimal)aprestamo.Diapago;
             this.chkEstado.Checked = aprestamo.Seguro;
         }
 
