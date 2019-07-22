@@ -28,30 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-         this.proceder1 = new Sistema_Bancario.Controles.Proceder();
-         this.SuspendLayout();
-         // 
-         // proceder1
-         // 
-         this.proceder1.Dock = System.Windows.Forms.DockStyle.Bottom;
-         this.proceder1.Location = new System.Drawing.Point(8, 570);
-         this.proceder1.Margin = new System.Windows.Forms.Padding(2);
-         this.proceder1.Name = "proceder1";
-         this.proceder1.Size = new System.Drawing.Size(858, 40);
-         this.proceder1.TabIndex = 0;
-         // 
-         // Base
-         // 
-         this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-         this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-         this.BackColor = System.Drawing.Color.White;
-         this.Controls.Add(this.proceder1);
-         this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-         this.Name = "Base";
-         this.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
-         this.Size = new System.Drawing.Size(874, 618);
-         this.Load += new System.EventHandler(this.Base_Load);
-         this.ResumeLayout(false);
+            this.proceder1 = new Sistema_Bancario.Controles.Proceder();
+            this.SuspendLayout();
+            // 
+            // proceder1
+            // 
+            this.proceder1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.proceder1.Location = new System.Drawing.Point(8, 570);
+            this.proceder1.Margin = new System.Windows.Forms.Padding(2);
+            this.proceder1.Name = "proceder1";
+            this.proceder1.Size = new System.Drawing.Size(435, 40);
+            this.proceder1.TabIndex = 0;
+            // 
+            // Base
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.proceder1);
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "Base";
+            this.Padding = new System.Windows.Forms.Padding(8);
+            this.Size = new System.Drawing.Size(451, 618);
+            this.Load += new System.EventHandler(this.Base_Load);
+            this.ResumeLayout(false);
 
         }
 
