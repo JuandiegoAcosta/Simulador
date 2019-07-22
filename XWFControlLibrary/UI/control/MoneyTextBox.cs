@@ -9,8 +9,8 @@ namespace XWFControlLibrary.UI.control
 {
    public class MoneyTextBox : TextBox
    {
-      private int money = default(int);
-      private string[] value = {"PEN", "USD", "EUR"};
+      private int money = default;
+      private string[] value = {"PEN", "USD"};
       public Button btnViewMoney = null;
       public MoneyTextBox() : base()
       {
@@ -32,8 +32,8 @@ namespace XWFControlLibrary.UI.control
       private void _btnViewPassword_Click(object sender, EventArgs e)
       {
          money++;
-         if (money == 3)
-            money = default(int);
+         if (money == 2)
+            money = default;
 
          btnViewMoney.Text = value[money];
       }
