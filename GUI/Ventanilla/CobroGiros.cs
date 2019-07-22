@@ -1,5 +1,6 @@
 ﻿using CNegocio.Ventanilla;
 using Modelos.Modelos;
+using Sistema_Bancario.Ventanilla;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,6 +40,8 @@ namespace Sistema_Bancario.Froms_opciones
             if (executado > 0)
             {
                MessageBox.Show("Giro cobrado");
+               Recibo recibo = new Recibo();
+               recibo.Show();
             }
          }
         }

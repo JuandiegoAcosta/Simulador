@@ -331,10 +331,9 @@ namespace CDatos.Manager
                     {
                         while (reader.Read())
                         {
-
                             versiones.Version1 = (byte[])(reader["ChequeVersion"]);
                             versiones.Version2 = (byte[])(reader["ChequeraVersion"]);
-
+                            versiones.Version3 = (byte[])(reader["CuentaVersion"]);
                         }
                     }
                 }

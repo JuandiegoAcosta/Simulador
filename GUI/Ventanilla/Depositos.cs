@@ -62,8 +62,8 @@ namespace Sistema_Bancario.Ventanilla
             else
             { return false; }
 
-            if (!string.IsNullOrEmpty(this.txtMonto.Text.Trim()))
-            { m_deposito.Monto = Convert.ToDecimal(this.txtMonto.Text.Trim()); }
+            if (!string.IsNullOrEmpty(this.monto1.TBMonto.Text.Trim()))
+            { m_deposito.Monto = Convert.ToDecimal(this.monto1.TBMonto.Text.Trim()); }
             else
             { return false; }
 
@@ -90,7 +90,13 @@ namespace Sistema_Bancario.Ventanilla
                 m_deposito.RowVer = nroCuenta1.VersionCuenta;
                 var a = m_depositoMethods.insert(m_deposito);
             if (a.Equals("Transferido"))
-               MessageBox.Show("Operacion Realizada");
+              {
+                    MessageBox.Show("Operacion Realizada");
+                    Recibo recibo = new Recibo();
+                    recibo.Show();
+
+                }
+               
             else
                MessageBox.Show("No se pudo realizar la operación :" + a);
          }
@@ -125,7 +131,7 @@ namespace Sistema_Bancario.Ventanilla
         private void TxtConversion_TextChanged(object sender, EventArgs e)
         {
             
-           txtMonto.Text = Decimal.Round(Convert.ToDecimal(cambioMoneda.txtConversion.Text), 3).ToString();
+           monto1.TBMonto.Text = Decimal.Round(Convert.ToDecimal(cambioMoneda.txtConversion.Text), 3).ToString();
            
                 
         }

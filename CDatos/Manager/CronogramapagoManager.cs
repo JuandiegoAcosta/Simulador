@@ -12,6 +12,7 @@ namespace CDatos.Manager
     public class CronogramaPagoManager
     {
         #region Methods
+
         /// <summary>
         /// Saves a record to the CronogramaPagosModel table.
         /// returns True if value saved successfully else false
@@ -32,9 +33,9 @@ namespace CDatos.Manager
                     command.Transaction = sqlTran;
 
                     command.Parameters.AddWithValue("@CuentaPrestamo", cuenta);
-                    command.Parameters.AddWithValue("@FechaPago", aCronogramaPagosModel.Fechapago == null ? (object)DBNull.Value : aCronogramaPagosModel.Fechapago);
+                    command.Parameters.AddWithValue("@FechaPago", aCronogramaPagosModel.FechaCancelado == null ? (object)DBNull.Value : aCronogramaPagosModel.FechaCancelado);
                     command.Parameters.AddWithValue("@Monto", aCronogramaPagosModel.Monto);
-                    command.Parameters.AddWithValue("@DiaPago", aCronogramaPagosModel.Diapago);
+                    command.Parameters.AddWithValue("@DiaPago", aCronogramaPagosModel.DiaPago);
                     command.Parameters.AddWithValue("@Estado", aCronogramaPagosModel.Estado);
                     command.Parameters.AddWithValue("@FECHA_CREACION", aCronogramaPagosModel.Fecha_creacion);
                     command.Parameters.AddWithValue("@FECHA_MODIFICACION", aCronogramaPagosModel.Fecha_modificacion == null ? (object)DBNull.Value : aCronogramaPagosModel.Fecha_modificacion);
@@ -88,9 +89,9 @@ namespace CDatos.Manager
 
                     command.Parameters.AddWithValue("@ID", aCronogramaPagosModel.Id);
                     command.Parameters.AddWithValue("@Prestamo", aCronogramaPagosModel.Prestamo);
-                    command.Parameters.AddWithValue("@FechaPago", aCronogramaPagosModel.Fechapago);
+                    command.Parameters.AddWithValue("@FechaPago", aCronogramaPagosModel.FechaCancelado);
                     command.Parameters.AddWithValue("@Monto", aCronogramaPagosModel.Monto);
-                    command.Parameters.AddWithValue("@DiaPago", aCronogramaPagosModel.Diapago);
+                    command.Parameters.AddWithValue("@DiaPago", aCronogramaPagosModel.DiaPago);
                     command.Parameters.AddWithValue("@FECHA_CREACION", aCronogramaPagosModel.Fecha_creacion);
                     command.Parameters.AddWithValue("@FECHA_MODIFICACION", aCronogramaPagosModel.Fecha_modificacion == null ? (object)DBNull.Value : aCronogramaPagosModel.Fecha_modificacion);
                     command.Parameters.AddWithValue("@USUARIO_CREADOR", aCronogramaPagosModel.Usuario_creador);
@@ -197,26 +198,49 @@ namespace CDatos.Manager
 
                             int ID = (int)(reader["ID"]);
                             int Prestamo = (int)(reader["Prestamo"]);
-                            DateTime FechaPago = (DateTime)(reader["FechaPago"]);
+                            DateTime? DiaPago = (reader["DiaPago"]) as DateTime?;
                             decimal Monto = (decimal)(reader["Monto"]);
-                            DateTime DiaPago = (DateTime)(reader["DiaPago"]);
+                            decimal Amortizacion = (decimal)(reader["Amortizacion"]);
+                            decimal Interes = (decimal)(reader["Interes"]);
+                            decimal Seguro = (decimal)(reader["Seguro"]);
+                            decimal Saldo = (decimal)(reader["Saldo"]);
+                            DateTime? FechaCancelado = (reader["FechaCancelado"]) as DateTime?;
+                            int estado = (int)(reader["Estado"]);
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
                             DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
                             string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
-                            string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
+                            string USUARIO_MODIFICADOR = reader["USUARIO_MODIFICADOR"] as string;
+                            string estado_s = "POR PAGAR";
+                            switch (estado)
+                            {
+                                case 0:
+                                    estado_s = "POR PAGAR";
+                                    break;
+                                case 1:
+                                    estado_s = "CANCELADO";
+                                    break;
+                                case 2:
+                                    estado_s = "ANULADO";
+                                    break;
+                            }
 
                             CronogramaPagosModel = new CronogramaPagosModel
                             {
                                 Id = ID,
                                 Prestamo = Prestamo,
-                                Fechapago = FechaPago,
+                                DiaPago = DiaPago,
                                 Monto = Monto,
-                                Diapago = DiaPago,
+                                Amortizacion = Amortizacion,
+                                Interes = Interes,
+                                Seguro = Seguro,
+                                Saldo = Saldo,
+                                FechaCancelado = FechaCancelado,
+                                Estado = estado,
+                                EstadoString = estado_s,
                                 Fecha_creacion = FECHA_CREACION,
                                 Fecha_modificacion = FECHA_MODIFICACION,
                                 Usuario_creador = USUARIO_CREADOR,
                                 Usuario_modificador = USUARIO_MODIFICADOR,
-
                             };
                         }
                     }
@@ -260,26 +284,49 @@ namespace CDatos.Manager
 
                             int ID = (int)(reader["ID"]);
                             int Prestamo = (int)(reader["Prestamo"]);
-                            DateTime FechaPago = (DateTime)(reader["FechaPago"]);
+                            DateTime? DiaPago = (reader["DiaPago"]) as DateTime?;
                             decimal Monto = (decimal)(reader["Monto"]);
-                            DateTime DiaPago = (DateTime)(reader["DiaPago"]);
+                            decimal Amortizacion = (decimal)(reader["Amortizacion"]);
+                            decimal Interes = (decimal)(reader["Interes"]);
+                            decimal Seguro = (decimal)(reader["Seguro"]);
+                            decimal Saldo = (decimal)(reader["Saldo"]);
+                            DateTime? FechaCancelado = (reader["FechaCancelado"]) as DateTime?;
+                            int estado = (int)(reader["Estado"]);
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
                             DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
                             string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
-                            string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
+                            string USUARIO_MODIFICADOR = reader["USUARIO_MODIFICADOR"] as string;
+                            string estado_s = "POR PAGAR";
+                            switch (estado)
+                            {
+                                case 0:
+                                    estado_s = "POR PAGAR";
+                                    break;
+                                case 1:
+                                    estado_s = "CANCELADO";
+                                    break;
+                                case 2:
+                                    estado_s = "ANULADO";
+                                    break;
+                            }
 
                             CronogramaPagosModellist.Add(new CronogramaPagosModel
                             {
                                 Id = ID,
                                 Prestamo = Prestamo,
-                                Fechapago = FechaPago,
+                                DiaPago = DiaPago,
                                 Monto = Monto,
-                                Diapago = DiaPago,
+                                Amortizacion = Amortizacion,
+                                Interes = Interes,
+                                Seguro = Seguro,
+                                Saldo = Saldo,
+                                FechaCancelado = FechaCancelado,
+                                Estado = estado,
+                                EstadoString = estado_s,
                                 Fecha_creacion = FECHA_CREACION,
                                 Fecha_modificacion = FECHA_MODIFICACION,
                                 Usuario_creador = USUARIO_CREADOR,
                                 Usuario_modificador = USUARIO_MODIFICADOR,
-
                             });
                         }
                     }
@@ -297,7 +344,7 @@ namespace CDatos.Manager
         /// <summary>
         /// Selects the Multiple objects of CronogramaPagosModel table by a given criteria.
         /// </summary>
-        public List<CronogramaPagosModel> CronogramaPagosModelSelectbyUNKNOW(string aValue)
+        public List<CronogramaPagosModel> CronogramaPagosModelSelectbyId(string aValue)
         {
 
             List<CronogramaPagosModel> CronogramaPagosModellist = new List<CronogramaPagosModel>();
@@ -310,11 +357,11 @@ namespace CDatos.Manager
 
                     SqlCommand command = connection.CreateCommand();
 
-                    command.Parameters.AddWithValue("@UNKNOW", aValue);
+                    command.Parameters.AddWithValue("@id_prestamo", aValue);
 
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.CommandText = "CronogramaPagosModelSelectbyUNKNOW";
+                    command.CommandText = "CronogramaSelectbyId";
 
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -325,26 +372,49 @@ namespace CDatos.Manager
 
                             int ID = (int)(reader["ID"]);
                             int Prestamo = (int)(reader["Prestamo"]);
-                            DateTime FechaPago = (DateTime)(reader["FechaPago"]);
+                            DateTime? DiaPago = (reader["DiaPago"]) as DateTime?;
                             decimal Monto = (decimal)(reader["Monto"]);
-                            DateTime DiaPago = (DateTime)(reader["DiaPago"]);
+                            decimal Amortizacion = (decimal)(reader["Amortizacion"]);
+                            decimal Interes = (decimal)(reader["Interes"]);
+                            decimal Seguro = (decimal)(reader["Seguro"]);
+                            decimal Saldo = (decimal)(reader["Saldo"]);
+                            DateTime? FechaCancelado = (reader["FechaCancelado"]) as DateTime?;
+                            int estado = (int)(reader["Estado"]);
                             DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
                             DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
                             string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
-                            string USUARIO_MODIFICADOR = (string)(reader["USUARIO_MODIFICADOR"]);
+                            string USUARIO_MODIFICADOR = reader["USUARIO_MODIFICADOR"] as string;
+                            string estado_s = "POR PAGAR";
+                            switch (estado)
+                            {
+                                case 0:
+                                    estado_s = "POR PAGAR";
+                                    break;
+                                case 1:
+                                    estado_s = "CANCELADO";
+                                    break;
+                                case 2:
+                                    estado_s = "ANULADO";
+                                    break;
+                            }
 
                             CronogramaPagosModellist.Add(new CronogramaPagosModel
                             {
                                 Id = ID,
                                 Prestamo = Prestamo,
-                                Fechapago = FechaPago,
+                                DiaPago = DiaPago,
                                 Monto = Monto,
-                                Diapago = DiaPago,
+                                Amortizacion = Amortizacion,
+                                Interes = Interes,
+                                Seguro = Seguro,
+                                Saldo = Saldo,
+                                FechaCancelado = FechaCancelado,
+                                Estado = estado,
+                                EstadoString = estado_s,
                                 Fecha_creacion = FECHA_CREACION,
                                 Fecha_modificacion = FECHA_MODIFICACION,
                                 Usuario_creador = USUARIO_CREADOR,
                                 Usuario_modificador = USUARIO_MODIFICADOR,
-
                             });
                         }
                     }

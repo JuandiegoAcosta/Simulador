@@ -16,6 +16,7 @@ namespace Sistema_Bancario.plataforma_controles
 {
     public partial class NuevaCuentaUserControl : UserControl
     {
+
         #region Variables
 
         WsSistemaBancario.CuentaServiceClient BLCuenta = new WsSistemaBancario.CuentaServiceClient();
@@ -279,6 +280,8 @@ namespace Sistema_Bancario.plataforma_controles
             this.txtNumero_documento.Enabled = true;
             this.chkEstado.Enabled = true;
             this.cboTipo_documento.Enabled = true;
+            this.cboTipoCuenta.SelectedIndex = 0;
+            this.cboMoneda.SelectedIndex = 0;
             this.cboMoneda.Enabled = true;
             this.cboTipoCuenta.Enabled = true;
         }
@@ -330,12 +333,30 @@ namespace Sistema_Bancario.plataforma_controles
 
         private void btnNombres_Click(object sender, EventArgs e)
         {
+            string nombres = this.txtNombres.Text;
 
+            var objeto = this.BLPersona.PersonaSelectbyNombres(nombres).ToList();
+
+            if (objeto == null || objeto.Count <= 0)
+            {
+                MessageBox.Show("No se han encontrado resultados");
+                return;
+            }
+            this.buscarPersona(objeto);
         }
 
         private void btnDocumento_Click(object sender, EventArgs e)
         {
+            string numero_documento = this.txtNumero_documento.Text;
 
+            var objeto = this.BLPersona.PersonaSelectbyNroDocumento(numero_documento).ToList();
+
+            if (objeto == null || objeto.Count <= 0)
+            {
+                MessageBox.Show("No se han encontrado resultados");
+                return;
+            }
+            this.buscarPersona(objeto);
         }
 
         private void buttonNuevo_Click(object sender, EventArgs e)
@@ -346,17 +367,76 @@ namespace Sistema_Bancario.plataforma_controles
 
         private void buttonCrear_Click(object sender, EventArgs e)
         {
+            var objeto = this.gui2cuenta();
 
+            if (objeto == null)
+            {
+                MessageBox.Show("Se detectan incoherencias, por favor revisarlas");
+                return;
+            }
+            if (objeto.Estado == false)
+            {
+                DialogResult result = MessageBox.Show("Está a punto de crear una cuenta inactiva, ¿Desea continuar?", "Advertencia", MessageBoxButtons.YesNo);
+                if (result == DialogResult.No) return;
+            }
+            if (this.BLCuenta.Cuenta_Crear(objeto))
+            {
+                this.clearForm();
+                this.modoInicial();
+                MessageBox.Show("La cuenta fue creada exitosamente");
+            }
         }
 
         private void buttonActualizar_Click(object sender, EventArgs e)
         {
+            var objeto = this.gui2cuenta();
 
+            if (objeto == null)
+            {
+                MessageBox.Show("Problemas al instanciar el nuevo objeto, revise las propiedas");
+                return;
+            }
+
+            objeto.Nrocuenta = this.gCuenta.Nrocuenta;
+            objeto.Usuario_creador = this.gPersona.Usuario_creador;
+            objeto.Fecha_creacion = this.gPersona.Fecha_creacion;
+            objeto.Usuario_modificador = this.gUsuario;
+            objeto.Fecha_modificacion = BLFechaHoraServer.ObtenerFechaHoraActual();
+
+            if (objeto.Estado == false)
+            {
+                DialogResult result = MessageBox.Show("La cuenta está en estado inactivo, ¿Desea continuar?", "Advertencia", MessageBoxButtons.YesNo);
+                if (result == DialogResult.No) return;
+            }
+            if (this.BLCuenta.Cuenta_Editar(objeto))
+            {
+                MessageBox.Show("El proceso ha sido correcto");
+                this.clearForm();
+                this.modoInicial();
+            }
         }
 
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
+            if (this.gCuenta == null)
+            {
+                MessageBox.Show("Problemas al obtener el objeto de base de datos");
+                return;
+            }
 
+            DialogResult result = MessageBox.Show("¿Estás seguro que quieres eliminar esta cuenta? Este proceso no se puede revertir", "Advertencia", MessageBoxButtons.YesNo);
+            if (result == DialogResult.No) return;
+
+            if (this.BLCuenta.Cuenta_Borrar(this.gCuenta.Nrocuenta))
+            {
+                this.clearForm();
+                this.modoInicial();
+                MessageBox.Show("El proceso ha sido correcto");
+            }
+            else
+            {
+                MessageBox.Show("La cuenta está siendo usada, elimine las referencias y vuelva a intentarlo");
+            }
         }
 
         private void buttonDeshacer_Click(object sender, EventArgs e)
@@ -367,7 +447,16 @@ namespace Sistema_Bancario.plataforma_controles
 
         private void btnCodigo_Click(object sender, EventArgs e)
         {
+            string codigo = this.txtCodigo.Text;
 
+            List<CuentasModel> objeto = this.BLCuenta.Cuenta_SeleccionarPorNumero(codigo).ToList();
+
+            if (objeto == null || objeto.Count <= 0)
+            {
+                MessageBox.Show("No se han encontrado resultados");
+                return;
+            }
+            this.buscarCuenta(objeto);
         }
 
         private void NuevaCuentaUserControl_Load(object sender, EventArgs e)
@@ -377,9 +466,5 @@ namespace Sistema_Bancario.plataforma_controles
 
         #endregion
 
-        private void btnApellidos_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

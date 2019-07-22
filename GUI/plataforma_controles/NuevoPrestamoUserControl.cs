@@ -53,13 +53,13 @@ namespace Sistema_Bancario.plataforma_controles
         {
             //Por razones del simulador, la fecha del prestamo es variable, en un entorno real no deberia ser así
 
-            //this.nudPlazoMeses.Minimum = 1;
-            //this.nudPlazoMeses.Maximum = 360;
-            //this.nudPorcentajeInteres.Minimum = 0;
-            //this.nudPorcentajeInteres.Maximum = 300;
-            
-            //this.nudDiaPago.Minimum = 1;
-            //this.nudDiaPago.Maximum = 31;
+            this.nudPlazoMeses.Minimum = 1;
+            this.nudPlazoMeses.Maximum = 60;
+            this.nudPorcentajeInteres.Minimum = 0;
+            this.nudPorcentajeInteres.Maximum = 80;
+
+            this.nudDiaPago.Minimum = 1;
+            this.nudDiaPago.Maximum = 31;
         }
 
         private void poblarCboMonedas()
@@ -493,7 +493,6 @@ namespace Sistema_Bancario.plataforma_controles
         }
 
         #endregion
-
 
     }
 }

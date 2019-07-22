@@ -9,7 +9,7 @@ namespace XWFControlLibrary.UI.control
 {
    public class MoneyTextBox : TextBox
    {
-      private int money = default;
+      private int money = default(int);
       private string[] value = {"PEN", "USD"};
       public Button btnViewMoney = null;
       public MoneyTextBox() : base()
@@ -33,7 +33,7 @@ namespace XWFControlLibrary.UI.control
       {
          money++;
          if (money == 2)
-            money = default;
+            money = default(int);
 
          btnViewMoney.Text = value[money];
       }

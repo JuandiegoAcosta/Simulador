@@ -2,6 +2,7 @@
 using Modelos.Modelos;
 using Modelos.Session;
 using Sistema_Bancario.Controles;
+using Sistema_Bancario.Ventanilla;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -136,7 +137,11 @@ namespace Sistema_Bancario.Froms_opciones
                 cuentas.RowVersion = nroCuenta1.VersionCuenta;
                 var a = retirosMethods.InsertaRetiro(cuentas);
                 if (a.Equals("Transferido"))
+                {
                     MessageBox.Show("Retiro con exito");
+                    Recibo recibo = new Recibo();
+                    recibo.Show();
+                }                  
                 else
                     MessageBox.Show("No se pudo generar el retiro: "+a);
             }

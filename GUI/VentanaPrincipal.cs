@@ -360,6 +360,20 @@ namespace Sistema_Bancario
             {
                 CrearControl<UserControl>(Permisos.instance, btn);
             }
+
+            else if (btn.Text.Equals("Cronograma"))
+            {
+                ReporteCronograma cronograma;
+                if (this.Session != null)
+                {
+                    cronograma = new ReporteCronograma(this.Session);
+                    CrearControl<UserControl>(cronograma, btn);
+                }
+                else
+                {
+                    MessageBox.Show("La sesión ha caducado");
+                }
+            }
             #endregion
         }
         private void BTGestion_Click(object sender, EventArgs e)
@@ -379,6 +393,8 @@ namespace Sistema_Bancario
         private void BTReportes_Click(object sender, EventArgs e)
         {
             Marcar(sender);
+            panel2.Controls.Clear();
+            this.Componentes(5);
         }
 
         private void BTOperaciones_Click(object sender, EventArgs e)
@@ -559,6 +575,11 @@ namespace Sistema_Bancario
                this.CrearBoton(Roles, "Roles", 50);
                this.CrearBoton(Permisos, "Permisos", 100);
                break;
+
+            case 5:
+                Button Cronograma = new Button();
+                this.CrearBoton(Cronograma, "Cronograma", 0);
+                break;
             }
       }
 

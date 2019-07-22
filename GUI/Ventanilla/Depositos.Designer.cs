@@ -29,10 +29,10 @@
       private void InitializeComponent()
       {
             this.tipoMoneda2 = new Sistema_Bancario.Controles.TipoMoneda();
-            this.txtMonto = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.nroCuenta1 = new Sistema_Bancario.Controles.NroCuenta();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.monto1 = new Sistema_Bancario.Monto();
             this.SuspendLayout();
             // 
             // proceder1
@@ -42,18 +42,11 @@
             // 
             // tipoMoneda2
             // 
-            this.tipoMoneda2.Location = new System.Drawing.Point(271, 88);
+            this.tipoMoneda2.Location = new System.Drawing.Point(281, 88);
             this.tipoMoneda2.Margin = new System.Windows.Forms.Padding(2);
             this.tipoMoneda2.Name = "tipoMoneda2";
             this.tipoMoneda2.Size = new System.Drawing.Size(136, 25);
             this.tipoMoneda2.TabIndex = 4;
-            // 
-            // txtMonto
-            // 
-            this.txtMonto.Location = new System.Drawing.Point(81, 90);
-            this.txtMonto.Name = "txtMonto";
-            this.txtMonto.Size = new System.Drawing.Size(185, 20);
-            this.txtMonto.TabIndex = 21;
             // 
             // label3
             // 
@@ -67,11 +60,13 @@
             // 
             // nroCuenta1
             // 
+            this.nroCuenta1.EstadoCuenta = null;
             this.nroCuenta1.Location = new System.Drawing.Point(13, 12);
             this.nroCuenta1.Margin = new System.Windows.Forms.Padding(2);
             this.nroCuenta1.Name = "nroCuenta1";
             this.nroCuenta1.Size = new System.Drawing.Size(767, 77);
             this.nroCuenta1.TabIndex = 27;
+            this.nroCuenta1.VersionCuenta = null;
             // 
             // panel1
             // 
@@ -83,35 +78,43 @@
             this.panel1.Size = new System.Drawing.Size(679, 0);
             this.panel1.TabIndex = 28;
             // 
+            // monto1
+            // 
+            this.monto1.Location = new System.Drawing.Point(80, 90);
+            this.monto1.Margin = new System.Windows.Forms.Padding(2);
+            this.monto1.Name = "monto1";
+            this.monto1.Size = new System.Drawing.Size(193, 20);
+            this.monto1.TabIndex = 29;
+            // 
             // Depositos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.monto1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tipoMoneda2);
             this.Controls.Add(this.nroCuenta1);
-            this.Controls.Add(this.txtMonto);
             this.Controls.Add(this.label3);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Depositos";
             this.Padding = new System.Windows.Forms.Padding(11, 10, 11, 10);
             this.Size = new System.Drawing.Size(740, 407);
             this.Controls.SetChildIndex(this.label3, 0);
-            this.Controls.SetChildIndex(this.txtMonto, 0);
             this.Controls.SetChildIndex(this.nroCuenta1, 0);
             this.Controls.SetChildIndex(this.tipoMoneda2, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.proceder1, 0);
+            this.Controls.SetChildIndex(this.monto1, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
       }
 
       #endregion
-      private System.Windows.Forms.TextBox txtMonto;
       private System.Windows.Forms.Label label3;
         private Controles.TipoMoneda tipoMoneda2;
         private Controles.NroCuenta nroCuenta1;
         private System.Windows.Forms.Panel panel1;
+        private Monto monto1;
     }
 }

@@ -60,6 +60,7 @@
     <Compile Include="Modelos\Deposito.cs" />
     <Compile Include="Modelos\DetalleCajaChicaModel.cs" />
     <Compile Include="Modelos\EmpresaModel.cs" />
+    <Compile Include="Modelos\GenerarDocumento.cs" />
     <Compile Include="Modelos\GiroModel.cs" />
     <Compile Include="Modelos\HorariosAtencionModel.cs" />
     <Compile Include="Modelos\MovimientosVentanillaModel.cs" />

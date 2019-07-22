@@ -1,5 +1,6 @@
 ﻿using CNegocio.Ventanilla;
 using Modelos.Modelos;
+using Sistema_Bancario.Ventanilla;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -42,6 +43,8 @@ namespace Sistema_Bancario
                 if (a.Equals("Transferido"))
                 {
                     MessageBox.Show("Pago Realizado");
+                    Recibo recibo = new Recibo();
+                    recibo.Show();
                 }
                 else
                 {
@@ -94,7 +97,7 @@ namespace Sistema_Bancario
                 var AnonymousType = new
                 {
                     CuotasModel[i].Id,
-                    CuotasModel[i].Diapago,
+                    CuotasModel[i].FechaCancelado,
                     CuotasModel[i].Monto,
                     CuotasModel[i].EstadoString
                 };

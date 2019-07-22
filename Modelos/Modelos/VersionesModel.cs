@@ -10,5 +10,6 @@ namespace Modelos.Modelos
     {
         public byte[] Version1 { get; set; }
         public byte[] Version2 { get; set; }
+        public byte[] Version3 { get; set; }
     }
 }

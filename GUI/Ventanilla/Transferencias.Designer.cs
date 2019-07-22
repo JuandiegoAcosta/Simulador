@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtMonto = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.nroCuenta1 = new Sistema_Bancario.Controles.NroCuenta();
             this.tipoMoneda1 = new Sistema_Bancario.Controles.TipoMoneda();
             this.clave1 = new Sistema_Bancario.Controles.Clave();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.nroCuenta2 = new Sistema_Bancario.Controles.NroCuenta();
-            this.label1 = new System.Windows.Forms.Label();
+            this.monto1 = new Sistema_Bancario.Monto();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -46,13 +46,6 @@
             this.proceder1.Location = new System.Drawing.Point(6, 383);
             this.proceder1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.proceder1.Size = new System.Drawing.Size(703, 40);
-            // 
-            // txtMonto
-            // 
-            this.txtMonto.Location = new System.Drawing.Point(73, 112);
-            this.txtMonto.Name = "txtMonto";
-            this.txtMonto.Size = new System.Drawing.Size(196, 20);
-            this.txtMonto.TabIndex = 28;
             // 
             // label3
             // 
@@ -67,11 +60,11 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.Window;
+            this.groupBox1.Controls.Add(this.monto1);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.nroCuenta1);
             this.groupBox1.Controls.Add(this.tipoMoneda1);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txtMonto);
             this.groupBox1.Controls.Add(this.clave1);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.InfoText;
             this.groupBox1.Location = new System.Drawing.Point(20, 22);
@@ -82,6 +75,15 @@
             this.groupBox1.TabIndex = 38;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Persona Origen";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(18, 140);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(34, 13);
+            this.label1.TabIndex = 41;
+            this.label1.Text = "Clave";
             // 
             // nroCuenta1
             // 
@@ -133,14 +135,13 @@
             this.nroCuenta2.TabIndex = 35;
             this.nroCuenta2.VersionCuenta = null;
             // 
-            // label1
+            // monto1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 140);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 13);
-            this.label1.TabIndex = 41;
-            this.label1.Text = "Clave";
+            this.monto1.Location = new System.Drawing.Point(73, 113);
+            this.monto1.Margin = new System.Windows.Forms.Padding(2);
+            this.monto1.Name = "monto1";
+            this.monto1.Size = new System.Drawing.Size(193, 20);
+            this.monto1.TabIndex = 42;
             // 
             // Transferencias
             // 
@@ -162,7 +163,6 @@
         }
 
       #endregion
-      private System.Windows.Forms.TextBox txtMonto;
       private System.Windows.Forms.Label label3;
         private Controles.Clave clave1;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -171,5 +171,6 @@
         private Controles.NroCuenta nroCuenta1;
         private Controles.NroCuenta nroCuenta2;
         private System.Windows.Forms.Label label1;
+        private Monto monto1;
     }
 }

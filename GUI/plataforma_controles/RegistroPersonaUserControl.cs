@@ -71,7 +71,7 @@ namespace Sistema_Bancario.plataforma_controles
         private Boolean Email_correcto(String email)
         {
             String expresion = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
-            return Regex.IsMatch(email, expresion)? (Regex.Replace(email, expresion, String.Empty).Length == 0 ? true : false) : false;
+            return Regex.IsMatch(email, expresion) ? (Regex.Replace(email, expresion, String.Empty).Length == 0 ? true : false) : false;
         }
 
         private PersonaModel gui2persona()
@@ -179,6 +179,8 @@ namespace Sistema_Bancario.plataforma_controles
             this.txtTelefono.Enabled = true;
             this.chkEstado.Enabled = true;
             this.cboTipo_documento.Enabled = true;
+            this.cboTipo_documento.SelectedIndex = 0;
+            this.cboTipoPersona.SelectedIndex = 0;
             this.cboTipoPersona.Enabled = true;
             this.dtpFecha_nacimiento.Enabled = true;
 
@@ -400,7 +402,7 @@ namespace Sistema_Bancario.plataforma_controles
 
         private void TxtMontoPrestamo_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
+
         }
 
         private void TxtNumero_documento_KeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)

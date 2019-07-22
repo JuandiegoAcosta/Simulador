@@ -30,9 +30,14 @@
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaCancelado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Amortizacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Interes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Seguro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Saldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.btnCodigo = new System.Windows.Forms.Button();
@@ -47,8 +52,13 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Codigo,
-            this.FechaPago,
+            this.FechaCancelado,
             this.Monto,
+            this.Amortizacion,
+            this.Interes,
+            this.Seguro,
+            this.Saldo,
+            this.DiaPago,
             this.Estado});
             this.dataGridView1.Location = new System.Drawing.Point(25, 72);
             this.dataGridView1.Name = "dataGridView1";
@@ -61,25 +71,65 @@
             this.Codigo.HeaderText = "Codigo";
             this.Codigo.Name = "Codigo";
             this.Codigo.ReadOnly = true;
+            this.Codigo.ValueType = typeof(string);
             // 
-            // FechaPago
+            // FechaCancelado
             // 
-            this.FechaPago.HeaderText = "Fecha de Pago";
-            this.FechaPago.Name = "FechaPago";
-            this.FechaPago.ReadOnly = true;
-            this.FechaPago.Width = 150;
+            this.FechaCancelado.HeaderText = "Fecha a pagar";
+            this.FechaCancelado.Name = "FechaCancelado";
+            this.FechaCancelado.ReadOnly = true;
+            this.FechaCancelado.Width = 150;
+            this.FechaCancelado.ValueType = typeof(string);
             // 
             // Monto
             // 
             this.Monto.HeaderText = "Monto";
             this.Monto.Name = "Monto";
             this.Monto.ReadOnly = true;
+            this.Monto.ValueType = typeof(string);
+            // 
+            // Amortizacion
+            // 
+            this.Amortizacion.HeaderText = "Amortizacion";
+            this.Amortizacion.Name = "Amortizacion";
+            this.Amortizacion.ReadOnly = true;
+            this.Amortizacion.ValueType = typeof(string);
+            // 
+            // Interes
+            // 
+            this.Interes.HeaderText = "Interes";
+            this.Interes.Name = "Interes";
+            this.Interes.ReadOnly = true;
+            this.Interes.ValueType = typeof(string);
+            // 
+            // Seguro
+            // 
+            this.Seguro.HeaderText = "Seguro";
+            this.Seguro.Name = "Seguro";
+            this.Seguro.ReadOnly = true;
+            this.Seguro.ValueType = typeof(string);
+            // 
+            // Saldo
+            // 
+            this.Saldo.HeaderText = "Saldo";
+            this.Saldo.Name = "Saldo";
+            this.Saldo.ReadOnly = true;
+            this.Saldo.ValueType = typeof(string);
+            // 
+            // DiaPago
+            // 
+            this.DiaPago.HeaderText = "Dia de pago";
+            this.DiaPago.Name = "DiaPago";
+            this.DiaPago.ReadOnly = true;
+            this.DiaPago.Width = 150;
+            this.DiaPago.ValueType = typeof(string);
             // 
             // Estado
             // 
             this.Estado.HeaderText = "Estado";
             this.Estado.Name = "Estado";
             this.Estado.ReadOnly = true;
+            this.Estado.ValueType = typeof(string);
             // 
             // label3
             // 
@@ -138,9 +188,14 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FechaPago;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaCancelado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Monto;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Estado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Amortizacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Interes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Seguro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Saldo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiaPago;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Button btnCodigo;

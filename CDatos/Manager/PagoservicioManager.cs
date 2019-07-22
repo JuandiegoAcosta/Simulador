@@ -343,30 +343,47 @@ namespace CDatos.Manager
             }
         }
 
-        public int InsertPagoServicio(RecaudosModel recaudos,string User)
+        public string InsertPagoServicio(RecaudosModel recaudos,string User)
         {
 
-            int result=-1;
+            string afectados;
 
             try
             {
                 using (var connection = Util.ConnectionFactory.conexion())
                 {
                     connection.Open();
+
+                    SqlTransaction sqlTran = connection.BeginTransaction();
+
                     SqlCommand command = connection.CreateCommand();
+
+                    command.Transaction = sqlTran;
                     command.Parameters.AddWithValue("@nroContrato", recaudos.Nro_contrato);
                     command.Parameters.AddWithValue("@Usuario", User);
                     command.Parameters.AddWithValue("@RowVer", recaudos.RowVersion);
                     command.CommandType = CommandType.StoredProcedure;
                     command.CommandText = "InsertPagoServicio";                 
-                    result = command.ExecuteNonQuery();
+                  
+                    object a = command.ExecuteScalar();
+                    if (a != null)
+                        afectados = (string)a;
+                    else
+                        afectados = "Cobrado";
+
+                    sqlTran.Commit();
+
+                    connection.Close();
+                    connection.Dispose();
+
                     connection.Close();
                 }
-                return result;
+                return afectados;
             }
-            catch (Exception)
+            catch (SqlException e)
             {
-                return result;
+                afectados = e.Errors[0].ToString();
+                return afectados;
             }
         }
         #endregion

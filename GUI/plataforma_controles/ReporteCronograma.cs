@@ -31,18 +31,24 @@ namespace Sistema_Bancario.plataforma_controles
 
             var objeto = this.BLPrestamo.prestamoSelectbyID(codigo);
 
-            if (objeto == null && objeto.Count <= 0) { return; }
+            if (objeto == null || objeto.Count <= 0)
+            {
+                MessageBox.Show("No se han encontrado resultados");
+                return;
+            }
             this.buscarPrestamo(objeto);
         }
 
         private void buscarPrestamo(List<PrestamosModel> objetos)
         {
-            string[][] orden = new string[4][];
+            string[][] orden = new string[6][];
 
-            orden[0] = new string[] { "ID", "Codigo", "80" };
-            orden[1] = new string[] { "FechaPrestamo", "Fecha de Prestamo", "150" };
-            orden[2] = new string[] { "Cuenta", "Cuenta", "200" };
-            orden[3] = new string[] { "MontoPrestamo", "Codigo", "100" };
+            orden[0] = new string[] { "Id", "Codigo", "60" };
+            orden[1] = new string[] { "Cuenta", "Cuenta", "180" };
+            orden[2] = new string[] { "Fechaprestamo", "Fecha de Prestamo", "150" };
+            orden[3] = new string[] { "Montoprestamo", "Monto", "100" };
+            orden[4] = new string[] { "Plazomeses", "Meses", "80" };
+            orden[5] = new string[] { "Usuario_creador", "Aprobado por", "100" };
 
 
             if (objetos != null)
@@ -58,6 +64,7 @@ namespace Sistema_Bancario.plataforma_controles
                         if (dato != null)
                         {
                             var datos = this.BLPrestamo.CronogramaPagosModelSelectbyIdPrestamo(dato.Id);
+                            this.cronograma2gui(datos);
                         }
                     }
                 }
@@ -68,45 +75,52 @@ namespace Sistema_Bancario.plataforma_controles
         {
             this.dataGridView1.Rows.Clear();
 
-
             foreach (var item in cronogramaPagosModels)
             {
-                this.dataGridView1.Rows.Add(item.Id.ToString(), item.Fechapago.ToString(), item.Monto.ToString(), item.Estado);
+                this.dataGridView1.Rows.Add(item.Id.ToString(), item.FechaCancelado.ToString(), item.Monto.ToString(), item.Amortizacion.ToString(), item.Interes.ToString(), item.Seguro.ToString(), item.Saldo.ToString(), item.DiaPago.ToString(), item.EstadoString.ToString());
             }
         }
 
         private void btnExportar_Click(object sender, EventArgs e)
         {
-            //Creating DataTable
-            DataTable dt = new DataTable();
-
-            //Adding the Columns
-            foreach (DataGridViewColumn column in dataGridView1.Columns)
+            try
             {
-                dt.Columns.Add(column.HeaderText, column.ValueType);
-            }
+                //Creating DataTable
+                DataTable dt = new DataTable();
 
-            //Adding the Rows
-            foreach (DataGridViewRow row in dataGridView1.Rows)
-            {
-                dt.Rows.Add();
-                foreach (DataGridViewCell cell in row.Cells)
+                //Adding the Columns
+                foreach (DataGridViewColumn column in dataGridView1.Columns)
                 {
-                    dt.Rows[dt.Rows.Count - 1][cell.ColumnIndex] = cell.Value.ToString();
+                    dt.Columns.Add(column.HeaderText, column.ValueType);
+                }
+
+                //Adding the Rows
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    dt.Rows.Add();
+                    foreach (DataGridViewCell cell in row.Cells)
+                    {
+                        dt.Rows[dt.Rows.Count - 1][cell.ColumnIndex] = cell.Value.ToString();
+                    }
+                }
+
+                SaveFileDialog x = new SaveFileDialog();
+                x.Filter = "xlsx files (*.xlsx)|*.xlsx";
+                x.FileName = $"Cronograma{DateTime.Now.ToLongDateString()}.xlsx";
+
+                if (x.ShowDialog() == DialogResult.OK)
+                {
+                    using (XLWorkbook wb = new XLWorkbook())
+                    {
+                        wb.Worksheets.Add(dt, "Cronogramas");
+                        wb.SaveAs(x.FileName);
+                    }
                 }
             }
-
-            SaveFileDialog x = new SaveFileDialog();
-            x.Filter = "xlsx files (*.xlsx)|*.xlsx";
-            x.FileName = $"Exportacion{DateTime.Now.ToLongDateString()}.xlsx";
-
-            if (x.ShowDialog() == DialogResult.OK)
+            catch (Exception)
             {
-                using (XLWorkbook wb = new XLWorkbook())
-                {
-                    wb.Worksheets.Add(dt, "Cronogramas");
-                    wb.SaveAs(x.FileName);
-                }
+                MessageBox.Show("Seleccione un cronograma");
+                return;
             }
         }
     }

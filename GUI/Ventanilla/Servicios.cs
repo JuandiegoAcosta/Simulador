@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using CNegocio.Ventanilla;
 using Modelos.Modelos;
+using Sistema_Bancario.Ventanilla;
 
 namespace Sistema_Bancario.Froms_opciones
 {
@@ -55,11 +56,17 @@ namespace Sistema_Bancario.Froms_opciones
                 RecaudosModel recaudos = new RecaudosModel();
                 recaudos.Nro_contrato = Convert.ToInt32(nroContrato1.TBNroContrato.Text);
                 recaudos.RowVersion = recaudosModels[i].RowVersion;
-                if (pagoServicioMethods.InsertPagoServicio(recaudos, o.Items[1].Text) > 0)
+                var a = pagoServicioMethods.InsertPagoServicio(recaudos, o.Items[1].Text);
+                if (a.Equals("Cobrado"))
                 {
-                    MessageBox.Show("Se Realiazo el pago correctamente");
+                    MessageBox.Show("Se realizo el pago correctamente");
+                    Recibo recibo = new Recibo();
+                    recibo.Show();
                 }
-
+                else
+                {
+                    MessageBox.Show("Erro: "+a);
+                }
          }
         }
 
@@ -126,7 +133,6 @@ namespace Sistema_Bancario.Froms_opciones
             }
             catch (Exception)
             {
-
 
             }
         }
