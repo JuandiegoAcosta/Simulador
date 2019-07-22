@@ -239,7 +239,9 @@ namespace Sistema_Bancario
             }
             else if (btn.Text.Equals("Tipo Cambio"))
             {
-                CrearControl<UserControl>(ViewTipoCambio.instance, btn);
+            ViewTipoCambio tipoCambio = ViewTipoCambio.instance;
+            tipoCambio.session = Session;
+                CrearControl<UserControl>(tipoCambio, btn);
             }
             else if (btn.Text.Equals("Pago Servicios"))
             {
