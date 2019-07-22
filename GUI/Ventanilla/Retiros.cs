@@ -1,4 +1,5 @@
 ﻿using CNegocio.Ventanilla;
+using Modelos.Modelos;
 using Modelos.Session;
 using Sistema_Bancario.Controles;
 using System;
@@ -22,9 +23,9 @@ namespace Sistema_Bancario.Froms_opciones
 
         #region [Variables Globales]
          private decimal m_monto = default(decimal);
-         private Int64 m_nroTarjeta = default(Int64);
+         private Int64 m_nrocuenta = default(Int64);
          private int m_clave = default(int);
-         private string m_doi = default(string);
+         private int m_doi = default(int);
       #endregion
       public Retiros()
         {
@@ -98,7 +99,7 @@ namespace Sistema_Bancario.Froms_opciones
             { return false; }
 
             if (!string.IsNullOrEmpty(this.nroCuenta1.TBNroCuenta.Text.Trim()))
-            { m_nroTarjeta = Convert.ToInt64(this.nroCuenta1.TBNroCuenta.Text.Trim()); }
+            { m_nrocuenta = Convert.ToInt64(this.nroCuenta1.TBNroCuenta.Text.Trim()); }
             else
             { return false; }
 
@@ -107,8 +108,8 @@ namespace Sistema_Bancario.Froms_opciones
             else
             { return false; }
 
-            if (!string.IsNullOrEmpty(this.doi1.TBDoi.Text.Trim()))
-            { m_doi = this.doi1.TBDoi.Text.Trim(); }
+            if (!string.IsNullOrEmpty(this.nroCuenta1.dni1.TBDni.Text.Trim()))
+            { m_doi = Convert.ToInt32(this.nroCuenta1.dni1.TBDni.Text.Trim()); }
             else
             { return false; }
 
@@ -125,11 +126,19 @@ namespace Sistema_Bancario.Froms_opciones
             if (SetItem())
             {
                 retirosMethods = new RetirosMethods();
-                StatusStrip o = this.TopLevelControl.Controls.Find("stStatus", true).FirstOrDefault() as StatusStrip;//o.Items[1].Text;
-                if (retirosMethods.InsertaRetiro(this.m_monto, this.m_nroTarjeta, this.m_clave, this.m_doi, o.Items[1].Text) > 0)
+                StatusStrip o = this.TopLevelControl.Controls.Find("stStatus", true).FirstOrDefault() as StatusStrip;
+                CuentasTarjetasModel cuentas = new CuentasTarjetasModel();
+                cuentas.Monto = this.m_monto;
+                cuentas.NroCuenta = this.m_nrocuenta;
+                cuentas.clave = this.m_clave;
+                cuentas.doi = this.m_doi;
+                cuentas.Usuario = o.Items[1].Text;
+                cuentas.RowVersion = nroCuenta1.VersionCuenta;
+                var a = retirosMethods.InsertaRetiro(cuentas);
+                if (a.Equals("Transferido"))
                     MessageBox.Show("Retiro con exito");
                 else
-                    MessageBox.Show("No se pudo generar el retiro");
+                    MessageBox.Show("No se pudo generar el retiro: "+a);
             }
             else
             {

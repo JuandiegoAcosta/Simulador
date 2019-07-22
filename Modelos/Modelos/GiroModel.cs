@@ -22,6 +22,6 @@ namespace Modelos.Modelos
         public DateTime FECHA_CREACION { get; set; }
         public byte Clave { get; set; }
         public string Moneda { get; set; }
-
+        public byte[] RowVer { get; set; }
     }
 }

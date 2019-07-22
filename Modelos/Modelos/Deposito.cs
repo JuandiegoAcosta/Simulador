@@ -13,6 +13,8 @@ namespace Modelos.Modelos
         public string Doi { get; set; }
 
         public string Usuario { get; set; }
+        public byte[] RowVer { get; set; }
+
         public Deposito() { }
     }
 }

@@ -397,7 +397,8 @@ namespace CDatos.Manager
                             Monto = reader[3],
                             FechaGiro = reader[4],
                             FechaRetiro = reader[5],
-                            Estado = reader[6]
+                            Estado = reader[6],
+                            RowVer = reader[7]
                         });
                     }
                 }
@@ -466,6 +467,7 @@ namespace CDatos.Manager
                     command.Parameters.AddWithValue("@Codigo", giro.Id);
                     command.Parameters.AddWithValue("@Usuario", giro.USUARIO_CREADOR);
                     command.Parameters.AddWithValue("@doi", giro.Id_PersonaOrigen);
+                    command.Parameters.AddWithValue("@RowVersion", giro.RowVer);
                     command.CommandType = CommandType.StoredProcedure;
                     command.CommandText = "GiroUpdateById";
 
@@ -485,13 +487,6 @@ namespace CDatos.Manager
                 return -1;
             }
         }
-
-
-
-
-
-
-
         #endregion
     }
 }

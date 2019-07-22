@@ -142,21 +142,26 @@ namespace Sistema_Bancario
                 }
                 return back;
          }
-         catch (Exception ex)
+         catch (Exception)
          {
             return back;
          }
       }
       private void button1_Click(object sender, EventArgs e)
-      {
+      {          
             SetLogin();
+            Cursor.Current = Cursors.WaitCursor;
             if (StartLogin())
             {
                 VentanaPrincipal ventanaPrincipal = new VentanaPrincipal(Session);
                 ClearLogin();
+                Cursor.Current = Cursors.Arrow;
                 Close();
             }
-            else MessageBox.Show("Error en las credenciales");
+            else
+            {
+                MessageBox.Show("Error en las credenciales");
+            }               
       }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

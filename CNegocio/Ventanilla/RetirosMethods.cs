@@ -1,4 +1,5 @@
 ﻿using CDatos.Manager;
+using Modelos.Modelos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,9 +17,9 @@ namespace CNegocio.Ventanilla
             retirosManager = new RetirosManager();
         }
         //RetiroInsert
-        public int InsertaRetiro(decimal monto,Int64 tarjeta,int clave,string doi,string usuario)
+        public string InsertaRetiro(CuentasTarjetasModel cuenta)
         {
-            return retirosManager.RetiroInsert(monto,tarjeta,clave,doi,usuario);
+            return retirosManager.RetiroInsert(cuenta);
         }
     }
 }

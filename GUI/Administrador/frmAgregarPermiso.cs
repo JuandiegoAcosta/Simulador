@@ -46,6 +46,7 @@ namespace Sistema_Bancario.Administrador
                 btnAgregar.Text = "Agregar +";
             }
         }
+
         public void Actualizar()
         {
             try
@@ -71,10 +72,11 @@ namespace Sistema_Bancario.Administrador
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
             }
         }
+
         public void Agregar()
         {
             try
@@ -104,10 +106,11 @@ namespace Sistema_Bancario.Administrador
                    }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
             }
         }
+
         public void llenarCombo()
         {
             try
@@ -120,11 +123,12 @@ namespace Sistema_Bancario.Administrador
                     cmbPadre.DisplayMember = "Nombre";
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Error en cargar componentes", "Componentes");
             }
         }
+
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             if (_editar)

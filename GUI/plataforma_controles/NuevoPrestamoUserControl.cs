@@ -48,6 +48,20 @@ namespace Sistema_Bancario.plataforma_controles
 
         #region Metodos
 
+        //Actualmente Desactivado
+        private void ConfigurarParametros()
+        {
+            //Por razones del simulador, la fecha del prestamo es variable, en un entorno real no deberia ser así
+
+            //this.nudPlazoMeses.Minimum = 1;
+            //this.nudPlazoMeses.Maximum = 360;
+            //this.nudPorcentajeInteres.Minimum = 0;
+            //this.nudPorcentajeInteres.Maximum = 300;
+            
+            //this.nudDiaPago.Minimum = 1;
+            //this.nudDiaPago.Maximum = 31;
+        }
+
         private void poblarCboMonedas()
         {
             var objetos = this.BLTipoMoneda.Moneda_ObtenerTodos();
@@ -67,8 +81,7 @@ namespace Sistema_Bancario.plataforma_controles
             try
             {
                 var objcuenta = this.BLCuenta.Cuenta_ObtenerUno(this.gCuenta.Nrocuenta);
-
-
+                
                 DateTime fechaPrestamo = this.dtpFechaPrestamo.Value;
                 decimal montoPrestamo = Convert.ToDecimal(this.txtMontoPrestamo.Text);
                 int moneda = (int)this.cboMoneda.SelectedValue;
@@ -140,6 +153,7 @@ namespace Sistema_Bancario.plataforma_controles
             this.nudPlazoMeses.Value = 1m;
             this.nudPorcentajeInteres.Value = 0m;
             this.nudDiaPago.Value = 1m;
+            this.chkEstado.Checked = false;
 
             this.SlblUsuario_creador.Text = "*";
             this.SlblFecha_creacion.Text = "*";
@@ -153,9 +167,6 @@ namespace Sistema_Bancario.plataforma_controles
 
             this.buttonActualizar.Enabled = false;
             this.buttonEliminar.Enabled = false;
-
-            this.buttonActualizar.Visible = false;
-            this.buttonEliminar.Visible = false;
 
             this.buttonNuevo.Enabled = false;
             this.buttonCrear.Enabled = true;
@@ -174,7 +185,6 @@ namespace Sistema_Bancario.plataforma_controles
             this.nudPorcentajeInteres.Enabled = true;
             this.nudDiaPago.Enabled = true;
             this.chkEstado.Enabled = true;
-            this.chkEstado.Checked = true;
         }
 
         private void modoInicial()
@@ -183,9 +193,6 @@ namespace Sistema_Bancario.plataforma_controles
 
             this.buttonActualizar.Enabled = false;
             this.buttonEliminar.Enabled = false;
-
-            this.buttonActualizar.Visible = false;
-            this.buttonEliminar.Visible = false;
 
             this.buttonNuevo.Enabled = true;
             this.buttonCrear.Enabled = false;
@@ -204,7 +211,6 @@ namespace Sistema_Bancario.plataforma_controles
             this.nudPorcentajeInteres.Enabled = false;
             this.nudDiaPago.Enabled = false;
             this.chkEstado.Enabled = false;
-            this.chkEstado.Checked = false;
         }
 
         private void modoEdicion()
@@ -212,10 +218,8 @@ namespace Sistema_Bancario.plataforma_controles
             this.modo = "modoEdicion";
 
             this.buttonCrear.Enabled = false;
-            this.buttonActualizar.Enabled = false;
-            this.buttonEliminar.Enabled = false;
-            this.buttonEliminar.Visible = false;
-            this.buttonActualizar.Visible = false;
+            this.buttonActualizar.Enabled = true;
+            this.buttonEliminar.Enabled = true;
 
             this.cboMoneda.Enabled = false;
             this.txtCuenta.Enabled = false;
@@ -223,22 +227,24 @@ namespace Sistema_Bancario.plataforma_controles
 
             this.dtpFechaPrestamo.Enabled = false;
             this.txtMontoPrestamo.Enabled = false;
-            this.txtMontoMora.Enabled = false;
+            this.txtMontoMora.Enabled = true;
             this.nudPlazoMeses.Enabled = false;
             this.nudPorcentajeInteres.Enabled = false;
             this.nudDiaPago.Enabled = false;
             this.chkEstado.Enabled = false;
-
         }
 
         private void buscarCuenta(List<CuentasModel> objetos)
         {
-            string[][] orden = new string[4][];
+            string[][] orden = new string[7][];
 
-            orden[0] = new string[] { "NroCuenta", "Numero Cuenta", "150" };
+            orden[0] = new string[] { "NroCuenta", "Numero Cuenta", "130" };
             orden[1] = new string[] { "TipoCuenta", "Tipo Cuenta", "100" };
-            orden[2] = new string[] { "SaldoContable", "Saldo Contable", "90" };
-            orden[3] = new string[] { "SaldoDisponible", "Saldo Disponible", "90" };
+            orden[2] = new string[] { "SaldoContable", "Saldo Contable", "100" };
+            orden[3] = new string[] { "SaldoDisponible", "Saldo Disponible", "80" };
+            orden[4] = new string[] { "FECHA_CREACION", "Creado", "120" };
+            orden[5] = new string[] { "FECHA_MODIFICACION", "Modificado", "120" };
+            orden[6] = new string[] { "Estado", "Activo", "60" };
 
             if (objetos != null)
             {
@@ -266,14 +272,19 @@ namespace Sistema_Bancario.plataforma_controles
                                     MessageBox.Show("No tiene prestamos asociados a esta cuenta");
                                     return;
                                 }
-
-
                                 this.buscarPrestamo(Prestamos);
                             }
                             else
                             {
-                                this.clearForm();
-                                this.cuenta2gui(this.gCuenta);
+                                if (gCuenta.Estado == true)
+                                {
+                                    this.clearForm();
+                                    this.cuenta2gui(this.gCuenta);
+                                }
+                                else
+                                {
+                                    MessageBox.Show("No puede usar una cuenta inactiva para esta transacción");
+                                }
                             }
 
                         }
@@ -284,13 +295,14 @@ namespace Sistema_Bancario.plataforma_controles
 
         private void buscarPrestamo(List<PrestamosModel> objetos)
         {
-            string[][] orden = new string[4][];
+            string[][] orden = new string[6][];
 
-            orden[0] = new string[] { "ID", "Codigo", "80" };
-            orden[1] = new string[] { "FechaPrestamo", "Fecha de Prestamo", "150" };
-            orden[2] = new string[] { "Cuenta", "Cuenta", "200" };
-            orden[3] = new string[] { "MontoPrestamo", "Monto", "100" };
-
+            orden[0] = new string[] { "Id", "Codigo", "60" };
+            orden[1] = new string[] { "Cuenta", "Cuenta", "180" };
+            orden[2] = new string[] { "Fechaprestamo", "Fecha de Prestamo", "150" };
+            orden[3] = new string[] { "Montoprestamo", "Monto", "100" };
+            orden[4] = new string[] { "Plazomeses", "Meses", "80" };
+            orden[5] = new string[] { "Usuario_creador", "Aprobado por", "100" };
 
             if (objetos != null)
             {
@@ -366,7 +378,7 @@ namespace Sistema_Bancario.plataforma_controles
 
             if (objeto == null)
             {
-                MessageBox.Show("Problemas al instanciar el nuevo objeto, revise las propiedas");
+                MessageBox.Show("Problemas al extraer desde la base de datos");
                 return;
             }
 
@@ -376,11 +388,14 @@ namespace Sistema_Bancario.plataforma_controles
             objeto.Usuario_modificador = this.gUsuario;
             objeto.Fecha_modificacion = BLFechaHoraServidor.Obtener();
 
-            if (this.BLPrestamo.Prestamo_Editar(objeto))
+            if (MessageBox.Show("¿Está seguro que desea modificar el préstamo? Esta operacion puede afectar los pagos futuros", "Advertencia", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                MessageBox.Show("El proceso ha sido correcto");
-                this.clearForm();
-                this.modoInicial();
+                if (this.BLPrestamo.Prestamo_Editar(objeto))
+                {
+                    MessageBox.Show("El prestamo se ha actualizado correctamente");
+                    this.clearForm();
+                    this.modoInicial();
+                }
             }
         }
 
@@ -388,14 +403,21 @@ namespace Sistema_Bancario.plataforma_controles
         {
             if (this.gPrestamo == null)
             {
-                MessageBox.Show("Problemas al obtener el objeto de base de datos");
+                MessageBox.Show("Problemas al extraer desde la base de datos");
                 return;
             }
-            if (this.BLPrestamo.Prestamo_Borrar(this.gPrestamo.Id))
+            if (MessageBox.Show("¿Está que quiere eliminar el préstamo? Este proceso no podrá ser revertido", "Advertencia", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                this.clearForm();
-                this.modoInicial();
-                MessageBox.Show("El proceso ha sido correcto");
+                if (this.BLPrestamo.Prestamo_Borrar(this.gPrestamo.Id))
+                {
+                    this.clearForm();
+                    this.modoInicial();
+                    MessageBox.Show("Se ha eliminado correctamente");
+                }
+            }
+            else
+            {
+                MessageBox.Show("No se pudo eliminar debido a que tiene cronogramas asociados");
             }
         }
 
@@ -429,6 +451,45 @@ namespace Sistema_Bancario.plataforma_controles
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.') e.Handled = true;
             if (e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1) e.Handled = true;
+        }
+
+        private void NudDiaPago_ValueChanged(object sender, System.EventArgs e)
+        {
+            int numero = (int)nudDiaPago.Value;
+            if(numero < 1)
+            {
+                nudDiaPago.Value = 1;
+            }
+            else if (numero > 31)
+            {
+                nudDiaPago.Value = 31;
+            }
+        }
+
+        private void NudPorcentajeInteres_ValueChanged(object sender, System.EventArgs e)
+        {
+            decimal numero = nudPorcentajeInteres.Value;
+            if (numero < 0)
+            {
+                nudPorcentajeInteres.Value = 0;
+            }
+            else if (numero > 80)
+            {
+                nudPorcentajeInteres.Value = 80;
+            }
+        }
+
+        private void NudPlazoMeses_ValueChanged(object sender, System.EventArgs e)
+        {
+            int numero = (int)nudPlazoMeses.Value;
+            if (numero < 1)
+            {
+                nudPlazoMeses.Value = 1;
+            }
+            else if (numero > 60)
+            {
+                nudPlazoMeses.Value = 60;
+            }
         }
 
         #endregion

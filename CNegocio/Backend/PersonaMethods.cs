@@ -94,6 +94,12 @@ namespace CNegocio.Backend
         {
             return ADPersonaManager.personaSelectbyApellidos(aValue);
         }
+        public List<PersonaU> personaSelectbyNombresApellidos(string aValue)
+        {
+            return ADPersonaManager.personaSelectbyNombresApellidos(aValue);
+        }
+
+        //personaSelectbyNombresApellidos
 
         /// <summary>
         /// Selects the Multiple objects of persona table by a given criteria.

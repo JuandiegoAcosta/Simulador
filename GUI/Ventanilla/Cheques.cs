@@ -14,11 +14,13 @@ namespace Sistema_Bancario.Ventanilla
 {
     public partial class Cheques : Base
     {
+        VersionesModel Versiones;
         public Cheques()
         {
             InitializeComponent();
             nroCuenta1.Visible = false;
             proceder1.BTProceder.Click += BTProceder_Click;
+            dni2.TBDni.ReadOnly = true;             
         }
 
         private void BTProceder_Click(object sender, EventArgs e)
@@ -40,7 +42,10 @@ namespace Sistema_Bancario.Ventanilla
             cheque.Monto = Convert.ToInt32(monto1.TBMonto.Text);
             cheque.Usuario_creacion = o.Items[1].Text;
             cheque.DOI = dni2.TBDni.Text;
-                        
+            cheque.RowverCDestino = nroCuenta1.VersionCuenta;
+            cheque.RowVerCheque = Versiones.Version1;
+            cheque.RowVerChequera = Versiones.Version2;
+            
             string result = cobroCheque.CobroInsert(cheque, nroCuenta1.TBNroCuenta.Text);
             MessageBox.Show(result);
             //if( result.Equals("-1"))
@@ -82,6 +87,16 @@ namespace Sistema_Bancario.Ventanilla
                 nroCuenta1.Visible = false;
             }
             
+        }
+
+        private void TBNroCheque_TextChanged(object sender, EventArgs e)
+        {
+            CobroChequeMethods cobroChequeMethods = new CobroChequeMethods();
+            Versiones =  cobroChequeMethods.Versionchequera(Convert.ToInt32(TBNroCheque.Text));
+
+
+
+           
         }
     }
 }

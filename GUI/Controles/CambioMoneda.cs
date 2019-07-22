@@ -113,12 +113,13 @@ namespace Sistema_Bancario.Controles
                 if (flag == true)
                 {
                     Decimal C = A * B;
-                    txtConversion.Text = Convert.ToString(C);
+                    txtConversion.Text = Decimal.Round(C, 3).ToString();
                 }
                 else if (flag == false)
                 {
                     Decimal C = D * B;
-                    txtConversion.Text = Convert.ToString(C);
+                
+                    txtConversion.Text = Decimal.Round(C, 3).ToString();
                 }
             }
             else
@@ -136,12 +137,12 @@ namespace Sistema_Bancario.Controles
                 if (flag == true)
                 {
                     Decimal C = B / A;
-                    txtConversion.Text = Convert.ToString(C);
+                    txtConversion.Text = Decimal.Round(C, 3).ToString();
                 }
                 else if (flag == false)
                 {
                     Decimal C = D / B;
-                    txtConversion.Text = Convert.ToString(C);
+                    txtConversion.Text = Decimal.Round(C, 3).ToString();
                 }
             }
             else

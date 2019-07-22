@@ -54,7 +54,9 @@
     <Compile Include="Modelos\CronogramaPagosModel.cs" />
     <Compile Include="Modelos\CuentaPersonaMonedaModel.cs" />
     <Compile Include="Modelos\CuentasModel.cs" />
+    <Compile Include="Modelos\CuentasPersona.cs" />
     <Compile Include="Modelos\CuentasTarjetasModel.cs" />
+    <Compile Include="Modelos\CuotasModel.cs" />
     <Compile Include="Modelos\Deposito.cs" />
     <Compile Include="Modelos\DetalleCajaChicaModel.cs" />
     <Compile Include="Modelos\EmpresaModel.cs" />
@@ -64,6 +66,7 @@
     <Compile Include="Modelos\PagoServiciosModel.cs" />
     <Compile Include="Modelos\PermisosUsuarioModel.cs" />
     <Compile Include="Modelos\PersonaModel.cs" />
+    <Compile Include="Modelos\PersonaU.cs" />
     <Compile Include="Modelos\PrestamosModel.cs" />
     <Compile Include="Modelos\RecaudosModel.cs" />
     <Compile Include="Modelos\RolesModel.cs" />
@@ -76,6 +79,7 @@
     <Compile Include="Modelos\TurnosModel.cs" />
     <Compile Include="Modelos\TurnoUsuarioModel.cs" />
     <Compile Include="Modelos\VentanillaModel.cs" />
+    <Compile Include="Modelos\VersionesModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Modelos\TipoCambioModel.cs" />
     <Compile Include="Session\ISession.cs" />

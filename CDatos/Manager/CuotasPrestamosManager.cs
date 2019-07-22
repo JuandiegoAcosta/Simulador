@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Modelos.Modelos;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -70,10 +71,10 @@ namespace CDatos.Manager
             throw new NotImplementedException();
         }
 
-        public List<object> CuotasSelect(int aValue)
+        public List<CronogramaPagosModel> CuotasSelect(int aValue)
         {
 
-            List<object> cuotas = new List<object>();
+            List<CronogramaPagosModel> cuotas = new List<CronogramaPagosModel>();
 
 
             using (var connection = Util.ConnectionFactory.conexion())
@@ -95,13 +96,14 @@ namespace CDatos.Manager
                     while (reader.Read())
                     {
 
-                        cuotas.Add(new
+                        cuotas.Add(new CronogramaPagosModel
                         {
                             //someBool ? "true" : "false";
-                            Codigo = reader[0],
-                            Cuota = reader[1],
-                            Monto = reader[2],
-                            Estado = ((int)reader[3] == 1) ? "Pagado":"Debe"
+                            Id = (int)reader[0],
+                            Diapago = (DateTime)reader[1],
+                            Monto = (decimal)reader[2],
+                            EstadoString = (string)reader[3],
+                            RowVer = (byte[])reader[4]
                         });
                     }
                 }
@@ -112,7 +114,7 @@ namespace CDatos.Manager
 
         }
         //CronogramaPagosInsertById
-        public int CuotasInsert(int CuotaID,string Usuario)
+        public string CuotasInsert(CuotasModel Cuotas)
         {
 
             //  List<object> cuotas = new List<object>();
@@ -124,8 +126,9 @@ namespace CDatos.Manager
 
                 SqlCommand command = connection.CreateCommand();
 
-                command.Parameters.AddWithValue("@Cuota", CuotaID);
-                command.Parameters.AddWithValue("@Usuario", Usuario);
+                command.Parameters.AddWithValue("@Cuota", Cuotas.CuotaID);
+                command.Parameters.AddWithValue("@Usuario", Cuotas.Usuario);
+                command.Parameters.AddWithValue("@RowVer", Cuotas.RowVer);
 
                 command.CommandType = CommandType.StoredProcedure;
 
@@ -135,7 +138,7 @@ namespace CDatos.Manager
 
             }
 
-            return reader;
+            return reader.ToString();
 
 
         }

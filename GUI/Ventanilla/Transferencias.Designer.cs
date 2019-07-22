@@ -33,23 +33,23 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.nroCuenta1 = new Sistema_Bancario.Controles.NroCuenta();
             this.tipoMoneda1 = new Sistema_Bancario.Controles.TipoMoneda();
-            this.doi1 = new Sistema_Bancario.Doi();
             this.clave1 = new Sistema_Bancario.Controles.Clave();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.nroCuenta2 = new Sistema_Bancario.Controles.NroCuenta();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // proceder1
             // 
-            this.proceder1.Location = new System.Drawing.Point(6, 403);
+            this.proceder1.Location = new System.Drawing.Point(6, 383);
             this.proceder1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.proceder1.Size = new System.Drawing.Size(703, 40);
             // 
             // txtMonto
             // 
-            this.txtMonto.Location = new System.Drawing.Point(95, 101);
+            this.txtMonto.Location = new System.Drawing.Point(73, 112);
             this.txtMonto.Name = "txtMonto";
             this.txtMonto.Size = new System.Drawing.Size(196, 20);
             this.txtMonto.TabIndex = 28;
@@ -58,18 +58,18 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(18, 105);
+            this.label3.Location = new System.Drawing.Point(17, 115);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 13);
+            this.label3.Size = new System.Drawing.Size(41, 13);
             this.label3.TabIndex = 27;
-            this.label3.Text = "Monto :";
+            this.label3.Text = "Monto";
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.Window;
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.nroCuenta1);
             this.groupBox1.Controls.Add(this.tipoMoneda1);
-            this.groupBox1.Controls.Add(this.doi1);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtMonto);
             this.groupBox1.Controls.Add(this.clave1);
@@ -78,41 +78,35 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(687, 194);
+            this.groupBox1.Size = new System.Drawing.Size(687, 165);
             this.groupBox1.TabIndex = 38;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Persona Origen";
             // 
             // nroCuenta1
             // 
+            this.nroCuenta1.EstadoCuenta = null;
             this.nroCuenta1.Location = new System.Drawing.Point(12, 17);
             this.nroCuenta1.Margin = new System.Windows.Forms.Padding(2);
             this.nroCuenta1.Name = "nroCuenta1";
-            this.nroCuenta1.Size = new System.Drawing.Size(671, 79);
+            this.nroCuenta1.Size = new System.Drawing.Size(671, 90);
             this.nroCuenta1.TabIndex = 40;
+            this.nroCuenta1.VersionCuenta = null;
             // 
             // tipoMoneda1
             // 
-            this.tipoMoneda1.Location = new System.Drawing.Point(311, 98);
+            this.tipoMoneda1.Location = new System.Drawing.Point(274, 107);
             this.tipoMoneda1.Margin = new System.Windows.Forms.Padding(2);
             this.tipoMoneda1.Name = "tipoMoneda1";
             this.tipoMoneda1.Size = new System.Drawing.Size(133, 25);
             this.tipoMoneda1.TabIndex = 37;
             // 
-            // doi1
-            // 
-            this.doi1.Location = new System.Drawing.Point(21, 158);
-            this.doi1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.doi1.Name = "doi1";
-            this.doi1.Size = new System.Drawing.Size(181, 27);
-            this.doi1.TabIndex = 36;
-            // 
             // clave1
             // 
-            this.clave1.Location = new System.Drawing.Point(21, 126);
+            this.clave1.Location = new System.Drawing.Point(73, 137);
             this.clave1.Margin = new System.Windows.Forms.Padding(2);
             this.clave1.Name = "clave1";
-            this.clave1.Size = new System.Drawing.Size(240, 28);
+            this.clave1.Size = new System.Drawing.Size(159, 20);
             this.clave1.TabIndex = 35;
             // 
             // groupBox2
@@ -120,22 +114,33 @@
             this.groupBox2.BackColor = System.Drawing.SystemColors.Window;
             this.groupBox2.Controls.Add(this.nroCuenta2);
             this.groupBox2.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.groupBox2.Location = new System.Drawing.Point(22, 220);
+            this.groupBox2.Location = new System.Drawing.Point(22, 191);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(687, 99);
+            this.groupBox2.Size = new System.Drawing.Size(687, 118);
             this.groupBox2.TabIndex = 39;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Persona Destino";
             // 
             // nroCuenta2
             // 
+            this.nroCuenta2.EstadoCuenta = null;
             this.nroCuenta2.Location = new System.Drawing.Point(12, 17);
             this.nroCuenta2.Margin = new System.Windows.Forms.Padding(2);
             this.nroCuenta2.Name = "nroCuenta2";
-            this.nroCuenta2.Size = new System.Drawing.Size(671, 80);
+            this.nroCuenta2.Size = new System.Drawing.Size(671, 89);
             this.nroCuenta2.TabIndex = 35;
+            this.nroCuenta2.VersionCuenta = null;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(18, 140);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(34, 13);
+            this.label1.TabIndex = 41;
+            this.label1.Text = "Clave";
             // 
             // Transferencias
             // 
@@ -145,7 +150,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Transferencias";
             this.Padding = new System.Windows.Forms.Padding(6);
-            this.Size = new System.Drawing.Size(715, 449);
+            this.Size = new System.Drawing.Size(715, 429);
             this.Controls.SetChildIndex(this.proceder1, 0);
             this.Controls.SetChildIndex(this.groupBox1, 0);
             this.Controls.SetChildIndex(this.groupBox2, 0);
@@ -162,9 +167,9 @@
         private Controles.Clave clave1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private Doi doi1;
         private Controles.TipoMoneda tipoMoneda1;
         private Controles.NroCuenta nroCuenta1;
         private Controles.NroCuenta nroCuenta2;
+        private System.Windows.Forms.Label label1;
     }
 }

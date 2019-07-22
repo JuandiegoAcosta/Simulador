@@ -209,9 +209,9 @@ namespace CDatos.Manager
 
                 return TipoMonedaModel;
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                throw;
+                //throw;
                 return null;
             }
         }

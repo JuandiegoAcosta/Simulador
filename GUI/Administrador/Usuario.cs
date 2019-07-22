@@ -70,7 +70,7 @@ namespace Sistema_Bancario.Administrador
 
             }
 
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -107,7 +107,7 @@ namespace Sistema_Bancario.Administrador
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -128,7 +128,7 @@ namespace Sistema_Bancario.Administrador
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -157,7 +157,7 @@ namespace Sistema_Bancario.Administrador
 
             }
 
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -196,7 +196,7 @@ namespace Sistema_Bancario.Administrador
 
             }
 
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }

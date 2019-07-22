@@ -557,7 +557,7 @@ namespace CDatos.Manager
             }
         }
 
-        public CuentaPersonaMonedaModel ValidarCuenta(Int64 aNroCuenta)
+        public CuentaPersonaMonedaModel ValidarCuenta(string aNroCuenta)
         {
             CuentaPersonaMonedaModel cuenta = null;
 
@@ -645,9 +645,57 @@ namespace CDatos.Manager
             }
         }
 
+        public List<CuentasPersona> ListaCuentas(string DNI)
+        {
+            try
+            {
+                using (var connection = Util.ConnectionFactory.conexion())
+                {
+                    connection.Open();
+                    List<CuentasPersona> cuentas =new List<CuentasPersona>();
+                    SqlTransaction sqlTran = connection.BeginTransaction();
 
+                    SqlCommand command = connection.CreateCommand();
+
+                    command.Transaction = sqlTran;
+
+                    command.Parameters.AddWithValue("@DNI", DNI);
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.CommandText = "SelectCuentasbyDNI";
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            string NroCuenta = (string)reader[0];
+                            string Estado = ((bool)reader[1]).ToString();
+                            string TipoCuenta = (string)reader[2];
+
+                            cuentas.Add(new CuentasPersona
+                            {
+                                NroCuenta = NroCuenta,
+                                Estado = Estado,
+                                TipoCuenta = TipoCuenta
+                            });
+                        }
+                    }
+
+                    // Commit the transaction.
+                    //sqlTran.Commit();
+
+                    connection.Close();
+                    connection.Dispose();
+
+                    return cuentas;
+                }
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
         #endregion
-
     }
-
 }

@@ -19,7 +19,7 @@ namespace Sistema_Bancario.Froms_opciones
         {
             InitializeComponent();
             proceder1.BTProceder.Click += BTProceder_Click;
-            nroCuenta1.LbTarjeta.Text = "Nro Cuenta / Tarjeta";
+           // nroCuenta1.LbTarjeta.Text = "Nro Cuenta / Tarjeta";
             nroCuenta1.BtValidar.Click += BtValidar_Click;
         }
 
@@ -31,34 +31,42 @@ namespace Sistema_Bancario.Froms_opciones
         }
 
         private bool SetItem()
-      {
-         CuentasTarjetasModel = new CuentasTarjetasModel();
-         if (!string.IsNullOrEmpty(this.txtMonto.Text.Trim()))
-            CuentasTarjetasModel.Monto = Convert.ToDecimal(this.txtMonto.Text.Trim());
-         else
-            return false;
+        {
+            CuentasTarjetasModel = new CuentasTarjetasModel();
+            bool flag = false;
+            if (!string.IsNullOrEmpty(this.txtMonto.Text.Trim()))
+                CuentasTarjetasModel.Monto = Convert.ToDecimal(this.txtMonto.Text.Trim());
+            else
+                flag = false;
+            if (!string.IsNullOrEmpty(this.nroCuenta1.TBNroCuenta.Text.Trim()))
+                CuentasTarjetasModel.NroCuenta = Convert.ToInt64(this.nroCuenta1.TBNroCuenta.Text.Trim());
+            else
+                flag = false;
 
-         if (!string.IsNullOrEmpty(this.nroCuenta1.TBNroCuenta.Text.Trim()))
-            CuentasTarjetasModel.NroCuenta = Convert.ToInt64(this.nroCuenta1.TBNroCuenta.Text.Trim());
-         else
-            return false;
+            if (!string.IsNullOrEmpty(this.nroCuenta2.TBNroCuenta.Text.Trim()))
+                CuentasTarjetasModel.NroCuentaDestino = Convert.ToInt64(this.nroCuenta2.TBNroCuenta.Text.Trim());
+            else
+                flag = false;
 
-         if (!string.IsNullOrEmpty(this.nroCuenta2.TBNroCuenta.Text.Trim()))
-            CuentasTarjetasModel.NroCuentaDestino = Convert.ToInt64(this.nroCuenta2.TBNroCuenta.Text.Trim());
-         else
-            return false;
+            if (!string.IsNullOrEmpty(this.nroCuenta1.dni1.TBDni.Text.Trim()))
+                CuentasTarjetasModel.doi = Convert.ToInt32(this.nroCuenta1.dni1.TBDni.Text.Trim());
+            else
+                flag = false;
 
-         if (!string.IsNullOrEmpty(this.doi1.TBDoi.Text.Trim()))
-            CuentasTarjetasModel.doi = Convert.ToInt32(this.doi1.TBDoi.Text.Trim());
-         else
-            return false;
+            if (!string.IsNullOrEmpty(clave1.TBClave.Text.Trim()))
+                CuentasTarjetasModel.clave = Convert.ToInt32(clave1.TBClave.Text.Trim());
+            else
+                flag = false;
+            if (nroCuenta1.TBNroCuenta.Text.Equals(nroCuenta2.TBNroCuenta.Text))
+                flag = false;
 
-         if (!string.IsNullOrEmpty(clave1.TBClave.Text.Trim()))
-            CuentasTarjetasModel.clave = Convert.ToInt32(clave1.TBClave.Text.Trim());
-         else
-            return false;
-
-         return true;
+            if (flag == false)
+            {
+                MessageBox.Show("Se encontro campos incorrectamente ingresados");
+                return flag;
+            }             
+            else
+                return true;
       }
 
         private void BTProceder_Click(object sender, EventArgs e)
@@ -74,18 +82,17 @@ namespace Sistema_Bancario.Froms_opciones
                 CuentasTarjetasModel.RowVersion = nroCuenta1.VersionCuenta;
                 CuentasTarjetasModel.RowVersionD = nroCuenta2.VersionCuenta;
                 string a = transferenciasMethods.RealizarTransferencia(CuentasTarjetasModel);
-                if (!a.Equals("Error"))
+                if (a.Equals("Transferido"))
                 {
                     MessageBox.Show("Operacion Realizada");
                     nroCuenta1.LimpiarControles();
                     nroCuenta2.LimpiarControles();
                     txtMonto.Clear();
-                    doi1.TBDoi.Clear();
+                    nroCuenta1.dni1.TBDni.Clear();
                     clave1.TBClave.Clear();
-                }
-              
+                }             
             else
-               MessageBox.Show("No se pudo realizar la operación:"+a);
+               MessageBox.Show("No se pudo realizar la operación: "+a);
          } 
         }
 

@@ -103,8 +103,7 @@
             this.nudPlazoMeses.Name = "nudPlazoMeses";
             this.nudPlazoMeses.Size = new System.Drawing.Size(92, 20);
             this.nudPlazoMeses.TabIndex = 486;
-            this.nudPlazoMeses.Minimum = 1;
-            this.nudPlazoMeses.Maximum = 360;
+            this.nudPlazoMeses.ValueChanged += NudPlazoMeses_ValueChanged;
             // 
             // nudPorcentajeInteres
             // 
@@ -112,8 +111,7 @@
             this.nudPorcentajeInteres.Name = "nudPorcentajeInteres";
             this.nudPorcentajeInteres.Size = new System.Drawing.Size(92, 20);
             this.nudPorcentajeInteres.TabIndex = 487;
-            this.nudPorcentajeInteres.Minimum = 0;
-            this.nudPorcentajeInteres.Maximum = 300;
+            this.nudPorcentajeInteres.ValueChanged += NudPorcentajeInteres_ValueChanged;
             // 
             // label1
             // 
@@ -242,8 +240,7 @@
             this.nudDiaPago.Name = "nudDiaPago";
             this.nudDiaPago.Size = new System.Drawing.Size(92, 20);
             this.nudDiaPago.TabIndex = 501;
-            this.nudDiaPago.Minimum = 1;
-            this.nudDiaPago.Maximum = 28;
+            this.nudDiaPago.ValueChanged += NudDiaPago_ValueChanged;
             // 
             // label10
             // 
@@ -459,7 +456,7 @@
             this.PerformLayout();
 
         }
-
+        
         #endregion
 
         private System.Windows.Forms.Label label4;

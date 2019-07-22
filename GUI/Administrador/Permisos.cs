@@ -73,7 +73,7 @@ namespace Sistema_Bancario.Administrador
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Error en cargar componentes", "Componentes");
             }
@@ -93,7 +93,7 @@ namespace Sistema_Bancario.Administrador
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Error en cargar roles", "Roles");
             }
@@ -114,7 +114,7 @@ namespace Sistema_Bancario.Administrador
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Error en cargar Usuarios", "Usuarios");
             }
@@ -293,7 +293,7 @@ namespace Sistema_Bancario.Administrador
 
             }
 
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -301,61 +301,11 @@ namespace Sistema_Bancario.Administrador
 
 
         }
-        private bool cNuevo = true;
 
         private void btnAgregarNuevoComponente_Click(object sender, EventArgs e)
         {
-           // try
-           // {
-           //     using (WsSistemaBancario.ComponenteServiceClient componente = new WsSistemaBancario.ComponenteServiceClient())
-           //     {
-           //         if (cNuevo)
-           //         {//agregar
-           //
-           //             ComponenteModel nuevoComponente = new ComponenteModel
-           //             {
-           //                 Nombre = txtNombeAgregar.Text,
-           //                 Codigo = txtCodigoAgregar.Text,
-           //                 Descripcion = txtDescripcionAgregar.Text,
-           //                 Id_aplicacion = 1,
-           //                 Estado = (checkEstadoAgregar.Checked) ? true : false,
-           //                 IdPadre = (int)cmbComponentesPadreAgregar.SelectedValue
-           //             };
-           //
-           //             if (!(componente.Componente_Crear(nuevoComponente, 8)))
-           //             {
-           //                 MessageBox.Show("Error al registrar Dato");
-           //             }
-           //         }
-           //         else
-           //         {
-           //             //actualizar
-           //             componenteActualizar.Nombre = txtNombeAgregar.Text;
-           //             componenteActualizar.Descripcion = txtDescripcionAgregar.Text;
-           //             componenteActualizar.Id_aplicacion = 1;
-           //             componenteActualizar.Estado = (checkEstadoAgregar.Checked) ? true : false;
-           //             componenteActualizar.IdPadre = (int)cmbComponentesPadreAgregar.SelectedIndex;
-           //
-           //             if (!(componente.Componente_Editar(componenteActualizar, 8)))
-           //             {
-           //                 MessageBox.Show("Error al actualizar Dato");
-           //             }
-           //             
-           //         }
-           //         pnlPrincipal.BringToFront();
-           //         pnlSecundario.SendToBack();
-           //         pnlAgregar.SendToBack();
-           //         pnlAgregarPermisos.SendToBack();
-           //     }
-           //
-           // }
-           // catch (Exception ex)
-           // {
-           //     MessageBox.Show("Error en cargar componentes", "Componentes");
-           // }
-           // Listar_Componentes();
-           //
         }
+
         private void btnAgregarPermiso_Click(object sender, EventArgs e)
         {
             frmAgregarPermiso p = new frmAgregarPermiso(false);

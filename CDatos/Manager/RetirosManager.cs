@@ -11,9 +11,9 @@ namespace CDatos.Manager
 {
    public class RetirosManager
     {
-        public int RetiroInsert(decimal Monto,Int64 Tarjeta,int Clave,string doi,string Usuario)
+        public string RetiroInsert(CuentasTarjetasModel cuentas)
         {
-            int afectados=0;
+            string afectados;
             try
             {
                 using (var connection = Util.ConnectionFactory.conexion())
@@ -27,16 +27,21 @@ namespace CDatos.Manager
                     command.Transaction = sqlTran;
 
 
-                    command.Parameters.AddWithValue("@Monto",Monto);
-                    command.Parameters.AddWithValue("@NroCuenta", Tarjeta);
-                    command.Parameters.AddWithValue("@Clave",Clave);
-                    command.Parameters.AddWithValue("@doi", doi);
-                    command.Parameters.AddWithValue("@Usuario", Usuario);
-
+                    command.Parameters.AddWithValue("@Monto",cuentas.Monto);
+                    command.Parameters.AddWithValue("@NroCuenta", cuentas.NroCuenta);
+                    command.Parameters.AddWithValue("@Clave",cuentas.clave);
+                    command.Parameters.AddWithValue("@doi", cuentas.doi);
+                    command.Parameters.AddWithValue("@Usuario", cuentas.Usuario);
+                    command.Parameters.AddWithValue("@RowVer", cuentas.RowVersion);
                     command.CommandType = CommandType.StoredProcedure;
                     command.CommandText = "RetirosInsert";
 
-                    afectados = command.ExecuteNonQuery();
+                    object a = command.ExecuteScalar();
+
+                    if (a != null)
+                        afectados = (string)a;
+                    else
+                        afectados = "Transferido";
 
                     // Commit the transaction.
                     sqlTran.Commit();
@@ -46,9 +51,9 @@ namespace CDatos.Manager
                     return afectados;
                 }
             }
-            catch (Exception)
+            catch (SqlException e)
             {
-               
+                afectados = e.Errors[0].Message.ToString();
                 return afectados;
             }
         }

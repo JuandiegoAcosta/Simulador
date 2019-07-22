@@ -22,7 +22,7 @@ namespace Sistema_Bancario.plataforma_controles
 
         private string modo;
         private CuentasModel gCuenta;
-        private ChequerasModel gChequera;
+        //private ChequerasModel gChequera;
         private string gUsuario;
 
         public RegistrarChequera(ISession isesion)
