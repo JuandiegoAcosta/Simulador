@@ -179,6 +179,8 @@ namespace Sistema_Bancario.plataforma_controles
             this.txtTelefono.Enabled = true;
             this.chkEstado.Enabled = true;
             this.cboTipo_documento.Enabled = true;
+            this.cboTipo_documento.SelectedIndex = 0;
+            this.cboTipoPersona.SelectedIndex = 0;
             this.cboTipoPersona.Enabled = true;
             this.dtpFecha_nacimiento.Enabled = true;
 
@@ -271,17 +273,67 @@ namespace Sistema_Bancario.plataforma_controles
 
         private void buttonCrear_Click(object sender, EventArgs e)
         {
+            var objeto = this.gui2persona();
 
+            if (objeto == null)
+            {
+                MessageBox.Show("Algunos datos no coinciden, por favor revísalos");
+                return;
+            }
+            if (BLPersona.Persona_Crear(objeto))
+            {
+                this.clearForm();
+                this.modoInicial();
+                MessageBox.Show("La persona fue creada con éxito");
+            }
         }
 
         private void buttonActualizar_Click(object sender, EventArgs e)
         {
+            var objeto = this.gui2persona();
 
+            if (objeto == null)
+            {
+                MessageBox.Show("Problemas al instanciar el nuevo objeto, revise las propiedas");
+                return;
+            }
+
+            objeto.Id = this.gPerona.Id;
+            objeto.Usuario_creador = this.gPerona.Usuario_creador;
+            objeto.Fecha_creacion = this.gPerona.Fecha_creacion;
+            objeto.Usuario_modificador = this.gusuario;
+            objeto.Fecha_modificacion = BLFechaHoraServidor.Obtener();
+
+            if (this.BLPersona.Persona_Editar(objeto))
+            {
+                MessageBox.Show("El proceso ha sido correcto");
+                this.clearForm();
+                this.modoInicial();
+            }
         }
 
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
+            if (this.gPerona == null)
+            {
+                MessageBox.Show("Problemas al obtener el la persona desde la base de datos");
+                return;
+            }
 
+            DialogResult result = MessageBox.Show("¿Está seguro que quiere eliminar la persona seleccionada? Este proceso no se puede deshacer", "Advertencia", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                if (this.BLPersona.Persona_Eliminar(this.gPerona.Id))
+                {
+                    this.clearForm();
+                    this.modoInicial();
+                    MessageBox.Show("El proceso ha sido correcto");
+                }
+                else
+                {
+                    MessageBox.Show("La persona no puede ser eliminada debido a que tiene cuentas asociadas");
+                }
+            }
         }
 
         private void buttonDeshacer_Click(object sender, EventArgs e)
@@ -293,22 +345,59 @@ namespace Sistema_Bancario.plataforma_controles
 
         private void btnCodigo_Click(object sender, EventArgs e)
         {
+            string codigo = this.txtCodigo.Text;
 
+            var objeto = this.BLPersona.PersonaSelectbyId(codigo).ToList();
+
+            if (objeto == null || objeto.Count <= 0)
+            {
+                MessageBox.Show("No se han encontrado resultados");
+                return;
+            }
+            this.buscarObjeto(objeto);
         }
 
         private void btnNombres_Click(object sender, EventArgs e)
         {
+            string nombres = this.txtNombres.Text;
 
+            var objeto = this.BLPersona.PersonaSelectbyNombres(nombres).ToList();
+
+            if (objeto == null || objeto.Count <= 0)
+            {
+                MessageBox.Show("No se han encontrado resultados");
+                return;
+            }
+            this.buscarObjeto(objeto);
         }
 
         private void btnApellidos_Click(object sender, EventArgs e)
         {
+            string apellidos = this.txtApellidos.Text;
+
+            var objeto = this.BLPersona.PersonaSelectbyApellidos(apellidos).ToList();
+
+            if (objeto == null || objeto.Count <= 0)
+            {
+                MessageBox.Show("No se han encontrado resultados");
+                return;
+            }
+            this.buscarObjeto(objeto);
 
         }
 
         private void btnDocumento_Click(object sender, EventArgs e)
         {
+            string numero_documento = this.txtNumero_documento.Text;
 
+            var objeto = this.BLPersona.PersonaSelectbyNroDocumento(numero_documento).ToList();
+
+            if (objeto == null || objeto.Count <= 0)
+            {
+                MessageBox.Show("No se han encontrado resultados");
+                return;
+            }
+            this.buscarObjeto(objeto);
         }
 
         private void TxtMontoPrestamo_KeyPress(object sender, KeyPressEventArgs e)
