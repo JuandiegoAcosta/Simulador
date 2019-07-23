@@ -10,8 +10,8 @@ namespace Modelos.Modelos
     {
         public decimal Monto { get; set; }
         public int clave { get; set; }
-        public long NroCuenta { get; set; }
-        public long NroCuentaDestino { get; set; }
+        public string NroCuenta { get; set; }
+        public string NroCuentaDestino { get; set; }
         public int doi { get; set; }
         public string Usuario { get; set; }
         public byte[] RowVersionD { get; set; }

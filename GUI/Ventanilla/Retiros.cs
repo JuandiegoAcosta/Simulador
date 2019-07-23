@@ -24,7 +24,7 @@ namespace Sistema_Bancario.Froms_opciones
 
         #region [Variables Globales]
          private decimal m_monto = default(decimal);
-         private Int64 m_nrocuenta = default(Int64);
+         private string m_nrocuenta = default(string);
          private int m_clave = default(int);
          private int m_doi = default(int);
       #endregion
@@ -100,7 +100,7 @@ namespace Sistema_Bancario.Froms_opciones
             { return false; }
 
             if (!string.IsNullOrEmpty(this.nroCuenta1.TBNroCuenta.Text.Trim()))
-            { m_nrocuenta = Convert.ToInt64(this.nroCuenta1.TBNroCuenta.Text.Trim()); }
+            { m_nrocuenta = Convert.ToString(this.nroCuenta1.TBNroCuenta.Text.Trim()); }
             else
             { return false; }
 
