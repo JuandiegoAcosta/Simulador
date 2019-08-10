@@ -330,81 +330,81 @@ namespace CDatos.Manager
         }
 
 
-        /// <summary>
-        /// Selects the Multiple objects of cuenta table by a given criteria.
-        /// </summary>
-        public List<CuentasModel> cuentaSelectbyId_cliente(int id_cliente)
-        {
+        ///// <summary>
+        ///// Selects the Multiple objects of cuenta table by a given criteria.
+        ///// </summary>
+        //public List<CuentasModel> cuentaSelectbyId_cliente(int id_cliente)
+        //{
 
-            List<CuentasModel> cuentalist = new List<CuentasModel>();
+        //    List<CuentasModel> cuentalist = new List<CuentasModel>();
 
-            try
-            {
-                using (var connection = Util.ConnectionFactory.conexion())
-                {
-                    connection.Open();
+        //    try
+        //    {
+        //        using (var connection = Util.ConnectionFactory.conexion())
+        //        {
+        //            connection.Open();
 
-                    SqlCommand command = connection.CreateCommand();
+        //            SqlCommand command = connection.CreateCommand();
 
-                    command.Parameters.AddWithValue("@Cliente", id_cliente);
+        //            command.Parameters.AddWithValue("@Cliente", id_cliente);
 
-                    command.CommandType = CommandType.StoredProcedure;
+        //            command.CommandType = CommandType.StoredProcedure;
 
-                    command.CommandText = "CuentasSelectAllByCliente";
+        //            command.CommandText = "CuentasSelectAllByCliente";
 
-                    SqlDataReader reader = command.ExecuteReader();
+        //            SqlDataReader reader = command.ExecuteReader();
 
-                    if (reader.HasRows)
-                    {
-                        while (reader.Read())
-                        {
+        //            if (reader.HasRows)
+        //            {
+        //                while (reader.Read())
+        //                {
 
-                            string NroCuenta = (string)(reader["NroCuenta"]);
-                            bool Estado = (bool)(reader["Estado"]);
-                            decimal SaldoContable = (decimal)(reader["SaldoContable"]);
-                            decimal SaldoDisponible = (decimal)(reader["SaldoDisponible"]);
-                            decimal? SobreGiro = reader["SobreGiro"] as decimal?;
-                            string TipoCuenta = (string)(reader["TipoCuenta"]);
-                            int TipoMoneda = (int)(reader["TipoMoneda"]);
-                            int? Id_Tarjeta = reader["Id_Tarjeta"] as int?;
-                            byte? ContChequeRebote1 = reader["ContChequeRebote1"] as byte?;
-                            byte? ContChequeRebote2 = reader["ContChequeRebote2"] as byte?;
-                            string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
-                            int Cliente = (int)(reader["Cliente"]);
-                            DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
-                            DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
-                            string USUARIO_MODIFICADOR = reader["USUARIO_MODIFICADOR"] as string;
+        //                    string NroCuenta = (string)(reader["NroCuenta"]);
+        //                    bool Estado = (bool)(reader["Estado"]);
+        //                    decimal SaldoContable = (decimal)(reader["SaldoContable"]);
+        //                    decimal SaldoDisponible = (decimal)(reader["SaldoDisponible"]);
+        //                    decimal? SobreGiro = reader["SobreGiro"] as decimal?;
+        //                    string TipoCuenta = (string)(reader["TipoCuenta"]);
+        //                    int TipoMoneda = (int)(reader["TipoMoneda"]);
+        //                    int? Id_Tarjeta = reader["Id_Tarjeta"] as int?;
+        //                    byte? ContChequeRebote1 = reader["ContChequeRebote1"] as byte?;
+        //                    byte? ContChequeRebote2 = reader["ContChequeRebote2"] as byte?;
+        //                    string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
+        //                    int Cliente = (int)(reader["Cliente"]);
+        //                    DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
+        //                    DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
+        //                    string USUARIO_MODIFICADOR = reader["USUARIO_MODIFICADOR"] as string;
 
-                            cuentalist.Add(new CuentasModel
-                            {
-                                Nrocuenta = NroCuenta,
-                                Estado = Estado,
-                                Saldocontable = SaldoContable,
-                                Saldodisponible = SaldoDisponible,
-                                Sobregiro = SobreGiro,
-                                Tipocuenta = TipoCuenta,
-                                Tipomoneda = TipoMoneda,
-                                Id_tarjeta = Id_Tarjeta,
-                                Contchequerebote1 = ContChequeRebote1,
-                                Contchequerebote2 = ContChequeRebote2,
-                                Usuario_creador = USUARIO_CREADOR,
-                                Cliente = Cliente,
-                                Fecha_creacion = FECHA_CREACION,
-                                Fecha_modificacion = FECHA_MODIFICACION,
-                                Usuario_modificador = USUARIO_MODIFICADOR,
+        //                    cuentalist.Add(new CuentasModel
+        //                    {
+        //                        Nrocuenta = NroCuenta,
+        //                        Estado = Estado,
+        //                        Saldocontable = SaldoContable,
+        //                        Saldodisponible = SaldoDisponible,
+        //                        Sobregiro = SobreGiro,
+        //                        Tipocuenta = TipoCuenta,
+        //                        Tipomoneda = TipoMoneda,
+        //                        Id_tarjeta = Id_Tarjeta,
+        //                        Contchequerebote1 = ContChequeRebote1,
+        //                        Contchequerebote2 = ContChequeRebote2,
+        //                        Usuario_creador = USUARIO_CREADOR,
+        //                        Cliente = Cliente,
+        //                        Fecha_creacion = FECHA_CREACION,
+        //                        Fecha_modificacion = FECHA_MODIFICACION,
+        //                        Usuario_modificador = USUARIO_MODIFICADOR,
 
-                            });
-                        }
-                    }
-                }
+        //                    });
+        //                }
+        //            }
+        //        }
 
-                return cuentalist;
-            }
-            catch (Exception)
-            {
-                return cuentalist;
-            }
-        }
+        //        return cuentalist;
+        //    }
+        //    catch (Exception)
+        //    {
+        //        return cuentalist;
+        //    }
+        //}
 
         /// <summary>
         /// Selects the Multiple objects of cuenta table by a given criteria.
@@ -696,6 +696,84 @@ namespace CDatos.Manager
                 return null;
             }
         }
+
+        /// <summary>
+        /// Selects the Multiple objects of cuenta table by a given criteria.
+        /// </summary>
+        public List<CuentasModel> cuentaSelectbyId_cliente(int id_cliente)
+        {
+
+            List<CuentasModel> cuentalist = new List<CuentasModel>();
+
+            try
+            {
+                using (var connection = Util.ConnectionFactory.conexion())
+                {
+                    connection.Open();
+
+                    SqlCommand command = connection.CreateCommand();
+
+                    command.Parameters.AddWithValue("@Cliente", id_cliente);
+
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.CommandText = "CuentasSelectAllByCliente";
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+
+                            string NroCuenta = (string)(reader["NroCuenta"]);
+                            bool Estado = (bool)(reader["Estado"]);
+                            decimal SaldoContable = (decimal)(reader["SaldoContable"]);
+                            decimal SaldoDisponible = (decimal)(reader["SaldoDisponible"]);
+                            decimal? SobreGiro = reader["SobreGiro"] as decimal?;
+                            string TipoCuenta = (string)(reader["TipoCuenta"]);
+                            int TipoMoneda = (int)(reader["TipoMoneda"]);
+                            int? Id_Tarjeta = reader["Id_Tarjeta"] as int?;
+                            byte? ContChequeRebote1 = reader["ContChequeRebote1"] as byte?;
+                            byte? ContChequeRebote2 = reader["ContChequeRebote2"] as byte?;
+                            string USUARIO_CREADOR = (string)(reader["USUARIO_CREADOR"]);
+                            int Cliente = (int)(reader["Cliente"]);
+                            DateTime FECHA_CREACION = (DateTime)(reader["FECHA_CREACION"]);
+                            DateTime? FECHA_MODIFICACION = reader["FECHA_MODIFICACION"] as DateTime?;
+                            string USUARIO_MODIFICADOR = reader["USUARIO_MODIFICADOR"] as string;
+
+                            cuentalist.Add(new CuentasModel
+                            {
+                                Nrocuenta = NroCuenta,
+                                Estado = Estado,
+                                Saldocontable = SaldoContable,
+                                Saldodisponible = SaldoDisponible,
+                                Sobregiro = SobreGiro,
+                                Tipocuenta = TipoCuenta,
+                                Tipomoneda = TipoMoneda,
+                                Id_tarjeta = Id_Tarjeta,
+                                Contchequerebote1 = ContChequeRebote1,
+                                Contchequerebote2 = ContChequeRebote2,
+                                Usuario_creador = USUARIO_CREADOR,
+                                Cliente = Cliente,
+                                Fecha_creacion = FECHA_CREACION,
+                                Fecha_modificacion = FECHA_MODIFICACION,
+                                Usuario_modificador = USUARIO_MODIFICADOR,
+
+                            });
+                        }
+                    }
+                }
+
+                return cuentalist;
+            }
+            catch (Exception)
+            {
+                return cuentalist;
+            }
+        }
+
+
         #endregion
     }
 }

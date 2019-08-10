@@ -722,6 +722,12 @@
   <wsdl:message name="ICuentaService_Cuenta_SeleccionarPorNumeroPrestamo_OutputMessage">
     <wsdl:part name="parameters" element="tns:Cuenta_SeleccionarPorNumeroPrestamoResponse" />
   </wsdl:message>
+  <wsdl:message name="ICuentaService_cuentaSelectbyId_cliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:cuentaSelectbyId_cliente" />
+  </wsdl:message>
+  <wsdl:message name="ICuentaService_cuentaSelectbyId_cliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:cuentaSelectbyId_clienteResponse" />
+  </wsdl:message>
   <wsdl:message name="ICajaChicaService_Crear_InputMessage">
     <wsdl:part name="parameters" element="tns:Crear" />
   </wsdl:message>
@@ -1336,6 +1342,10 @@
     <wsdl:operation name="Cuenta_SeleccionarPorNumeroPrestamo">
       <wsdl:input wsaw:Action="http://tempuri.org/ICuentaService/Cuenta_SeleccionarPorNumeroPrestamo" message="tns:ICuentaService_Cuenta_SeleccionarPorNumeroPrestamo_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICuentaService/Cuenta_SeleccionarPorNumeroPrestamoResponse" message="tns:ICuentaService_Cuenta_SeleccionarPorNumeroPrestamo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="cuentaSelectbyId_cliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICuentaService/cuentaSelectbyId_cliente" message="tns:ICuentaService_cuentaSelectbyId_cliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICuentaService/cuentaSelectbyId_clienteResponse" message="tns:ICuentaService_cuentaSelectbyId_cliente_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="ICajaChicaService">
@@ -2534,6 +2544,15 @@
     </wsdl:operation>
     <wsdl:operation name="Cuenta_SeleccionarPorNumeroPrestamo">
       <soap:operation soapAction="http://tempuri.org/ICuentaService/Cuenta_SeleccionarPorNumeroPrestamo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cuentaSelectbyId_cliente">
+      <soap:operation soapAction="http://tempuri.org/ICuentaService/cuentaSelectbyId_cliente" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

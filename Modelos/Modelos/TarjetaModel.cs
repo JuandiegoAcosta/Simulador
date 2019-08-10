@@ -8,7 +8,6 @@ namespace Modelos.Modelos
 {
     public class TarjetaModel
     {
-
         #region Properties
 
         /// <summary>
@@ -39,6 +38,12 @@ namespace Modelos.Modelos
         /// Gets or sets the Fechavinculacion value.
         /// </summary>
         public DateTime? Fechavinculacion
+        { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Fechavinculacion value.
+        /// </summary>
+        public string Id_cuenta
         { get; set; }
 
         /// <summary>

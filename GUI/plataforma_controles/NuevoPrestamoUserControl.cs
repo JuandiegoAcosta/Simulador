@@ -27,6 +27,7 @@ namespace Sistema_Bancario.plataforma_controles
         WsSistemaBancario.PrestamoServiceClient BLPrestamo = new WsSistemaBancario.PrestamoServiceClient();
         WsSistemaBancario.CuentaServiceClient BLCuenta = new WsSistemaBancario.CuentaServiceClient();
         WsSistemaBancario.TipoMonedaServiceClient BLTipoMoneda = new WsSistemaBancario.TipoMonedaServiceClient();
+        WsSistemaBancario.PersonaServiceClient BLPersona = new WsSistemaBancario.PersonaServiceClient();
 
         #endregion
 
@@ -48,7 +49,6 @@ namespace Sistema_Bancario.plataforma_controles
 
         #region Metodos
 
-        //Actualmente Desactivado
         private void ConfigurarParametros()
         {
             //Por razones del simulador, la fecha del prestamo es variable, en un entorno real no deberia ser así
@@ -131,7 +131,7 @@ namespace Sistema_Bancario.plataforma_controles
             this.cboMoneda.SelectedValue = aprestamo.Moneda;
             this.nudPlazoMeses.Value = aprestamo.Plazomeses;
             this.nudPorcentajeInteres.Value = aprestamo.Porcentaje_interes;
-            //this.nudDiaPago.Value = (decimal)aprestamo.Diapago;
+            this.nudDiaPago.Value = (decimal)aprestamo.Diapago;
             this.chkEstado.Checked = aprestamo.Seguro;
         }
 
@@ -154,6 +154,7 @@ namespace Sistema_Bancario.plataforma_controles
             this.nudPorcentajeInteres.Value = 0m;
             this.nudDiaPago.Value = 1m;
             this.chkEstado.Checked = false;
+            this.clearPersona();
 
             this.SlblUsuario_creador.Text = "*";
             this.SlblFecha_creacion.Text = "*";
@@ -161,12 +162,21 @@ namespace Sistema_Bancario.plataforma_controles
             this.SlblFecha_modificacion.Text = "*";
         }
 
+        private void clearPersona()
+        {
+            this.txtNombres.Text = default(string);
+            this.txtApellidos.Text = default(string);
+            this.txtNumero_documento.Text = default(string);
+            this.cboTipo_documento.SelectedValue = -1;
+        }
+
         private void modoNuevo()
         {
             this.modo = "modoNuevo";
-
+            this.groupBox1.Enabled = false;
             this.buttonActualizar.Enabled = false;
             this.buttonEliminar.Enabled = false;
+            this.buttonEditar.Visible = false;
 
             this.buttonNuevo.Enabled = false;
             this.buttonCrear.Enabled = true;
@@ -193,6 +203,7 @@ namespace Sistema_Bancario.plataforma_controles
 
             this.buttonActualizar.Enabled = false;
             this.buttonEliminar.Enabled = false;
+            this.buttonEditar.Visible = false;
 
             this.buttonNuevo.Enabled = true;
             this.buttonCrear.Enabled = false;
@@ -201,6 +212,7 @@ namespace Sistema_Bancario.plataforma_controles
             this.btnCodigo.Enabled = true;
             this.btnCuenta.Enabled = true;
 
+            this.groupBox1.Enabled = true;
             this.txtCodigo.Enabled = true;
             this.txtCuenta.Enabled = true;
             this.cboMoneda.Enabled = false;
@@ -218,8 +230,9 @@ namespace Sistema_Bancario.plataforma_controles
             this.modo = "modoEdicion";
 
             this.buttonCrear.Enabled = false;
-            this.buttonActualizar.Enabled = true;
+            this.buttonActualizar.Enabled = false;
             this.buttonEliminar.Enabled = true;
+            this.buttonEditar.Visible = true;
 
             this.cboMoneda.Enabled = false;
             this.txtCuenta.Enabled = false;
@@ -227,7 +240,7 @@ namespace Sistema_Bancario.plataforma_controles
 
             this.dtpFechaPrestamo.Enabled = false;
             this.txtMontoPrestamo.Enabled = false;
-            this.txtMontoMora.Enabled = true;
+            this.txtMontoMora.Enabled = false;
             this.nudPlazoMeses.Enabled = false;
             this.nudPorcentajeInteres.Enabled = false;
             this.nudDiaPago.Enabled = false;
@@ -318,6 +331,7 @@ namespace Sistema_Bancario.plataforma_controles
                         {
                             this.clearForm();
                             this.gPrestamo = this.BLPrestamo.Prestamo_ObtenerUno(dato.Id);
+                            this.gCuenta = this.BLCuenta.Cuenta_ObtenerUno(dato.Cuenta);
                             this.prestamo2gui(this.gPrestamo);
                             this.modoNuevo();
                             this.modoEdicion();
@@ -325,6 +339,44 @@ namespace Sistema_Bancario.plataforma_controles
                     }
                 }
             }
+        }
+
+        private void buscarObjeto(List<PersonaModel> objetos)
+        {
+            string[][] orden = new string[3][];
+
+            orden[0] = new string[] { "Id", "Codigo", "100" };
+            orden[1] = new string[] { "Nombres", "Nombres", "200" };
+            orden[2] = new string[] { "Apellidos", "Apellidos", "200" };
+
+            if (objetos != null)
+            {
+                using (Ayuda.FormHelp2 formHelp1 = new Ayuda.FormHelp2())
+                {
+                    formHelp1.setList(objetos, orden);
+                    formHelp1.ShowDialog();
+
+                    if (formHelp1.EstaAceptado())
+                    {
+                        var dato = formHelp1.getObject<PersonaModel>();
+                        if (dato != null)
+                        {
+                            this.persona2gui(dato);
+
+                            var cuentas_anexadas = this.BLCuenta.cuentaSelectbyId_cliente(dato.Id).ToList();
+                            this.buscarCuenta(cuentas_anexadas);
+                        }
+                    }
+                }
+            }
+        }
+
+        private void persona2gui(PersonaModel apersona)
+        {
+            this.txtNombres.Text = apersona.Nombres;
+            this.txtApellidos.Text = apersona.Apellidos;
+            this.txtNumero_documento.Text = apersona.Nrodocumento;
+            this.cboTipo_documento.SelectedValue = apersona.Tipodocumento;
         }
 
         #endregion
@@ -388,14 +440,42 @@ namespace Sistema_Bancario.plataforma_controles
             objeto.Usuario_modificador = this.gUsuario;
             objeto.Fecha_modificacion = BLFechaHoraServidor.Obtener();
 
-            if (MessageBox.Show("¿Está seguro que desea modificar el préstamo? Esta operacion puede afectar los pagos futuros", "Advertencia", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Se va a proceder a refinanciar la deuda, Esto no se puede revertir, ¿Desea continuar?", "Advertencia", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 if (this.BLPrestamo.Prestamo_Editar(objeto))
                 {
-                    MessageBox.Show("El prestamo se ha actualizado correctamente");
+                    MessageBox.Show("La deuda ha sido refinanciada correctamente");
                     this.clearForm();
                     this.modoInicial();
                 }
+            }
+        }
+
+        private void buttonEditar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Esta a punto de refinanciar una deuda, ¿Desea continuar?", "Advertencia", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                this.buttonEditar.Visible = false;
+                this.buttonActualizar.Enabled = true;
+                this.buttonEliminar.Enabled = false;
+
+                this.buttonNuevo.Enabled = false;
+                this.buttonCrear.Enabled = false;
+                this.buttonDeshacer.Enabled = true;
+
+                this.btnCodigo.Enabled = false;
+                this.btnCuenta.Enabled = false;
+
+                this.txtCodigo.Enabled = false;
+                this.txtCuenta.Enabled = false;
+                this.cboMoneda.Enabled = false;
+                this.dtpFechaPrestamo.Enabled = true;
+                this.txtMontoPrestamo.Enabled = true;
+                this.txtMontoMora.Enabled = true;
+                this.nudPlazoMeses.Enabled = true;
+                this.nudPorcentajeInteres.Enabled = true;
+                this.nudDiaPago.Enabled = true;
+                this.chkEstado.Enabled = true;
             }
         }
 
@@ -490,6 +570,36 @@ namespace Sistema_Bancario.plataforma_controles
             {
                 nudPlazoMeses.Value = 60;
             }
+        }
+
+        private void btnNombres_Click(object sender, EventArgs e)
+        {
+            string nombres = this.txtNombres.Text;
+
+            var objeto = this.BLPersona.PersonaSelectbyNombres(nombres).ToList();
+
+            if (objeto == null && objeto.Count <= 0) { return; }
+            this.buscarObjeto(objeto);
+        }
+
+        private void btnApellidos_Click(object sender, EventArgs e)
+        {
+            string apellidos = this.txtApellidos.Text;
+
+            var objeto = this.BLPersona.PersonaSelectbyApellidos(apellidos).ToList();
+
+            if (objeto == null && objeto.Count <= 0) { return; }
+            this.buscarObjeto(objeto);
+        }
+
+        private void btnDocumento_Click(object sender, EventArgs e)
+        {
+            string numero_documento = this.txtNumero_documento.Text;
+
+            var objeto = this.BLPersona.PersonaSelectbyNroDocumento(numero_documento).ToList();
+
+            if (objeto == null && objeto.Count <= 0) { return; }
+            this.buscarObjeto(objeto);
         }
 
         #endregion

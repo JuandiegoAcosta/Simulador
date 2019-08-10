@@ -233,4 +233,10 @@ C:\Users\katva\Source\Repos\JuandiegoAcosta\Simulador\Modelos\obj\Debug\Modelos.
 C:\Users\katva\Source\Repos\JuandiegoAcosta\Simulador\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
 C:\Users\katva\Source\Repos\JuandiegoAcosta\Simulador\Modelos\obj\Debug\Modelos.dll
 C:\Users\katva\Source\Repos\JuandiegoAcosta\Simulador\Modelos\obj\Debug\Modelos.pdb
-C:\Users\elife\Desktop\Others\ISUR\Bancario\Modelos\obj\Debug\Modelos.csprojAssemblyReference.cache
+C:\Users\Jean\Desktop\z4\JuandiegoAcosta\Simulador\Modelos\bin\Debug\Modelos.dll
+C:\Users\Jean\Desktop\z4\JuandiegoAcosta\Simulador\Modelos\bin\Debug\Modelos.pdb
+C:\Users\Jean\Desktop\z4\JuandiegoAcosta\Simulador\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
+C:\Users\Jean\Desktop\z4\JuandiegoAcosta\Simulador\Modelos\obj\Debug\Modelos.dll
+C:\Users\Jean\Desktop\z4\JuandiegoAcosta\Simulador\Modelos\obj\Debug\Modelos.pdb
+C:\Users\Jean\Desktop\z4\JuandiegoAcosta\Simulador\Modelos\obj\Debug\Modelos.csprojAssemblyReference.cache
+C:\Users\Usuario\Source\Repos\Simulador\Modelos\obj\Debug\Modelos.csprojAssemblyReference.cache

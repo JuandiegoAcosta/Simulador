@@ -400,3 +400,12 @@ C:\Users\katva\Source\Repos\JuandiegoAcosta\Simulador\CDatos\obj\Debug\CDatos.cs
 C:\Users\katva\Source\Repos\JuandiegoAcosta\Simulador\CDatos\obj\Debug\CDatos.csproj.CopyComplete
 C:\Users\katva\Source\Repos\JuandiegoAcosta\Simulador\CDatos\obj\Debug\CDatos.dll
 C:\Users\katva\Source\Repos\JuandiegoAcosta\Simulador\CDatos\obj\Debug\CDatos.pdb
+C:\Users\Jean\Desktop\z4\JuandiegoAcosta\Simulador\CDatos\bin\Debug\CDatos.dll
+C:\Users\Jean\Desktop\z4\JuandiegoAcosta\Simulador\CDatos\bin\Debug\CDatos.pdb
+C:\Users\Jean\Desktop\z4\JuandiegoAcosta\Simulador\CDatos\bin\Debug\Modelos.dll
+C:\Users\Jean\Desktop\z4\JuandiegoAcosta\Simulador\CDatos\bin\Debug\Modelos.pdb
+C:\Users\Jean\Desktop\z4\JuandiegoAcosta\Simulador\CDatos\obj\Debug\CDatos.csprojAssemblyReference.cache
+C:\Users\Jean\Desktop\z4\JuandiegoAcosta\Simulador\CDatos\obj\Debug\CDatos.csproj.CoreCompileInputs.cache
+C:\Users\Jean\Desktop\z4\JuandiegoAcosta\Simulador\CDatos\obj\Debug\CDatos.csproj.CopyComplete
+C:\Users\Jean\Desktop\z4\JuandiegoAcosta\Simulador\CDatos\obj\Debug\CDatos.dll
+C:\Users\Jean\Desktop\z4\JuandiegoAcosta\Simulador\CDatos\obj\Debug\CDatos.pdb

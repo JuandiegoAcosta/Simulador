@@ -16,7 +16,7 @@ namespace CNegocio.Plataforma
 
         public bool Insert(ChequerasModel achequera)
         {
-            achequera.Fin = achequera.Inicio + achequera.Cantidad_cheques;
+            achequera.Fin = achequera.Inicio + achequera.Cantidad_cheques - 1;
 
             return this.managerChequera.Insert(achequera);
         }
@@ -49,6 +49,11 @@ namespace CNegocio.Plataforma
         public List<ChequerasModel> chequeraSelectbyCuenta(string acuenta)
         {
             return this.managerChequera.chequeraSelectbyCuenta(acuenta);
+        }
+
+        public List<ChequerasModel> ChequerasSelectbyId(string aNumero)
+        {
+            return this.managerChequera.ChequerasSelectbyId(aNumero);
         }
         #endregion
     }

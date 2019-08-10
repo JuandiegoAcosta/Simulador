@@ -17,16 +17,17 @@ namespace Sistema_Bancario.plataforma_controles
     {
 
         private BLTarjeta BLTarjeta = new BLTarjeta();
-
+        private BLCuenta BLCuenta = new BLCuenta();
 
         private TarjetaModel gtarjeta;
+        private CuentasModel gcuenta;
         private string gUsuario;
 
-        public NuevaTarjeta(ISession isesion)
+        public NuevaTarjeta(ISession sesion)
         {
             InitializeComponent();
 
-            this.gUsuario = isesion.UserName;
+            this.gUsuario = sesion.UserName;
 
 
             this.clearForm();
@@ -35,10 +36,13 @@ namespace Sistema_Bancario.plataforma_controles
 
         private TarjetaModel gui2tarjeta()
         {
+            if (this.gcuenta == null)
+                return null;
             try
             {
                 return new TarjetaModel()
                 {
+                    Id_cuenta = this.gcuenta.Nrocuenta,
                     Codcontrol = Convert.ToInt32(this.txtCodigoControl.Text),
                     Password = Convert.ToInt32(this.txtPassword.Text),
                     Fechavencimiento = this.dtpFechaVencimiento.Value,
@@ -56,11 +60,19 @@ namespace Sistema_Bancario.plataforma_controles
 
         private void tarjeta2gui(TarjetaModel atarjeta)
         {
+            this.gcuenta = this.BLCuenta.Getcuenta(atarjeta.Id_cuenta);
+
             this.txtCodigo.Text = atarjeta.Numero.ToString();
             this.txtCodigoControl.Text = atarjeta.Codcontrol.ToString();
             this.txtPassword.Text = atarjeta.Password.ToString();
             this.dtpFechaVencimiento.Value = (DateTime)atarjeta.Fechavencimiento;
             this.chkEstado.Checked = atarjeta.Estado;
+            this.txtCuenta.Text = this.gcuenta.Nrocuenta;
+
+            this.SlblUsuario_creador.Text = atarjeta.Usuario_creador;
+            this.SlblFecha_creacion.Text = atarjeta.Fecha_creacion.ToLongDateString();
+            this.SlblUsuario_modificador.Text = atarjeta.Usuario_modificador;
+            this.SlblFecha_modificacion.Text = atarjeta.Fecha_modificacion.ToString();
         }
 
 
@@ -73,7 +85,10 @@ namespace Sistema_Bancario.plataforma_controles
 
         private void clearForm()
         {
+            this.gcuenta = null;
+
             this.txtCodigo.Text = default(string);
+            this.txtCuenta.Text = default(string);
             this.txtCodigoControl.Text = default(string);
             this.txtPassword.Text = default(string);
             this.dtpFechaVencimiento.Value = DateTime.Now;
@@ -96,8 +111,10 @@ namespace Sistema_Bancario.plataforma_controles
             this.buttonDeshacer.Enabled = true;
 
             this.btnCodigo.Enabled = false;
+            this.btnCuenta.Enabled = true;
 
             this.txtCodigo.Enabled = false;
+            this.txtCuenta.Enabled = true;
             this.txtCodigoControl.Enabled = true;
             this.txtPassword.Enabled = true;
             this.dtpFechaVencimiento.Enabled = true;
@@ -115,7 +132,9 @@ namespace Sistema_Bancario.plataforma_controles
             this.buttonDeshacer.Enabled = false;
 
             this.btnCodigo.Enabled = true;
+            this.btnCuenta.Enabled = false;
 
+            this.txtCuenta.Enabled = false;
             this.txtCodigo.Enabled = true;
             this.dtpFechaVencimiento.Enabled = false;
             this.txtCodigoControl.Enabled = false;
@@ -132,6 +151,7 @@ namespace Sistema_Bancario.plataforma_controles
 
         private void buttonCrear_Click(object sender, EventArgs e)
         {
+
             var objeto = this.gui2tarjeta();
 
             if (objeto == null)
@@ -198,7 +218,11 @@ namespace Sistema_Bancario.plataforma_controles
 
             var objeto = this.BLTarjeta.tarjetaSelectbyId(codigo);
 
-            if (objeto == null && objeto.Count <= 0) { return; }
+            if (objeto == null && objeto.Count <= 0)
+            {
+                MessageBox.Show("No se han encontrado resultados");
+                return;
+            }
             this.buscarTarjetas(objeto);
         }
 
@@ -208,7 +232,7 @@ namespace Sistema_Bancario.plataforma_controles
 
             orden[0] = new string[] { "Numero", "Codigo", "100" };
             orden[1] = new string[] { "Fechavencimiento", "Fecha Vencimiento", "150" };
-            orden[2] = new string[] { "FechaVinculacion", "Fecha Vinculacion", "150" };
+            orden[2] = new string[] { "Id_cuenta", "Cuenta Vinculada", "150" };
 
             if (objetos != null)
             {
@@ -227,6 +251,54 @@ namespace Sistema_Bancario.plataforma_controles
                             this.tarjeta2gui(this.gtarjeta);
                             this.modoNuevo();
                             this.modoEdicion();
+                        }
+                    }
+                }
+            }
+        }
+
+        private void btnCuenta_Click(object sender, EventArgs e)
+        {
+            string cuenta = this.txtCuenta.Text;
+
+            var objeto = this.BLCuenta.cuentaSelectbyNroCuenta(cuenta);
+
+            if (objeto == null && objeto.Count <= 0) { return; }
+            this.buscarCuenta(objeto);
+        }
+
+        private void cuenta2gui(CuentasModel acuenta)
+        {
+            this.txtCuenta.Text = acuenta.Nrocuenta.ToString();
+        }
+
+        private void buscarCuenta(List<CuentasModel> objetos)
+        {
+            string[][] orden = new string[4][];
+
+            orden[0] = new string[] { "NroCuenta", "Numero Cuenta", "150" };
+            orden[1] = new string[] { "TipoCuenta", "Tipo Cuenta", "100" };
+            orden[2] = new string[] { "SaldoContable", "Saldo Contable", "90" };
+            orden[3] = new string[] { "SaldoDisponible", "Saldo Disponible", "90" };
+
+            if (objetos != null)
+            {
+                using (Ayuda.FormHelp2 formHelp1 = new Ayuda.FormHelp2())
+                {
+                    formHelp1.setList(objetos, orden);
+                    formHelp1.ShowDialog();
+
+                    if (formHelp1.EstaAceptado())
+                    {
+                        var dato = formHelp1.getObject<CuentasModel>();
+                        if (dato != null)
+                        {
+                            this.gcuenta = BLCuenta.Getcuenta(dato.Nrocuenta);
+
+                            if (gcuenta == null)
+                                return;
+                            this.cuenta2gui(gcuenta);
+
                         }
                     }
                 }

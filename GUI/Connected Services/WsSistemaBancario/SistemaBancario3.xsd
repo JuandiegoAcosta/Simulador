@@ -1671,10 +1671,24 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="cuentaSelectbyId_cliente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id_cliente" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="cuentaSelectbyId_clienteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q97="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="cuentaSelectbyId_clienteResult" nillable="true" type="q97:ArrayOfCuentasModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="Crear">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q97="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="aCajaChica" nillable="true" type="q97:CajaChicaModel" />
+        <xs:element xmlns:q98="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="aCajaChica" nillable="true" type="q98:CajaChicaModel" />
         <xs:element minOccurs="0" name="id_user" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -1689,7 +1703,7 @@
   <xs:element name="Editar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q98="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="aCajaChica" nillable="true" type="q98:CajaChicaModel" />
+        <xs:element xmlns:q99="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="aCajaChica" nillable="true" type="q99:CajaChicaModel" />
         <xs:element minOccurs="0" name="id_user" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -1725,7 +1739,7 @@
   <xs:element name="ObtenerUnoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q99="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="ObtenerUnoResult" nillable="true" type="q99:CajaChicaModel" />
+        <xs:element xmlns:q100="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="ObtenerUnoResult" nillable="true" type="q100:CajaChicaModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1737,14 +1751,14 @@
   <xs:element name="ObtenerTodosResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q100="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="ObtenerTodosResult" nillable="true" type="q100:ArrayOfCajaChicaModel" />
+        <xs:element xmlns:q101="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="ObtenerTodosResult" nillable="true" type="q101:ArrayOfCajaChicaModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="DetalleCajaChica_Crear">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q101="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="aDetalleCajaChica" nillable="true" type="q101:DetalleCajaChicaModel" />
+        <xs:element xmlns:q102="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="aDetalleCajaChica" nillable="true" type="q102:DetalleCajaChicaModel" />
         <xs:element minOccurs="0" name="id_user" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -1759,7 +1773,7 @@
   <xs:element name="DetalleCajaChica_Editar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q102="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="aDetalleCajaChica" nillable="true" type="q102:DetalleCajaChicaModel" />
+        <xs:element xmlns:q103="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="aDetalleCajaChica" nillable="true" type="q103:DetalleCajaChicaModel" />
         <xs:element minOccurs="0" name="id_user" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -1795,7 +1809,7 @@
   <xs:element name="DetalleCajaChica_ObtenerUnoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q103="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="DetalleCajaChica_ObtenerUnoResult" nillable="true" type="q103:DetalleCajaChicaModel" />
+        <xs:element xmlns:q104="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="DetalleCajaChica_ObtenerUnoResult" nillable="true" type="q104:DetalleCajaChicaModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1807,14 +1821,14 @@
   <xs:element name="DetalleCajaChica_ObtenerTodosResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q104="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="DetalleCajaChica_ObtenerTodosResult" nillable="true" type="q104:ArrayOfDetalleCajaChicaModel" />
+        <xs:element xmlns:q105="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="DetalleCajaChica_ObtenerTodosResult" nillable="true" type="q105:ArrayOfDetalleCajaChicaModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="Prestamo_Crear">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q105="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="aPrestamo" nillable="true" type="q105:PrestamosModel" />
+        <xs:element xmlns:q106="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="aPrestamo" nillable="true" type="q106:PrestamosModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1828,7 +1842,7 @@
   <xs:element name="Prestamo_Editar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q106="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="aPrestamo" nillable="true" type="q106:PrestamosModel" />
+        <xs:element xmlns:q107="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="aPrestamo" nillable="true" type="q107:PrestamosModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1863,7 +1877,7 @@
   <xs:element name="Prestamo_ObtenerUnoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q107="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="Prestamo_ObtenerUnoResult" nillable="true" type="q107:PrestamosModel" />
+        <xs:element xmlns:q108="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="Prestamo_ObtenerUnoResult" nillable="true" type="q108:PrestamosModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1877,7 +1891,7 @@
   <xs:element name="Prestamo_SelecionarPorCuentaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q108="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="Prestamo_SelecionarPorCuentaResult" nillable="true" type="q108:ArrayOfPrestamosModel" />
+        <xs:element xmlns:q109="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="Prestamo_SelecionarPorCuentaResult" nillable="true" type="q109:ArrayOfPrestamosModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1891,7 +1905,7 @@
   <xs:element name="Prestamo_SeleccionarPorIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q109="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="Prestamo_SeleccionarPorIdResult" nillable="true" type="q109:ArrayOfPrestamosModel" />
+        <xs:element xmlns:q110="http://schemas.datacontract.org/2004/07/Modelos.Modelos" minOccurs="0" name="Prestamo_SeleccionarPorIdResult" nillable="true" type="q110:ArrayOfPrestamosModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

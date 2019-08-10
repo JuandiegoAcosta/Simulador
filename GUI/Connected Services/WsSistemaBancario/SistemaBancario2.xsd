@@ -61,15 +61,11 @@
   <xs:element name="ArrayOfPagoServiciosModel" nillable="true" type="tns:ArrayOfPagoServiciosModel" />
   <xs:complexType name="RecaudosModel">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Estado_recaudo" type="xs:boolean" />
-      <xs:element minOccurs="0" name="Fecha_creacion" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="Fecha_modificacion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Estado_recaudo" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Fecha_vencimiento" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="Id_empresa" type="xs:int" />
       <xs:element minOccurs="0" name="Monto" type="xs:decimal" />
       <xs:element minOccurs="0" name="Nro_contrato" type="xs:int" />
-      <xs:element minOccurs="0" name="Usuario_creador" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Usuario_modificador" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RowVersion" nillable="true" type="xs:base64Binary" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="RecaudosModel" nillable="true" type="tns:RecaudosModel" />
@@ -393,6 +389,7 @@
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="Interes_moratorio" nillable="true" type="xs:decimal" />
       <xs:element minOccurs="0" name="Moneda" type="xs:int" />
+      <xs:element minOccurs="0" name="Monto_mensual" nillable="true" type="xs:decimal" />
       <xs:element minOccurs="0" name="Montoprestamo" type="xs:decimal" />
       <xs:element minOccurs="0" name="Plazomeses" type="xs:int" />
       <xs:element minOccurs="0" name="Porcentaje_interes" type="xs:decimal" />

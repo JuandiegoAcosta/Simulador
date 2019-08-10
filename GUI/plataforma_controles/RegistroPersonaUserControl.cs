@@ -412,5 +412,40 @@ namespace Sistema_Bancario.plataforma_controles
 
         #endregion
 
+        private void cboTipo_documento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch(cboTipo_documento.SelectedIndex)
+            {
+                case 0:
+                    this.lblNombre.Text = "Nombres:";
+                    this.lblNombre.Location = new Point(61, 102);
+                    this.lblApellido.Visible = true;
+                    this.lblFechaNac.Visible = true;
+                    this.txtApellidos.Visible = true;
+                    this.dtpFecha_nacimiento.Visible = true;
+                    this.btnApellidos.Visible = true;
+                    break;
+                case 1:
+                    this.lblNombre.Text = "Razón Social:";
+                    this.lblNombre.Location=new Point(40, 102);
+                    this.lblApellido.Visible = false;
+                    this.lblFechaNac.Visible = false;
+                    this.btnApellidos.Visible = false;
+                    this.txtApellidos.Text = null;
+                    this.txtApellidos.Visible = false;
+                    this.dtpFecha_nacimiento.Visible = false;
+                    //fecha null faltaa
+
+                    break;
+            }
+        }
+
+        private void txtNumero_documento_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

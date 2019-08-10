@@ -31,5 +31,8 @@ namespace ServiciosBancarios.Plataforma
 
         [OperationContract]
         List<CuentasModel> Cuenta_SeleccionarPorNumeroPrestamo(string aID_Cuenta);
+
+        [OperationContract]
+        List<CuentasModel> cuentaSelectbyId_cliente(int id_cliente);
     }
 }

@@ -53,7 +53,7 @@
             this.SlblFecha_modificacion = new System.Windows.Forms.ToolStripStatusLabel();
             this.btnNombres = new System.Windows.Forms.Button();
             this.btnCodigo = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblFechaNac = new System.Windows.Forms.Label();
             this.dtpFecha_nacimiento = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.txtNumero_documento = new System.Windows.Forms.TextBox();
@@ -61,8 +61,8 @@
             this.cboTipo_documento = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtCorreo = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblApellido = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
             this.txtApellidos = new System.Windows.Forms.TextBox();
             this.txtNombres = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -90,7 +90,7 @@
             // 
             this.cboTipoPersona.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTipoPersona.FormattingEnabled = true;
-            this.cboTipoPersona.Location = new System.Drawing.Point(119, 226);
+            this.cboTipoPersona.Location = new System.Drawing.Point(119, 228);
             this.cboTipoPersona.Name = "cboTipoPersona";
             this.cboTipoPersona.Size = new System.Drawing.Size(187, 21);
             this.cboTipoPersona.TabIndex = 499;
@@ -124,7 +124,7 @@
             // 
             // btnApellidos
             // 
-            this.btnApellidos.Location = new System.Drawing.Point(393, 71);
+            this.btnApellidos.Location = new System.Drawing.Point(393, 123);
             this.btnApellidos.Name = "btnApellidos";
             this.btnApellidos.Size = new System.Drawing.Size(33, 23);
             this.btnApellidos.TabIndex = 495;
@@ -134,7 +134,7 @@
             // 
             // btnDocumento
             // 
-            this.btnDocumento.Location = new System.Drawing.Point(312, 124);
+            this.btnDocumento.Location = new System.Drawing.Point(312, 72);
             this.btnDocumento.Name = "btnDocumento";
             this.btnDocumento.Size = new System.Drawing.Size(33, 23);
             this.btnDocumento.TabIndex = 494;
@@ -235,7 +235,7 @@
             this.SlblFecha_modificacion});
             this.statusStrip1.Location = new System.Drawing.Point(0, 328);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(587, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(650, 22);
             this.statusStrip1.TabIndex = 488;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -297,7 +297,7 @@
             // 
             // btnNombres
             // 
-            this.btnNombres.Location = new System.Drawing.Point(393, 45);
+            this.btnNombres.Location = new System.Drawing.Point(393, 97);
             this.btnNombres.Name = "btnNombres";
             this.btnNombres.Size = new System.Drawing.Size(33, 23);
             this.btnNombres.TabIndex = 487;
@@ -315,14 +315,14 @@
             this.btnCodigo.UseVisualStyleBackColor = true;
             this.btnCodigo.Click += new System.EventHandler(this.btnCodigo_Click);
             // 
-            // label7
+            // lblFechaNac
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(17, 155);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(96, 13);
-            this.label7.TabIndex = 485;
-            this.label7.Text = "Fecha Nacimiento:";
+            this.lblFechaNac.AutoSize = true;
+            this.lblFechaNac.Location = new System.Drawing.Point(17, 155);
+            this.lblFechaNac.Name = "lblFechaNac";
+            this.lblFechaNac.Size = new System.Drawing.Size(96, 13);
+            this.lblFechaNac.TabIndex = 485;
+            this.lblFechaNac.Text = "Fecha Nacimiento:";
             // 
             // dtpFecha_nacimiento
             // 
@@ -334,7 +334,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(8, 129);
+            this.label6.Location = new System.Drawing.Point(8, 77);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(105, 13);
             this.label6.TabIndex = 483;
@@ -342,15 +342,16 @@
             // 
             // txtNumero_documento
             // 
-            this.txtNumero_documento.Location = new System.Drawing.Point(119, 126);
+            this.txtNumero_documento.Location = new System.Drawing.Point(119, 74);
             this.txtNumero_documento.Name = "txtNumero_documento";
             this.txtNumero_documento.Size = new System.Drawing.Size(187, 20);
             this.txtNumero_documento.TabIndex = 482;
+            this.txtNumero_documento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumero_documento_KeyPress_1);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(24, 102);
+            this.label5.Location = new System.Drawing.Point(24, 50);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(89, 13);
             this.label5.TabIndex = 481;
@@ -360,10 +361,11 @@
             // 
             this.cboTipo_documento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTipo_documento.FormattingEnabled = true;
-            this.cboTipo_documento.Location = new System.Drawing.Point(119, 99);
+            this.cboTipo_documento.Location = new System.Drawing.Point(119, 47);
             this.cboTipo_documento.Name = "cboTipo_documento";
             this.cboTipo_documento.Size = new System.Drawing.Size(187, 21);
             this.cboTipo_documento.TabIndex = 480;
+            this.cboTipo_documento.SelectedIndexChanged += new System.EventHandler(this.cboTipo_documento_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -381,34 +383,34 @@
             this.txtCorreo.Size = new System.Drawing.Size(268, 20);
             this.txtCorreo.TabIndex = 478;
             // 
-            // label3
+            // lblApellido
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(61, 76);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 13);
-            this.label3.TabIndex = 477;
-            this.label3.Text = "Apellidos:";
+            this.lblApellido.AutoSize = true;
+            this.lblApellido.Location = new System.Drawing.Point(61, 128);
+            this.lblApellido.Name = "lblApellido";
+            this.lblApellido.Size = new System.Drawing.Size(52, 13);
+            this.lblApellido.TabIndex = 477;
+            this.lblApellido.Text = "Apellidos:";
             // 
-            // label2
+            // lblNombre
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(61, 50);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 13);
-            this.label2.TabIndex = 476;
-            this.label2.Text = "Nombres:";
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(61, 102);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(52, 13);
+            this.lblNombre.TabIndex = 476;
+            this.lblNombre.Text = "Nombres:";
             // 
             // txtApellidos
             // 
-            this.txtApellidos.Location = new System.Drawing.Point(119, 73);
+            this.txtApellidos.Location = new System.Drawing.Point(119, 125);
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.Size = new System.Drawing.Size(268, 20);
             this.txtApellidos.TabIndex = 475;
             // 
             // txtNombres
             // 
-            this.txtNombres.Location = new System.Drawing.Point(119, 47);
+            this.txtNombres.Location = new System.Drawing.Point(119, 99);
             this.txtNombres.Name = "txtNombres";
             this.txtNombres.Size = new System.Drawing.Size(268, 20);
             this.txtNombres.TabIndex = 474;
@@ -449,7 +451,7 @@
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.btnNombres);
             this.Controls.Add(this.btnCodigo);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.lblFechaNac);
             this.Controls.Add(this.dtpFecha_nacimiento);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtNumero_documento);
@@ -457,14 +459,14 @@
             this.Controls.Add(this.cboTipo_documento);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtCorreo);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblApellido);
+            this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.txtApellidos);
             this.Controls.Add(this.txtNombres);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtCodigo);
             this.Name = "RegistroPersonaUserControl";
-            this.Size = new System.Drawing.Size(587, 350);
+            this.Size = new System.Drawing.Size(650, 350);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -498,7 +500,7 @@
         private System.Windows.Forms.ToolStripStatusLabel SlblFecha_modificacion;
         private System.Windows.Forms.Button btnNombres;
         private System.Windows.Forms.Button btnCodigo;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblFechaNac;
         private System.Windows.Forms.DateTimePicker dtpFecha_nacimiento;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtNumero_documento;
@@ -506,8 +508,8 @@
         private System.Windows.Forms.ComboBox cboTipo_documento;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtCorreo;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblApellido;
+        private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.TextBox txtApellidos;
         private System.Windows.Forms.TextBox txtNombres;
         private System.Windows.Forms.Label label1;
