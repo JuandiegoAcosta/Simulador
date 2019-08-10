@@ -7,4 +7,3 @@ AS
 	INNER JOIN  Persona p ON c.Cliente = p.Id
 	WHERE p.Tipo_Persona = 'CLI'
 	AND c.NroCuenta = @NRO_CUENTA
-
